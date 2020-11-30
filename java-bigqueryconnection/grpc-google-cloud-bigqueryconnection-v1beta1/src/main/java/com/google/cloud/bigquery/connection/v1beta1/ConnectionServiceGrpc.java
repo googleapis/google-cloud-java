@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Manages external data source connections and credentials.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/bigquery/connection/v1beta1/connection.proto")
@@ -511,22 +505,10 @@ public final class ConnectionServiceGrpc {
     return ConnectionServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Manages external data source connections and credentials.
-   * </pre>
-   */
+  /** */
   public abstract static class ConnectionServiceImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new connection.
-     * </pre>
-     */
+    /** */
     public void createConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CreateConnectionRequest
             request,
@@ -536,13 +518,7 @@ public final class ConnectionServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateConnectionMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns specified connection.
-     * </pre>
-     */
+    /** */
     public void getConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.GetConnectionRequest request,
         io.grpc.stub.StreamObserver<
@@ -551,13 +527,7 @@ public final class ConnectionServiceGrpc {
       asyncUnimplementedUnaryCall(getGetConnectionMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns a list of connections in the given project.
-     * </pre>
-     */
+    /** */
     public void listConnections(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsRequest request,
         io.grpc.stub.StreamObserver<
@@ -567,14 +537,7 @@ public final class ConnectionServiceGrpc {
       asyncUnimplementedUnaryCall(getListConnectionsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified connection. For security reasons, also resets
-     * credential if connection properties are in the update field mask.
-     * </pre>
-     */
+    /** */
     public void updateConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.UpdateConnectionRequest
             request,
@@ -584,13 +547,7 @@ public final class ConnectionServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateConnectionMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Sets the credential for the specified connection.
-     * </pre>
-     */
+    /** */
     public void updateConnectionCredential(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                 .UpdateConnectionCredentialRequest
@@ -599,13 +556,7 @@ public final class ConnectionServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateConnectionCredentialMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes connection and associated credential.
-     * </pre>
-     */
+    /** */
     public void deleteConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.DeleteConnectionRequest
             request,
@@ -613,48 +564,21 @@ public final class ConnectionServiceGrpc {
       asyncUnimplementedUnaryCall(getDeleteConnectionMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the access control policy for a resource.
-     * Returns an empty policy if the resource exists and does not have a policy
-     * set.
-     * </pre>
-     */
+    /** */
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Sets the access control policy on the specified resource. Replaces any
-     * existing policy.
-     * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-     * </pre>
-     */
+    /** */
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns permissions that a caller has on the specified resource.
-     * If the resource does not exist, this will return an empty set of
-     * permissions, not a NOT_FOUND error.
-     * Note: This operation is designed to be used for building permission-aware
-     * UIs and command-line tools, not for authorization checking. This operation
-     * may "fail open" without warning.
-     * </pre>
-     */
+    /** */
     public void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
@@ -734,13 +658,7 @@ public final class ConnectionServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Manages external data source connections and credentials.
-   * </pre>
-   */
+  /** */
   public static final class ConnectionServiceStub
       extends io.grpc.stub.AbstractAsyncStub<ConnectionServiceStub> {
     private ConnectionServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -753,13 +671,7 @@ public final class ConnectionServiceGrpc {
       return new ConnectionServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new connection.
-     * </pre>
-     */
+    /** */
     public void createConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CreateConnectionRequest
             request,
@@ -772,13 +684,7 @@ public final class ConnectionServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns specified connection.
-     * </pre>
-     */
+    /** */
     public void getConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.GetConnectionRequest request,
         io.grpc.stub.StreamObserver<
@@ -790,13 +696,7 @@ public final class ConnectionServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns a list of connections in the given project.
-     * </pre>
-     */
+    /** */
     public void listConnections(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsRequest request,
         io.grpc.stub.StreamObserver<
@@ -809,14 +709,7 @@ public final class ConnectionServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified connection. For security reasons, also resets
-     * credential if connection properties are in the update field mask.
-     * </pre>
-     */
+    /** */
     public void updateConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.UpdateConnectionRequest
             request,
@@ -829,13 +722,7 @@ public final class ConnectionServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Sets the credential for the specified connection.
-     * </pre>
-     */
+    /** */
     public void updateConnectionCredential(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                 .UpdateConnectionCredentialRequest
@@ -847,13 +734,7 @@ public final class ConnectionServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes connection and associated credential.
-     * </pre>
-     */
+    /** */
     public void deleteConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.DeleteConnectionRequest
             request,
@@ -864,15 +745,7 @@ public final class ConnectionServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the access control policy for a resource.
-     * Returns an empty policy if the resource exists and does not have a policy
-     * set.
-     * </pre>
-     */
+    /** */
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
@@ -882,15 +755,7 @@ public final class ConnectionServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Sets the access control policy on the specified resource. Replaces any
-     * existing policy.
-     * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-     * </pre>
-     */
+    /** */
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
@@ -900,18 +765,7 @@ public final class ConnectionServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns permissions that a caller has on the specified resource.
-     * If the resource does not exist, this will return an empty set of
-     * permissions, not a NOT_FOUND error.
-     * Note: This operation is designed to be used for building permission-aware
-     * UIs and command-line tools, not for authorization checking. This operation
-     * may "fail open" without warning.
-     * </pre>
-     */
+    /** */
     public void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
@@ -923,13 +777,7 @@ public final class ConnectionServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Manages external data source connections and credentials.
-   * </pre>
-   */
+  /** */
   public static final class ConnectionServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ConnectionServiceBlockingStub> {
     private ConnectionServiceBlockingStub(
@@ -943,13 +791,7 @@ public final class ConnectionServiceGrpc {
       return new ConnectionServiceBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new connection.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection createConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CreateConnectionRequest
             request) {
@@ -957,25 +799,13 @@ public final class ConnectionServiceGrpc {
           getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns specified connection.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection getConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.GetConnectionRequest request) {
       return blockingUnaryCall(getChannel(), getGetConnectionMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns a list of connections in the given project.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsResponse
         listConnections(
             com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsRequest
@@ -983,14 +813,7 @@ public final class ConnectionServiceGrpc {
       return blockingUnaryCall(getChannel(), getListConnectionsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified connection. For security reasons, also resets
-     * credential if connection properties are in the update field mask.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection updateConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.UpdateConnectionRequest
             request) {
@@ -998,13 +821,7 @@ public final class ConnectionServiceGrpc {
           getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Sets the credential for the specified connection.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty updateConnectionCredential(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                 .UpdateConnectionCredentialRequest
@@ -1013,13 +830,7 @@ public final class ConnectionServiceGrpc {
           getChannel(), getUpdateConnectionCredentialMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes connection and associated credential.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.DeleteConnectionRequest
             request) {
@@ -1027,44 +838,17 @@ public final class ConnectionServiceGrpc {
           getChannel(), getDeleteConnectionMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the access control policy for a resource.
-     * Returns an empty policy if the resource exists and does not have a policy
-     * set.
-     * </pre>
-     */
+    /** */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return blockingUnaryCall(getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Sets the access control policy on the specified resource. Replaces any
-     * existing policy.
-     * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-     * </pre>
-     */
+    /** */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
       return blockingUnaryCall(getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns permissions that a caller has on the specified resource.
-     * If the resource does not exist, this will return an empty set of
-     * permissions, not a NOT_FOUND error.
-     * Note: This operation is designed to be used for building permission-aware
-     * UIs and command-line tools, not for authorization checking. This operation
-     * may "fail open" without warning.
-     * </pre>
-     */
+    /** */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return blockingUnaryCall(
@@ -1072,13 +856,7 @@ public final class ConnectionServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Manages external data source connections and credentials.
-   * </pre>
-   */
+  /** */
   public static final class ConnectionServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<ConnectionServiceFutureStub> {
     private ConnectionServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1091,13 +869,7 @@ public final class ConnectionServiceGrpc {
       return new ConnectionServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new connection.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>
         createConnection(
@@ -1107,13 +879,7 @@ public final class ConnectionServiceGrpc {
           getChannel().newCall(getCreateConnectionMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns specified connection.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>
         getConnection(
@@ -1123,13 +889,7 @@ public final class ConnectionServiceGrpc {
           getChannel().newCall(getGetConnectionMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns a list of connections in the given project.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsResponse>
         listConnections(
@@ -1139,14 +899,7 @@ public final class ConnectionServiceGrpc {
           getChannel().newCall(getListConnectionsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified connection. For security reasons, also resets
-     * credential if connection properties are in the update field mask.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>
         updateConnection(
@@ -1156,13 +909,7 @@ public final class ConnectionServiceGrpc {
           getChannel().newCall(getUpdateConnectionMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Sets the credential for the specified connection.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         updateConnectionCredential(
             com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
@@ -1172,13 +919,7 @@ public final class ConnectionServiceGrpc {
           getChannel().newCall(getUpdateConnectionCredentialMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes connection and associated credential.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteConnection(
             com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.DeleteConnectionRequest
@@ -1187,48 +928,21 @@ public final class ConnectionServiceGrpc {
           getChannel().newCall(getDeleteConnectionMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets the access control policy for a resource.
-     * Returns an empty policy if the resource exists and does not have a policy
-     * set.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Sets the access control policy on the specified resource. Replaces any
-     * existing policy.
-     * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns permissions that a caller has on the specified resource.
-     * If the resource does not exist, this will return an empty set of
-     * permissions, not a NOT_FOUND error.
-     * Note: This operation is designed to be used for building permission-aware
-     * UIs and command-line tools, not for authorization checking. This operation
-     * may "fail open" without warning.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
