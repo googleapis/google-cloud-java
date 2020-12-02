@@ -22,7 +22,25 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * This API allows users to manage their flat-rate BigQuery reservations.
+ * A reservation provides computational resource guarantees, in the form of
+ * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
+ * unit of computational power in BigQuery, and serves as the basic unit of
+ * parallelism. In a scan of a multi-partitioned table, a single slot operates
+ * on a single partition of the table. A reservation resource exists as a child
+ * resource of the admin project and location, e.g.:
+ *   `projects/myproject/locations/US/reservations/reservationName`.
+ * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
+ * (in the form of slots) with some committed period of usage. A capacity
+ * commitment resource exists as a child resource of the admin project and
+ * location, e.g.:
+ *   `projects/myproject/locations/US/capacityCommitments/id`.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/bigquery/reservation/v1/reservation.proto")
@@ -1011,10 +1029,34 @@ public final class ReservationServiceGrpc {
     return ReservationServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * This API allows users to manage their flat-rate BigQuery reservations.
+   * A reservation provides computational resource guarantees, in the form of
+   * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
+   * unit of computational power in BigQuery, and serves as the basic unit of
+   * parallelism. In a scan of a multi-partitioned table, a single slot operates
+   * on a single partition of the table. A reservation resource exists as a child
+   * resource of the admin project and location, e.g.:
+   *   `projects/myproject/locations/US/reservations/reservationName`.
+   * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
+   * (in the form of slots) with some committed period of usage. A capacity
+   * commitment resource exists as a child resource of the admin project and
+   * location, e.g.:
+   *   `projects/myproject/locations/US/capacityCommitments/id`.
+   * </pre>
+   */
   public abstract static class ReservationServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reservation resource.
+     * </pre>
+     */
     public void createReservation(
         com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
@@ -1022,7 +1064,13 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateReservationMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the reservations for the project in the specified location.
+     * </pre>
+     */
     public void listReservations(
         com.google.cloud.bigquery.reservation.v1.ListReservationsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1031,7 +1079,13 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getListReservationsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the reservation.
+     * </pre>
+     */
     public void getReservation(
         com.google.cloud.bigquery.reservation.v1.GetReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
@@ -1039,14 +1093,28 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getGetReservationMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reservation.
+     * Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+     * assignments.
+     * </pre>
+     */
     public void deleteReservation(
         com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteReservationMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reservation resource.
+     * </pre>
+     */
     public void updateReservation(
         com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
@@ -1054,7 +1122,13 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateReservationMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new capacity commitment resource.
+     * </pre>
+     */
     public void createCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
@@ -1062,7 +1136,13 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateCapacityCommitmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the capacity commitments for the admin project.
+     * </pre>
+     */
     public void listCapacityCommitments(
         com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1071,7 +1151,13 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getListCapacityCommitmentsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the capacity commitment.
+     * </pre>
+     */
     public void getCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
@@ -1079,14 +1165,32 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getGetCapacityCommitmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a capacity commitment. Attempting to delete capacity commitment
+     * before its commitment_end_time will fail with the error code
+     * `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public void deleteCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteCapacityCommitmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing capacity commitment.
+     * Only `plan` and `renewal_plan` fields can be updated.
+     * Plan can only be changed to a plan of a longer commitment period.
+     * Attempting to change to a plan with shorter commitment period will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public void updateCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
@@ -1094,7 +1198,18 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateCapacityCommitmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Splits capacity commitment to two commitments of the same plan and
+     * `commitment_end_time`.
+     * A common use case is to enable downgrading commitments.
+     * For example, in order to downgrade from 10000 slots to 8000, you might
+     * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
+     * you would change the plan of the first one to `FLEX` and then delete it.
+     * </pre>
+     */
     public void splitCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<
@@ -1103,7 +1218,17 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getSplitCapacityCommitmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Merges capacity commitments of the same plan into a single commitment.
+     * The resulting capacity commitment has the greater commitment_end_time
+     * out of the to-be-merged capacity commitments.
+     * Attempting to merge capacity commitments of different plan will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public void mergeCapacityCommitments(
         com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
@@ -1111,7 +1236,35 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getMergeCapacityCommitmentsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an assignment object which allows the given project to submit jobs
+     * of a certain type using slots from the specified reservation.
+     * Currently a
+     * resource (project, folder, organization) can only have one assignment per
+     * each (job_type, location) combination, and that reservation will be used
+     * for all jobs of the matching type.
+     * Different assignments can be created on different levels of the
+     * projects, folders or organization hierarchy.  During query execution,
+     * the assignment is looked up at the project, folder and organization levels
+     * in that order. The first assignment found is applied to the query.
+     * When creating assignments, it does not matter if other assignments exist at
+     * higher levels.
+     * Example:
+     * * The organization `organizationA` contains two projects, `project1`
+     *   and `project2`.
+     * * Assignments for all three entities (`organizationA`, `project1`, and
+     *   `project2`) could all be created and mapped to the same or different
+     *   reservations.
+     * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
+     * 'bigquery.admin' permissions on the project using the reservation
+     * and the project that owns this reservation.
+     * Returns `google.rpc.Code.INVALID_ARGUMENT` when location of the assignment
+     * does not match location of the reservation.
+     * </pre>
+     */
     public void createAssignment(
         com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
@@ -1119,7 +1272,27 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateAssignmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists assignments.
+     * Only explicitly created assignments will be returned.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, ListAssignments will just return the above two assignments
+     * for reservation `res1`, and no expansion/merge will happen.
+     * The wildcard "-" can be used for
+     * reservations in the request. In that case all assignments belongs to the
+     * specified project and location will be listed.
+     * **Note** "-" cannot be used for projects nor locations.
+     * </pre>
+     */
     public void listAssignments(
         com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1128,14 +1301,53 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getListAssignmentsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a assignment. No expansion will happen.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't
+     * affect the other assignment `&lt;project1, res1&gt;`. After said deletion,
+     * queries from `project1` will still use `res1` while queries from
+     * `project2` will switch to use on-demand mode.
+     * </pre>
+     */
     public void deleteAssignment(
         com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteAssignmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Looks up assignments for a specified resource for a particular region.
+     * If the request is about a project:
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
+     * If the request is about an organization, then assignments created on the
+     * organization will be returned (organization doesn't have ancestors).
+     * Comparing to ListAssignments, there are some behavior
+     * differences:
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * **Note** "-" cannot be used for projects
+     * nor locations.
+     * </pre>
+     */
     public void searchAssignments(
         com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1144,7 +1356,16 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getSearchAssignmentsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Moves an assignment under a new reservation.
+     * This differs from removing an existing assignment and recreating a new one
+     * by providing a transactional change that ensures an assignee always has an
+     * associated reservation.
+     * </pre>
+     */
     public void moveAssignment(
         com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
@@ -1152,7 +1373,13 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getMoveAssignmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a BI reservation.
+     * </pre>
+     */
     public void getBiReservation(
         com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>
@@ -1160,7 +1387,18 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getGetBiReservationMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BI reservation.
+     * Only fields specified in the `field_mask` are updated.
+     * A singleton BI reservation always exists with default size 0.
+     * In order to reserve BI capacity it needs to be updated to an amount
+     * greater than 0. In order to release BI capacity reservation size
+     * must be set to 0.
+     * </pre>
+     */
     public void updateBiReservation(
         com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>
@@ -1305,7 +1543,25 @@ public final class ReservationServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * This API allows users to manage their flat-rate BigQuery reservations.
+   * A reservation provides computational resource guarantees, in the form of
+   * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
+   * unit of computational power in BigQuery, and serves as the basic unit of
+   * parallelism. In a scan of a multi-partitioned table, a single slot operates
+   * on a single partition of the table. A reservation resource exists as a child
+   * resource of the admin project and location, e.g.:
+   *   `projects/myproject/locations/US/reservations/reservationName`.
+   * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
+   * (in the form of slots) with some committed period of usage. A capacity
+   * commitment resource exists as a child resource of the admin project and
+   * location, e.g.:
+   *   `projects/myproject/locations/US/capacityCommitments/id`.
+   * </pre>
+   */
   public static final class ReservationServiceStub
       extends io.grpc.stub.AbstractAsyncStub<ReservationServiceStub> {
     private ReservationServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1318,7 +1574,13 @@ public final class ReservationServiceGrpc {
       return new ReservationServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reservation resource.
+     * </pre>
+     */
     public void createReservation(
         com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
@@ -1329,7 +1591,13 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the reservations for the project in the specified location.
+     * </pre>
+     */
     public void listReservations(
         com.google.cloud.bigquery.reservation.v1.ListReservationsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1341,7 +1609,13 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the reservation.
+     * </pre>
+     */
     public void getReservation(
         com.google.cloud.bigquery.reservation.v1.GetReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
@@ -1352,7 +1626,15 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reservation.
+     * Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+     * assignments.
+     * </pre>
+     */
     public void deleteReservation(
         com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1362,7 +1644,13 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reservation resource.
+     * </pre>
+     */
     public void updateReservation(
         com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
@@ -1373,7 +1661,13 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new capacity commitment resource.
+     * </pre>
+     */
     public void createCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
@@ -1384,7 +1678,13 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the capacity commitments for the admin project.
+     * </pre>
+     */
     public void listCapacityCommitments(
         com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1396,7 +1696,13 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the capacity commitment.
+     * </pre>
+     */
     public void getCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
@@ -1407,7 +1713,15 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a capacity commitment. Attempting to delete capacity commitment
+     * before its commitment_end_time will fail with the error code
+     * `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public void deleteCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1417,7 +1731,17 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing capacity commitment.
+     * Only `plan` and `renewal_plan` fields can be updated.
+     * Plan can only be changed to a plan of a longer commitment period.
+     * Attempting to change to a plan with shorter commitment period will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public void updateCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
@@ -1428,7 +1752,18 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Splits capacity commitment to two commitments of the same plan and
+     * `commitment_end_time`.
+     * A common use case is to enable downgrading commitments.
+     * For example, in order to downgrade from 10000 slots to 8000, you might
+     * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
+     * you would change the plan of the first one to `FLEX` and then delete it.
+     * </pre>
+     */
     public void splitCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<
@@ -1440,7 +1775,17 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Merges capacity commitments of the same plan into a single commitment.
+     * The resulting capacity commitment has the greater commitment_end_time
+     * out of the to-be-merged capacity commitments.
+     * Attempting to merge capacity commitments of different plan will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public void mergeCapacityCommitments(
         com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
@@ -1451,7 +1796,35 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an assignment object which allows the given project to submit jobs
+     * of a certain type using slots from the specified reservation.
+     * Currently a
+     * resource (project, folder, organization) can only have one assignment per
+     * each (job_type, location) combination, and that reservation will be used
+     * for all jobs of the matching type.
+     * Different assignments can be created on different levels of the
+     * projects, folders or organization hierarchy.  During query execution,
+     * the assignment is looked up at the project, folder and organization levels
+     * in that order. The first assignment found is applied to the query.
+     * When creating assignments, it does not matter if other assignments exist at
+     * higher levels.
+     * Example:
+     * * The organization `organizationA` contains two projects, `project1`
+     *   and `project2`.
+     * * Assignments for all three entities (`organizationA`, `project1`, and
+     *   `project2`) could all be created and mapped to the same or different
+     *   reservations.
+     * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
+     * 'bigquery.admin' permissions on the project using the reservation
+     * and the project that owns this reservation.
+     * Returns `google.rpc.Code.INVALID_ARGUMENT` when location of the assignment
+     * does not match location of the reservation.
+     * </pre>
+     */
     public void createAssignment(
         com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
@@ -1462,7 +1835,27 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists assignments.
+     * Only explicitly created assignments will be returned.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, ListAssignments will just return the above two assignments
+     * for reservation `res1`, and no expansion/merge will happen.
+     * The wildcard "-" can be used for
+     * reservations in the request. In that case all assignments belongs to the
+     * specified project and location will be listed.
+     * **Note** "-" cannot be used for projects nor locations.
+     * </pre>
+     */
     public void listAssignments(
         com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1474,7 +1867,24 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a assignment. No expansion will happen.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't
+     * affect the other assignment `&lt;project1, res1&gt;`. After said deletion,
+     * queries from `project1` will still use `res1` while queries from
+     * `project2` will switch to use on-demand mode.
+     * </pre>
+     */
     public void deleteAssignment(
         com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1484,7 +1894,29 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Looks up assignments for a specified resource for a particular region.
+     * If the request is about a project:
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
+     * If the request is about an organization, then assignments created on the
+     * organization will be returned (organization doesn't have ancestors).
+     * Comparing to ListAssignments, there are some behavior
+     * differences:
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * **Note** "-" cannot be used for projects
+     * nor locations.
+     * </pre>
+     */
     public void searchAssignments(
         com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1496,7 +1928,16 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Moves an assignment under a new reservation.
+     * This differs from removing an existing assignment and recreating a new one
+     * by providing a transactional change that ensures an assignee always has an
+     * associated reservation.
+     * </pre>
+     */
     public void moveAssignment(
         com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
@@ -1507,7 +1948,13 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a BI reservation.
+     * </pre>
+     */
     public void getBiReservation(
         com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>
@@ -1518,7 +1965,18 @@ public final class ReservationServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BI reservation.
+     * Only fields specified in the `field_mask` are updated.
+     * A singleton BI reservation always exists with default size 0.
+     * In order to reserve BI capacity it needs to be updated to an amount
+     * greater than 0. In order to release BI capacity reservation size
+     * must be set to 0.
+     * </pre>
+     */
     public void updateBiReservation(
         com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>
@@ -1530,7 +1988,25 @@ public final class ReservationServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * This API allows users to manage their flat-rate BigQuery reservations.
+   * A reservation provides computational resource guarantees, in the form of
+   * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
+   * unit of computational power in BigQuery, and serves as the basic unit of
+   * parallelism. In a scan of a multi-partitioned table, a single slot operates
+   * on a single partition of the table. A reservation resource exists as a child
+   * resource of the admin project and location, e.g.:
+   *   `projects/myproject/locations/US/reservations/reservationName`.
+   * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
+   * (in the form of slots) with some committed period of usage. A capacity
+   * commitment resource exists as a child resource of the admin project and
+   * location, e.g.:
+   *   `projects/myproject/locations/US/capacityCommitments/id`.
+   * </pre>
+   */
   public static final class ReservationServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ReservationServiceBlockingStub> {
     private ReservationServiceBlockingStub(
@@ -1544,48 +2020,92 @@ public final class ReservationServiceGrpc {
       return new ReservationServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reservation resource.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.Reservation createReservation(
         com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateReservationMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the reservations for the project in the specified location.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.ListReservationsResponse listReservations(
         com.google.cloud.bigquery.reservation.v1.ListReservationsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListReservationsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the reservation.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.Reservation getReservation(
         com.google.cloud.bigquery.reservation.v1.GetReservationRequest request) {
       return blockingUnaryCall(getChannel(), getGetReservationMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reservation.
+     * Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+     * assignments.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteReservation(
         com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteReservationMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reservation resource.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.Reservation updateReservation(
         com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateReservationMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new capacity commitment resource.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment createCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the capacity commitments for the admin project.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse
         listCapacityCommitments(
             com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest request) {
@@ -1593,28 +2113,63 @@ public final class ReservationServiceGrpc {
           getChannel(), getListCapacityCommitmentsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the capacity commitment.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment getCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a capacity commitment. Attempting to delete capacity commitment
+     * before its commitment_end_time will fail with the error code
+     * `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing capacity commitment.
+     * Only `plan` and `renewal_plan` fields can be updated.
+     * Plan can only be changed to a plan of a longer commitment period.
+     * Attempting to change to a plan with shorter commitment period will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment updateCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Splits capacity commitment to two commitments of the same plan and
+     * `commitment_end_time`.
+     * A common use case is to enable downgrading commitments.
+     * For example, in order to downgrade from 10000 slots to 8000, you might
+     * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
+     * you would change the plan of the first one to `FLEX` and then delete it.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse
         splitCapacityCommitment(
             com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest request) {
@@ -1622,54 +2177,177 @@ public final class ReservationServiceGrpc {
           getChannel(), getSplitCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Merges capacity commitments of the same plan into a single commitment.
+     * The resulting capacity commitment has the greater commitment_end_time
+     * out of the to-be-merged capacity commitments.
+     * Attempting to merge capacity commitments of different plan will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment mergeCapacityCommitments(
         com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request) {
       return blockingUnaryCall(
           getChannel(), getMergeCapacityCommitmentsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an assignment object which allows the given project to submit jobs
+     * of a certain type using slots from the specified reservation.
+     * Currently a
+     * resource (project, folder, organization) can only have one assignment per
+     * each (job_type, location) combination, and that reservation will be used
+     * for all jobs of the matching type.
+     * Different assignments can be created on different levels of the
+     * projects, folders or organization hierarchy.  During query execution,
+     * the assignment is looked up at the project, folder and organization levels
+     * in that order. The first assignment found is applied to the query.
+     * When creating assignments, it does not matter if other assignments exist at
+     * higher levels.
+     * Example:
+     * * The organization `organizationA` contains two projects, `project1`
+     *   and `project2`.
+     * * Assignments for all three entities (`organizationA`, `project1`, and
+     *   `project2`) could all be created and mapped to the same or different
+     *   reservations.
+     * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
+     * 'bigquery.admin' permissions on the project using the reservation
+     * and the project that owns this reservation.
+     * Returns `google.rpc.Code.INVALID_ARGUMENT` when location of the assignment
+     * does not match location of the reservation.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.Assignment createAssignment(
         com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateAssignmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists assignments.
+     * Only explicitly created assignments will be returned.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, ListAssignments will just return the above two assignments
+     * for reservation `res1`, and no expansion/merge will happen.
+     * The wildcard "-" can be used for
+     * reservations in the request. In that case all assignments belongs to the
+     * specified project and location will be listed.
+     * **Note** "-" cannot be used for projects nor locations.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse listAssignments(
         com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest request) {
       return blockingUnaryCall(getChannel(), getListAssignmentsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a assignment. No expansion will happen.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't
+     * affect the other assignment `&lt;project1, res1&gt;`. After said deletion,
+     * queries from `project1` will still use `res1` while queries from
+     * `project2` will switch to use on-demand mode.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteAssignment(
         com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteAssignmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Looks up assignments for a specified resource for a particular region.
+     * If the request is about a project:
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
+     * If the request is about an organization, then assignments created on the
+     * organization will be returned (organization doesn't have ancestors).
+     * Comparing to ListAssignments, there are some behavior
+     * differences:
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * **Note** "-" cannot be used for projects
+     * nor locations.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse searchAssignments(
         com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request) {
       return blockingUnaryCall(
           getChannel(), getSearchAssignmentsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Moves an assignment under a new reservation.
+     * This differs from removing an existing assignment and recreating a new one
+     * by providing a transactional change that ensures an assignee always has an
+     * associated reservation.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.Assignment moveAssignment(
         com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request) {
       return blockingUnaryCall(getChannel(), getMoveAssignmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a BI reservation.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.BiReservation getBiReservation(
         com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetBiReservationMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BI reservation.
+     * Only fields specified in the `field_mask` are updated.
+     * A singleton BI reservation always exists with default size 0.
+     * In order to reserve BI capacity it needs to be updated to an amount
+     * greater than 0. In order to release BI capacity reservation size
+     * must be set to 0.
+     * </pre>
+     */
     public com.google.cloud.bigquery.reservation.v1.BiReservation updateBiReservation(
         com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request) {
       return blockingUnaryCall(
@@ -1677,7 +2355,25 @@ public final class ReservationServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * This API allows users to manage their flat-rate BigQuery reservations.
+   * A reservation provides computational resource guarantees, in the form of
+   * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
+   * unit of computational power in BigQuery, and serves as the basic unit of
+   * parallelism. In a scan of a multi-partitioned table, a single slot operates
+   * on a single partition of the table. A reservation resource exists as a child
+   * resource of the admin project and location, e.g.:
+   *   `projects/myproject/locations/US/reservations/reservationName`.
+   * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
+   * (in the form of slots) with some committed period of usage. A capacity
+   * commitment resource exists as a child resource of the admin project and
+   * location, e.g.:
+   *   `projects/myproject/locations/US/capacityCommitments/id`.
+   * </pre>
+   */
   public static final class ReservationServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<ReservationServiceFutureStub> {
     private ReservationServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1690,7 +2386,13 @@ public final class ReservationServiceGrpc {
       return new ReservationServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reservation resource.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.Reservation>
         createReservation(
@@ -1699,7 +2401,13 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getCreateReservationMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the reservations for the project in the specified location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.ListReservationsResponse>
         listReservations(com.google.cloud.bigquery.reservation.v1.ListReservationsRequest request) {
@@ -1707,7 +2415,13 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getListReservationsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the reservation.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.Reservation>
         getReservation(com.google.cloud.bigquery.reservation.v1.GetReservationRequest request) {
@@ -1715,7 +2429,15 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getGetReservationMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reservation.
+     * Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+     * assignments.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteReservation(
             com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request) {
@@ -1723,7 +2445,13 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getDeleteReservationMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reservation resource.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.Reservation>
         updateReservation(
@@ -1732,7 +2460,13 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getUpdateReservationMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new capacity commitment resource.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
         createCapacityCommitment(
@@ -1741,7 +2475,13 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getCreateCapacityCommitmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the capacity commitments for the admin project.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse>
         listCapacityCommitments(
@@ -1750,7 +2490,13 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getListCapacityCommitmentsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the capacity commitment.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
         getCapacityCommitment(
@@ -1759,7 +2505,15 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getGetCapacityCommitmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a capacity commitment. Attempting to delete capacity commitment
+     * before its commitment_end_time will fail with the error code
+     * `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteCapacityCommitment(
             com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request) {
@@ -1767,7 +2521,17 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getDeleteCapacityCommitmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing capacity commitment.
+     * Only `plan` and `renewal_plan` fields can be updated.
+     * Plan can only be changed to a plan of a longer commitment period.
+     * Attempting to change to a plan with shorter commitment period will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
         updateCapacityCommitment(
@@ -1776,7 +2540,18 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getUpdateCapacityCommitmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Splits capacity commitment to two commitments of the same plan and
+     * `commitment_end_time`.
+     * A common use case is to enable downgrading commitments.
+     * For example, in order to downgrade from 10000 slots to 8000, you might
+     * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
+     * you would change the plan of the first one to `FLEX` and then delete it.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse>
         splitCapacityCommitment(
@@ -1785,7 +2560,17 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getSplitCapacityCommitmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Merges capacity commitments of the same plan into a single commitment.
+     * The resulting capacity commitment has the greater commitment_end_time
+     * out of the to-be-merged capacity commitments.
+     * Attempting to merge capacity commitments of different plan will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
         mergeCapacityCommitments(
@@ -1794,7 +2579,35 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getMergeCapacityCommitmentsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an assignment object which allows the given project to submit jobs
+     * of a certain type using slots from the specified reservation.
+     * Currently a
+     * resource (project, folder, organization) can only have one assignment per
+     * each (job_type, location) combination, and that reservation will be used
+     * for all jobs of the matching type.
+     * Different assignments can be created on different levels of the
+     * projects, folders or organization hierarchy.  During query execution,
+     * the assignment is looked up at the project, folder and organization levels
+     * in that order. The first assignment found is applied to the query.
+     * When creating assignments, it does not matter if other assignments exist at
+     * higher levels.
+     * Example:
+     * * The organization `organizationA` contains two projects, `project1`
+     *   and `project2`.
+     * * Assignments for all three entities (`organizationA`, `project1`, and
+     *   `project2`) could all be created and mapped to the same or different
+     *   reservations.
+     * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
+     * 'bigquery.admin' permissions on the project using the reservation
+     * and the project that owns this reservation.
+     * Returns `google.rpc.Code.INVALID_ARGUMENT` when location of the assignment
+     * does not match location of the reservation.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.Assignment>
         createAssignment(com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request) {
@@ -1802,7 +2615,27 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getCreateAssignmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists assignments.
+     * Only explicitly created assignments will be returned.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, ListAssignments will just return the above two assignments
+     * for reservation `res1`, and no expansion/merge will happen.
+     * The wildcard "-" can be used for
+     * reservations in the request. In that case all assignments belongs to the
+     * specified project and location will be listed.
+     * **Note** "-" cannot be used for projects nor locations.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse>
         listAssignments(com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest request) {
@@ -1810,14 +2643,53 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getListAssignmentsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a assignment. No expansion will happen.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't
+     * affect the other assignment `&lt;project1, res1&gt;`. After said deletion,
+     * queries from `project1` will still use `res1` while queries from
+     * `project2` will switch to use on-demand mode.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteAssignment(com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteAssignmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Looks up assignments for a specified resource for a particular region.
+     * If the request is about a project:
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
+     * If the request is about an organization, then assignments created on the
+     * organization will be returned (organization doesn't have ancestors).
+     * Comparing to ListAssignments, there are some behavior
+     * differences:
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * **Note** "-" cannot be used for projects
+     * nor locations.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>
         searchAssignments(
@@ -1826,7 +2698,16 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getSearchAssignmentsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Moves an assignment under a new reservation.
+     * This differs from removing an existing assignment and recreating a new one
+     * by providing a transactional change that ensures an assignee always has an
+     * associated reservation.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.Assignment>
         moveAssignment(com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request) {
@@ -1834,7 +2715,13 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getMoveAssignmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a BI reservation.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.BiReservation>
         getBiReservation(com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request) {
@@ -1842,7 +2729,18 @@ public final class ReservationServiceGrpc {
           getChannel().newCall(getGetBiReservationMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BI reservation.
+     * Only fields specified in the `field_mask` are updated.
+     * A singleton BI reservation always exists with default size 0.
+     * In order to reserve BI capacity it needs to be updated to an amount
+     * greater than 0. In order to release BI capacity reservation size
+     * must be set to 0.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.BiReservation>
         updateBiReservation(
