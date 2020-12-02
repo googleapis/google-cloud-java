@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.8](https://www.github.com/googleapis/java-iot/compare/v1.1.7...v1.1.8) (2020-12-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#310](https://www.github.com/googleapis/java-iot/issues/310)) ([83a6954](https://www.github.com/googleapis/java-iot/commit/83a6954f2899ed902bb6d68209739ee1aa6e23f5))
+
 ### [1.1.7](https://www.github.com/googleapis/java-iot/compare/v1.1.6...v1.1.7) (2020-11-11)
 
 
