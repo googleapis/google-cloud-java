@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dataproc</artifactId>
-      <version>1.1.8-SNAPSHOT</version>
+      <version>1.1.8</version>
     </dependency>
     <!-- {x-version-update-end} -->
     <dependency>
