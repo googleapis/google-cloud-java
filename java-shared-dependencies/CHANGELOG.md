@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.16.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.15.0...v0.16.0) (2020-12-02)
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson:jackson-bom to v2.12.0 ([#225](https://www.github.com/googleapis/java-shared-dependencies/issues/225)) ([b78a1ef](https://www.github.com/googleapis/java-shared-dependencies/commit/b78a1ef83ad946b0d29cd0dff46e48fbde44d120))
+* update dependency com.google.api-client:google-api-client-bom to v1.31.1 ([#215](https://www.github.com/googleapis/java-shared-dependencies/issues/215)) ([08d643a](https://www.github.com/googleapis/java-shared-dependencies/commit/08d643aaf289984b87d734274830712af82585b6))
+* update dependency com.google.protobuf:protobuf-bom to v3.14.0 ([#217](https://www.github.com/googleapis/java-shared-dependencies/issues/217)) ([01a9c64](https://www.github.com/googleapis/java-shared-dependencies/commit/01a9c6442906e8482a53712eba95ccc6f7040928))
+* update dependency io.grpc:grpc-bom to v1.34.0 ([#228](https://www.github.com/googleapis/java-shared-dependencies/issues/228)) ([425d1ea](https://www.github.com/googleapis/java-shared-dependencies/commit/425d1eab2a046c365f816f946576e4030e7c3696))
+* update gax.version to v1.60.1 ([#223](https://www.github.com/googleapis/java-shared-dependencies/issues/223)) ([84c75bd](https://www.github.com/googleapis/java-shared-dependencies/commit/84c75bdbd3f86ef7187373289ee08ad3a0c24719))
+* update google.core.version to v1.94.0 ([#212](https://www.github.com/googleapis/java-shared-dependencies/issues/212)) ([764ef5e](https://www.github.com/googleapis/java-shared-dependencies/commit/764ef5e9a2272cd9244a8fc5cc107ffacf9e9d5b))
+
 ## [0.15.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.14.1...v0.15.0) (2020-11-10)
 
 
