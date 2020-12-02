@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-os-config-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
+  <version>1.1.1</version><!-- {x-version-update:google-cloud-os-config:current} -->
   <name>Google OS Config API Parent</name>
   <url>https://github.com/googleapis/java-os-config</url>
   <description>
@@ -70,17 +70,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-config</artifactId>
-        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
+        <version>1.1.1</version><!-- {x-version-update:google-cloud-os-config:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-os-config-v1</artifactId>
-        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-os-config-v1:current} -->
+        <version>1.1.1</version><!-- {x-version-update:proto-google-cloud-os-config-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-os-config-v1</artifactId>
-        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-os-config-v1:current} -->
+        <version>1.1.1</version><!-- {x-version-update:grpc-google-cloud-os-config-v1:current} -->
       </dependency>
 
       <dependency>
