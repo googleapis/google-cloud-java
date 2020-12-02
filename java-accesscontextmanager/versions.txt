@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-identity-accesscontextmanager-v1:1.0.8:1.0.9-SNAPSHOT
+proto-google-identity-accesscontextmanager-v1:1.0.9:1.0.9
