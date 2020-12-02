@@ -1,5 +1,30 @@
 # Changelog
 
+### [1.125.1](https://www.github.com/googleapis/java-bigquery/compare/v1.125.0...v1.125.1) (2020-12-02)
+
+
+### Bug Fixes
+
+* update listPartitions() to support tables from other projects ([#974](https://www.github.com/googleapis/java-bigquery/issues/974)) ([1739d57](https://www.github.com/googleapis/java-bigquery/commit/1739d57c59cfb6b90ccf3fcc9c07d1449fc17238))
+
+
+### Documentation
+
+* **samples:** add alter materialized view ([#979](https://www.github.com/googleapis/java-bigquery/issues/979)) ([37c0632](https://www.github.com/googleapis/java-bigquery/commit/37c0632500366006aecab18b21a10bf8956c4b6c))
+* **samples:** add create external table using hivepartitioningoptions ([#969](https://www.github.com/googleapis/java-bigquery/issues/969)) ([3994be6](https://www.github.com/googleapis/java-bigquery/commit/3994be62b63b4b56944499c10b42d77ced4ab33c))
+* **samples:** add create iam policy for table ([#975](https://www.github.com/googleapis/java-bigquery/issues/975)) ([0cfc98b](https://www.github.com/googleapis/java-bigquery/commit/0cfc98bffc9970d3275cc233d59c621ddbb6aea6))
+* **samples:** add create materialized view ([#977](https://www.github.com/googleapis/java-bigquery/issues/977)) ([155e688](https://www.github.com/googleapis/java-bigquery/commit/155e6882aebdb4ac93e1e78baac0579ca7e11bd1))
+* **samples:** add delete materialized view ([#980](https://www.github.com/googleapis/java-bigquery/issues/980)) ([022cb99](https://www.github.com/googleapis/java-bigquery/commit/022cb99b486d27c91f478353ab47df4b8e184e4a))
+* **samples:** add export model ([#970](https://www.github.com/googleapis/java-bigquery/issues/970)) ([2edad15](https://www.github.com/googleapis/java-bigquery/commit/2edad15764f144268f1bd3052d1d0ac069a2f377))
+* **samples:** add query materialized view ([#978](https://www.github.com/googleapis/java-bigquery/issues/978)) ([cf36b82](https://www.github.com/googleapis/java-bigquery/commit/cf36b82ef9bc0849a87b717c099321915a76b967))
+* **samples:** add update iam policy for table ([#976](https://www.github.com/googleapis/java-bigquery/issues/976)) ([aeecac9](https://www.github.com/googleapis/java-bigquery/commit/aeecac905911dbe1ee534f0e5eeef2705a0cb6b3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigtable to v1.18.1 ([#989](https://www.github.com/googleapis/java-bigquery/issues/989)) ([bbf4fe2](https://www.github.com/googleapis/java-bigquery/commit/bbf4fe2565b1676567f28d720b255696328c08cc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#988](https://www.github.com/googleapis/java-bigquery/issues/988)) ([3cc0d94](https://www.github.com/googleapis/java-bigquery/commit/3cc0d94888f649a16495f66e80ebf95093730b1a))
+
 ## [1.125.0](https://www.github.com/googleapis/java-bigquery/compare/v1.124.7...v1.125.0) (2020-11-19)
 
 
