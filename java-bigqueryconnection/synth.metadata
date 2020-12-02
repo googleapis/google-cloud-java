@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigqueryconnection.git",
-        "sha": "9bbceed5b9b86a441bc9e40f8fded08da4e1f359"
+        "sha": "6175bacd0e4fd770b2ffae4c1c1a4fb26607c424"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b11a87f3b54be3a5e42c15020ee1e0781f86da90",
-        "internalRef": "344134135"
+        "sha": "8cfc6c874574b649b4524a4ef6a0651533325a84",
+        "internalRef": "345067549"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b11a87f3b54be3a5e42c15020ee1e0781f86da90",
-        "internalRef": "344134135"
+        "sha": "8cfc6c874574b649b4524a4ef6a0651533325a84",
+        "internalRef": "345067549"
       }
     },
     {
