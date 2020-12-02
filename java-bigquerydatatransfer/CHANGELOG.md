@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.0.21](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.20...v1.0.21) (2020-12-02)
+
+
+### Documentation
+
+* **samples:** add create youtube channel transfer config ([#537](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/537)) ([fddd0a9](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/fddd0a9acddfbc309f949db247f7279a280fb53d))
+* **samples:** add create youtube owner channel transfer config ([#538](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/538)) ([18e069f](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/18e069fd0dc437ba5254a6b412bad91bfc9b7a5f))
+* **samples:** create play transfer ([#536](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/536)) ([52dc122](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/52dc122f472b530f8702cc74f84c2224939e6a4e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.110.0 ([#547](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/547)) ([c42c3aa](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/c42c3aa06bafeaf6d57440ce6a32b1542cb28a0e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#548](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/548)) ([137c2f3](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/137c2f3bd15dfe9986c73f9ee4a4e5d0a5cb850d))
+
 ### [1.0.20](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.19...v1.0.20) (2020-11-20)
 
 
