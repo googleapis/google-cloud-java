@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
-  <version>0.86.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-errorreporting-v1beta1:current} -->
+  <version>0.86.9</version><!-- {x-version-update:proto-google-cloud-errorreporting-v1beta1:current} -->
   <name>proto-google-cloud-error-reporting-v1beta1</name>
   <description>PROTO library for proto-google-cloud-error-reporting-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-errorreporting-parent</artifactId>
-    <version>0.120.9-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+    <version>0.120.9-beta</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
   </parent>
   <dependencies>
     <dependency>
