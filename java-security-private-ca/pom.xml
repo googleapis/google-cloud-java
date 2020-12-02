@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-security-private-ca-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
+  <version>0.2.3</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
   <name>Google Certificate Authority Service Parent</name>
   <url>https://github.com/googleapis/java-</url>
   <description>
@@ -70,17 +70,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-security-private-ca</artifactId>
-        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
+        <version>0.2.3</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-security-private-ca-v1beta1</artifactId>
-        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-security-private-ca-v1beta1:current} -->
+        <version>0.2.3</version><!-- {x-version-update:proto-google-cloud-security-private-ca-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-security-private-ca-v1beta1</artifactId>
-        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-security-private-ca-v1beta1:current} -->
+        <version>0.2.3</version><!-- {x-version-update:grpc-google-cloud-security-private-ca-v1beta1:current} -->
       </dependency>
 
       <dependency>

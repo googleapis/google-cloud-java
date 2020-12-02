@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-security-private-ca</artifactId>
-  <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
+  <version>0.2.3</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
   <packaging>jar</packaging>
   <name>Google Certificate Authority Service</name>
   <url>https://github.com/googleapis/java-security-private-ca</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-security-private-ca-parent</artifactId>
-    <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
+    <version>0.2.3</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-security-private-ca</site.installationModule>
