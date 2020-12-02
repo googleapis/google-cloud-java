@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.24.8](https://www.github.com/googleapis/java-speech/compare/v1.24.7...v1.24.8) (2020-12-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#370](https://www.github.com/googleapis/java-speech/issues/370)) ([e7bb02b](https://www.github.com/googleapis/java-speech/commit/e7bb02b544ff3f9fc85281475682ce7a16fce03d))
+
 ### [1.24.7](https://www.github.com/googleapis/java-speech/compare/v1.24.6...v1.24.7) (2020-11-11)
 
 
