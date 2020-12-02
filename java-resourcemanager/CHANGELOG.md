@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.118.5](https://www.github.com/googleapis/java-resourcemanager/compare/v0.118.4...v0.118.5) (2020-12-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#320](https://www.github.com/googleapis/java-resourcemanager/issues/320)) ([a2f7a30](https://www.github.com/googleapis/java-resourcemanager/commit/a2f7a30d79bd77209009b5f397e874bfc3005eae))
+
 ### [0.118.4](https://www.github.com/googleapis/java-resourcemanager/compare/v0.118.3...v0.118.4) (2020-11-17)
 
 
