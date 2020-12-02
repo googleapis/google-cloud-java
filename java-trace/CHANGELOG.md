@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.8](https://www.github.com/googleapis/java-trace/compare/v1.2.7...v1.2.8) (2020-12-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#363](https://www.github.com/googleapis/java-trace/issues/363)) ([8bf9d9d](https://www.github.com/googleapis/java-trace/commit/8bf9d9d746ee3179042d84174d8325a67d9c973d))
+
 ### [1.2.7](https://www.github.com/googleapis/java-trace/compare/v1.2.6...v1.2.7) (2020-11-17)
 
 
