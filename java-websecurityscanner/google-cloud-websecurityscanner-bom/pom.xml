@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-websecurityscanner-bom</artifactId>
-  <version>1.0.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
+  <version>1.0.7</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,37 +64,37 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.84.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
+        <version>0.84.7</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1beta</artifactId>
-        <version>0.84.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1beta:current} -->
+        <version>0.84.7</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1</artifactId>
-        <version>1.0.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1:current} -->
+        <version>1.0.7</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.84.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1alpha:current} -->
+        <version>0.84.7</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1beta</artifactId>
-        <version>0.84.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
+        <version>0.84.7</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1</artifactId>
-        <version>1.0.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1:current} -->
+        <version>1.0.7</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-websecurityscanner</artifactId>
-        <version>1.0.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
+        <version>1.0.7</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
