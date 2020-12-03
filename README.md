@@ -20,17 +20,17 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.118.5-alpha</version>
+  <version>0.118.7-alpha</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging-logback:0.118.5-alpha'
+compile 'com.google.cloud:google-cloud-logging-logback:0.118.7-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.118.5-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.118.7-alpha"
 ```
 
 ## Authentication
