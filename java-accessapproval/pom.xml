@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-accessapproval-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.7</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
+  <version>1.0.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
   <name>Google Cloud Access Approval Parent</name>
   <url>https://github.com/googleapis/java-accessapproval</url>
   <description>
@@ -70,17 +70,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-accessapproval-v1</artifactId>
-        <version>1.0.7</version><!-- {x-version-update:proto-google-cloud-accessapproval-v1:current} -->
+        <version>1.0.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-accessapproval-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-accessapproval-v1</artifactId>
-        <version>1.0.7</version><!-- {x-version-update:grpc-google-cloud-accessapproval-v1:current} -->
+        <version>1.0.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-accessapproval-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-accessapproval</artifactId>
-        <version>1.0.7</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
+        <version>1.0.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
       </dependency>
 
       <dependency>
