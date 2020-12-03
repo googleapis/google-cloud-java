@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-game-servers-v1:1.0.3:1.0.3
-proto-google-cloud-game-servers-v1beta:0.22.3:0.22.3
-grpc-google-cloud-game-servers-v1:1.0.3:1.0.3
-grpc-google-cloud-game-servers-v1beta:0.22.3:0.22.3
-google-cloud-game-servers:1.0.3:1.0.3
+proto-google-cloud-game-servers-v1:1.0.3:1.0.4-SNAPSHOT
+proto-google-cloud-game-servers-v1beta:0.22.3:0.22.4-SNAPSHOT
+grpc-google-cloud-game-servers-v1:1.0.3:1.0.4-SNAPSHOT
+grpc-google-cloud-game-servers-v1beta:0.22.3:0.22.4-SNAPSHOT
+google-cloud-game-servers:1.0.3:1.0.4-SNAPSHOT
