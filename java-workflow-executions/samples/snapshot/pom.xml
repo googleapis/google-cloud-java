@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-workflow-executions</artifactId>
-      <version>0.1.1</version>
+      <version>0.1.2-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
 
