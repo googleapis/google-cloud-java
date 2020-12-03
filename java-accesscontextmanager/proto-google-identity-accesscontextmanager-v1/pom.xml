@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-identity-accesscontextmanager-v1</artifactId>
-  <version>1.0.9</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
+  <version>1.0.10-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
   <name>proto-google-identity-accesscontextmanager-v1</name>
   <description>PROTO library for proto-google-identity-accesscontextmanager-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-identity-accesscontextmanager-parent</artifactId>
-    <version>1.0.9</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
+    <version>1.0.10-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -24,7 +24,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-identity-accesscontextmanager-type</artifactId>
-      <version>1.0.9</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
+      <version>1.0.10-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
     </dependency>
   </dependencies>
 
