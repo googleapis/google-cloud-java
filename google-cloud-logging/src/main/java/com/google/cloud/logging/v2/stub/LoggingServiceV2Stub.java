@@ -21,6 +21,7 @@ import static com.google.cloud.logging.v2.LoggingClient.ListMonitoredResourceDes
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
@@ -29,6 +30,8 @@ import com.google.logging.v2.ListLogsRequest;
 import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
+import com.google.logging.v2.TailLogEntriesRequest;
+import com.google.logging.v2.TailLogEntriesResponse;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -81,6 +84,11 @@ public abstract class LoggingServiceV2Stub implements BackgroundResource {
 
   public UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable() {
     throw new UnsupportedOperationException("Not implemented: listLogsCallable()");
+  }
+
+  public BidiStreamingCallable<TailLogEntriesRequest, TailLogEntriesResponse>
+      tailLogEntriesCallable() {
+    throw new UnsupportedOperationException("Not implemented: tailLogEntriesCallable()");
   }
 
   @Override

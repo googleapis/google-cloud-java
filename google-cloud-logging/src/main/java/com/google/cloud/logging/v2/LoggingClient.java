@@ -25,6 +25,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.LoggingServiceV2Stub;
@@ -43,6 +44,8 @@ import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.LogName;
 import com.google.logging.v2.OrganizationName;
 import com.google.logging.v2.ProjectName;
+import com.google.logging.v2.TailLogEntriesRequest;
+import com.google.logging.v2.TailLogEntriesResponse;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -301,6 +304,11 @@ public class LoggingClient implements BackgroundResource {
    *     entries:
    *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]"
+   *     <p>May alternatively be one or more views
+   *     projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *     organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *     billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *     folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
    *     <p>Projects listed in the `project_ids` field are added to this list.
    * @param filter Optional. A filter that chooses which log entries to return. See [Advanced Logs
    *     Queries](https://cloud.google.com/logging/docs/view/advanced-queries). Only log entries
@@ -905,6 +913,34 @@ public class LoggingClient implements BackgroundResource {
    */
   public final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable() {
     return stub.listLogsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Streaming read of log entries as they are ingested. Until the stream is terminated, it will
+   * continue reading logs.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   BidiStream&lt;TailLogEntriesRequest, TailLogEntriesResponse&gt; bidiStream =
+   *       loggingClient.tailLogEntriesCallable().call();
+   *
+   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
+   *   TailLogEntriesRequest request = TailLogEntriesRequest.newBuilder()
+   *     .addAllResourceNames(resourceNames)
+   *     .build();
+   *   bidiStream.send(request);
+   *   for (TailLogEntriesResponse response : bidiStream) {
+   *     // Do something when receive a response
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final BidiStreamingCallable<TailLogEntriesRequest, TailLogEntriesResponse>
+      tailLogEntriesCallable() {
+    return stub.tailLogEntriesCallable();
   }
 
   @Override

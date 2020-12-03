@@ -26,8 +26,12 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
@@ -39,6 +43,8 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.LogName;
 import com.google.logging.v2.ProjectName;
+import com.google.logging.v2.TailLogEntriesRequest;
+import com.google.logging.v2.TailLogEntriesResponse;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.AbstractMessage;
@@ -52,6 +58,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -342,6 +349,58 @@ public class LoggingClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void tailLogEntriesTest() throws Exception {
+    TailLogEntriesResponse expectedResponse = TailLogEntriesResponse.newBuilder().build();
+    mockLoggingServiceV2.addResponse(expectedResponse);
+    List<String> resourceNames = new ArrayList<>();
+    TailLogEntriesRequest request =
+        TailLogEntriesRequest.newBuilder().addAllResourceNames(resourceNames).build();
+
+    MockStreamObserver<TailLogEntriesResponse> responseObserver = new MockStreamObserver<>();
+
+    BidiStreamingCallable<TailLogEntriesRequest, TailLogEntriesResponse> callable =
+        client.tailLogEntriesCallable();
+    ApiStreamObserver<TailLogEntriesRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<TailLogEntriesResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void tailLogEntriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockLoggingServiceV2.addException(exception);
+    List<String> resourceNames = new ArrayList<>();
+    TailLogEntriesRequest request =
+        TailLogEntriesRequest.newBuilder().addAllResourceNames(resourceNames).build();
+
+    MockStreamObserver<TailLogEntriesResponse> responseObserver = new MockStreamObserver<>();
+
+    BidiStreamingCallable<TailLogEntriesRequest, TailLogEntriesResponse> callable =
+        client.tailLogEntriesCallable();
+    ApiStreamObserver<TailLogEntriesRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<TailLogEntriesResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

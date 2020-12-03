@@ -16,10 +16,13 @@
 package com.google.logging.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
@@ -261,6 +264,49 @@ public final class LoggingServiceV2Grpc {
     return getListLogsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.TailLogEntriesRequest, com.google.logging.v2.TailLogEntriesResponse>
+      getTailLogEntriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TailLogEntries",
+      requestType = com.google.logging.v2.TailLogEntriesRequest.class,
+      responseType = com.google.logging.v2.TailLogEntriesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.TailLogEntriesRequest, com.google.logging.v2.TailLogEntriesResponse>
+      getTailLogEntriesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.TailLogEntriesRequest,
+            com.google.logging.v2.TailLogEntriesResponse>
+        getTailLogEntriesMethod;
+    if ((getTailLogEntriesMethod = LoggingServiceV2Grpc.getTailLogEntriesMethod) == null) {
+      synchronized (LoggingServiceV2Grpc.class) {
+        if ((getTailLogEntriesMethod = LoggingServiceV2Grpc.getTailLogEntriesMethod) == null) {
+          LoggingServiceV2Grpc.getTailLogEntriesMethod =
+              getTailLogEntriesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.TailLogEntriesRequest,
+                          com.google.logging.v2.TailLogEntriesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TailLogEntries"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.TailLogEntriesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.TailLogEntriesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LoggingServiceV2MethodDescriptorSupplier("TailLogEntries"))
+                      .build();
+        }
+      }
+    }
+    return getTailLogEntriesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static LoggingServiceV2Stub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<LoggingServiceV2Stub> factory =
@@ -392,6 +438,20 @@ public final class LoggingServiceV2Grpc {
       asyncUnimplementedUnaryCall(getListLogsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Streaming read of log entries as they are ingested. Until the stream is
+     * terminated, it will continue reading logs.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesRequest> tailLogEntries(
+        io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesResponse>
+            responseObserver) {
+      return asyncUnimplementedStreamingCall(getTailLogEntriesMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -428,6 +488,13 @@ public final class LoggingServiceV2Grpc {
                   new MethodHandlers<
                       com.google.logging.v2.ListLogsRequest,
                       com.google.logging.v2.ListLogsResponse>(this, METHODID_LIST_LOGS)))
+          .addMethod(
+              getTailLogEntriesMethod(),
+              asyncBidiStreamingCall(
+                  new MethodHandlers<
+                      com.google.logging.v2.TailLogEntriesRequest,
+                      com.google.logging.v2.TailLogEntriesResponse>(
+                      this, METHODID_TAIL_LOG_ENTRIES)))
           .build();
     }
   }
@@ -540,6 +607,21 @@ public final class LoggingServiceV2Grpc {
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListLogsResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getListLogsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streaming read of log entries as they are ingested. Until the stream is
+     * terminated, it will continue reading logs.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesRequest> tailLogEntries(
+        io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesResponse>
+            responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getTailLogEntriesMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -744,6 +826,7 @@ public final class LoggingServiceV2Grpc {
   private static final int METHODID_LIST_LOG_ENTRIES = 2;
   private static final int METHODID_LIST_MONITORED_RESOURCE_DESCRIPTORS = 3;
   private static final int METHODID_LIST_LOGS = 4;
+  private static final int METHODID_TAIL_LOG_ENTRIES = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -802,6 +885,11 @@ public final class LoggingServiceV2Grpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_TAIL_LOG_ENTRIES:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.tailLogEntries(
+                  (io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -861,6 +949,7 @@ public final class LoggingServiceV2Grpc {
                       .addMethod(getListLogEntriesMethod())
                       .addMethod(getListMonitoredResourceDescriptorsMethod())
                       .addMethod(getListLogsMethod())
+                      .addMethod(getTailLogEntriesMethod())
                       .build();
         }
       }

@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -35,6 +36,8 @@ import com.google.logging.v2.ListLogsRequest;
 import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
+import com.google.logging.v2.TailLogEntriesRequest;
+import com.google.logging.v2.TailLogEntriesResponse;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -106,6 +109,16 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListLogsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListLogsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<TailLogEntriesRequest, TailLogEntriesResponse>
+      tailLogEntriesMethodDescriptor =
+          MethodDescriptor.<TailLogEntriesRequest, TailLogEntriesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName("google.logging.v2.LoggingServiceV2/TailLogEntries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TailLogEntriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TailLogEntriesResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -123,6 +136,8 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
       listMonitoredResourceDescriptorsPagedCallable;
   private final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable;
   private final UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable;
+  private final BidiStreamingCallable<TailLogEntriesRequest, TailLogEntriesResponse>
+      tailLogEntriesCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -209,6 +224,11 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
                   }
                 })
             .build();
+    GrpcCallSettings<TailLogEntriesRequest, TailLogEntriesResponse>
+        tailLogEntriesTransportSettings =
+            GrpcCallSettings.<TailLogEntriesRequest, TailLogEntriesResponse>newBuilder()
+                .setMethodDescriptor(tailLogEntriesMethodDescriptor)
+                .build();
 
     this.deleteLogCallable =
         callableFactory.createUnaryCallable(
@@ -238,6 +258,9 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
     this.listLogsPagedCallable =
         callableFactory.createPagedCallable(
             listLogsTransportSettings, settings.listLogsSettings(), clientContext);
+    this.tailLogEntriesCallable =
+        callableFactory.createBidiStreamingCallable(
+            tailLogEntriesTransportSettings, settings.tailLogEntriesSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -277,6 +300,11 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
 
   public UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable() {
     return listLogsCallable;
+  }
+
+  public BidiStreamingCallable<TailLogEntriesRequest, TailLogEntriesResponse>
+      tailLogEntriesCallable() {
+    return tailLogEntriesCallable;
   }
 
   @Override

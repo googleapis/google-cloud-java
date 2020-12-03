@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.logging.v2.stub.LoggingServiceV2StubSettings;
@@ -39,6 +40,8 @@ import com.google.logging.v2.ListLogsRequest;
 import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
+import com.google.logging.v2.TailLogEntriesRequest;
+import com.google.logging.v2.TailLogEntriesResponse;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -112,6 +115,12 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
   public PagedCallSettings<ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
       listLogsSettings() {
     return ((LoggingServiceV2StubSettings) getStubSettings()).listLogsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to tailLogEntries. */
+  public StreamingCallSettings<TailLogEntriesRequest, TailLogEntriesResponse>
+      tailLogEntriesSettings() {
+    return ((LoggingServiceV2StubSettings) getStubSettings()).tailLogEntriesSettings();
   }
 
   public static final LoggingSettings create(LoggingServiceV2StubSettings stub) throws IOException {
@@ -241,6 +250,12 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
     public PagedCallSettings.Builder<ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
         listLogsSettings() {
       return getStubSettingsBuilder().listLogsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to tailLogEntries. */
+    public StreamingCallSettings.Builder<TailLogEntriesRequest, TailLogEntriesResponse>
+        tailLogEntriesSettings() {
+      return getStubSettingsBuilder().tailLogEntriesSettings();
     }
 
     @Override

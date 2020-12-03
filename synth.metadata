@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-logging.git",
-        "sha": "94d62919c8253e46b906cdb661bfabb7f27852af"
+        "sha": "ccb3a73e133f6def4f29b47359b7f0eb66101a54"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "be0bdf86cd31aa7c1a7b30a9a2e9f2fd53ee3d91",
-        "internalRef": "342353190"
+        "sha": "8cfc6c874574b649b4524a4ef6a0651533325a84",
+        "internalRef": "345067549"
       }
     },
     {
@@ -240,6 +240,10 @@
     "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/OrganizationLocationName.java",
     "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/OrganizationName.java",
     "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/ProjectName.java",
+    "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/TailLogEntriesRequest.java",
+    "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/TailLogEntriesRequestOrBuilder.java",
+    "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/TailLogEntriesResponse.java",
+    "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/TailLogEntriesResponseOrBuilder.java",
     "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UndeleteBucketRequest.java",
     "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UndeleteBucketRequestOrBuilder.java",
     "proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/UpdateBucketRequest.java",

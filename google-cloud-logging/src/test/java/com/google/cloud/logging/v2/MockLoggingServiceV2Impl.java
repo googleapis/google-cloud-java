@@ -24,6 +24,8 @@ import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LoggingServiceV2Grpc.LoggingServiceV2ImplBase;
+import com.google.logging.v2.TailLogEntriesRequest;
+import com.google.logging.v2.TailLogEntriesResponse;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.AbstractMessage;
@@ -138,5 +140,36 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
+  }
+
+  @Override
+  public StreamObserver<TailLogEntriesRequest> tailLogEntries(
+      final StreamObserver<TailLogEntriesResponse> responseObserver) {
+    StreamObserver<TailLogEntriesRequest> requestObserver =
+        new StreamObserver<TailLogEntriesRequest>() {
+          @Override
+          public void onNext(TailLogEntriesRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof TailLogEntriesResponse) {
+              responseObserver.onNext((TailLogEntriesResponse) response);
+            } else if (response instanceof Exception) {
+              responseObserver.onError((Exception) response);
+            } else {
+              responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
   }
 }

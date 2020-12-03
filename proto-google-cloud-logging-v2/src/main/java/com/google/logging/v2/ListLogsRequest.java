@@ -40,6 +40,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   private ListLogsRequest() {
     parent_ = "";
     pageToken_ = "";
+    resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -61,6 +62,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -90,6 +92,16 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
               pageToken_ = s;
               break;
             }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                resourceNames_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              resourceNames_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -104,6 +116,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        resourceNames_ = resourceNames_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -260,6 +275,103 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int RESOURCE_NAMES_FIELD_NUMBER = 8;
+  private com.google.protobuf.LazyStringList resourceNames_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name that owns the logs:
+   *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   * To support legacy queries, it could also be:
+   *     "projects/[PROJECT_ID]"
+   *     "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+   *     "folders/[FOLDER_ID]"
+   * </pre>
+   *
+   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the resourceNames.
+   */
+  public com.google.protobuf.ProtocolStringList getResourceNamesList() {
+    return resourceNames_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name that owns the logs:
+   *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   * To support legacy queries, it could also be:
+   *     "projects/[PROJECT_ID]"
+   *     "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+   *     "folders/[FOLDER_ID]"
+   * </pre>
+   *
+   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of resourceNames.
+   */
+  public int getResourceNamesCount() {
+    return resourceNames_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name that owns the logs:
+   *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   * To support legacy queries, it could also be:
+   *     "projects/[PROJECT_ID]"
+   *     "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+   *     "folders/[FOLDER_ID]"
+   * </pre>
+   *
+   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceNames at the given index.
+   */
+  public java.lang.String getResourceNames(int index) {
+    return resourceNames_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name that owns the logs:
+   *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+   * To support legacy queries, it could also be:
+   *     "projects/[PROJECT_ID]"
+   *     "organizations/[ORGANIZATION_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+   *     "folders/[FOLDER_ID]"
+   * </pre>
+   *
+   * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceNames at the given index.
+   */
+  public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
+    return resourceNames_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -283,6 +395,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    for (int i = 0; i < resourceNames_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, resourceNames_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -300,6 +415,14 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < resourceNames_.size(); i++) {
+        dataSize += computeStringSizeNoTag(resourceNames_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getResourceNamesList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -319,6 +442,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getResourceNamesList().equals(other.getResourceNamesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -336,6 +460,10 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    if (getResourceNamesCount() > 0) {
+      hash = (37 * hash) + RESOURCE_NAMES_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceNamesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -486,6 +614,8 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
 
       pageToken_ = "";
 
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -513,9 +643,15 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.logging.v2.ListLogsRequest buildPartial() {
       com.google.logging.v2.ListLogsRequest result =
           new com.google.logging.v2.ListLogsRequest(this);
+      int from_bitField0_ = bitField0_;
       result.parent_ = parent_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        resourceNames_ = resourceNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.resourceNames_ = resourceNames_;
       onBuilt();
       return result;
     }
@@ -576,6 +712,16 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
         pageToken_ = other.pageToken_;
         onChanged();
       }
+      if (!other.resourceNames_.isEmpty()) {
+        if (resourceNames_.isEmpty()) {
+          resourceNames_ = other.resourceNames_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureResourceNamesIsMutable();
+          resourceNames_.addAll(other.resourceNames_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -604,6 +750,8 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -916,6 +1064,255 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       pageToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList resourceNames_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureResourceNamesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        resourceNames_ = new com.google.protobuf.LazyStringArrayList(resourceNames_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name that owns the logs:
+     *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     * To support legacy queries, it could also be:
+     *     "projects/[PROJECT_ID]"
+     *     "organizations/[ORGANIZATION_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *     "folders/[FOLDER_ID]"
+     * </pre>
+     *
+     * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the resourceNames.
+     */
+    public com.google.protobuf.ProtocolStringList getResourceNamesList() {
+      return resourceNames_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name that owns the logs:
+     *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     * To support legacy queries, it could also be:
+     *     "projects/[PROJECT_ID]"
+     *     "organizations/[ORGANIZATION_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *     "folders/[FOLDER_ID]"
+     * </pre>
+     *
+     * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of resourceNames.
+     */
+    public int getResourceNamesCount() {
+      return resourceNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name that owns the logs:
+     *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     * To support legacy queries, it could also be:
+     *     "projects/[PROJECT_ID]"
+     *     "organizations/[ORGANIZATION_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *     "folders/[FOLDER_ID]"
+     * </pre>
+     *
+     * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceNames at the given index.
+     */
+    public java.lang.String getResourceNames(int index) {
+      return resourceNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name that owns the logs:
+     *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     * To support legacy queries, it could also be:
+     *     "projects/[PROJECT_ID]"
+     *     "organizations/[ORGANIZATION_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *     "folders/[FOLDER_ID]"
+     * </pre>
+     *
+     * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceNames at the given index.
+     */
+    public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
+      return resourceNames_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name that owns the logs:
+     *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     * To support legacy queries, it could also be:
+     *     "projects/[PROJECT_ID]"
+     *     "organizations/[ORGANIZATION_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *     "folders/[FOLDER_ID]"
+     * </pre>
+     *
+     * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The resourceNames to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceNames(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResourceNamesIsMutable();
+      resourceNames_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name that owns the logs:
+     *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     * To support legacy queries, it could also be:
+     *     "projects/[PROJECT_ID]"
+     *     "organizations/[ORGANIZATION_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *     "folders/[FOLDER_ID]"
+     * </pre>
+     *
+     * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The resourceNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResourceNames(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResourceNamesIsMutable();
+      resourceNames_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name that owns the logs:
+     *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     * To support legacy queries, it could also be:
+     *     "projects/[PROJECT_ID]"
+     *     "organizations/[ORGANIZATION_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *     "folders/[FOLDER_ID]"
+     * </pre>
+     *
+     * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The resourceNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllResourceNames(java.lang.Iterable<java.lang.String> values) {
+      ensureResourceNamesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceNames_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name that owns the logs:
+     *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     * To support legacy queries, it could also be:
+     *     "projects/[PROJECT_ID]"
+     *     "organizations/[ORGANIZATION_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *     "folders/[FOLDER_ID]"
+     * </pre>
+     *
+     * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceNames() {
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name that owns the logs:
+     *   projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   organization/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     *   folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]
+     * To support legacy queries, it could also be:
+     *     "projects/[PROJECT_ID]"
+     *     "organizations/[ORGANIZATION_ID]"
+     *     "billingAccounts/[BILLING_ACCOUNT_ID]"
+     *     "folders/[FOLDER_ID]"
+     * </pre>
+     *
+     * <code>repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the resourceNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResourceNamesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureResourceNamesIsMutable();
+      resourceNames_.add(value);
       onChanged();
       return this;
     }

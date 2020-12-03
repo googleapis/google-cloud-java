@@ -75,6 +75,18 @@ public final class LoggingProto {
       internal_static_google_logging_v2_ListLogsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_logging_v2_ListLogsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_TailLogEntriesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_TailLogEntriesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_TailLogEntriesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_TailLogEntriesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_TailLogEntriesResponse_SuppressionInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_TailLogEntriesResponse_SuppressionInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -124,50 +136,67 @@ public final class LoggingProto {
           + "redResourceDescriptorsResponse\022E\n\024resour"
           + "ce_descriptors\030\001 \003(\0132\'.google.api.Monito"
           + "redResourceDescriptor\022\027\n\017next_page_token"
-          + "\030\002 \001(\t\"v\n\017ListLogsRequest\0222\n\006parent\030\001 \001("
-          + "\tB\"\340A\002\372A\034\022\032logging.googleapis.com/Log\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001("
-          + "\tB\003\340A\001\">\n\020ListLogsResponse\022\021\n\tlog_names\030"
-          + "\003 \003(\t\022\027\n\017next_page_token\030\002 \001(\t2\335\n\n\020Loggi"
-          + "ngServiceV2\022\223\002\n\tDeleteLog\022#.google.loggi"
-          + "ng.v2.DeleteLogRequest\032\026.google.protobuf"
-          + ".Empty\"\310\001\202\323\344\223\002\266\001* /v2/{log_name=projects"
-          + "/*/logs/*}Z\033*\031/v2/{log_name=*/*/logs/*}Z"
-          + "\'*%/v2/{log_name=organizations/*/logs/*}"
-          + "Z!*\037/v2/{log_name=folders/*/logs/*}Z)*\'/"
-          + "v2/{log_name=billingAccounts/*/logs/*}\332A"
-          + "\010log_name\022\251\001\n\017WriteLogEntries\022).google.l"
-          + "ogging.v2.WriteLogEntriesRequest\032*.googl"
-          + "e.logging.v2.WriteLogEntriesResponse\"?\202\323"
-          + "\344\223\002\026\"\021/v2/entries:write:\001*\332A log_name,re"
-          + "source,labels,entries\022\243\001\n\016ListLogEntries"
-          + "\022(.google.logging.v2.ListLogEntriesReque"
-          + "st\032).google.logging.v2.ListLogEntriesRes"
-          + "ponse\"<\202\323\344\223\002\025\"\020/v2/entries:list:\001*\332A\036res"
-          + "ource_names,filter,order_by\022\305\001\n ListMoni"
-          + "toredResourceDescriptors\022:.google.loggin"
-          + "g.v2.ListMonitoredResourceDescriptorsReq"
-          + "uest\032;.google.logging.v2.ListMonitoredRe"
-          + "sourceDescriptorsResponse\"(\202\323\344\223\002\"\022 /v2/m"
-          + "onitoredResourceDescriptors\022\210\002\n\010ListLogs"
-          + "\022\".google.logging.v2.ListLogsRequest\032#.g"
-          + "oogle.logging.v2.ListLogsResponse\"\262\001\202\323\344\223"
-          + "\002\242\001\022\025/v2/{parent=*/*}/logsZ\036\022\034/v2/{paren"
-          + "t=projects/*}/logsZ#\022!/v2/{parent=organi"
-          + "zations/*}/logsZ\035\022\033/v2/{parent=folders/*"
-          + "}/logsZ%\022#/v2/{parent=billingAccounts/*}"
-          + "/logs\332A\006parent\032\215\002\312A\026logging.googleapis.c"
-          + "om\322A\360\001https://www.googleapis.com/auth/cl"
-          + "oud-platform,https://www.googleapis.com/"
-          + "auth/cloud-platform.read-only,https://ww"
-          + "w.googleapis.com/auth/logging.admin,http"
-          + "s://www.googleapis.com/auth/logging.read"
-          + ",https://www.googleapis.com/auth/logging"
-          + ".writeB\265\001\n\025com.google.logging.v2B\014Loggin"
-          + "gProtoP\001Z8google.golang.org/genproto/goo"
-          + "gleapis/logging/v2;logging\370\001\001\252\002\027Google.C"
-          + "loud.Logging.V2\312\002\027Google\\Cloud\\Logging\\V"
-          + "2\352\002\032Google::Cloud::Logging::V2b\006proto3"
+          + "\030\002 \001(\t\"\223\001\n\017ListLogsRequest\0222\n\006parent\030\001 \001"
+          + "(\tB\"\340A\002\372A\034\022\032logging.googleapis.com/Log\022\026"
+          + "\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001"
+          + "(\tB\003\340A\001\022\033\n\016resource_names\030\010 \003(\tB\003\340A\001\">\n\020"
+          + "ListLogsResponse\022\021\n\tlog_names\030\003 \003(\t\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\"\200\001\n\025TailLogEntriesR"
+          + "equest\022\033\n\016resource_names\030\001 \003(\tB\003\340A\002\022\023\n\006f"
+          + "ilter\030\002 \001(\tB\003\340A\001\0225\n\rbuffer_window\030\003 \001(\0132"
+          + "\031.google.protobuf.DurationB\003\340A\001\"\337\002\n\026Tail"
+          + "LogEntriesResponse\022,\n\007entries\030\001 \003(\0132\033.go"
+          + "ogle.logging.v2.LogEntry\022S\n\020suppression_"
+          + "info\030\002 \003(\01329.google.logging.v2.TailLogEn"
+          + "triesResponse.SuppressionInfo\032\301\001\n\017Suppre"
+          + "ssionInfo\022P\n\006reason\030\001 \001(\0162@.google.loggi"
+          + "ng.v2.TailLogEntriesResponse.Suppression"
+          + "Info.Reason\022\030\n\020suppressed_count\030\002 \001(\005\"B\n"
+          + "\006Reason\022\026\n\022REASON_UNSPECIFIED\020\000\022\016\n\nRATE_"
+          + "LIMIT\020\001\022\020\n\014NOT_CONSUMED\020\0022\346\013\n\020LoggingSer"
+          + "viceV2\022\223\002\n\tDeleteLog\022#.google.logging.v2"
+          + ".DeleteLogRequest\032\026.google.protobuf.Empt"
+          + "y\"\310\001\202\323\344\223\002\266\001* /v2/{log_name=projects/*/lo"
+          + "gs/*}Z\033*\031/v2/{log_name=*/*/logs/*}Z\'*%/v"
+          + "2/{log_name=organizations/*/logs/*}Z!*\037/"
+          + "v2/{log_name=folders/*/logs/*}Z)*\'/v2/{l"
+          + "og_name=billingAccounts/*/logs/*}\332A\010log_"
+          + "name\022\251\001\n\017WriteLogEntries\022).google.loggin"
+          + "g.v2.WriteLogEntriesRequest\032*.google.log"
+          + "ging.v2.WriteLogEntriesResponse\"?\202\323\344\223\002\026\""
+          + "\021/v2/entries:write:\001*\332A log_name,resourc"
+          + "e,labels,entries\022\243\001\n\016ListLogEntries\022(.go"
+          + "ogle.logging.v2.ListLogEntriesRequest\032)."
+          + "google.logging.v2.ListLogEntriesResponse"
+          + "\"<\202\323\344\223\002\025\"\020/v2/entries:list:\001*\332A\036resource"
+          + "_names,filter,order_by\022\305\001\n ListMonitored"
+          + "ResourceDescriptors\022:.google.logging.v2."
+          + "ListMonitoredResourceDescriptorsRequest\032"
+          + ";.google.logging.v2.ListMonitoredResourc"
+          + "eDescriptorsResponse\"(\202\323\344\223\002\"\022 /v2/monito"
+          + "redResourceDescriptors\022\210\002\n\010ListLogs\022\".go"
+          + "ogle.logging.v2.ListLogsRequest\032#.google"
+          + ".logging.v2.ListLogsResponse\"\262\001\202\323\344\223\002\242\001\022\025"
+          + "/v2/{parent=*/*}/logsZ\036\022\034/v2/{parent=pro"
+          + "jects/*}/logsZ#\022!/v2/{parent=organizatio"
+          + "ns/*}/logsZ\035\022\033/v2/{parent=folders/*}/log"
+          + "sZ%\022#/v2/{parent=billingAccounts/*}/logs"
+          + "\332A\006parent\022\206\001\n\016TailLogEntries\022(.google.lo"
+          + "gging.v2.TailLogEntriesRequest\032).google."
+          + "logging.v2.TailLogEntriesResponse\"\033\202\323\344\223\002"
+          + "\025\"\020/v2/entries:tail:\001*(\0010\001\032\215\002\312A\026logging."
+          + "googleapis.com\322A\360\001https://www.googleapis"
+          + ".com/auth/cloud-platform,https://www.goo"
+          + "gleapis.com/auth/cloud-platform.read-onl"
+          + "y,https://www.googleapis.com/auth/loggin"
+          + "g.admin,https://www.googleapis.com/auth/"
+          + "logging.read,https://www.googleapis.com/"
+          + "auth/logging.writeB\265\001\n\025com.google.loggin"
+          + "g.v2B\014LoggingProtoP\001Z8google.golang.org/"
+          + "genproto/googleapis/logging/v2;logging\370\001"
+          + "\001\252\002\027Google.Cloud.Logging.V2\312\002\027Google\\Clo"
+          + "ud\\Logging\\V2\352\002\032Google::Cloud::Logging::"
+          + "V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -272,7 +301,7 @@ public final class LoggingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListLogsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "ResourceNames",
             });
     internal_static_google_logging_v2_ListLogsResponse_descriptor =
         getDescriptor().getMessageTypes().get(9);
@@ -281,6 +310,30 @@ public final class LoggingProto {
             internal_static_google_logging_v2_ListLogsResponse_descriptor,
             new java.lang.String[] {
               "LogNames", "NextPageToken",
+            });
+    internal_static_google_logging_v2_TailLogEntriesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_logging_v2_TailLogEntriesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_TailLogEntriesRequest_descriptor,
+            new java.lang.String[] {
+              "ResourceNames", "Filter", "BufferWindow",
+            });
+    internal_static_google_logging_v2_TailLogEntriesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_logging_v2_TailLogEntriesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_TailLogEntriesResponse_descriptor,
+            new java.lang.String[] {
+              "Entries", "SuppressionInfo",
+            });
+    internal_static_google_logging_v2_TailLogEntriesResponse_SuppressionInfo_descriptor =
+        internal_static_google_logging_v2_TailLogEntriesResponse_descriptor.getNestedTypes().get(0);
+    internal_static_google_logging_v2_TailLogEntriesResponse_SuppressionInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_TailLogEntriesResponse_SuppressionInfo_descriptor,
+            new java.lang.String[] {
+              "Reason", "SuppressedCount",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
