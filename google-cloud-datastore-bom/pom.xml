@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastore-bom</artifactId>
-  <version>1.105.3</version><!-- {x-version-update:google-cloud-datastore-bom:current} -->
+  <version>1.105.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore-bom:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -63,12 +63,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-v1</artifactId>
-        <version>0.88.3</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
+        <version>0.88.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastore</artifactId>
-        <version>1.105.3</version><!-- {x-version-update:google-cloud-datastore:current} -->
+        <version>1.105.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
