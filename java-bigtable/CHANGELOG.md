@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.0](https://www.github.com/googleapis/java-bigtable/compare/v1.18.1...v1.19.0) (2020-12-03)
+
+
+### Features
+
+* attempt DirectPath by default ([#544](https://www.github.com/googleapis/java-bigtable/issues/544)) ([2043063](https://www.github.com/googleapis/java-bigtable/commit/20430636f10445e32834f44b902dd506b0bdadf8))
+
 ### [1.18.1](https://www.github.com/googleapis/java-bigtable/compare/v1.18.0...v1.18.1) (2020-12-02)
 
 
