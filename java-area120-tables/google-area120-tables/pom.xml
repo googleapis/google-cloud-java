@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables</artifactId>
-  <version>0.1.6</version><!-- {x-version-update:google-area120-tables:current} -->
+  <version>0.1.7-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
   <packaging>jar</packaging>
   <name>Google Area 120 Tables</name>
   <url>https://github.com/googleapis/java-area120-tables</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.area120</groupId>
     <artifactId>google-area120-tables-parent</artifactId>
-    <version>0.1.6</version><!-- {x-version-update:google-area120-tables:current} -->
+    <version>0.1.7-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
   </parent>
   <properties>
     <site.installationModule>google-area120-tables</site.installationModule>
