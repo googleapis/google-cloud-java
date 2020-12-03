@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-trace-bom</artifactId>
-  <version>1.2.8</version><!-- {x-version-update:google-cloud-trace:current} -->
+  <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -63,32 +63,32 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v1</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v1</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:grpc-google-cloud-trace-v1:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v2</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v2</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v2</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-trace</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:google-cloud-trace:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
