@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-video-transcoder:0.1.5:0.1.5
-proto-google-cloud-video-transcoder-v1beta1:0.1.5:0.1.5
-grpc-google-cloud-video-transcoder-v1beta1:0.1.5:0.1.5
+google-cloud-video-transcoder:0.1.5:0.1.6-SNAPSHOT
+proto-google-cloud-video-transcoder-v1beta1:0.1.5:0.1.6-SNAPSHOT
+grpc-google-cloud-video-transcoder-v1beta1:0.1.5:0.1.6-SNAPSHOT
