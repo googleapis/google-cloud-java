@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.6.7](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.6.6...v1.6.7) (2020-12-03)
+
+
+### Dependencies
+
+* update dependency org.apache.avro:avro to v1.10.1 ([#703](https://www.github.com/googleapis/java-bigquerystorage/issues/703)) ([9b5480a](https://www.github.com/googleapis/java-bigquerystorage/commit/9b5480af03b104c8b3c76e88534e39644570296a))
+
 ### [1.6.6](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.6.5...v1.6.6) (2020-12-02)
 
 
