@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-recaptchaenterprise-v1</artifactId>
-  <version>1.0.7</version><!-- {x-version-update:proto-google-cloud-recaptchaenterprise-v1:current} -->
+  <version>1.0.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recaptchaenterprise-v1:current} -->
   <name>proto-google-cloud-recaptchaenterprise-v1</name>
   <description>PROTO library for proto-google-cloud-recaptchaenterprise-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-recaptchaenterprise-parent</artifactId>
-    <version>1.0.7</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
+    <version>1.0.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
   </parent>
   <dependencies>
     <dependency>
