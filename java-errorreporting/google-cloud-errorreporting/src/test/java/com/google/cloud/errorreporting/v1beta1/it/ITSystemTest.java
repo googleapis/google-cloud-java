@@ -27,8 +27,8 @@ import com.google.cloud.errorreporting.v1beta1.ReportErrorsServiceClient;
 import com.google.common.collect.Lists;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
+import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupName;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats;
-import com.google.devtools.clouderrorreporting.v1beta1.GroupName;
 import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
@@ -110,8 +110,8 @@ public class ITSystemTest {
 
   @Test(expected = InvalidArgumentException.class)
   public void getGroupExceptionTest() {
-    GroupName group = GroupName.of(PROJECT_ID, "DUMMY-GROUP");
-    errorGroupServiceClient.getGroup(group);
+    ErrorGroupName errorGroupName = ErrorGroupName.of(PROJECT_ID, "DUMMY-GROUP");
+    errorGroupServiceClient.getGroup(errorGroupName);
   }
 
   @Test
