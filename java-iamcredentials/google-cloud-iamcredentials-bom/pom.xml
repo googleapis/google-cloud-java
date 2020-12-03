@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iamcredentials-bom</artifactId>
-  <version>1.1.7</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
+  <version>1.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,17 +64,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-iamcredentials</artifactId>
-        <version>1.1.7</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
+        <version>1.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-iamcredentials-v1</artifactId>
-        <version>1.1.7</version><!-- {x-version-update:grpc-google-cloud-iamcredentials-v1:current} -->
+        <version>1.1.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-iamcredentials-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-iamcredentials-v1</artifactId>
-        <version>1.1.7</version><!-- {x-version-update:proto-google-cloud-iamcredentials-v1:current} -->
+        <version>1.1.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iamcredentials-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
