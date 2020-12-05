@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
 
 import com.google.api.services.bigquery.model.QueryRequest;
@@ -31,7 +32,6 @@ import org.junit.Test;
 
 public class QueryRequestInfoTest {
 
-  private static final String TEST_PROJECT_ID = "test-project-id";
   private static final String QUERY = "BigQuery SQL";
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
@@ -166,8 +166,7 @@ public class QueryRequestInfoTest {
   }
 
   private void compareQueryRequestInfo(QueryRequestInfo expected, QueryRequestInfo actual) {
-    assertEquals(expected, actual);
-    assertEquals(expected.hashCode(), actual.hashCode());
-    assertEquals(expected.toString(), actual.toString());
+    // requestId are expected to be different
+    assertThat(actual).isEqualToIgnoringGivenFields(expected, "requestId");
   }
 }

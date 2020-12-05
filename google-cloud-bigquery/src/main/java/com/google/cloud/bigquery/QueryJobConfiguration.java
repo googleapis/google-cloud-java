@@ -35,7 +35,6 @@ import com.google.common.collect.Maps;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.UUID;
 
 /**
  * Google BigQuery Query Job configuration. A Query Job runs a query against BigQuery data. Query
@@ -72,7 +71,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final List<ConnectionProperty> connectionProperties;
   // maxResults is only used for fast query path
   private final Long maxResults;
-  private final String requestId;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be {@link
@@ -123,7 +121,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private RangePartitioning rangePartitioning;
     private List<ConnectionProperty> connectionProperties;
     private Long maxResults;
-    private String requestId;
 
     private Builder() {
       super(Type.QUERY);
@@ -157,7 +154,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.rangePartitioning = jobConfiguration.rangePartitioning;
       this.connectionProperties = jobConfiguration.connectionProperties;
       this.maxResults = jobConfiguration.maxResults;
-      this.requestId = jobConfiguration.requestId;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -625,11 +621,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    Builder setRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
-    }
-
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -672,7 +663,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.rangePartitioning = builder.rangePartitioning;
     this.connectionProperties = builder.connectionProperties;
     this.maxResults = builder.maxResults;
-    this.requestId = builder.requestId;
   }
 
   /**
@@ -875,10 +865,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return maxResults;
   }
 
-  String getRequestId() {
-    return requestId;
-  }
-
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -1057,7 +1043,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   /** Creates a builder for a BigQuery Query Job given the query to be run. */
   public static Builder newBuilder(String query) {
     checkArgument(!isNullOrEmpty(query), "Provided query is null or empty");
-    return new Builder().setQuery(query).setRequestId(UUID.randomUUID().toString());
+    return new Builder().setQuery(query);
   }
 
   /**

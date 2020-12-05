@@ -1776,6 +1776,15 @@ public class ITBigQueryTest {
     assertNull(result.getNextPageToken());
     assertFalse(result.hasNextPage());
 
+    // running the same QueryJobConfiguration with the same query again
+    TableResult result1Duplicate = bigquery.query(config);
+    assertEquals(QUERY_RESULT_SCHEMA, result1Duplicate.getSchema());
+    assertEquals(2, result.getTotalRows());
+    assertNull(result1Duplicate.getNextPage());
+    assertNull(result1Duplicate.getNextPageToken());
+    assertFalse(result1Duplicate.hasNextPage());
+
+    // running a new QueryJobConfiguration with the same query
     QueryJobConfiguration config2 =
         QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(DATASET)).build();
     TableResult result2 = bigquery.query(config2);
