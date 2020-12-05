@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.126.0](https://www.github.com/googleapis/java-bigquery/compare/v1.125.2...v1.126.0) (2020-12-05)
+
+
+### Features
+
+* set requestId for fast query path in QueryRequestInfo instead of QueryJobConfiguration ([#987](https://www.github.com/googleapis/java-bigquery/issues/987)) ([e2cd4f6](https://www.github.com/googleapis/java-bigquery/commit/e2cd4f63ccc543e144f90e06eaadb2e96ce94943))
+
 ### [1.125.2](https://www.github.com/googleapis/java-bigquery/compare/v1.125.1...v1.125.2) (2020-12-04)
 
 
