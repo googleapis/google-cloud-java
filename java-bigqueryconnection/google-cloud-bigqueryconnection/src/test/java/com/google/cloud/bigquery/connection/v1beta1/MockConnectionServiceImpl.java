@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,17 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.connection.v1beta1;
 
 import com.google.api.core.BetaApi;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CreateConnectionRequest;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.DeleteConnectionRequest;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.GetConnectionRequest;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsRequest;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsResponse;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.UpdateConnectionCredentialRequest;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.UpdateConnectionRequest;
 import com.google.cloud.bigquery.connection.v1beta1.ConnectionServiceGrpc.ConnectionServiceImplBase;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -37,9 +30,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -72,14 +66,15 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
 
   @Override
   public void createConnection(
-      CreateConnectionRequest request, StreamObserver<Connection> responseObserver) {
+      ConnectionProto.CreateConnectionRequest request,
+      StreamObserver<ConnectionProto.Connection> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof Connection) {
+    if (response instanceof ConnectionProto.Connection) {
       requests.add(request);
-      responseObserver.onNext((Connection) response);
+      responseObserver.onNext(((ConnectionProto.Connection) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -87,14 +82,15 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
 
   @Override
   public void getConnection(
-      GetConnectionRequest request, StreamObserver<Connection> responseObserver) {
+      ConnectionProto.GetConnectionRequest request,
+      StreamObserver<ConnectionProto.Connection> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof Connection) {
+    if (response instanceof ConnectionProto.Connection) {
       requests.add(request);
-      responseObserver.onNext((Connection) response);
+      responseObserver.onNext(((ConnectionProto.Connection) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -102,14 +98,15 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
 
   @Override
   public void listConnections(
-      ListConnectionsRequest request, StreamObserver<ListConnectionsResponse> responseObserver) {
+      ConnectionProto.ListConnectionsRequest request,
+      StreamObserver<ConnectionProto.ListConnectionsResponse> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof ListConnectionsResponse) {
+    if (response instanceof ConnectionProto.ListConnectionsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListConnectionsResponse) response);
+      responseObserver.onNext(((ConnectionProto.ListConnectionsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -117,14 +114,15 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
 
   @Override
   public void updateConnection(
-      UpdateConnectionRequest request, StreamObserver<Connection> responseObserver) {
+      ConnectionProto.UpdateConnectionRequest request,
+      StreamObserver<ConnectionProto.Connection> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof Connection) {
+    if (response instanceof ConnectionProto.Connection) {
       requests.add(request);
-      responseObserver.onNext((Connection) response);
+      responseObserver.onNext(((ConnectionProto.Connection) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -132,14 +130,15 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
 
   @Override
   public void updateConnectionCredential(
-      UpdateConnectionCredentialRequest request, StreamObserver<Empty> responseObserver) {
+      ConnectionProto.UpdateConnectionCredentialRequest request,
+      StreamObserver<Empty> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -147,14 +146,14 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
 
   @Override
   public void deleteConnection(
-      DeleteConnectionRequest request, StreamObserver<Empty> responseObserver) {
+      ConnectionProto.DeleteConnectionRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -165,10 +164,10 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Policy) {
       requests.add(request);
-      responseObserver.onNext((Policy) response);
+      responseObserver.onNext(((Policy) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -179,10 +178,10 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Policy) {
       requests.add(request);
-      responseObserver.onNext((Policy) response);
+      responseObserver.onNext(((Policy) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -195,10 +194,10 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
     Object response = responses.remove();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
-      responseObserver.onNext((TestIamPermissionsResponse) response);
+      responseObserver.onNext(((TestIamPermissionsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

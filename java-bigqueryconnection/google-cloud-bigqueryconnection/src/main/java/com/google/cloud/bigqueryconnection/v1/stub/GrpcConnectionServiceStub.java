@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigqueryconnection.v1.stub;
 
 import static com.google.cloud.bigqueryconnection.v1.ConnectionServiceClient.ListConnectionsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -38,6 +38,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -46,16 +47,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for BigQuery Connection API.
+ * gRPC stub implementation for the ConnectionService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcConnectionServiceStub extends ConnectionServiceStub {
-
   private static final MethodDescriptor<CreateConnectionRequest, Connection>
       createConnectionMethodDescriptor =
           MethodDescriptor.<CreateConnectionRequest, Connection>newBuilder()
@@ -66,6 +65,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(CreateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetConnectionRequest, Connection>
       getConnectionMethodDescriptor =
           MethodDescriptor.<GetConnectionRequest, Connection>newBuilder()
@@ -76,6 +76,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(GetConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListConnectionsRequest, ListConnectionsResponse>
       listConnectionsMethodDescriptor =
           MethodDescriptor.<ListConnectionsRequest, ListConnectionsResponse>newBuilder()
@@ -87,6 +88,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectionsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateConnectionRequest, Connection>
       updateConnectionMethodDescriptor =
           MethodDescriptor.<UpdateConnectionRequest, Connection>newBuilder()
@@ -97,6 +99,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(UpdateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteConnectionRequest, Empty>
       deleteConnectionMethodDescriptor =
           MethodDescriptor.<DeleteConnectionRequest, Empty>newBuilder()
@@ -107,6 +110,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -114,6 +118,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -121,6 +126,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -132,8 +138,6 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable;
   private final UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable;
@@ -148,6 +152,8 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcConnectionServiceStub create(ConnectionServiceStubSettings settings)
@@ -167,27 +173,18 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
         ConnectionServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
-  /**
-   * Constructs an instance of GrpcConnectionServiceStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcConnectionServiceStub(
       ConnectionServiceStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new GrpcConnectionServiceCallableFactory());
   }
 
-  /**
-   * Constructs an instance of GrpcConnectionServiceStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcConnectionServiceStub(
       ConnectionServiceStubSettings settings,
       ClientContext clientContext,
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateConnectionRequest, Connection> createConnectionTransportSettings =
         GrpcCallSettings.<CreateConnectionRequest, Connection>newBuilder()
@@ -326,7 +323,12 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable() {
@@ -337,13 +339,13 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
     return getConnectionCallable;
   }
 
+  public UnaryCallable<ListConnectionsRequest, ListConnectionsResponse> listConnectionsCallable() {
+    return listConnectionsCallable;
+  }
+
   public UnaryCallable<ListConnectionsRequest, ListConnectionsPagedResponse>
       listConnectionsPagedCallable() {
     return listConnectionsPagedCallable;
-  }
-
-  public UnaryCallable<ListConnectionsRequest, ListConnectionsResponse> listConnectionsCallable() {
-    return listConnectionsCallable;
   }
 
   public UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable() {

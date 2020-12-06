@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigqueryconnection.v1;
 
 import static com.google.cloud.bigqueryconnection.v1.ConnectionServiceClient.ListConnectionsPagedResponse;
@@ -46,7 +47,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ConnectionServiceClient}.
  *
@@ -64,23 +65,24 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createConnection to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ConnectionServiceSettings.Builder connectionServiceSettingsBuilder =
  *     ConnectionServiceSettings.newBuilder();
  * connectionServiceSettingsBuilder
  *     .createConnectionSettings()
  *     .setRetrySettings(
- *         connectionServiceSettingsBuilder.createConnectionSettings().getRetrySettings().toBuilder()
+ *         connectionServiceSettingsBuilder
+ *             .createConnectionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ConnectionServiceSettings connectionServiceSettings = connectionServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ConnectionServiceSettings extends ClientSettings<ConnectionServiceSettings> {
+
   /** Returns the object with the settings used for calls to createConnection. */
   public UnaryCallSettings<CreateConnectionRequest, Connection> createConnectionSettings() {
     return ((ConnectionServiceStubSettings) getStubSettings()).createConnectionSettings();
@@ -184,16 +186,13 @@ public class ConnectionServiceSettings extends ClientSettings<ConnectionServiceS
 
   /** Builder for ConnectionServiceSettings. */
   public static class Builder extends ClientSettings.Builder<ConnectionServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ConnectionServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ConnectionServiceStubSettings.newBuilder());
     }
 
     protected Builder(ConnectionServiceSettings settings) {
@@ -204,11 +203,15 @@ public class ConnectionServiceSettings extends ClientSettings<ConnectionServiceS
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ConnectionServiceStubSettings.newBuilder());
+    }
+
     public ConnectionServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((ConnectionServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

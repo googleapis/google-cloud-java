@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.connection.v1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -23,20 +23,14 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CreateConnectionRequest;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.DeleteConnectionRequest;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.GetConnectionRequest;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsRequest;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsResponse;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.UpdateConnectionCredentialRequest;
-import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.UpdateConnectionRequest;
+import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -45,77 +39,99 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for BigQuery Connection API.
+ * gRPC stub implementation for the ConnectionService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcConnectionServiceStub extends ConnectionServiceStub {
-
-  private static final MethodDescriptor<CreateConnectionRequest, Connection>
+  private static final MethodDescriptor<
+          ConnectionProto.CreateConnectionRequest, ConnectionProto.Connection>
       createConnectionMethodDescriptor =
-          MethodDescriptor.<CreateConnectionRequest, Connection>newBuilder()
+          MethodDescriptor
+              .<ConnectionProto.CreateConnectionRequest, ConnectionProto.Connection>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.bigquery.connection.v1beta1.ConnectionService/CreateConnection")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateConnectionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      ConnectionProto.CreateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ConnectionProto.Connection.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<GetConnectionRequest, Connection>
+
+  private static final MethodDescriptor<
+          ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>
       getConnectionMethodDescriptor =
-          MethodDescriptor.<GetConnectionRequest, Connection>newBuilder()
+          MethodDescriptor
+              .<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.bigquery.connection.v1beta1.ConnectionService/GetConnection")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetConnectionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+                  ProtoUtils.marshaller(ConnectionProto.GetConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ConnectionProto.Connection.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<ListConnectionsRequest, ListConnectionsResponse>
+
+  private static final MethodDescriptor<
+          ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
       listConnectionsMethodDescriptor =
-          MethodDescriptor.<ListConnectionsRequest, ListConnectionsResponse>newBuilder()
+          MethodDescriptor
+              .<ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.bigquery.connection.v1beta1.ConnectionService/ListConnections")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListConnectionsRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      ConnectionProto.ListConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListConnectionsResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      ConnectionProto.ListConnectionsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<UpdateConnectionRequest, Connection>
+
+  private static final MethodDescriptor<
+          ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>
       updateConnectionMethodDescriptor =
-          MethodDescriptor.<UpdateConnectionRequest, Connection>newBuilder()
+          MethodDescriptor
+              .<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.bigquery.connection.v1beta1.ConnectionService/UpdateConnection")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateConnectionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      ConnectionProto.UpdateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ConnectionProto.Connection.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<UpdateConnectionCredentialRequest, Empty>
+
+  private static final MethodDescriptor<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
       updateConnectionCredentialMethodDescriptor =
-          MethodDescriptor.<UpdateConnectionCredentialRequest, Empty>newBuilder()
+          MethodDescriptor.<ConnectionProto.UpdateConnectionCredentialRequest, Empty>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.bigquery.connection.v1beta1.ConnectionService/UpdateConnectionCredential")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateConnectionCredentialRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      ConnectionProto.UpdateConnectionCredentialRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteConnectionRequest, Empty>
+
+  private static final MethodDescriptor<ConnectionProto.DeleteConnectionRequest, Empty>
       deleteConnectionMethodDescriptor =
-          MethodDescriptor.<DeleteConnectionRequest, Empty>newBuilder()
+          MethodDescriptor.<ConnectionProto.DeleteConnectionRequest, Empty>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.bigquery.connection.v1beta1.ConnectionService/DeleteConnection")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      ConnectionProto.DeleteConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -124,6 +140,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -132,6 +149,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -144,21 +162,26 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
-  private final UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable;
-  private final UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable;
-  private final UnaryCallable<ListConnectionsRequest, ListConnectionsResponse>
+  private final UnaryCallable<ConnectionProto.CreateConnectionRequest, ConnectionProto.Connection>
+      createConnectionCallable;
+  private final UnaryCallable<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>
+      getConnectionCallable;
+  private final UnaryCallable<
+          ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
       listConnectionsCallable;
-  private final UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable;
-  private final UnaryCallable<UpdateConnectionCredentialRequest, Empty>
+  private final UnaryCallable<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>
+      updateConnectionCallable;
+  private final UnaryCallable<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
       updateConnectionCredentialCallable;
-  private final UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable;
+  private final UnaryCallable<ConnectionProto.DeleteConnectionRequest, Empty>
+      deleteConnectionCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcConnectionServiceStub create(ConnectionServiceStubSettings settings)
@@ -178,109 +201,116 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
         ConnectionServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
-  /**
-   * Constructs an instance of GrpcConnectionServiceStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcConnectionServiceStub(
       ConnectionServiceStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new GrpcConnectionServiceCallableFactory());
   }
 
-  /**
-   * Constructs an instance of GrpcConnectionServiceStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcConnectionServiceStub(
       ConnectionServiceStubSettings settings,
       ClientContext clientContext,
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<CreateConnectionRequest, Connection> createConnectionTransportSettings =
-        GrpcCallSettings.<CreateConnectionRequest, Connection>newBuilder()
-            .setMethodDescriptor(createConnectionMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CreateConnectionRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateConnectionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
-        GrpcCallSettings.<GetConnectionRequest, Connection>newBuilder()
-            .setMethodDescriptor(getConnectionMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetConnectionRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetConnectionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<ListConnectionsRequest, ListConnectionsResponse>
-        listConnectionsTransportSettings =
-            GrpcCallSettings.<ListConnectionsRequest, ListConnectionsResponse>newBuilder()
-                .setMethodDescriptor(listConnectionsMethodDescriptor)
+    GrpcCallSettings<ConnectionProto.CreateConnectionRequest, ConnectionProto.Connection>
+        createConnectionTransportSettings =
+            GrpcCallSettings
+                .<ConnectionProto.CreateConnectionRequest, ConnectionProto.Connection>newBuilder()
+                .setMethodDescriptor(createConnectionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListConnectionsRequest>() {
+                    new RequestParamsExtractor<ConnectionProto.CreateConnectionRequest>() {
                       @Override
-                      public Map<String, String> extract(ListConnectionsRequest request) {
+                      public Map<String, String> extract(
+                          ConnectionProto.CreateConnectionRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("parent", String.valueOf(request.getParent()));
                         return params.build();
                       }
                     })
                 .build();
-    GrpcCallSettings<UpdateConnectionRequest, Connection> updateConnectionTransportSettings =
-        GrpcCallSettings.<UpdateConnectionRequest, Connection>newBuilder()
-            .setMethodDescriptor(updateConnectionMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<UpdateConnectionRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateConnectionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<UpdateConnectionCredentialRequest, Empty>
-        updateConnectionCredentialTransportSettings =
-            GrpcCallSettings.<UpdateConnectionCredentialRequest, Empty>newBuilder()
-                .setMethodDescriptor(updateConnectionCredentialMethodDescriptor)
+    GrpcCallSettings<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>
+        getConnectionTransportSettings =
+            GrpcCallSettings
+                .<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>newBuilder()
+                .setMethodDescriptor(getConnectionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateConnectionCredentialRequest>() {
+                    new RequestParamsExtractor<ConnectionProto.GetConnectionRequest>() {
                       @Override
                       public Map<String, String> extract(
-                          UpdateConnectionCredentialRequest request) {
+                          ConnectionProto.GetConnectionRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("name", String.valueOf(request.getName()));
                         return params.build();
                       }
                     })
                 .build();
-    GrpcCallSettings<DeleteConnectionRequest, Empty> deleteConnectionTransportSettings =
-        GrpcCallSettings.<DeleteConnectionRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteConnectionMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteConnectionRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteConnectionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
+    GrpcCallSettings<
+            ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
+        listConnectionsTransportSettings =
+            GrpcCallSettings
+                .<ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listConnectionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ConnectionProto.ListConnectionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          ConnectionProto.ListConnectionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>
+        updateConnectionTransportSettings =
+            GrpcCallSettings
+                .<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>newBuilder()
+                .setMethodDescriptor(updateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ConnectionProto.UpdateConnectionRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          ConnectionProto.UpdateConnectionRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
+        updateConnectionCredentialTransportSettings =
+            GrpcCallSettings.<ConnectionProto.UpdateConnectionCredentialRequest, Empty>newBuilder()
+                .setMethodDescriptor(updateConnectionCredentialMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<
+                        ConnectionProto.UpdateConnectionCredentialRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          ConnectionProto.UpdateConnectionCredentialRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<ConnectionProto.DeleteConnectionRequest, Empty>
+        deleteConnectionTransportSettings =
+            GrpcCallSettings.<ConnectionProto.DeleteConnectionRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ConnectionProto.DeleteConnectionRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          ConnectionProto.DeleteConnectionRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
@@ -354,31 +384,41 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable() {
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  public UnaryCallable<ConnectionProto.CreateConnectionRequest, ConnectionProto.Connection>
+      createConnectionCallable() {
     return createConnectionCallable;
   }
 
-  public UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable() {
+  public UnaryCallable<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>
+      getConnectionCallable() {
     return getConnectionCallable;
   }
 
-  public UnaryCallable<ListConnectionsRequest, ListConnectionsResponse> listConnectionsCallable() {
+  public UnaryCallable<
+          ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
+      listConnectionsCallable() {
     return listConnectionsCallable;
   }
 
-  public UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable() {
+  public UnaryCallable<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>
+      updateConnectionCallable() {
     return updateConnectionCallable;
   }
 
-  public UnaryCallable<UpdateConnectionCredentialRequest, Empty>
+  public UnaryCallable<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
       updateConnectionCredentialCallable() {
     return updateConnectionCredentialCallable;
   }
 
-  public UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
+  public UnaryCallable<ConnectionProto.DeleteConnectionRequest, Empty> deleteConnectionCallable() {
     return deleteConnectionCallable;
   }
 
