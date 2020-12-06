@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.reservation.v1.stub;
 
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
@@ -80,7 +81,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ReservationServiceStub}.
  *
@@ -98,22 +99,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createReservation to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ReservationServiceStubSettings.Builder reservationServiceSettingsBuilder =
  *     ReservationServiceStubSettings.newBuilder();
  * reservationServiceSettingsBuilder
  *     .createReservationSettings()
  *     .setRetrySettings(
- *         reservationServiceSettingsBuilder.createReservationSettings().getRetrySettings().toBuilder()
+ *         reservationServiceSettingsBuilder
+ *             .createReservationSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * ReservationServiceStubSettings reservationServiceSettings = reservationServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * ReservationServiceStubSettings reservationServiceSettings =
+ *     reservationServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class ReservationServiceStubSettings extends StubSettings<ReservationServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -158,6 +161,254 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
   private final UnaryCallSettings<GetBiReservationRequest, BiReservation> getBiReservationSettings;
   private final UnaryCallSettings<UpdateBiReservationRequest, BiReservation>
       updateBiReservationSettings;
+
+  private static final PagedListDescriptor<
+          ListReservationsRequest, ListReservationsResponse, Reservation>
+      LIST_RESERVATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListReservationsRequest, ListReservationsResponse, Reservation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListReservationsRequest injectToken(
+                ListReservationsRequest payload, String token) {
+              return ListReservationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListReservationsRequest injectPageSize(
+                ListReservationsRequest payload, int pageSize) {
+              return ListReservationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListReservationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListReservationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Reservation> extractResources(ListReservationsResponse payload) {
+              return payload.getReservationsList() == null
+                  ? ImmutableList.<Reservation>of()
+                  : payload.getReservationsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse, CapacityCommitment>
+      LIST_CAPACITY_COMMITMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCapacityCommitmentsRequest,
+              ListCapacityCommitmentsResponse,
+              CapacityCommitment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCapacityCommitmentsRequest injectToken(
+                ListCapacityCommitmentsRequest payload, String token) {
+              return ListCapacityCommitmentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCapacityCommitmentsRequest injectPageSize(
+                ListCapacityCommitmentsRequest payload, int pageSize) {
+              return ListCapacityCommitmentsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCapacityCommitmentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCapacityCommitmentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CapacityCommitment> extractResources(
+                ListCapacityCommitmentsResponse payload) {
+              return payload.getCapacityCommitmentsList() == null
+                  ? ImmutableList.<CapacityCommitment>of()
+                  : payload.getCapacityCommitmentsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAssignmentsRequest, ListAssignmentsResponse, Assignment>
+      LIST_ASSIGNMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAssignmentsRequest, ListAssignmentsResponse, Assignment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAssignmentsRequest injectToken(
+                ListAssignmentsRequest payload, String token) {
+              return ListAssignmentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAssignmentsRequest injectPageSize(
+                ListAssignmentsRequest payload, int pageSize) {
+              return ListAssignmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAssignmentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAssignmentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Assignment> extractResources(ListAssignmentsResponse payload) {
+              return payload.getAssignmentsList() == null
+                  ? ImmutableList.<Assignment>of()
+                  : payload.getAssignmentsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment>
+      SEARCH_ASSIGNMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchAssignmentsRequest injectToken(
+                SearchAssignmentsRequest payload, String token) {
+              return SearchAssignmentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchAssignmentsRequest injectPageSize(
+                SearchAssignmentsRequest payload, int pageSize) {
+              return SearchAssignmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchAssignmentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchAssignmentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Assignment> extractResources(SearchAssignmentsResponse payload) {
+              return payload.getAssignmentsList() == null
+                  ? ImmutableList.<Assignment>of()
+                  : payload.getAssignmentsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
+      LIST_RESERVATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListReservationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListReservationsRequest, ListReservationsResponse> callable,
+                ListReservationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListReservationsResponse> futureResponse) {
+              PageContext<ListReservationsRequest, ListReservationsResponse, Reservation>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RESERVATIONS_PAGE_STR_DESC, request, context);
+              return ListReservationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCapacityCommitmentsRequest,
+          ListCapacityCommitmentsResponse,
+          ListCapacityCommitmentsPagedResponse>
+      LIST_CAPACITY_COMMITMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCapacityCommitmentsRequest,
+              ListCapacityCommitmentsResponse,
+              ListCapacityCommitmentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCapacityCommitmentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
+                    callable,
+                ListCapacityCommitmentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCapacityCommitmentsResponse> futureResponse) {
+              PageContext<
+                      ListCapacityCommitmentsRequest,
+                      ListCapacityCommitmentsResponse,
+                      CapacityCommitment>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CAPACITY_COMMITMENTS_PAGE_STR_DESC, request, context);
+              return ListCapacityCommitmentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAssignmentsRequest, ListAssignmentsResponse, ListAssignmentsPagedResponse>
+      LIST_ASSIGNMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAssignmentsRequest, ListAssignmentsResponse, ListAssignmentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAssignmentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAssignmentsRequest, ListAssignmentsResponse> callable,
+                ListAssignmentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAssignmentsResponse> futureResponse) {
+              PageContext<ListAssignmentsRequest, ListAssignmentsResponse, Assignment> pageContext =
+                  PageContext.create(callable, LIST_ASSIGNMENTS_PAGE_STR_DESC, request, context);
+              return ListAssignmentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
+      SEARCH_ASSIGNMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchAssignmentsRequest,
+              SearchAssignmentsResponse,
+              SearchAssignmentsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchAssignmentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsResponse> callable,
+                SearchAssignmentsRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchAssignmentsResponse> futureResponse) {
+              PageContext<SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment>
+                  pageContext =
+                      PageContext.create(
+                          callable, SEARCH_ASSIGNMENTS_PAGE_STR_DESC, request, context);
+              return SearchAssignmentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createReservation. */
   public UnaryCallSettings<CreateReservationRequest, Reservation> createReservationSettings() {
@@ -277,10 +528,10 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcReservationServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -361,259 +612,10 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     updateBiReservationSettings = settingsBuilder.updateBiReservationSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListReservationsRequest, ListReservationsResponse, Reservation>
-      LIST_RESERVATIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListReservationsRequest, ListReservationsResponse, Reservation>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListReservationsRequest injectToken(
-                ListReservationsRequest payload, String token) {
-              return ListReservationsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListReservationsRequest injectPageSize(
-                ListReservationsRequest payload, int pageSize) {
-              return ListReservationsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListReservationsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListReservationsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Reservation> extractResources(ListReservationsResponse payload) {
-              return payload.getReservationsList() != null
-                  ? payload.getReservationsList()
-                  : ImmutableList.<Reservation>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse, CapacityCommitment>
-      LIST_CAPACITY_COMMITMENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListCapacityCommitmentsRequest,
-              ListCapacityCommitmentsResponse,
-              CapacityCommitment>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListCapacityCommitmentsRequest injectToken(
-                ListCapacityCommitmentsRequest payload, String token) {
-              return ListCapacityCommitmentsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListCapacityCommitmentsRequest injectPageSize(
-                ListCapacityCommitmentsRequest payload, int pageSize) {
-              return ListCapacityCommitmentsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListCapacityCommitmentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListCapacityCommitmentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<CapacityCommitment> extractResources(
-                ListCapacityCommitmentsResponse payload) {
-              return payload.getCapacityCommitmentsList() != null
-                  ? payload.getCapacityCommitmentsList()
-                  : ImmutableList.<CapacityCommitment>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListAssignmentsRequest, ListAssignmentsResponse, Assignment>
-      LIST_ASSIGNMENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListAssignmentsRequest, ListAssignmentsResponse, Assignment>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListAssignmentsRequest injectToken(
-                ListAssignmentsRequest payload, String token) {
-              return ListAssignmentsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListAssignmentsRequest injectPageSize(
-                ListAssignmentsRequest payload, int pageSize) {
-              return ListAssignmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListAssignmentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListAssignmentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Assignment> extractResources(ListAssignmentsResponse payload) {
-              return payload.getAssignmentsList() != null
-                  ? payload.getAssignmentsList()
-                  : ImmutableList.<Assignment>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment>
-      SEARCH_ASSIGNMENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public SearchAssignmentsRequest injectToken(
-                SearchAssignmentsRequest payload, String token) {
-              return SearchAssignmentsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public SearchAssignmentsRequest injectPageSize(
-                SearchAssignmentsRequest payload, int pageSize) {
-              return SearchAssignmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(SearchAssignmentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(SearchAssignmentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Assignment> extractResources(SearchAssignmentsResponse payload) {
-              return payload.getAssignmentsList() != null
-                  ? payload.getAssignmentsList()
-                  : ImmutableList.<Assignment>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
-      LIST_RESERVATIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>() {
-            @Override
-            public ApiFuture<ListReservationsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListReservationsRequest, ListReservationsResponse> callable,
-                ListReservationsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListReservationsResponse> futureResponse) {
-              PageContext<ListReservationsRequest, ListReservationsResponse, Reservation>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_RESERVATIONS_PAGE_STR_DESC, request, context);
-              return ListReservationsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListCapacityCommitmentsRequest,
-          ListCapacityCommitmentsResponse,
-          ListCapacityCommitmentsPagedResponse>
-      LIST_CAPACITY_COMMITMENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListCapacityCommitmentsRequest,
-              ListCapacityCommitmentsResponse,
-              ListCapacityCommitmentsPagedResponse>() {
-            @Override
-            public ApiFuture<ListCapacityCommitmentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
-                    callable,
-                ListCapacityCommitmentsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListCapacityCommitmentsResponse> futureResponse) {
-              PageContext<
-                      ListCapacityCommitmentsRequest,
-                      ListCapacityCommitmentsResponse,
-                      CapacityCommitment>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_CAPACITY_COMMITMENTS_PAGE_STR_DESC, request, context);
-              return ListCapacityCommitmentsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListAssignmentsRequest, ListAssignmentsResponse, ListAssignmentsPagedResponse>
-      LIST_ASSIGNMENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListAssignmentsRequest, ListAssignmentsResponse, ListAssignmentsPagedResponse>() {
-            @Override
-            public ApiFuture<ListAssignmentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListAssignmentsRequest, ListAssignmentsResponse> callable,
-                ListAssignmentsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListAssignmentsResponse> futureResponse) {
-              PageContext<ListAssignmentsRequest, ListAssignmentsResponse, Assignment> pageContext =
-                  PageContext.create(callable, LIST_ASSIGNMENTS_PAGE_STR_DESC, request, context);
-              return ListAssignmentsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
-      SEARCH_ASSIGNMENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              SearchAssignmentsRequest,
-              SearchAssignmentsResponse,
-              SearchAssignmentsPagedResponse>() {
-            @Override
-            public ApiFuture<SearchAssignmentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsResponse> callable,
-                SearchAssignmentsRequest request,
-                ApiCallContext context,
-                ApiFuture<SearchAssignmentsResponse> futureResponse) {
-              PageContext<SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment>
-                  pageContext =
-                      PageContext.create(
-                          callable, SEARCH_ASSIGNMENTS_PAGE_STR_DESC, request, context);
-              return SearchAssignmentsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for ReservationServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<ReservationServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateReservationRequest, Reservation>
         createReservationSettings;
     private final PagedCallSettings.Builder<
@@ -659,7 +661,6 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
         getBiReservationSettings;
     private final UnaryCallSettings.Builder<UpdateBiReservationRequest, BiReservation>
         updateBiReservationSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -667,13 +668,12 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -682,6 +682,14 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -693,63 +701,35 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listReservationsSettings = PagedCallSettings.newBuilder(LIST_RESERVATIONS_PAGE_STR_FACT);
-
       getReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createCapacityCommitmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listCapacityCommitmentsSettings =
           PagedCallSettings.newBuilder(LIST_CAPACITY_COMMITMENTS_PAGE_STR_FACT);
-
       getCapacityCommitmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteCapacityCommitmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateCapacityCommitmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       splitCapacityCommitmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       mergeCapacityCommitmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listAssignmentsSettings = PagedCallSettings.newBuilder(LIST_ASSIGNMENTS_PAGE_STR_FACT);
-
       deleteAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       searchAssignmentsSettings = PagedCallSettings.newBuilder(SEARCH_ASSIGNMENTS_PAGE_STR_FACT);
-
       moveAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getBiReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateBiReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -773,117 +753,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               moveAssignmentSettings,
               getBiReservationSettings,
               updateBiReservationSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listReservationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createCapacityCommitmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listCapacityCommitmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getCapacityCommitmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteCapacityCommitmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateCapacityCommitmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .splitCapacityCommitmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .mergeCapacityCommitmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createAssignmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listAssignmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteAssignmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .searchAssignmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .moveAssignmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getBiReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateBiReservationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(ReservationServiceStubSettings settings) {
@@ -932,7 +802,117 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               updateBiReservationSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createReservationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listReservationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getReservationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteReservationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateReservationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createCapacityCommitmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listCapacityCommitmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getCapacityCommitmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteCapacityCommitmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateCapacityCommitmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .splitCapacityCommitmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .mergeCapacityCommitmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createAssignmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listAssignmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteAssignmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .searchAssignmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .moveAssignmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getBiReservationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateBiReservationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

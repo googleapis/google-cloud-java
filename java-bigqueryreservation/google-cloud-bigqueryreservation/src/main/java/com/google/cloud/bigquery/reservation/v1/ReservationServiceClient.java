@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.reservation.v1;
 
 import com.google.api.core.ApiFunction;
@@ -35,7 +36,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: This API allows users to manage their flat-rate BigQuery reservations.
  *
@@ -54,18 +55,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   Reservation reservation = Reservation.newBuilder().build();
- *   String reservationId = "";
- *   Reservation response = reservationServiceClient.createReservation(parent, reservation, reservationId);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the reservationServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the ReservationServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -94,30 +84,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ReservationServiceSettings reservationServiceSettings =
  *     ReservationServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ReservationServiceClient reservationServiceClient =
  *     ReservationServiceClient.create(reservationServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ReservationServiceSettings reservationServiceSettings =
  *     ReservationServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ReservationServiceClient reservationServiceClient =
  *     ReservationServiceClient.create(reservationServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class ReservationServiceClient implements BackgroundResource {
   private final ReservationServiceSettings settings;
   private final ReservationServiceStub stub;
@@ -138,7 +126,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ReservationServiceClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use ReservationServiceSettings}.
+   * is for advanced usage - prefer using create(ReservationServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ReservationServiceClient create(ReservationServiceStub stub) {
@@ -170,24 +158,13 @@ public class ReservationServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new reservation resource.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Reservation reservation = Reservation.newBuilder().build();
-   *   String reservationId = "";
-   *   Reservation response = reservationServiceClient.createReservation(parent, reservation, reservationId);
-   * }
-   * </code></pre>
-   *
    * @param parent Required. Project, location. E.g., `projects/myproject/locations/US`
    * @param reservation Definition of the new reservation to create.
-   * @param reservationId The reservation ID. This field must only contain lower case alphanumeric
+   * @param reservation_id The reservation ID. This field must only contain lower case alphanumeric
    *     characters or dash. Max length is 64 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -202,24 +179,13 @@ public class ReservationServiceClient implements BackgroundResource {
     return createReservation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new reservation resource.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Reservation reservation = Reservation.newBuilder().build();
-   *   String reservationId = "";
-   *   Reservation response = reservationServiceClient.createReservation(parent.toString(), reservation, reservationId);
-   * }
-   * </code></pre>
-   *
    * @param parent Required. Project, location. E.g., `projects/myproject/locations/US`
    * @param reservation Definition of the new reservation to create.
-   * @param reservationId The reservation ID. This field must only contain lower case alphanumeric
+   * @param reservation_id The reservation ID. This field must only contain lower case alphanumeric
    *     characters or dash. Max length is 64 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -234,21 +200,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return createReservation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new reservation resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   CreateReservationRequest request = CreateReservationRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   Reservation response = reservationServiceClient.createReservation(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -257,42 +211,19 @@ public class ReservationServiceClient implements BackgroundResource {
     return createReservationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new reservation resource.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   CreateReservationRequest request = CreateReservationRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;Reservation&gt; future = reservationServiceClient.createReservationCallable().futureCall(request);
-   *   // Do something
-   *   Reservation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable() {
     return stub.createReservationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the reservations for the project in the specified location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Reservation element : reservationServiceClient.listReservations(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name containing project and location, e.g.:
    *     `projects/myproject/locations/US`
@@ -306,20 +237,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return listReservations(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the reservations for the project in the specified location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Reservation element : reservationServiceClient.listReservations(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name containing project and location, e.g.:
    *     `projects/myproject/locations/US`
@@ -331,23 +251,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return listReservations(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the reservations for the project in the specified location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListReservationsRequest request = ListReservationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Reservation element : reservationServiceClient.listReservations(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -356,75 +262,31 @@ public class ReservationServiceClient implements BackgroundResource {
     return listReservationsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the reservations for the project in the specified location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListReservationsRequest request = ListReservationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListReservationsPagedResponse&gt; future = reservationServiceClient.listReservationsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Reservation element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListReservationsRequest, ListReservationsPagedResponse>
       listReservationsPagedCallable() {
     return stub.listReservationsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the reservations for the project in the specified location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListReservationsRequest request = ListReservationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListReservationsResponse response = reservationServiceClient.listReservationsCallable().call(request);
-   *     for (Reservation element : response.getReservationsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListReservationsRequest, ListReservationsResponse>
       listReservationsCallable() {
     return stub.listReservationsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns information about the reservation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   Reservation response = reservationServiceClient.getReservation(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the reservation to retrieve. E.g.,
    *     `projects/myproject/locations/US/reservations/team1-prod`
@@ -436,18 +298,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return getReservation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns information about the reservation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   Reservation response = reservationServiceClient.getReservation(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the reservation to retrieve. E.g.,
    *     `projects/myproject/locations/US/reservations/team1-prod`
@@ -458,21 +311,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return getReservation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns information about the reservation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   GetReservationRequest request = GetReservationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Reservation response = reservationServiceClient.getReservation(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -481,41 +322,20 @@ public class ReservationServiceClient implements BackgroundResource {
     return getReservationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns information about the reservation.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   GetReservationRequest request = GetReservationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Reservation&gt; future = reservationServiceClient.getReservationCallable().futureCall(request);
-   *   // Do something
-   *   Reservation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetReservationRequest, Reservation> getReservationCallable() {
     return stub.getReservationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
    * assignments.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   reservationServiceClient.deleteReservation(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the reservation to retrieve. E.g.,
    *     `projects/myproject/locations/US/reservations/team1-prod`
@@ -529,19 +349,10 @@ public class ReservationServiceClient implements BackgroundResource {
     deleteReservation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
    * assignments.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   reservationServiceClient.deleteReservation(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the reservation to retrieve. E.g.,
    *     `projects/myproject/locations/US/reservations/team1-prod`
@@ -552,22 +363,10 @@ public class ReservationServiceClient implements BackgroundResource {
     deleteReservation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
    * assignments.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   DeleteReservationRequest request = DeleteReservationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   reservationServiceClient.deleteReservation(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -576,45 +375,23 @@ public class ReservationServiceClient implements BackgroundResource {
     deleteReservationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
    * assignments.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName name = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   DeleteReservationRequest request = DeleteReservationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = reservationServiceClient.deleteReservationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable() {
     return stub.deleteReservationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing reservation resource.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   Reservation reservation = Reservation.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Reservation response = reservationServiceClient.updateReservation(reservation, updateMask);
-   * }
-   * </code></pre>
-   *
    * @param reservation Content of the reservation to update.
-   * @param updateMask Standard field mask for the set of fields to be updated.
+   * @param update_mask Standard field mask for the set of fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Reservation updateReservation(Reservation reservation, FieldMask updateMask) {
@@ -626,18 +403,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return updateReservation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing reservation resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   UpdateReservationRequest request = UpdateReservationRequest.newBuilder().build();
-   *   Reservation response = reservationServiceClient.updateReservation(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -646,42 +414,23 @@ public class ReservationServiceClient implements BackgroundResource {
     return updateReservationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing reservation resource.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   UpdateReservationRequest request = UpdateReservationRequest.newBuilder().build();
-   *   ApiFuture&lt;Reservation&gt; future = reservationServiceClient.updateReservationCallable().futureCall(request);
-   *   // Do something
-   *   Reservation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable() {
     return stub.updateReservationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new capacity commitment resource.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   CapacityCommitment capacityCommitment = CapacityCommitment.newBuilder().build();
-   *   CapacityCommitment response = reservationServiceClient.createCapacityCommitment(parent, capacityCommitment);
-   * }
-   * </code></pre>
-   *
    * @param parent Required. Resource name of the parent reservation. E.g.,
    *     `projects/myproject/locations/US`
-   * @param capacityCommitment Content of the capacity commitment to create.
+   * @param capacity_commitment Content of the capacity commitment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment createCapacityCommitment(
@@ -694,23 +443,13 @@ public class ReservationServiceClient implements BackgroundResource {
     return createCapacityCommitment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new capacity commitment resource.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   CapacityCommitment capacityCommitment = CapacityCommitment.newBuilder().build();
-   *   CapacityCommitment response = reservationServiceClient.createCapacityCommitment(parent.toString(), capacityCommitment);
-   * }
-   * </code></pre>
-   *
    * @param parent Required. Resource name of the parent reservation. E.g.,
    *     `projects/myproject/locations/US`
-   * @param capacityCommitment Content of the capacity commitment to create.
+   * @param capacity_commitment Content of the capacity commitment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment createCapacityCommitment(
@@ -723,21 +462,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return createCapacityCommitment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new capacity commitment resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   CreateCapacityCommitmentRequest request = CreateCapacityCommitmentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   CapacityCommitment response = reservationServiceClient.createCapacityCommitment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -747,43 +474,20 @@ public class ReservationServiceClient implements BackgroundResource {
     return createCapacityCommitmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new capacity commitment resource.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   CreateCapacityCommitmentRequest request = CreateCapacityCommitmentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;CapacityCommitment&gt; future = reservationServiceClient.createCapacityCommitmentCallable().futureCall(request);
-   *   // Do something
-   *   CapacityCommitment response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentCallable() {
     return stub.createCapacityCommitmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the capacity commitments for the admin project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (CapacityCommitment element : reservationServiceClient.listCapacityCommitments(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the parent reservation. E.g.,
    *     `projects/myproject/locations/US`
@@ -797,20 +501,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return listCapacityCommitments(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the capacity commitments for the admin project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (CapacityCommitment element : reservationServiceClient.listCapacityCommitments(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the parent reservation. E.g.,
    *     `projects/myproject/locations/US`
@@ -822,23 +515,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return listCapacityCommitments(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the capacity commitments for the admin project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListCapacityCommitmentsRequest request = ListCapacityCommitmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (CapacityCommitment element : reservationServiceClient.listCapacityCommitments(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -848,75 +527,31 @@ public class ReservationServiceClient implements BackgroundResource {
     return listCapacityCommitmentsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the capacity commitments for the admin project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListCapacityCommitmentsRequest request = ListCapacityCommitmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListCapacityCommitmentsPagedResponse&gt; future = reservationServiceClient.listCapacityCommitmentsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (CapacityCommitment element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsPagedResponse>
       listCapacityCommitmentsPagedCallable() {
     return stub.listCapacityCommitmentsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all the capacity commitments for the admin project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListCapacityCommitmentsRequest request = ListCapacityCommitmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListCapacityCommitmentsResponse response = reservationServiceClient.listCapacityCommitmentsCallable().call(request);
-   *     for (CapacityCommitment element : response.getCapacityCommitmentsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
       listCapacityCommitmentsCallable() {
     return stub.listCapacityCommitmentsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns information about the capacity commitment.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   CapacityCommitment response = reservationServiceClient.getCapacityCommitment(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the capacity commitment to retrieve. E.g.,
    *     `projects/myproject/locations/US/capacityCommitments/123`
@@ -930,18 +565,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return getCapacityCommitment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns information about the capacity commitment.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   CapacityCommitment response = reservationServiceClient.getCapacityCommitment(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the capacity commitment to retrieve. E.g.,
    *     `projects/myproject/locations/US/capacityCommitments/123`
@@ -953,21 +579,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return getCapacityCommitment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns information about the capacity commitment.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   GetCapacityCommitmentRequest request = GetCapacityCommitmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   CapacityCommitment response = reservationServiceClient.getCapacityCommitment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -976,42 +590,21 @@ public class ReservationServiceClient implements BackgroundResource {
     return getCapacityCommitmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns information about the capacity commitment.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   GetCapacityCommitmentRequest request = GetCapacityCommitmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;CapacityCommitment&gt; future = reservationServiceClient.getCapacityCommitmentCallable().futureCall(request);
-   *   // Do something
-   *   CapacityCommitment response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetCapacityCommitmentRequest, CapacityCommitment>
       getCapacityCommitmentCallable() {
     return stub.getCapacityCommitmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a capacity commitment. Attempting to delete capacity commitment before its
    * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   reservationServiceClient.deleteCapacityCommitment(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the capacity commitment to delete. E.g.,
    *     `projects/myproject/locations/US/capacityCommitments/123`
@@ -1025,19 +618,10 @@ public class ReservationServiceClient implements BackgroundResource {
     deleteCapacityCommitment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a capacity commitment. Attempting to delete capacity commitment before its
    * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   reservationServiceClient.deleteCapacityCommitment(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the capacity commitment to delete. E.g.,
    *     `projects/myproject/locations/US/capacityCommitments/123`
@@ -1049,22 +633,10 @@ public class ReservationServiceClient implements BackgroundResource {
     deleteCapacityCommitment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a capacity commitment. Attempting to delete capacity commitment before its
    * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   DeleteCapacityCommitmentRequest request = DeleteCapacityCommitmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   reservationServiceClient.deleteCapacityCommitment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1073,31 +645,19 @@ public class ReservationServiceClient implements BackgroundResource {
     deleteCapacityCommitmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a capacity commitment. Attempting to delete capacity commitment before its
    * commitment_end_time will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   DeleteCapacityCommitmentRequest request = DeleteCapacityCommitmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = reservationServiceClient.deleteCapacityCommitmentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteCapacityCommitmentRequest, Empty>
       deleteCapacityCommitmentCallable() {
     return stub.deleteCapacityCommitmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing capacity commitment.
    *
@@ -1107,18 +667,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * plan with shorter commitment period will fail with the error code
    * `google.rpc.Code.FAILED_PRECONDITION`.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitment capacityCommitment = CapacityCommitment.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   CapacityCommitment response = reservationServiceClient.updateCapacityCommitment(capacityCommitment, updateMask);
-   * }
-   * </code></pre>
-   *
-   * @param capacityCommitment Content of the capacity commitment to update.
-   * @param updateMask Standard field mask for the set of fields to be updated.
+   * @param capacity_commitment Content of the capacity commitment to update.
+   * @param update_mask Standard field mask for the set of fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment updateCapacityCommitment(
@@ -1131,7 +681,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return updateCapacityCommitment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing capacity commitment.
    *
@@ -1140,15 +690,6 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Plan can only be changed to a plan of a longer commitment period. Attempting to change to a
    * plan with shorter commitment period will fail with the error code
    * `google.rpc.Code.FAILED_PRECONDITION`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   UpdateCapacityCommitmentRequest request = UpdateCapacityCommitmentRequest.newBuilder().build();
-   *   CapacityCommitment response = reservationServiceClient.updateCapacityCommitment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1158,7 +699,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return updateCapacityCommitmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing capacity commitment.
    *
@@ -1169,22 +710,13 @@ public class ReservationServiceClient implements BackgroundResource {
    * `google.rpc.Code.FAILED_PRECONDITION`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   UpdateCapacityCommitmentRequest request = UpdateCapacityCommitmentRequest.newBuilder().build();
-   *   ApiFuture&lt;CapacityCommitment&gt; future = reservationServiceClient.updateCapacityCommitmentCallable().futureCall(request);
-   *   // Do something
-   *   CapacityCommitment response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateCapacityCommitmentRequest, CapacityCommitment>
       updateCapacityCommitmentCallable() {
     return stub.updateCapacityCommitmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Splits capacity commitment to two commitments of the same plan and `commitment_end_time`.
    *
@@ -1194,19 +726,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * capacity commitment into commitments of 2000 and 8000. Then, you would change the plan of the
    * first one to `FLEX` and then delete it.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   long slotCount = 0L;
-   *   SplitCapacityCommitmentResponse response = reservationServiceClient.splitCapacityCommitment(name, slotCount);
-   * }
-   * </code></pre>
-   *
    * @param name Required. The resource name e.g.,:
    *     `projects/myproject/locations/US/capacityCommitments/123`
-   * @param slotCount Number of slots in the capacity commitment after the split.
+   * @param slot_count Number of slots in the capacity commitment after the split.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SplitCapacityCommitmentResponse splitCapacityCommitment(
@@ -1219,7 +741,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return splitCapacityCommitment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Splits capacity commitment to two commitments of the same plan and `commitment_end_time`.
    *
@@ -1229,19 +751,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * capacity commitment into commitments of 2000 and 8000. Then, you would change the plan of the
    * first one to `FLEX` and then delete it.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   long slotCount = 0L;
-   *   SplitCapacityCommitmentResponse response = reservationServiceClient.splitCapacityCommitment(name.toString(), slotCount);
-   * }
-   * </code></pre>
-   *
    * @param name Required. The resource name e.g.,:
    *     `projects/myproject/locations/US/capacityCommitments/123`
-   * @param slotCount Number of slots in the capacity commitment after the split.
+   * @param slot_count Number of slots in the capacity commitment after the split.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SplitCapacityCommitmentResponse splitCapacityCommitment(
@@ -1251,7 +763,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return splitCapacityCommitment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Splits capacity commitment to two commitments of the same plan and `commitment_end_time`.
    *
@@ -1260,18 +772,6 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>For example, in order to downgrade from 10000 slots to 8000, you might split a 10000
    * capacity commitment into commitments of 2000 and 8000. Then, you would change the plan of the
    * first one to `FLEX` and then delete it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   SplitCapacityCommitmentRequest request = SplitCapacityCommitmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   SplitCapacityCommitmentResponse response = reservationServiceClient.splitCapacityCommitment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1281,7 +781,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return splitCapacityCommitmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Splits capacity commitment to two commitments of the same plan and `commitment_end_time`.
    *
@@ -1292,25 +792,13 @@ public class ReservationServiceClient implements BackgroundResource {
    * first one to `FLEX` and then delete it.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   CapacityCommitmentName name = CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
-   *   SplitCapacityCommitmentRequest request = SplitCapacityCommitmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;SplitCapacityCommitmentResponse&gt; future = reservationServiceClient.splitCapacityCommitmentCallable().futureCall(request);
-   *   // Do something
-   *   SplitCapacityCommitmentResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SplitCapacityCommitmentRequest, SplitCapacityCommitmentResponse>
       splitCapacityCommitmentCallable() {
     return stub.splitCapacityCommitmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Merges capacity commitments of the same plan into a single commitment.
    *
@@ -1320,19 +808,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Attempting to merge capacity commitments of different plan will fail with the error code
    * `google.rpc.Code.FAILED_PRECONDITION`.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   List&lt;String&gt; capacityCommitmentIds = new ArrayList&lt;&gt;();
-   *   CapacityCommitment response = reservationServiceClient.mergeCapacityCommitments(parent, capacityCommitmentIds);
-   * }
-   * </code></pre>
-   *
    * @param parent Parent resource that identifies admin project and location e.g.,
    *     `projects/myproject/locations/us`
-   * @param capacityCommitmentIds Ids of capacity commitments to merge. These capacity commitments
+   * @param capacity_commitment_ids Ids of capacity commitments to merge. These capacity commitments
    *     must exist under admin project and location specified in the parent. ID is the last portion
    *     of capacity commitment name e.g., 'abc' for
    *     projects/myproject/locations/US/capacityCommitments/abc
@@ -1348,7 +826,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return mergeCapacityCommitments(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Merges capacity commitments of the same plan into a single commitment.
    *
@@ -1358,19 +836,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Attempting to merge capacity commitments of different plan will fail with the error code
    * `google.rpc.Code.FAILED_PRECONDITION`.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   List&lt;String&gt; capacityCommitmentIds = new ArrayList&lt;&gt;();
-   *   CapacityCommitment response = reservationServiceClient.mergeCapacityCommitments(parent.toString(), capacityCommitmentIds);
-   * }
-   * </code></pre>
-   *
    * @param parent Parent resource that identifies admin project and location e.g.,
    *     `projects/myproject/locations/us`
-   * @param capacityCommitmentIds Ids of capacity commitments to merge. These capacity commitments
+   * @param capacity_commitment_ids Ids of capacity commitments to merge. These capacity commitments
    *     must exist under admin project and location specified in the parent. ID is the last portion
    *     of capacity commitment name e.g., 'abc' for
    *     projects/myproject/locations/US/capacityCommitments/abc
@@ -1386,7 +854,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return mergeCapacityCommitments(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Merges capacity commitments of the same plan into a single commitment.
    *
@@ -1395,15 +863,6 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>Attempting to merge capacity commitments of different plan will fail with the error code
    * `google.rpc.Code.FAILED_PRECONDITION`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   MergeCapacityCommitmentsRequest request = MergeCapacityCommitmentsRequest.newBuilder().build();
-   *   CapacityCommitment response = reservationServiceClient.mergeCapacityCommitments(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1413,7 +872,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return mergeCapacityCommitmentsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Merges capacity commitments of the same plan into a single commitment.
    *
@@ -1424,22 +883,13 @@ public class ReservationServiceClient implements BackgroundResource {
    * `google.rpc.Code.FAILED_PRECONDITION`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   MergeCapacityCommitmentsRequest request = MergeCapacityCommitmentsRequest.newBuilder().build();
-   *   ApiFuture&lt;CapacityCommitment&gt; future = reservationServiceClient.mergeCapacityCommitmentsCallable().futureCall(request);
-   *   // Do something
-   *   CapacityCommitment response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<MergeCapacityCommitmentsRequest, CapacityCommitment>
       mergeCapacityCommitmentsCallable() {
     return stub.mergeCapacityCommitmentsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an assignment object which allows the given project to submit jobs of a certain type
    * using slots from the specified reservation.
@@ -1457,25 +907,17 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>Example:
    *
-   * <p>&#42; The organization `organizationA` contains two projects, `project1` and `project2`.
-   * &#42; Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
-   * all be created and mapped to the same or different reservations.
+   * <ul>
+   *   <li>The organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
+   *       all be created and mapped to the same or different reservations.
+   * </ul>
    *
    * <p>Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have 'bigquery.admin'
    * permissions on the project using the reservation and the project that owns this reservation.
    *
    * <p>Returns `google.rpc.Code.INVALID_ARGUMENT` when location of the assignment does not match
    * location of the reservation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   Assignment assignment = Assignment.newBuilder().build();
-   *   Assignment response = reservationServiceClient.createAssignment(parent, assignment);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name of the assignment E.g.
    *     `projects/myproject/locations/US/reservations/team1-prod`
@@ -1491,7 +933,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return createAssignment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an assignment object which allows the given project to submit jobs of a certain type
    * using slots from the specified reservation.
@@ -1509,25 +951,17 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>Example:
    *
-   * <p>&#42; The organization `organizationA` contains two projects, `project1` and `project2`.
-   * &#42; Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
-   * all be created and mapped to the same or different reservations.
+   * <ul>
+   *   <li>The organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
+   *       all be created and mapped to the same or different reservations.
+   * </ul>
    *
    * <p>Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have 'bigquery.admin'
    * permissions on the project using the reservation and the project that owns this reservation.
    *
    * <p>Returns `google.rpc.Code.INVALID_ARGUMENT` when location of the assignment does not match
    * location of the reservation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   Assignment assignment = Assignment.newBuilder().build();
-   *   Assignment response = reservationServiceClient.createAssignment(parent.toString(), assignment);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name of the assignment E.g.
    *     `projects/myproject/locations/US/reservations/team1-prod`
@@ -1540,7 +974,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return createAssignment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an assignment object which allows the given project to submit jobs of a certain type
    * using slots from the specified reservation.
@@ -1558,27 +992,17 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>Example:
    *
-   * <p>&#42; The organization `organizationA` contains two projects, `project1` and `project2`.
-   * &#42; Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
-   * all be created and mapped to the same or different reservations.
+   * <ul>
+   *   <li>The organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
+   *       all be created and mapped to the same or different reservations.
+   * </ul>
    *
    * <p>Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have 'bigquery.admin'
    * permissions on the project using the reservation and the project that owns this reservation.
    *
    * <p>Returns `google.rpc.Code.INVALID_ARGUMENT` when location of the assignment does not match
    * location of the reservation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   CreateAssignmentRequest request = CreateAssignmentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   Assignment response = reservationServiceClient.createAssignment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1587,7 +1011,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return createAssignmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an assignment object which allows the given project to submit jobs of a certain type
    * using slots from the specified reservation.
@@ -1605,9 +1029,11 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>Example:
    *
-   * <p>&#42; The organization `organizationA` contains two projects, `project1` and `project2`.
-   * &#42; Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
-   * all be created and mapped to the same or different reservations.
+   * <ul>
+   *   <li>The organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
+   *       all be created and mapped to the same or different reservations.
+   * </ul>
    *
    * <p>Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have 'bigquery.admin'
    * permissions on the project using the reservation and the project that owns this reservation.
@@ -1616,24 +1042,12 @@ public class ReservationServiceClient implements BackgroundResource {
    * location of the reservation.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   CreateAssignmentRequest request = CreateAssignmentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;Assignment&gt; future = reservationServiceClient.createAssignmentCallable().futureCall(request);
-   *   // Do something
-   *   Assignment response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateAssignmentRequest, Assignment> createAssignmentCallable() {
     return stub.createAssignmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists assignments.
    *
@@ -1641,10 +1055,12 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>Example:
    *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * <ul>
+   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Reservation `res1` exists and was created previously.
+   *   <li>CreateAssignment was used previously to define the following associations between
+   *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * </ul>
    *
    * <p>In this example, ListAssignments will just return the above two assignments for reservation
    * `res1`, and no expansion/merge will happen.
@@ -1653,17 +1069,6 @@ public class ReservationServiceClient implements BackgroundResource {
    * belongs to the specified project and location will be listed.
    *
    * <p>&#42;&#42;Note&#42;&#42; "-" cannot be used for projects nor locations.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   for (Assignment element : reservationServiceClient.listAssignments(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name e.g.:
    *     <p>`projects/myproject/locations/US/reservations/team1-prod`
@@ -1679,7 +1084,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return listAssignments(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists assignments.
    *
@@ -1687,10 +1092,12 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>Example:
    *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * <ul>
+   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Reservation `res1` exists and was created previously.
+   *   <li>CreateAssignment was used previously to define the following associations between
+   *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * </ul>
    *
    * <p>In this example, ListAssignments will just return the above two assignments for reservation
    * `res1`, and no expansion/merge will happen.
@@ -1699,17 +1106,6 @@ public class ReservationServiceClient implements BackgroundResource {
    * belongs to the specified project and location will be listed.
    *
    * <p>&#42;&#42;Note&#42;&#42; "-" cannot be used for projects nor locations.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   for (Assignment element : reservationServiceClient.listAssignments(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name e.g.:
    *     <p>`projects/myproject/locations/US/reservations/team1-prod`
@@ -1722,7 +1118,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return listAssignments(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists assignments.
    *
@@ -1730,10 +1126,12 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>Example:
    *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * <ul>
+   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Reservation `res1` exists and was created previously.
+   *   <li>CreateAssignment was used previously to define the following associations between
+   *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * </ul>
    *
    * <p>In this example, ListAssignments will just return the above two assignments for reservation
    * `res1`, and no expansion/merge will happen.
@@ -1742,20 +1140,6 @@ public class ReservationServiceClient implements BackgroundResource {
    * belongs to the specified project and location will be listed.
    *
    * <p>&#42;&#42;Note&#42;&#42; "-" cannot be used for projects nor locations.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   ListAssignmentsRequest request = ListAssignmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Assignment element : reservationServiceClient.listAssignments(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1764,7 +1148,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return listAssignmentsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists assignments.
    *
@@ -1772,10 +1156,12 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>Example:
    *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * <ul>
+   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Reservation `res1` exists and was created previously.
+   *   <li>CreateAssignment was used previously to define the following associations between
+   *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * </ul>
    *
    * <p>In this example, ListAssignments will just return the above two assignments for reservation
    * `res1`, and no expansion/merge will happen.
@@ -1786,27 +1172,13 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>&#42;&#42;Note&#42;&#42; "-" cannot be used for projects nor locations.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   ListAssignmentsRequest request = ListAssignmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListAssignmentsPagedResponse&gt; future = reservationServiceClient.listAssignmentsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Assignment element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAssignmentsRequest, ListAssignmentsPagedResponse>
       listAssignmentsPagedCallable() {
     return stub.listAssignmentsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists assignments.
    *
@@ -1814,10 +1186,12 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>Example:
    *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * <ul>
+   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Reservation `res1` exists and was created previously.
+   *   <li>CreateAssignment was used previously to define the following associations between
+   *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * </ul>
    *
    * <p>In this example, ListAssignments will just return the above two assignments for reservation
    * `res1`, and no expansion/merge will happen.
@@ -1828,56 +1202,28 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>&#42;&#42;Note&#42;&#42; "-" cannot be used for projects nor locations.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   ListAssignmentsRequest request = ListAssignmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListAssignmentsResponse response = reservationServiceClient.listAssignmentsCallable().call(request);
-   *     for (Assignment element : response.getAssignmentsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAssignmentsRequest, ListAssignmentsResponse>
       listAssignmentsCallable() {
     return stub.listAssignmentsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a assignment. No expansion will happen.
    *
    * <p>Example:
    *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * <ul>
+   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Reservation `res1` exists and was created previously.
+   *   <li>CreateAssignment was used previously to define the following associations between
+   *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * </ul>
    *
    * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
    * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
    * still use `res1` while queries from `project2` will switch to use on-demand mode.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   reservationServiceClient.deleteAssignment(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the resource, e.g.
    *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
@@ -1889,29 +1235,22 @@ public class ReservationServiceClient implements BackgroundResource {
     deleteAssignment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a assignment. No expansion will happen.
    *
    * <p>Example:
    *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * <ul>
+   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Reservation `res1` exists and was created previously.
+   *   <li>CreateAssignment was used previously to define the following associations between
+   *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * </ul>
    *
    * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
    * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
    * still use `res1` while queries from `project2` will switch to use on-demand mode.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   reservationServiceClient.deleteAssignment(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the resource, e.g.
    *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
@@ -1922,32 +1261,22 @@ public class ReservationServiceClient implements BackgroundResource {
     deleteAssignment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a assignment. No expansion will happen.
    *
    * <p>Example:
    *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * <ul>
+   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Reservation `res1` exists and was created previously.
+   *   <li>CreateAssignment was used previously to define the following associations between
+   *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * </ul>
    *
    * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
    * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
    * still use `res1` while queries from `project2` will switch to use on-demand mode.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   DeleteAssignmentRequest request = DeleteAssignmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   reservationServiceClient.deleteAssignment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1956,40 +1285,30 @@ public class ReservationServiceClient implements BackgroundResource {
     deleteAssignmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a assignment. No expansion will happen.
    *
    * <p>Example:
    *
-   * <p>&#42; Organization `organizationA` contains two projects, `project1` and `project2`. &#42;
-   * Reservation `res1` exists and was created previously. &#42; CreateAssignment was used
-   * previously to define the following associations between entities and reservations:
-   * `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * <ul>
+   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li>Reservation `res1` exists and was created previously.
+   *   <li>CreateAssignment was used previously to define the following associations between
+   *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
+   * </ul>
    *
    * <p>In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't affect the
    * other assignment `&lt;project1, res1&gt;`. After said deletion, queries from `project1` will
    * still use `res1` while queries from `project2` will switch to use on-demand mode.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   DeleteAssignmentRequest request = DeleteAssignmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = reservationServiceClient.deleteAssignmentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable() {
     return stub.deleteAssignmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Looks up assignments for a specified resource for a particular region. If the request is about
    * a project:
@@ -2012,24 +1331,16 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>&#42;&#42;Note&#42;&#42; "-" cannot be used for projects nor locations.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String query = "";
-   *   for (Assignment element : reservationServiceClient.searchAssignments(parent, query).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
    * @param parent Required. The resource name of the admin project(containing project and
    *     location), e.g.: `projects/myproject/locations/US`.
    * @param query Please specify resource name as assignee in the query.
    *     <p>Examples:
-   *     <p>&#42; `assignee=projects/myproject` &#42; `assignee=folders/123` &#42;
-   *     `assignee=organizations/456`
+   *     <ul>
+   *       <li>`assignee=projects/myproject`
+   *       <li>`assignee=folders/123`
+   *       <li>`assignee=organizations/456`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAssignmentsPagedResponse searchAssignments(LocationName parent, String query) {
@@ -2041,7 +1352,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return searchAssignments(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Looks up assignments for a specified resource for a particular region. If the request is about
    * a project:
@@ -2064,24 +1375,16 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <p>&#42;&#42;Note&#42;&#42; "-" cannot be used for projects nor locations.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String query = "";
-   *   for (Assignment element : reservationServiceClient.searchAssignments(parent.toString(), query).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
    * @param parent Required. The resource name of the admin project(containing project and
    *     location), e.g.: `projects/myproject/locations/US`.
    * @param query Please specify resource name as assignee in the query.
    *     <p>Examples:
-   *     <p>&#42; `assignee=projects/myproject` &#42; `assignee=folders/123` &#42;
-   *     `assignee=organizations/456`
+   *     <ul>
+   *       <li>`assignee=projects/myproject`
+   *       <li>`assignee=folders/123`
+   *       <li>`assignee=organizations/456`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAssignmentsPagedResponse searchAssignments(String parent, String query) {
@@ -2090,7 +1393,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return searchAssignments(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Looks up assignments for a specified resource for a particular region. If the request is about
    * a project:
@@ -2112,20 +1415,6 @@ public class ReservationServiceClient implements BackgroundResource {
    * `projects/&#42;/locations/&#42;reservations/&#42;`.
    *
    * <p>&#42;&#42;Note&#42;&#42; "-" cannot be used for projects nor locations.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SearchAssignmentsRequest request = SearchAssignmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Assignment element : reservationServiceClient.searchAssignments(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2134,7 +1423,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return searchAssignmentsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Looks up assignments for a specified resource for a particular region. If the request is about
    * a project:
@@ -2158,27 +1447,13 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>&#42;&#42;Note&#42;&#42; "-" cannot be used for projects nor locations.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SearchAssignmentsRequest request = SearchAssignmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;SearchAssignmentsPagedResponse&gt; future = reservationServiceClient.searchAssignmentsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Assignment element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>
       searchAssignmentsPagedCallable() {
     return stub.searchAssignmentsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Looks up assignments for a specified resource for a particular region. If the request is about
    * a project:
@@ -2202,53 +1477,22 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>&#42;&#42;Note&#42;&#42; "-" cannot be used for projects nor locations.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SearchAssignmentsRequest request = SearchAssignmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     SearchAssignmentsResponse response = reservationServiceClient.searchAssignmentsCallable().call(request);
-   *     for (Assignment element : response.getAssignmentsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsResponse>
       searchAssignmentsCallable() {
     return stub.searchAssignmentsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Moves an assignment under a new reservation.
    *
    * <p>This differs from removing an existing assignment and recreating a new one by providing a
    * transactional change that ensures an assignee always has an associated reservation.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   ReservationName destinationId = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   Assignment response = reservationServiceClient.moveAssignment(name, destinationId);
-   * }
-   * </code></pre>
-   *
    * @param name Required. The resource name of the assignment, e.g.
    *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
-   * @param destinationId The new reservation ID, e.g.:
+   * @param destination_id The new reservation ID, e.g.:
    *     `projects/myotherproject/locations/US/reservations/team2-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2261,26 +1505,60 @@ public class ReservationServiceClient implements BackgroundResource {
     return moveAssignment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Moves an assignment under a new reservation.
    *
    * <p>This differs from removing an existing assignment and recreating a new one by providing a
    * transactional change that ensures an assignee always has an associated reservation.
    *
-   * <p>Sample code:
+   * @param name Required. The resource name of the assignment, e.g.
+   *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
+   * @param destination_id The new reservation ID, e.g.:
+   *     `projects/myotherproject/locations/US/reservations/team2-prod`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Assignment moveAssignment(AssignmentName name, String destinationId) {
+    MoveAssignmentRequest request =
+        MoveAssignmentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDestinationId(destinationId)
+            .build();
+    return moveAssignment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves an assignment under a new reservation.
    *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   ReservationName destinationId = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
-   *   Assignment response = reservationServiceClient.moveAssignment(name.toString(), destinationId.toString());
-   * }
-   * </code></pre>
+   * <p>This differs from removing an existing assignment and recreating a new one by providing a
+   * transactional change that ensures an assignee always has an associated reservation.
    *
    * @param name Required. The resource name of the assignment, e.g.
    *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
-   * @param destinationId The new reservation ID, e.g.:
+   * @param destination_id The new reservation ID, e.g.:
+   *     `projects/myotherproject/locations/US/reservations/team2-prod`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Assignment moveAssignment(String name, ReservationName destinationId) {
+    MoveAssignmentRequest request =
+        MoveAssignmentRequest.newBuilder()
+            .setName(name)
+            .setDestinationId(destinationId == null ? null : destinationId.toString())
+            .build();
+    return moveAssignment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves an assignment under a new reservation.
+   *
+   * <p>This differs from removing an existing assignment and recreating a new one by providing a
+   * transactional change that ensures an assignee always has an associated reservation.
+   *
+   * @param name Required. The resource name of the assignment, e.g.
+   *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
+   * @param destination_id The new reservation ID, e.g.:
    *     `projects/myotherproject/locations/US/reservations/team2-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2290,24 +1568,12 @@ public class ReservationServiceClient implements BackgroundResource {
     return moveAssignment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Moves an assignment under a new reservation.
    *
    * <p>This differs from removing an existing assignment and recreating a new one by providing a
    * transactional change that ensures an assignee always has an associated reservation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   MoveAssignmentRequest request = MoveAssignmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Assignment response = reservationServiceClient.moveAssignment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2316,7 +1582,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return moveAssignmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Moves an assignment under a new reservation.
    *
@@ -2324,35 +1590,14 @@ public class ReservationServiceClient implements BackgroundResource {
    * transactional change that ensures an assignee always has an associated reservation.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   MoveAssignmentRequest request = MoveAssignmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Assignment&gt; future = reservationServiceClient.moveAssignmentCallable().futureCall(request);
-   *   // Do something
-   *   Assignment response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<MoveAssignmentRequest, Assignment> moveAssignmentCallable() {
     return stub.moveAssignmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a BI reservation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   BiReservationName name = BiReservationName.of("[PROJECT]", "[LOCATION]");
-   *   BiReservation response = reservationServiceClient.getBiReservation(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the requested reservation, for example:
    *     `projects/{project_id}/locations/{location_id}/bireservation`
@@ -2364,18 +1609,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return getBiReservation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a BI reservation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   BiReservationName name = BiReservationName.of("[PROJECT]", "[LOCATION]");
-   *   BiReservation response = reservationServiceClient.getBiReservation(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the requested reservation, for example:
    *     `projects/{project_id}/locations/{location_id}/bireservation`
@@ -2386,21 +1622,9 @@ public class ReservationServiceClient implements BackgroundResource {
     return getBiReservation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a BI reservation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   BiReservationName name = BiReservationName.of("[PROJECT]", "[LOCATION]");
-   *   GetBiReservationRequest request = GetBiReservationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   BiReservation response = reservationServiceClient.getBiReservation(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2409,29 +1633,17 @@ public class ReservationServiceClient implements BackgroundResource {
     return getBiReservationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves a BI reservation.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   BiReservationName name = BiReservationName.of("[PROJECT]", "[LOCATION]");
-   *   GetBiReservationRequest request = GetBiReservationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;BiReservation&gt; future = reservationServiceClient.getBiReservationCallable().futureCall(request);
-   *   // Do something
-   *   BiReservation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetBiReservationRequest, BiReservation> getBiReservationCallable() {
     return stub.getBiReservationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a BI reservation.
    *
@@ -2441,18 +1653,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * capacity it needs to be updated to an amount greater than 0. In order to release BI capacity
    * reservation size must be set to 0.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   BiReservation biReservation = BiReservation.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   BiReservation response = reservationServiceClient.updateBiReservation(biReservation, updateMask);
-   * }
-   * </code></pre>
-   *
-   * @param biReservation A reservation to update.
-   * @param updateMask A list of fields to be updated in this request.
+   * @param bi_reservation A reservation to update.
+   * @param update_mask A list of fields to be updated in this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BiReservation updateBiReservation(
@@ -2465,7 +1667,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return updateBiReservation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a BI reservation.
    *
@@ -2474,15 +1676,6 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>A singleton BI reservation always exists with default size 0. In order to reserve BI
    * capacity it needs to be updated to an amount greater than 0. In order to release BI capacity
    * reservation size must be set to 0.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   UpdateBiReservationRequest request = UpdateBiReservationRequest.newBuilder().build();
-   *   BiReservation response = reservationServiceClient.updateBiReservation(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2491,7 +1684,7 @@ public class ReservationServiceClient implements BackgroundResource {
     return updateBiReservationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a BI reservation.
    *
@@ -2502,15 +1695,6 @@ public class ReservationServiceClient implements BackgroundResource {
    * reservation size must be set to 0.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   UpdateBiReservationRequest request = UpdateBiReservationRequest.newBuilder().build();
-   *   ApiFuture&lt;BiReservation&gt; future = reservationServiceClient.updateBiReservationCallable().futureCall(request);
-   *   // Do something
-   *   BiReservation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateBiReservationRequest, BiReservation>
       updateBiReservationCallable() {

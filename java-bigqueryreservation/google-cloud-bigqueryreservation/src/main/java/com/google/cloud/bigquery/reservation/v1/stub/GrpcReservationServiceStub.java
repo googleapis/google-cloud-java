@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.reservation.v1.stub;
 
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
@@ -20,7 +21,6 @@ import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -57,6 +57,7 @@ import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -65,16 +66,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for BigQuery Reservation API.
+ * gRPC stub implementation for the ReservationService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcReservationServiceStub extends ReservationServiceStub {
-
   private static final MethodDescriptor<CreateReservationRequest, Reservation>
       createReservationMethodDescriptor =
           MethodDescriptor.<CreateReservationRequest, Reservation>newBuilder()
@@ -85,6 +84,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(CreateReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reservation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListReservationsRequest, ListReservationsResponse>
       listReservationsMethodDescriptor =
           MethodDescriptor.<ListReservationsRequest, ListReservationsResponse>newBuilder()
@@ -96,6 +96,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReservationsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetReservationRequest, Reservation>
       getReservationMethodDescriptor =
           MethodDescriptor.<GetReservationRequest, Reservation>newBuilder()
@@ -106,6 +107,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(GetReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reservation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteReservationRequest, Empty>
       deleteReservationMethodDescriptor =
           MethodDescriptor.<DeleteReservationRequest, Empty>newBuilder()
@@ -116,6 +118,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(DeleteReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateReservationRequest, Reservation>
       updateReservationMethodDescriptor =
           MethodDescriptor.<UpdateReservationRequest, Reservation>newBuilder()
@@ -126,6 +129,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(UpdateReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reservation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentMethodDescriptor =
           MethodDescriptor.<CreateCapacityCommitmentRequest, CapacityCommitment>newBuilder()
@@ -136,6 +140,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(CreateCapacityCommitmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CapacityCommitment.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
       listCapacityCommitmentsMethodDescriptor =
@@ -149,6 +154,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCapacityCommitmentsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetCapacityCommitmentRequest, CapacityCommitment>
       getCapacityCommitmentMethodDescriptor =
           MethodDescriptor.<GetCapacityCommitmentRequest, CapacityCommitment>newBuilder()
@@ -159,6 +165,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(GetCapacityCommitmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CapacityCommitment.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteCapacityCommitmentRequest, Empty>
       deleteCapacityCommitmentMethodDescriptor =
           MethodDescriptor.<DeleteCapacityCommitmentRequest, Empty>newBuilder()
@@ -169,6 +176,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(DeleteCapacityCommitmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateCapacityCommitmentRequest, CapacityCommitment>
       updateCapacityCommitmentMethodDescriptor =
           MethodDescriptor.<UpdateCapacityCommitmentRequest, CapacityCommitment>newBuilder()
@@ -179,6 +187,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(UpdateCapacityCommitmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CapacityCommitment.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           SplitCapacityCommitmentRequest, SplitCapacityCommitmentResponse>
       splitCapacityCommitmentMethodDescriptor =
@@ -192,6 +201,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SplitCapacityCommitmentResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<MergeCapacityCommitmentsRequest, CapacityCommitment>
       mergeCapacityCommitmentsMethodDescriptor =
           MethodDescriptor.<MergeCapacityCommitmentsRequest, CapacityCommitment>newBuilder()
@@ -202,6 +212,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(MergeCapacityCommitmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CapacityCommitment.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateAssignmentRequest, Assignment>
       createAssignmentMethodDescriptor =
           MethodDescriptor.<CreateAssignmentRequest, Assignment>newBuilder()
@@ -212,6 +223,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(CreateAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Assignment.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListAssignmentsRequest, ListAssignmentsResponse>
       listAssignmentsMethodDescriptor =
           MethodDescriptor.<ListAssignmentsRequest, ListAssignmentsResponse>newBuilder()
@@ -223,6 +235,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAssignmentsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteAssignmentRequest, Empty>
       deleteAssignmentMethodDescriptor =
           MethodDescriptor.<DeleteAssignmentRequest, Empty>newBuilder()
@@ -233,6 +246,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(DeleteAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SearchAssignmentsRequest, SearchAssignmentsResponse>
       searchAssignmentsMethodDescriptor =
           MethodDescriptor.<SearchAssignmentsRequest, SearchAssignmentsResponse>newBuilder()
@@ -244,6 +258,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchAssignmentsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<MoveAssignmentRequest, Assignment>
       moveAssignmentMethodDescriptor =
           MethodDescriptor.<MoveAssignmentRequest, Assignment>newBuilder()
@@ -254,6 +269,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(MoveAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Assignment.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetBiReservationRequest, BiReservation>
       getBiReservationMethodDescriptor =
           MethodDescriptor.<GetBiReservationRequest, BiReservation>newBuilder()
@@ -264,6 +280,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(GetBiReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BiReservation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateBiReservationRequest, BiReservation>
       updateBiReservationMethodDescriptor =
           MethodDescriptor.<UpdateBiReservationRequest, BiReservation>newBuilder()
@@ -274,8 +291,6 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(UpdateBiReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BiReservation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable;
   private final UnaryCallable<ListReservationsRequest, ListReservationsResponse>
@@ -316,6 +331,8 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
   private final UnaryCallable<UpdateBiReservationRequest, BiReservation>
       updateBiReservationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcReservationServiceStub create(ReservationServiceStubSettings settings)
@@ -335,27 +352,18 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
         ReservationServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
-  /**
-   * Constructs an instance of GrpcReservationServiceStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcReservationServiceStub(
       ReservationServiceStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new GrpcReservationServiceCallableFactory());
   }
 
-  /**
-   * Constructs an instance of GrpcReservationServiceStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcReservationServiceStub(
       ReservationServiceStubSettings settings,
       ClientContext clientContext,
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateReservationRequest, Reservation> createReservationTransportSettings =
         GrpcCallSettings.<CreateReservationRequest, Reservation>newBuilder()
@@ -721,21 +729,26 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             settings.updateBiReservationSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable() {
     return createReservationCallable;
   }
 
-  public UnaryCallable<ListReservationsRequest, ListReservationsPagedResponse>
-      listReservationsPagedCallable() {
-    return listReservationsPagedCallable;
-  }
-
   public UnaryCallable<ListReservationsRequest, ListReservationsResponse>
       listReservationsCallable() {
     return listReservationsCallable;
+  }
+
+  public UnaryCallable<ListReservationsRequest, ListReservationsPagedResponse>
+      listReservationsPagedCallable() {
+    return listReservationsPagedCallable;
   }
 
   public UnaryCallable<GetReservationRequest, Reservation> getReservationCallable() {
@@ -755,14 +768,14 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
     return createCapacityCommitmentCallable;
   }
 
-  public UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsPagedResponse>
-      listCapacityCommitmentsPagedCallable() {
-    return listCapacityCommitmentsPagedCallable;
-  }
-
   public UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
       listCapacityCommitmentsCallable() {
     return listCapacityCommitmentsCallable;
+  }
+
+  public UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsPagedResponse>
+      listCapacityCommitmentsPagedCallable() {
+    return listCapacityCommitmentsPagedCallable;
   }
 
   public UnaryCallable<GetCapacityCommitmentRequest, CapacityCommitment>
@@ -793,27 +806,27 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
     return createAssignmentCallable;
   }
 
+  public UnaryCallable<ListAssignmentsRequest, ListAssignmentsResponse> listAssignmentsCallable() {
+    return listAssignmentsCallable;
+  }
+
   public UnaryCallable<ListAssignmentsRequest, ListAssignmentsPagedResponse>
       listAssignmentsPagedCallable() {
     return listAssignmentsPagedCallable;
-  }
-
-  public UnaryCallable<ListAssignmentsRequest, ListAssignmentsResponse> listAssignmentsCallable() {
-    return listAssignmentsCallable;
   }
 
   public UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable() {
     return deleteAssignmentCallable;
   }
 
-  public UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>
-      searchAssignmentsPagedCallable() {
-    return searchAssignmentsPagedCallable;
-  }
-
   public UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsResponse>
       searchAssignmentsCallable() {
     return searchAssignmentsCallable;
+  }
+
+  public UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>
+      searchAssignmentsPagedCallable() {
+    return searchAssignmentsPagedCallable;
   }
 
   public UnaryCallable<MoveAssignmentRequest, Assignment> moveAssignmentCallable() {

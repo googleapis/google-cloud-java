@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.reservation.v1;
 
 import com.google.api.core.BetaApi;
@@ -24,9 +25,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockReservationServiceImpl extends ReservationServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -63,10 +65,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Reservation) {
       requests.add(request);
-      responseObserver.onNext((Reservation) response);
+      responseObserver.onNext(((Reservation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -78,10 +80,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListReservationsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListReservationsResponse) response);
+      responseObserver.onNext(((ListReservationsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -93,10 +95,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Reservation) {
       requests.add(request);
-      responseObserver.onNext((Reservation) response);
+      responseObserver.onNext(((Reservation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -108,10 +110,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -123,10 +125,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Reservation) {
       requests.add(request);
-      responseObserver.onNext((Reservation) response);
+      responseObserver.onNext(((Reservation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -139,10 +141,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof CapacityCommitment) {
       requests.add(request);
-      responseObserver.onNext((CapacityCommitment) response);
+      responseObserver.onNext(((CapacityCommitment) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -155,10 +157,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListCapacityCommitmentsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListCapacityCommitmentsResponse) response);
+      responseObserver.onNext(((ListCapacityCommitmentsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -170,10 +172,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof CapacityCommitment) {
       requests.add(request);
-      responseObserver.onNext((CapacityCommitment) response);
+      responseObserver.onNext(((CapacityCommitment) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -185,10 +187,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -201,10 +203,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof CapacityCommitment) {
       requests.add(request);
-      responseObserver.onNext((CapacityCommitment) response);
+      responseObserver.onNext(((CapacityCommitment) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -217,10 +219,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof SplitCapacityCommitmentResponse) {
       requests.add(request);
-      responseObserver.onNext((SplitCapacityCommitmentResponse) response);
+      responseObserver.onNext(((SplitCapacityCommitmentResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -233,10 +235,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof CapacityCommitment) {
       requests.add(request);
-      responseObserver.onNext((CapacityCommitment) response);
+      responseObserver.onNext(((CapacityCommitment) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -248,10 +250,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Assignment) {
       requests.add(request);
-      responseObserver.onNext((Assignment) response);
+      responseObserver.onNext(((Assignment) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -263,10 +265,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListAssignmentsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListAssignmentsResponse) response);
+      responseObserver.onNext(((ListAssignmentsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -278,10 +280,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -294,10 +296,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof SearchAssignmentsResponse) {
       requests.add(request);
-      responseObserver.onNext((SearchAssignmentsResponse) response);
+      responseObserver.onNext(((SearchAssignmentsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -309,10 +311,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Assignment) {
       requests.add(request);
-      responseObserver.onNext((Assignment) response);
+      responseObserver.onNext(((Assignment) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -324,10 +326,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof BiReservation) {
       requests.add(request);
-      responseObserver.onNext((BiReservation) response);
+      responseObserver.onNext(((BiReservation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -339,10 +341,10 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
     Object response = responses.remove();
     if (response instanceof BiReservation) {
       requests.add(request);
-      responseObserver.onNext((BiReservation) response);
+      responseObserver.onNext(((BiReservation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
