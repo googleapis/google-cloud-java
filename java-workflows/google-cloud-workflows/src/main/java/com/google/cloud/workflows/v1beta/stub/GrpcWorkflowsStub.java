@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.workflows.v1beta.stub;
 
 import static com.google.cloud.workflows.v1beta.WorkflowsClient.ListWorkflowsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -45,16 +45,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Workflows API.
+ * gRPC stub implementation for the Workflows service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcWorkflowsStub extends WorkflowsStub {
-
   private static final MethodDescriptor<ListWorkflowsRequest, ListWorkflowsResponse>
       listWorkflowsMethodDescriptor =
           MethodDescriptor.<ListWorkflowsRequest, ListWorkflowsResponse>newBuilder()
@@ -65,6 +63,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkflowsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetWorkflowRequest, Workflow> getWorkflowMethodDescriptor =
       MethodDescriptor.<GetWorkflowRequest, Workflow>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -72,6 +71,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetWorkflowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Workflow.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateWorkflowRequest, Operation>
       createWorkflowMethodDescriptor =
           MethodDescriptor.<CreateWorkflowRequest, Operation>newBuilder()
@@ -81,6 +81,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   ProtoUtils.marshaller(CreateWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteWorkflowRequest, Operation>
       deleteWorkflowMethodDescriptor =
           MethodDescriptor.<DeleteWorkflowRequest, Operation>newBuilder()
@@ -90,6 +91,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   ProtoUtils.marshaller(DeleteWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateWorkflowRequest, Operation>
       updateWorkflowMethodDescriptor =
           MethodDescriptor.<UpdateWorkflowRequest, Operation>newBuilder()
@@ -99,9 +101,6 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   ProtoUtils.marshaller(UpdateWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsCallable;
   private final UnaryCallable<ListWorkflowsRequest, ListWorkflowsPagedResponse>
@@ -117,6 +116,8 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
   private final OperationCallable<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcWorkflowsStub create(WorkflowsStubSettings settings) throws IOException {
@@ -133,21 +134,11 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
         WorkflowsStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
-  /**
-   * Constructs an instance of GrpcWorkflowsStub, using the given settings. This is protected so
-   * that it is easy to make a subclass, but otherwise, the static factory methods should be
-   * preferred.
-   */
   protected GrpcWorkflowsStub(WorkflowsStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcWorkflowsCallableFactory());
   }
 
-  /**
-   * Constructs an instance of GrpcWorkflowsStub, using the given settings. This is protected so
-   * that it is easy to make a subclass, but otherwise, the static factory methods should be
-   * preferred.
-   */
   protected GrpcWorkflowsStub(
       WorkflowsStubSettings settings,
       ClientContext clientContext,
@@ -239,7 +230,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
             createWorkflowTransportSettings,
             settings.createWorkflowOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteWorkflowCallable =
         callableFactory.createUnaryCallable(
             deleteWorkflowTransportSettings, settings.deleteWorkflowSettings(), clientContext);
@@ -248,7 +239,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
             deleteWorkflowTransportSettings,
             settings.deleteWorkflowOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateWorkflowCallable =
         callableFactory.createUnaryCallable(
             updateWorkflowTransportSettings, settings.updateWorkflowSettings(), clientContext);
@@ -257,14 +248,18 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
             updateWorkflowTransportSettings,
             settings.updateWorkflowOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  public UnaryCallable<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsCallable() {
+    return listWorkflowsCallable;
   }
 
   public UnaryCallable<ListWorkflowsRequest, ListWorkflowsPagedResponse>
@@ -272,42 +267,35 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
     return listWorkflowsPagedCallable;
   }
 
-  public UnaryCallable<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsCallable() {
-    return listWorkflowsCallable;
-  }
-
   public UnaryCallable<GetWorkflowRequest, Workflow> getWorkflowCallable() {
     return getWorkflowCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateWorkflowRequest, Workflow, OperationMetadata>
-      createWorkflowOperationCallable() {
-    return createWorkflowOperationCallable;
   }
 
   public UnaryCallable<CreateWorkflowRequest, Operation> createWorkflowCallable() {
     return createWorkflowCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteWorkflowRequest, Empty, OperationMetadata>
-      deleteWorkflowOperationCallable() {
-    return deleteWorkflowOperationCallable;
+  public OperationCallable<CreateWorkflowRequest, Workflow, OperationMetadata>
+      createWorkflowOperationCallable() {
+    return createWorkflowOperationCallable;
   }
 
   public UnaryCallable<DeleteWorkflowRequest, Operation> deleteWorkflowCallable() {
     return deleteWorkflowCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateWorkflowRequest, Workflow, OperationMetadata>
-      updateWorkflowOperationCallable() {
-    return updateWorkflowOperationCallable;
+  public OperationCallable<DeleteWorkflowRequest, Empty, OperationMetadata>
+      deleteWorkflowOperationCallable() {
+    return deleteWorkflowOperationCallable;
   }
 
   public UnaryCallable<UpdateWorkflowRequest, Operation> updateWorkflowCallable() {
     return updateWorkflowCallable;
+  }
+
+  public OperationCallable<UpdateWorkflowRequest, Workflow, OperationMetadata>
+      updateWorkflowOperationCallable() {
+    return updateWorkflowOperationCallable;
   }
 
   @Override

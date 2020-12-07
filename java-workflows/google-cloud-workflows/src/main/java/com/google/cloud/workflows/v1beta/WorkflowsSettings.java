@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.workflows.v1beta;
 
 import static com.google.cloud.workflows.v1beta.WorkflowsClient.ListWorkflowsPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link WorkflowsClient}.
  *
@@ -53,23 +54,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getWorkflow to 30 seconds:
  *
- * <pre>
- * <code>
- * WorkflowsSettings.Builder workflowsSettingsBuilder =
- *     WorkflowsSettings.newBuilder();
+ * <pre>{@code
+ * WorkflowsSettings.Builder workflowsSettingsBuilder = WorkflowsSettings.newBuilder();
  * workflowsSettingsBuilder
  *     .getWorkflowSettings()
  *     .setRetrySettings(
- *         workflowsSettingsBuilder.getWorkflowSettings().getRetrySettings().toBuilder()
+ *         workflowsSettingsBuilder
+ *             .getWorkflowSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * WorkflowsSettings workflowsSettings = workflowsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
+
   /** Returns the object with the settings used for calls to listWorkflows. */
   public PagedCallSettings<ListWorkflowsRequest, ListWorkflowsResponse, ListWorkflowsPagedResponse>
       listWorkflowsSettings() {
@@ -87,8 +88,6 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
   }
 
   /** Returns the object with the settings used for calls to createWorkflow. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateWorkflowRequest, Workflow, OperationMetadata>
       createWorkflowOperationSettings() {
     return ((WorkflowsStubSettings) getStubSettings()).createWorkflowOperationSettings();
@@ -100,8 +99,6 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteWorkflow. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteWorkflowRequest, Empty, OperationMetadata>
       deleteWorkflowOperationSettings() {
     return ((WorkflowsStubSettings) getStubSettings()).deleteWorkflowOperationSettings();
@@ -113,8 +110,6 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
   }
 
   /** Returns the object with the settings used for calls to updateWorkflow. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationSettings() {
     return ((WorkflowsStubSettings) getStubSettings()).updateWorkflowOperationSettings();
@@ -179,16 +174,13 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
 
   /** Builder for WorkflowsSettings. */
   public static class Builder extends ClientSettings.Builder<WorkflowsSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(WorkflowsStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(WorkflowsStubSettings.newBuilder());
     }
 
     protected Builder(WorkflowsSettings settings) {
@@ -199,11 +191,15 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(WorkflowsStubSettings.newBuilder());
+    }
+
     public WorkflowsStubSettings.Builder getStubSettingsBuilder() {
       return ((WorkflowsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -234,8 +230,6 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createWorkflow. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateWorkflowRequest, Workflow, OperationMetadata>
         createWorkflowOperationSettings() {
       return getStubSettingsBuilder().createWorkflowOperationSettings();
@@ -247,8 +241,6 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteWorkflow. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteWorkflowRequest, Empty, OperationMetadata>
         deleteWorkflowOperationSettings() {
       return getStubSettingsBuilder().deleteWorkflowOperationSettings();
@@ -260,8 +252,6 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateWorkflow. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateWorkflowRequest, Workflow, OperationMetadata>
         updateWorkflowOperationSettings() {
       return getStubSettingsBuilder().updateWorkflowOperationSettings();

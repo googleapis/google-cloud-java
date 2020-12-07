@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.workflows.v1beta.stub;
 
 import static com.google.cloud.workflows.v1beta.WorkflowsClient.ListWorkflowsPagedResponse;
@@ -62,7 +63,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link WorkflowsStub}.
  *
@@ -79,22 +80,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getWorkflow to 30 seconds:
  *
- * <pre>
- * <code>
- * WorkflowsStubSettings.Builder workflowsSettingsBuilder =
- *     WorkflowsStubSettings.newBuilder();
+ * <pre>{@code
+ * WorkflowsStubSettings.Builder workflowsSettingsBuilder = WorkflowsStubSettings.newBuilder();
  * workflowsSettingsBuilder
  *     .getWorkflowSettings()
  *     .setRetrySettings(
- *         workflowsSettingsBuilder.getWorkflowSettings().getRetrySettings().toBuilder()
+ *         workflowsSettingsBuilder
+ *             .getWorkflowSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * WorkflowsStubSettings workflowsSettings = workflowsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -114,6 +115,59 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
   private final OperationCallSettings<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationSettings;
 
+  private static final PagedListDescriptor<ListWorkflowsRequest, ListWorkflowsResponse, Workflow>
+      LIST_WORKFLOWS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListWorkflowsRequest, ListWorkflowsResponse, Workflow>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListWorkflowsRequest injectToken(ListWorkflowsRequest payload, String token) {
+              return ListWorkflowsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListWorkflowsRequest injectPageSize(ListWorkflowsRequest payload, int pageSize) {
+              return ListWorkflowsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListWorkflowsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListWorkflowsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Workflow> extractResources(ListWorkflowsResponse payload) {
+              return payload.getWorkflowsList() == null
+                  ? ImmutableList.<Workflow>of()
+                  : payload.getWorkflowsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListWorkflowsRequest, ListWorkflowsResponse, ListWorkflowsPagedResponse>
+      LIST_WORKFLOWS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListWorkflowsRequest, ListWorkflowsResponse, ListWorkflowsPagedResponse>() {
+            @Override
+            public ApiFuture<ListWorkflowsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListWorkflowsRequest, ListWorkflowsResponse> callable,
+                ListWorkflowsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListWorkflowsResponse> futureResponse) {
+              PageContext<ListWorkflowsRequest, ListWorkflowsResponse, Workflow> pageContext =
+                  PageContext.create(callable, LIST_WORKFLOWS_PAGE_STR_DESC, request, context);
+              return ListWorkflowsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listWorkflows. */
   public PagedCallSettings<ListWorkflowsRequest, ListWorkflowsResponse, ListWorkflowsPagedResponse>
       listWorkflowsSettings() {
@@ -131,7 +185,6 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to createWorkflow. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateWorkflowRequest, Workflow, OperationMetadata>
       createWorkflowOperationSettings() {
     return createWorkflowOperationSettings;
@@ -143,7 +196,6 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteWorkflow. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteWorkflowRequest, Empty, OperationMetadata>
       deleteWorkflowOperationSettings() {
     return deleteWorkflowOperationSettings;
@@ -155,7 +207,6 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to updateWorkflow. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationSettings() {
     return updateWorkflowOperationSettings;
@@ -167,10 +218,10 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcWorkflowsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -239,63 +290,9 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
     updateWorkflowOperationSettings = settingsBuilder.updateWorkflowOperationSettings().build();
   }
 
-  private static final PagedListDescriptor<ListWorkflowsRequest, ListWorkflowsResponse, Workflow>
-      LIST_WORKFLOWS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListWorkflowsRequest, ListWorkflowsResponse, Workflow>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListWorkflowsRequest injectToken(ListWorkflowsRequest payload, String token) {
-              return ListWorkflowsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListWorkflowsRequest injectPageSize(ListWorkflowsRequest payload, int pageSize) {
-              return ListWorkflowsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListWorkflowsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListWorkflowsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Workflow> extractResources(ListWorkflowsResponse payload) {
-              return payload.getWorkflowsList() != null
-                  ? payload.getWorkflowsList()
-                  : ImmutableList.<Workflow>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListWorkflowsRequest, ListWorkflowsResponse, ListWorkflowsPagedResponse>
-      LIST_WORKFLOWS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListWorkflowsRequest, ListWorkflowsResponse, ListWorkflowsPagedResponse>() {
-            @Override
-            public ApiFuture<ListWorkflowsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListWorkflowsRequest, ListWorkflowsResponse> callable,
-                ListWorkflowsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListWorkflowsResponse> futureResponse) {
-              PageContext<ListWorkflowsRequest, ListWorkflowsResponse, Workflow> pageContext =
-                  PageContext.create(callable, LIST_WORKFLOWS_PAGE_STR_DESC, request, context);
-              return ListWorkflowsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for WorkflowsStubSettings. */
   public static class Builder extends StubSettings.Builder<WorkflowsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListWorkflowsRequest, ListWorkflowsResponse, ListWorkflowsPagedResponse>
         listWorkflowsSettings;
@@ -312,19 +309,13 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
         updateWorkflowSettings;
     private final OperationCallSettings.Builder<UpdateWorkflowRequest, Workflow, OperationMetadata>
         updateWorkflowOperationSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -333,41 +324,25 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("default", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listWorkflowsSettings = PagedCallSettings.newBuilder(LIST_WORKFLOWS_PAGE_STR_FACT);
-
       getWorkflowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createWorkflowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createWorkflowOperationSettings = OperationCallSettings.newBuilder();
-
       deleteWorkflowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteWorkflowOperationSettings = OperationCallSettings.newBuilder();
-
       updateWorkflowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateWorkflowOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
@@ -377,116 +352,7 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
               createWorkflowSettings,
               deleteWorkflowSettings,
               updateWorkflowSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listWorkflowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getWorkflowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createWorkflowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteWorkflowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateWorkflowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-      builder
-          .createWorkflowOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateWorkflowRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Workflow.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteWorkflowOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteWorkflowRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .updateWorkflowOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateWorkflowRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Workflow.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(WorkflowsStubSettings settings) {
@@ -510,7 +376,119 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
               updateWorkflowSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listWorkflowsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getWorkflowSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createWorkflowSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteWorkflowSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateWorkflowSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createWorkflowOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateWorkflowRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Workflow.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteWorkflowOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteWorkflowRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateWorkflowOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateWorkflowRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Workflow.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
