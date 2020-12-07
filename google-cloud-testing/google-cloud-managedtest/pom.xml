@@ -32,10 +32,12 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
+      <version>1.94.0</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
+      <version>1.94.0</version>
       <type>test-jar</type>
     </dependency>
 
