@@ -285,6 +285,40 @@ public CloudTasksClient getService() throws IOException {
 }
 ```
 
+## Long Running Operations
+
+Long running operations (LROs) are often used for API calls that are expected to
+take a long time to complete (e.g. provisioning a GCE instance or a Dataflow pipeline).
+The initial API call creates an "operation" on the server and returns an operation ID
+to track its progress.
+
+Our generated gRPC clients provide a nice interface for starting the operation and
+then waiting for the operation to complete. This is accomplished by returning an
+[`OperationFuture`](https://googleapis.dev/java/gax/latest/index.html?com/google/api/gax/longrunning/OperationFuture.html).
+When you call `get()` on the `OperationFuture` we poll the operation endpoint to
+check on the operation. These polling operations have a default timeout that
+varies from service to service and will throw a `java.util.concurrent.CancellationException`
+with the message: `Task was cancelled.` after that timeout has been reached.
+
+### Configuring LRO Timeouts
+
+```java
+ClusterControllerSettings.Builder settingsBuilder = ClusterControllerSettings.newBuilder();
+TimedRetryAlgorithm timedRetryAlgorithm = OperationTimedPollAlgorithm.create(
+		RetrySettings.newBuilder()
+				.setInitialRetryDelay(Duration.ofMillis(500L))
+				.setRetryDelayMultiplier(1.5)
+				.setMaxRetryDelay(Duration.ofMillis(5000L))
+				.setInitialRpcTimeout(Duration.ZERO) // ignored
+				.setRpcTimeoutMultiplier(1.0) // ignored
+				.setMaxRpcTimeout(Duration.ZERO) // ignored
+				.setTotalTimeout(Duration.ofHours(24L))	// set polling timeout to 24 hours
+				.build());
+settingsBuilder.createClusterOperationSettings()
+		.setPollingAlgorithm(timedRetryAlgorithm);
+ClusterControllerClient clusterControllerClient = ClusterControllerClient.create(settingsBuilder.build());
+```
+
 ## Java Versions
 
 Java 7 or above is required for using the clients in this repository.
