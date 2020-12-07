@@ -341,7 +341,6 @@ Thus, the following are not supported:
   - It is possible to use these libraries in many cases, although it is unsupported.
     You can find examples, such as [this one](https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/SpeechRecognitionClient),
     in this [example repository](https://github.com/GoogleCloudPlatform/android-docs-samples) but consider the risks carefully before using these libraries in an application.
-- Alpine Linux (due to netty-tcnative requiring glibc, which is not present on Alpine)
 - Raspberry Pi (since it runs on the ARM architecture)
 - Google App Engine Standard Java 7
 
@@ -354,6 +353,7 @@ The following environments should work (among others):
 - Google Container Engine (GKE)
 - Google App Engine Standard Java 8 (GAE Std J8)
 - Google App Engine Flex (GAE Flex)
+- Alpine Linux (Java 11+)
 
 ## Testing
 
