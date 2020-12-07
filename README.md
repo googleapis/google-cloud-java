@@ -319,6 +319,12 @@ settingsBuilder.createClusterOperationSettings()
 ClusterControllerClient clusterControllerClient = ClusterControllerClient.create(settingsBuilder.build());
 ```
 
+## Managing Dependencies
+
+If you are using more than one Google Cloud client library, we recommend you use one of
+our Bill of Material (BOM) artifacts to help manage dependency versions. For more information,
+see https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM.
+
 ## Java Versions
 
 Java 7 or above is required for using the clients in this repository.
