@@ -291,7 +291,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   private LogEntry logEntryFor(ILoggingEvent e) {
-    StringBuilder payload = new StringBuilder(e.getFormattedMessage()).append('\n');
+    StringBuilder payload = new StringBuilder().append(e.getFormattedMessage()).append('\n');
     writeStack(e.getThrowableProxy(), "", payload);
 
     Level level = e.getLevel();
