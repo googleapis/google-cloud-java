@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-package beta.video;
+package video;
 
-// [START video_detect_person_beta]
+// [START video_detect_person]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoProgress;
-import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest;
-import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse;
-import com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute;
-import com.google.cloud.videointelligence.v1p3beta1.DetectedLandmark;
-import com.google.cloud.videointelligence.v1p3beta1.Feature;
-import com.google.cloud.videointelligence.v1p3beta1.PersonDetectionAnnotation;
-import com.google.cloud.videointelligence.v1p3beta1.PersonDetectionConfig;
-import com.google.cloud.videointelligence.v1p3beta1.TimestampedObject;
-import com.google.cloud.videointelligence.v1p3beta1.Track;
-import com.google.cloud.videointelligence.v1p3beta1.VideoAnnotationResults;
-import com.google.cloud.videointelligence.v1p3beta1.VideoContext;
-import com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceClient;
-import com.google.cloud.videointelligence.v1p3beta1.VideoSegment;
+import com.google.cloud.videointelligence.v1.AnnotateVideoProgress;
+import com.google.cloud.videointelligence.v1.AnnotateVideoRequest;
+import com.google.cloud.videointelligence.v1.AnnotateVideoResponse;
+import com.google.cloud.videointelligence.v1.DetectedAttribute;
+import com.google.cloud.videointelligence.v1.DetectedLandmark;
+import com.google.cloud.videointelligence.v1.Feature;
+import com.google.cloud.videointelligence.v1.PersonDetectionAnnotation;
+import com.google.cloud.videointelligence.v1.PersonDetectionConfig;
+import com.google.cloud.videointelligence.v1.TimestampedObject;
+import com.google.cloud.videointelligence.v1.Track;
+import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
+import com.google.cloud.videointelligence.v1.VideoContext;
+import com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient;
+import com.google.cloud.videointelligence.v1.VideoSegment;
 import com.google.protobuf.ByteString;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -118,4 +118,4 @@ public class DetectPerson {
     }
   }
 }
-// [END video_detect_person_beta]
+// [END video_detect_person]

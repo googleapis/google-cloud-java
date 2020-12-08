@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
 // [START video_detect_logo]
 

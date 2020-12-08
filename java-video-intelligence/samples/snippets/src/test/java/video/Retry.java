@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
 import java.util.Objects;
 import org.junit.rules.TestRule;

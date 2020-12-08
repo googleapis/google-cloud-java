@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package beta.video;
+package video;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -25,7 +25,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
-public class DetectPersonIT {
+public class DetectPersonGcsIT {
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -47,8 +47,8 @@ public class DetectPersonIT {
   }
 
   @Test
-  public void testDetectPerson() throws Exception {
-    DetectPerson.detectPerson("resources/googlework_short.mp4");
+  public void testDetectPersonGcs() throws Exception {
+    DetectPersonGcs.detectPersonGcs("gs://cloud-samples-data/video/googlework_short.mp4");
     String got = bout.toString();
     assertThat(got).contains("Landmark");
   }

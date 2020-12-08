@@ -31,6 +31,11 @@
       <artifactId>google-cloud-video-intelligence</artifactId>
       <version>1.5.5</version>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+      <version>1.113.4</version>
+    </dependency>
     <!-- [END videointelligence_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>

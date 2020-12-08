@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.videointelligence.v1.AnnotateVideoProgress;
@@ -51,10 +51,11 @@ public class TextDetection {
       byte[] data = Files.readAllBytes(path);
 
       // Create the request
-      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-          .setInputContent(ByteString.copyFrom(data))
-          .addFeatures(Feature.TEXT_DETECTION)
-          .build();
+      AnnotateVideoRequest request =
+          AnnotateVideoRequest.newBuilder()
+              .setInputContent(ByteString.copyFrom(data))
+              .addFeatures(Feature.TEXT_DETECTION)
+              .build();
 
       // asynchronously perform object tracking on videos
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> future =
@@ -77,25 +78,29 @@ public class TextDetection {
       Duration startTimeOffset = videoSegment.getStartTimeOffset();
       Duration endTimeOffset = videoSegment.getEndTimeOffset();
       // Display the offset times in seconds, 1e9 is part of the formula to convert nanos to seconds
-      System.out.println(String.format("Start time: %.2f",
-          startTimeOffset.getSeconds() + startTimeOffset.getNanos() / 1e9));
-      System.out.println(String.format("End time: %.2f",
-          endTimeOffset.getSeconds() + endTimeOffset.getNanos() / 1e9));
+      System.out.println(
+          String.format(
+              "Start time: %.2f", startTimeOffset.getSeconds() + startTimeOffset.getNanos() / 1e9));
+      System.out.println(
+          String.format(
+              "End time: %.2f", endTimeOffset.getSeconds() + endTimeOffset.getNanos() / 1e9));
 
       // Show the first result for the first frame in the segment.
       TextFrame textFrame = textSegment.getFrames(0);
       Duration timeOffset = textFrame.getTimeOffset();
-      System.out.println(String.format("Time offset for the first frame: %.2f",
-          timeOffset.getSeconds() + timeOffset.getNanos() / 1e9));
+      System.out.println(
+          String.format(
+              "Time offset for the first frame: %.2f",
+              timeOffset.getSeconds() + timeOffset.getNanos() / 1e9));
 
       // Display the rotated bounding box for where the text is on the frame.
       System.out.println("Rotated Bounding Box Vertices:");
       List<NormalizedVertex> vertices = textFrame.getRotatedBoundingBox().getVerticesList();
       for (NormalizedVertex normalizedVertex : vertices) {
-        System.out.println(String.format(
-            "\tVertex.x: %.2f, Vertex.y: %.2f",
-            normalizedVertex.getX(),
-            normalizedVertex.getY()));
+        System.out.println(
+            String.format(
+                "\tVertex.x: %.2f, Vertex.y: %.2f",
+                normalizedVertex.getX(), normalizedVertex.getY()));
       }
       return results;
     }
@@ -111,10 +116,11 @@ public class TextDetection {
   public static VideoAnnotationResults detectTextGcs(String gcsUri) throws Exception {
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
       // Create the request
-      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-          .setInputUri(gcsUri)
-          .addFeatures(Feature.TEXT_DETECTION)
-          .build();
+      AnnotateVideoRequest request =
+          AnnotateVideoRequest.newBuilder()
+              .setInputUri(gcsUri)
+              .addFeatures(Feature.TEXT_DETECTION)
+              .build();
 
       // asynchronously perform object tracking on videos
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> future =
@@ -137,25 +143,29 @@ public class TextDetection {
       Duration startTimeOffset = videoSegment.getStartTimeOffset();
       Duration endTimeOffset = videoSegment.getEndTimeOffset();
       // Display the offset times in seconds, 1e9 is part of the formula to convert nanos to seconds
-      System.out.println(String.format("Start time: %.2f",
-          startTimeOffset.getSeconds() + startTimeOffset.getNanos() / 1e9));
-      System.out.println(String.format("End time: %.2f",
-          endTimeOffset.getSeconds() + endTimeOffset.getNanos() / 1e9));
+      System.out.println(
+          String.format(
+              "Start time: %.2f", startTimeOffset.getSeconds() + startTimeOffset.getNanos() / 1e9));
+      System.out.println(
+          String.format(
+              "End time: %.2f", endTimeOffset.getSeconds() + endTimeOffset.getNanos() / 1e9));
 
       // Show the first result for the first frame in the segment.
       TextFrame textFrame = textSegment.getFrames(0);
       Duration timeOffset = textFrame.getTimeOffset();
-      System.out.println(String.format("Time offset for the first frame: %.2f",
-          timeOffset.getSeconds() + timeOffset.getNanos() / 1e9));
+      System.out.println(
+          String.format(
+              "Time offset for the first frame: %.2f",
+              timeOffset.getSeconds() + timeOffset.getNanos() / 1e9));
 
       // Display the rotated bounding box for where the text is on the frame.
       System.out.println("Rotated Bounding Box Vertices:");
       List<NormalizedVertex> vertices = textFrame.getRotatedBoundingBox().getVerticesList();
       for (NormalizedVertex normalizedVertex : vertices) {
-        System.out.println(String.format(
-            "\tVertex.x: %.2f, Vertex.y: %.2f",
-            normalizedVertex.getX(),
-            normalizedVertex.getY()));
+        System.out.println(
+            String.format(
+                "\tVertex.x: %.2f, Vertex.y: %.2f",
+                normalizedVertex.getX(), normalizedVertex.getY()));
       }
       return results;
     }

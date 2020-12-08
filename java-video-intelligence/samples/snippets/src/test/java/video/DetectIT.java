@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -27,9 +27,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for video analysis sample.
- */
+/** Tests for video analysis sample. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIT {
@@ -38,7 +36,7 @@ public class DetectIT {
   static final String SHOTS_FILE_LOCATION = "gs://cloud-samples-data/video/gbikes_dinosaur.mp4";
   static final String EXPLICIT_CONTENT_LOCATION = "gs://cloud-samples-data/video/cat.mp4";
   static final String SPEECH_GCS_LOCATION =
-          "gs://java-docs-samples-testing/video/googlework_short.mp4";
+      "gs://java-docs-samples-testing/video/googlework_short.mp4";
 
   private ByteArrayOutputStream bout;
   private PrintStream out;

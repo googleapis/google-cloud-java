@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-
-package com.example.video;
+package video;
 
 import static com.google.common.truth.Truth.assertThat;
 

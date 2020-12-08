@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
 // [START video_quickstart]
 
@@ -32,9 +32,7 @@ import java.util.List;
 
 public class QuickstartSample {
 
-  /**
-   * Demonstrates using the video intelligence client to detect labels in a video file.
-   */
+  /** Demonstrates using the video intelligence client to detect labels in a video file. */
   public static void main(String[] args) throws Exception {
     // Instantiate a video intelligence client
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
@@ -42,10 +40,11 @@ public class QuickstartSample {
       String gcsUri = "gs://cloud-samples-data/video/cat.mp4";
 
       // Create an operation that will contain the response when the operation completes.
-      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-          .setInputUri(gcsUri)
-          .addFeatures(Feature.LABEL_DETECTION)
-          .build();
+      AnnotateVideoRequest request =
+          AnnotateVideoRequest.newBuilder()
+              .setInputUri(gcsUri)
+              .addFeatures(Feature.LABEL_DETECTION)
+              .build();
 
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> response =
           client.annotateVideoAsync(request);
@@ -61,18 +60,20 @@ public class QuickstartSample {
         System.out.println("Labels:");
         // get video segment label annotations
         for (LabelAnnotation annotation : result.getSegmentLabelAnnotationsList()) {
-          System.out
-              .println("Video label description : " + annotation.getEntity().getDescription());
+          System.out.println(
+              "Video label description : " + annotation.getEntity().getDescription());
           // categories
           for (Entity categoryEntity : annotation.getCategoryEntitiesList()) {
             System.out.println("Label Category description : " + categoryEntity.getDescription());
           }
           // segments
           for (LabelSegment segment : annotation.getSegmentsList()) {
-            double startTime = segment.getSegment().getStartTimeOffset().getSeconds()
-                + segment.getSegment().getStartTimeOffset().getNanos() / 1e9;
-            double endTime = segment.getSegment().getEndTimeOffset().getSeconds()
-                + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
+            double startTime =
+                segment.getSegment().getStartTimeOffset().getSeconds()
+                    + segment.getSegment().getStartTimeOffset().getNanos() / 1e9;
+            double endTime =
+                segment.getSegment().getEndTimeOffset().getSeconds()
+                    + segment.getSegment().getEndTimeOffset().getNanos() / 1e9;
             System.out.printf("Segment location : %.3f:%.3f\n", startTime, endTime);
             System.out.println("Confidence : " + segment.getConfidence());
           }
