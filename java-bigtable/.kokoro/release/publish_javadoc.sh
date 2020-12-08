@@ -38,8 +38,8 @@ python3 -m pip install gcp-docuploader
 # compile all packages
 mvn clean install -B -q -DskipTests=true
 
-NAME=google-cloud-bigtable
-VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
+export NAME=google-cloud-bigtable
+export VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 
 # build the docs
 mvn site -B -q
@@ -59,7 +59,8 @@ python3 -m docuploader upload . \
 
 popd
 
-# V2
+# V2 due to problems w/ the released javadoc plugin doclava, Java 8 is required.  Beware of accidental updates.
+
 mvn clean site -B -q -Ddevsite.template="${KOKORO_GFILE_DIR}/java/"
 
 pushd target/devsite/reference
