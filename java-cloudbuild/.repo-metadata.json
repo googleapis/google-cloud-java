@@ -11,6 +11,7 @@
   "repo": "googleapis/java-cloudbuild",
   "repo_short": "java-cloudbuild",
   "distribution_name": "com.google.cloud:google-cloud-build",
+  "codeowner_team": "@googleapis/cicd",
   "api_id": "cloudbuild.googleapis.com",
   "requires_billing": true
 }
