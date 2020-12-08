@@ -98,7 +98,7 @@ public class ReservationServiceClientTest {
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Reservation reservation = Reservation.newBuilder().build();
-    String reservationId = "reservation_id266209902";
+    String reservationId = "reservationId1116965383";
 
     Reservation actualResponse = client.createReservation(parent, reservation, reservationId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -124,7 +124,7 @@ public class ReservationServiceClientTest {
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Reservation reservation = Reservation.newBuilder().build();
-      String reservationId = "reservation_id266209902";
+      String reservationId = "reservationId1116965383";
       client.createReservation(parent, reservation, reservationId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -144,7 +144,7 @@ public class ReservationServiceClientTest {
 
     String parent = "parent-995424086";
     Reservation reservation = Reservation.newBuilder().build();
-    String reservationId = "reservation_id266209902";
+    String reservationId = "reservationId1116965383";
 
     Reservation actualResponse = client.createReservation(parent, reservation, reservationId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -170,7 +170,7 @@ public class ReservationServiceClientTest {
     try {
       String parent = "parent-995424086";
       Reservation reservation = Reservation.newBuilder().build();
-      String reservationId = "reservation_id266209902";
+      String reservationId = "reservationId1116965383";
       client.createReservation(parent, reservation, reservationId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1437,7 +1437,7 @@ public class ReservationServiceClientTest {
 
     AssignmentName name =
         AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-    String destinationId = "destination_id912984812";
+    String destinationId = "destinationId306545097";
 
     Assignment actualResponse = client.moveAssignment(name, destinationId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1462,7 +1462,7 @@ public class ReservationServiceClientTest {
     try {
       AssignmentName name =
           AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-      String destinationId = "destination_id912984812";
+      String destinationId = "destinationId306545097";
       client.moveAssignment(name, destinationId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1527,7 +1527,7 @@ public class ReservationServiceClientTest {
     mockReservationService.addResponse(expectedResponse);
 
     String name = "name3373707";
-    String destinationId = "destination_id912984812";
+    String destinationId = "destinationId306545097";
 
     Assignment actualResponse = client.moveAssignment(name, destinationId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1551,7 +1551,7 @@ public class ReservationServiceClientTest {
 
     try {
       String name = "name3373707";
-      String destinationId = "destination_id912984812";
+      String destinationId = "destinationId306545097";
       client.moveAssignment(name, destinationId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
