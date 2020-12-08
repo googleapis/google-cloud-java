@@ -9,6 +9,7 @@
   "repo": "googleapis/java-containeranalysis",
   "repo_short": "java-containeranalysis",
   "distribution_name": "com.google.cloud:google-cloud-containeranalysis",
+  "codeowner_team": "@googleapis/cicd",  
   "api_id": "containeranalysis.googleapis.com",
   "api_description": "is a service that provides vulnerability scanning and metadata storage for software artifacts. The service performs vulnerability scans on built software artifacts, such as the images in Container Registry, then stores the resulting metadata and makes it available for consumption through an API. The metadata may come from several sources, including vulnerability scanning, other Cloud services, and third-party providers.",
   "transport": "grpc",
