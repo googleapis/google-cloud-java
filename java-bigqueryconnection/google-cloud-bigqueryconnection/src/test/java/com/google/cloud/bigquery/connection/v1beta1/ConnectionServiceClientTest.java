@@ -95,7 +95,7 @@ public class ConnectionServiceClientTest {
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     ConnectionProto.Connection connection = ConnectionProto.Connection.newBuilder().build();
-    String connectionId = "connection_id-513204708";
+    String connectionId = "connectionId1923106969";
 
     ConnectionProto.Connection actualResponse =
         client.createConnection(parent, connection, connectionId);
@@ -123,7 +123,7 @@ public class ConnectionServiceClientTest {
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       ConnectionProto.Connection connection = ConnectionProto.Connection.newBuilder().build();
-      String connectionId = "connection_id-513204708";
+      String connectionId = "connectionId1923106969";
       client.createConnection(parent, connection, connectionId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -138,7 +138,7 @@ public class ConnectionServiceClientTest {
 
     String parent = "parent-995424086";
     ConnectionProto.Connection connection = ConnectionProto.Connection.newBuilder().build();
-    String connectionId = "connection_id-513204708";
+    String connectionId = "connectionId1923106969";
 
     ConnectionProto.Connection actualResponse =
         client.createConnection(parent, connection, connectionId);
@@ -166,7 +166,7 @@ public class ConnectionServiceClientTest {
     try {
       String parent = "parent-995424086";
       ConnectionProto.Connection connection = ConnectionProto.Connection.newBuilder().build();
-      String connectionId = "connection_id-513204708";
+      String connectionId = "connectionId1923106969";
       client.createConnection(parent, connection, connectionId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

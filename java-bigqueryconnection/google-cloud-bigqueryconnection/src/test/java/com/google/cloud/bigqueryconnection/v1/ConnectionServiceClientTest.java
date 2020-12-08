@@ -104,7 +104,7 @@ public class ConnectionServiceClientTest {
     Connection expectedResponse =
         Connection.newBuilder()
             .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
-            .setFriendlyName("friendly_name1451097503")
+            .setFriendlyName("friendlyName461933014")
             .setDescription("description-1724546052")
             .setCreationTime(1932333101)
             .setLastModifiedTime(-671513446)
@@ -114,7 +114,7 @@ public class ConnectionServiceClientTest {
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Connection connection = Connection.newBuilder().build();
-    String connectionId = "connection_id-513204708";
+    String connectionId = "connectionId1923106969";
 
     Connection actualResponse = client.createConnection(parent, connection, connectionId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -140,7 +140,7 @@ public class ConnectionServiceClientTest {
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Connection connection = Connection.newBuilder().build();
-      String connectionId = "connection_id-513204708";
+      String connectionId = "connectionId1923106969";
       client.createConnection(parent, connection, connectionId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -153,7 +153,7 @@ public class ConnectionServiceClientTest {
     Connection expectedResponse =
         Connection.newBuilder()
             .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
-            .setFriendlyName("friendly_name1451097503")
+            .setFriendlyName("friendlyName461933014")
             .setDescription("description-1724546052")
             .setCreationTime(1932333101)
             .setLastModifiedTime(-671513446)
@@ -163,7 +163,7 @@ public class ConnectionServiceClientTest {
 
     String parent = "parent-995424086";
     Connection connection = Connection.newBuilder().build();
-    String connectionId = "connection_id-513204708";
+    String connectionId = "connectionId1923106969";
 
     Connection actualResponse = client.createConnection(parent, connection, connectionId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -189,7 +189,7 @@ public class ConnectionServiceClientTest {
     try {
       String parent = "parent-995424086";
       Connection connection = Connection.newBuilder().build();
-      String connectionId = "connection_id-513204708";
+      String connectionId = "connectionId1923106969";
       client.createConnection(parent, connection, connectionId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -202,7 +202,7 @@ public class ConnectionServiceClientTest {
     Connection expectedResponse =
         Connection.newBuilder()
             .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
-            .setFriendlyName("friendly_name1451097503")
+            .setFriendlyName("friendlyName461933014")
             .setDescription("description-1724546052")
             .setCreationTime(1932333101)
             .setLastModifiedTime(-671513446)
@@ -245,7 +245,7 @@ public class ConnectionServiceClientTest {
     Connection expectedResponse =
         Connection.newBuilder()
             .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
-            .setFriendlyName("friendly_name1451097503")
+            .setFriendlyName("friendlyName461933014")
             .setDescription("description-1724546052")
             .setCreationTime(1932333101)
             .setLastModifiedTime(-671513446)
@@ -376,7 +376,7 @@ public class ConnectionServiceClientTest {
     Connection expectedResponse =
         Connection.newBuilder()
             .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
-            .setFriendlyName("friendly_name1451097503")
+            .setFriendlyName("friendlyName461933014")
             .setDescription("description-1724546052")
             .setCreationTime(1932333101)
             .setLastModifiedTime(-671513446)
@@ -425,7 +425,7 @@ public class ConnectionServiceClientTest {
     Connection expectedResponse =
         Connection.newBuilder()
             .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
-            .setFriendlyName("friendly_name1451097503")
+            .setFriendlyName("friendlyName461933014")
             .setDescription("description-1724546052")
             .setCreationTime(1932333101)
             .setLastModifiedTime(-671513446)
