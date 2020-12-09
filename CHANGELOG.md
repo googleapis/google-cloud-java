@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.7.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.6.7...v1.7.0) (2020-12-09)
+
+
+### Features
+
+* v1beta2 manual client library for BigQueryWrite ([#714](https://www.github.com/googleapis/java-bigquerystorage/issues/714)) ([53a9c3a](https://www.github.com/googleapis/java-bigquerystorage/commit/53a9c3aaf7e6a17d10ceecaf9cef5eb3e81a58ee))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.126.0 ([#708](https://www.github.com/googleapis/java-bigquerystorage/issues/708)) ([24a98c8](https://www.github.com/googleapis/java-bigquerystorage/commit/24a98c88b5531210efa8ba7b474f89d9b790df16))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.126.1 ([#716](https://www.github.com/googleapis/java-bigquerystorage/issues/716)) ([03aa545](https://www.github.com/googleapis/java-bigquerystorage/commit/03aa5455baf29e10b5938829f340ce865574453d))
+
 ### [1.6.7](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.6.6...v1.6.7) (2020-12-03)
 
 
