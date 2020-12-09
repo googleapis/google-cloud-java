@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.errorreporting.v1beta1;
 
 import com.google.api.core.BetaApi;
@@ -29,9 +30,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockErrorStatsServiceImpl extends ErrorStatsServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -68,10 +70,10 @@ public class MockErrorStatsServiceImpl extends ErrorStatsServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListGroupStatsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListGroupStatsResponse) response);
+      responseObserver.onNext(((ListGroupStatsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -83,10 +85,10 @@ public class MockErrorStatsServiceImpl extends ErrorStatsServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListEventsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListEventsResponse) response);
+      responseObserver.onNext(((ListEventsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -98,10 +100,10 @@ public class MockErrorStatsServiceImpl extends ErrorStatsServiceImplBase {
     Object response = responses.remove();
     if (response instanceof DeleteEventsResponse) {
       requests.add(request);
-      responseObserver.onNext((DeleteEventsResponse) response);
+      responseObserver.onNext(((DeleteEventsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

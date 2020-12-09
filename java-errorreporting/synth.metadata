@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e5211c547d63632963f9125e2b333185d57ff8f6",
-        "internalRef": "337519886"
+        "sha": "16e91be3603953bcfc0f87aa369e3eb7d1b2cbaf",
+        "internalRef": "345608665"
       }
     },
     {
@@ -129,7 +129,6 @@
     "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/MockReportErrorsService.java",
     "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/MockReportErrorsServiceImpl.java",
     "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/ReportErrorsServiceClientTest.java",
-    "google-cloud-errorreporting/src/test/java/com/google/cloud/errorreporting/v1beta1/ReportErrorsServiceSmokeTest.java",
     "grpc-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupServiceGrpc.java",
     "grpc-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorStatsServiceGrpc.java",
     "grpc-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ReportErrorsServiceGrpc.java",

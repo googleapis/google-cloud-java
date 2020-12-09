@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.errorreporting.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -25,14 +26,16 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupName;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
+import com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
 import com.google.protobuf.AbstractMessage;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -40,37 +43,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class ErrorGroupServiceClientTest {
-  private static MockErrorGroupService mockErrorGroupService;
-  private static MockErrorStatsService mockErrorStatsService;
-  private static MockReportErrorsService mockReportErrorsService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private ErrorGroupServiceClient client;
   private LocalChannelProvider channelProvider;
+  private static MockErrorGroupService mockErrorGroupService;
 
   @BeforeClass
   public static void startStaticServer() {
     mockErrorGroupService = new MockErrorGroupService();
-    mockErrorStatsService = new MockErrorStatsService();
-    mockReportErrorsService = new MockReportErrorsService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockErrorGroupService, mockErrorStatsService, mockReportErrorsService));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockErrorGroupService));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     ErrorGroupServiceSettings settings =
         ErrorGroupServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -85,53 +82,13 @@ public class ErrorGroupServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateGroupTest() {
-    ErrorGroupName name = ErrorGroupName.of("[PROJECT]", "[GROUP]");
-    String groupId = "groupId506361563";
+  public void getGroupTest() throws Exception {
     ErrorGroup expectedResponse =
-        ErrorGroup.newBuilder().setName(name.toString()).setGroupId(groupId).build();
-    mockErrorGroupService.addResponse(expectedResponse);
-
-    ErrorGroup group = ErrorGroup.newBuilder().build();
-
-    ErrorGroup actualResponse = client.updateGroup(group);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockErrorGroupService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    UpdateGroupRequest actualRequest = (UpdateGroupRequest) actualRequests.get(0);
-
-    Assert.assertEquals(group, actualRequest.getGroup());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void updateGroupExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockErrorGroupService.addException(exception);
-
-    try {
-      ErrorGroup group = ErrorGroup.newBuilder().build();
-
-      client.updateGroup(group);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getGroupTest() {
-    ErrorGroupName name = ErrorGroupName.of("[PROJECT]", "[GROUP]");
-    String groupId = "groupId506361563";
-    ErrorGroup expectedResponse =
-        ErrorGroup.newBuilder().setName(name.toString()).setGroupId(groupId).build();
+        ErrorGroup.newBuilder()
+            .setName(ErrorGroupName.of("[PROJECT]", "[GROUP]").toString())
+            .setGroupId("group_id506361563")
+            .addAllTrackingIssues(new ArrayList<TrackingIssue>())
+            .build();
     mockErrorGroupService.addResponse(expectedResponse);
 
     ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
@@ -141,9 +98,9 @@ public class ErrorGroupServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockErrorGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
+    GetGroupRequest actualRequest = ((GetGroupRequest) actualRequests.get(0));
 
-    Assert.assertEquals(groupName, ErrorGroupName.parse(actualRequest.getGroupName()));
+    Assert.assertEquals(groupName.toString(), actualRequest.getGroupName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -151,18 +108,96 @@ public class ErrorGroupServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getGroupExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockErrorGroupService.addException(exception);
 
     try {
       ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
-
       client.getGroup(groupName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGroupTest2() throws Exception {
+    ErrorGroup expectedResponse =
+        ErrorGroup.newBuilder()
+            .setName(ErrorGroupName.of("[PROJECT]", "[GROUP]").toString())
+            .setGroupId("group_id506361563")
+            .addAllTrackingIssues(new ArrayList<TrackingIssue>())
+            .build();
+    mockErrorGroupService.addResponse(expectedResponse);
+
+    String groupName = "group_name1282307147";
+
+    ErrorGroup actualResponse = client.getGroup(groupName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockErrorGroupService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGroupRequest actualRequest = ((GetGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(groupName, actualRequest.getGroupName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockErrorGroupService.addException(exception);
+
+    try {
+      String groupName = "group_name1282307147";
+      client.getGroup(groupName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateGroupTest() throws Exception {
+    ErrorGroup expectedResponse =
+        ErrorGroup.newBuilder()
+            .setName(ErrorGroupName.of("[PROJECT]", "[GROUP]").toString())
+            .setGroupId("group_id506361563")
+            .addAllTrackingIssues(new ArrayList<TrackingIssue>())
+            .build();
+    mockErrorGroupService.addResponse(expectedResponse);
+
+    ErrorGroup group = ErrorGroup.newBuilder().build();
+
+    ErrorGroup actualResponse = client.updateGroup(group);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockErrorGroupService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGroupRequest actualRequest = ((UpdateGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(group, actualRequest.getGroup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockErrorGroupService.addException(exception);
+
+    try {
+      ErrorGroup group = ErrorGroup.newBuilder().build();
+      client.updateGroup(group);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

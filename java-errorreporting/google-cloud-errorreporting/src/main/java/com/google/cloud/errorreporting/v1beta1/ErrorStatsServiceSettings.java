@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.errorreporting.v1beta1;
 
 import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListEventsPagedResponse;
@@ -40,7 +41,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ErrorStatsServiceClient}.
  *
@@ -58,27 +59,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of deleteEvents to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ErrorStatsServiceSettings.Builder errorStatsServiceSettingsBuilder =
  *     ErrorStatsServiceSettings.newBuilder();
  * errorStatsServiceSettingsBuilder
  *     .deleteEventsSettings()
  *     .setRetrySettings(
- *         errorStatsServiceSettingsBuilder.deleteEventsSettings().getRetrySettings().toBuilder()
+ *         errorStatsServiceSettingsBuilder
+ *             .deleteEventsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ErrorStatsServiceSettings errorStatsServiceSettings = errorStatsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceSettings> {
-  /** Returns the object with the settings used for calls to deleteEvents. */
-  public UnaryCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsSettings() {
-    return ((ErrorStatsServiceStubSettings) getStubSettings()).deleteEventsSettings();
-  }
 
   /** Returns the object with the settings used for calls to listGroupStats. */
   public PagedCallSettings<
@@ -91,6 +88,11 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
   public PagedCallSettings<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
       listEventsSettings() {
     return ((ErrorStatsServiceStubSettings) getStubSettings()).listEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEvents. */
+  public UnaryCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsSettings() {
+    return ((ErrorStatsServiceStubSettings) getStubSettings()).deleteEventsSettings();
   }
 
   public static final ErrorStatsServiceSettings create(ErrorStatsServiceStubSettings stub)
@@ -153,16 +155,13 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
 
   /** Builder for ErrorStatsServiceSettings. */
   public static class Builder extends ClientSettings.Builder<ErrorStatsServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ErrorStatsServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ErrorStatsServiceStubSettings.newBuilder());
     }
 
     protected Builder(ErrorStatsServiceSettings settings) {
@@ -173,11 +172,15 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ErrorStatsServiceStubSettings.newBuilder());
+    }
+
     public ErrorStatsServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((ErrorStatsServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -188,12 +191,6 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteEvents. */
-    public UnaryCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
-        deleteEventsSettings() {
-      return getStubSettingsBuilder().deleteEventsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listGroupStats. */
@@ -207,6 +204,12 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
     public PagedCallSettings.Builder<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
         listEventsSettings() {
       return getStubSettingsBuilder().listEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEvents. */
+    public UnaryCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
+        deleteEventsSettings() {
+      return getStubSettingsBuilder().deleteEventsSettings();
     }
 
     @Override

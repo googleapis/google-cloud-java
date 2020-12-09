@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.errorreporting.v1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -27,6 +27,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -34,15 +35,22 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Error Reporting API.
+ * gRPC stub implementation for the ErrorGroupService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
+  private static final MethodDescriptor<GetGroupRequest, ErrorGroup> getGroupMethodDescriptor =
+      MethodDescriptor.<GetGroupRequest, ErrorGroup>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/GetGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
+          .build();
 
   private static final MethodDescriptor<UpdateGroupRequest, ErrorGroup>
       updateGroupMethodDescriptor =
@@ -53,20 +61,12 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<GetGroupRequest, ErrorGroup> getGroupMethodDescriptor =
-      MethodDescriptor.<GetGroupRequest, ErrorGroup>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(
-              "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/GetGroup")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
-          .build();
+
+  private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
+  private final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
 
   private final BackgroundResource backgroundResources;
-
-  private final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
-  private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
-
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcErrorGroupServiceStub create(ErrorGroupServiceStubSettings settings)
@@ -86,41 +86,19 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
         ErrorGroupServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
-  /**
-   * Constructs an instance of GrpcErrorGroupServiceStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcErrorGroupServiceStub(
       ErrorGroupServiceStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new GrpcErrorGroupServiceCallableFactory());
   }
 
-  /**
-   * Constructs an instance of GrpcErrorGroupServiceStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcErrorGroupServiceStub(
       ErrorGroupServiceStubSettings settings,
       ClientContext clientContext,
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupTransportSettings =
-        GrpcCallSettings.<UpdateGroupRequest, ErrorGroup>newBuilder()
-            .setMethodDescriptor(updateGroupMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<UpdateGroupRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateGroupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("group.name", String.valueOf(request.getGroup().getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<GetGroupRequest, ErrorGroup> getGroupTransportSettings =
         GrpcCallSettings.<GetGroupRequest, ErrorGroup>newBuilder()
             .setMethodDescriptor(getGroupMethodDescriptor)
@@ -134,23 +112,41 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupTransportSettings =
+        GrpcCallSettings.<UpdateGroupRequest, ErrorGroup>newBuilder()
+            .setMethodDescriptor(updateGroupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateGroupRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateGroupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("group.name", String.valueOf(request.getGroup().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.updateGroupCallable =
-        callableFactory.createUnaryCallable(
-            updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
     this.getGroupCallable =
         callableFactory.createUnaryCallable(
             getGroupTransportSettings, settings.getGroupSettings(), clientContext);
+    this.updateGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
-    return updateGroupCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
     return getGroupCallable;
+  }
+
+  public UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
+    return updateGroupCallable;
   }
 
   @Override

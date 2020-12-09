@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.errorreporting.v1beta1.stub;
 
 import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListGroupStatsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
@@ -29,19 +29,14 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Base stub class for Cloud Error Reporting API.
+ * Base stub class for the ErrorStatsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ErrorStatsServiceStub implements BackgroundResource {
-
-  public UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteEventsCallable()");
-  }
 
   public UnaryCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
       listGroupStatsPagedCallable() {
@@ -58,6 +53,10 @@ public abstract class ErrorStatsServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: listEventsCallable()");
+  }
+
+  public UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEventsCallable()");
   }
 
   @Override

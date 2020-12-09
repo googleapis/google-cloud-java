@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.errorreporting.v1beta1.stub;
 
 import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListGroupStatsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,6 +33,7 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -40,26 +41,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Error Reporting API.
+ * gRPC stub implementation for the ErrorStatsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
-
-  private static final MethodDescriptor<DeleteEventsRequest, DeleteEventsResponse>
-      deleteEventsMethodDescriptor =
-          MethodDescriptor.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/DeleteEvents")
-              .setRequestMarshaller(ProtoUtils.marshaller(DeleteEventsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(DeleteEventsResponse.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ListGroupStatsRequest, ListGroupStatsResponse>
       listGroupStatsMethodDescriptor =
           MethodDescriptor.<ListGroupStatsRequest, ListGroupStatsResponse>newBuilder()
@@ -71,6 +60,7 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGroupStatsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListEventsRequest, ListEventsResponse>
       listEventsMethodDescriptor =
           MethodDescriptor.<ListEventsRequest, ListEventsResponse>newBuilder()
@@ -81,15 +71,26 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
+  private static final MethodDescriptor<DeleteEventsRequest, DeleteEventsResponse>
+      deleteEventsMethodDescriptor =
+          MethodDescriptor.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/DeleteEvents")
+              .setRequestMarshaller(ProtoUtils.marshaller(DeleteEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DeleteEventsResponse.getDefaultInstance()))
+              .build();
 
-  private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
   private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable;
   private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
       listGroupStatsPagedCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
+  private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcErrorStatsServiceStub create(ErrorStatsServiceStubSettings settings)
@@ -109,41 +110,19 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
         ErrorStatsServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
-  /**
-   * Constructs an instance of GrpcErrorStatsServiceStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcErrorStatsServiceStub(
       ErrorStatsServiceStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new GrpcErrorStatsServiceCallableFactory());
   }
 
-  /**
-   * Constructs an instance of GrpcErrorStatsServiceStub, using the given settings. This is
-   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcErrorStatsServiceStub(
       ErrorStatsServiceStubSettings settings,
       ClientContext clientContext,
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsTransportSettings =
-        GrpcCallSettings.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
-            .setMethodDescriptor(deleteEventsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteEventsRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteEventsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_name", String.valueOf(request.getProjectName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListGroupStatsRequest, ListGroupStatsResponse>
         listGroupStatsTransportSettings =
             GrpcCallSettings.<ListGroupStatsRequest, ListGroupStatsResponse>newBuilder()
@@ -171,10 +150,20 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsTransportSettings =
+        GrpcCallSettings.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
+            .setMethodDescriptor(deleteEventsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteEventsRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteEventsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_name", String.valueOf(request.getProjectName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.deleteEventsCallable =
-        callableFactory.createUnaryCallable(
-            deleteEventsTransportSettings, settings.deleteEventsSettings(), clientContext);
     this.listGroupStatsCallable =
         callableFactory.createUnaryCallable(
             listGroupStatsTransportSettings, settings.listGroupStatsSettings(), clientContext);
@@ -187,12 +176,20 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
     this.listEventsPagedCallable =
         callableFactory.createPagedCallable(
             listEventsTransportSettings, settings.listEventsSettings(), clientContext);
+    this.deleteEventsCallable =
+        callableFactory.createUnaryCallable(
+            deleteEventsTransportSettings, settings.deleteEventsSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
-    return deleteEventsCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  public UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable() {
+    return listGroupStatsCallable;
   }
 
   public UnaryCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
@@ -200,16 +197,16 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
     return listGroupStatsPagedCallable;
   }
 
-  public UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable() {
-    return listGroupStatsCallable;
+  public UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
+    return listEventsCallable;
   }
 
   public UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable() {
     return listEventsPagedCallable;
   }
 
-  public UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
-    return listEventsCallable;
+  public UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
+    return deleteEventsCallable;
   }
 
   @Override

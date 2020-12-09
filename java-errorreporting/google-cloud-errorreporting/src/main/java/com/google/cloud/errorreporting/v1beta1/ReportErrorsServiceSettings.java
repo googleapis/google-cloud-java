@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.errorreporting.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -32,7 +33,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ReportErrorsServiceClient}.
  *
@@ -50,23 +51,25 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of reportErrorEvent to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ReportErrorsServiceSettings.Builder reportErrorsServiceSettingsBuilder =
  *     ReportErrorsServiceSettings.newBuilder();
  * reportErrorsServiceSettingsBuilder
  *     .reportErrorEventSettings()
  *     .setRetrySettings(
- *         reportErrorsServiceSettingsBuilder.reportErrorEventSettings().getRetrySettings().toBuilder()
+ *         reportErrorsServiceSettingsBuilder
+ *             .reportErrorEventSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * ReportErrorsServiceSettings reportErrorsServiceSettings = reportErrorsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * ReportErrorsServiceSettings reportErrorsServiceSettings =
+ *     reportErrorsServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ReportErrorsServiceSettings extends ClientSettings<ReportErrorsServiceSettings> {
+
   /** Returns the object with the settings used for calls to reportErrorEvent. */
   public UnaryCallSettings<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventSettings() {
@@ -133,16 +136,13 @@ public class ReportErrorsServiceSettings extends ClientSettings<ReportErrorsServ
 
   /** Builder for ReportErrorsServiceSettings. */
   public static class Builder extends ClientSettings.Builder<ReportErrorsServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ReportErrorsServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ReportErrorsServiceStubSettings.newBuilder());
     }
 
     protected Builder(ReportErrorsServiceSettings settings) {
@@ -153,11 +153,15 @@ public class ReportErrorsServiceSettings extends ClientSettings<ReportErrorsServ
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ReportErrorsServiceStubSettings.newBuilder());
+    }
+
     public ReportErrorsServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((ReportErrorsServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

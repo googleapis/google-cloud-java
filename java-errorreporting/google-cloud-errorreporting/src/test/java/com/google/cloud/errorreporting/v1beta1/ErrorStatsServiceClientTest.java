@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.errorreporting.v1beta1;
 
 import static com.google.cloud.errorreporting.v1beta1.ErrorStatsServiceClient.ListEventsPagedResponse;
@@ -37,12 +38,12 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange;
 import com.google.protobuf.AbstractMessage;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -50,37 +51,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class ErrorStatsServiceClientTest {
-  private static MockErrorGroupService mockErrorGroupService;
+  private static MockServiceHelper mockServiceHelper;
   private static MockErrorStatsService mockErrorStatsService;
-  private static MockReportErrorsService mockReportErrorsService;
-  private static MockServiceHelper serviceHelper;
   private ErrorStatsServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockErrorGroupService = new MockErrorGroupService();
     mockErrorStatsService = new MockErrorStatsService();
-    mockReportErrorsService = new MockReportErrorsService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockErrorGroupService, mockErrorStatsService, mockReportErrorsService));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockErrorStatsService));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     ErrorStatsServiceSettings settings =
         ErrorStatsServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -95,8 +90,195 @@ public class ErrorStatsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteEventsTest() {
+  public void listGroupStatsTest() throws Exception {
+    ErrorGroupStats responsesElement = ErrorGroupStats.newBuilder().build();
+    ListGroupStatsResponse expectedResponse =
+        ListGroupStatsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllErrorGroupStats(Arrays.asList(responsesElement))
+            .build();
+    mockErrorStatsService.addResponse(expectedResponse);
+
+    ProjectName projectName = ProjectName.of("[PROJECT]");
+    QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
+
+    ListGroupStatsPagedResponse pagedListResponse = client.listGroupStats(projectName, timeRange);
+
+    List<ErrorGroupStats> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getErrorGroupStatsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGroupStatsRequest actualRequest = ((ListGroupStatsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(projectName.toString(), actualRequest.getProjectName());
+    Assert.assertEquals(timeRange, actualRequest.getTimeRange());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGroupStatsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockErrorStatsService.addException(exception);
+
+    try {
+      ProjectName projectName = ProjectName.of("[PROJECT]");
+      QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
+      client.listGroupStats(projectName, timeRange);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGroupStatsTest2() throws Exception {
+    ErrorGroupStats responsesElement = ErrorGroupStats.newBuilder().build();
+    ListGroupStatsResponse expectedResponse =
+        ListGroupStatsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllErrorGroupStats(Arrays.asList(responsesElement))
+            .build();
+    mockErrorStatsService.addResponse(expectedResponse);
+
+    String projectName = "project_name939388913";
+    QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
+
+    ListGroupStatsPagedResponse pagedListResponse = client.listGroupStats(projectName, timeRange);
+
+    List<ErrorGroupStats> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getErrorGroupStatsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGroupStatsRequest actualRequest = ((ListGroupStatsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(projectName, actualRequest.getProjectName());
+    Assert.assertEquals(timeRange, actualRequest.getTimeRange());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGroupStatsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockErrorStatsService.addException(exception);
+
+    try {
+      String projectName = "project_name939388913";
+      QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
+      client.listGroupStats(projectName, timeRange);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEventsTest() throws Exception {
+    ErrorEvent responsesElement = ErrorEvent.newBuilder().build();
+    ListEventsResponse expectedResponse =
+        ListEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllErrorEvents(Arrays.asList(responsesElement))
+            .build();
+    mockErrorStatsService.addResponse(expectedResponse);
+
+    ProjectName projectName = ProjectName.of("[PROJECT]");
+    String groupId = "group_id506361563";
+
+    ListEventsPagedResponse pagedListResponse = client.listEvents(projectName, groupId);
+
+    List<ErrorEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getErrorEventsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEventsRequest actualRequest = ((ListEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(projectName.toString(), actualRequest.getProjectName());
+    Assert.assertEquals(groupId, actualRequest.getGroupId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockErrorStatsService.addException(exception);
+
+    try {
+      ProjectName projectName = ProjectName.of("[PROJECT]");
+      String groupId = "group_id506361563";
+      client.listEvents(projectName, groupId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEventsTest2() throws Exception {
+    ErrorEvent responsesElement = ErrorEvent.newBuilder().build();
+    ListEventsResponse expectedResponse =
+        ListEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllErrorEvents(Arrays.asList(responsesElement))
+            .build();
+    mockErrorStatsService.addResponse(expectedResponse);
+
+    String projectName = "project_name939388913";
+    String groupId = "group_id506361563";
+
+    ListEventsPagedResponse pagedListResponse = client.listEvents(projectName, groupId);
+
+    List<ErrorEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getErrorEventsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEventsRequest actualRequest = ((ListEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(projectName, actualRequest.getProjectName());
+    Assert.assertEquals(groupId, actualRequest.getGroupId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEventsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockErrorStatsService.addException(exception);
+
+    try {
+      String projectName = "project_name939388913";
+      String groupId = "group_id506361563";
+      client.listEvents(projectName, groupId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEventsTest() throws Exception {
     DeleteEventsResponse expectedResponse = DeleteEventsResponse.newBuilder().build();
     mockErrorStatsService.addResponse(expectedResponse);
 
@@ -107,9 +289,9 @@ public class ErrorStatsServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteEventsRequest actualRequest = (DeleteEventsRequest) actualRequests.get(0);
+    DeleteEventsRequest actualRequest = ((DeleteEventsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
+    Assert.assertEquals(projectName.toString(), actualRequest.getProjectName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -117,49 +299,34 @@ public class ErrorStatsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteEventsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockErrorStatsService.addException(exception);
 
     try {
       ProjectName projectName = ProjectName.of("[PROJECT]");
-
       client.deleteEvents(projectName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listGroupStatsTest() {
-    String nextPageToken = "";
-    ErrorGroupStats errorGroupStatsElement = ErrorGroupStats.newBuilder().build();
-    List<ErrorGroupStats> errorGroupStats = Arrays.asList(errorGroupStatsElement);
-    ListGroupStatsResponse expectedResponse =
-        ListGroupStatsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllErrorGroupStats(errorGroupStats)
-            .build();
+  public void deleteEventsTest2() throws Exception {
+    DeleteEventsResponse expectedResponse = DeleteEventsResponse.newBuilder().build();
     mockErrorStatsService.addResponse(expectedResponse);
 
-    ProjectName projectName = ProjectName.of("[PROJECT]");
-    QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
+    String projectName = "project_name939388913";
 
-    ListGroupStatsPagedResponse pagedListResponse = client.listGroupStats(projectName, timeRange);
-
-    List<ErrorGroupStats> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getErrorGroupStatsList().get(0), resources.get(0));
+    DeleteEventsResponse actualResponse = client.deleteEvents(projectName);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListGroupStatsRequest actualRequest = (ListGroupStatsRequest) actualRequests.get(0);
+    DeleteEventsRequest actualRequest = ((DeleteEventsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
-    Assert.assertEquals(timeRange, actualRequest.getTimeRange());
+    Assert.assertEquals(projectName, actualRequest.getProjectName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -167,70 +334,16 @@ public class ErrorStatsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listGroupStatsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+  public void deleteEventsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockErrorStatsService.addException(exception);
 
     try {
-      ProjectName projectName = ProjectName.of("[PROJECT]");
-      QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
-
-      client.listGroupStats(projectName, timeRange);
+      String projectName = "project_name939388913";
+      client.deleteEvents(projectName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listEventsTest() {
-    String nextPageToken = "";
-    ErrorEvent errorEventsElement = ErrorEvent.newBuilder().build();
-    List<ErrorEvent> errorEvents = Arrays.asList(errorEventsElement);
-    ListEventsResponse expectedResponse =
-        ListEventsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllErrorEvents(errorEvents)
-            .build();
-    mockErrorStatsService.addResponse(expectedResponse);
-
-    ProjectName projectName = ProjectName.of("[PROJECT]");
-    String groupId = "groupId506361563";
-
-    ListEventsPagedResponse pagedListResponse = client.listEvents(projectName, groupId);
-
-    List<ErrorEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getErrorEventsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListEventsRequest actualRequest = (ListEventsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
-    Assert.assertEquals(groupId, actualRequest.getGroupId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listEventsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockErrorStatsService.addException(exception);
-
-    try {
-      ProjectName projectName = ProjectName.of("[PROJECT]");
-      String groupId = "groupId506361563";
-
-      client.listEvents(projectName, groupId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }

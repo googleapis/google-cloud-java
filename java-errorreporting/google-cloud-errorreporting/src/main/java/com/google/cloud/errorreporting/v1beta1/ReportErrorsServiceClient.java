@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.errorreporting.v1beta1;
 
 import com.google.api.core.BetaApi;
@@ -28,24 +29,14 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: An API for reporting error events.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
- *   ProjectName projectName = ProjectName.of("[PROJECT]");
- *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
- *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the reportErrorsServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the ReportErrorsServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -74,30 +65,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ReportErrorsServiceSettings reportErrorsServiceSettings =
  *     ReportErrorsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ReportErrorsServiceClient reportErrorsServiceClient =
  *     ReportErrorsServiceClient.create(reportErrorsServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ReportErrorsServiceSettings reportErrorsServiceSettings =
  *     ReportErrorsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ReportErrorsServiceClient reportErrorsServiceClient =
  *     ReportErrorsServiceClient.create(reportErrorsServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class ReportErrorsServiceClient implements BackgroundResource {
   private final ReportErrorsServiceSettings settings;
   private final ReportErrorsServiceStub stub;
@@ -118,7 +107,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ReportErrorsServiceClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use ReportErrorsServiceSettings}.
+   * This is for advanced usage - prefer using create(ReportErrorsServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ReportErrorsServiceClient create(ReportErrorsServiceStub stub) {
@@ -150,29 +139,23 @@ public class ReportErrorsServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Report an individual error event.
    *
-   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token, &#42;&#42;or&#42;&#42; an
-   * [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API
-   * key, append it to the URL as the value of a `key` parameter. For example:
+   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token,
+   *
+   * <ul>
+   *   <li>&#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
+   *       authentication. To use an API key, append it to the URL as the value of a `key`
+   *       parameter. For example:
+   * </ul>
    *
    * <p>`POST
    * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.of("[PROJECT]");
-   *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
-   *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
-   * }
-   * </code></pre>
-   *
-   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
-   *     `projects/` plus the [Google Cloud Platform project
+   * @param project_name Required. The resource name of the Google Cloud Platform project. Written
+   *     as `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @param event Required. The error event to be reported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -187,29 +170,23 @@ public class ReportErrorsServiceClient implements BackgroundResource {
     return reportErrorEvent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Report an individual error event.
    *
-   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token, &#42;&#42;or&#42;&#42; an
-   * [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API
-   * key, append it to the URL as the value of a `key` parameter. For example:
+   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token,
+   *
+   * <ul>
+   *   <li>&#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
+   *       authentication. To use an API key, append it to the URL as the value of a `key`
+   *       parameter. For example:
+   * </ul>
    *
    * <p>`POST
    * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.of("[PROJECT]");
-   *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
-   *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName.toString(), event);
-   * }
-   * </code></pre>
-   *
-   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
-   *     `projects/` plus the [Google Cloud Platform project
+   * @param project_name Required. The resource name of the Google Cloud Platform project. Written
+   *     as `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @param event Required. The error event to be reported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -221,30 +198,20 @@ public class ReportErrorsServiceClient implements BackgroundResource {
     return reportErrorEvent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Report an individual error event.
    *
-   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token, &#42;&#42;or&#42;&#42; an
-   * [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API
-   * key, append it to the URL as the value of a `key` parameter. For example:
+   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token,
+   *
+   * <ul>
+   *   <li>&#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
+   *       authentication. To use an API key, append it to the URL as the value of a `key`
+   *       parameter. For example:
+   * </ul>
    *
    * <p>`POST
    * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.of("[PROJECT]");
-   *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
-   *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
-   *     .setProjectName(projectName.toString())
-   *     .setEvent(event)
-   *     .build();
-   *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -253,32 +220,22 @@ public class ReportErrorsServiceClient implements BackgroundResource {
     return reportErrorEventCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Report an individual error event.
    *
-   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token, &#42;&#42;or&#42;&#42; an
-   * [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API
-   * key, append it to the URL as the value of a `key` parameter. For example:
+   * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token,
+   *
+   * <ul>
+   *   <li>&#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
+   *       authentication. To use an API key, append it to the URL as the value of a `key`
+   *       parameter. For example:
+   * </ul>
    *
    * <p>`POST
    * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.of("[PROJECT]");
-   *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
-   *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
-   *     .setProjectName(projectName.toString())
-   *     .setEvent(event)
-   *     .build();
-   *   ApiFuture&lt;ReportErrorEventResponse&gt; future = reportErrorsServiceClient.reportErrorEventCallable().futureCall(request);
-   *   // Do something
-   *   ReportErrorEventResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable() {
