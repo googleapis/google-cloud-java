@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-build</artifactId>
-      <version>2.1.6</version>
+      <version>2.1.7</version>
     </dependency>
     <!-- [END build_install_without_bom] -->
 
