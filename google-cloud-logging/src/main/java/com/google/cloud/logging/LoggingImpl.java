@@ -17,8 +17,11 @@
 package com.google.cloud.logging;
 
 import static com.google.api.client.util.Preconditions.checkArgument;
+import static com.google.cloud.logging.Logging.EntryListOption.OptionType.BILLINGACCOUNT;
 import static com.google.cloud.logging.Logging.EntryListOption.OptionType.FILTER;
+import static com.google.cloud.logging.Logging.EntryListOption.OptionType.FOLDER;
 import static com.google.cloud.logging.Logging.EntryListOption.OptionType.ORDER_BY;
+import static com.google.cloud.logging.Logging.EntryListOption.OptionType.ORGANIZATION;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_TOKEN;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
@@ -766,6 +769,18 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       String projectId, Map<Option.OptionType, ?> options) {
     ListLogEntriesRequest.Builder builder = ListLogEntriesRequest.newBuilder();
     builder.addResourceNames("projects/" + projectId);
+    String organization = ORGANIZATION.get(options);
+    if (organization != null) {
+      builder.addResourceNames("organizations/" + organization);
+    }
+    String billingAccount = BILLINGACCOUNT.get(options);
+    if (billingAccount != null) {
+      builder.addResourceNames("billingAccounts/" + billingAccount);
+    }
+    String folder = FOLDER.get(options);
+    if (folder != null) {
+      builder.addResourceNames("folders/" + folder);
+    }
     Integer pageSize = PAGE_SIZE.get(options);
     if (pageSize != null) {
       builder.setPageSize(pageSize);

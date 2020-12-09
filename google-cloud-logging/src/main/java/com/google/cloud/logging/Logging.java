@@ -138,7 +138,10 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
 
     enum OptionType implements Option.OptionType {
       ORDER_BY,
-      FILTER;
+      FILTER,
+      ORGANIZATION,
+      BILLINGACCOUNT,
+      FOLDER;
 
       @SuppressWarnings("unchecked")
       <T> T get(Map<Option.OptionType, ?> options) {
@@ -176,6 +179,21 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      */
     public static EntryListOption filter(String filter) {
       return new EntryListOption(OptionType.FILTER, filter);
+    }
+
+    /** Returns an option to specify an organization for the log entries to be listed. */
+    public static EntryListOption organization(String organization) {
+      return new EntryListOption(OptionType.ORGANIZATION, organization);
+    }
+
+    /** Returns an option to specify a billingAccount for the log entries to be listed. */
+    public static EntryListOption billingAccount(String billingAccount) {
+      return new EntryListOption(OptionType.BILLINGACCOUNT, billingAccount);
+    }
+
+    /** Returns an option to specify a folder for the log entries to be listed. */
+    public static EntryListOption folder(String folder) {
+      return new EntryListOption(OptionType.FOLDER, folder);
     }
   }
 
