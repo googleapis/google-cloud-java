@@ -4,7 +4,9 @@
 # For syntax help see:
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
-*                       @googleapis/yoshi-java
+# The @googleapis/cicd is the default owner for changes in this repo
+*                       @googleapis/yoshi-java @googleapis/cicd
+**/*.java               @googleapis/cicd
 
 # The java-samples-reviewers team is the default owner for samples changes
-samples/**/*.java       @googleapis/java-samples-reviewers @googleapis/cicd
+samples/**/*.java       @googleapis/java-samples-reviewers
