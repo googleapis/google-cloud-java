@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-datalabeling-v1beta1</artifactId>
-  <version>0.84.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datalabeling-v1beta1:current} -->
+  <version>0.84.7</version><!-- {x-version-update:proto-google-cloud-datalabeling-v1beta1:current} -->
   <name>proto-google-cloud-datalabeling-v1beta1</name>
   <description>PROTO library for proto-google-cloud-datalabeling-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datalabeling-parent</artifactId>
-    <version>0.119.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+    <version>0.119.7</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
   </parent>
   <dependencies>
     <dependency>
