@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,11 +15,9 @@
  */
 
 /**
- * A client to Access Approval API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>========================= AccessApprovalAdminClient =========================
+ * <p>======================= AccessApprovalClient =======================
  *
  * <p>Service Description: This API allows a customer to manage accesses to cloud resources by
  * Google personnel. It defines the following resource model:
@@ -50,18 +48,9 @@
  *
  * <p>If a request is not approved or dismissed, we call it pending.
  *
- * <p>Sample for AccessApprovalAdminClient:
- *
- * <pre>
- * <code>
- * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
- *   String name = "";
- *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(name);
- * }
- * </code>
- * </pre>
+ * <p>Sample for AccessApprovalClient:
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.accessapproval.v1;
 
 import javax.annotation.Generated;

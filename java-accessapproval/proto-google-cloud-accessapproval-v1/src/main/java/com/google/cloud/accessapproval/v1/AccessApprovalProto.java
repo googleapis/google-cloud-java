@@ -218,12 +218,14 @@ public final class AccessApprovalProto {
           + "valSettings}Z3*1/v1/{name=organizations/"
           + "*/accessApprovalSettings}\332A\004name\032Q\312A\035acc"
           + "essapproval.googleapis.com\322A.https://www"
-          + ".googleapis.com/auth/cloud-platformB\255\001\n\""
+          + ".googleapis.com/auth/cloud-platformB\357\001\n\""
           + "com.google.cloud.accessapproval.v1B\023Acce"
           + "ssApprovalProtoP\001ZLgoogle.golang.org/gen"
           + "proto/googleapis/cloud/accessapproval/v1"
-          + ";accessapproval\352\002!Google::Cloud::AccessA"
-          + "pproval::V1b\006proto3"
+          + ";accessapproval\252\002\036Google.Cloud.AccessApp"
+          + "roval.V1\312\002\036Google\\Cloud\\AccessApproval\\V"
+          + "1\352\002!Google::Cloud::AccessApproval::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

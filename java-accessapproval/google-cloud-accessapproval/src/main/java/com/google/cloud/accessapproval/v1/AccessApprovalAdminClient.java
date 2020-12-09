@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.accessapproval.v1;
 
 import com.google.api.core.ApiFunction;
@@ -35,7 +36,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: This API allows a customer to manage accesses to cloud resources by Google
  * personnel. It defines the following resource model:
@@ -69,16 +70,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
- *   String name = "";
- *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the accessApprovalAdminClient object to clean up resources
+ * <p>Note: close() needs to be called on the AccessApprovalAdminClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -107,30 +99,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AccessApprovalAdminSettings accessApprovalAdminSettings =
  *     AccessApprovalAdminSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * AccessApprovalAdminClient accessApprovalAdminClient =
  *     AccessApprovalAdminClient.create(accessApprovalAdminSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AccessApprovalAdminSettings accessApprovalAdminSettings =
  *     AccessApprovalAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AccessApprovalAdminClient accessApprovalAdminClient =
  *     AccessApprovalAdminClient.create(accessApprovalAdminSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class AccessApprovalAdminClient implements BackgroundResource {
   private final AccessApprovalAdminSettings settings;
   private final AccessApprovalStub stub;
@@ -151,7 +141,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
 
   /**
    * Constructs an instance of AccessApprovalAdminClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use AccessApprovalAdminSettings}.
+   * This is for advanced usage - prefer using create(AccessApprovalAdminSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AccessApprovalAdminClient create(AccessApprovalStub stub) {
@@ -183,21 +173,10 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists approval requests associated with a project, folder, or organization. Approval requests
    * can be filtered by state (pending, active, dismissed). The order is reverse chronological.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   String parent = "";
-   *   for (ApprovalRequest element : accessApprovalAdminClient.listApprovalRequests(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent The parent resource. This may be "projects/{project_id}", "folders/{folder_id}",
    *     or "organizations/{organization_id}".
@@ -209,21 +188,10 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return listApprovalRequests(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists approval requests associated with a project, folder, or organization. Approval requests
    * can be filtered by state (pending, active, dismissed). The order is reverse chronological.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   ListApprovalRequestsMessage request = ListApprovalRequestsMessage.newBuilder().build();
-   *   for (ApprovalRequest element : accessApprovalAdminClient.listApprovalRequests(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -233,71 +201,33 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return listApprovalRequestsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists approval requests associated with a project, folder, or organization. Approval requests
    * can be filtered by state (pending, active, dismissed). The order is reverse chronological.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   ListApprovalRequestsMessage request = ListApprovalRequestsMessage.newBuilder().build();
-   *   ApiFuture&lt;ListApprovalRequestsPagedResponse&gt; future = accessApprovalAdminClient.listApprovalRequestsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ApprovalRequest element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListApprovalRequestsMessage, ListApprovalRequestsPagedResponse>
       listApprovalRequestsPagedCallable() {
     return stub.listApprovalRequestsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists approval requests associated with a project, folder, or organization. Approval requests
    * can be filtered by state (pending, active, dismissed). The order is reverse chronological.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   ListApprovalRequestsMessage request = ListApprovalRequestsMessage.newBuilder().build();
-   *   while (true) {
-   *     ListApprovalRequestsResponse response = accessApprovalAdminClient.listApprovalRequestsCallable().call(request);
-   *     for (ApprovalRequest element : response.getApprovalRequestsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListApprovalRequestsMessage, ListApprovalRequestsResponse>
       listApprovalRequestsCallable() {
     return stub.listApprovalRequestsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an approval request. Returns NOT_FOUND if the request does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   String name = "";
-   *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(name);
-   * }
-   * </code></pre>
    *
    * @param name Name of the approval request to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -308,18 +238,9 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return getApprovalRequest(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an approval request. Returns NOT_FOUND if the request does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   GetApprovalRequestMessage request = GetApprovalRequestMessage.newBuilder().build();
-   *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -328,41 +249,23 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return getApprovalRequestCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an approval request. Returns NOT_FOUND if the request does not exist.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   GetApprovalRequestMessage request = GetApprovalRequestMessage.newBuilder().build();
-   *   ApiFuture&lt;ApprovalRequest&gt; future = accessApprovalAdminClient.getApprovalRequestCallable().futureCall(request);
-   *   // Do something
-   *   ApprovalRequest response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetApprovalRequestMessage, ApprovalRequest>
       getApprovalRequestCallable() {
     return stub.getApprovalRequestCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Approves a request and returns the updated ApprovalRequest.
    *
    * <p>Returns NOT_FOUND if the request does not exist. Returns FAILED_PRECONDITION if the request
    * exists but is not in a pending state.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   ApproveApprovalRequestMessage request = ApproveApprovalRequestMessage.newBuilder().build();
-   *   ApprovalRequest response = accessApprovalAdminClient.approveApprovalRequest(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -371,7 +274,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return approveApprovalRequestCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Approves a request and returns the updated ApprovalRequest.
    *
@@ -379,22 +282,13 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * exists but is not in a pending state.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   ApproveApprovalRequestMessage request = ApproveApprovalRequestMessage.newBuilder().build();
-   *   ApiFuture&lt;ApprovalRequest&gt; future = accessApprovalAdminClient.approveApprovalRequestCallable().futureCall(request);
-   *   // Do something
-   *   ApprovalRequest response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ApproveApprovalRequestMessage, ApprovalRequest>
       approveApprovalRequestCallable() {
     return stub.approveApprovalRequestCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Dismisses a request. Returns the updated ApprovalRequest.
    *
@@ -404,15 +298,6 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * <p>Returns NOT_FOUND if the request does not exist.
    *
    * <p>Returns FAILED_PRECONDITION if the request exists but is not in a pending state.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   DismissApprovalRequestMessage request = DismissApprovalRequestMessage.newBuilder().build();
-   *   ApprovalRequest response = accessApprovalAdminClient.dismissApprovalRequest(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -421,7 +306,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return dismissApprovalRequestCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Dismisses a request. Returns the updated ApprovalRequest.
    *
@@ -433,33 +318,15 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * <p>Returns FAILED_PRECONDITION if the request exists but is not in a pending state.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   DismissApprovalRequestMessage request = DismissApprovalRequestMessage.newBuilder().build();
-   *   ApiFuture&lt;ApprovalRequest&gt; future = accessApprovalAdminClient.dismissApprovalRequestCallable().futureCall(request);
-   *   // Do something
-   *   ApprovalRequest response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DismissApprovalRequestMessage, ApprovalRequest>
       dismissApprovalRequestCallable() {
     return stub.dismissApprovalRequestCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the settings associated with a project, folder, or organization.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   String name = "";
-   *   AccessApprovalSettings response = accessApprovalAdminClient.getAccessApprovalSettings(name);
-   * }
-   * </code></pre>
    *
    * @param name Name of the AccessApprovalSettings to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -470,18 +337,9 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return getAccessApprovalSettings(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the settings associated with a project, folder, or organization.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   GetAccessApprovalSettingsMessage request = GetAccessApprovalSettingsMessage.newBuilder().build();
-   *   AccessApprovalSettings response = accessApprovalAdminClient.getAccessApprovalSettings(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -491,43 +349,24 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return getAccessApprovalSettingsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the settings associated with a project, folder, or organization.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   GetAccessApprovalSettingsMessage request = GetAccessApprovalSettingsMessage.newBuilder().build();
-   *   ApiFuture&lt;AccessApprovalSettings&gt; future = accessApprovalAdminClient.getAccessApprovalSettingsCallable().futureCall(request);
-   *   // Do something
-   *   AccessApprovalSettings response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
       getAccessApprovalSettingsCallable() {
     return stub.getAccessApprovalSettingsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the settings associated with a project, folder, or organization. Settings to update are
    * determined by the value of field_mask.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   AccessApprovalSettings settings = AccessApprovalSettings.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   AccessApprovalSettings response = accessApprovalAdminClient.updateAccessApprovalSettings(settings, updateMask);
-   * }
-   * </code></pre>
-   *
    * @param settings The new AccessApprovalSettings.
-   * @param updateMask The update mask applies to the settings. Only the top level fields of
+   * @param update_mask The update mask applies to the settings. Only the top level fields of
    *     AccessApprovalSettings (notification_emails &amp; enrolled_services) are supported. For
    *     each field, if it is included, the currently stored value will be entirely overwritten with
    *     the value of the field passed in this request.
@@ -546,19 +385,10 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return updateAccessApprovalSettings(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the settings associated with a project, folder, or organization. Settings to update are
    * determined by the value of field_mask.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   UpdateAccessApprovalSettingsMessage request = UpdateAccessApprovalSettingsMessage.newBuilder().build();
-   *   AccessApprovalSettings response = accessApprovalAdminClient.updateAccessApprovalSettings(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -568,43 +398,25 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return updateAccessApprovalSettingsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the settings associated with a project, folder, or organization. Settings to update are
    * determined by the value of field_mask.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   UpdateAccessApprovalSettingsMessage request = UpdateAccessApprovalSettingsMessage.newBuilder().build();
-   *   ApiFuture&lt;AccessApprovalSettings&gt; future = accessApprovalAdminClient.updateAccessApprovalSettingsCallable().futureCall(request);
-   *   // Do something
-   *   AccessApprovalSettings response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>
       updateAccessApprovalSettingsCallable() {
     return stub.updateAccessApprovalSettingsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the settings associated with a project, folder, or organization. This will have the
    * effect of disabling Access Approval for the project, folder, or organization, but only if all
    * ancestors also have Access Approval disabled. If Access Approval is enabled at a higher level
    * of the hierarchy, then Access Approval will still be enabled at this level as the settings are
    * inherited.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   String name = "";
-   *   accessApprovalAdminClient.deleteAccessApprovalSettings(name);
-   * }
-   * </code></pre>
    *
    * @param name Name of the AccessApprovalSettings to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -615,22 +427,13 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     deleteAccessApprovalSettings(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the settings associated with a project, folder, or organization. This will have the
    * effect of disabling Access Approval for the project, folder, or organization, but only if all
    * ancestors also have Access Approval disabled. If Access Approval is enabled at a higher level
    * of the hierarchy, then Access Approval will still be enabled at this level as the settings are
    * inherited.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   DeleteAccessApprovalSettingsMessage request = DeleteAccessApprovalSettingsMessage.newBuilder().build();
-   *   accessApprovalAdminClient.deleteAccessApprovalSettings(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -639,7 +442,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     deleteAccessApprovalSettingsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the settings associated with a project, folder, or organization. This will have the
    * effect of disabling Access Approval for the project, folder, or organization, but only if all
@@ -648,15 +451,6 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * inherited.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-   *   DeleteAccessApprovalSettingsMessage request = DeleteAccessApprovalSettingsMessage.newBuilder().build();
-   *   ApiFuture&lt;Void&gt; future = accessApprovalAdminClient.deleteAccessApprovalSettingsCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteAccessApprovalSettingsMessage, Empty>
       deleteAccessApprovalSettingsCallable() {

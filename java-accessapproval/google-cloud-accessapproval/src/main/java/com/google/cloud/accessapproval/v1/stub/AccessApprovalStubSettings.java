@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.accessapproval.v1.stub;
 
 import static com.google.cloud.accessapproval.v1.AccessApprovalAdminClient.ListApprovalRequestsPagedResponse;
@@ -59,7 +60,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AccessApprovalStub}.
  *
@@ -77,22 +78,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getApprovalRequest to 30 seconds:
  *
- * <pre>
- * <code>
- * AccessApprovalStubSettings.Builder accessApprovalAdminSettingsBuilder =
+ * <pre>{@code
+ * AccessApprovalStubSettings.Builder accessApprovalSettingsBuilder =
  *     AccessApprovalStubSettings.newBuilder();
- * accessApprovalAdminSettingsBuilder
+ * accessApprovalSettingsBuilder
  *     .getApprovalRequestSettings()
  *     .setRetrySettings(
- *         accessApprovalAdminSettingsBuilder.getApprovalRequestSettings().getRetrySettings().toBuilder()
+ *         accessApprovalSettingsBuilder
+ *             .getApprovalRequestSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * AccessApprovalStubSettings accessApprovalAdminSettings = accessApprovalAdminSettingsBuilder.build();
- * </code>
- * </pre>
+ * AccessApprovalStubSettings accessApprovalSettings = accessApprovalSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -115,6 +117,71 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
       updateAccessApprovalSettingsSettings;
   private final UnaryCallSettings<DeleteAccessApprovalSettingsMessage, Empty>
       deleteAccessApprovalSettingsSettings;
+
+  private static final PagedListDescriptor<
+          ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
+      LIST_APPROVAL_REQUESTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListApprovalRequestsMessage injectToken(
+                ListApprovalRequestsMessage payload, String token) {
+              return ListApprovalRequestsMessage.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListApprovalRequestsMessage injectPageSize(
+                ListApprovalRequestsMessage payload, int pageSize) {
+              return ListApprovalRequestsMessage.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListApprovalRequestsMessage payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListApprovalRequestsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ApprovalRequest> extractResources(
+                ListApprovalRequestsResponse payload) {
+              return payload.getApprovalRequestsList() == null
+                  ? ImmutableList.<ApprovalRequest>of()
+                  : payload.getApprovalRequestsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListApprovalRequestsMessage,
+          ListApprovalRequestsResponse,
+          ListApprovalRequestsPagedResponse>
+      LIST_APPROVAL_REQUESTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListApprovalRequestsMessage,
+              ListApprovalRequestsResponse,
+              ListApprovalRequestsPagedResponse>() {
+            @Override
+            public ApiFuture<ListApprovalRequestsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListApprovalRequestsMessage, ListApprovalRequestsResponse> callable,
+                ListApprovalRequestsMessage request,
+                ApiCallContext context,
+                ApiFuture<ListApprovalRequestsResponse> futureResponse) {
+              PageContext<
+                      ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_APPROVAL_REQUESTS_PAGE_STR_DESC, request, context);
+              return ListApprovalRequestsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listApprovalRequests. */
   public PagedCallSettings<
@@ -167,10 +234,10 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcAccessApprovalStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -241,75 +308,9 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
         settingsBuilder.deleteAccessApprovalSettingsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
-      LIST_APPROVAL_REQUESTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListApprovalRequestsMessage injectToken(
-                ListApprovalRequestsMessage payload, String token) {
-              return ListApprovalRequestsMessage.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListApprovalRequestsMessage injectPageSize(
-                ListApprovalRequestsMessage payload, int pageSize) {
-              return ListApprovalRequestsMessage.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListApprovalRequestsMessage payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListApprovalRequestsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ApprovalRequest> extractResources(
-                ListApprovalRequestsResponse payload) {
-              return payload.getApprovalRequestsList() != null
-                  ? payload.getApprovalRequestsList()
-                  : ImmutableList.<ApprovalRequest>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListApprovalRequestsMessage,
-          ListApprovalRequestsResponse,
-          ListApprovalRequestsPagedResponse>
-      LIST_APPROVAL_REQUESTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListApprovalRequestsMessage,
-              ListApprovalRequestsResponse,
-              ListApprovalRequestsPagedResponse>() {
-            @Override
-            public ApiFuture<ListApprovalRequestsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListApprovalRequestsMessage, ListApprovalRequestsResponse> callable,
-                ListApprovalRequestsMessage request,
-                ApiCallContext context,
-                ApiFuture<ListApprovalRequestsResponse> futureResponse) {
-              PageContext<
-                      ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_APPROVAL_REQUESTS_PAGE_STR_DESC, request, context);
-              return ListApprovalRequestsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for AccessApprovalStubSettings. */
   public static class Builder extends StubSettings.Builder<AccessApprovalStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListApprovalRequestsMessage,
             ListApprovalRequestsResponse,
@@ -329,7 +330,6 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
         updateAccessApprovalSettingsSettings;
     private final UnaryCallSettings.Builder<DeleteAccessApprovalSettingsMessage, Empty>
         deleteAccessApprovalSettingsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -337,9 +337,8 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -360,9 +359,7 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(600000L))
@@ -375,7 +372,7 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
@@ -383,17 +380,11 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
 
       listApprovalRequestsSettings =
           PagedCallSettings.newBuilder(LIST_APPROVAL_REQUESTS_PAGE_STR_FACT);
-
       getApprovalRequestSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       approveApprovalRequestSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       dismissApprovalRequestSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getAccessApprovalSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateAccessApprovalSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteAccessApprovalSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -405,57 +396,7 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
               getAccessApprovalSettingsSettings,
               updateAccessApprovalSettingsSettings,
               deleteAccessApprovalSettingsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listApprovalRequestsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getApprovalRequestSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .approveApprovalRequestSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .dismissApprovalRequestSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getAccessApprovalSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateAccessApprovalSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteAccessApprovalSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(AccessApprovalStubSettings settings) {
@@ -482,7 +423,57 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
               deleteAccessApprovalSettingsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listApprovalRequestsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getApprovalRequestSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .approveApprovalRequestSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .dismissApprovalRequestSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getAccessApprovalSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAccessApprovalSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteAccessApprovalSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
