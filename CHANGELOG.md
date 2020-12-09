@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.119.0](https://www.github.com/googleapis/java-logging-logback/compare/v0.118.7...v0.119.0) (2020-12-08)
+
+
+### Features
+
+* adds support to group logs of the same http request ([#257](https://www.github.com/googleapis/java-logging-logback/issues/257)) ([d98051c](https://www.github.com/googleapis/java-logging-logback/commit/d98051c969de254c128a92f330175bc085a75855))
+
+
+### Bug Fixes
+
+* logback logging exceptions with null message ([#251](https://www.github.com/googleapis/java-logging-logback/issues/251)) ([d9856f6](https://www.github.com/googleapis/java-logging-logback/commit/d9856f6c88458648f81612fc8b15315abcec9683))
+
 ### [0.118.7](https://www.github.com/googleapis/java-logging-logback/compare/v0.118.6...v0.118.7) (2020-12-02)
 
 
