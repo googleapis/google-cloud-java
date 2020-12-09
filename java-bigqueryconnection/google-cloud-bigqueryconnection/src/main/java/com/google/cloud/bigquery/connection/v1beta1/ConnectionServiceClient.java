@@ -153,7 +153,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name. Must be in the format
    *     `projects/{project_id}/locations/{location_id}`
    * @param connection Required. Connection to create.
-   * @param connection_id Optional. Connection id that should be assigned to the created connection.
+   * @param connectionId Optional. Connection id that should be assigned to the created connection.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConnectionProto.Connection createConnection(
@@ -174,7 +174,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name. Must be in the format
    *     `projects/{project_id}/locations/{location_id}`
    * @param connection Required. Connection to create.
-   * @param connection_id Optional. Connection id that should be assigned to the created connection.
+   * @param connectionId Optional. Connection id that should be assigned to the created connection.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConnectionProto.Connection createConnection(
@@ -270,7 +270,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name. Must be in the form:
    *     `projects/{project_id}/locations/{location_id}`
-   * @param max_results Required. Maximum number of results per page.
+   * @param maxResults Required. Maximum number of results per page.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConnectionProto.ListConnectionsResponse listConnections(
@@ -289,7 +289,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name. Must be in the form:
    *     `projects/{project_id}/locations/{location_id}`
-   * @param max_results Required. Maximum number of results per page.
+   * @param maxResults Required. Maximum number of results per page.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConnectionProto.ListConnectionsResponse listConnections(
@@ -334,7 +334,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @param name Required. Name of the connection to update, for example:
    *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
    * @param connection Required. Connection containing the updated fields.
-   * @param update_mask Required. Update mask for the connection fields to be updated.
+   * @param updateMask Required. Update mask for the connection fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConnectionProto.Connection updateConnection(
@@ -356,7 +356,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @param name Required. Name of the connection to update, for example:
    *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
    * @param connection Required. Connection containing the updated fields.
-   * @param update_mask Required. Update mask for the connection fields to be updated.
+   * @param updateMask Required. Update mask for the connection fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConnectionProto.Connection updateConnection(
