@@ -311,6 +311,41 @@ public class LoggingHandlerTest {
   }
 
   @Test
+  public void testPublishKubernetesContainerResource() {
+    expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    expect(options.getService()).andReturn(logging);
+    logging.setFlushSeverity(Severity.ERROR);
+    expectLastCall().once();
+    logging.setWriteSynchronicity(Synchronicity.ASYNC);
+    expectLastCall().once();
+    MonitoredResource resource =
+        MonitoredResource.of(
+            "k8s_container",
+            ImmutableMap.of(
+                "project_id",
+                PROJECT,
+                "container_name",
+                "metadata-agent",
+                "location",
+                "us-central1-c",
+                "namespace_name",
+                "test-system",
+                "pod_name",
+                "metadata-agent-cluster"));
+    logging.write(
+        ImmutableList.of(FINEST_ENTRY),
+        WriteOption.logName(LOG_NAME),
+        WriteOption.resource(resource),
+        WriteOption.labels(BASE_SEVERITY_MAP));
+    expectLastCall().once();
+    replay(options, logging);
+    Handler handler = new LoggingHandler(LOG_NAME, options, resource);
+    handler.setLevel(Level.ALL);
+    handler.setFormatter(new TestFormatter());
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
+  }
+
+  @Test
   public void testEnhancedLogEntry() {
     expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     expect(options.getService()).andReturn(logging);
