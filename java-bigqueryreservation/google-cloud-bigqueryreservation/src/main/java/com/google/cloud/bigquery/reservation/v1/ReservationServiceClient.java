@@ -164,7 +164,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param parent Required. Project, location. E.g., `projects/myproject/locations/US`
    * @param reservation Definition of the new reservation to create.
-   * @param reservation_id The reservation ID. This field must only contain lower case alphanumeric
+   * @param reservationId The reservation ID. This field must only contain lower case alphanumeric
    *     characters or dash. Max length is 64 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -185,7 +185,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param parent Required. Project, location. E.g., `projects/myproject/locations/US`
    * @param reservation Definition of the new reservation to create.
-   * @param reservation_id The reservation ID. This field must only contain lower case alphanumeric
+   * @param reservationId The reservation ID. This field must only contain lower case alphanumeric
    *     characters or dash. Max length is 64 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -391,7 +391,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * Updates an existing reservation resource.
    *
    * @param reservation Content of the reservation to update.
-   * @param update_mask Standard field mask for the set of fields to be updated.
+   * @param updateMask Standard field mask for the set of fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Reservation updateReservation(Reservation reservation, FieldMask updateMask) {
@@ -430,7 +430,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param parent Required. Resource name of the parent reservation. E.g.,
    *     `projects/myproject/locations/US`
-   * @param capacity_commitment Content of the capacity commitment to create.
+   * @param capacityCommitment Content of the capacity commitment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment createCapacityCommitment(
@@ -449,7 +449,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param parent Required. Resource name of the parent reservation. E.g.,
    *     `projects/myproject/locations/US`
-   * @param capacity_commitment Content of the capacity commitment to create.
+   * @param capacityCommitment Content of the capacity commitment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment createCapacityCommitment(
@@ -667,8 +667,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * plan with shorter commitment period will fail with the error code
    * `google.rpc.Code.FAILED_PRECONDITION`.
    *
-   * @param capacity_commitment Content of the capacity commitment to update.
-   * @param update_mask Standard field mask for the set of fields to be updated.
+   * @param capacityCommitment Content of the capacity commitment to update.
+   * @param updateMask Standard field mask for the set of fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment updateCapacityCommitment(
@@ -728,7 +728,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name e.g.,:
    *     `projects/myproject/locations/US/capacityCommitments/123`
-   * @param slot_count Number of slots in the capacity commitment after the split.
+   * @param slotCount Number of slots in the capacity commitment after the split.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SplitCapacityCommitmentResponse splitCapacityCommitment(
@@ -753,7 +753,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name e.g.,:
    *     `projects/myproject/locations/US/capacityCommitments/123`
-   * @param slot_count Number of slots in the capacity commitment after the split.
+   * @param slotCount Number of slots in the capacity commitment after the split.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SplitCapacityCommitmentResponse splitCapacityCommitment(
@@ -810,7 +810,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param parent Parent resource that identifies admin project and location e.g.,
    *     `projects/myproject/locations/us`
-   * @param capacity_commitment_ids Ids of capacity commitments to merge. These capacity commitments
+   * @param capacityCommitmentIds Ids of capacity commitments to merge. These capacity commitments
    *     must exist under admin project and location specified in the parent. ID is the last portion
    *     of capacity commitment name e.g., 'abc' for
    *     projects/myproject/locations/US/capacityCommitments/abc
@@ -838,7 +838,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param parent Parent resource that identifies admin project and location e.g.,
    *     `projects/myproject/locations/us`
-   * @param capacity_commitment_ids Ids of capacity commitments to merge. These capacity commitments
+   * @param capacityCommitmentIds Ids of capacity commitments to merge. These capacity commitments
    *     must exist under admin project and location specified in the parent. ID is the last portion
    *     of capacity commitment name e.g., 'abc' for
    *     projects/myproject/locations/US/capacityCommitments/abc
@@ -1492,7 +1492,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the assignment, e.g.
    *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
-   * @param destination_id The new reservation ID, e.g.:
+   * @param destinationId The new reservation ID, e.g.:
    *     `projects/myotherproject/locations/US/reservations/team2-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1514,7 +1514,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the assignment, e.g.
    *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
-   * @param destination_id The new reservation ID, e.g.:
+   * @param destinationId The new reservation ID, e.g.:
    *     `projects/myotherproject/locations/US/reservations/team2-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1536,7 +1536,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the assignment, e.g.
    *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
-   * @param destination_id The new reservation ID, e.g.:
+   * @param destinationId The new reservation ID, e.g.:
    *     `projects/myotherproject/locations/US/reservations/team2-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1558,7 +1558,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the assignment, e.g.
    *     `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
-   * @param destination_id The new reservation ID, e.g.:
+   * @param destinationId The new reservation ID, e.g.:
    *     `projects/myotherproject/locations/US/reservations/team2-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1653,8 +1653,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * capacity it needs to be updated to an amount greater than 0. In order to release BI capacity
    * reservation size must be set to 0.
    *
-   * @param bi_reservation A reservation to update.
-   * @param update_mask A list of fields to be updated in this request.
+   * @param biReservation A reservation to update.
+   * @param updateMask A list of fields to be updated in this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BiReservation updateBiReservation(
