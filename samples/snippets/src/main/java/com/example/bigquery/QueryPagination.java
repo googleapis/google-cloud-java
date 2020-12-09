@@ -57,10 +57,18 @@ public class QueryPagination {
       TableResult results =
           bigquery.listTableData(tableId, BigQuery.TableDataListOption.pageSize(20));
 
+      // First Page
       results
-          .getNextPage()
           .iterateAll()
           .forEach(row -> row.forEach(val -> System.out.printf("%s,", val.toString())));
+
+      if (results.hasNextPage()) {
+        // Next Page
+        results
+            .getNextPage()
+            .iterateAll()
+            .forEach(row -> row.forEach(val -> System.out.printf("%s,", val.toString())));
+      }
 
       System.out.println("Query pagination performed successfully.");
     } catch (BigQueryException | InterruptedException e) {
