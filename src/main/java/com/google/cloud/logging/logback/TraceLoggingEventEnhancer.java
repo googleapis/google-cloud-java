@@ -35,6 +35,10 @@ public class TraceLoggingEventEnhancer implements LoggingEventEnhancer {
     MDC.put(TRACE_ID, id);
   }
 
+  /** Clearing a trace Id from the MDC */
+  public static void clearTraceId() {
+    MDC.remove(TRACE_ID);
+  }
   /**
    * Get the Trace ID associated with any logging done by the current thread.
    *

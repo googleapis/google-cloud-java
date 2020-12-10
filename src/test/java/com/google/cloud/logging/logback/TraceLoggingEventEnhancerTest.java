@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import ch.qos.logback.classic.spi.LoggingEvent;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Payload.StringPayload;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,6 +31,11 @@ public class TraceLoggingEventEnhancerTest {
   @Before
   public void setUp() {
     classUnderTest = new TraceLoggingEventEnhancer();
+  }
+
+  @After
+  public void tearDown() {
+    TraceLoggingEventEnhancer.clearTraceId();
   }
 
   @Test
