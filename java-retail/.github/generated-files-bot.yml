@@ -1,0 +1,7 @@
+externalManifests:
+- type: json
+  file: 'synth.metadata'
+  jsonpath: '$.generatedFiles[*]'
+- type: json
+  file: '.github/readme/synth.metadata/synth.metadata'
+  jsonpath: '$.generatedFiles[*]'
