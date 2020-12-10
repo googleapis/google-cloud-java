@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/googleapis/java-logging/compare/v2.0.1...v2.1.0) (2020-12-10)
+
+
+### Features
+
+* add support for k8s_container resource type ([#207](https://www.github.com/googleapis/java-logging/issues/207)) ([233efcc](https://www.github.com/googleapis/java-logging/commit/233efcce7d08cc66088d367b7fb6c104cb2f3a46))
+* fix resourceNames ([#24](https://www.github.com/googleapis/java-logging/issues/24)) ([70242d5](https://www.github.com/googleapis/java-logging/commit/70242d525dc3164c043f86d720e9210af40c6af5))
+* Makes remaining LogBucket and LogViews methods public ([#336](https://www.github.com/googleapis/java-logging/issues/336)) ([f3472c2](https://www.github.com/googleapis/java-logging/commit/f3472c27c79740cb62f83eaff66bb48f3e4ac723))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#350](https://www.github.com/googleapis/java-logging/issues/350)) ([ea92588](https://www.github.com/googleapis/java-logging/commit/ea9258838c66be244c440c76f84e5db729661791))
+
+
+### Documentation
+
+* specify current version ([#356](https://www.github.com/googleapis/java-logging/issues/356)) ([729b650](https://www.github.com/googleapis/java-logging/commit/729b650ff6a5f5022e5e5a32b0ef7b2c1642858f))
+
 ### [2.0.1](https://www.github.com/googleapis/java-logging/compare/v2.0.0...v2.0.1) (2020-11-12)
 
 
