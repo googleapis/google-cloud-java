@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-scheduler-v1</artifactId>
-  <version>1.23.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1:current} -->
+  <version>1.23.4</version><!-- {x-version-update:proto-google-cloud-scheduler-v1:current} -->
   <name>proto-google-cloud-scheduler-v1</name>
   <description>PROTO library for proto-google-cloud-scheduler-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-scheduler-parent</artifactId>
-    <version>1.23.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+    <version>1.23.4</version><!-- {x-version-update:google-cloud-scheduler:current} -->
   </parent>
   <dependencies>
     <dependency>
