@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-asset/compare/v2.1.1...v2.2.0) (2020-12-10)
+
+
+### Features
+
+* added support OSInventory in Assets. docs: updated existing docs. ([#460](https://www.github.com/googleapis/java-asset/issues/460)) ([7fecc7e](https://www.github.com/googleapis/java-asset/commit/7fecc7e2bdaa2f946e8fc3f8ea825aaab872ad85))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-orgpolicy-v1 to v1.0.7 ([#469](https://www.github.com/googleapis/java-asset/issues/469)) ([d21db38](https://www.github.com/googleapis/java-asset/commit/d21db384df384e5017fafc3745053a6b09abe519))
+* update dependency com.google.api.grpc:proto-google-cloud-os-config-v1 to v1.1.1 ([#475](https://www.github.com/googleapis/java-asset/issues/475)) ([e896db8](https://www.github.com/googleapis/java-asset/commit/e896db861a6b1697e99332cc27d597a7bf7164de))
+* update dependency com.google.api.grpc:proto-google-identity-accesscontextmanager-v1 to v1.0.9 ([#474](https://www.github.com/googleapis/java-asset/issues/474)) ([d34e588](https://www.github.com/googleapis/java-asset/commit/d34e588905a661adb77ea935f94f1a948c641969))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#468](https://www.github.com/googleapis/java-asset/issues/468)) ([0cdd449](https://www.github.com/googleapis/java-asset/commit/0cdd449bbd5ca3241f4a9ef795550171d042b02b))
+
 ### [2.1.1](https://www.github.com/googleapis/java-asset/compare/v2.1.0...v2.1.1) (2020-11-17)
 
 

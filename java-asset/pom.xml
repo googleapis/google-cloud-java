@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-asset-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.1.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
+  <version>2.2.0</version><!-- {x-version-update:google-cloud-asset:current} -->
   <name>Google Cloud Asset Parent</name>
   <url>https://github.com/googleapis/java-asset</url>
   <description>
@@ -70,67 +70,67 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1</artifactId>
-        <version>2.1.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1:current} -->
+        <version>2.2.0</version><!-- {x-version-update:proto-google-cloud-asset-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1p1beta1</artifactId>
-        <version>0.94.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p1beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:proto-google-cloud-asset-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1p2beta1</artifactId>
-        <version>0.94.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p2beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:proto-google-cloud-asset-v1p2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1beta1</artifactId>
-        <version>0.94.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:proto-google-cloud-asset-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1p4beta1</artifactId>
-        <version>0.94.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p4beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:proto-google-cloud-asset-v1p4beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1p5beta1</artifactId>
-        <version>0.94.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p5beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:proto-google-cloud-asset-v1p5beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1</artifactId>
-        <version>2.1.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1:current} -->
+        <version>2.2.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1beta1</artifactId>
-        <version>0.94.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1p1beta1</artifactId>
-        <version>0.94.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p1beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1p2beta1</artifactId>
-        <version>0.94.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p2beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1p2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1p4beta1</artifactId>
-        <version>0.94.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p4beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1p4beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1p5beta1</artifactId>
-        <version>0.94.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p5beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1p5beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-asset</artifactId>
-        <version>2.1.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
+        <version>2.2.0</version><!-- {x-version-update:google-cloud-asset:current} -->
       </dependency>
 
       <dependency>
