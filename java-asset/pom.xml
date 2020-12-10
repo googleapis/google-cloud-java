@@ -148,7 +148,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-identity-accesscontextmanager-v1</artifactId>
-        <version>1.0.7</version>
+        <version>1.0.9</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
