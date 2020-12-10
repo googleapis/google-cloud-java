@@ -81,7 +81,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>1.113.2</version>
+      <version>1.113.5</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -98,7 +98,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-storage</artifactId>
-      <version>v1-rev20200927-1.30.10</version>
+      <version>v1-rev20201112-1.31.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
