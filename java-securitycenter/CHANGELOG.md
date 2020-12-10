@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.3](https://www.github.com/googleapis/java-securitycenter/compare/v1.3.2...v1.3.3) (2020-12-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#317](https://www.github.com/googleapis/java-securitycenter/issues/317)) ([5749635](https://www.github.com/googleapis/java-securitycenter/commit/574963527d22387443bcb3f38f968a88f3e26941))
+
 ### [1.3.2](https://www.github.com/googleapis/java-securitycenter/compare/v1.3.1...v1.3.2) (2020-11-12)
 
 
