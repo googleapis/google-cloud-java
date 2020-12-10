@@ -180,12 +180,12 @@ if (entity != null) {
 ```
 
 The complete source code can be found at
-[UpdateEntity.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
+[UpdateEntity.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
 
 #### Complete source code
 
 In
-[AddEntitiesAndRunQuery.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
+[AddEntitiesAndRunQuery.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
 we put together all the code to store data and run queries into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
