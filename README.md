@@ -38,18 +38,18 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerystorage</artifactId>
-  <version>1.6.7</version>
+  <version>1.7.0</version>
 </dependency>
 
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquerystorage:1.6.7'
+compile 'com.google.cloud:google-cloud-bigquerystorage:1.7.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "1.6.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "1.7.0"
 ```
 
 ## Authentication
@@ -139,6 +139,8 @@ Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
 Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
+
+Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/bigquery/docs/reference/storage/
 [javadocs]: https://googleapis.dev/java/google-cloud-bigquerystorage/latest
