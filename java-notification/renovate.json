@@ -57,6 +57,14 @@
     },
     {
       "packagePatterns": [
+        "^com.google.apis:google-api-services-storage",
+        "^com.google.cloud:google-cloud-storage"
+      ],
+      "semanticCommitType": "deps",
+      "semanticCommitScope": null
+    },
+    {
+      "packagePatterns": [
         "^com.google.cloud:google-cloud-"
       ],
       "ignoreUnstable": false
