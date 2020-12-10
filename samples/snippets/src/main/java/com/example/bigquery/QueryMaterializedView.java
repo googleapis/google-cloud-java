@@ -16,6 +16,7 @@
 
 package com.example.bigquery;
 
+// [START bigquery_query_materialized_view]
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -49,3 +50,4 @@ public class QueryMaterializedView {
     }
   }
 }
+// [END bigquery_query_materialized_view]
