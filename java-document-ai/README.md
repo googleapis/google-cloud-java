@@ -153,6 +153,8 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
+Java is a registered trademark of Oracle and/or its affiliates.
+
 [product-docs]: https://cloud.google.com/compute/docs/documentai/
 [javadocs]: https://googleapis.dev/java/google-cloud-document-ai/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-document-ai/java7.svg
