@@ -24,6 +24,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.Intent;
 import com.google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase;
 import com.google.cloud.dialogflow.cx.v3beta1.Intent.TrainingPhrase.Part;
 import com.google.cloud.dialogflow.cx.v3beta1.IntentsClient;
+import com.google.cloud.dialogflow.cx.v3beta1.IntentsSettings;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +39,16 @@ public class CreateIntent {
       String agentId,
       List<String> trainingPhrasesParts)
       throws IOException, ApiException {
+    IntentsSettings.Builder intentsSettingsBuilder = IntentsSettings.newBuilder();
+    if (locationId.equals("global")) {
+      intentsSettingsBuilder.setEndpoint("dialogflow.googleapis.com:443");
+    } else {
+      intentsSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");
+    }
+    IntentsSettings intentsSettings = intentsSettingsBuilder.build();
+
     // Instantiates a client
-    try (IntentsClient intentsClient = IntentsClient.create()) {
+    try (IntentsClient intentsClient = IntentsClient.create(intentsSettings)) {
       // Set the project agent name using the projectID (my-project-id), locationID (global), and
       // agentID (UUID).
       AgentName parent = AgentName.of(projectId, locationId, agentId);

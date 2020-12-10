@@ -20,10 +20,11 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsClient;
+import com.google.cloud.dialogflow.cx.v3beta1.FlowsSettings;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.UUID;
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -35,30 +36,67 @@ public class CreateFlowIT {
 
   private static String DISPLAY_NAME = "flow-" + UUID.randomUUID().toString();
   private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static String LOCATION = "global";
-  private static String AGENT_ID =
+  private static String LOCATION_GLOBAL = "global";
+  private static String LOCATION_REGIONAL = "us-central1";
+  private static String AGENT_ID_GLOBAL =
       System.getenv()
-          .getOrDefault("DIALOGFLOW_CX_AGENT_ID", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
+          .getOrDefault("DIALOGFLOW_CX_AGENT_ID_GLOBAL", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
+  private static String AGENT_ID_REGIONAL =
+      System.getenv()
+          .getOrDefault("DIALOGFLOW_CX_AGENT_ID_REGIONAL", "1ea2bf10-d5ef-4442-b93f-a917d1991014");
   private static Map<String, String> EVENT_TO_FULFILLMENT_MESSAGES =
       ImmutableMap.of("event-1", "message-1", "event-2", "message-2");
-  private static String newFlowName;
 
-  @After
-  public void tearDown() throws Exception {
-    // Delete the newly created Flow.
-    if (newFlowName != null) {
+  private static String newFlowNameGlobal;
+  private static String newFlowNameRegional;
+
+  @AfterClass
+  public static void tearDown() throws Exception {
+    // Delete the newly created Flow in the global location.
+    if (newFlowNameGlobal != null) {
       try (FlowsClient flowsClient = FlowsClient.create()) {
-        flowsClient.deleteFlow(newFlowName);
+        flowsClient.deleteFlow(newFlowNameGlobal);
+      }
+    }
+
+    // Delete the newly created Flow in the regional location.
+    if (newFlowNameRegional != null) {
+      FlowsSettings flowsSettings =
+          FlowsSettings.newBuilder()
+              .setEndpoint(LOCATION_REGIONAL + "-dialogflow.googleapis.com:443")
+              .build();
+      try (FlowsClient flowsClient = FlowsClient.create(flowsSettings)) {
+        flowsClient.deleteFlow(newFlowNameRegional);
       }
     }
   }
 
   @Test
-  public void testCreateFlow() throws Exception {
+  public void testCreateFlowGlobal() throws Exception {
     Flow result =
         CreateFlow.createFlow(
-            DISPLAY_NAME, PROJECT_ID, LOCATION, AGENT_ID, EVENT_TO_FULFILLMENT_MESSAGES);
-    newFlowName = result.getName();
+            DISPLAY_NAME,
+            PROJECT_ID,
+            LOCATION_GLOBAL,
+            AGENT_ID_GLOBAL,
+            EVENT_TO_FULFILLMENT_MESSAGES);
+    newFlowNameGlobal = result.getName();
+
+    assertEquals(result.getDisplayName(), DISPLAY_NAME);
+    // Number of added event handlers + 2 default event handlers.
+    assertEquals(result.getEventHandlersCount(), EVENT_TO_FULFILLMENT_MESSAGES.size() + 2);
+  }
+
+  @Test
+  public void testCreateFlowRegional() throws Exception {
+    Flow result =
+        CreateFlow.createFlow(
+            DISPLAY_NAME,
+            PROJECT_ID,
+            LOCATION_REGIONAL,
+            AGENT_ID_REGIONAL,
+            EVENT_TO_FULFILLMENT_MESSAGES);
+    newFlowNameRegional = result.getName();
 
     assertEquals(result.getDisplayName(), DISPLAY_NAME);
     // Number of added event handlers + 2 default event handlers.

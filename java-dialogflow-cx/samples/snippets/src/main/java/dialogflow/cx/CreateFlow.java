@@ -23,6 +23,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.AgentName;
 import com.google.cloud.dialogflow.cx.v3beta1.EventHandler;
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsClient;
+import com.google.cloud.dialogflow.cx.v3beta1.FlowsSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.Fulfillment;
 import com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage;
 import com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text;
@@ -41,8 +42,16 @@ public class CreateFlow {
       String agentId,
       Map<String, String> eventsToFulfillmentMessages)
       throws IOException, ApiException {
+    FlowsSettings.Builder flowsSettingsBuilder = FlowsSettings.newBuilder();
+    if (locationId.equals("global")) {
+      flowsSettingsBuilder.setEndpoint("dialogflow.googleapis.com:443");
+    } else {
+      flowsSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");
+    }
+    FlowsSettings flowsSettings = flowsSettingsBuilder.build();
+
     // Instantiates a client
-    try (FlowsClient flowsClient = FlowsClient.create()) {
+    try (FlowsClient flowsClient = FlowsClient.create(flowsSettings)) {
       // Set the project agent name using the projectID (my-project-id), locationID (global), and
       // agentID (UUID).
       AgentName parent = AgentName.of(projectId, locationId, agentId);

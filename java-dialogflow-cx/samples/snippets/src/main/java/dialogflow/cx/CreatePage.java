@@ -26,6 +26,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.Form.Parameter.FillBehavior;
 import com.google.cloud.dialogflow.cx.v3beta1.Fulfillment;
 import com.google.cloud.dialogflow.cx.v3beta1.Page;
 import com.google.cloud.dialogflow.cx.v3beta1.PagesClient;
+import com.google.cloud.dialogflow.cx.v3beta1.PagesSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage;
 import com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text;
 import java.io.IOException;
@@ -42,8 +43,16 @@ public class CreatePage {
       String flowId,
       List<String> entryTexts)
       throws IOException, ApiException {
+    PagesSettings.Builder pagesSettingsBuilder = PagesSettings.newBuilder();
+    if (locationId.equals("global")) {
+      pagesSettingsBuilder.setEndpoint("dialogflow.googleapis.com:443");
+    } else {
+      pagesSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");
+    }
+    PagesSettings pagesSettings = pagesSettingsBuilder.build();
+
     // Instantiates a client
-    try (PagesClient pagesClient = PagesClient.create()) {
+    try (PagesClient pagesClient = PagesClient.create(pagesSettings)) {
       // Set the flow name using the projectID (my-project-id), locationID (global), agentID (UUID)
       // and flowID (UUID).
       FlowName parent = FlowName.of(projectId, locationId, agentId, flowId);

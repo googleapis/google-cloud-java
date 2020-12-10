@@ -33,18 +33,35 @@ import org.junit.runners.JUnit4;
 public class DetectIntentIT {
 
   private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static String LOCATION = "global";
-  private static String AGENT_ID =
+  private static String LOCATION_GLOBAL = "global";
+  private static String LOCATION_REGIONAL = "us-central1";
+  private static String AGENT_ID_GLOBAL =
       System.getenv()
-          .getOrDefault("DIALOGFLOW_CX_AGENT_ID", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
+          .getOrDefault("DIALOGFLOW_CX_AGENT_ID_GLOBAL", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
+  private static String AGENT_ID_REGIONAL =
+      System.getenv()
+          .getOrDefault("DIALOGFLOW_CX_AGENT_ID_REGIONAL", "1ea2bf10-d5ef-4442-b93f-a917d1991014");
   private static String SESSION_ID = UUID.randomUUID().toString();
   private static String LANGUAGE_CODE = "en-US";
   private static List<String> TEXTS = Arrays.asList("hello", "book a meeting room");
 
   @Test
-  public void testDetectIntent() throws Exception {
+  public void testDetectIntentGlobal() throws Exception {
     Map<String, QueryResult> queryResults =
-        DetectIntent.detectIntent(PROJECT_ID, LOCATION, AGENT_ID, SESSION_ID, TEXTS, LANGUAGE_CODE);
+        DetectIntent.detectIntent(
+            PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL, SESSION_ID, TEXTS, LANGUAGE_CODE);
+    assertEquals(queryResults.size(), TEXTS.size());
+    for (int i = 0; i < TEXTS.size(); i++) {
+      String text = TEXTS.get(i);
+      assertEquals(queryResults.get(text).getText(), text);
+    }
+  }
+
+  @Test
+  public void testDetectIntentRegional() throws Exception {
+    Map<String, QueryResult> queryResults =
+        DetectIntent.detectIntent(
+            PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL, SESSION_ID, TEXTS, LANGUAGE_CODE);
     assertEquals(queryResults.size(), TEXTS.size());
     for (int i = 0; i < TEXTS.size(); i++) {
       String text = TEXTS.get(i);

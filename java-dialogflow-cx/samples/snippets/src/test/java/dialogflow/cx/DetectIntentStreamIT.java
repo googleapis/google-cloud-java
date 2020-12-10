@@ -35,10 +35,14 @@ public class DetectIntentStreamIT {
 
   private static String AUDIO_FILE_PATH = "resources/book_a_room.wav";
   private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static String LOCATION = "global";
-  private static String AGENT_ID =
+  private static String LOCATION_GLOBAL = "global";
+  private static String LOCATION_REGIONAL = "us-central1";
+  private static String AGENT_ID_GLOBAL =
       System.getenv()
-          .getOrDefault("DIALOGFLOW_CX_AGENT_ID", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
+          .getOrDefault("DIALOGFLOW_CX_AGENT_ID_GLOBAL", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
+  private static String AGENT_ID_REGIONAL =
+      System.getenv()
+          .getOrDefault("DIALOGFLOW_CX_AGENT_ID_REGIONAL", "1ea2bf10-d5ef-4442-b93f-a917d1991014");
   private static String SESSION_ID = UUID.randomUUID().toString();
   private ByteArrayOutputStream bout;
   private PrintStream original;
@@ -57,9 +61,20 @@ public class DetectIntentStreamIT {
   }
 
   @Test
-  public void testDetectIntentStream() throws IOException {
+  public void testDetectIntentStreamGlobal() throws IOException {
     DetectIntentStream.detectIntentStream(
-        PROJECT_ID, LOCATION, AGENT_ID, SESSION_ID, AUDIO_FILE_PATH);
+        PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL, SESSION_ID, AUDIO_FILE_PATH);
+
+    String output = bout.toString();
+
+    assertThat(output).contains("Detected Intent");
+    assertThat(output).contains("book");
+  }
+
+  @Test
+  public void testDetectIntentStreamRegional() throws IOException {
+    DetectIntentStream.detectIntentStream(
+        PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL, SESSION_ID, AUDIO_FILE_PATH);
 
     String output = bout.toString();
 

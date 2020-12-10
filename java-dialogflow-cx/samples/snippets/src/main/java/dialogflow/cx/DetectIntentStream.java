@@ -27,6 +27,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
 import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
+import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse;
 import com.google.protobuf.ByteString;
@@ -39,8 +40,16 @@ public class DetectIntentStream {
   public static void detectIntentStream(
       String projectId, String locationId, String agentId, String sessionId, String audioFilePath)
       throws ApiException, IOException {
+    SessionsSettings.Builder sessionsSettingsBuilder = SessionsSettings.newBuilder();
+    if (locationId.equals("global")) {
+      sessionsSettingsBuilder.setEndpoint("dialogflow.googleapis.com:443");
+    } else {
+      sessionsSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");
+    }
+    SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
+
     // Instantiates a client
-    try (SessionsClient sessionsClient = SessionsClient.create()) {
+    try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
       // Set the session name using the projectID (my-project-id), locationID (global), agentID
       // (UUID), and sessionId (UUID).
       // Using the same `sessionId` between requests allows continuation of the conversation.

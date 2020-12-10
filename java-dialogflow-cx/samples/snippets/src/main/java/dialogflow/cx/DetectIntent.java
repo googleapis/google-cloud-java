@@ -25,6 +25,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
 import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
+import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.TextInput;
 import com.google.common.collect.Maps;
 import java.io.IOException;
@@ -42,9 +43,17 @@ public class DetectIntent {
       List<String> texts,
       String languageCode)
       throws IOException, ApiException {
+    SessionsSettings.Builder sessionsSettingsBuilder = SessionsSettings.newBuilder();
+    if (locationId.equals("global")) {
+      sessionsSettingsBuilder.setEndpoint("dialogflow.googleapis.com:443");
+    } else {
+      sessionsSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");
+    }
+    SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
+
     Map<String, QueryResult> queryResults = Maps.newHashMap();
     // Instantiates a client
-    try (SessionsClient sessionsClient = SessionsClient.create()) {
+    try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
       // Set the session name using the projectID (my-project-id), locationID (global), agentID
       // (UUID), and sessionId (UUID).
       SessionName session = SessionName.of(projectId, locationId, agentId, sessionId);
