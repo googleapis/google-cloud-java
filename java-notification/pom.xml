@@ -71,7 +71,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-pubsub-bom</artifactId>
-        <version>1.108.7</version>
+        <version>1.110.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
