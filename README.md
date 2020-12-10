@@ -20,17 +20,17 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.118.7-alpha</version>
+  <version>0.119.0-alpha</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging-logback:0.118.7-alpha'
+compile 'com.google.cloud:google-cloud-logging-logback:0.119.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.118.7-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.119.0-alpha"
 ```
 
 ## Authentication
@@ -173,6 +173,8 @@ Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
 Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
+
+Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/logging-logback/docs/
 [javadocs]: https://googleapis.dev/java/google-cloud-logging-logback/latest/index.html
