@@ -20,6 +20,12 @@ import com.google.common.io.BaseEncoding;
 import java.util.Random;
 
 public class GenerateEncryptionKey {
+  /**
+   * Generates a 256 bit (32 byte) AES encryption key and prints the base64 representation. This is
+   * included for demonstration purposes only. You should generate your own key, and consult your
+   * security team about best practices. Please remember that encryption keys should be handled with
+   * a comprehensive security policy.
+   */
   public static void generateEncryptionKey() {
     byte[] key = new byte[32];
     new Random().nextBytes(key);
