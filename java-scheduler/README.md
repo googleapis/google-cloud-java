@@ -45,11 +45,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-scheduler:1.23.3'
+compile 'com.google.cloud:google-cloud-scheduler:1.23.4'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "1.23.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "1.23.4"
 ```
 
 ## Authentication
