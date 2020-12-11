@@ -133,6 +133,30 @@ public class JsonStreamWriterTest {
           .addFields(1, COMPLEXLVL2)
           .setName("complex_lvl1")
           .build();
+  private final TableFieldSchema TEST_NUMERIC =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_numeric")
+          .build();
+  private final TableFieldSchema TEST_GEO =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.GEOGRAPHY)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_geo")
+          .build();
+  private final TableFieldSchema TEST_TIMESTAMP =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.TIMESTAMP)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_timestamp")
+          .build();
+  private final TableFieldSchema TEST_TIME =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.TIME)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_time")
+          .build();
   private final TableSchema COMPLEX_TABLE_SCHEMA =
       TableSchema.newBuilder()
           .addFields(0, TEST_INT)
@@ -143,6 +167,10 @@ public class JsonStreamWriterTest {
           .addFields(5, TEST_DATE)
           .addFields(6, COMPLEXLVL1)
           .addFields(7, COMPLEXLVL2)
+          .addFields(8, TEST_NUMERIC)
+          .addFields(9, TEST_GEO)
+          .addFields(10, TEST_TIMESTAMP)
+          .addFields(11, TEST_TIME)
           .build();
 
   @Before
@@ -353,6 +381,10 @@ public class JsonStreamWriterTest {
                 com.google.cloud.bigquery.storage.test.JsonTest.ComplexLvl2.newBuilder()
                     .setTestInt(3)
                     .build())
+            .setTestNumeric("1.23456")
+            .setTestGeo("POINT(1,1)")
+            .setTestTimestamp(12345678)
+            .setTestTime("01:00:01")
             .build();
     JSONObject complex_lvl2 = new JSONObject();
     complex_lvl2.put("test_int", 3);
@@ -370,6 +402,10 @@ public class JsonStreamWriterTest {
     json.put("test_date", 1);
     json.put("complex_lvl1", complex_lvl1);
     json.put("complex_lvl2", complex_lvl2);
+    json.put("test_numeric", "1.23456");
+    json.put("test_geo", "POINT(1,1)");
+    json.put("test_timestamp", 12345678);
+    json.put("test_time", "01:00:01");
     JSONArray jsonArr = new JSONArray();
     jsonArr.put(json);
 

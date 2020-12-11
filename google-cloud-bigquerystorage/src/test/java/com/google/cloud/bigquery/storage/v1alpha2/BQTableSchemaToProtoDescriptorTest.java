@@ -39,13 +39,13 @@ public class BQTableSchemaToProtoDescriptorTest {
               .put(Table.TableFieldSchema.Type.BOOL, BoolType.getDescriptor())
               .put(Table.TableFieldSchema.Type.BYTES, BytesType.getDescriptor())
               .put(Table.TableFieldSchema.Type.DATE, Int32Type.getDescriptor())
-              .put(Table.TableFieldSchema.Type.DATETIME, Int64Type.getDescriptor())
+              .put(Table.TableFieldSchema.Type.DATETIME, StringType.getDescriptor())
               .put(Table.TableFieldSchema.Type.DOUBLE, DoubleType.getDescriptor())
               .put(Table.TableFieldSchema.Type.GEOGRAPHY, StringType.getDescriptor())
               .put(Table.TableFieldSchema.Type.INT64, Int64Type.getDescriptor())
-              .put(Table.TableFieldSchema.Type.NUMERIC, BytesType.getDescriptor())
+              .put(Table.TableFieldSchema.Type.NUMERIC, StringType.getDescriptor())
               .put(Table.TableFieldSchema.Type.STRING, StringType.getDescriptor())
-              .put(Table.TableFieldSchema.Type.TIME, Int64Type.getDescriptor())
+              .put(Table.TableFieldSchema.Type.TIME, StringType.getDescriptor())
               .put(Table.TableFieldSchema.Type.TIMESTAMP, Int64Type.getDescriptor())
               .build();
 
@@ -75,7 +75,7 @@ public class BQTableSchemaToProtoDescriptorTest {
       // Check type
       FieldDescriptor.Type convertedType = convertedField.getType();
       FieldDescriptor.Type originalType = originalField.getType();
-      assertEquals(convertedType, originalType);
+      assertEquals(convertedField.getName(), convertedType, originalType);
       // Check mode
       assertTrue(
           (originalField.isRepeated() == convertedField.isRepeated())
@@ -181,6 +181,30 @@ public class BQTableSchemaToProtoDescriptorTest {
             .addFields(1, ComplexLvl2)
             .setName("complex_lvl1")
             .build();
+    final Table.TableFieldSchema TEST_NUMERIC =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.NUMERIC)
+            .setMode(Table.TableFieldSchema.Mode.NULLABLE)
+            .setName("test_numeric")
+            .build();
+    final Table.TableFieldSchema TEST_GEO =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.GEOGRAPHY)
+            .setMode(Table.TableFieldSchema.Mode.NULLABLE)
+            .setName("test_geo")
+            .build();
+    final Table.TableFieldSchema TEST_TIMESTAMP =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.TIMESTAMP)
+            .setMode(Table.TableFieldSchema.Mode.NULLABLE)
+            .setName("test_timestamp")
+            .build();
+    final Table.TableFieldSchema TEST_TIME =
+        Table.TableFieldSchema.newBuilder()
+            .setType(Table.TableFieldSchema.Type.TIME)
+            .setMode(Table.TableFieldSchema.Mode.NULLABLE)
+            .setName("test_time")
+            .build();
     final Table.TableSchema tableSchema =
         Table.TableSchema.newBuilder()
             .addFields(0, test_int)
@@ -191,6 +215,10 @@ public class BQTableSchemaToProtoDescriptorTest {
             .addFields(5, test_date)
             .addFields(6, ComplexLvl1)
             .addFields(7, ComplexLvl2)
+            .addFields(8, TEST_NUMERIC)
+            .addFields(9, TEST_GEO)
+            .addFields(10, TEST_TIMESTAMP)
+            .addFields(11, TEST_TIME)
             .build();
     final Descriptor descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);

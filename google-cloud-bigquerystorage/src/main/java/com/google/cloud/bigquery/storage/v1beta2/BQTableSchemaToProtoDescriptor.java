@@ -47,14 +47,14 @@ public class BQTableSchemaToProtoDescriptor {
               .put(TableFieldSchema.Type.BOOL, FieldDescriptorProto.Type.TYPE_BOOL)
               .put(TableFieldSchema.Type.BYTES, FieldDescriptorProto.Type.TYPE_BYTES)
               .put(TableFieldSchema.Type.DATE, FieldDescriptorProto.Type.TYPE_INT32)
-              .put(TableFieldSchema.Type.DATETIME, FieldDescriptorProto.Type.TYPE_INT64)
+              .put(TableFieldSchema.Type.DATETIME, FieldDescriptorProto.Type.TYPE_STRING)
               .put(TableFieldSchema.Type.DOUBLE, FieldDescriptorProto.Type.TYPE_DOUBLE)
               .put(TableFieldSchema.Type.GEOGRAPHY, FieldDescriptorProto.Type.TYPE_STRING)
               .put(TableFieldSchema.Type.INT64, FieldDescriptorProto.Type.TYPE_INT64)
-              .put(TableFieldSchema.Type.NUMERIC, FieldDescriptorProto.Type.TYPE_BYTES)
+              .put(TableFieldSchema.Type.NUMERIC, FieldDescriptorProto.Type.TYPE_STRING)
               .put(TableFieldSchema.Type.STRING, FieldDescriptorProto.Type.TYPE_STRING)
               .put(TableFieldSchema.Type.STRUCT, FieldDescriptorProto.Type.TYPE_MESSAGE)
-              .put(TableFieldSchema.Type.TIME, FieldDescriptorProto.Type.TYPE_INT64)
+              .put(TableFieldSchema.Type.TIME, FieldDescriptorProto.Type.TYPE_STRING)
               .put(TableFieldSchema.Type.TIMESTAMP, FieldDescriptorProto.Type.TYPE_INT64)
               .build();
 

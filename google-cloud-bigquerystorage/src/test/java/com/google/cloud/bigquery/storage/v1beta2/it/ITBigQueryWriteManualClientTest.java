@@ -216,7 +216,15 @@ public class ITBigQueryWriteManualClientTest {
                 TableId.of(DATASET, tableName),
                 StandardTableDefinition.of(
                     Schema.of(
-                        com.google.cloud.bigquery.Field.newBuilder("foo", LegacySQLTypeName.STRING)
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_str", StandardSQLTypeName.STRING)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_numerics", StandardSQLTypeName.NUMERIC)
+                            .setMode(Field.Mode.REPEATED)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_datetime", StandardSQLTypeName.DATETIME)
                             .build())))
             .build();
     bigquery.create(tableInfo);
@@ -239,28 +247,31 @@ public class ITBigQueryWriteManualClientTest {
                     .build())
             .build()) {
       LOG.info("Sending one message");
-      JSONObject foo = new JSONObject();
-      foo.put("foo", "aaa");
-      JSONArray jsonArr = new JSONArray();
-      jsonArr.put(foo);
+      JSONObject testStr = new JSONObject();
+      testStr.put("test_str", "aaa");
+      JSONObject testNumerics = new JSONObject();
+      testNumerics.put("test_numerics", new JSONArray(new String[] {"123.4", "-9000000"}));
+      JSONObject testDateTime = new JSONObject();
+      testDateTime.put("test_datetime", "2020-10-1 12:00:00");
+      JSONArray row = new JSONArray(new JSONObject[] {testStr, testNumerics, testDateTime});
 
       ApiFuture<AppendRowsResponse> response =
-          jsonStreamWriter.append(jsonArr, -1, /* allowUnknownFields */ false);
+          jsonStreamWriter.append(row, -1, /* allowUnknownFields */ false);
       assertEquals(0, response.get().getOffset());
 
       LOG.info("Sending two more messages");
-      JSONObject foo1 = new JSONObject();
-      foo1.put("foo", "bbb");
-      JSONObject foo2 = new JSONObject();
-      foo2.put("foo", "ccc");
+      JSONObject row1 = new JSONObject();
+      row1.put("test_str", "bbb");
+      JSONObject row2 = new JSONObject();
+      row2.put("test_str", "ccc");
       JSONArray jsonArr1 = new JSONArray();
-      jsonArr1.put(foo1);
-      jsonArr1.put(foo2);
+      jsonArr1.put(row1);
+      jsonArr1.put(row2);
 
-      JSONObject foo3 = new JSONObject();
-      foo3.put("foo", "ddd");
+      JSONObject row3 = new JSONObject();
+      row3.put("test_str", "ddd");
       JSONArray jsonArr2 = new JSONArray();
-      jsonArr2.put(foo3);
+      jsonArr2.put(row3);
 
       ApiFuture<AppendRowsResponse> response1 =
           jsonStreamWriter.append(jsonArr1, -1, /* allowUnknownFields */ false);
@@ -276,11 +287,12 @@ public class ITBigQueryWriteManualClientTest {
               tableInfo.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
       Iterator<FieldValueList> iter = result.getValues().iterator();
       assertEquals("aaa", iter.next().get(0).getStringValue());
+      assertEquals("-9000000", iter.next().get(1).getRepeatedValue().get(1).getStringValue());
+      assertEquals("2020-10-01T12:00:00", iter.next().get(2).getStringValue());
       assertEquals("bbb", iter.next().get(0).getStringValue());
       assertEquals("ccc", iter.next().get(0).getStringValue());
       assertEquals("ddd", iter.next().get(0).getStringValue());
       assertEquals(false, iter.hasNext());
-      jsonStreamWriter.close();
     }
   }
 
