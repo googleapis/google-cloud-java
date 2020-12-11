@@ -110,7 +110,7 @@ public class ITSystemTest {
 
   private static final String PROJECT = ServiceOptions.getDefaultProjectId();
   private static final String ID = UUID.randomUUID().toString();
-  private static final String LOCATION = "us";
+  private static final String LOCATION = "global";
   private static final String DISPLAY_NAME = "test-" + ID.substring(0, 8);
   private static final String AGENT_TIME_ZONE = "America/Los_Angeles";
   private static final String DEFAULT_LANGUAGE_CODE = "en";
