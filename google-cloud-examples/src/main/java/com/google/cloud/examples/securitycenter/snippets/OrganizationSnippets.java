@@ -33,7 +33,8 @@ public class OrganizationSnippets {
    *
    * @param organizationName The organization to get settings for.
    */
-  // [START securitycenter_ // [START get_organization_settings]
+  // [START securitycenter_get_organization_settings]
+  // [START get_organization_settings]
   static OrganizationSettings getOrganizationSettings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to get OrganizationSettings for.
@@ -52,14 +53,16 @@ public class OrganizationSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END securitycenter_ // [END get_organization_settings]
+  // [END get_organization_settings]
+  // [END securitycenter_get_organization_settings]
 
   /**
    * Update Asset Discovery OrganizationSettings for an organization
    *
    * @param organizationName The organization to update settings for.
    */
-  // [START securitycenter_ // [START update_organization_settings]
+  // [START securitycenter_update_organization_settings]
+  // [START update_organization_settings]
   static OrganizationSettings updateOrganizationSettings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request to update OrganizationSettings for.
@@ -86,6 +89,7 @@ public class OrganizationSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END securitycenter_ // [END update_organization_settings]
+  // [END update_organization_settings]
+  // [END securitycenter_update_organization_settings]
 
 }

@@ -259,7 +259,7 @@ public class AssetSnippets {
     }
   }
   // [END group_all_assets_with_filter]
-  // [END securitycenter_all_assets_with_filter]
+  // [END securitycenter_group_all_assets_with_filter]
 
   /**
    * Groups all assets by their state_changes (ADDED/DELETED/ACTIVE) during a period of time for an
