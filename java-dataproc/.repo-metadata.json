@@ -9,7 +9,7 @@
   "repo": "googleapis/java-dataproc",
   "repo_short": "java-dataproc",
   "distribution_name": "com.google.cloud:google-cloud-dataproc",
-  "codeowner_team": "@googleapis/yoshi-java",
+  "codeowner_team": "@googleapis/api-dataproc",
   "api_id": "dataproc.googleapis.com",
   "transport": "grpc",
   "requires_billing": true,
