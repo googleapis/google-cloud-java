@@ -41,6 +41,7 @@ public class SecurityMarkSnippets {
    *
    * @param assetName The asset resource to add the security mark for.
    */
+  // [START securitycenter_add_to_asset]
   // [START add_to_asset]
   static SecurityMarks addToAsset(String assetName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -74,12 +75,14 @@ public class SecurityMarkSnippets {
     }
   }
   // [END add_to_asset]
+  // [END securitycenter_add_to_asset]
 
   /**
    * Clear security marks for an asset.
    *
    * @param assetName The asset resource to clear the security marks for.
    */
+  // [START securitycenter_clear_from_asset]
   // [START clear_from_asset]
   static SecurityMarks clearFromAsset(String assetName) {
     // String assetName = "organizations/123123342/assets/12312321";
@@ -108,12 +111,14 @@ public class SecurityMarkSnippets {
     }
   }
   // [END clear_from_asset]
+  // [END securitycenter_clear_from_asset]
 
   /**
    * Deletes and updates a security mark for an asset.
    *
    * @param assetName The asset resource path to update and remove the security marks for.
    */
+  // [START securitycenter_delete_and_update_marks]
   // [START delete_and_update_marks]
   static SecurityMarks deleteAndUpdateMarks(String assetName) {
     // String assetName = "organizations/123123342/assets/12312321";
@@ -145,12 +150,14 @@ public class SecurityMarkSnippets {
     }
   }
   // [END delete_and_update_marks]
+  // [END securitycenter_delete_and_update_marks]
 
   /**
    * Add security mark to a finding.
    *
    * @param findingName The finding resource path to add the security mark for.
    */
+  // [START securitycenter_add_to_finding]
   // [START add_to_finding]
   static SecurityMarks addToFinding(FindingName findingName) {
     // FindingName findingName = FindingName.of(/*organization=*/"123234324",
@@ -185,12 +192,14 @@ public class SecurityMarkSnippets {
     }
   }
   // [END add_to_finding]
+  // [END securitycenter_add_to_finding]
 
   /**
    * Lists all assets with a filter on security marks.
    *
    * @param organizationName The organization to list assets for.
    */
+  // [START securitycenter_list_assets_with_filter]
   // [START list_assets_with_filter]
   static ImmutableList<ListAssetsResult> listAssetsWithQueryMarks(
       OrganizationName organizationName) {
@@ -218,12 +227,14 @@ public class SecurityMarkSnippets {
     }
   }
   // [END list_assets_with_filter]
+  // [END securitycenter_list_assets_with_filter]
 
   /**
    * List all findings with a filter on security marks.
    *
    * @param sourceName The source to list filtered findings for.
    */
+  // [START securitycenter_list_filtered_findings]
   // [START list_filtered_findings]
   static ImmutableList<ListFindingsResult> listFindingsWithQueryMarks(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -252,5 +263,6 @@ public class SecurityMarkSnippets {
     }
   }
   // [END list_filtered_findings]
+  // [END securitycenter_list_filtered_findings]
 
 }

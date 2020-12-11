@@ -49,6 +49,7 @@ public class FindingSnippets {
    *
    * @param sourceName The source for the finding.
    */
+  // [START securitycenter_create_finding]
   // [START create_finding]
   static Finding createFinding(SourceName sourceName, String findingId) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -87,12 +88,14 @@ public class FindingSnippets {
     }
   }
   // [END create_finding]
+  // [END securitycenter_create_finding] 
 
   /**
    * Create a finding with source properties under a source.
    *
    * @param sourceName The source for the finding.
    */
+  // [START securitycenter_create_finding_with_source_properties]
   // [START create_finding_with_source_properties]
   static Finding createFindingWithSourceProperties(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -139,12 +142,14 @@ public class FindingSnippets {
     }
   }
   // [END create_finding_with_source_properties]
+  // [END securitycenter_create_finding_with_source_properties]
 
   /**
    * Update a finding's source properties.
    *
    * @param findingName The finding to update.
    */
+  // [START securitycenter_update_finding]
   // [START update_finding]
   static Finding updateFinding(FindingName findingName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -186,12 +191,14 @@ public class FindingSnippets {
     }
   }
   // [END update_finding]
+  // [END securitycenter_update_finding] 
 
   /**
    * Updates a finding's state to INACTIVE.
    *
    * @param findingName The finding to update.
    */
+  // [START securitycenter_update_finding_state]
   // [START update_finding_state]
   static Finding setFindingState(FindingName findingName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -217,12 +224,14 @@ public class FindingSnippets {
     }
   }
   // [END update_finding_state]
+  // [END securitycenter_update_finding_state]
 
   /**
    * List all findings under an organization.
    *
    * @param organizationName The source to list all findings for.
    */
+  // [START securitycenter_list_all_findings]
   // [START list_all_findings]
   static ImmutableList<ListFindingsResult> listAllFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -248,12 +257,14 @@ public class FindingSnippets {
     }
   }
   // [END list_all_findings]
+  // [END securitycenter_list_all_findings]
 
   /**
    * List filtered findings under a source.
    *
    * @param sourceName The source to list filtered findings for.
    */
+  // [START securitycenter_list_filtered_findings]
   // [START list_filtered_findings]
   static ImmutableList<ListFindingsResult> listFilteredFindings(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -281,12 +292,14 @@ public class FindingSnippets {
     }
   }
   // [END list_filtered_findings]
+  // [END securitycenter_list_filtered_findings]
 
   /**
    * List findings at a specific time under a source.
    *
    * @param sourceName The source to list findings at a specific time for.
    */
+  // [START securitycenter_list_findings_at_time]
   // [START list_findings_at_time]
   static ImmutableList<ListFindingsResult> listFindingsAtTime(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -319,6 +332,7 @@ public class FindingSnippets {
     }
   }
   // [END list_findings_at_time]
+  // [END securitycenter_list_findings_at_time]
 
   /**
    * Demonstrate calling testIamPermissions to determin if the service account has the correct
@@ -326,6 +340,7 @@ public class FindingSnippets {
    *
    * @param sourceName The source to create a finding for.
    */
+  // [START securitycenter_test_iam_permissions]
   // [START test_iam_permissions]
   static TestIamPermissionsResponse testIamPermissions(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -348,6 +363,7 @@ public class FindingSnippets {
     }
   }
   // [END test_iam_permissions]
+  // [END securitycenter_test_iam_permissions]
 
   /**
    * Group all findings under an organization across all sources by their specified properties (e.g.
@@ -355,6 +371,7 @@ public class FindingSnippets {
    *
    * @param organizationName The organizatoin to group all findings for.
    */
+  // [START securitycenter_group_all_findings]
   // [START group_all_findings]
   static ImmutableList<GroupResult> groupFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -380,6 +397,7 @@ public class FindingSnippets {
     }
   }
   // [END group_all_findings]
+  // [END securitycenter_group_all_findings]
 
   /**
    * Group findings under an organization and a source by their specified properties (e.g.
@@ -387,6 +405,7 @@ public class FindingSnippets {
    *
    * @param sourceName The source to limit the findings to.
    */
+  // [START securitycenter_group_findings_with_source]
   // [START group_findings_with_source]
   static ImmutableList<GroupResult> groupFindingsWithSource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -412,6 +431,7 @@ public class FindingSnippets {
     }
   }
   // [END group_findings_with_source]
+  // [END securitycenter_group_findings_with_source]
 
   /**
    * Group active findings under an organization and a source by their specified properties (e.g.
@@ -419,6 +439,7 @@ public class FindingSnippets {
    *
    * @param sourceName The source to limit the findings to.
    */
+  // [START securitycenter_group_active_findings_with_source]
   // [START group_active_findings_with_source]
   static ImmutableList<GroupResult> groupActiveFindingsWithSource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -447,6 +468,7 @@ public class FindingSnippets {
     }
   }
   // [END group_active_findings_with_source]
+  // [END securitycenter_group_active_findings_with_source]
 
   /**
    * Group active findings under an organization and a source by their specified properties (e.g.
@@ -454,6 +476,7 @@ public class FindingSnippets {
    *
    * @param sourceName The source to limit the findings to.
    */
+  // [START securitycenter_group_active_findings_with_source_at_time]
   // [START group_active_findings_with_source_at_time]
   static ImmutableList<GroupResult> groupActiveFindingsWithSourceAtTime(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -489,6 +512,7 @@ public class FindingSnippets {
     }
   }
   // [END group_active_findings_with_source_at_time]
+  // [END securitycenter_group_active_findings_with_source_at_time]
 
   /**
    * Group active findings under an organization and a source by their state_changes
@@ -496,6 +520,7 @@ public class FindingSnippets {
    *
    * @param sourceName The source to limit the findings to.
    */
+  // [START securitycenter_group_active_findings_with_source_and_compare_duration]
   // [START group_active_findings_with_source_and_compare_duration]
   static ImmutableList<GroupResult> groupActiveFindingsWithSourceAndCompareDuration(
       SourceName sourceName, Duration duration) {
@@ -529,4 +554,5 @@ public class FindingSnippets {
     }
   }
   // [END group_active_findings_with_source_and_compare_duration]
+  // [END securitycenter_group_active_findings_with_source_and_compare_duration]
 }
