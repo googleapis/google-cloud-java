@@ -24,7 +24,6 @@
   </properties>
 
   <dependencies>
-    <!-- {x-version-update-start:google-cloud-logging:released} -->
     <!-- [START logging_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -32,7 +31,6 @@
       <version>2.1.0</version>
     </dependency>
     <!-- [END logging_install_without_bom] -->
-    <!-- {x-version-update-end} -->
 
     <dependency>
       <groupId>junit</groupId>
