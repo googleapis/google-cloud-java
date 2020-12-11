@@ -180,12 +180,12 @@ public class WorkflowsClientTest {
         Workflow.newBuilder()
             .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
             .setDescription("description-1724546052")
-            .setRevisionId("revision_id513861631")
+            .setRevisionId("revisionId-1507445162")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setRevisionCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setServiceAccount("service_account-1948028253")
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockWorkflows.addResponse(expectedResponse);
 
@@ -225,12 +225,12 @@ public class WorkflowsClientTest {
         Workflow.newBuilder()
             .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
             .setDescription("description-1724546052")
-            .setRevisionId("revision_id513861631")
+            .setRevisionId("revisionId-1507445162")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setRevisionCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setServiceAccount("service_account-1948028253")
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockWorkflows.addResponse(expectedResponse);
 
@@ -270,12 +270,12 @@ public class WorkflowsClientTest {
         Workflow.newBuilder()
             .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
             .setDescription("description-1724546052")
-            .setRevisionId("revision_id513861631")
+            .setRevisionId("revisionId-1507445162")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setRevisionCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setServiceAccount("service_account-1948028253")
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -287,7 +287,7 @@ public class WorkflowsClientTest {
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Workflow workflow = Workflow.newBuilder().build();
-    String workflowId = "workflow_id1712917915";
+    String workflowId = "workflowId-360387270";
 
     Workflow actualResponse = client.createWorkflowAsync(parent, workflow, workflowId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -313,7 +313,7 @@ public class WorkflowsClientTest {
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Workflow workflow = Workflow.newBuilder().build();
-      String workflowId = "workflow_id1712917915";
+      String workflowId = "workflowId-360387270";
       client.createWorkflowAsync(parent, workflow, workflowId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -329,12 +329,12 @@ public class WorkflowsClientTest {
         Workflow.newBuilder()
             .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
             .setDescription("description-1724546052")
-            .setRevisionId("revision_id513861631")
+            .setRevisionId("revisionId-1507445162")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setRevisionCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setServiceAccount("service_account-1948028253")
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -346,7 +346,7 @@ public class WorkflowsClientTest {
 
     String parent = "parent-995424086";
     Workflow workflow = Workflow.newBuilder().build();
-    String workflowId = "workflow_id1712917915";
+    String workflowId = "workflowId-360387270";
 
     Workflow actualResponse = client.createWorkflowAsync(parent, workflow, workflowId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -372,7 +372,7 @@ public class WorkflowsClientTest {
     try {
       String parent = "parent-995424086";
       Workflow workflow = Workflow.newBuilder().build();
-      String workflowId = "workflow_id1712917915";
+      String workflowId = "workflowId-360387270";
       client.createWorkflowAsync(parent, workflow, workflowId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -472,12 +472,12 @@ public class WorkflowsClientTest {
         Workflow.newBuilder()
             .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
             .setDescription("description-1724546052")
-            .setRevisionId("revision_id513861631")
+            .setRevisionId("revisionId-1507445162")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setRevisionCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setServiceAccount("service_account-1948028253")
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
