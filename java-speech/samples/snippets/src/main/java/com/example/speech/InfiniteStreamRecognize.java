@@ -266,13 +266,13 @@ public class InfiniteStreamRecognize {
                 if (bridgingOffset > finalRequestEndTime) {
                   bridgingOffset = finalRequestEndTime;
                 }
-                int chunksFromMS =
+                int chunksFromMs =
                     (int) Math.floor((finalRequestEndTime - bridgingOffset) / chunkTime);
                 // chunks from MS is number of chunks to resend
                 bridgingOffset =
-                    (int) Math.floor((lastAudioInput.size() - chunksFromMS) * chunkTime);
+                    (int) Math.floor((lastAudioInput.size() - chunksFromMs) * chunkTime);
                 // set bridging offset for next request
-                for (int i = chunksFromMS; i < lastAudioInput.size(); i++) {
+                for (int i = chunksFromMs; i < lastAudioInput.size(); i++) {
                   request =
                       StreamingRecognizeRequest.newBuilder()
                           .setAudioContent(lastAudioInput.get(i))
