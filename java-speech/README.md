@@ -46,11 +46,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-speech:1.24.7'
+compile 'com.google.cloud:google-cloud-speech:1.24.8'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "1.24.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "1.24.8"
 ```
 
 ## Authentication
@@ -151,6 +151,7 @@ has instructions for running the samples.
 | Recognize | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/Recognize.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/Recognize.java) |
 | Recognize Beta | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/RecognizeBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/RecognizeBeta.java) |
 | Speech Adaptation | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/SpeechAdaptation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/SpeechAdaptation.java) |
+| Speech Profanity Filter | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/SpeechProfanityFilter.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/SpeechProfanityFilter.java) |
 | Transcribe Context Classes | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/TranscribeContextClasses.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/TranscribeContextClasses.java) |
 | Transcribe Diarization | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/TranscribeDiarization.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/TranscribeDiarization.java) |
 | Transcribe Diarization Gcs | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/TranscribeDiarizationGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/TranscribeDiarizationGcs.java) |
@@ -199,6 +200,8 @@ Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
 Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
+
+Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/speech-to-text/docs/
 [javadocs]: https://googleapis.dev/java/google-cloud-speech/latest/
