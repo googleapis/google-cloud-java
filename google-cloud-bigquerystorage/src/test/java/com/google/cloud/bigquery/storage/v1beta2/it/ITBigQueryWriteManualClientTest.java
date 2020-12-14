@@ -257,7 +257,9 @@ public class ITBigQueryWriteManualClientTest {
 
       ApiFuture<AppendRowsResponse> response =
           jsonStreamWriter.append(row, -1, /* allowUnknownFields */ false);
-      assertEquals(0, response.get().getOffset());
+      // Temp for Breaking Change.
+      response.get();
+      // assertEquals(0, response.get().getOffset());
 
       LOG.info("Sending two more messages");
       JSONObject row1 = new JSONObject();
@@ -277,9 +279,10 @@ public class ITBigQueryWriteManualClientTest {
           jsonStreamWriter.append(jsonArr1, -1, /* allowUnknownFields */ false);
       ApiFuture<AppendRowsResponse> response2 =
           jsonStreamWriter.append(jsonArr2, -1, /* allowUnknownFields */ false);
-      // Waiting for API breaking change to be generated in new client.
+      // Temp for Breaking Change.
       // assertEquals(1, response1.get().getOffset());
       // assertEquals(3, response2.get().getOffset());
+      response1.get();
       response2.get();
 
       TableResult result =
@@ -336,7 +339,9 @@ public class ITBigQueryWriteManualClientTest {
 
       ApiFuture<AppendRowsResponse> response =
           jsonStreamWriter.append(jsonArr, -1, /* allowUnknownFields */ false);
-      assertEquals(0, response.get().getOffset());
+      // Temp for Breaking Change.
+      // assertEquals(0, response.get().getOffset());
+      response.get();
       // 2). Schema update and wait until querying it returns a new schema.
       try {
         com.google.cloud.bigquery.Table table = bigquery.getTable(DATASET, tableName);
@@ -380,8 +385,9 @@ public class ITBigQueryWriteManualClientTest {
       for (int i = 1; i < 100; i++) {
         ApiFuture<AppendRowsResponse> response2 =
             jsonStreamWriter.append(jsonArr2, -1, /* allowUnknownFields */ false);
-        // Waiting for API breaking change to be generated in new client.
+        // Temp for Breaking Change.
         // assertEquals(i, response2.get().getOffset());
+        response2.get();
         if (response2.get().hasUpdatedSchema()) {
           next = i;
           break;
@@ -409,7 +415,7 @@ public class ITBigQueryWriteManualClientTest {
       for (int i = 0; i < 10; i++) {
         ApiFuture<AppendRowsResponse> response3 =
             jsonStreamWriter.append(updatedJsonArr, -1, /* allowUnknownFields */ false);
-        // Waiting for API breaking change to be generated in new client.
+        // Temp for Breaking Change.
         // assertEquals(next + 1 + i, response3.get().getOffset());
         response3.get();
       }
@@ -456,6 +462,7 @@ public class ITBigQueryWriteManualClientTest {
                   .build());
       // Waiting for API breaking change to be generated in new client.
       // assertEquals(1, response2.get().getOffset());
+      response2.get();
 
       // Nothing showed up since rows are not committed.
       TableResult result =
@@ -474,8 +481,9 @@ public class ITBigQueryWriteManualClientTest {
                   .setOffset(Int64Value.of(1L))
                   .build());
       try {
-        // Waiting for API breaking change to be generated in new client.
+        // Temp for Breaking Change.
         // assertEquals(2, response3.get().getOffset());
+        response3.get();
         // fail("Append to finalized stream should fail.");
       } catch (Exception expected) {
         // The exception thrown is not stable. Opened a bug to fix it.
@@ -523,7 +531,7 @@ public class ITBigQueryWriteManualClientTest {
       ApiFuture<AppendRowsResponse> response =
           streamWriter.append(
               createAppendRequest(writeStream.getName(), new String[] {"aaa"}).build());
-      // Waiting for API breaking change to be generated in new client.
+      // Temp for Breaking Change.
       // assertEquals(0L, response.get().getOffset());
       response.get();
       // Send in a bogus stream name should cause in connection error.
@@ -545,6 +553,7 @@ public class ITBigQueryWriteManualClientTest {
               createAppendRequest(writeStream.getName(), new String[] {"aaa"}).build());
       // Waiting for API breaking change to be generated in new client.
       // assertEquals(1L, response3.get().getOffset());
+      response3.get();
     } finally {
     }
   }
@@ -564,8 +573,9 @@ public class ITBigQueryWriteManualClientTest {
               createAppendRequest(writeStream.getName(), new String[] {"aaa"})
                   .setOffset(Int64Value.of(0L))
                   .build());
-      // Waiting for API breaking change to be generated in new client.
+      // Temp for Breaking Change.
       // assertEquals(0L, response.get().getOffset());
+      response.get();
     }
 
     try (StreamWriter streamWriter = StreamWriter.newBuilder(writeStream.getName()).build()) {
@@ -576,8 +586,9 @@ public class ITBigQueryWriteManualClientTest {
               createAppendRequest(writeStream.getName(), new String[] {"bbb"})
                   .setOffset(Int64Value.of(1L))
                   .build());
-      // Waiting for API breaking change to be generated in new client.
+      // Temp for Breaking Change.
       // assertEquals(1L, response.get().getOffset());
+      response.get();
     }
   }
 }

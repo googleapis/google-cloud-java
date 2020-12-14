@@ -857,18 +857,19 @@ public class StreamWriter implements AutoCloseable {
             inflightBatch.onFailure(exception);
           }
         }
-        if (inflightBatch.getExpectedOffset() > 0
-            && response.getOffset() != inflightBatch.getExpectedOffset()) {
-          IllegalStateException exception =
-              new IllegalStateException(
-                  String.format(
-                      "The append result offset %s does not match " + "the expected offset %s.",
-                      response.getOffset(), inflightBatch.getExpectedOffset()));
-          inflightBatch.onFailure(exception);
-          abortInflightRequests(exception);
-        } else {
-          inflightBatch.onSuccess(response);
-        }
+        // Temp for Breaking Change.
+        // if (inflightBatch.getExpectedOffset() > 0
+        //     && response.getOffset() != inflightBatch.getExpectedOffset()) {
+        //   IllegalStateException exception =
+        //      new IllegalStateException(
+        //          String.format(
+        //              "The append result offset %s does not match " + "the expected offset %s.",
+        //              response.getOffset(), inflightBatch.getExpectedOffset()));
+        //  inflightBatch.onFailure(exception);
+        //  abortInflightRequests(exception);
+        // } else {
+        inflightBatch.onSuccess(response);
+        // }
       } finally {
         streamWriter.messagesWaiter.release(inflightBatch.getByteSize());
       }
