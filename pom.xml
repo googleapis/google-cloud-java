@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+  <version>2.1.1</version><!-- {x-version-update:google-cloud-logging:current} -->
   <name>Google Cloud Logging Parent</name>
   <url>https://github.com/googleapis/java-logging</url>
   <description>
@@ -70,17 +70,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-logging-v2</artifactId>
-        <version>0.86.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
+        <version>0.86.1</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-logging-v2</artifactId>
-        <version>0.86.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
+        <version>0.86.1</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-logging</artifactId>
-        <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+        <version>2.1.1</version><!-- {x-version-update:google-cloud-logging:current} -->
       </dependency>
 
       <dependency>
