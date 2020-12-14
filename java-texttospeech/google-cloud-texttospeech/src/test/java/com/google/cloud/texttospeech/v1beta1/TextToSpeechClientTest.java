@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.texttospeech.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -24,12 +25,13 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -37,31 +39,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class TextToSpeechClientTest {
+  private static MockServiceHelper mockServiceHelper;
   private static MockTextToSpeech mockTextToSpeech;
-  private static MockServiceHelper serviceHelper;
   private TextToSpeechClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockTextToSpeech = new MockTextToSpeech();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockTextToSpeech));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     TextToSpeechSettings settings =
         TextToSpeechSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -76,19 +78,19 @@ public class TextToSpeechClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listVoicesTest() {
-    ListVoicesResponse expectedResponse = ListVoicesResponse.newBuilder().build();
+  public void listVoicesTest() throws Exception {
+    ListVoicesResponse expectedResponse =
+        ListVoicesResponse.newBuilder().addAllVoices(new ArrayList<Voice>()).build();
     mockTextToSpeech.addResponse(expectedResponse);
 
-    String languageCode = "languageCode-412800396";
+    String languageCode = "languageCode-2092349083";
 
     ListVoicesResponse actualResponse = client.listVoices(languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTextToSpeech.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListVoicesRequest actualRequest = (ListVoicesRequest) actualRequests.get(0);
+    ListVoicesRequest actualRequest = ((ListVoicesRequest) actualRequests.get(0));
 
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertTrue(
@@ -98,27 +100,27 @@ public class TextToSpeechClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listVoicesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTextToSpeech.addException(exception);
 
     try {
-      String languageCode = "languageCode-412800396";
-
+      String languageCode = "languageCode-2092349083";
       client.listVoices(languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void synthesizeSpeechTest() {
-    ByteString audioContent = ByteString.copyFromUtf8("16");
+  public void synthesizeSpeechTest() throws Exception {
     SynthesizeSpeechResponse expectedResponse =
-        SynthesizeSpeechResponse.newBuilder().setAudioContent(audioContent).build();
+        SynthesizeSpeechResponse.newBuilder()
+            .setAudioContent(ByteString.EMPTY)
+            .addAllTimepoints(new ArrayList<Timepoint>())
+            .setAudioConfig(AudioConfig.newBuilder().build())
+            .build();
     mockTextToSpeech.addResponse(expectedResponse);
 
     SynthesisInput input = SynthesisInput.newBuilder().build();
@@ -130,7 +132,7 @@ public class TextToSpeechClientTest {
 
     List<AbstractMessage> actualRequests = mockTextToSpeech.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SynthesizeSpeechRequest actualRequest = (SynthesizeSpeechRequest) actualRequests.get(0);
+    SynthesizeSpeechRequest actualRequest = ((SynthesizeSpeechRequest) actualRequests.get(0));
 
     Assert.assertEquals(input, actualRequest.getInput());
     Assert.assertEquals(voice, actualRequest.getVoice());
@@ -142,20 +144,18 @@ public class TextToSpeechClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void synthesizeSpeechExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTextToSpeech.addException(exception);
 
     try {
       SynthesisInput input = SynthesisInput.newBuilder().build();
       VoiceSelectionParams voice = VoiceSelectionParams.newBuilder().build();
       AudioConfig audioConfig = AudioConfig.newBuilder().build();
-
       client.synthesizeSpeech(input, voice, audioConfig);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }
