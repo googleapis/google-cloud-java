@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-functions.git",
-        "sha": "603e6e5c2fd5ab00474ad3d33b8bc6d23af7b17d"
+        "sha": "80170a344a82b50fa7c256b54b8273d49705d73d"
       }
     },
     {
