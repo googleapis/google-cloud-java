@@ -16,11 +16,13 @@
 
 package com.google.cloud.examples.securitycenter.snippets;
 
+// [START securitycenter_delete_notification_config]
 // [START scc_delete_notification_config]
 import com.google.cloud.securitycenter.v1.NotificationConfigName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import java.io.IOException;
 // [END scc_delete_notification_config]
+// [END securitycenter_delete_notification_config]
 
 /** Snippets for how to Delete NotificationConfigs. */
 final class DeleteNotificationConfigSnippets {

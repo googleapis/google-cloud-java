@@ -16,6 +16,7 @@
 
 package com.google.cloud.examples.securitycenter.snippets;
 
+// [START securitycenter_receive_notifications]
 // [START scc_receive_notifications]
 
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
@@ -73,3 +74,4 @@ public class NotificationReceiver {
   }
 }
 // [END scc_receive_notifications]
+// [END securitycenter_receive_notifications]

@@ -16,6 +16,7 @@
 
 package com.google.cloud.examples.securitycenter.snippets;
 
+// [START securitycenter_update_notification_config]
 // [START scc_update_notification_config]
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig;
@@ -23,11 +24,13 @@ import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 // [END scc_update_notification_config]
+// [END securitycenter_update_notification_config]
 
 /** Snippets for UpdateNotificationConfig. */
 final class UpdateNotificationConfigSnippets {
   private UpdateNotificationConfigSnippets() {}
 
+  // [START securitycenter_update_notification_config]
   // [START scc_update_notification_config]
   public static NotificationConfig updateNotificationConfig(
       String organizationId, String notificationConfigId, String projectId, String topicName)
@@ -65,4 +68,5 @@ final class UpdateNotificationConfigSnippets {
     }
   }
   // [END scc_update_notification_config]
+  // [END securitycenter_update_notification_config]
 }

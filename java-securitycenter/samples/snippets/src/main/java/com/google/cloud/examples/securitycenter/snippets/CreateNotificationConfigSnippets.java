@@ -16,6 +16,7 @@
 
 package com.google.cloud.examples.securitycenter.snippets;
 
+// [START securitycenter_create_notification_config]
 // [START scc_create_notification_config]
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.NotificationConfig;
@@ -23,11 +24,13 @@ import com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import java.io.IOException;
 // [END scc_create_notification_config]
+// [END securitycenter_create_notification_config]
 
 /** Create NotificationConfig Snippet. */
 final class CreateNotificationConfigSnippets {
   private CreateNotificationConfigSnippets() {}
 
+  // [START securitycenter_create_notification_config]
   // [START scc_create_notification_config]
   public static NotificationConfig createNotificationConfig(
       String organizationId, String notificationConfigId, String projectId, String topicName)
@@ -62,4 +65,5 @@ final class CreateNotificationConfigSnippets {
     }
   }
   // [END scc_create_notification_config]
+  // [END securitycenter_create_notification_config]
 }
