@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.documentai.v1beta3;
 
 import com.google.api.core.ApiFunction;
@@ -32,7 +33,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DocumentProcessorServiceClient}.
  *
@@ -49,24 +50,26 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of processDocument to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DocumentProcessorServiceSettings.Builder documentProcessorServiceSettingsBuilder =
  *     DocumentProcessorServiceSettings.newBuilder();
  * documentProcessorServiceSettingsBuilder
  *     .processDocumentSettings()
  *     .setRetrySettings(
- *         documentProcessorServiceSettingsBuilder.processDocumentSettings().getRetrySettings().toBuilder()
+ *         documentProcessorServiceSettingsBuilder
+ *             .processDocumentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * DocumentProcessorServiceSettings documentProcessorServiceSettings = documentProcessorServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * DocumentProcessorServiceSettings documentProcessorServiceSettings =
+ *     documentProcessorServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class DocumentProcessorServiceSettings
     extends ClientSettings<DocumentProcessorServiceSettings> {
+
   /** Returns the object with the settings used for calls to processDocument. */
   public UnaryCallSettings<ProcessRequest, ProcessResponse> processDocumentSettings() {
     return ((DocumentProcessorServiceStubSettings) getStubSettings()).processDocumentSettings();
@@ -79,8 +82,6 @@ public class DocumentProcessorServiceSettings
   }
 
   /** Returns the object with the settings used for calls to batchProcessDocuments. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchProcessRequest, BatchProcessResponse, BatchProcessMetadata>
       batchProcessDocumentsOperationSettings() {
     return ((DocumentProcessorServiceStubSettings) getStubSettings())
@@ -93,8 +94,6 @@ public class DocumentProcessorServiceSettings
   }
 
   /** Returns the object with the settings used for calls to reviewDocument. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationSettings() {
@@ -163,16 +162,13 @@ public class DocumentProcessorServiceSettings
   /** Builder for DocumentProcessorServiceSettings. */
   public static class Builder
       extends ClientSettings.Builder<DocumentProcessorServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(DocumentProcessorServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(DocumentProcessorServiceStubSettings.newBuilder());
     }
 
     protected Builder(DocumentProcessorServiceSettings settings) {
@@ -183,11 +179,15 @@ public class DocumentProcessorServiceSettings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(DocumentProcessorServiceStubSettings.newBuilder());
+    }
+
     public DocumentProcessorServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((DocumentProcessorServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -212,8 +212,6 @@ public class DocumentProcessorServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to batchProcessDocuments. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchProcessRequest, BatchProcessResponse, BatchProcessMetadata>
         batchProcessDocumentsOperationSettings() {
@@ -226,8 +224,6 @@ public class DocumentProcessorServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to reviewDocument. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
         reviewDocumentOperationSettings() {

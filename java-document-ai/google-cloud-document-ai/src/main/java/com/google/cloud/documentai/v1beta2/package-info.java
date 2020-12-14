@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,32 +15,17 @@
  */
 
 /**
- * A client to Cloud Document AI API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>================================== DocumentUnderstandingServiceClient
- * ==================================
+ * <p>======================= DocumentUnderstandingServiceClient =======================
  *
  * <p>Service Description: Service to parse structured information from unstructured or
  * semi-structured documents using state-of-the-art Google AI such as natural language, computer
  * vision, and translation.
  *
  * <p>Sample for DocumentUnderstandingServiceClient:
- *
- * <pre>
- * <code>
- * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient = DocumentUnderstandingServiceClient.create()) {
- *   InputConfig inputConfig = InputConfig.newBuilder().build();
- *   ProcessDocumentRequest request = ProcessDocumentRequest.newBuilder()
- *     .setInputConfig(inputConfig)
- *     .build();
- *   Document response = documentUnderstandingServiceClient.processDocument(request);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.documentai.v1beta2;
 
 import javax.annotation.Generated;

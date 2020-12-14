@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.documentai.v1beta3;
 
 import com.google.api.core.BetaApi;
@@ -28,7 +29,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service to call Cloud DocumentAI to process documents according to the
  * processor's definition. Processors are built using state-of-the-art Google AI such as natural
@@ -38,16 +39,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
- *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
- *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the documentProcessorServiceClient object to clean up
+ * <p>Note: close() needs to be called on the DocumentProcessorServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -76,30 +68,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DocumentProcessorServiceSettings documentProcessorServiceSettings =
  *     DocumentProcessorServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * DocumentProcessorServiceClient documentProcessorServiceClient =
  *     DocumentProcessorServiceClient.create(documentProcessorServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DocumentProcessorServiceSettings documentProcessorServiceSettings =
  *     DocumentProcessorServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DocumentProcessorServiceClient documentProcessorServiceClient =
  *     DocumentProcessorServiceClient.create(documentProcessorServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class DocumentProcessorServiceClient implements BackgroundResource {
   private final DocumentProcessorServiceSettings settings;
   private final DocumentProcessorServiceStub stub;
@@ -122,7 +112,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of DocumentProcessorServiceClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use DocumentProcessorServiceSettings}.
+   * calls. This is for advanced usage - prefer using create(DocumentProcessorServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DocumentProcessorServiceClient create(DocumentProcessorServiceStub stub) {
@@ -161,24 +151,13 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a single document.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The processor resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -189,18 +168,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     return processDocument(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a single document.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   ProcessResponse response = documentProcessorServiceClient.processDocument(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The processor resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -210,21 +180,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     return processDocument(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a single document.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   ProcessRequest request = ProcessRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ProcessResponse response = documentProcessorServiceClient.processDocument(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -233,47 +191,24 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     return processDocumentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a single document.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   ProcessRequest request = ProcessRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ProcessResponse&gt; future = documentProcessorServiceClient.processDocumentCallable().futureCall(request);
-   *   // Do something
-   *   ProcessResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ProcessRequest, ProcessResponse> processDocumentCallable() {
     return stub.processDocumentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in
    * the [Document] format.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   BatchProcessResponse response = documentProcessorServiceClient.batchProcessDocumentsAsync(name).get();
-   * }
-   * </code></pre>
-   *
    * @param name Required. The processor resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchProcessResponse, BatchProcessMetadata>
       batchProcessDocumentsAsync(ProcessorName name) {
     BatchProcessRequest request =
@@ -281,126 +216,65 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     return batchProcessDocumentsAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in
    * the [Document] format.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   BatchProcessResponse response = documentProcessorServiceClient.batchProcessDocumentsAsync(name.toString()).get();
-   * }
-   * </code></pre>
-   *
    * @param name Required. The processor resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchProcessResponse, BatchProcessMetadata>
       batchProcessDocumentsAsync(String name) {
     BatchProcessRequest request = BatchProcessRequest.newBuilder().setName(name).build();
     return batchProcessDocumentsAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in
    * the [Document] format.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   BatchProcessRequest request = BatchProcessRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   BatchProcessResponse response = documentProcessorServiceClient.batchProcessDocumentsAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchProcessResponse, BatchProcessMetadata>
       batchProcessDocumentsAsync(BatchProcessRequest request) {
     return batchProcessDocumentsOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in
    * the [Document] format.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   BatchProcessRequest request = BatchProcessRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;BatchProcessResponse, BatchProcessMetadata&gt; future = documentProcessorServiceClient.batchProcessDocumentsOperationCallable().futureCall(request);
-   *   // Do something
-   *   BatchProcessResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchProcessRequest, BatchProcessResponse, BatchProcessMetadata>
       batchProcessDocumentsOperationCallable() {
     return stub.batchProcessDocumentsOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in
    * the [Document] format.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   BatchProcessRequest request = BatchProcessRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = documentProcessorServiceClient.batchProcessDocumentsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchProcessRequest, Operation> batchProcessDocumentsCallable() {
     return stub.batchProcessDocumentsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Send a document for Human Review. The input document should be processed by the specified
    * processor.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   HumanReviewConfigName humanReviewConfig = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   ReviewDocumentResponse response = documentProcessorServiceClient.reviewDocumentAsync(humanReviewConfig).get();
-   * }
-   * </code></pre>
    *
    * @param humanReviewConfig Required. The resource name of the HumanReviewConfig that the document
    *     will be reviewed with.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentAsync(HumanReviewConfigName humanReviewConfig) {
     ReviewDocumentRequest request =
@@ -410,26 +284,15 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     return reviewDocumentAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Send a document for Human Review. The input document should be processed by the specified
    * processor.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   HumanReviewConfigName humanReviewConfig = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   ReviewDocumentResponse response = documentProcessorServiceClient.reviewDocumentAsync(humanReviewConfig.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param humanReviewConfig Required. The resource name of the HumanReviewConfig that the document
    *     will be reviewed with.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentAsync(String humanReviewConfig) {
     ReviewDocumentRequest request =
@@ -437,77 +300,38 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     return reviewDocumentAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Send a document for Human Review. The input document should be processed by the specified
    * processor.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   HumanReviewConfigName humanReviewConfig = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   ReviewDocumentRequest request = ReviewDocumentRequest.newBuilder()
-   *     .setHumanReviewConfig(humanReviewConfig.toString())
-   *     .build();
-   *   ReviewDocumentResponse response = documentProcessorServiceClient.reviewDocumentAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentAsync(ReviewDocumentRequest request) {
     return reviewDocumentOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Send a document for Human Review. The input document should be processed by the specified
    * processor.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   HumanReviewConfigName humanReviewConfig = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   ReviewDocumentRequest request = ReviewDocumentRequest.newBuilder()
-   *     .setHumanReviewConfig(humanReviewConfig.toString())
-   *     .build();
-   *   OperationFuture&lt;ReviewDocumentResponse, ReviewDocumentOperationMetadata&gt; future = documentProcessorServiceClient.reviewDocumentOperationCallable().futureCall(request);
-   *   // Do something
-   *   ReviewDocumentResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationCallable() {
     return stub.reviewDocumentOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Send a document for Human Review. The input document should be processed by the specified
    * processor.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
-   *   HumanReviewConfigName humanReviewConfig = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
-   *   ReviewDocumentRequest request = ReviewDocumentRequest.newBuilder()
-   *     .setHumanReviewConfig(humanReviewConfig.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = documentProcessorServiceClient.reviewDocumentCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ReviewDocumentRequest, Operation> reviewDocumentCallable() {
     return stub.reviewDocumentCallable();

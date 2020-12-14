@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.documentai.v1beta2;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -26,7 +27,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import io.grpc.Status;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -41,32 +43,32 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class DocumentUnderstandingServiceClientTest {
   private static MockDocumentUnderstandingService mockDocumentUnderstandingService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private DocumentUnderstandingServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockDocumentUnderstandingService = new MockDocumentUnderstandingService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(mockDocumentUnderstandingService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     DocumentUnderstandingServiceSettings settings =
         DocumentUnderstandingServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -81,10 +83,11 @@ public class DocumentUnderstandingServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void batchProcessDocumentsTest() throws Exception {
     BatchProcessDocumentsResponse expectedResponse =
-        BatchProcessDocumentsResponse.newBuilder().build();
+        BatchProcessDocumentsResponse.newBuilder()
+            .addAllResponses(new ArrayList<ProcessDocumentResponse>())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("batchProcessDocumentsTest")
@@ -102,7 +105,7 @@ public class DocumentUnderstandingServiceClientTest {
     List<AbstractMessage> actualRequests = mockDocumentUnderstandingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchProcessDocumentsRequest actualRequest =
-        (BatchProcessDocumentsRequest) actualRequests.get(0);
+        ((BatchProcessDocumentsRequest) actualRequests.get(0));
 
     Assert.assertEquals(requests, actualRequest.getRequestsList());
     Assert.assertTrue(
@@ -112,45 +115,67 @@ public class DocumentUnderstandingServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void batchProcessDocumentsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDocumentUnderstandingService.addException(exception);
 
     try {
       List<ProcessDocumentRequest> requests = new ArrayList<>();
-
       client.batchProcessDocumentsAsync(requests).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void processDocumentTest() {
-    String uri = "uri116076";
-    String mimeType = "mimeType-196041627";
-    String text = "text3556653";
+  public void processDocumentTest() throws Exception {
     Document expectedResponse =
-        Document.newBuilder().setUri(uri).setMimeType(mimeType).setText(text).build();
+        Document.newBuilder()
+            .setMimeType("mimeType-1392120434")
+            .setText("text3556653")
+            .addAllTextStyles(new ArrayList<Document.Style>())
+            .addAllPages(new ArrayList<Document.Page>())
+            .addAllEntities(new ArrayList<Document.Entity>())
+            .addAllEntityRelations(new ArrayList<Document.EntityRelation>())
+            .addAllLabels(new ArrayList<Document.Label>())
+            .setError(Status.newBuilder().build())
+            .build();
     mockDocumentUnderstandingService.addResponse(expectedResponse);
 
-    InputConfig inputConfig = InputConfig.newBuilder().build();
     ProcessDocumentRequest request =
-        ProcessDocumentRequest.newBuilder().setInputConfig(inputConfig).build();
+        ProcessDocumentRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setInputConfig(InputConfig.newBuilder().build())
+            .setOutputConfig(OutputConfig.newBuilder().build())
+            .setDocumentType("documentType-1473196299")
+            .setTableExtractionParams(TableExtractionParams.newBuilder().build())
+            .setFormExtractionParams(FormExtractionParams.newBuilder().build())
+            .setEntityExtractionParams(EntityExtractionParams.newBuilder().build())
+            .setOcrParams(OcrParams.newBuilder().build())
+            .setAutomlParams(AutoMlParams.newBuilder().build())
+            .build();
 
     Document actualResponse = client.processDocument(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDocumentUnderstandingService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ProcessDocumentRequest actualRequest = (ProcessDocumentRequest) actualRequests.get(0);
+    ProcessDocumentRequest actualRequest = ((ProcessDocumentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(inputConfig, actualRequest.getInputConfig());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getInputConfig(), actualRequest.getInputConfig());
+    Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
+    Assert.assertEquals(request.getDocumentType(), actualRequest.getDocumentType());
+    Assert.assertEquals(
+        request.getTableExtractionParams(), actualRequest.getTableExtractionParams());
+    Assert.assertEquals(request.getFormExtractionParams(), actualRequest.getFormExtractionParams());
+    Assert.assertEquals(
+        request.getEntityExtractionParams(), actualRequest.getEntityExtractionParams());
+    Assert.assertEquals(request.getOcrParams(), actualRequest.getOcrParams());
+    Assert.assertEquals(request.getAutomlParams(), actualRequest.getAutomlParams());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -158,20 +183,27 @@ public class DocumentUnderstandingServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void processDocumentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDocumentUnderstandingService.addException(exception);
 
     try {
-      InputConfig inputConfig = InputConfig.newBuilder().build();
       ProcessDocumentRequest request =
-          ProcessDocumentRequest.newBuilder().setInputConfig(inputConfig).build();
-
+          ProcessDocumentRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setInputConfig(InputConfig.newBuilder().build())
+              .setOutputConfig(OutputConfig.newBuilder().build())
+              .setDocumentType("documentType-1473196299")
+              .setTableExtractionParams(TableExtractionParams.newBuilder().build())
+              .setFormExtractionParams(FormExtractionParams.newBuilder().build())
+              .setEntityExtractionParams(EntityExtractionParams.newBuilder().build())
+              .setOcrParams(OcrParams.newBuilder().build())
+              .setAutomlParams(AutoMlParams.newBuilder().build())
+              .build();
       client.processDocument(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }

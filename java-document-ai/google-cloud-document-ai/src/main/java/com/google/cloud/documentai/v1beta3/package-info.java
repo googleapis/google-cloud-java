@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,11 +15,9 @@
  */
 
 /**
- * A client to Cloud Document AI API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>============================== DocumentProcessorServiceClient ==============================
+ * <p>======================= DocumentProcessorServiceClient =======================
  *
  * <p>Service Description: Service to call Cloud DocumentAI to process documents according to the
  * processor's definition. Processors are built using state-of-the-art Google AI such as natural
@@ -27,17 +25,8 @@
  * semi-structured documents.
  *
  * <p>Sample for DocumentProcessorServiceClient:
- *
- * <pre>
- * <code>
- * try (DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.create()) {
- *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
- *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.documentai.v1beta3;
 
 import javax.annotation.Generated;
