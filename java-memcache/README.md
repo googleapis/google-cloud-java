@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-memcache</artifactId>
-  <version>0.2.7</version>
+  <version>0.2.8</version>
 </dependency>
 
 ```
