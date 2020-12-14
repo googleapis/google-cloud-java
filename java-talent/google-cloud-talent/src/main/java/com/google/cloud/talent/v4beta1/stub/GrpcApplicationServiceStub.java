@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1.stub;
 
 import static com.google.cloud.talent.v4beta1.ApplicationServiceClient.ListApplicationsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,6 +33,7 @@ import com.google.cloud.talent.v4beta1.ListApplicationsRequest;
 import com.google.cloud.talent.v4beta1.ListApplicationsResponse;
 import com.google.cloud.talent.v4beta1.UpdateApplicationRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Talent Solution API.
+ * gRPC stub implementation for the ApplicationService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcApplicationServiceStub extends ApplicationServiceStub {
-
   private static final MethodDescriptor<CreateApplicationRequest, Application>
       createApplicationMethodDescriptor =
           MethodDescriptor.<CreateApplicationRequest, Application>newBuilder()
@@ -60,6 +59,7 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
                   ProtoUtils.marshaller(CreateApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Application.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetApplicationRequest, Application>
       getApplicationMethodDescriptor =
           MethodDescriptor.<GetApplicationRequest, Application>newBuilder()
@@ -69,6 +69,7 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
                   ProtoUtils.marshaller(GetApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Application.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateApplicationRequest, Application>
       updateApplicationMethodDescriptor =
           MethodDescriptor.<UpdateApplicationRequest, Application>newBuilder()
@@ -78,6 +79,7 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
                   ProtoUtils.marshaller(UpdateApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Application.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteApplicationRequest, Empty>
       deleteApplicationMethodDescriptor =
           MethodDescriptor.<DeleteApplicationRequest, Empty>newBuilder()
@@ -87,6 +89,7 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
                   ProtoUtils.marshaller(DeleteApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListApplicationsRequest, ListApplicationsResponse>
       listApplicationsMethodDescriptor =
           MethodDescriptor.<ListApplicationsRequest, ListApplicationsResponse>newBuilder()
@@ -98,8 +101,6 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
                   ProtoUtils.marshaller(ListApplicationsResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<CreateApplicationRequest, Application> createApplicationCallable;
   private final UnaryCallable<GetApplicationRequest, Application> getApplicationCallable;
   private final UnaryCallable<UpdateApplicationRequest, Application> updateApplicationCallable;
@@ -109,6 +110,8 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
   private final UnaryCallable<ListApplicationsRequest, ListApplicationsPagedResponse>
       listApplicationsPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcApplicationServiceStub create(ApplicationServiceStubSettings settings)
@@ -149,6 +152,7 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateApplicationRequest, Application> createApplicationTransportSettings =
         GrpcCallSettings.<CreateApplicationRequest, Application>newBuilder()
@@ -243,7 +247,12 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
         callableFactory.createPagedCallable(
             listApplicationsTransportSettings, settings.listApplicationsSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateApplicationRequest, Application> createApplicationCallable() {
@@ -262,14 +271,14 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
     return deleteApplicationCallable;
   }
 
-  public UnaryCallable<ListApplicationsRequest, ListApplicationsPagedResponse>
-      listApplicationsPagedCallable() {
-    return listApplicationsPagedCallable;
-  }
-
   public UnaryCallable<ListApplicationsRequest, ListApplicationsResponse>
       listApplicationsCallable() {
     return listApplicationsCallable;
+  }
+
+  public UnaryCallable<ListApplicationsRequest, ListApplicationsPagedResponse>
+      listApplicationsPagedCallable() {
+    return listApplicationsPagedCallable;
   }
 
   @Override

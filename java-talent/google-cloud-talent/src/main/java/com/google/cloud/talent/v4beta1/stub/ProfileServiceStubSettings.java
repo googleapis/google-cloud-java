@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1.stub;
 
 import static com.google.cloud.talent.v4beta1.ProfileServiceClient.ListProfilesPagedResponse;
@@ -43,12 +44,12 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4beta1.CreateProfileRequest;
 import com.google.cloud.talent.v4beta1.DeleteProfileRequest;
 import com.google.cloud.talent.v4beta1.GetProfileRequest;
+import com.google.cloud.talent.v4beta1.HistogramQueryResult;
 import com.google.cloud.talent.v4beta1.ListProfilesRequest;
 import com.google.cloud.talent.v4beta1.ListProfilesResponse;
 import com.google.cloud.talent.v4beta1.Profile;
 import com.google.cloud.talent.v4beta1.SearchProfilesRequest;
 import com.google.cloud.talent.v4beta1.SearchProfilesResponse;
-import com.google.cloud.talent.v4beta1.SummarizedProfile;
 import com.google.cloud.talent.v4beta1.UpdateProfileRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -60,7 +61,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ProfileServiceStub}.
  *
@@ -77,22 +78,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createProfile to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ProfileServiceStubSettings.Builder profileServiceSettingsBuilder =
  *     ProfileServiceStubSettings.newBuilder();
  * profileServiceSettingsBuilder
  *     .createProfileSettings()
  *     .setRetrySettings(
- *         profileServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
+ *         profileServiceSettingsBuilder
+ *             .createProfileSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProfileServiceStubSettings profileServiceSettings = profileServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -102,22 +104,125 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
           .build();
 
   private final PagedCallSettings<
-          SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
-      searchProfilesSettings;
-  private final PagedCallSettings<
           ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>
       listProfilesSettings;
   private final UnaryCallSettings<CreateProfileRequest, Profile> createProfileSettings;
   private final UnaryCallSettings<GetProfileRequest, Profile> getProfileSettings;
   private final UnaryCallSettings<UpdateProfileRequest, Profile> updateProfileSettings;
   private final UnaryCallSettings<DeleteProfileRequest, Empty> deleteProfileSettings;
-
-  /** Returns the object with the settings used for calls to searchProfiles. */
-  public PagedCallSettings<
+  private final PagedCallSettings<
           SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
-      searchProfilesSettings() {
-    return searchProfilesSettings;
-  }
+      searchProfilesSettings;
+
+  private static final PagedListDescriptor<ListProfilesRequest, ListProfilesResponse, Profile>
+      LIST_PROFILES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListProfilesRequest, ListProfilesResponse, Profile>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListProfilesRequest injectToken(ListProfilesRequest payload, String token) {
+              return ListProfilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListProfilesRequest injectPageSize(ListProfilesRequest payload, int pageSize) {
+              return ListProfilesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListProfilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListProfilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Profile> extractResources(ListProfilesResponse payload) {
+              return payload.getProfilesList() == null
+                  ? ImmutableList.<Profile>of()
+                  : payload.getProfilesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult>
+      SEARCH_PROFILES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchProfilesRequest injectToken(SearchProfilesRequest payload, String token) {
+              return SearchProfilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchProfilesRequest injectPageSize(
+                SearchProfilesRequest payload, int pageSize) {
+              return SearchProfilesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchProfilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchProfilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<HistogramQueryResult> extractResources(SearchProfilesResponse payload) {
+              return payload.getHistogramQueryResultsList() == null
+                  ? ImmutableList.<HistogramQueryResult>of()
+                  : payload.getHistogramQueryResultsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>
+      LIST_PROFILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>() {
+            @Override
+            public ApiFuture<ListProfilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListProfilesRequest, ListProfilesResponse> callable,
+                ListProfilesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListProfilesResponse> futureResponse) {
+              PageContext<ListProfilesRequest, ListProfilesResponse, Profile> pageContext =
+                  PageContext.create(callable, LIST_PROFILES_PAGE_STR_DESC, request, context);
+              return ListProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
+      SEARCH_PROFILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>() {
+            @Override
+            public ApiFuture<SearchProfilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchProfilesRequest, SearchProfilesResponse> callable,
+                SearchProfilesRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchProfilesResponse> futureResponse) {
+              PageContext<SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult>
+                  pageContext =
+                      PageContext.create(callable, SEARCH_PROFILES_PAGE_STR_DESC, request, context);
+              return SearchProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listProfiles. */
   public PagedCallSettings<ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>
@@ -145,16 +250,23 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     return deleteProfileSettings;
   }
 
+  /** Returns the object with the settings used for calls to searchProfiles. */
+  public PagedCallSettings<
+          SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
+      searchProfilesSettings() {
+    return searchProfilesSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProfileServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcProfileServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -214,131 +326,17 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
   protected ProfileServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    searchProfilesSettings = settingsBuilder.searchProfilesSettings().build();
     listProfilesSettings = settingsBuilder.listProfilesSettings().build();
     createProfileSettings = settingsBuilder.createProfileSettings().build();
     getProfileSettings = settingsBuilder.getProfileSettings().build();
     updateProfileSettings = settingsBuilder.updateProfileSettings().build();
     deleteProfileSettings = settingsBuilder.deleteProfileSettings().build();
+    searchProfilesSettings = settingsBuilder.searchProfilesSettings().build();
   }
-
-  private static final PagedListDescriptor<
-          SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile>
-      SEARCH_PROFILES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public SearchProfilesRequest injectToken(SearchProfilesRequest payload, String token) {
-              return SearchProfilesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public SearchProfilesRequest injectPageSize(
-                SearchProfilesRequest payload, int pageSize) {
-              return SearchProfilesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(SearchProfilesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(SearchProfilesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<SummarizedProfile> extractResources(SearchProfilesResponse payload) {
-              return payload.getSummarizedProfilesList() != null
-                  ? payload.getSummarizedProfilesList()
-                  : ImmutableList.<SummarizedProfile>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListProfilesRequest, ListProfilesResponse, Profile>
-      LIST_PROFILES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListProfilesRequest, ListProfilesResponse, Profile>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListProfilesRequest injectToken(ListProfilesRequest payload, String token) {
-              return ListProfilesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListProfilesRequest injectPageSize(ListProfilesRequest payload, int pageSize) {
-              return ListProfilesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListProfilesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListProfilesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Profile> extractResources(ListProfilesResponse payload) {
-              return payload.getProfilesList() != null
-                  ? payload.getProfilesList()
-                  : ImmutableList.<Profile>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
-      SEARCH_PROFILES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>() {
-            @Override
-            public ApiFuture<SearchProfilesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<SearchProfilesRequest, SearchProfilesResponse> callable,
-                SearchProfilesRequest request,
-                ApiCallContext context,
-                ApiFuture<SearchProfilesResponse> futureResponse) {
-              PageContext<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile>
-                  pageContext =
-                      PageContext.create(callable, SEARCH_PROFILES_PAGE_STR_DESC, request, context);
-              return SearchProfilesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>
-      LIST_PROFILES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>() {
-            @Override
-            public ApiFuture<ListProfilesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListProfilesRequest, ListProfilesResponse> callable,
-                ListProfilesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListProfilesResponse> futureResponse) {
-              PageContext<ListProfilesRequest, ListProfilesResponse, Profile> pageContext =
-                  PageContext.create(callable, LIST_PROFILES_PAGE_STR_DESC, request, context);
-              return ListProfilesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
 
   /** Builder for ProfileServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<ProfileServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final PagedCallSettings.Builder<
-            SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
-        searchProfilesSettings;
     private final PagedCallSettings.Builder<
             ListProfilesRequest, ListProfilesResponse, ListProfilesPagedResponse>
         listProfilesSettings;
@@ -346,7 +344,9 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     private final UnaryCallSettings.Builder<GetProfileRequest, Profile> getProfileSettings;
     private final UnaryCallSettings.Builder<UpdateProfileRequest, Profile> updateProfileSettings;
     private final UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings;
-
+    private final PagedCallSettings.Builder<
+            SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
+        searchProfilesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -354,13 +354,12 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_4_codes",
+          "retry_policy_6_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -379,9 +378,7 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("retry_policy_4_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_6_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(30000L))
@@ -389,106 +386,101 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("no_retry_2_params", settings);
+      definitions.put("no_retry_4_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      searchProfilesSettings = PagedCallSettings.newBuilder(SEARCH_PROFILES_PAGE_STR_FACT);
-
       listProfilesSettings = PagedCallSettings.newBuilder(LIST_PROFILES_PAGE_STR_FACT);
-
       createProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      searchProfilesSettings = PagedCallSettings.newBuilder(SEARCH_PROFILES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              searchProfilesSettings,
               listProfilesSettings,
               createProfileSettings,
               getProfileSettings,
               updateProfileSettings,
-              deleteProfileSettings);
-
+              deleteProfileSettings,
+              searchProfilesSettings);
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .searchProfilesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
-
-      builder
-          .listProfilesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      builder
-          .createProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
-
-      builder
-          .getProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      builder
-          .updateProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
-
-      builder
-          .deleteProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      return builder;
     }
 
     protected Builder(ProfileServiceStubSettings settings) {
       super(settings);
 
-      searchProfilesSettings = settings.searchProfilesSettings.toBuilder();
       listProfilesSettings = settings.listProfilesSettings.toBuilder();
       createProfileSettings = settings.createProfileSettings.toBuilder();
       getProfileSettings = settings.getProfileSettings.toBuilder();
       updateProfileSettings = settings.updateProfileSettings.toBuilder();
       deleteProfileSettings = settings.deleteProfileSettings.toBuilder();
+      searchProfilesSettings = settings.searchProfilesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              searchProfilesSettings,
               listProfilesSettings,
               createProfileSettings,
               getProfileSettings,
               updateProfileSettings,
-              deleteProfileSettings);
+              deleteProfileSettings,
+              searchProfilesSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listProfilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .createProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .getProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .updateProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .deleteProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .searchProfilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -502,13 +494,6 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to searchProfiles. */
-    public PagedCallSettings.Builder<
-            SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
-        searchProfilesSettings() {
-      return searchProfilesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listProfiles. */
@@ -536,6 +521,13 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     /** Returns the builder for the settings used for calls to deleteProfile. */
     public UnaryCallSettings.Builder<DeleteProfileRequest, Empty> deleteProfileSettings() {
       return deleteProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchProfiles. */
+    public PagedCallSettings.Builder<
+            SearchProfilesRequest, SearchProfilesResponse, SearchProfilesPagedResponse>
+        searchProfilesSettings() {
+      return searchProfilesSettings;
     }
 
     @Override

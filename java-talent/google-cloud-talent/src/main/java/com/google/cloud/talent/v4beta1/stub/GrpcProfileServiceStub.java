@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1.stub;
 
 import static com.google.cloud.talent.v4beta1.ProfileServiceClient.ListProfilesPagedResponse;
 import static com.google.cloud.talent.v4beta1.ProfileServiceClient.SearchProfilesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -36,6 +36,7 @@ import com.google.cloud.talent.v4beta1.SearchProfilesRequest;
 import com.google.cloud.talent.v4beta1.SearchProfilesResponse;
 import com.google.cloud.talent.v4beta1.UpdateProfileRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -44,15 +45,59 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Talent Solution API.
+ * gRPC stub implementation for the ProfileService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcProfileServiceStub extends ProfileServiceStub {
+  private static final MethodDescriptor<ListProfilesRequest, ListProfilesResponse>
+      listProfilesMethodDescriptor =
+          MethodDescriptor.<ListProfilesRequest, ListProfilesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/ListProfiles")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListProfilesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListProfilesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateProfileRequest, Profile>
+      createProfileMethodDescriptor =
+          MethodDescriptor.<CreateProfileRequest, Profile>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/CreateProfile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateProfileRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetProfileRequest, Profile> getProfileMethodDescriptor =
+      MethodDescriptor.<GetProfileRequest, Profile>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/GetProfile")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetProfileRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateProfileRequest, Profile>
+      updateProfileMethodDescriptor =
+          MethodDescriptor.<UpdateProfileRequest, Profile>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/UpdateProfile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateProfileRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteProfileRequest, Empty> deleteProfileMethodDescriptor =
+      MethodDescriptor.<DeleteProfileRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/DeleteProfile")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteProfileRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
 
   private static final MethodDescriptor<SearchProfilesRequest, SearchProfilesResponse>
       searchProfilesMethodDescriptor =
@@ -64,53 +109,7 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchProfilesResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<ListProfilesRequest, ListProfilesResponse>
-      listProfilesMethodDescriptor =
-          MethodDescriptor.<ListProfilesRequest, ListProfilesResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/ListProfiles")
-              .setRequestMarshaller(ProtoUtils.marshaller(ListProfilesRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListProfilesResponse.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<CreateProfileRequest, Profile>
-      createProfileMethodDescriptor =
-          MethodDescriptor.<CreateProfileRequest, Profile>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/CreateProfile")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateProfileRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<GetProfileRequest, Profile> getProfileMethodDescriptor =
-      MethodDescriptor.<GetProfileRequest, Profile>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/GetProfile")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetProfileRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<UpdateProfileRequest, Profile>
-      updateProfileMethodDescriptor =
-          MethodDescriptor.<UpdateProfileRequest, Profile>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/UpdateProfile")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateProfileRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteProfileRequest, Empty> deleteProfileMethodDescriptor =
-      MethodDescriptor.<DeleteProfileRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.talent.v4beta1.ProfileService/DeleteProfile")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteProfileRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
 
-  private final BackgroundResource backgroundResources;
-
-  private final UnaryCallable<SearchProfilesRequest, SearchProfilesResponse> searchProfilesCallable;
-  private final UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
-      searchProfilesPagedCallable;
   private final UnaryCallable<ListProfilesRequest, ListProfilesResponse> listProfilesCallable;
   private final UnaryCallable<ListProfilesRequest, ListProfilesPagedResponse>
       listProfilesPagedCallable;
@@ -118,7 +117,12 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
   private final UnaryCallable<GetProfileRequest, Profile> getProfileCallable;
   private final UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable;
   private final UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable;
+  private final UnaryCallable<SearchProfilesRequest, SearchProfilesResponse> searchProfilesCallable;
+  private final UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
+      searchProfilesPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcProfileServiceStub create(ProfileServiceStubSettings settings)
@@ -159,21 +163,8 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<SearchProfilesRequest, SearchProfilesResponse>
-        searchProfilesTransportSettings =
-            GrpcCallSettings.<SearchProfilesRequest, SearchProfilesResponse>newBuilder()
-                .setMethodDescriptor(searchProfilesMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<SearchProfilesRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchProfilesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<ListProfilesRequest, ListProfilesResponse> listProfilesTransportSettings =
         GrpcCallSettings.<ListProfilesRequest, ListProfilesResponse>newBuilder()
             .setMethodDescriptor(listProfilesMethodDescriptor)
@@ -239,13 +230,21 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<SearchProfilesRequest, SearchProfilesResponse>
+        searchProfilesTransportSettings =
+            GrpcCallSettings.<SearchProfilesRequest, SearchProfilesResponse>newBuilder()
+                .setMethodDescriptor(searchProfilesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<SearchProfilesRequest>() {
+                      @Override
+                      public Map<String, String> extract(SearchProfilesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
-    this.searchProfilesCallable =
-        callableFactory.createUnaryCallable(
-            searchProfilesTransportSettings, settings.searchProfilesSettings(), clientContext);
-    this.searchProfilesPagedCallable =
-        callableFactory.createPagedCallable(
-            searchProfilesTransportSettings, settings.searchProfilesSettings(), clientContext);
     this.listProfilesCallable =
         callableFactory.createUnaryCallable(
             listProfilesTransportSettings, settings.listProfilesSettings(), clientContext);
@@ -264,25 +263,27 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
     this.deleteProfileCallable =
         callableFactory.createUnaryCallable(
             deleteProfileTransportSettings, settings.deleteProfileSettings(), clientContext);
+    this.searchProfilesCallable =
+        callableFactory.createUnaryCallable(
+            searchProfilesTransportSettings, settings.searchProfilesSettings(), clientContext);
+    this.searchProfilesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchProfilesTransportSettings, settings.searchProfilesSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
-      searchProfilesPagedCallable() {
-    return searchProfilesPagedCallable;
-  }
-
-  public UnaryCallable<SearchProfilesRequest, SearchProfilesResponse> searchProfilesCallable() {
-    return searchProfilesCallable;
-  }
-
-  public UnaryCallable<ListProfilesRequest, ListProfilesPagedResponse> listProfilesPagedCallable() {
-    return listProfilesPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListProfilesRequest, ListProfilesResponse> listProfilesCallable() {
     return listProfilesCallable;
+  }
+
+  public UnaryCallable<ListProfilesRequest, ListProfilesPagedResponse> listProfilesPagedCallable() {
+    return listProfilesPagedCallable;
   }
 
   public UnaryCallable<CreateProfileRequest, Profile> createProfileCallable() {
@@ -299,6 +300,15 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
 
   public UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
     return deleteProfileCallable;
+  }
+
+  public UnaryCallable<SearchProfilesRequest, SearchProfilesResponse> searchProfilesCallable() {
+    return searchProfilesCallable;
+  }
+
+  public UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
+      searchProfilesPagedCallable() {
+    return searchProfilesPagedCallable;
   }
 
   @Override

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1;
 
 import static com.google.cloud.talent.v4beta1.JobServiceClient.ListJobsPagedResponse;
@@ -38,7 +39,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link JobServiceClient}.
  *
@@ -55,23 +56,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createJob to 30 seconds:
  *
- * <pre>
- * <code>
- * JobServiceSettings.Builder jobServiceSettingsBuilder =
- *     JobServiceSettings.newBuilder();
+ * <pre>{@code
+ * JobServiceSettings.Builder jobServiceSettingsBuilder = JobServiceSettings.newBuilder();
  * jobServiceSettingsBuilder
  *     .createJobSettings()
  *     .setRetrySettings(
- *         jobServiceSettingsBuilder.createJobSettings().getRetrySettings().toBuilder()
+ *         jobServiceSettingsBuilder
+ *             .createJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobServiceSettings jobServiceSettings = jobServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
+
   /** Returns the object with the settings used for calls to createJob. */
   public UnaryCallSettings<CreateJobRequest, Job> createJobSettings() {
     return ((JobServiceStubSettings) getStubSettings()).createJobSettings();
@@ -83,8 +84,6 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchCreateJobs. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchCreateJobsOperationSettings() {
     return ((JobServiceStubSettings) getStubSettings()).batchCreateJobsOperationSettings();
@@ -106,8 +105,6 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchUpdateJobs. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchUpdateJobsOperationSettings() {
     return ((JobServiceStubSettings) getStubSettings()).batchUpdateJobsOperationSettings();
@@ -200,16 +197,13 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
 
   /** Builder for JobServiceSettings. */
   public static class Builder extends ClientSettings.Builder<JobServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(JobServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(JobServiceStubSettings.newBuilder());
     }
 
     protected Builder(JobServiceSettings settings) {
@@ -220,11 +214,15 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(JobServiceStubSettings.newBuilder());
+    }
+
     public JobServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((JobServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -248,8 +246,6 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchCreateJobs. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
         batchCreateJobsOperationSettings() {
@@ -272,8 +268,6 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateJobs. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
         batchUpdateJobsOperationSettings() {

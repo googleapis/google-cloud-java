@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4;
 
 import com.google.api.core.BetaApi;
@@ -24,24 +25,14 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service handles client event report.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
- *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
- *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
- *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the eventServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the EventServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -69,30 +60,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EventServiceSettings eventServiceSettings =
  *     EventServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * EventServiceClient eventServiceClient =
- *     EventServiceClient.create(eventServiceSettings);
- * </code>
- * </pre>
+ * EventServiceClient eventServiceClient = EventServiceClient.create(eventServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EventServiceSettings eventServiceSettings =
  *     EventServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * EventServiceClient eventServiceClient =
- *     EventServiceClient.create(eventServiceSettings);
- * </code>
- * </pre>
+ * EventServiceClient eventServiceClient = EventServiceClient.create(eventServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class EventServiceClient implements BackgroundResource {
   private final EventServiceSettings settings;
   private final EventServiceStub stub;
@@ -112,7 +99,7 @@ public class EventServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of EventServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use EventServiceSettings}.
+   * for advanced usage - prefer using create(EventServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final EventServiceClient create(EventServiceStub stub) {
@@ -144,22 +131,12 @@ public class EventServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Report events issued when end user interacts with customer's application that uses Cloud Talent
    * Solution. You may inspect the created events in [self service
    * tools](https://console.cloud.google.com/talent-solution/overview). [Learn
    * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
-   *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the tenant under which the event is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -177,22 +154,12 @@ public class EventServiceClient implements BackgroundResource {
     return createClientEvent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Report events issued when end user interacts with customer's application that uses Cloud Talent
    * Solution. You may inspect the created events in [self service
    * tools](https://console.cloud.google.com/talent-solution/overview). [Learn
    * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
-   *   ClientEvent response = eventServiceClient.createClientEvent(parent.toString(), clientEvent);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the tenant under which the event is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -207,26 +174,12 @@ public class EventServiceClient implements BackgroundResource {
     return createClientEvent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Report events issued when end user interacts with customer's application that uses Cloud Talent
    * Solution. You may inspect the created events in [self service
    * tools](https://console.cloud.google.com/talent-solution/overview). [Learn
    * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
-   *   CreateClientEventRequest request = CreateClientEventRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setClientEvent(clientEvent)
-   *     .build();
-   *   ClientEvent response = eventServiceClient.createClientEvent(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -235,7 +188,7 @@ public class EventServiceClient implements BackgroundResource {
     return createClientEventCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Report events issued when end user interacts with customer's application that uses Cloud Talent
    * Solution. You may inspect the created events in [self service
@@ -243,20 +196,6 @@ public class EventServiceClient implements BackgroundResource {
    * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
-   *   CreateClientEventRequest request = CreateClientEventRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setClientEvent(clientEvent)
-   *     .build();
-   *   ApiFuture&lt;ClientEvent&gt; future = eventServiceClient.createClientEventCallable().futureCall(request);
-   *   // Do something
-   *   ClientEvent response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateClientEventRequest, ClientEvent> createClientEventCallable() {
     return stub.createClientEventCallable();

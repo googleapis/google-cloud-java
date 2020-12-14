@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1.stub;
 
 import static com.google.cloud.talent.v4beta1.JobServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.talent.v4beta1.JobServiceClient.SearchJobsForAlertPagedResponse;
 import static com.google.cloud.talent.v4beta1.JobServiceClient.SearchJobsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -53,16 +53,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Talent Solution API.
+ * gRPC stub implementation for the JobService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcJobServiceStub extends JobServiceStub {
-
   private static final MethodDescriptor<CreateJobRequest, Job> createJobMethodDescriptor =
       MethodDescriptor.<CreateJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -70,6 +68,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<BatchCreateJobsRequest, Operation>
       batchCreateJobsMethodDescriptor =
           MethodDescriptor.<BatchCreateJobsRequest, Operation>newBuilder()
@@ -79,6 +78,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(BatchCreateJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
       MethodDescriptor.<GetJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -86,6 +86,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
       MethodDescriptor.<UpdateJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -93,6 +94,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<BatchUpdateJobsRequest, Operation>
       batchUpdateJobsMethodDescriptor =
           MethodDescriptor.<BatchUpdateJobsRequest, Operation>newBuilder()
@@ -102,6 +104,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(BatchUpdateJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
       MethodDescriptor.<DeleteJobRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -109,6 +112,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<BatchDeleteJobsRequest, Empty>
       batchDeleteJobsMethodDescriptor =
           MethodDescriptor.<BatchDeleteJobsRequest, Empty>newBuilder()
@@ -118,6 +122,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(BatchDeleteJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
       listJobsMethodDescriptor =
           MethodDescriptor.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -126,6 +131,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SearchJobsRequest, SearchJobsResponse>
       searchJobsMethodDescriptor =
           MethodDescriptor.<SearchJobsRequest, SearchJobsResponse>newBuilder()
@@ -134,6 +140,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SearchJobsRequest, SearchJobsResponse>
       searchJobsForAlertMethodDescriptor =
           MethodDescriptor.<SearchJobsRequest, SearchJobsResponse>newBuilder()
@@ -142,9 +149,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchJobsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;
   private final UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable;
@@ -167,6 +171,8 @@ public class GrpcJobServiceStub extends JobServiceStub {
   private final UnaryCallable<SearchJobsRequest, SearchJobsForAlertPagedResponse>
       searchJobsForAlertPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcJobServiceStub create(JobServiceStubSettings settings)
@@ -349,7 +355,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
             batchCreateJobsTransportSettings,
             settings.batchCreateJobsOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getJobCallable =
         callableFactory.createUnaryCallable(
             getJobTransportSettings, settings.getJobSettings(), clientContext);
@@ -364,7 +370,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
             batchUpdateJobsTransportSettings,
             settings.batchUpdateJobsOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteJobCallable =
         callableFactory.createUnaryCallable(
             deleteJobTransportSettings, settings.deleteJobSettings(), clientContext);
@@ -394,10 +400,10 @@ public class GrpcJobServiceStub extends JobServiceStub {
             settings.searchJobsForAlertSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -406,14 +412,13 @@ public class GrpcJobServiceStub extends JobServiceStub {
     return createJobCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable() {
+    return batchCreateJobsCallable;
+  }
+
   public OperationCallable<BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchCreateJobsOperationCallable() {
     return batchCreateJobsOperationCallable;
-  }
-
-  public UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable() {
-    return batchCreateJobsCallable;
   }
 
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {
@@ -424,14 +429,13 @@ public class GrpcJobServiceStub extends JobServiceStub {
     return updateJobCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
+    return batchUpdateJobsCallable;
+  }
+
   public OperationCallable<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchUpdateJobsOperationCallable() {
     return batchUpdateJobsOperationCallable;
-  }
-
-  public UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
-    return batchUpdateJobsCallable;
   }
 
   public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
@@ -442,29 +446,29 @@ public class GrpcJobServiceStub extends JobServiceStub {
     return batchDeleteJobsCallable;
   }
 
-  public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
-    return listJobsPagedCallable;
-  }
-
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return listJobsCallable;
   }
 
-  public UnaryCallable<SearchJobsRequest, SearchJobsPagedResponse> searchJobsPagedCallable() {
-    return searchJobsPagedCallable;
+  public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
+    return listJobsPagedCallable;
   }
 
   public UnaryCallable<SearchJobsRequest, SearchJobsResponse> searchJobsCallable() {
     return searchJobsCallable;
   }
 
-  public UnaryCallable<SearchJobsRequest, SearchJobsForAlertPagedResponse>
-      searchJobsForAlertPagedCallable() {
-    return searchJobsForAlertPagedCallable;
+  public UnaryCallable<SearchJobsRequest, SearchJobsPagedResponse> searchJobsPagedCallable() {
+    return searchJobsPagedCallable;
   }
 
   public UnaryCallable<SearchJobsRequest, SearchJobsResponse> searchJobsForAlertCallable() {
     return searchJobsForAlertCallable;
+  }
+
+  public UnaryCallable<SearchJobsRequest, SearchJobsForAlertPagedResponse>
+      searchJobsForAlertPagedCallable() {
+    return searchJobsForAlertPagedCallable;
   }
 
   @Override

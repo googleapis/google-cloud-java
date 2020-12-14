@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1.stub;
 
 import static com.google.cloud.talent.v4beta1.CompanyServiceClient.ListCompaniesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,6 +33,7 @@ import com.google.cloud.talent.v4beta1.ListCompaniesRequest;
 import com.google.cloud.talent.v4beta1.ListCompaniesResponse;
 import com.google.cloud.talent.v4beta1.UpdateCompanyRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Talent Solution API.
+ * gRPC stub implementation for the CompanyService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcCompanyServiceStub extends CompanyServiceStub {
-
   private static final MethodDescriptor<CreateCompanyRequest, Company>
       createCompanyMethodDescriptor =
           MethodDescriptor.<CreateCompanyRequest, Company>newBuilder()
@@ -60,6 +59,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   ProtoUtils.marshaller(CreateCompanyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Company.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetCompanyRequest, Company> getCompanyMethodDescriptor =
       MethodDescriptor.<GetCompanyRequest, Company>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -67,6 +67,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetCompanyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Company.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateCompanyRequest, Company>
       updateCompanyMethodDescriptor =
           MethodDescriptor.<UpdateCompanyRequest, Company>newBuilder()
@@ -76,6 +77,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   ProtoUtils.marshaller(UpdateCompanyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Company.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteCompanyRequest, Empty> deleteCompanyMethodDescriptor =
       MethodDescriptor.<DeleteCompanyRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -83,6 +85,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteCompanyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListCompaniesRequest, ListCompaniesResponse>
       listCompaniesMethodDescriptor =
           MethodDescriptor.<ListCompaniesRequest, ListCompaniesResponse>newBuilder()
@@ -94,8 +97,6 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
                   ProtoUtils.marshaller(ListCompaniesResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable;
   private final UnaryCallable<GetCompanyRequest, Company> getCompanyCallable;
   private final UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable;
@@ -104,6 +105,8 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
   private final UnaryCallable<ListCompaniesRequest, ListCompaniesPagedResponse>
       listCompaniesPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcCompanyServiceStub create(CompanyServiceStubSettings settings)
@@ -144,6 +147,7 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateCompanyRequest, Company> createCompanyTransportSettings =
         GrpcCallSettings.<CreateCompanyRequest, Company>newBuilder()
@@ -230,7 +234,12 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
         callableFactory.createPagedCallable(
             listCompaniesTransportSettings, settings.listCompaniesSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable() {
@@ -249,13 +258,13 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
     return deleteCompanyCallable;
   }
 
+  public UnaryCallable<ListCompaniesRequest, ListCompaniesResponse> listCompaniesCallable() {
+    return listCompaniesCallable;
+  }
+
   public UnaryCallable<ListCompaniesRequest, ListCompaniesPagedResponse>
       listCompaniesPagedCallable() {
     return listCompaniesPagedCallable;
-  }
-
-  public UnaryCallable<ListCompaniesRequest, ListCompaniesResponse> listCompaniesCallable() {
-    return listCompaniesCallable;
   }
 
   @Override

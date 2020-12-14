@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1;
 
 import com.google.api.core.BetaApi;
@@ -24,30 +25,14 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service handles auto completion.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (CompletionClient completionClient = CompletionClient.create()) {
- *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
- *   String query = "";
- *   int pageSize = 0;
- *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
- *     .setParent(parent.toString())
- *     .setQuery(query)
- *     .setPageSize(pageSize)
- *     .build();
- *   CompleteQueryResponse response = completionClient.completeQuery(request);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the completionClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the CompletionClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -75,30 +60,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CompletionSettings completionSettings =
  *     CompletionSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * CompletionClient completionClient =
- *     CompletionClient.create(completionSettings);
- * </code>
- * </pre>
+ * CompletionClient completionClient = CompletionClient.create(completionSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CompletionSettings completionSettings =
  *     CompletionSettings.newBuilder().setEndpoint(myEndpoint).build();
- * CompletionClient completionClient =
- *     CompletionClient.create(completionSettings);
- * </code>
- * </pre>
+ * CompletionClient completionClient = CompletionClient.create(completionSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class CompletionClient implements BackgroundResource {
   private final CompletionSettings settings;
   private final CompletionStub stub;
@@ -118,7 +99,7 @@ public class CompletionClient implements BackgroundResource {
 
   /**
    * Constructs an instance of CompletionClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use CompletionSettings}.
+   * advanced usage - prefer using create(CompletionSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CompletionClient create(CompletionStub stub) {
@@ -149,26 +130,10 @@ public class CompletionClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Completes the specified prefix with keyword suggestions. Intended for use by a job search
    * auto-complete search box.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompletionClient completionClient = CompletionClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   String query = "";
-   *   int pageSize = 0;
-   *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setQuery(query)
-   *     .setPageSize(pageSize)
-   *     .build();
-   *   CompleteQueryResponse response = completionClient.completeQuery(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -177,28 +142,12 @@ public class CompletionClient implements BackgroundResource {
     return completeQueryCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Completes the specified prefix with keyword suggestions. Intended for use by a job search
    * auto-complete search box.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompletionClient completionClient = CompletionClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   String query = "";
-   *   int pageSize = 0;
-   *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setQuery(query)
-   *     .setPageSize(pageSize)
-   *     .build();
-   *   ApiFuture&lt;CompleteQueryResponse&gt; future = completionClient.completeQueryCallable().futureCall(request);
-   *   // Do something
-   *   CompleteQueryResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     return stub.completeQueryCallable();

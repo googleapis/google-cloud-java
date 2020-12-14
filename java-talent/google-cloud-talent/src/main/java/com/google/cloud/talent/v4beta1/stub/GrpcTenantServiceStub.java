@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1.stub;
 
 import static com.google.cloud.talent.v4beta1.TenantServiceClient.ListTenantsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,6 +33,7 @@ import com.google.cloud.talent.v4beta1.ListTenantsResponse;
 import com.google.cloud.talent.v4beta1.Tenant;
 import com.google.cloud.talent.v4beta1.UpdateTenantRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Talent Solution API.
+ * gRPC stub implementation for the TenantService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcTenantServiceStub extends TenantServiceStub {
-
   private static final MethodDescriptor<CreateTenantRequest, Tenant> createTenantMethodDescriptor =
       MethodDescriptor.<CreateTenantRequest, Tenant>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -58,6 +57,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetTenantRequest, Tenant> getTenantMethodDescriptor =
       MethodDescriptor.<GetTenantRequest, Tenant>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -65,6 +65,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateTenantRequest, Tenant> updateTenantMethodDescriptor =
       MethodDescriptor.<UpdateTenantRequest, Tenant>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -72,6 +73,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteTenantRequest, Empty> deleteTenantMethodDescriptor =
       MethodDescriptor.<DeleteTenantRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -79,6 +81,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListTenantsRequest, ListTenantsResponse>
       listTenantsMethodDescriptor =
           MethodDescriptor.<ListTenantsRequest, ListTenantsResponse>newBuilder()
@@ -89,8 +92,6 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                   ProtoUtils.marshaller(ListTenantsResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<CreateTenantRequest, Tenant> createTenantCallable;
   private final UnaryCallable<GetTenantRequest, Tenant> getTenantCallable;
   private final UnaryCallable<UpdateTenantRequest, Tenant> updateTenantCallable;
@@ -99,6 +100,8 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
   private final UnaryCallable<ListTenantsRequest, ListTenantsPagedResponse>
       listTenantsPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcTenantServiceStub create(TenantServiceStubSettings settings)
@@ -137,6 +140,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateTenantRequest, Tenant> createTenantTransportSettings =
         GrpcCallSettings.<CreateTenantRequest, Tenant>newBuilder()
@@ -223,7 +227,12 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
         callableFactory.createPagedCallable(
             listTenantsTransportSettings, settings.listTenantsSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateTenantRequest, Tenant> createTenantCallable() {
@@ -242,12 +251,12 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
     return deleteTenantCallable;
   }
 
-  public UnaryCallable<ListTenantsRequest, ListTenantsPagedResponse> listTenantsPagedCallable() {
-    return listTenantsPagedCallable;
-  }
-
   public UnaryCallable<ListTenantsRequest, ListTenantsResponse> listTenantsCallable() {
     return listTenantsCallable;
+  }
+
+  public UnaryCallable<ListTenantsRequest, ListTenantsPagedResponse> listTenantsPagedCallable() {
+    return listTenantsPagedCallable;
   }
 
   @Override

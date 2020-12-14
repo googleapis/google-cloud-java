@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1;
 
 import com.google.api.core.ApiFunction;
@@ -34,24 +35,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service that handles company management, including CRUD and enumeration.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
- *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
- *   Company company = Company.newBuilder().build();
- *   Company response = companyServiceClient.createCompany(parent, company);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the companyServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the CompanyServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -79,30 +70,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CompanyServiceSettings companyServiceSettings =
  *     CompanyServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * CompanyServiceClient companyServiceClient =
- *     CompanyServiceClient.create(companyServiceSettings);
- * </code>
- * </pre>
+ * CompanyServiceClient companyServiceClient = CompanyServiceClient.create(companyServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CompanyServiceSettings companyServiceSettings =
  *     CompanyServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * CompanyServiceClient companyServiceClient =
- *     CompanyServiceClient.create(companyServiceSettings);
- * </code>
- * </pre>
+ * CompanyServiceClient companyServiceClient = CompanyServiceClient.create(companyServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class CompanyServiceClient implements BackgroundResource {
   private final CompanyServiceSettings settings;
   private final CompanyServiceStub stub;
@@ -123,7 +110,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of CompanyServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use CompanyServiceSettings}.
+   * for advanced usage - prefer using create(CompanyServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CompanyServiceClient create(CompanyServiceStub stub) {
@@ -155,49 +142,9 @@ public class CompanyServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new company entity.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   Company company = Company.newBuilder().build();
-   *   Company response = companyServiceClient.createCompany(parent, company);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. Resource name of the tenant under which the company is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created, for
-   *     example, "projects/foo".
-   * @param company Required. The company to be created.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Company createCompany(TenantName parent, Company company) {
-    CreateCompanyRequest request =
-        CreateCompanyRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setCompany(company)
-            .build();
-    return createCompany(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new company entity.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Company company = Company.newBuilder().build();
-   *   Company response = companyServiceClient.createCompany(parent, company);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -215,19 +162,29 @@ public class CompanyServiceClient implements BackgroundResource {
     return createCompany(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new company entity.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   Company company = Company.newBuilder().build();
-   *   Company response = companyServiceClient.createCompany(parent.toString(), company);
-   * }
-   * </code></pre>
+   * @param parent Required. Resource name of the tenant under which the company is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created, for
+   *     example, "projects/foo".
+   * @param company Required. The company to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Company createCompany(TenantName parent, Company company) {
+    CreateCompanyRequest request =
+        CreateCompanyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCompany(company)
+            .build();
+    return createCompany(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new company entity.
    *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -242,23 +199,9 @@ public class CompanyServiceClient implements BackgroundResource {
     return createCompany(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new company entity.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   Company company = Company.newBuilder().build();
-   *   CreateCompanyRequest request = CreateCompanyRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setCompany(company)
-   *     .build();
-   *   Company response = companyServiceClient.createCompany(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -267,42 +210,19 @@ public class CompanyServiceClient implements BackgroundResource {
     return createCompanyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new company entity.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   Company company = Company.newBuilder().build();
-   *   CreateCompanyRequest request = CreateCompanyRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setCompany(company)
-   *     .build();
-   *   ApiFuture&lt;Company&gt; future = companyServiceClient.createCompanyCallable().futureCall(request);
-   *   // Do something
-   *   Company response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable() {
     return stub.createCompanyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified company.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   Company response = companyServiceClient.getCompany(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the company to be retrieved.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
@@ -317,18 +237,9 @@ public class CompanyServiceClient implements BackgroundResource {
     return getCompany(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified company.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   Company response = companyServiceClient.getCompany(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the company to be retrieved.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
@@ -342,21 +253,9 @@ public class CompanyServiceClient implements BackgroundResource {
     return getCompany(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified company.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   GetCompanyRequest request = GetCompanyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Company response = companyServiceClient.getCompany(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -365,40 +264,19 @@ public class CompanyServiceClient implements BackgroundResource {
     return getCompanyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified company.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   GetCompanyRequest request = GetCompanyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Company&gt; future = companyServiceClient.getCompanyCallable().futureCall(request);
-   *   // Do something
-   *   Company response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetCompanyRequest, Company> getCompanyCallable() {
     return stub.getCompanyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates specified company.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   Company company = Company.newBuilder().build();
-   *   Company response = companyServiceClient.updateCompany(company);
-   * }
-   * </code></pre>
    *
    * @param company Required. The company resource to replace the current resource in the system.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -408,21 +286,9 @@ public class CompanyServiceClient implements BackgroundResource {
     return updateCompany(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates specified company.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   Company company = Company.newBuilder().build();
-   *   UpdateCompanyRequest request = UpdateCompanyRequest.newBuilder()
-   *     .setCompany(company)
-   *     .build();
-   *   Company response = companyServiceClient.updateCompany(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -431,40 +297,19 @@ public class CompanyServiceClient implements BackgroundResource {
     return updateCompanyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates specified company.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   Company company = Company.newBuilder().build();
-   *   UpdateCompanyRequest request = UpdateCompanyRequest.newBuilder()
-   *     .setCompany(company)
-   *     .build();
-   *   ApiFuture&lt;Company&gt; future = companyServiceClient.updateCompanyCallable().futureCall(request);
-   *   // Do something
-   *   Company response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable() {
     return stub.updateCompanyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified company. Prerequisite: The company has no jobs associated with it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   companyServiceClient.deleteCompany(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the company to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
@@ -479,18 +324,9 @@ public class CompanyServiceClient implements BackgroundResource {
     deleteCompany(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified company. Prerequisite: The company has no jobs associated with it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   companyServiceClient.deleteCompany(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the company to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
@@ -504,21 +340,9 @@ public class CompanyServiceClient implements BackgroundResource {
     deleteCompany(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified company. Prerequisite: The company has no jobs associated with it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   companyServiceClient.deleteCompany(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -527,72 +351,19 @@ public class CompanyServiceClient implements BackgroundResource {
     deleteCompanyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified company. Prerequisite: The company has no jobs associated with it.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   CompanyName name = CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
-   *   DeleteCompanyRequest request = DeleteCompanyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = companyServiceClient.deleteCompanyCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable() {
     return stub.deleteCompanyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all companies associated with the project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. Resource name of the tenant under which the company is created.
-   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   *     "projects/foo/tenant/bar".
-   *     <p>If tenant id is unspecified, the default tenant will be used, for example,
-   *     "projects/foo".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListCompaniesPagedResponse listCompanies(TenantName parent) {
-    ListCompaniesRequest request =
-        ListCompaniesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listCompanies(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists all companies associated with the project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -609,20 +380,28 @@ public class CompanyServiceClient implements BackgroundResource {
     return listCompanies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all companies associated with the project.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   for (Company element : companyServiceClient.listCompanies(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * @param parent Required. Resource name of the tenant under which the company is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   *     "projects/foo/tenant/bar".
+   *     <p>If tenant id is unspecified, the default tenant will be used, for example,
+   *     "projects/foo".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCompaniesPagedResponse listCompanies(TenantName parent) {
+    ListCompaniesRequest request =
+        ListCompaniesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCompanies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all companies associated with the project.
    *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -636,23 +415,9 @@ public class CompanyServiceClient implements BackgroundResource {
     return listCompanies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all companies associated with the project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   ListCompaniesRequest request = ListCompaniesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Company element : companyServiceClient.listCompanies(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -661,57 +426,22 @@ public class CompanyServiceClient implements BackgroundResource {
     return listCompaniesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all companies associated with the project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   ListCompaniesRequest request = ListCompaniesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListCompaniesPagedResponse&gt; future = companyServiceClient.listCompaniesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Company element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListCompaniesRequest, ListCompaniesPagedResponse>
       listCompaniesPagedCallable() {
     return stub.listCompaniesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all companies associated with the project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
-   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
-   *   ListCompaniesRequest request = ListCompaniesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListCompaniesResponse response = companyServiceClient.listCompaniesCallable().call(request);
-   *     for (Company element : response.getCompaniesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListCompaniesRequest, ListCompaniesResponse> listCompaniesCallable() {
     return stub.listCompaniesCallable();

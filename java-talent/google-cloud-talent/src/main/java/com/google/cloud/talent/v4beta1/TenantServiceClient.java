@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4beta1;
 
 import com.google.api.core.ApiFunction;
@@ -34,24 +35,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service that handles tenant management, including CRUD and enumeration.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Tenant tenant = Tenant.newBuilder().build();
- *   Tenant response = tenantServiceClient.createTenant(parent, tenant);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the tenantServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the TenantServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -79,30 +70,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TenantServiceSettings tenantServiceSettings =
  *     TenantServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * TenantServiceClient tenantServiceClient =
- *     TenantServiceClient.create(tenantServiceSettings);
- * </code>
- * </pre>
+ * TenantServiceClient tenantServiceClient = TenantServiceClient.create(tenantServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TenantServiceSettings tenantServiceSettings =
  *     TenantServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * TenantServiceClient tenantServiceClient =
- *     TenantServiceClient.create(tenantServiceSettings);
- * </code>
- * </pre>
+ * TenantServiceClient tenantServiceClient = TenantServiceClient.create(tenantServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class TenantServiceClient implements BackgroundResource {
   private final TenantServiceSettings settings;
   private final TenantServiceStub stub;
@@ -123,7 +110,7 @@ public class TenantServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TenantServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use TenantServiceSettings}.
+   * for advanced usage - prefer using create(TenantServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TenantServiceClient create(TenantServiceStub stub) {
@@ -155,19 +142,9 @@ public class TenantServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new tenant entity.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Tenant tenant = Tenant.newBuilder().build();
-   *   Tenant response = tenantServiceClient.createTenant(parent, tenant);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the project under which the tenant is created.
    *     <p>The format is "projects/{project_id}", for example, "projects/foo".
@@ -183,19 +160,9 @@ public class TenantServiceClient implements BackgroundResource {
     return createTenant(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new tenant entity.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Tenant tenant = Tenant.newBuilder().build();
-   *   Tenant response = tenantServiceClient.createTenant(parent.toString(), tenant);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the project under which the tenant is created.
    *     <p>The format is "projects/{project_id}", for example, "projects/foo".
@@ -208,23 +175,9 @@ public class TenantServiceClient implements BackgroundResource {
     return createTenant(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new tenant entity.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Tenant tenant = Tenant.newBuilder().build();
-   *   CreateTenantRequest request = CreateTenantRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTenant(tenant)
-   *     .build();
-   *   Tenant response = tenantServiceClient.createTenant(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -233,42 +186,19 @@ public class TenantServiceClient implements BackgroundResource {
     return createTenantCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new tenant entity.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Tenant tenant = Tenant.newBuilder().build();
-   *   CreateTenantRequest request = CreateTenantRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTenant(tenant)
-   *     .build();
-   *   ApiFuture&lt;Tenant&gt; future = tenantServiceClient.createTenantCallable().futureCall(request);
-   *   // Do something
-   *   Tenant response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateTenantRequest, Tenant> createTenantCallable() {
     return stub.createTenantCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   Tenant response = tenantServiceClient.getTenant(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the tenant to be retrieved.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -281,18 +211,9 @@ public class TenantServiceClient implements BackgroundResource {
     return getTenant(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   Tenant response = tenantServiceClient.getTenant(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the tenant to be retrieved.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -304,21 +225,9 @@ public class TenantServiceClient implements BackgroundResource {
     return getTenant(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   GetTenantRequest request = GetTenantRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Tenant response = tenantServiceClient.getTenant(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -327,40 +236,19 @@ public class TenantServiceClient implements BackgroundResource {
     return getTenantCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified tenant.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   GetTenantRequest request = GetTenantRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Tenant&gt; future = tenantServiceClient.getTenantCallable().futureCall(request);
-   *   // Do something
-   *   Tenant response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetTenantRequest, Tenant> getTenantCallable() {
     return stub.getTenantCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   Tenant tenant = Tenant.newBuilder().build();
-   *   Tenant response = tenantServiceClient.updateTenant(tenant);
-   * }
-   * </code></pre>
    *
    * @param tenant Required. The tenant resource to replace the current resource in the system.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -370,21 +258,9 @@ public class TenantServiceClient implements BackgroundResource {
     return updateTenant(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   Tenant tenant = Tenant.newBuilder().build();
-   *   UpdateTenantRequest request = UpdateTenantRequest.newBuilder()
-   *     .setTenant(tenant)
-   *     .build();
-   *   Tenant response = tenantServiceClient.updateTenant(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -393,40 +269,19 @@ public class TenantServiceClient implements BackgroundResource {
     return updateTenantCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates specified tenant.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   Tenant tenant = Tenant.newBuilder().build();
-   *   UpdateTenantRequest request = UpdateTenantRequest.newBuilder()
-   *     .setTenant(tenant)
-   *     .build();
-   *   ApiFuture&lt;Tenant&gt; future = tenantServiceClient.updateTenantCallable().futureCall(request);
-   *   // Do something
-   *   Tenant response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateTenantRequest, Tenant> updateTenantCallable() {
     return stub.updateTenantCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   tenantServiceClient.deleteTenant(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the tenant to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -439,18 +294,9 @@ public class TenantServiceClient implements BackgroundResource {
     deleteTenant(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   tenantServiceClient.deleteTenant(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the tenant to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -462,21 +308,9 @@ public class TenantServiceClient implements BackgroundResource {
     deleteTenant(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified tenant.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   DeleteTenantRequest request = DeleteTenantRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   tenantServiceClient.deleteTenant(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -485,42 +319,19 @@ public class TenantServiceClient implements BackgroundResource {
     deleteTenantCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified tenant.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-   *   DeleteTenantRequest request = DeleteTenantRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = tenantServiceClient.deleteTenantCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteTenantRequest, Empty> deleteTenantCallable() {
     return stub.deleteTenantCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all tenants associated with the project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   for (Tenant element : tenantServiceClient.listTenants(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the project under which the tenant is created.
    *     <p>The format is "projects/{project_id}", for example, "projects/foo".
@@ -534,20 +345,9 @@ public class TenantServiceClient implements BackgroundResource {
     return listTenants(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all tenants associated with the project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   for (Tenant element : tenantServiceClient.listTenants(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the project under which the tenant is created.
    *     <p>The format is "projects/{project_id}", for example, "projects/foo".
@@ -558,23 +358,9 @@ public class TenantServiceClient implements BackgroundResource {
     return listTenants(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all tenants associated with the project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListTenantsRequest request = ListTenantsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Tenant element : tenantServiceClient.listTenants(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -583,57 +369,22 @@ public class TenantServiceClient implements BackgroundResource {
     return listTenantsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all tenants associated with the project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListTenantsRequest request = ListTenantsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListTenantsPagedResponse&gt; future = tenantServiceClient.listTenantsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Tenant element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListTenantsRequest, ListTenantsPagedResponse>
       listTenantsPagedCallable() {
     return stub.listTenantsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all tenants associated with the project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListTenantsRequest request = ListTenantsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListTenantsResponse response = tenantServiceClient.listTenantsCallable().call(request);
-   *     for (Tenant element : response.getTenantsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListTenantsRequest, ListTenantsResponse> listTenantsCallable() {
     return stub.listTenantsCallable();

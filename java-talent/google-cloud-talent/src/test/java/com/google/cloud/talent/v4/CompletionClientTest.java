@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.talent.v4;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -23,12 +24,13 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.protobuf.AbstractMessage;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -36,45 +38,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class CompletionClientTest {
-  private static MockCompanyService mockCompanyService;
-  private static MockCompletion mockCompletion;
-  private static MockEventService mockEventService;
-  private static MockJobService mockJobService;
-  private static MockTenantService mockTenantService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private CompletionClient client;
+  private static MockCompletion mockCompletion;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockCompanyService = new MockCompanyService();
     mockCompletion = new MockCompletion();
-    mockEventService = new MockEventService();
-    mockJobService = new MockJobService();
-    mockTenantService = new MockTenantService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockCompanyService,
-                mockCompletion,
-                mockEventService,
-                mockJobService,
-                mockTenantService));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockCompletion));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     CompletionSettings settings =
         CompletionSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -89,19 +77,21 @@ public class CompletionClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void completeQueryTest() {
-    CompleteQueryResponse expectedResponse = CompleteQueryResponse.newBuilder().build();
+  public void completeQueryTest() throws Exception {
+    CompleteQueryResponse expectedResponse =
+        CompleteQueryResponse.newBuilder()
+            .addAllCompletionResults(new ArrayList<CompleteQueryResponse.CompletionResult>())
+            .setMetadata(ResponseMetadata.newBuilder().build())
+            .build();
     mockCompletion.addResponse(expectedResponse);
 
-    TenantName tenant = TenantName.of("[PROJECT]", "[TENANT]");
-    String query = "query107944136";
-    int pageSize = 883849137;
     CompleteQueryRequest request =
         CompleteQueryRequest.newBuilder()
-            .setTenant(tenant.toString())
-            .setQuery(query)
-            .setPageSize(pageSize)
+            .setTenant(TenantName.of("[PROJECT]", "[TENANT]").toString())
+            .setQuery("query107944136")
+            .addAllLanguageCodes(new ArrayList<String>())
+            .setPageSize(883849137)
+            .setCompany(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
             .build();
 
     CompleteQueryResponse actualResponse = client.completeQuery(request);
@@ -109,11 +99,15 @@ public class CompletionClientTest {
 
     List<AbstractMessage> actualRequests = mockCompletion.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CompleteQueryRequest actualRequest = (CompleteQueryRequest) actualRequests.get(0);
+    CompleteQueryRequest actualRequest = ((CompleteQueryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(tenant, TenantName.parse(actualRequest.getTenant()));
-    Assert.assertEquals(query, actualRequest.getQuery());
-    Assert.assertEquals(pageSize, actualRequest.getPageSize());
+    Assert.assertEquals(request.getTenant(), actualRequest.getTenant());
+    Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getLanguageCodesList(), actualRequest.getLanguageCodesList());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getCompany(), actualRequest.getCompany());
+    Assert.assertEquals(request.getScope(), actualRequest.getScope());
+    Assert.assertEquals(request.getType(), actualRequest.getType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -121,26 +115,23 @@ public class CompletionClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void completeQueryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockCompletion.addException(exception);
 
     try {
-      TenantName tenant = TenantName.of("[PROJECT]", "[TENANT]");
-      String query = "query107944136";
-      int pageSize = 883849137;
       CompleteQueryRequest request =
           CompleteQueryRequest.newBuilder()
-              .setTenant(tenant.toString())
-              .setQuery(query)
-              .setPageSize(pageSize)
+              .setTenant(TenantName.of("[PROJECT]", "[TENANT]").toString())
+              .setQuery("query107944136")
+              .addAllLanguageCodes(new ArrayList<String>())
+              .setPageSize(883849137)
+              .setCompany(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
               .build();
-
       client.completeQuery(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }
