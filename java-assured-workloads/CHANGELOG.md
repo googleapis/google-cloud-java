@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-assured-workloads/compare/v0.1.4...v0.2.0) (2020-12-14)
+
+
+### Features
+
+* **v1beta1:** add provisioned_resources_parent and kms_settings to Workload ([#124](https://www.github.com/googleapis/java-assured-workloads/issues/124)) ([ca9e772](https://www.github.com/googleapis/java-assured-workloads/commit/ca9e77206ac70df0a5a800fee00a45b5427cba1c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#121](https://www.github.com/googleapis/java-assured-workloads/issues/121)) ([95bab45](https://www.github.com/googleapis/java-assured-workloads/commit/95bab4539244e30950251ca24ae7df3f75dc379b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#132](https://www.github.com/googleapis/java-assured-workloads/issues/132)) ([b49b319](https://www.github.com/googleapis/java-assured-workloads/commit/b49b319ef90a02da2cb7dcc762aa84f09624e0ce))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.1 ([a267605](https://www.github.com/googleapis/java-assured-workloads/commit/a26760597bbf90b0212a98f9b48a7bb326a0dbe7))
+
 ### [0.1.4](https://www.github.com/googleapis/java-assured-workloads/compare/v0.1.3...v0.1.4) (2020-11-02)
 
 
