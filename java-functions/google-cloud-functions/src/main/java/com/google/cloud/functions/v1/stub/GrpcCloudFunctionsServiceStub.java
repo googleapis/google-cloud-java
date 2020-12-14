@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.functions.v1.stub;
 
 import static com.google.cloud.functions.v1.CloudFunctionsServiceClient.ListFunctionsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -56,16 +56,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Functions API.
+ * gRPC stub implementation for the CloudFunctionsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
-
   private static final MethodDescriptor<ListFunctionsRequest, ListFunctionsResponse>
       listFunctionsMethodDescriptor =
           MethodDescriptor.<ListFunctionsRequest, ListFunctionsResponse>newBuilder()
@@ -76,6 +74,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFunctionsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetFunctionRequest, CloudFunction>
       getFunctionMethodDescriptor =
           MethodDescriptor.<GetFunctionRequest, CloudFunction>newBuilder()
@@ -84,6 +83,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CloudFunction.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateFunctionRequest, Operation>
       createFunctionMethodDescriptor =
           MethodDescriptor.<CreateFunctionRequest, Operation>newBuilder()
@@ -93,6 +93,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   ProtoUtils.marshaller(CreateFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateFunctionRequest, Operation>
       updateFunctionMethodDescriptor =
           MethodDescriptor.<UpdateFunctionRequest, Operation>newBuilder()
@@ -102,6 +103,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   ProtoUtils.marshaller(UpdateFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteFunctionRequest, Operation>
       deleteFunctionMethodDescriptor =
           MethodDescriptor.<DeleteFunctionRequest, Operation>newBuilder()
@@ -111,6 +113,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
                   ProtoUtils.marshaller(DeleteFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CallFunctionRequest, CallFunctionResponse>
       callFunctionMethodDescriptor =
           MethodDescriptor.<CallFunctionRequest, CallFunctionResponse>newBuilder()
@@ -120,6 +123,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CallFunctionResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GenerateUploadUrlRequest, GenerateUploadUrlResponse>
       generateUploadUrlMethodDescriptor =
           MethodDescriptor.<GenerateUploadUrlRequest, GenerateUploadUrlResponse>newBuilder()
@@ -131,6 +135,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateUploadUrlResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GenerateDownloadUrlRequest, GenerateDownloadUrlResponse>
       generateDownloadUrlMethodDescriptor =
           MethodDescriptor.<GenerateDownloadUrlRequest, GenerateDownloadUrlResponse>newBuilder()
@@ -142,6 +147,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateDownloadUrlResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -149,6 +155,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -156,6 +163,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -167,9 +175,6 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListFunctionsRequest, ListFunctionsResponse> listFunctionsCallable;
   private final UnaryCallable<ListFunctionsRequest, ListFunctionsPagedResponse>
@@ -194,6 +199,8 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcCloudFunctionsServiceStub create(
@@ -400,7 +407,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
             createFunctionTransportSettings,
             settings.createFunctionOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateFunctionCallable =
         callableFactory.createUnaryCallable(
             updateFunctionTransportSettings, settings.updateFunctionSettings(), clientContext);
@@ -409,7 +416,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
             updateFunctionTransportSettings,
             settings.updateFunctionOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteFunctionCallable =
         callableFactory.createUnaryCallable(
             deleteFunctionTransportSettings, settings.deleteFunctionSettings(), clientContext);
@@ -418,7 +425,7 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
             deleteFunctionTransportSettings,
             settings.deleteFunctionOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.callFunctionCallable =
         callableFactory.createUnaryCallable(
             callFunctionTransportSettings, settings.callFunctionSettings(), clientContext);
@@ -444,12 +451,16 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  public UnaryCallable<ListFunctionsRequest, ListFunctionsResponse> listFunctionsCallable() {
+    return listFunctionsCallable;
   }
 
   public UnaryCallable<ListFunctionsRequest, ListFunctionsPagedResponse>
@@ -457,42 +468,35 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
     return listFunctionsPagedCallable;
   }
 
-  public UnaryCallable<ListFunctionsRequest, ListFunctionsResponse> listFunctionsCallable() {
-    return listFunctionsCallable;
-  }
-
   public UnaryCallable<GetFunctionRequest, CloudFunction> getFunctionCallable() {
     return getFunctionCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateFunctionRequest, CloudFunction, OperationMetadataV1>
-      createFunctionOperationCallable() {
-    return createFunctionOperationCallable;
   }
 
   public UnaryCallable<CreateFunctionRequest, Operation> createFunctionCallable() {
     return createFunctionCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateFunctionRequest, CloudFunction, OperationMetadataV1>
-      updateFunctionOperationCallable() {
-    return updateFunctionOperationCallable;
+  public OperationCallable<CreateFunctionRequest, CloudFunction, OperationMetadataV1>
+      createFunctionOperationCallable() {
+    return createFunctionOperationCallable;
   }
 
   public UnaryCallable<UpdateFunctionRequest, Operation> updateFunctionCallable() {
     return updateFunctionCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteFunctionRequest, Empty, OperationMetadataV1>
-      deleteFunctionOperationCallable() {
-    return deleteFunctionOperationCallable;
+  public OperationCallable<UpdateFunctionRequest, CloudFunction, OperationMetadataV1>
+      updateFunctionOperationCallable() {
+    return updateFunctionOperationCallable;
   }
 
   public UnaryCallable<DeleteFunctionRequest, Operation> deleteFunctionCallable() {
     return deleteFunctionCallable;
+  }
+
+  public OperationCallable<DeleteFunctionRequest, Empty, OperationMetadataV1>
+      deleteFunctionOperationCallable() {
+    return deleteFunctionOperationCallable;
   }
 
   public UnaryCallable<CallFunctionRequest, CallFunctionResponse> callFunctionCallable() {
