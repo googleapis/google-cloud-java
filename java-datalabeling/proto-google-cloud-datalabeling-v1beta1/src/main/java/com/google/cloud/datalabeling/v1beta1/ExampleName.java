@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class ExampleName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_DATASET_ANNOTATED_DATASET_EXAMPLE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}/examples/{example}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String dataset;
   private final String annotatedDataset;
   private final String example;
+
+  @Deprecated
+  protected ExampleName() {
+    project = null;
+    dataset = null;
+    annotatedDataset = null;
+    example = null;
+  }
+
+  private ExampleName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    dataset = Preconditions.checkNotNull(builder.getDataset());
+    annotatedDataset = Preconditions.checkNotNull(builder.getAnnotatedDataset());
+    example = Preconditions.checkNotNull(builder.getExample());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class ExampleName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private ExampleName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    dataset = Preconditions.checkNotNull(builder.getDataset());
-    annotatedDataset = Preconditions.checkNotNull(builder.getAnnotatedDataset());
-    example = Preconditions.checkNotNull(builder.getExample());
   }
 
   public static ExampleName of(
@@ -96,7 +103,7 @@ public class ExampleName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_DATASET_ANNOTATED_DATASET_EXAMPLE.validatedMatch(
             formattedString, "ExampleName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -114,7 +121,7 @@ public class ExampleName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ExampleName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ExampleName value : values) {
       if (value == null) {
         list.add("");
@@ -126,18 +133,27 @@ public class ExampleName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_DATASET_ANNOTATED_DATASET_EXAMPLE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("dataset", dataset);
-          fieldMapBuilder.put("annotatedDataset", annotatedDataset);
-          fieldMapBuilder.put("example", example);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (dataset != null) {
+            fieldMapBuilder.put("dataset", dataset);
+          }
+          if (annotatedDataset != null) {
+            fieldMapBuilder.put("annotated_dataset", annotatedDataset);
+          }
+          if (example != null) {
+            fieldMapBuilder.put("example", example);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -151,7 +167,7 @@ public class ExampleName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_DATASET_ANNOTATED_DATASET_EXAMPLE.instantiate(
         "project",
         project,
         "dataset",
@@ -162,13 +178,46 @@ public class ExampleName implements ResourceName {
         example);
   }
 
-  /** Builder for ExampleName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ExampleName that = ((ExampleName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.dataset, that.dataset)
+          && Objects.equals(this.annotatedDataset, that.annotatedDataset)
+          && Objects.equals(this.example, that.example);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(dataset);
+    h *= 1000003;
+    h ^= Objects.hashCode(annotatedDataset);
+    h *= 1000003;
+    h ^= Objects.hashCode(example);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}/examples/{example}.
+   */
+  public static class Builder {
     private String project;
     private String dataset;
     private String annotatedDataset;
     private String example;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -206,8 +255,6 @@ public class ExampleName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(ExampleName exampleName) {
       project = exampleName.project;
       dataset = exampleName.dataset;
@@ -218,34 +265,5 @@ public class ExampleName implements ResourceName {
     public ExampleName build() {
       return new ExampleName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof ExampleName) {
-      ExampleName that = (ExampleName) o;
-      return (this.project.equals(that.project))
-          && (this.dataset.equals(that.dataset))
-          && (this.annotatedDataset.equals(that.annotatedDataset))
-          && (this.example.equals(that.example));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= dataset.hashCode();
-    h *= 1000003;
-    h ^= annotatedDataset.hashCode();
-    h *= 1000003;
-    h ^= example.hashCode();
-    return h;
   }
 }

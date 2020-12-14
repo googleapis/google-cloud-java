@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datalabeling.v1beta1.stub;
 
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListAnnotatedDatasetsPagedResponse;
@@ -25,7 +26,6 @@ import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.Li
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchEvaluationsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchExampleComparisonsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -91,17 +91,15 @@ import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Base stub class for Data Labeling API.
+ * Base stub class for the DataLabelingService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class DataLabelingServiceStub implements BackgroundResource {
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
@@ -126,7 +124,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteDatasetCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
           ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
       importDataOperationCallable() {
@@ -137,7 +134,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: importDataCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
           ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
       exportDataOperationCallable() {
@@ -180,7 +176,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteAnnotatedDatasetCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
       labelImageOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: labelImageOperationCallable()");
@@ -190,7 +185,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: labelImageCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<LabelVideoRequest, AnnotatedDataset, LabelOperationMetadata>
       labelVideoOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: labelVideoOperationCallable()");
@@ -200,7 +194,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: labelVideoCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
       labelTextOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: labelTextOperationCallable()");
@@ -247,7 +240,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteAnnotationSpecSetCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateInstructionRequest, Instruction, CreateInstructionMetadata>
       createInstructionOperationCallable() {
     throw new UnsupportedOperationException(

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datalabeling.v1beta1.stub;
 
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListAnnotatedDatasetsPagedResponse;
@@ -119,7 +120,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DataLabelingServiceStub}.
  *
@@ -136,22 +137,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createDataset to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DataLabelingServiceStubSettings.Builder dataLabelingServiceSettingsBuilder =
  *     DataLabelingServiceStubSettings.newBuilder();
  * dataLabelingServiceSettingsBuilder
  *     .createDatasetSettings()
  *     .setRetrySettings(
- *         dataLabelingServiceSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
+ *         dataLabelingServiceSettingsBuilder
+ *             .createDatasetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * DataLabelingServiceStubSettings dataLabelingServiceSettings = dataLabelingServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * DataLabelingServiceStubSettings dataLabelingServiceSettings =
+ *     dataLabelingServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -238,359 +241,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
       listEvaluationJobsSettings;
 
-  /** Returns the object with the settings used for calls to createDataset. */
-  public UnaryCallSettings<CreateDatasetRequest, Dataset> createDatasetSettings() {
-    return createDatasetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getDataset. */
-  public UnaryCallSettings<GetDatasetRequest, Dataset> getDatasetSettings() {
-    return getDatasetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listDatasets. */
-  public PagedCallSettings<ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
-      listDatasetsSettings() {
-    return listDatasetsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteDataset. */
-  public UnaryCallSettings<DeleteDatasetRequest, Empty> deleteDatasetSettings() {
-    return deleteDatasetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to importData. */
-  public UnaryCallSettings<ImportDataRequest, Operation> importDataSettings() {
-    return importDataSettings;
-  }
-
-  /** Returns the object with the settings used for calls to importData. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
-      importDataOperationSettings() {
-    return importDataOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to exportData. */
-  public UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings() {
-    return exportDataSettings;
-  }
-
-  /** Returns the object with the settings used for calls to exportData. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataOperationSettings() {
-    return exportDataOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getDataItem. */
-  public UnaryCallSettings<GetDataItemRequest, DataItem> getDataItemSettings() {
-    return getDataItemSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listDataItems. */
-  public PagedCallSettings<ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
-      listDataItemsSettings() {
-    return listDataItemsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getAnnotatedDataset. */
-  public UnaryCallSettings<GetAnnotatedDatasetRequest, AnnotatedDataset>
-      getAnnotatedDatasetSettings() {
-    return getAnnotatedDatasetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listAnnotatedDatasets. */
-  public PagedCallSettings<
-          ListAnnotatedDatasetsRequest,
-          ListAnnotatedDatasetsResponse,
-          ListAnnotatedDatasetsPagedResponse>
-      listAnnotatedDatasetsSettings() {
-    return listAnnotatedDatasetsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteAnnotatedDataset. */
-  public UnaryCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetSettings() {
-    return deleteAnnotatedDatasetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to labelImage. */
-  public UnaryCallSettings<LabelImageRequest, Operation> labelImageSettings() {
-    return labelImageSettings;
-  }
-
-  /** Returns the object with the settings used for calls to labelImage. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelImageOperationSettings() {
-    return labelImageOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to labelVideo. */
-  public UnaryCallSettings<LabelVideoRequest, Operation> labelVideoSettings() {
-    return labelVideoSettings;
-  }
-
-  /** Returns the object with the settings used for calls to labelVideo. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<LabelVideoRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelVideoOperationSettings() {
-    return labelVideoOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to labelText. */
-  public UnaryCallSettings<LabelTextRequest, Operation> labelTextSettings() {
-    return labelTextSettings;
-  }
-
-  /** Returns the object with the settings used for calls to labelText. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelTextOperationSettings() {
-    return labelTextOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getExample. */
-  public UnaryCallSettings<GetExampleRequest, Example> getExampleSettings() {
-    return getExampleSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listExamples. */
-  public PagedCallSettings<ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
-      listExamplesSettings() {
-    return listExamplesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createAnnotationSpecSet. */
-  public UnaryCallSettings<CreateAnnotationSpecSetRequest, AnnotationSpecSet>
-      createAnnotationSpecSetSettings() {
-    return createAnnotationSpecSetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getAnnotationSpecSet. */
-  public UnaryCallSettings<GetAnnotationSpecSetRequest, AnnotationSpecSet>
-      getAnnotationSpecSetSettings() {
-    return getAnnotationSpecSetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listAnnotationSpecSets. */
-  public PagedCallSettings<
-          ListAnnotationSpecSetsRequest,
-          ListAnnotationSpecSetsResponse,
-          ListAnnotationSpecSetsPagedResponse>
-      listAnnotationSpecSetsSettings() {
-    return listAnnotationSpecSetsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteAnnotationSpecSet. */
-  public UnaryCallSettings<DeleteAnnotationSpecSetRequest, Empty>
-      deleteAnnotationSpecSetSettings() {
-    return deleteAnnotationSpecSetSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createInstruction. */
-  public UnaryCallSettings<CreateInstructionRequest, Operation> createInstructionSettings() {
-    return createInstructionSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createInstruction. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<CreateInstructionRequest, Instruction, CreateInstructionMetadata>
-      createInstructionOperationSettings() {
-    return createInstructionOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getInstruction. */
-  public UnaryCallSettings<GetInstructionRequest, Instruction> getInstructionSettings() {
-    return getInstructionSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listInstructions. */
-  public PagedCallSettings<
-          ListInstructionsRequest, ListInstructionsResponse, ListInstructionsPagedResponse>
-      listInstructionsSettings() {
-    return listInstructionsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteInstruction. */
-  public UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
-    return deleteInstructionSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getEvaluation. */
-  public UnaryCallSettings<GetEvaluationRequest, Evaluation> getEvaluationSettings() {
-    return getEvaluationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to searchEvaluations. */
-  public PagedCallSettings<
-          SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
-      searchEvaluationsSettings() {
-    return searchEvaluationsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to searchExampleComparisons. */
-  public PagedCallSettings<
-          SearchExampleComparisonsRequest,
-          SearchExampleComparisonsResponse,
-          SearchExampleComparisonsPagedResponse>
-      searchExampleComparisonsSettings() {
-    return searchExampleComparisonsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createEvaluationJob. */
-  public UnaryCallSettings<CreateEvaluationJobRequest, EvaluationJob>
-      createEvaluationJobSettings() {
-    return createEvaluationJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateEvaluationJob. */
-  public UnaryCallSettings<UpdateEvaluationJobRequest, EvaluationJob>
-      updateEvaluationJobSettings() {
-    return updateEvaluationJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getEvaluationJob. */
-  public UnaryCallSettings<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobSettings() {
-    return getEvaluationJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to pauseEvaluationJob. */
-  public UnaryCallSettings<PauseEvaluationJobRequest, Empty> pauseEvaluationJobSettings() {
-    return pauseEvaluationJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to resumeEvaluationJob. */
-  public UnaryCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobSettings() {
-    return resumeEvaluationJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteEvaluationJob. */
-  public UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings() {
-    return deleteEvaluationJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listEvaluationJobs. */
-  public PagedCallSettings<
-          ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
-      listEvaluationJobsSettings() {
-    return listEvaluationJobsSettings;
-  }
-
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  public DataLabelingServiceStub createStub() throws IOException {
-    if (getTransportChannelProvider()
-        .getTransportName()
-        .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcDataLabelingServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
-    }
-  }
-
-  /** Returns a builder for the default ExecutorProvider for this service. */
-  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
-    return InstantiatingExecutorProvider.newBuilder();
-  }
-
-  /** Returns the default service endpoint. */
-  public static String getDefaultEndpoint() {
-    return "datalabeling.googleapis.com:443";
-  }
-
-  /** Returns the default service scopes. */
-  public static List<String> getDefaultServiceScopes() {
-    return DEFAULT_SERVICE_SCOPES;
-  }
-
-  /** Returns a builder for the default credentials for this service. */
-  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
-  }
-
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder()
-        .setMaxInboundMessageSize(Integer.MAX_VALUE);
-  }
-
-  public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
-  }
-
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(
-            "gapic", GaxProperties.getLibraryVersion(DataLabelingServiceStubSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
-  }
-
-  /** Returns a new builder for this class. */
-  public static Builder newBuilder() {
-    return Builder.createDefault();
-  }
-
-  /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
-    return new Builder(clientContext);
-  }
-
-  /** Returns a builder containing all the values of this settings class. */
-  public Builder toBuilder() {
-    return new Builder(this);
-  }
-
-  protected DataLabelingServiceStubSettings(Builder settingsBuilder) throws IOException {
-    super(settingsBuilder);
-
-    createDatasetSettings = settingsBuilder.createDatasetSettings().build();
-    getDatasetSettings = settingsBuilder.getDatasetSettings().build();
-    listDatasetsSettings = settingsBuilder.listDatasetsSettings().build();
-    deleteDatasetSettings = settingsBuilder.deleteDatasetSettings().build();
-    importDataSettings = settingsBuilder.importDataSettings().build();
-    importDataOperationSettings = settingsBuilder.importDataOperationSettings().build();
-    exportDataSettings = settingsBuilder.exportDataSettings().build();
-    exportDataOperationSettings = settingsBuilder.exportDataOperationSettings().build();
-    getDataItemSettings = settingsBuilder.getDataItemSettings().build();
-    listDataItemsSettings = settingsBuilder.listDataItemsSettings().build();
-    getAnnotatedDatasetSettings = settingsBuilder.getAnnotatedDatasetSettings().build();
-    listAnnotatedDatasetsSettings = settingsBuilder.listAnnotatedDatasetsSettings().build();
-    deleteAnnotatedDatasetSettings = settingsBuilder.deleteAnnotatedDatasetSettings().build();
-    labelImageSettings = settingsBuilder.labelImageSettings().build();
-    labelImageOperationSettings = settingsBuilder.labelImageOperationSettings().build();
-    labelVideoSettings = settingsBuilder.labelVideoSettings().build();
-    labelVideoOperationSettings = settingsBuilder.labelVideoOperationSettings().build();
-    labelTextSettings = settingsBuilder.labelTextSettings().build();
-    labelTextOperationSettings = settingsBuilder.labelTextOperationSettings().build();
-    getExampleSettings = settingsBuilder.getExampleSettings().build();
-    listExamplesSettings = settingsBuilder.listExamplesSettings().build();
-    createAnnotationSpecSetSettings = settingsBuilder.createAnnotationSpecSetSettings().build();
-    getAnnotationSpecSetSettings = settingsBuilder.getAnnotationSpecSetSettings().build();
-    listAnnotationSpecSetsSettings = settingsBuilder.listAnnotationSpecSetsSettings().build();
-    deleteAnnotationSpecSetSettings = settingsBuilder.deleteAnnotationSpecSetSettings().build();
-    createInstructionSettings = settingsBuilder.createInstructionSettings().build();
-    createInstructionOperationSettings =
-        settingsBuilder.createInstructionOperationSettings().build();
-    getInstructionSettings = settingsBuilder.getInstructionSettings().build();
-    listInstructionsSettings = settingsBuilder.listInstructionsSettings().build();
-    deleteInstructionSettings = settingsBuilder.deleteInstructionSettings().build();
-    getEvaluationSettings = settingsBuilder.getEvaluationSettings().build();
-    searchEvaluationsSettings = settingsBuilder.searchEvaluationsSettings().build();
-    searchExampleComparisonsSettings = settingsBuilder.searchExampleComparisonsSettings().build();
-    createEvaluationJobSettings = settingsBuilder.createEvaluationJobSettings().build();
-    updateEvaluationJobSettings = settingsBuilder.updateEvaluationJobSettings().build();
-    getEvaluationJobSettings = settingsBuilder.getEvaluationJobSettings().build();
-    pauseEvaluationJobSettings = settingsBuilder.pauseEvaluationJobSettings().build();
-    resumeEvaluationJobSettings = settingsBuilder.resumeEvaluationJobSettings().build();
-    deleteEvaluationJobSettings = settingsBuilder.deleteEvaluationJobSettings().build();
-    listEvaluationJobsSettings = settingsBuilder.listEvaluationJobsSettings().build();
-  }
-
   private static final PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>
       LIST_DATASETS_PAGE_STR_DESC =
           new PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>() {
@@ -621,9 +271,9 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
             @Override
             public Iterable<Dataset> extractResources(ListDatasetsResponse payload) {
-              return payload.getDatasetsList() != null
-                  ? payload.getDatasetsList()
-                  : ImmutableList.<Dataset>of();
+              return payload.getDatasetsList() == null
+                  ? ImmutableList.<Dataset>of()
+                  : payload.getDatasetsList();
             }
           };
 
@@ -657,9 +307,9 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
             @Override
             public Iterable<DataItem> extractResources(ListDataItemsResponse payload) {
-              return payload.getDataItemsList() != null
-                  ? payload.getDataItemsList()
-                  : ImmutableList.<DataItem>of();
+              return payload.getDataItemsList() == null
+                  ? ImmutableList.<DataItem>of()
+                  : payload.getDataItemsList();
             }
           };
 
@@ -698,9 +348,9 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             @Override
             public Iterable<AnnotatedDataset> extractResources(
                 ListAnnotatedDatasetsResponse payload) {
-              return payload.getAnnotatedDatasetsList() != null
-                  ? payload.getAnnotatedDatasetsList()
-                  : ImmutableList.<AnnotatedDataset>of();
+              return payload.getAnnotatedDatasetsList() == null
+                  ? ImmutableList.<AnnotatedDataset>of()
+                  : payload.getAnnotatedDatasetsList();
             }
           };
 
@@ -734,9 +384,9 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
             @Override
             public Iterable<Example> extractResources(ListExamplesResponse payload) {
-              return payload.getExamplesList() != null
-                  ? payload.getExamplesList()
-                  : ImmutableList.<Example>of();
+              return payload.getExamplesList() == null
+                  ? ImmutableList.<Example>of()
+                  : payload.getExamplesList();
             }
           };
 
@@ -777,9 +427,9 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             @Override
             public Iterable<AnnotationSpecSet> extractResources(
                 ListAnnotationSpecSetsResponse payload) {
-              return payload.getAnnotationSpecSetsList() != null
-                  ? payload.getAnnotationSpecSetsList()
-                  : ImmutableList.<AnnotationSpecSet>of();
+              return payload.getAnnotationSpecSetsList() == null
+                  ? ImmutableList.<AnnotationSpecSet>of()
+                  : payload.getAnnotationSpecSetsList();
             }
           };
 
@@ -817,9 +467,9 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
             @Override
             public Iterable<Instruction> extractResources(ListInstructionsResponse payload) {
-              return payload.getInstructionsList() != null
-                  ? payload.getInstructionsList()
-                  : ImmutableList.<Instruction>of();
+              return payload.getInstructionsList() == null
+                  ? ImmutableList.<Instruction>of()
+                  : payload.getInstructionsList();
             }
           };
 
@@ -857,9 +507,9 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
             @Override
             public Iterable<Evaluation> extractResources(SearchEvaluationsResponse payload) {
-              return payload.getEvaluationsList() != null
-                  ? payload.getEvaluationsList()
-                  : ImmutableList.<Evaluation>of();
+              return payload.getEvaluationsList() == null
+                  ? ImmutableList.<Evaluation>of()
+                  : payload.getEvaluationsList();
             }
           };
 
@@ -906,9 +556,9 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             @Override
             public Iterable<SearchExampleComparisonsResponse.ExampleComparison> extractResources(
                 SearchExampleComparisonsResponse payload) {
-              return payload.getExampleComparisonsList() != null
-                  ? payload.getExampleComparisonsList()
-                  : ImmutableList.<SearchExampleComparisonsResponse.ExampleComparison>of();
+              return payload.getExampleComparisonsList() == null
+                  ? ImmutableList.<SearchExampleComparisonsResponse.ExampleComparison>of()
+                  : payload.getExampleComparisonsList();
             }
           };
 
@@ -946,9 +596,9 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
             @Override
             public Iterable<EvaluationJob> extractResources(ListEvaluationJobsResponse payload) {
-              return payload.getEvaluationJobsList() != null
-                  ? payload.getEvaluationJobsList()
-                  : ImmutableList.<EvaluationJob>of();
+              return payload.getEvaluationJobsList() == null
+                  ? ImmutableList.<EvaluationJob>of()
+                  : payload.getEvaluationJobsList();
             }
           };
 
@@ -1142,11 +792,357 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             }
           };
 
+  /** Returns the object with the settings used for calls to createDataset. */
+  public UnaryCallSettings<CreateDatasetRequest, Dataset> createDatasetSettings() {
+    return createDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDataset. */
+  public UnaryCallSettings<GetDatasetRequest, Dataset> getDatasetSettings() {
+    return getDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDatasets. */
+  public PagedCallSettings<ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
+      listDatasetsSettings() {
+    return listDatasetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  public UnaryCallSettings<DeleteDatasetRequest, Empty> deleteDatasetSettings() {
+    return deleteDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importData. */
+  public UnaryCallSettings<ImportDataRequest, Operation> importDataSettings() {
+    return importDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importData. */
+  public OperationCallSettings<
+          ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
+      importDataOperationSettings() {
+    return importDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings() {
+    return exportDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public OperationCallSettings<
+          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataOperationSettings() {
+    return exportDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDataItem. */
+  public UnaryCallSettings<GetDataItemRequest, DataItem> getDataItemSettings() {
+    return getDataItemSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDataItems. */
+  public PagedCallSettings<ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
+      listDataItemsSettings() {
+    return listDataItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAnnotatedDataset. */
+  public UnaryCallSettings<GetAnnotatedDatasetRequest, AnnotatedDataset>
+      getAnnotatedDatasetSettings() {
+    return getAnnotatedDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAnnotatedDatasets. */
+  public PagedCallSettings<
+          ListAnnotatedDatasetsRequest,
+          ListAnnotatedDatasetsResponse,
+          ListAnnotatedDatasetsPagedResponse>
+      listAnnotatedDatasetsSettings() {
+    return listAnnotatedDatasetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAnnotatedDataset. */
+  public UnaryCallSettings<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetSettings() {
+    return deleteAnnotatedDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to labelImage. */
+  public UnaryCallSettings<LabelImageRequest, Operation> labelImageSettings() {
+    return labelImageSettings;
+  }
+
+  /** Returns the object with the settings used for calls to labelImage. */
+  public OperationCallSettings<LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
+      labelImageOperationSettings() {
+    return labelImageOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to labelVideo. */
+  public UnaryCallSettings<LabelVideoRequest, Operation> labelVideoSettings() {
+    return labelVideoSettings;
+  }
+
+  /** Returns the object with the settings used for calls to labelVideo. */
+  public OperationCallSettings<LabelVideoRequest, AnnotatedDataset, LabelOperationMetadata>
+      labelVideoOperationSettings() {
+    return labelVideoOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to labelText. */
+  public UnaryCallSettings<LabelTextRequest, Operation> labelTextSettings() {
+    return labelTextSettings;
+  }
+
+  /** Returns the object with the settings used for calls to labelText. */
+  public OperationCallSettings<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
+      labelTextOperationSettings() {
+    return labelTextOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getExample. */
+  public UnaryCallSettings<GetExampleRequest, Example> getExampleSettings() {
+    return getExampleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listExamples. */
+  public PagedCallSettings<ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
+      listExamplesSettings() {
+    return listExamplesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAnnotationSpecSet. */
+  public UnaryCallSettings<CreateAnnotationSpecSetRequest, AnnotationSpecSet>
+      createAnnotationSpecSetSettings() {
+    return createAnnotationSpecSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAnnotationSpecSet. */
+  public UnaryCallSettings<GetAnnotationSpecSetRequest, AnnotationSpecSet>
+      getAnnotationSpecSetSettings() {
+    return getAnnotationSpecSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAnnotationSpecSets. */
+  public PagedCallSettings<
+          ListAnnotationSpecSetsRequest,
+          ListAnnotationSpecSetsResponse,
+          ListAnnotationSpecSetsPagedResponse>
+      listAnnotationSpecSetsSettings() {
+    return listAnnotationSpecSetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAnnotationSpecSet. */
+  public UnaryCallSettings<DeleteAnnotationSpecSetRequest, Empty>
+      deleteAnnotationSpecSetSettings() {
+    return deleteAnnotationSpecSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createInstruction. */
+  public UnaryCallSettings<CreateInstructionRequest, Operation> createInstructionSettings() {
+    return createInstructionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createInstruction. */
+  public OperationCallSettings<CreateInstructionRequest, Instruction, CreateInstructionMetadata>
+      createInstructionOperationSettings() {
+    return createInstructionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getInstruction. */
+  public UnaryCallSettings<GetInstructionRequest, Instruction> getInstructionSettings() {
+    return getInstructionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listInstructions. */
+  public PagedCallSettings<
+          ListInstructionsRequest, ListInstructionsResponse, ListInstructionsPagedResponse>
+      listInstructionsSettings() {
+    return listInstructionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteInstruction. */
+  public UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
+    return deleteInstructionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEvaluation. */
+  public UnaryCallSettings<GetEvaluationRequest, Evaluation> getEvaluationSettings() {
+    return getEvaluationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchEvaluations. */
+  public PagedCallSettings<
+          SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
+      searchEvaluationsSettings() {
+    return searchEvaluationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchExampleComparisons. */
+  public PagedCallSettings<
+          SearchExampleComparisonsRequest,
+          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsPagedResponse>
+      searchExampleComparisonsSettings() {
+    return searchExampleComparisonsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createEvaluationJob. */
+  public UnaryCallSettings<CreateEvaluationJobRequest, EvaluationJob>
+      createEvaluationJobSettings() {
+    return createEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEvaluationJob. */
+  public UnaryCallSettings<UpdateEvaluationJobRequest, EvaluationJob>
+      updateEvaluationJobSettings() {
+    return updateEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEvaluationJob. */
+  public UnaryCallSettings<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobSettings() {
+    return getEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pauseEvaluationJob. */
+  public UnaryCallSettings<PauseEvaluationJobRequest, Empty> pauseEvaluationJobSettings() {
+    return pauseEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resumeEvaluationJob. */
+  public UnaryCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobSettings() {
+    return resumeEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEvaluationJob. */
+  public UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings() {
+    return deleteEvaluationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEvaluationJobs. */
+  public PagedCallSettings<
+          ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
+      listEvaluationJobsSettings() {
+    return listEvaluationJobsSettings;
+  }
+
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+  public DataLabelingServiceStub createStub() throws IOException {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcDataLabelingServiceStub.create(this);
+    }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return InstantiatingExecutorProvider.newBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "datalabeling.googleapis.com:443";
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return DEFAULT_SERVICE_SCOPES;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(DataLabelingServiceStubSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder() {
+    return Builder.createDefault();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
+  /** Returns a builder containing all the values of this settings class. */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  protected DataLabelingServiceStubSettings(Builder settingsBuilder) throws IOException {
+    super(settingsBuilder);
+
+    createDatasetSettings = settingsBuilder.createDatasetSettings().build();
+    getDatasetSettings = settingsBuilder.getDatasetSettings().build();
+    listDatasetsSettings = settingsBuilder.listDatasetsSettings().build();
+    deleteDatasetSettings = settingsBuilder.deleteDatasetSettings().build();
+    importDataSettings = settingsBuilder.importDataSettings().build();
+    importDataOperationSettings = settingsBuilder.importDataOperationSettings().build();
+    exportDataSettings = settingsBuilder.exportDataSettings().build();
+    exportDataOperationSettings = settingsBuilder.exportDataOperationSettings().build();
+    getDataItemSettings = settingsBuilder.getDataItemSettings().build();
+    listDataItemsSettings = settingsBuilder.listDataItemsSettings().build();
+    getAnnotatedDatasetSettings = settingsBuilder.getAnnotatedDatasetSettings().build();
+    listAnnotatedDatasetsSettings = settingsBuilder.listAnnotatedDatasetsSettings().build();
+    deleteAnnotatedDatasetSettings = settingsBuilder.deleteAnnotatedDatasetSettings().build();
+    labelImageSettings = settingsBuilder.labelImageSettings().build();
+    labelImageOperationSettings = settingsBuilder.labelImageOperationSettings().build();
+    labelVideoSettings = settingsBuilder.labelVideoSettings().build();
+    labelVideoOperationSettings = settingsBuilder.labelVideoOperationSettings().build();
+    labelTextSettings = settingsBuilder.labelTextSettings().build();
+    labelTextOperationSettings = settingsBuilder.labelTextOperationSettings().build();
+    getExampleSettings = settingsBuilder.getExampleSettings().build();
+    listExamplesSettings = settingsBuilder.listExamplesSettings().build();
+    createAnnotationSpecSetSettings = settingsBuilder.createAnnotationSpecSetSettings().build();
+    getAnnotationSpecSetSettings = settingsBuilder.getAnnotationSpecSetSettings().build();
+    listAnnotationSpecSetsSettings = settingsBuilder.listAnnotationSpecSetsSettings().build();
+    deleteAnnotationSpecSetSettings = settingsBuilder.deleteAnnotationSpecSetSettings().build();
+    createInstructionSettings = settingsBuilder.createInstructionSettings().build();
+    createInstructionOperationSettings =
+        settingsBuilder.createInstructionOperationSettings().build();
+    getInstructionSettings = settingsBuilder.getInstructionSettings().build();
+    listInstructionsSettings = settingsBuilder.listInstructionsSettings().build();
+    deleteInstructionSettings = settingsBuilder.deleteInstructionSettings().build();
+    getEvaluationSettings = settingsBuilder.getEvaluationSettings().build();
+    searchEvaluationsSettings = settingsBuilder.searchEvaluationsSettings().build();
+    searchExampleComparisonsSettings = settingsBuilder.searchExampleComparisonsSettings().build();
+    createEvaluationJobSettings = settingsBuilder.createEvaluationJobSettings().build();
+    updateEvaluationJobSettings = settingsBuilder.updateEvaluationJobSettings().build();
+    getEvaluationJobSettings = settingsBuilder.getEvaluationJobSettings().build();
+    pauseEvaluationJobSettings = settingsBuilder.pauseEvaluationJobSettings().build();
+    resumeEvaluationJobSettings = settingsBuilder.resumeEvaluationJobSettings().build();
+    deleteEvaluationJobSettings = settingsBuilder.deleteEvaluationJobSettings().build();
+    listEvaluationJobsSettings = settingsBuilder.listEvaluationJobsSettings().build();
+  }
+
   /** Builder for DataLabelingServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<DataLabelingServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateDatasetRequest, Dataset> createDatasetSettings;
     private final UnaryCallSettings.Builder<GetDatasetRequest, Dataset> getDatasetSettings;
     private final PagedCallSettings.Builder<
@@ -1237,7 +1233,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     private final PagedCallSettings.Builder<
             ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
         listEvaluationJobsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1245,13 +1240,13 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -1260,6 +1255,14 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -1273,105 +1276,58 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
       definitions.put("retry_policy_1_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDatasetsSettings = PagedCallSettings.newBuilder(LIST_DATASETS_PAGE_STR_FACT);
-
       deleteDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       importDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       importDataOperationSettings = OperationCallSettings.newBuilder();
-
       exportDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       exportDataOperationSettings = OperationCallSettings.newBuilder();
-
       getDataItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDataItemsSettings = PagedCallSettings.newBuilder(LIST_DATA_ITEMS_PAGE_STR_FACT);
-
       getAnnotatedDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listAnnotatedDatasetsSettings =
           PagedCallSettings.newBuilder(LIST_ANNOTATED_DATASETS_PAGE_STR_FACT);
-
       deleteAnnotatedDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       labelImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       labelImageOperationSettings = OperationCallSettings.newBuilder();
-
       labelVideoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       labelVideoOperationSettings = OperationCallSettings.newBuilder();
-
       labelTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       labelTextOperationSettings = OperationCallSettings.newBuilder();
-
       getExampleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listExamplesSettings = PagedCallSettings.newBuilder(LIST_EXAMPLES_PAGE_STR_FACT);
-
       createAnnotationSpecSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getAnnotationSpecSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listAnnotationSpecSetsSettings =
           PagedCallSettings.newBuilder(LIST_ANNOTATION_SPEC_SETS_PAGE_STR_FACT);
-
       deleteAnnotationSpecSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createInstructionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createInstructionOperationSettings = OperationCallSettings.newBuilder();
-
       getInstructionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listInstructionsSettings = PagedCallSettings.newBuilder(LIST_INSTRUCTIONS_PAGE_STR_FACT);
-
       deleteInstructionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       searchEvaluationsSettings = PagedCallSettings.newBuilder(SEARCH_EVALUATIONS_PAGE_STR_FACT);
-
       searchExampleComparisonsSettings =
           PagedCallSettings.newBuilder(SEARCH_EXAMPLE_COMPARISONS_PAGE_STR_FACT);
-
       createEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       pauseEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       resumeEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteEvaluationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listEvaluationJobsSettings = PagedCallSettings.newBuilder(LIST_EVALUATION_JOBS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
@@ -1410,330 +1366,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               resumeEvaluationJobSettings,
               deleteEvaluationJobSettings,
               listEvaluationJobsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listDatasetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .importDataSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .exportDataSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getDataItemSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listDataItemsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getAnnotatedDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listAnnotatedDatasetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteAnnotatedDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .labelImageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .labelVideoSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .labelTextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getExampleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listExamplesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createAnnotationSpecSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getAnnotationSpecSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listAnnotationSpecSetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteAnnotationSpecSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createInstructionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getInstructionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listInstructionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteInstructionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getEvaluationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .searchEvaluationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .searchExampleComparisonsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .pauseEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .resumeEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteEvaluationJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listEvaluationJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-      builder
-          .importDataOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(
-                  ImportDataOperationResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  ImportDataOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .exportDataOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(
-                  ExportDataOperationResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  ExportDataOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .labelImageOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<LabelImageRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(AnnotatedDataset.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(LabelOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .labelVideoOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<LabelVideoRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(AnnotatedDataset.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(LabelOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .labelTextOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<LabelTextRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(AnnotatedDataset.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(LabelOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .createInstructionOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateInstructionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Instruction.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  CreateInstructionMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(DataLabelingServiceStubSettings settings) {
@@ -1818,7 +1451,336 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
               listEvaluationJobsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listDatasetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .importDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .exportDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getDataItemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listDataItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getAnnotatedDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listAnnotatedDatasetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteAnnotatedDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .labelImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .labelVideoSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .labelTextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getExampleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listExamplesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createAnnotationSpecSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getAnnotationSpecSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listAnnotationSpecSetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteAnnotationSpecSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createInstructionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getInstructionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listInstructionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteInstructionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getEvaluationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .searchEvaluationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .searchExampleComparisonsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .pauseEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .resumeEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteEvaluationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listEvaluationJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .importDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ImportDataOperationResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ImportDataOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ExportDataOperationResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ExportDataOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .labelImageOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<LabelImageRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AnnotatedDataset.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(LabelOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .labelVideoOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<LabelVideoRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AnnotatedDataset.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(LabelOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .labelTextOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<LabelTextRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AnnotatedDataset.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(LabelOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createInstructionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateInstructionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instruction.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CreateInstructionMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

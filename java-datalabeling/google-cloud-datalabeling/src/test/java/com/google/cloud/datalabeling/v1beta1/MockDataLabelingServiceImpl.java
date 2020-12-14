@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datalabeling.v1beta1;
 
 import com.google.api.core.BetaApi;
@@ -25,9 +26,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -64,10 +66,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Dataset) {
       requests.add(request);
-      responseObserver.onNext((Dataset) response);
+      responseObserver.onNext(((Dataset) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -78,10 +80,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Dataset) {
       requests.add(request);
-      responseObserver.onNext((Dataset) response);
+      responseObserver.onNext(((Dataset) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -93,10 +95,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListDatasetsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListDatasetsResponse) response);
+      responseObserver.onNext(((ListDatasetsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -107,10 +109,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -121,10 +123,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -135,10 +137,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -149,10 +151,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof DataItem) {
       requests.add(request);
-      responseObserver.onNext((DataItem) response);
+      responseObserver.onNext(((DataItem) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -164,10 +166,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListDataItemsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListDataItemsResponse) response);
+      responseObserver.onNext(((ListDataItemsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -179,10 +181,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof AnnotatedDataset) {
       requests.add(request);
-      responseObserver.onNext((AnnotatedDataset) response);
+      responseObserver.onNext(((AnnotatedDataset) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -195,10 +197,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListAnnotatedDatasetsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListAnnotatedDatasetsResponse) response);
+      responseObserver.onNext(((ListAnnotatedDatasetsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -210,10 +212,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -224,10 +226,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -238,10 +240,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -252,10 +254,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -266,10 +268,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Example) {
       requests.add(request);
-      responseObserver.onNext((Example) response);
+      responseObserver.onNext(((Example) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -281,10 +283,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListExamplesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListExamplesResponse) response);
+      responseObserver.onNext(((ListExamplesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -296,10 +298,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof AnnotationSpecSet) {
       requests.add(request);
-      responseObserver.onNext((AnnotationSpecSet) response);
+      responseObserver.onNext(((AnnotationSpecSet) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -311,10 +313,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof AnnotationSpecSet) {
       requests.add(request);
-      responseObserver.onNext((AnnotationSpecSet) response);
+      responseObserver.onNext(((AnnotationSpecSet) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -327,10 +329,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListAnnotationSpecSetsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListAnnotationSpecSetsResponse) response);
+      responseObserver.onNext(((ListAnnotationSpecSetsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -342,10 +344,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -357,10 +359,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -372,10 +374,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Instruction) {
       requests.add(request);
-      responseObserver.onNext((Instruction) response);
+      responseObserver.onNext(((Instruction) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -387,10 +389,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListInstructionsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListInstructionsResponse) response);
+      responseObserver.onNext(((ListInstructionsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -402,10 +404,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -417,10 +419,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Evaluation) {
       requests.add(request);
-      responseObserver.onNext((Evaluation) response);
+      responseObserver.onNext(((Evaluation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -433,10 +435,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof SearchEvaluationsResponse) {
       requests.add(request);
-      responseObserver.onNext((SearchEvaluationsResponse) response);
+      responseObserver.onNext(((SearchEvaluationsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -449,10 +451,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof SearchExampleComparisonsResponse) {
       requests.add(request);
-      responseObserver.onNext((SearchExampleComparisonsResponse) response);
+      responseObserver.onNext(((SearchExampleComparisonsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -464,10 +466,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof EvaluationJob) {
       requests.add(request);
-      responseObserver.onNext((EvaluationJob) response);
+      responseObserver.onNext(((EvaluationJob) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -479,10 +481,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof EvaluationJob) {
       requests.add(request);
-      responseObserver.onNext((EvaluationJob) response);
+      responseObserver.onNext(((EvaluationJob) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -494,10 +496,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof EvaluationJob) {
       requests.add(request);
-      responseObserver.onNext((EvaluationJob) response);
+      responseObserver.onNext(((EvaluationJob) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -509,10 +511,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -524,10 +526,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -539,10 +541,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -555,10 +557,10 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListEvaluationJobsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListEvaluationJobsResponse) response);
+      responseObserver.onNext(((ListEvaluationJobsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

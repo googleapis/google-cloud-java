@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class DataItemName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_DATASET_DATA_ITEM =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/datasets/{dataset}/dataItems/{data_item}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String dataset;
   private final String dataItem;
+
+  @Deprecated
+  protected DataItemName() {
+    project = null;
+    dataset = null;
+    dataItem = null;
+  }
+
+  private DataItemName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    dataset = Preconditions.checkNotNull(builder.getDataset());
+    dataItem = Preconditions.checkNotNull(builder.getDataItem());
+  }
 
   public String getProject() {
     return project;
@@ -58,12 +70,6 @@ public class DataItemName implements ResourceName {
     return new Builder(this);
   }
 
-  private DataItemName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    dataset = Preconditions.checkNotNull(builder.getDataset());
-    dataItem = Preconditions.checkNotNull(builder.getDataItem());
-  }
-
   public static DataItemName of(String project, String dataset, String dataItem) {
     return newBuilder().setProject(project).setDataset(dataset).setDataItem(dataItem).build();
   }
@@ -82,7 +88,7 @@ public class DataItemName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_DATASET_DATA_ITEM.validatedMatch(
             formattedString, "DataItemName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("dataset"), matchMap.get("data_item"));
   }
@@ -96,7 +102,7 @@ public class DataItemName implements ResourceName {
   }
 
   public static List<String> toStringList(List<DataItemName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (DataItemName value : values) {
       if (value == null) {
         list.add("");
@@ -108,17 +114,24 @@ public class DataItemName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_DATASET_DATA_ITEM.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("dataset", dataset);
-          fieldMapBuilder.put("dataItem", dataItem);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (dataset != null) {
+            fieldMapBuilder.put("dataset", dataset);
+          }
+          if (dataItem != null) {
+            fieldMapBuilder.put("data_item", dataItem);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -132,15 +145,43 @@ public class DataItemName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "dataset", dataset, "data_item", dataItem);
+    return PROJECT_DATASET_DATA_ITEM.instantiate(
+        "project", project, "dataset", dataset, "data_item", dataItem);
   }
 
-  /** Builder for DataItemName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      DataItemName that = ((DataItemName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.dataset, that.dataset)
+          && Objects.equals(this.dataItem, that.dataItem);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(dataset);
+    h *= 1000003;
+    h ^= Objects.hashCode(dataItem);
+    return h;
+  }
+
+  /** Builder for projects/{project}/datasets/{dataset}/dataItems/{data_item}. */
+  public static class Builder {
     private String project;
     private String dataset;
     private String dataItem;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -169,8 +210,6 @@ public class DataItemName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(DataItemName dataItemName) {
       project = dataItemName.project;
       dataset = dataItemName.dataset;
@@ -180,31 +219,5 @@ public class DataItemName implements ResourceName {
     public DataItemName build() {
       return new DataItemName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof DataItemName) {
-      DataItemName that = (DataItemName) o;
-      return (this.project.equals(that.project))
-          && (this.dataset.equals(that.dataset))
-          && (this.dataItem.equals(that.dataItem));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= dataset.hashCode();
-    h *= 1000003;
-    h ^= dataItem.hashCode();
-    return h;
   }
 }

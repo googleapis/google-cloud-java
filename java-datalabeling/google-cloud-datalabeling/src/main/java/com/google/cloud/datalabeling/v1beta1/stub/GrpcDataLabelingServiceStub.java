@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datalabeling.v1beta1.stub;
 
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListAnnotatedDatasetsPagedResponse;
@@ -25,7 +26,6 @@ import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.Li
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchEvaluationsPagedResponse;
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.SearchExampleComparisonsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -102,16 +102,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Data Labeling API.
+ * gRPC stub implementation for the DataLabelingService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
-
   private static final MethodDescriptor<CreateDatasetRequest, Dataset>
       createDatasetMethodDescriptor =
           MethodDescriptor.<CreateDatasetRequest, Dataset>newBuilder()
@@ -122,6 +120,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
       MethodDescriptor.<GetDatasetRequest, Dataset>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -129,6 +128,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
       listDatasetsMethodDescriptor =
           MethodDescriptor.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -139,6 +139,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteDatasetRequest, Empty> deleteDatasetMethodDescriptor =
       MethodDescriptor.<DeleteDatasetRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -146,6 +147,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
       MethodDescriptor.<ImportDataRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -153,6 +155,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ImportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
       MethodDescriptor.<ExportDataRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -160,6 +163,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetDataItemRequest, DataItem> getDataItemMethodDescriptor =
       MethodDescriptor.<GetDataItemRequest, DataItem>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -167,6 +171,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetDataItemRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DataItem.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListDataItemsRequest, ListDataItemsResponse>
       listDataItemsMethodDescriptor =
           MethodDescriptor.<ListDataItemsRequest, ListDataItemsResponse>newBuilder()
@@ -178,6 +183,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataItemsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetAnnotatedDatasetRequest, AnnotatedDataset>
       getAnnotatedDatasetMethodDescriptor =
           MethodDescriptor.<GetAnnotatedDatasetRequest, AnnotatedDataset>newBuilder()
@@ -188,6 +194,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(GetAnnotatedDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotatedDataset.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse>
       listAnnotatedDatasetsMethodDescriptor =
           MethodDescriptor.<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse>newBuilder()
@@ -199,6 +206,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnnotatedDatasetsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteAnnotatedDatasetRequest, Empty>
       deleteAnnotatedDatasetMethodDescriptor =
           MethodDescriptor.<DeleteAnnotatedDatasetRequest, Empty>newBuilder()
@@ -209,6 +217,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(DeleteAnnotatedDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<LabelImageRequest, Operation> labelImageMethodDescriptor =
       MethodDescriptor.<LabelImageRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -216,6 +225,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(LabelImageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<LabelVideoRequest, Operation> labelVideoMethodDescriptor =
       MethodDescriptor.<LabelVideoRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -223,6 +233,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(LabelVideoRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<LabelTextRequest, Operation> labelTextMethodDescriptor =
       MethodDescriptor.<LabelTextRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -230,6 +241,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(LabelTextRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetExampleRequest, Example> getExampleMethodDescriptor =
       MethodDescriptor.<GetExampleRequest, Example>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -237,6 +249,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetExampleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Example.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListExamplesRequest, ListExamplesResponse>
       listExamplesMethodDescriptor =
           MethodDescriptor.<ListExamplesRequest, ListExamplesResponse>newBuilder()
@@ -247,6 +260,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExamplesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateAnnotationSpecSetRequest, AnnotationSpecSet>
       createAnnotationSpecSetMethodDescriptor =
           MethodDescriptor.<CreateAnnotationSpecSetRequest, AnnotationSpecSet>newBuilder()
@@ -257,6 +271,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(CreateAnnotationSpecSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotationSpecSet.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetAnnotationSpecSetRequest, AnnotationSpecSet>
       getAnnotationSpecSetMethodDescriptor =
           MethodDescriptor.<GetAnnotationSpecSetRequest, AnnotationSpecSet>newBuilder()
@@ -267,6 +282,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(GetAnnotationSpecSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotationSpecSet.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse>
       listAnnotationSpecSetsMethodDescriptor =
@@ -280,6 +296,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnnotationSpecSetsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteAnnotationSpecSetRequest, Empty>
       deleteAnnotationSpecSetMethodDescriptor =
           MethodDescriptor.<DeleteAnnotationSpecSetRequest, Empty>newBuilder()
@@ -290,6 +307,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(DeleteAnnotationSpecSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateInstructionRequest, Operation>
       createInstructionMethodDescriptor =
           MethodDescriptor.<CreateInstructionRequest, Operation>newBuilder()
@@ -300,6 +318,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(CreateInstructionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetInstructionRequest, Instruction>
       getInstructionMethodDescriptor =
           MethodDescriptor.<GetInstructionRequest, Instruction>newBuilder()
@@ -310,6 +329,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(GetInstructionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Instruction.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListInstructionsRequest, ListInstructionsResponse>
       listInstructionsMethodDescriptor =
           MethodDescriptor.<ListInstructionsRequest, ListInstructionsResponse>newBuilder()
@@ -321,6 +341,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstructionsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteInstructionRequest, Empty>
       deleteInstructionMethodDescriptor =
           MethodDescriptor.<DeleteInstructionRequest, Empty>newBuilder()
@@ -331,6 +352,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(DeleteInstructionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetEvaluationRequest, Evaluation>
       getEvaluationMethodDescriptor =
           MethodDescriptor.<GetEvaluationRequest, Evaluation>newBuilder()
@@ -341,6 +363,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(GetEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Evaluation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SearchEvaluationsRequest, SearchEvaluationsResponse>
       searchEvaluationsMethodDescriptor =
           MethodDescriptor.<SearchEvaluationsRequest, SearchEvaluationsResponse>newBuilder()
@@ -352,6 +375,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchEvaluationsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
       searchExampleComparisonsMethodDescriptor =
@@ -365,6 +389,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchExampleComparisonsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateEvaluationJobRequest, EvaluationJob>
       createEvaluationJobMethodDescriptor =
           MethodDescriptor.<CreateEvaluationJobRequest, EvaluationJob>newBuilder()
@@ -375,6 +400,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(CreateEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EvaluationJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateEvaluationJobRequest, EvaluationJob>
       updateEvaluationJobMethodDescriptor =
           MethodDescriptor.<UpdateEvaluationJobRequest, EvaluationJob>newBuilder()
@@ -385,6 +411,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(UpdateEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EvaluationJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetEvaluationJobRequest, EvaluationJob>
       getEvaluationJobMethodDescriptor =
           MethodDescriptor.<GetEvaluationJobRequest, EvaluationJob>newBuilder()
@@ -395,6 +422,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(GetEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EvaluationJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<PauseEvaluationJobRequest, Empty>
       pauseEvaluationJobMethodDescriptor =
           MethodDescriptor.<PauseEvaluationJobRequest, Empty>newBuilder()
@@ -405,6 +433,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(PauseEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ResumeEvaluationJobRequest, Empty>
       resumeEvaluationJobMethodDescriptor =
           MethodDescriptor.<ResumeEvaluationJobRequest, Empty>newBuilder()
@@ -415,6 +444,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(ResumeEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteEvaluationJobRequest, Empty>
       deleteEvaluationJobMethodDescriptor =
           MethodDescriptor.<DeleteEvaluationJobRequest, Empty>newBuilder()
@@ -425,6 +455,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(DeleteEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
       listEvaluationJobsMethodDescriptor =
           MethodDescriptor.<ListEvaluationJobsRequest, ListEvaluationJobsResponse>newBuilder()
@@ -436,9 +467,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEvaluationJobsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable;
   private final UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable;
@@ -520,6 +548,8 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
   private final UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>
       listEvaluationJobsPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcDataLabelingServiceStub create(DataLabelingServiceStubSettings settings)
@@ -1045,7 +1075,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             importDataTransportSettings,
             settings.importDataOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.exportDataCallable =
         callableFactory.createUnaryCallable(
             exportDataTransportSettings, settings.exportDataSettings(), clientContext);
@@ -1054,7 +1084,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             exportDataTransportSettings,
             settings.exportDataOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getDataItemCallable =
         callableFactory.createUnaryCallable(
             getDataItemTransportSettings, settings.getDataItemSettings(), clientContext);
@@ -1092,7 +1122,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             labelImageTransportSettings,
             settings.labelImageOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.labelVideoCallable =
         callableFactory.createUnaryCallable(
             labelVideoTransportSettings, settings.labelVideoSettings(), clientContext);
@@ -1101,7 +1131,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             labelVideoTransportSettings,
             settings.labelVideoOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.labelTextCallable =
         callableFactory.createUnaryCallable(
             labelTextTransportSettings, settings.labelTextSettings(), clientContext);
@@ -1110,7 +1140,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             labelTextTransportSettings,
             settings.labelTextOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getExampleCallable =
         callableFactory.createUnaryCallable(
             getExampleTransportSettings, settings.getExampleSettings(), clientContext);
@@ -1155,7 +1185,7 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             createInstructionTransportSettings,
             settings.createInstructionOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getInstructionCallable =
         callableFactory.createUnaryCallable(
             getInstructionTransportSettings, settings.getInstructionSettings(), clientContext);
@@ -1232,10 +1262,10 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             settings.listEvaluationJobsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -1248,42 +1278,44 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return getDatasetCallable;
   }
 
-  public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
-    return listDatasetsPagedCallable;
-  }
-
   public UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable() {
     return listDatasetsCallable;
+  }
+
+  public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
+    return listDatasetsPagedCallable;
   }
 
   public UnaryCallable<DeleteDatasetRequest, Empty> deleteDatasetCallable() {
     return deleteDatasetCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
+    return importDataCallable;
+  }
+
   public OperationCallable<
           ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
       importDataOperationCallable() {
     return importDataOperationCallable;
   }
 
-  public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
-    return importDataCallable;
+  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
+    return exportDataCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
           ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
       exportDataOperationCallable() {
     return exportDataOperationCallable;
   }
 
-  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
-    return exportDataCallable;
-  }
-
   public UnaryCallable<GetDataItemRequest, DataItem> getDataItemCallable() {
     return getDataItemCallable;
+  }
+
+  public UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable() {
+    return listDataItemsCallable;
   }
 
   public UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
@@ -1291,17 +1323,8 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return listDataItemsPagedCallable;
   }
 
-  public UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable() {
-    return listDataItemsCallable;
-  }
-
   public UnaryCallable<GetAnnotatedDatasetRequest, AnnotatedDataset> getAnnotatedDatasetCallable() {
     return getAnnotatedDatasetCallable;
-  }
-
-  public UnaryCallable<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsPagedResponse>
-      listAnnotatedDatasetsPagedCallable() {
-    return listAnnotatedDatasetsPagedCallable;
   }
 
   public UnaryCallable<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse>
@@ -1309,50 +1332,52 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return listAnnotatedDatasetsCallable;
   }
 
-  public UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable() {
-    return deleteAnnotatedDatasetCallable;
+  public UnaryCallable<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsPagedResponse>
+      listAnnotatedDatasetsPagedCallable() {
+    return listAnnotatedDatasetsPagedCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelImageOperationCallable() {
-    return labelImageOperationCallable;
+  public UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable() {
+    return deleteAnnotatedDatasetCallable;
   }
 
   public UnaryCallable<LabelImageRequest, Operation> labelImageCallable() {
     return labelImageCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<LabelVideoRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelVideoOperationCallable() {
-    return labelVideoOperationCallable;
+  public OperationCallable<LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
+      labelImageOperationCallable() {
+    return labelImageOperationCallable;
   }
 
   public UnaryCallable<LabelVideoRequest, Operation> labelVideoCallable() {
     return labelVideoCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
-      labelTextOperationCallable() {
-    return labelTextOperationCallable;
+  public OperationCallable<LabelVideoRequest, AnnotatedDataset, LabelOperationMetadata>
+      labelVideoOperationCallable() {
+    return labelVideoOperationCallable;
   }
 
   public UnaryCallable<LabelTextRequest, Operation> labelTextCallable() {
     return labelTextCallable;
   }
 
+  public OperationCallable<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
+      labelTextOperationCallable() {
+    return labelTextOperationCallable;
+  }
+
   public UnaryCallable<GetExampleRequest, Example> getExampleCallable() {
     return getExampleCallable;
   }
 
-  public UnaryCallable<ListExamplesRequest, ListExamplesPagedResponse> listExamplesPagedCallable() {
-    return listExamplesPagedCallable;
-  }
-
   public UnaryCallable<ListExamplesRequest, ListExamplesResponse> listExamplesCallable() {
     return listExamplesCallable;
+  }
+
+  public UnaryCallable<ListExamplesRequest, ListExamplesPagedResponse> listExamplesPagedCallable() {
+    return listExamplesPagedCallable;
   }
 
   public UnaryCallable<CreateAnnotationSpecSetRequest, AnnotationSpecSet>
@@ -1365,42 +1390,41 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return getAnnotationSpecSetCallable;
   }
 
-  public UnaryCallable<ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsPagedResponse>
-      listAnnotationSpecSetsPagedCallable() {
-    return listAnnotationSpecSetsPagedCallable;
-  }
-
   public UnaryCallable<ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse>
       listAnnotationSpecSetsCallable() {
     return listAnnotationSpecSetsCallable;
+  }
+
+  public UnaryCallable<ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsPagedResponse>
+      listAnnotationSpecSetsPagedCallable() {
+    return listAnnotationSpecSetsPagedCallable;
   }
 
   public UnaryCallable<DeleteAnnotationSpecSetRequest, Empty> deleteAnnotationSpecSetCallable() {
     return deleteAnnotationSpecSetCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<CreateInstructionRequest, Operation> createInstructionCallable() {
+    return createInstructionCallable;
+  }
+
   public OperationCallable<CreateInstructionRequest, Instruction, CreateInstructionMetadata>
       createInstructionOperationCallable() {
     return createInstructionOperationCallable;
-  }
-
-  public UnaryCallable<CreateInstructionRequest, Operation> createInstructionCallable() {
-    return createInstructionCallable;
   }
 
   public UnaryCallable<GetInstructionRequest, Instruction> getInstructionCallable() {
     return getInstructionCallable;
   }
 
-  public UnaryCallable<ListInstructionsRequest, ListInstructionsPagedResponse>
-      listInstructionsPagedCallable() {
-    return listInstructionsPagedCallable;
-  }
-
   public UnaryCallable<ListInstructionsRequest, ListInstructionsResponse>
       listInstructionsCallable() {
     return listInstructionsCallable;
+  }
+
+  public UnaryCallable<ListInstructionsRequest, ListInstructionsPagedResponse>
+      listInstructionsPagedCallable() {
+    return listInstructionsPagedCallable;
   }
 
   public UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable() {
@@ -1411,24 +1435,24 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return getEvaluationCallable;
   }
 
-  public UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsPagedResponse>
-      searchEvaluationsPagedCallable() {
-    return searchEvaluationsPagedCallable;
-  }
-
   public UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsResponse>
       searchEvaluationsCallable() {
     return searchEvaluationsCallable;
   }
 
-  public UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsPagedResponse>
-      searchExampleComparisonsPagedCallable() {
-    return searchExampleComparisonsPagedCallable;
+  public UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsPagedResponse>
+      searchEvaluationsPagedCallable() {
+    return searchEvaluationsPagedCallable;
   }
 
   public UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
       searchExampleComparisonsCallable() {
     return searchExampleComparisonsCallable;
+  }
+
+  public UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsPagedResponse>
+      searchExampleComparisonsPagedCallable() {
+    return searchExampleComparisonsPagedCallable;
   }
 
   public UnaryCallable<CreateEvaluationJobRequest, EvaluationJob> createEvaluationJobCallable() {
@@ -1455,14 +1479,14 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return deleteEvaluationJobCallable;
   }
 
-  public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>
-      listEvaluationJobsPagedCallable() {
-    return listEvaluationJobsPagedCallable;
-  }
-
   public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
       listEvaluationJobsCallable() {
     return listEvaluationJobsCallable;
+  }
+
+  public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>
+      listEvaluationJobsPagedCallable() {
+    return listEvaluationJobsPagedCallable;
   }
 
   @Override

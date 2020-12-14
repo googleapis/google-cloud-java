@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class EvaluationJobName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_EVALUATION_JOB =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/evaluationJobs/{evaluation_job}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String evaluationJob;
+
+  @Deprecated
+  protected EvaluationJobName() {
+    project = null;
+    evaluationJob = null;
+  }
+
+  private EvaluationJobName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    evaluationJob = Preconditions.checkNotNull(builder.getEvaluationJob());
+  }
 
   public String getProject() {
     return project;
@@ -52,11 +62,6 @@ public class EvaluationJobName implements ResourceName {
     return new Builder(this);
   }
 
-  private EvaluationJobName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    evaluationJob = Preconditions.checkNotNull(builder.getEvaluationJob());
-  }
-
   public static EvaluationJobName of(String project, String evaluationJob) {
     return newBuilder().setProject(project).setEvaluationJob(evaluationJob).build();
   }
@@ -70,7 +75,7 @@ public class EvaluationJobName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_EVALUATION_JOB.validatedMatch(
             formattedString, "EvaluationJobName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("evaluation_job"));
   }
@@ -84,7 +89,7 @@ public class EvaluationJobName implements ResourceName {
   }
 
   public static List<String> toStringList(List<EvaluationJobName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (EvaluationJobName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class EvaluationJobName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_EVALUATION_JOB.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("evaluationJob", evaluationJob);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (evaluationJob != null) {
+            fieldMapBuilder.put("evaluation_job", evaluationJob);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,38 @@ public class EvaluationJobName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "evaluation_job", evaluationJob);
+    return PROJECT_EVALUATION_JOB.instantiate("project", project, "evaluation_job", evaluationJob);
   }
 
-  /** Builder for EvaluationJobName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      EvaluationJobName that = ((EvaluationJobName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.evaluationJob, that.evaluationJob);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(evaluationJob);
+    return h;
+  }
+
+  /** Builder for projects/{project}/evaluationJobs/{evaluation_job}. */
+  public static class Builder {
     private String project;
     private String evaluationJob;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -146,8 +180,6 @@ public class EvaluationJobName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(EvaluationJobName evaluationJobName) {
       project = evaluationJobName.project;
       evaluationJob = evaluationJobName.evaluationJob;
@@ -156,27 +188,5 @@ public class EvaluationJobName implements ResourceName {
     public EvaluationJobName build() {
       return new EvaluationJobName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof EvaluationJobName) {
-      EvaluationJobName that = (EvaluationJobName) o;
-      return (this.project.equals(that.project)) && (this.evaluationJob.equals(that.evaluationJob));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= evaluationJob.hashCode();
-    return h;
   }
 }

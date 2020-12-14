@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datalabeling.v1beta1;
 
 import static com.google.cloud.datalabeling.v1beta1.DataLabelingServiceClient.ListAnnotatedDatasetsPagedResponse;
@@ -44,7 +45,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DataLabelingServiceClient}.
  *
@@ -61,23 +62,25 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createDataset to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DataLabelingServiceSettings.Builder dataLabelingServiceSettingsBuilder =
  *     DataLabelingServiceSettings.newBuilder();
  * dataLabelingServiceSettingsBuilder
  *     .createDatasetSettings()
  *     .setRetrySettings(
- *         dataLabelingServiceSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
+ *         dataLabelingServiceSettingsBuilder
+ *             .createDatasetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * DataLabelingServiceSettings dataLabelingServiceSettings = dataLabelingServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * DataLabelingServiceSettings dataLabelingServiceSettings =
+ *     dataLabelingServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServiceSettings> {
+
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Dataset> createDatasetSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).createDatasetSettings();
@@ -105,8 +108,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
   }
 
   /** Returns the object with the settings used for calls to importData. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
       importDataOperationSettings() {
@@ -119,8 +120,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
   }
 
   /** Returns the object with the settings used for calls to exportData. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
       exportDataOperationSettings() {
@@ -164,8 +163,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
   }
 
   /** Returns the object with the settings used for calls to labelImage. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
       labelImageOperationSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).labelImageOperationSettings();
@@ -177,8 +174,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
   }
 
   /** Returns the object with the settings used for calls to labelVideo. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<LabelVideoRequest, AnnotatedDataset, LabelOperationMetadata>
       labelVideoOperationSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).labelVideoOperationSettings();
@@ -190,8 +185,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
   }
 
   /** Returns the object with the settings used for calls to labelText. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
       labelTextOperationSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).labelTextOperationSettings();
@@ -241,8 +234,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
   }
 
   /** Returns the object with the settings used for calls to createInstruction. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateInstructionRequest, Instruction, CreateInstructionMetadata>
       createInstructionOperationSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings())
@@ -386,16 +377,13 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
 
   /** Builder for DataLabelingServiceSettings. */
   public static class Builder extends ClientSettings.Builder<DataLabelingServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(DataLabelingServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(DataLabelingServiceStubSettings.newBuilder());
     }
 
     protected Builder(DataLabelingServiceSettings settings) {
@@ -406,11 +394,15 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(DataLabelingServiceStubSettings.newBuilder());
+    }
+
     public DataLabelingServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((DataLabelingServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -451,8 +443,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     }
 
     /** Returns the builder for the settings used for calls to importData. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
         importDataOperationSettings() {
@@ -465,8 +455,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     }
 
     /** Returns the builder for the settings used for calls to exportData. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
         exportDataOperationSettings() {
@@ -512,8 +500,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     }
 
     /** Returns the builder for the settings used for calls to labelImage. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
         labelImageOperationSettings() {
@@ -526,8 +512,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     }
 
     /** Returns the builder for the settings used for calls to labelVideo. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             LabelVideoRequest, AnnotatedDataset, LabelOperationMetadata>
         labelVideoOperationSettings() {
@@ -540,8 +524,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     }
 
     /** Returns the builder for the settings used for calls to labelText. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
         labelTextOperationSettings() {
       return getStubSettingsBuilder().labelTextOperationSettings();
@@ -593,8 +575,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     }
 
     /** Returns the builder for the settings used for calls to createInstruction. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateInstructionRequest, Instruction, CreateInstructionMetadata>
         createInstructionOperationSettings() {
