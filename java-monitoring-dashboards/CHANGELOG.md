@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.6](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.0.5...v1.0.6) (2020-12-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.1 ([63ec3e5](https://www.github.com/googleapis/java-monitoring-dashboards/commit/63ec3e5172084e99d1048c59e8d1743ed77e34f5))
+
 ### [1.0.5](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.0.4...v1.0.5) (2020-12-02)
 
 
