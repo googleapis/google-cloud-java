@@ -46,11 +46,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-monitoring:2.0.8'
+compile 'com.google.cloud:google-cloud-monitoring:2.0.9'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "2.0.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "2.0.9"
 ```
 
 ## Authentication
