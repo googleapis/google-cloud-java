@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.secretmanager.v1beta1.stub;
 
 import static com.google.cloud.secretmanager.v1beta1.SecretManagerServiceClient.ListSecretVersionsPagedResponse;
 import static com.google.cloud.secretmanager.v1beta1.SecretManagerServiceClient.ListSecretsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -49,6 +49,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -57,16 +58,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Secret Manager API.
+ * gRPC stub implementation for the SecretManagerService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
-
   private static final MethodDescriptor<ListSecretsRequest, ListSecretsResponse>
       listSecretsMethodDescriptor =
           MethodDescriptor.<ListSecretsRequest, ListSecretsResponse>newBuilder()
@@ -76,6 +75,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSecretsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateSecretRequest, Secret> createSecretMethodDescriptor =
       MethodDescriptor.<CreateSecretRequest, Secret>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -83,6 +83,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Secret.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<AddSecretVersionRequest, SecretVersion>
       addSecretVersionMethodDescriptor =
           MethodDescriptor.<AddSecretVersionRequest, SecretVersion>newBuilder()
@@ -93,6 +94,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(AddSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetSecretRequest, Secret> getSecretMethodDescriptor =
       MethodDescriptor.<GetSecretRequest, Secret>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -100,6 +102,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Secret.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateSecretRequest, Secret> updateSecretMethodDescriptor =
       MethodDescriptor.<UpdateSecretRequest, Secret>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -107,6 +110,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Secret.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteSecretRequest, Empty> deleteSecretMethodDescriptor =
       MethodDescriptor.<DeleteSecretRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -114,6 +118,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListSecretVersionsRequest, ListSecretVersionsResponse>
       listSecretVersionsMethodDescriptor =
           MethodDescriptor.<ListSecretVersionsRequest, ListSecretVersionsResponse>newBuilder()
@@ -125,6 +130,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSecretVersionsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetSecretVersionRequest, SecretVersion>
       getSecretVersionMethodDescriptor =
           MethodDescriptor.<GetSecretVersionRequest, SecretVersion>newBuilder()
@@ -135,6 +141,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(GetSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<AccessSecretVersionRequest, AccessSecretVersionResponse>
       accessSecretVersionMethodDescriptor =
           MethodDescriptor.<AccessSecretVersionRequest, AccessSecretVersionResponse>newBuilder()
@@ -146,6 +153,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AccessSecretVersionResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DisableSecretVersionRequest, SecretVersion>
       disableSecretVersionMethodDescriptor =
           MethodDescriptor.<DisableSecretVersionRequest, SecretVersion>newBuilder()
@@ -156,6 +164,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(DisableSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<EnableSecretVersionRequest, SecretVersion>
       enableSecretVersionMethodDescriptor =
           MethodDescriptor.<EnableSecretVersionRequest, SecretVersion>newBuilder()
@@ -166,6 +175,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(EnableSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DestroySecretVersionRequest, SecretVersion>
       destroySecretVersionMethodDescriptor =
           MethodDescriptor.<DestroySecretVersionRequest, SecretVersion>newBuilder()
@@ -176,6 +186,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(DestroySecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -183,6 +194,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -190,6 +202,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -201,8 +214,6 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListSecretsRequest, ListSecretsResponse> listSecretsCallable;
   private final UnaryCallable<ListSecretsRequest, ListSecretsPagedResponse>
@@ -230,6 +241,8 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcSecretManagerServiceStub create(SecretManagerServiceStubSettings settings)
@@ -270,6 +283,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListSecretsRequest, ListSecretsResponse> listSecretsTransportSettings =
         GrpcCallSettings.<ListSecretsRequest, ListSecretsResponse>newBuilder()
@@ -539,15 +553,20 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListSecretsRequest, ListSecretsPagedResponse> listSecretsPagedCallable() {
-    return listSecretsPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListSecretsRequest, ListSecretsResponse> listSecretsCallable() {
     return listSecretsCallable;
+  }
+
+  public UnaryCallable<ListSecretsRequest, ListSecretsPagedResponse> listSecretsPagedCallable() {
+    return listSecretsPagedCallable;
   }
 
   public UnaryCallable<CreateSecretRequest, Secret> createSecretCallable() {
@@ -570,14 +589,14 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
     return deleteSecretCallable;
   }
 
-  public UnaryCallable<ListSecretVersionsRequest, ListSecretVersionsPagedResponse>
-      listSecretVersionsPagedCallable() {
-    return listSecretVersionsPagedCallable;
-  }
-
   public UnaryCallable<ListSecretVersionsRequest, ListSecretVersionsResponse>
       listSecretVersionsCallable() {
     return listSecretVersionsCallable;
+  }
+
+  public UnaryCallable<ListSecretVersionsRequest, ListSecretVersionsPagedResponse>
+      listSecretVersionsPagedCallable() {
+    return listSecretVersionsPagedCallable;
   }
 
   public UnaryCallable<GetSecretVersionRequest, SecretVersion> getSecretVersionCallable() {

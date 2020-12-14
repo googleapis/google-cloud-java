@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.secretmanager.v1.stub;
 
 import static com.google.cloud.secretmanager.v1.SecretManagerServiceClient.ListSecretVersionsPagedResponse;
@@ -72,7 +73,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link SecretManagerServiceStub}.
  *
@@ -89,22 +90,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createSecret to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SecretManagerServiceStubSettings.Builder secretManagerServiceSettingsBuilder =
  *     SecretManagerServiceStubSettings.newBuilder();
  * secretManagerServiceSettingsBuilder
  *     .createSecretSettings()
  *     .setRetrySettings(
- *         secretManagerServiceSettingsBuilder.createSecretSettings().getRetrySettings().toBuilder()
+ *         secretManagerServiceSettingsBuilder
+ *             .createSecretSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * SecretManagerServiceStubSettings secretManagerServiceSettings = secretManagerServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * SecretManagerServiceStubSettings secretManagerServiceSettings =
+ *     secretManagerServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class SecretManagerServiceStubSettings
     extends StubSettings<SecretManagerServiceStubSettings> {
   /** The default scopes of the service. */
@@ -134,6 +137,120 @@ public class SecretManagerServiceStubSettings
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<ListSecretsRequest, ListSecretsResponse, Secret>
+      LIST_SECRETS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSecretsRequest, ListSecretsResponse, Secret>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSecretsRequest injectToken(ListSecretsRequest payload, String token) {
+              return ListSecretsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSecretsRequest injectPageSize(ListSecretsRequest payload, int pageSize) {
+              return ListSecretsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSecretsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSecretsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Secret> extractResources(ListSecretsResponse payload) {
+              return payload.getSecretsList() == null
+                  ? ImmutableList.<Secret>of()
+                  : payload.getSecretsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion>
+      LIST_SECRET_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSecretVersionsRequest injectToken(
+                ListSecretVersionsRequest payload, String token) {
+              return ListSecretVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSecretVersionsRequest injectPageSize(
+                ListSecretVersionsRequest payload, int pageSize) {
+              return ListSecretVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSecretVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSecretVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SecretVersion> extractResources(ListSecretVersionsResponse payload) {
+              return payload.getVersionsList() == null
+                  ? ImmutableList.<SecretVersion>of()
+                  : payload.getVersionsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSecretsRequest, ListSecretsResponse, ListSecretsPagedResponse>
+      LIST_SECRETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSecretsRequest, ListSecretsResponse, ListSecretsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSecretsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSecretsRequest, ListSecretsResponse> callable,
+                ListSecretsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSecretsResponse> futureResponse) {
+              PageContext<ListSecretsRequest, ListSecretsResponse, Secret> pageContext =
+                  PageContext.create(callable, LIST_SECRETS_PAGE_STR_DESC, request, context);
+              return ListSecretsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSecretVersionsRequest, ListSecretVersionsResponse, ListSecretVersionsPagedResponse>
+      LIST_SECRET_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSecretVersionsRequest,
+              ListSecretVersionsResponse,
+              ListSecretVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSecretVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSecretVersionsRequest, ListSecretVersionsResponse> callable,
+                ListSecretVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSecretVersionsResponse> futureResponse) {
+              PageContext<ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SECRET_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListSecretVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listSecrets. */
   public PagedCallSettings<ListSecretsRequest, ListSecretsResponse, ListSecretsPagedResponse>
@@ -224,10 +341,10 @@ public class SecretManagerServiceStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcSecretManagerServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -304,125 +421,10 @@ public class SecretManagerServiceStubSettings
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  private static final PagedListDescriptor<ListSecretsRequest, ListSecretsResponse, Secret>
-      LIST_SECRETS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListSecretsRequest, ListSecretsResponse, Secret>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSecretsRequest injectToken(ListSecretsRequest payload, String token) {
-              return ListSecretsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSecretsRequest injectPageSize(ListSecretsRequest payload, int pageSize) {
-              return ListSecretsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSecretsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSecretsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Secret> extractResources(ListSecretsResponse payload) {
-              return payload.getSecretsList() != null
-                  ? payload.getSecretsList()
-                  : ImmutableList.<Secret>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion>
-      LIST_SECRET_VERSIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSecretVersionsRequest injectToken(
-                ListSecretVersionsRequest payload, String token) {
-              return ListSecretVersionsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSecretVersionsRequest injectPageSize(
-                ListSecretVersionsRequest payload, int pageSize) {
-              return ListSecretVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSecretVersionsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSecretVersionsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<SecretVersion> extractResources(ListSecretVersionsResponse payload) {
-              return payload.getVersionsList() != null
-                  ? payload.getVersionsList()
-                  : ImmutableList.<SecretVersion>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSecretsRequest, ListSecretsResponse, ListSecretsPagedResponse>
-      LIST_SECRETS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSecretsRequest, ListSecretsResponse, ListSecretsPagedResponse>() {
-            @Override
-            public ApiFuture<ListSecretsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSecretsRequest, ListSecretsResponse> callable,
-                ListSecretsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSecretsResponse> futureResponse) {
-              PageContext<ListSecretsRequest, ListSecretsResponse, Secret> pageContext =
-                  PageContext.create(callable, LIST_SECRETS_PAGE_STR_DESC, request, context);
-              return ListSecretsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSecretVersionsRequest, ListSecretVersionsResponse, ListSecretVersionsPagedResponse>
-      LIST_SECRET_VERSIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSecretVersionsRequest,
-              ListSecretVersionsResponse,
-              ListSecretVersionsPagedResponse>() {
-            @Override
-            public ApiFuture<ListSecretVersionsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSecretVersionsRequest, ListSecretVersionsResponse> callable,
-                ListSecretVersionsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSecretVersionsResponse> futureResponse) {
-              PageContext<ListSecretVersionsRequest, ListSecretVersionsResponse, SecretVersion>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_SECRET_VERSIONS_PAGE_STR_DESC, request, context);
-              return ListSecretVersionsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for SecretManagerServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<SecretManagerServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListSecretsRequest, ListSecretsResponse, ListSecretsPagedResponse>
         listSecretsSettings;
@@ -449,7 +451,6 @@ public class SecretManagerServiceStubSettings
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -457,13 +458,12 @@ public class SecretManagerServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -472,6 +472,14 @@ public class SecretManagerServiceStubSettings
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(1000L))
@@ -483,54 +491,30 @@ public class SecretManagerServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listSecretsSettings = PagedCallSettings.newBuilder(LIST_SECRETS_PAGE_STR_FACT);
-
       createSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       addSecretVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSecretVersionsSettings = PagedCallSettings.newBuilder(LIST_SECRET_VERSIONS_PAGE_STR_FACT);
-
       getSecretVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       accessSecretVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       disableSecretVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       enableSecretVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       destroySecretVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -550,97 +534,7 @@ public class SecretManagerServiceStubSettings
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listSecretsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createSecretSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .addSecretVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getSecretSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateSecretSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteSecretSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listSecretVersionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getSecretVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .accessSecretVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .disableSecretVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .enableSecretVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .destroySecretVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(SecretManagerServiceStubSettings settings) {
@@ -681,7 +575,97 @@ public class SecretManagerServiceStubSettings
               testIamPermissionsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listSecretsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .addSecretVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listSecretVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getSecretVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .accessSecretVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .disableSecretVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .enableSecretVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .destroySecretVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

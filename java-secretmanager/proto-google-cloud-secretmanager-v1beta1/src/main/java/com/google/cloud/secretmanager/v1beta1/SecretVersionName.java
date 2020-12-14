@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class SecretVersionName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_SECRET_SECRET_VERSION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/secrets/{secret}/versions/{secret_version}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String secret;
   private final String secretVersion;
+
+  @Deprecated
+  protected SecretVersionName() {
+    project = null;
+    secret = null;
+    secretVersion = null;
+  }
+
+  private SecretVersionName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    secret = Preconditions.checkNotNull(builder.getSecret());
+    secretVersion = Preconditions.checkNotNull(builder.getSecretVersion());
+  }
 
   public String getProject() {
     return project;
@@ -56,12 +68,6 @@ public class SecretVersionName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private SecretVersionName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    secret = Preconditions.checkNotNull(builder.getSecret());
-    secretVersion = Preconditions.checkNotNull(builder.getSecretVersion());
   }
 
   public static SecretVersionName of(String project, String secret, String secretVersion) {
@@ -86,7 +92,7 @@ public class SecretVersionName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_SECRET_SECRET_VERSION.validatedMatch(
             formattedString, "SecretVersionName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("secret"), matchMap.get("secret_version"));
   }
@@ -100,7 +106,7 @@ public class SecretVersionName implements ResourceName {
   }
 
   public static List<String> toStringList(List<SecretVersionName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (SecretVersionName value : values) {
       if (value == null) {
         list.add("");
@@ -112,17 +118,24 @@ public class SecretVersionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_SECRET_SECRET_VERSION.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("secret", secret);
-          fieldMapBuilder.put("secretVersion", secretVersion);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (secret != null) {
+            fieldMapBuilder.put("secret", secret);
+          }
+          if (secretVersion != null) {
+            fieldMapBuilder.put("secret_version", secretVersion);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -136,16 +149,43 @@ public class SecretVersionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_SECRET_SECRET_VERSION.instantiate(
         "project", project, "secret", secret, "secret_version", secretVersion);
   }
 
-  /** Builder for SecretVersionName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      SecretVersionName that = ((SecretVersionName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.secret, that.secret)
+          && Objects.equals(this.secretVersion, that.secretVersion);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(secret);
+    h *= 1000003;
+    h ^= Objects.hashCode(secretVersion);
+    return h;
+  }
+
+  /** Builder for projects/{project}/secrets/{secret}/versions/{secret_version}. */
+  public static class Builder {
     private String project;
     private String secret;
     private String secretVersion;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -174,8 +214,6 @@ public class SecretVersionName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(SecretVersionName secretVersionName) {
       project = secretVersionName.project;
       secret = secretVersionName.secret;
@@ -185,31 +223,5 @@ public class SecretVersionName implements ResourceName {
     public SecretVersionName build() {
       return new SecretVersionName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof SecretVersionName) {
-      SecretVersionName that = (SecretVersionName) o;
-      return (this.project.equals(that.project))
-          && (this.secret.equals(that.secret))
-          && (this.secretVersion.equals(that.secretVersion));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= secret.hashCode();
-    h *= 1000003;
-    h ^= secretVersion.hashCode();
-    return h;
   }
 }

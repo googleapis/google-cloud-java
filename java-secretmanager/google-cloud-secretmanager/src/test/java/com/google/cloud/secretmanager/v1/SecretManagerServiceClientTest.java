@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.secretmanager.v1;
 
 import static com.google.cloud.secretmanager.v1.SecretManagerServiceClient.ListSecretVersionsPagedResponse;
@@ -25,9 +26,10 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -36,14 +38,15 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -51,31 +54,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class SecretManagerServiceClientTest {
   private static MockSecretManagerService mockSecretManagerService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private SecretManagerServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockSecretManagerService = new MockSecretManagerService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockSecretManagerService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     SecretManagerServiceSettings settings =
         SecretManagerServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -90,17 +93,12 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listSecretsTest() {
-    String nextPageToken = "";
-    int totalSize = 705419236;
-    Secret secretsElement = Secret.newBuilder().build();
-    List<Secret> secrets = Arrays.asList(secretsElement);
+  public void listSecretsTest() throws Exception {
+    Secret responsesElement = Secret.newBuilder().build();
     ListSecretsResponse expectedResponse =
         ListSecretsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .setTotalSize(totalSize)
-            .addAllSecrets(secrets)
+            .setNextPageToken("")
+            .addAllSecrets(Arrays.asList(responsesElement))
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -109,14 +107,15 @@ public class SecretManagerServiceClientTest {
     ListSecretsPagedResponse pagedListResponse = client.listSecrets(parent);
 
     List<Secret> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSecretsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListSecretsRequest actualRequest = (ListSecretsRequest) actualRequests.get(0);
+    ListSecretsRequest actualRequest = ((ListSecretsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -124,30 +123,76 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listSecretsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       ProjectName parent = ProjectName.of("[PROJECT]");
-
       client.listSecrets(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createSecretTest() {
-    SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
-    Secret expectedResponse = Secret.newBuilder().setName(name.toString()).build();
+  public void listSecretsTest2() throws Exception {
+    Secret responsesElement = Secret.newBuilder().build();
+    ListSecretsResponse expectedResponse =
+        ListSecretsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSecrets(Arrays.asList(responsesElement))
+            .build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSecretsPagedResponse pagedListResponse = client.listSecrets(parent);
+
+    List<Secret> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSecretsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSecretsRequest actualRequest = ((ListSecretsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSecretsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSecrets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSecretTest() throws Exception {
+    Secret expectedResponse =
+        Secret.newBuilder()
+            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setReplication(Replication.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
-    String secretId = "secretId-739547894";
+    String secretId = "secretId945974251";
     Secret secret = Secret.newBuilder().build();
 
     Secret actualResponse = client.createSecret(parent, secretId, secret);
@@ -155,9 +200,9 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateSecretRequest actualRequest = (CreateSecretRequest) actualRequests.get(0);
+    CreateSecretRequest actualRequest = ((CreateSecretRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(secretId, actualRequest.getSecretId());
     Assert.assertEquals(secret, actualRequest.getSecret());
     Assert.assertTrue(
@@ -167,28 +212,77 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createSecretExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       ProjectName parent = ProjectName.of("[PROJECT]");
-      String secretId = "secretId-739547894";
+      String secretId = "secretId945974251";
       Secret secret = Secret.newBuilder().build();
-
       client.createSecret(parent, secretId, secret);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void addSecretVersionTest() {
-    SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
-    SecretVersion expectedResponse = SecretVersion.newBuilder().setName(name.toString()).build();
+  public void createSecretTest2() throws Exception {
+    Secret expectedResponse =
+        Secret.newBuilder()
+            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setReplication(Replication.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String secretId = "secretId945974251";
+    Secret secret = Secret.newBuilder().build();
+
+    Secret actualResponse = client.createSecret(parent, secretId, secret);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSecretRequest actualRequest = ((CreateSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(secretId, actualRequest.getSecretId());
+    Assert.assertEquals(secret, actualRequest.getSecret());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSecretExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String secretId = "secretId945974251";
+      Secret secret = Secret.newBuilder().build();
+      client.createSecret(parent, secretId, secret);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addSecretVersionTest() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
     SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
@@ -199,9 +293,9 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    AddSecretVersionRequest actualRequest = (AddSecretVersionRequest) actualRequests.get(0);
+    AddSecretVersionRequest actualRequest = ((AddSecretVersionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, SecretName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(payload, actualRequest.getPayload());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -210,27 +304,73 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void addSecretVersionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
       SecretPayload payload = SecretPayload.newBuilder().build();
-
       client.addSecretVersion(parent, payload);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getSecretTest() {
-    SecretName name2 = SecretName.of("[PROJECT]", "[SECRET]");
-    Secret expectedResponse = Secret.newBuilder().setName(name2.toString()).build();
+  public void addSecretVersionTest2() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    SecretPayload payload = SecretPayload.newBuilder().build();
+
+    SecretVersion actualResponse = client.addSecretVersion(parent, payload);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddSecretVersionRequest actualRequest = ((AddSecretVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(payload, actualRequest.getPayload());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addSecretVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      SecretPayload payload = SecretPayload.newBuilder().build();
+      client.addSecretVersion(parent, payload);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSecretTest() throws Exception {
+    Secret expectedResponse =
+        Secret.newBuilder()
+            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setReplication(Replication.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
     SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
@@ -240,9 +380,9 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetSecretRequest actualRequest = (GetSecretRequest) actualRequests.get(0);
+    GetSecretRequest actualRequest = ((GetSecretRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, SecretName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -250,26 +390,69 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getSecretExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
-
       client.getSecret(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateSecretTest() {
-    SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
-    Secret expectedResponse = Secret.newBuilder().setName(name.toString()).build();
+  public void getSecretTest2() throws Exception {
+    Secret expectedResponse =
+        Secret.newBuilder()
+            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setReplication(Replication.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Secret actualResponse = client.getSecret(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSecretRequest actualRequest = ((GetSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSecretExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSecret(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSecretTest() throws Exception {
+    Secret expectedResponse =
+        Secret.newBuilder()
+            .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setReplication(Replication.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
     Secret secret = Secret.newBuilder().build();
@@ -280,7 +463,7 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateSecretRequest actualRequest = (UpdateSecretRequest) actualRequests.get(0);
+    UpdateSecretRequest actualRequest = ((UpdateSecretRequest) actualRequests.get(0));
 
     Assert.assertEquals(secret, actualRequest.getSecret());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
@@ -291,25 +474,22 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateSecretExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       Secret secret = Secret.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateSecret(secret, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteSecretTest() {
+  public void deleteSecretTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -319,9 +499,9 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteSecretRequest actualRequest = (DeleteSecretRequest) actualRequests.get(0);
+    DeleteSecretRequest actualRequest = ((DeleteSecretRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, SecretName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -329,33 +509,60 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteSecretExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
-
       client.deleteSecret(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listSecretVersionsTest() {
-    String nextPageToken = "";
-    int totalSize = 705419236;
-    SecretVersion versionsElement = SecretVersion.newBuilder().build();
-    List<SecretVersion> versions = Arrays.asList(versionsElement);
+  public void deleteSecretTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteSecret(name);
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSecretRequest actualRequest = ((DeleteSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSecretExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSecret(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSecretVersionsTest() throws Exception {
+    SecretVersion responsesElement = SecretVersion.newBuilder().build();
     ListSecretVersionsResponse expectedResponse =
         ListSecretVersionsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .setTotalSize(totalSize)
-            .addAllVersions(versions)
+            .setNextPageToken("")
+            .addAllVersions(Arrays.asList(responsesElement))
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -364,14 +571,15 @@ public class SecretManagerServiceClientTest {
     ListSecretVersionsPagedResponse pagedListResponse = client.listSecretVersions(parent);
 
     List<SecretVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getVersionsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListSecretVersionsRequest actualRequest = (ListSecretVersionsRequest) actualRequests.get(0);
+    ListSecretVersionsRequest actualRequest = ((ListSecretVersionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, SecretName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -379,26 +587,72 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listSecretVersionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
-
       client.listSecretVersions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getSecretVersionTest() {
-    SecretVersionName name2 = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
-    SecretVersion expectedResponse = SecretVersion.newBuilder().setName(name2.toString()).build();
+  public void listSecretVersionsTest2() throws Exception {
+    SecretVersion responsesElement = SecretVersion.newBuilder().build();
+    ListSecretVersionsResponse expectedResponse =
+        ListSecretVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllVersions(Arrays.asList(responsesElement))
+            .build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSecretVersionsPagedResponse pagedListResponse = client.listSecretVersions(parent);
+
+    List<SecretVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSecretVersionsRequest actualRequest = ((ListSecretVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSecretVersionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSecretVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSecretVersionTest() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
     SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
@@ -408,9 +662,9 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetSecretVersionRequest actualRequest = (GetSecretVersionRequest) actualRequests.get(0);
+    GetSecretVersionRequest actualRequest = ((GetSecretVersionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, SecretVersionName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -418,27 +672,67 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getSecretVersionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
-
       client.getSecretVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void accessSecretVersionTest() {
-    SecretVersionName name2 = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+  public void getSecretVersionTest2() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SecretVersion actualResponse = client.getSecretVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSecretVersionRequest actualRequest = ((GetSecretVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSecretVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSecretVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void accessSecretVersionTest() throws Exception {
     AccessSecretVersionResponse expectedResponse =
-        AccessSecretVersionResponse.newBuilder().setName(name2.toString()).build();
+        AccessSecretVersionResponse.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setPayload(SecretPayload.newBuilder().build())
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
     SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
@@ -448,9 +742,9 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    AccessSecretVersionRequest actualRequest = (AccessSecretVersionRequest) actualRequests.get(0);
+    AccessSecretVersionRequest actualRequest = ((AccessSecretVersionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, SecretVersionName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -458,26 +752,67 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void accessSecretVersionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
-
       client.accessSecretVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void disableSecretVersionTest() {
-    SecretVersionName name2 = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
-    SecretVersion expectedResponse = SecretVersion.newBuilder().setName(name2.toString()).build();
+  public void accessSecretVersionTest2() throws Exception {
+    AccessSecretVersionResponse expectedResponse =
+        AccessSecretVersionResponse.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setPayload(SecretPayload.newBuilder().build())
+            .build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AccessSecretVersionResponse actualResponse = client.accessSecretVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AccessSecretVersionRequest actualRequest = ((AccessSecretVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void accessSecretVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.accessSecretVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void disableSecretVersionTest() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
     SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
@@ -487,9 +822,10 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DisableSecretVersionRequest actualRequest = (DisableSecretVersionRequest) actualRequests.get(0);
+    DisableSecretVersionRequest actualRequest =
+        ((DisableSecretVersionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, SecretVersionName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -497,26 +833,70 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void disableSecretVersionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
-
       client.disableSecretVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void enableSecretVersionTest() {
-    SecretVersionName name2 = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
-    SecretVersion expectedResponse = SecretVersion.newBuilder().setName(name2.toString()).build();
+  public void disableSecretVersionTest2() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SecretVersion actualResponse = client.disableSecretVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableSecretVersionRequest actualRequest =
+        ((DisableSecretVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableSecretVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.disableSecretVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void enableSecretVersionTest() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
     SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
@@ -526,9 +906,9 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    EnableSecretVersionRequest actualRequest = (EnableSecretVersionRequest) actualRequests.get(0);
+    EnableSecretVersionRequest actualRequest = ((EnableSecretVersionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, SecretVersionName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -536,26 +916,69 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void enableSecretVersionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
-
       client.enableSecretVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void destroySecretVersionTest() {
-    SecretVersionName name2 = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
-    SecretVersion expectedResponse = SecretVersion.newBuilder().setName(name2.toString()).build();
+  public void enableSecretVersionTest2() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SecretVersion actualResponse = client.enableSecretVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EnableSecretVersionRequest actualRequest = ((EnableSecretVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void enableSecretVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.enableSecretVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void destroySecretVersionTest() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
     SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
@@ -565,9 +988,10 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DestroySecretVersionRequest actualRequest = (DestroySecretVersionRequest) actualRequests.get(0);
+    DestroySecretVersionRequest actualRequest =
+        ((DestroySecretVersionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, SecretVersionName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -575,43 +999,86 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void destroySecretVersionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
       SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
-
       client.destroySecretVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setIamPolicyTest() {
-    int version = 351608024;
-    ByteString etag = ByteString.copyFromUtf8("21");
-    Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
+  public void destroySecretVersionTest2() throws Exception {
+    SecretVersion expectedResponse =
+        SecretVersion.newBuilder()
+            .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setReplicationStatus(ReplicationStatus.newBuilder().build())
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
-    ResourceName resource = ProjectName.of("[PROJECT]");
-    Policy policy = Policy.newBuilder().build();
+    String name = "name3373707";
+
+    SecretVersion actualResponse = client.destroySecretVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DestroySecretVersionRequest actualRequest =
+        ((DestroySecretVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void destroySecretVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecretManagerService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.destroySecretVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockSecretManagerService.addResponse(expectedResponse);
+
     SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder().setResource(resource.toString()).setPolicy(policy).build();
+        SetIamPolicyRequest.newBuilder()
+            .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .build();
 
     Policy actualResponse = client.setIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
+    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
-    Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -619,47 +1086,48 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
-      ResourceName resource = ProjectName.of("[PROJECT]");
-      Policy policy = Policy.newBuilder().build();
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(resource.toString())
-              .setPolicy(policy)
+              .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setPolicy(Policy.newBuilder().build())
               .build();
-
       client.setIamPolicy(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getIamPolicyTest() {
-    int version = 351608024;
-    ByteString etag = ByteString.copyFromUtf8("21");
-    Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .setEtag(ByteString.EMPTY)
+            .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
-    ResourceName resource = ProjectName.of("[PROJECT]");
     GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
+        GetIamPolicyRequest.newBuilder()
+            .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
 
     Policy actualResponse = client.getIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -667,35 +1135,33 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
-      ResourceName resource = ProjectName.of("[PROJECT]");
       GetIamPolicyRequest request =
-          GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
-
+          GetIamPolicyRequest.newBuilder()
+              .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
       client.getIamPolicy(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void testIamPermissionsTest() {
-    TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockSecretManagerService.addResponse(expectedResponse);
 
-    ResourceName resource = ProjectName.of("[PROJECT]");
-    List<String> permissions = new ArrayList<>();
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(resource.toString())
-            .addAllPermissions(permissions)
+            .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+            .addAllPermissions(new ArrayList<String>())
             .build();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
@@ -703,10 +1169,10 @@ public class SecretManagerServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockSecretManagerService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
+    TestIamPermissionsRequest actualRequest = ((TestIamPermissionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
-    Assert.assertEquals(permissions, actualRequest.getPermissionsList());
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPermissionsList(), actualRequest.getPermissionsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -714,24 +1180,20 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void testIamPermissionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSecretManagerService.addException(exception);
 
     try {
-      ResourceName resource = ProjectName.of("[PROJECT]");
-      List<String> permissions = new ArrayList<>();
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(resource.toString())
-              .addAllPermissions(permissions)
+              .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .addAllPermissions(new ArrayList<String>())
               .build();
-
       client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }
