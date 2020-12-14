@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.trace.v2;
 
 import com.google.api.core.BetaApi;
@@ -29,7 +30,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: This file describes an API for collecting and viewing traces and spans
  * within a trace. A Trace is a collection of spans corresponding to a single operation or set of
@@ -39,17 +40,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
- *   ProjectName name = ProjectName.of("[PROJECT]");
- *   List&lt;Span&gt; spans = new ArrayList&lt;&gt;();
- *   traceServiceClient.batchWriteSpans(name, spans);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the traceServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the TraceServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -77,30 +68,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TraceServiceSettings traceServiceSettings =
  *     TraceServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * TraceServiceClient traceServiceClient =
- *     TraceServiceClient.create(traceServiceSettings);
- * </code>
- * </pre>
+ * TraceServiceClient traceServiceClient = TraceServiceClient.create(traceServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TraceServiceSettings traceServiceSettings =
  *     TraceServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * TraceServiceClient traceServiceClient =
- *     TraceServiceClient.create(traceServiceSettings);
- * </code>
- * </pre>
+ * TraceServiceClient traceServiceClient = TraceServiceClient.create(traceServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class TraceServiceClient implements BackgroundResource {
   private final TraceServiceSettings settings;
   private final TraceServiceStub stub;
@@ -120,7 +107,7 @@ public class TraceServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TraceServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use TraceServiceSettings}.
+   * for advanced usage - prefer using create(TraceServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TraceServiceClient create(TraceServiceStub stub) {
@@ -152,80 +139,9 @@ public class TraceServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new span.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
-   *   String spanId = "";
-   *   TruncatableString displayName = TruncatableString.newBuilder().build();
-   *   Timestamp startTime = Timestamp.newBuilder().build();
-   *   Timestamp endTime = Timestamp.newBuilder().build();
-   *   Span request = Span.newBuilder()
-   *     .setName(name.toString())
-   *     .setSpanId(spanId)
-   *     .setDisplayName(displayName)
-   *     .setStartTime(startTime)
-   *     .setEndTime(endTime)
-   *     .build();
-   *   Span response = traceServiceClient.createSpan(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Span createSpan(Span request) {
-    return createSpanCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new span.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
-   *   String spanId = "";
-   *   TruncatableString displayName = TruncatableString.newBuilder().build();
-   *   Timestamp startTime = Timestamp.newBuilder().build();
-   *   Timestamp endTime = Timestamp.newBuilder().build();
-   *   Span request = Span.newBuilder()
-   *     .setName(name.toString())
-   *     .setSpanId(spanId)
-   *     .setDisplayName(displayName)
-   *     .setStartTime(startTime)
-   *     .setEndTime(endTime)
-   *     .build();
-   *   ApiFuture&lt;Span&gt; future = traceServiceClient.createSpanCallable().futureCall(request);
-   *   // Do something
-   *   Span response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<Span, Span> createSpanCallable() {
-    return stub.createSpanCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sends new spans to new or existing traces. You cannot update existing spans.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   List&lt;Span&gt; spans = new ArrayList&lt;&gt;();
-   *   traceServiceClient.batchWriteSpans(name, spans);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the project where the spans belong. The format is
    *     `projects/[PROJECT_ID]`.
@@ -242,19 +158,9 @@ public class TraceServiceClient implements BackgroundResource {
     batchWriteSpans(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sends new spans to new or existing traces. You cannot update existing spans.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   List&lt;Span&gt; spans = new ArrayList&lt;&gt;();
-   *   traceServiceClient.batchWriteSpans(name.toString(), spans);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the project where the spans belong. The format is
    *     `projects/[PROJECT_ID]`.
@@ -268,23 +174,9 @@ public class TraceServiceClient implements BackgroundResource {
     batchWriteSpans(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sends new spans to new or existing traces. You cannot update existing spans.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   List&lt;Span&gt; spans = new ArrayList&lt;&gt;();
-   *   BatchWriteSpansRequest request = BatchWriteSpansRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .addAllSpans(spans)
-   *     .build();
-   *   traceServiceClient.batchWriteSpans(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -293,28 +185,35 @@ public class TraceServiceClient implements BackgroundResource {
     batchWriteSpansCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sends new spans to new or existing traces. You cannot update existing spans.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   List&lt;Span&gt; spans = new ArrayList&lt;&gt;();
-   *   BatchWriteSpansRequest request = BatchWriteSpansRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .addAllSpans(spans)
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = traceServiceClient.batchWriteSpansCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable() {
     return stub.batchWriteSpansCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new span.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Span createSpan(Span request) {
+    return createSpanCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new span.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<Span, Span> createSpanCallable() {
+    return stub.createSpanCallable();
   }
 
   @Override

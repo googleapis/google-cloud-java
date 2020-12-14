@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,19 +23,31 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class SpanName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_TRACE_SPAN =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/traces/{trace}/spans/{span}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String trace;
   private final String span;
+
+  @Deprecated
+  protected SpanName() {
+    project = null;
+    trace = null;
+    span = null;
+  }
+
+  private SpanName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    trace = Preconditions.checkNotNull(builder.getTrace());
+    span = Preconditions.checkNotNull(builder.getSpan());
+  }
 
   public String getProject() {
     return project;
@@ -57,12 +69,6 @@ public class SpanName implements ResourceName {
     return new Builder(this);
   }
 
-  private SpanName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    trace = Preconditions.checkNotNull(builder.getTrace());
-    span = Preconditions.checkNotNull(builder.getSpan());
-  }
-
   public static SpanName of(String project, String trace, String span) {
     return newBuilder().setProject(project).setTrace(trace).setSpan(span).build();
   }
@@ -76,7 +82,7 @@ public class SpanName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_TRACE_SPAN.validatedMatch(
             formattedString, "SpanName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("trace"), matchMap.get("span"));
   }
@@ -90,7 +96,7 @@ public class SpanName implements ResourceName {
   }
 
   public static List<String> toStringList(List<SpanName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (SpanName value : values) {
       if (value == null) {
         list.add("");
@@ -102,17 +108,24 @@ public class SpanName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_TRACE_SPAN.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("trace", trace);
-          fieldMapBuilder.put("span", span);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (trace != null) {
+            fieldMapBuilder.put("trace", trace);
+          }
+          if (span != null) {
+            fieldMapBuilder.put("span", span);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -126,15 +139,42 @@ public class SpanName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "trace", trace, "span", span);
+    return PROJECT_TRACE_SPAN.instantiate("project", project, "trace", trace, "span", span);
   }
 
-  /** Builder for SpanName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      SpanName that = ((SpanName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.trace, that.trace)
+          && Objects.equals(this.span, that.span);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(trace);
+    h *= 1000003;
+    h ^= Objects.hashCode(span);
+    return h;
+  }
+
+  /** Builder for projects/{project}/traces/{trace}/spans/{span}. */
+  public static class Builder {
     private String project;
     private String trace;
     private String span;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -163,8 +203,6 @@ public class SpanName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(SpanName spanName) {
       project = spanName.project;
       trace = spanName.trace;
@@ -174,31 +212,5 @@ public class SpanName implements ResourceName {
     public SpanName build() {
       return new SpanName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof SpanName) {
-      SpanName that = (SpanName) o;
-      return (this.project.equals(that.project))
-          && (this.trace.equals(that.trace))
-          && (this.span.equals(that.span));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= trace.hashCode();
-    h *= 1000003;
-    h ^= span.hashCode();
-    return h;
   }
 }

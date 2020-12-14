@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.trace.v2.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest;
 import com.google.devtools.cloudtrace.v2.Span;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -34,23 +35,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Stackdriver Trace API.
+ * gRPC stub implementation for the TraceService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcTraceServiceStub extends TraceServiceStub {
-
-  private static final MethodDescriptor<Span, Span> createSpanMethodDescriptor =
-      MethodDescriptor.<Span, Span>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.devtools.cloudtrace.v2.TraceService/CreateSpan")
-          .setRequestMarshaller(ProtoUtils.marshaller(Span.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Span.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<BatchWriteSpansRequest, Empty>
       batchWriteSpansMethodDescriptor =
           MethodDescriptor.<BatchWriteSpansRequest, Empty>newBuilder()
@@ -61,11 +53,19 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
+  private static final MethodDescriptor<Span, Span> createSpanMethodDescriptor =
+      MethodDescriptor.<Span, Span>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.cloudtrace.v2.TraceService/CreateSpan")
+          .setRequestMarshaller(ProtoUtils.marshaller(Span.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Span.getDefaultInstance()))
+          .build();
 
-  private final UnaryCallable<Span, Span> createSpanCallable;
   private final UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable;
+  private final UnaryCallable<Span, Span> createSpanCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcTraceServiceStub create(TraceServiceStubSettings settings)
@@ -104,20 +104,8 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<Span, Span> createSpanTransportSettings =
-        GrpcCallSettings.<Span, Span>newBuilder()
-            .setMethodDescriptor(createSpanMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<Span>() {
-                  @Override
-                  public Map<String, String> extract(Span request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansTransportSettings =
         GrpcCallSettings.<BatchWriteSpansRequest, Empty>newBuilder()
             .setMethodDescriptor(batchWriteSpansMethodDescriptor)
@@ -131,23 +119,41 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<Span, Span> createSpanTransportSettings =
+        GrpcCallSettings.<Span, Span>newBuilder()
+            .setMethodDescriptor(createSpanMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<Span>() {
+                  @Override
+                  public Map<String, String> extract(Span request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.createSpanCallable =
-        callableFactory.createUnaryCallable(
-            createSpanTransportSettings, settings.createSpanSettings(), clientContext);
     this.batchWriteSpansCallable =
         callableFactory.createUnaryCallable(
             batchWriteSpansTransportSettings, settings.batchWriteSpansSettings(), clientContext);
+    this.createSpanCallable =
+        callableFactory.createUnaryCallable(
+            createSpanTransportSettings, settings.createSpanSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<Span, Span> createSpanCallable() {
-    return createSpanCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable() {
     return batchWriteSpansCallable;
+  }
+
+  public UnaryCallable<Span, Span> createSpanCallable() {
+    return createSpanCallable;
   }
 
   @Override

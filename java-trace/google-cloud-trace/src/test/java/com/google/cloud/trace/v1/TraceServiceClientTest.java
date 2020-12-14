@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.trace.v1;
 
 import static com.google.cloud.trace.v1.TraceServiceClient.ListTracesPagedResponse;
@@ -30,15 +31,17 @@ import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
 import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
+import com.google.devtools.cloudtrace.v1.TraceSpan;
 import com.google.devtools.cloudtrace.v1.Traces;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -46,31 +49,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class TraceServiceClientTest {
-  private static MockTraceService mockTraceService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private TraceServiceClient client;
+  private static MockTraceService mockTraceService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockTraceService = new MockTraceService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockTraceService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     TraceServiceSettings settings =
         TraceServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -85,69 +88,27 @@ public class TraceServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void patchTracesTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockTraceService.addResponse(expectedResponse);
-
-    String projectId = "projectId-1969970175";
-    Traces traces = Traces.newBuilder().build();
-
-    client.patchTraces(projectId, traces);
-
-    List<AbstractMessage> actualRequests = mockTraceService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    PatchTracesRequest actualRequest = (PatchTracesRequest) actualRequests.get(0);
-
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(traces, actualRequest.getTraces());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void patchTracesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockTraceService.addException(exception);
-
-    try {
-      String projectId = "projectId-1969970175";
-      Traces traces = Traces.newBuilder().build();
-
-      client.patchTraces(projectId, traces);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listTracesTest() {
-    String nextPageToken = "";
-    Trace tracesElement = Trace.newBuilder().build();
-    List<Trace> traces = Arrays.asList(tracesElement);
+  public void listTracesTest() throws Exception {
+    Trace responsesElement = Trace.newBuilder().build();
     ListTracesResponse expectedResponse =
         ListTracesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllTraces(traces)
+            .setNextPageToken("")
+            .addAllTraces(Arrays.asList(responsesElement))
             .build();
     mockTraceService.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
 
     ListTracesPagedResponse pagedListResponse = client.listTraces(projectId);
 
     List<Trace> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTracesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListTracesRequest actualRequest = (ListTracesRequest) actualRequests.get(0);
+    ListTracesRequest actualRequest = ((ListTracesRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertTrue(
@@ -157,39 +118,38 @@ public class TraceServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listTracesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTraceService.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-
+      String projectId = "projectId-894832108";
       client.listTraces(projectId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getTraceTest() {
-    String projectId2 = "projectId2939242356";
-    String traceId2 = "traceId2987826376";
+  public void getTraceTest() throws Exception {
     Trace expectedResponse =
-        Trace.newBuilder().setProjectId(projectId2).setTraceId(traceId2).build();
+        Trace.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setTraceId("traceId-1067401920")
+            .addAllSpans(new ArrayList<TraceSpan>())
+            .build();
     mockTraceService.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String traceId = "traceId1270300245";
+    String projectId = "projectId-894832108";
+    String traceId = "traceId-1067401920";
 
     Trace actualResponse = client.getTrace(projectId, traceId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetTraceRequest actualRequest = (GetTraceRequest) actualRequests.get(0);
+    GetTraceRequest actualRequest = ((GetTraceRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(traceId, actualRequest.getTraceId());
@@ -200,19 +160,54 @@ public class TraceServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getTraceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTraceService.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String traceId = "traceId1270300245";
-
+      String projectId = "projectId-894832108";
+      String traceId = "traceId-1067401920";
       client.getTrace(projectId, traceId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void patchTracesTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTraceService.addResponse(expectedResponse);
+
+    String projectId = "projectId-894832108";
+    Traces traces = Traces.newBuilder().build();
+
+    client.patchTraces(projectId, traces);
+
+    List<AbstractMessage> actualRequests = mockTraceService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PatchTracesRequest actualRequest = ((PatchTracesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(traces, actualRequest.getTraces());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void patchTracesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTraceService.addException(exception);
+
+    try {
+      String projectId = "projectId-894832108";
+      Traces traces = Traces.newBuilder().build();
+      client.patchTraces(projectId, traces);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

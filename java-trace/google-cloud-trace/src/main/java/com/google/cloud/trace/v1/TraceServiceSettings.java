@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.trace.v1;
 
 import static com.google.cloud.trace.v1.TraceServiceClient.ListTracesPagedResponse;
@@ -39,7 +40,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link TraceServiceClient}.
  *
@@ -54,29 +55,24 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of patchTraces to 30 seconds:
+ * <p>For example, to set the total timeout of getTrace to 30 seconds:
  *
- * <pre>
- * <code>
- * TraceServiceSettings.Builder traceServiceSettingsBuilder =
- *     TraceServiceSettings.newBuilder();
+ * <pre>{@code
+ * TraceServiceSettings.Builder traceServiceSettingsBuilder = TraceServiceSettings.newBuilder();
  * traceServiceSettingsBuilder
- *     .patchTracesSettings()
+ *     .getTraceSettings()
  *     .setRetrySettings(
- *         traceServiceSettingsBuilder.patchTracesSettings().getRetrySettings().toBuilder()
+ *         traceServiceSettingsBuilder
+ *             .getTraceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TraceServiceSettings traceServiceSettings = traceServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
-  /** Returns the object with the settings used for calls to patchTraces. */
-  public UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
-    return ((TraceServiceStubSettings) getStubSettings()).patchTracesSettings();
-  }
 
   /** Returns the object with the settings used for calls to listTraces. */
   public PagedCallSettings<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
@@ -87,6 +83,11 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
   /** Returns the object with the settings used for calls to getTrace. */
   public UnaryCallSettings<GetTraceRequest, Trace> getTraceSettings() {
     return ((TraceServiceStubSettings) getStubSettings()).getTraceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchTraces. */
+  public UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
+    return ((TraceServiceStubSettings) getStubSettings()).patchTracesSettings();
   }
 
   public static final TraceServiceSettings create(TraceServiceStubSettings stub)
@@ -149,16 +150,13 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
 
   /** Builder for TraceServiceSettings. */
   public static class Builder extends ClientSettings.Builder<TraceServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(TraceServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(TraceServiceStubSettings.newBuilder());
     }
 
     protected Builder(TraceServiceSettings settings) {
@@ -169,11 +167,15 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(TraceServiceStubSettings.newBuilder());
+    }
+
     public TraceServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((TraceServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -186,11 +188,6 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to patchTraces. */
-    public UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
-      return getStubSettingsBuilder().patchTracesSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listTraces. */
     public PagedCallSettings.Builder<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
         listTracesSettings() {
@@ -200,6 +197,11 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
     /** Returns the builder for the settings used for calls to getTrace. */
     public UnaryCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings() {
       return getStubSettingsBuilder().getTraceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchTraces. */
+    public UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
+      return getStubSettingsBuilder().patchTracesSettings();
     }
 
     @Override

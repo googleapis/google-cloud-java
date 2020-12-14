@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,11 +15,9 @@
  */
 
 /**
- * A client to Stackdriver Trace API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>================== TraceServiceClient ==================
+ * <p>======================= TraceServiceClient =======================
  *
  * <p>Service Description: This file describes an API for collecting and viewing traces and spans
  * within a trace. A Trace is a collection of spans corresponding to a single operation or set of
@@ -27,18 +25,8 @@
  * trace tree. A single trace may contain span(s) from multiple services.
  *
  * <p>Sample for TraceServiceClient:
- *
- * <pre>
- * <code>
- * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
- *   ProjectName name = ProjectName.of("[PROJECT]");
- *   List&lt;Span&gt; spans = new ArrayList&lt;&gt;();
- *   traceServiceClient.batchWriteSpans(name, spans);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.trace.v2;
 
 import javax.annotation.Generated;
