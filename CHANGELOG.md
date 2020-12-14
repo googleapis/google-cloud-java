@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.119.1](https://www.github.com/googleapis/java-logging-logback/compare/v0.119.0...v0.119.1) (2020-12-14)
+
+
+### Bug Fixes
+
+* Add cleanup for  Trace context ([#266](https://www.github.com/googleapis/java-logging-logback/issues/266)) ([af43dfa](https://www.github.com/googleapis/java-logging-logback/commit/af43dfa5a35ba5e2f68de1a7f9c0de838b69c0cf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-logging to v2.1.0 ([#268](https://www.github.com/googleapis/java-logging-logback/issues/268)) ([462730e](https://www.github.com/googleapis/java-logging-logback/commit/462730e9008aa084850d24d41ea1778cca8d7ba6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.1 ([469b414](https://www.github.com/googleapis/java-logging-logback/commit/469b4144f5fb37ecf6f99ff5020492614e3d266d))
+
 ## [0.119.0](https://www.github.com/googleapis/java-logging-logback/compare/v0.118.7...v0.119.0) (2020-12-08)
 
 
