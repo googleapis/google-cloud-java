@@ -36,6 +36,7 @@ import com.google.cloud.examples.storage.buckets.EnableBucketVersioning;
 import com.google.cloud.examples.storage.buckets.EnableLifecycleManagement;
 import com.google.cloud.examples.storage.buckets.EnableRequesterPays;
 import com.google.cloud.examples.storage.buckets.GetBucketMetadata;
+import com.google.cloud.examples.storage.buckets.GetPublicAccessPrevention;
 import com.google.cloud.examples.storage.buckets.ListBucketIamMembers;
 import com.google.cloud.examples.storage.buckets.ListBuckets;
 import com.google.cloud.examples.storage.buckets.MakeBucketPublic;
@@ -45,6 +46,8 @@ import com.google.cloud.examples.storage.buckets.RemoveBucketIamConditionalBindi
 import com.google.cloud.examples.storage.buckets.RemoveBucketIamMember;
 import com.google.cloud.examples.storage.buckets.RemoveBucketLabel;
 import com.google.cloud.examples.storage.buckets.SetBucketWebsiteInfo;
+import com.google.cloud.examples.storage.buckets.SetPublicAccessPreventionEnforced;
+import com.google.cloud.examples.storage.buckets.SetPublicAccessPreventionUnspecified;
 import com.google.cloud.examples.storage.objects.DownloadRequesterPaysObject;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
@@ -302,6 +305,36 @@ public class ITBucketSnippets {
     assertEquals(1, storage.get(BUCKET).getLifecycleRules().size());
     DisableLifecycleManagement.disableLifecycleManagement(PROJECT_ID, BUCKET);
     assertEquals(0, storage.get(BUCKET).getLifecycleRules().size());
+  }
+
+  @Test
+  public void testSetPublicAccessPreventionEnforced() {
+    SetPublicAccessPreventionEnforced.setPublicAccessPreventionEnforced(PROJECT_ID, BUCKET);
+    assertEquals(
+        storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
+        BucketInfo.PublicAccessPrevention.ENFORCED);
+    PrintStream standardOut = System.out;
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    GetPublicAccessPrevention.getPublicAccessPrevention(PROJECT_ID, BUCKET);
+    String snippetOutput = snippetOutputCapture.toString();
+    System.setOut(standardOut);
+    assertTrue(snippetOutput.contains("enforced"));
+  }
+
+  @Test
+  public void testSetPublicAccessPreventionUnspecified() {
+    SetPublicAccessPreventionUnspecified.setPublicAccessPreventionUnspecified(PROJECT_ID, BUCKET);
+    assertEquals(
+        storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
+        BucketInfo.PublicAccessPrevention.UNSPECIFIED);
+    PrintStream standardOut = System.out;
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    GetPublicAccessPrevention.getPublicAccessPrevention(PROJECT_ID, BUCKET);
+    String snippetOutput = snippetOutputCapture.toString();
+    System.setOut(standardOut);
+    assertTrue(snippetOutput.contains("unspecified"));
   }
 
   @Test
