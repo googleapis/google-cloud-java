@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.security.privateca.v1beta1;
 
 import static com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient.ListCertificateAuthoritiesPagedResponse;
@@ -38,7 +39,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link CertificateAuthorityServiceClient}.
  *
@@ -55,24 +56,26 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createCertificate to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CertificateAuthorityServiceSettings.Builder certificateAuthorityServiceSettingsBuilder =
  *     CertificateAuthorityServiceSettings.newBuilder();
  * certificateAuthorityServiceSettingsBuilder
  *     .createCertificateSettings()
  *     .setRetrySettings(
- *         certificateAuthorityServiceSettingsBuilder.createCertificateSettings().getRetrySettings().toBuilder()
+ *         certificateAuthorityServiceSettingsBuilder
+ *             .createCertificateSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * CertificateAuthorityServiceSettings certificateAuthorityServiceSettings = certificateAuthorityServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * CertificateAuthorityServiceSettings certificateAuthorityServiceSettings =
+ *     certificateAuthorityServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class CertificateAuthorityServiceSettings
     extends ClientSettings<CertificateAuthorityServiceSettings> {
+
   /** Returns the object with the settings used for calls to createCertificate. */
   public UnaryCallSettings<CreateCertificateRequest, Certificate> createCertificateSettings() {
     return ((CertificateAuthorityServiceStubSettings) getStubSettings())
@@ -111,8 +114,6 @@ public class CertificateAuthorityServiceSettings
   }
 
   /** Returns the object with the settings used for calls to activateCertificateAuthority. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           ActivateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       activateCertificateAuthorityOperationSettings() {
@@ -128,8 +129,6 @@ public class CertificateAuthorityServiceSettings
   }
 
   /** Returns the object with the settings used for calls to createCertificateAuthority. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           CreateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       createCertificateAuthorityOperationSettings() {
@@ -145,8 +144,6 @@ public class CertificateAuthorityServiceSettings
   }
 
   /** Returns the object with the settings used for calls to disableCertificateAuthority. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           DisableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       disableCertificateAuthorityOperationSettings() {
@@ -162,8 +159,6 @@ public class CertificateAuthorityServiceSettings
   }
 
   /** Returns the object with the settings used for calls to enableCertificateAuthority. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           EnableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       enableCertificateAuthorityOperationSettings() {
@@ -204,8 +199,6 @@ public class CertificateAuthorityServiceSettings
   }
 
   /** Returns the object with the settings used for calls to restoreCertificateAuthority. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           RestoreCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       restoreCertificateAuthorityOperationSettings() {
@@ -221,8 +214,6 @@ public class CertificateAuthorityServiceSettings
   }
 
   /** Returns the object with the settings used for calls to scheduleDeleteCertificateAuthority. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           ScheduleDeleteCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       scheduleDeleteCertificateAuthorityOperationSettings() {
@@ -238,8 +229,6 @@ public class CertificateAuthorityServiceSettings
   }
 
   /** Returns the object with the settings used for calls to updateCertificateAuthority. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           UpdateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       updateCertificateAuthorityOperationSettings() {
@@ -272,8 +261,6 @@ public class CertificateAuthorityServiceSettings
   }
 
   /** Returns the object with the settings used for calls to updateCertificateRevocationList. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           UpdateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
       updateCertificateRevocationListOperationSettings() {
@@ -356,16 +343,13 @@ public class CertificateAuthorityServiceSettings
   /** Builder for CertificateAuthorityServiceSettings. */
   public static class Builder
       extends ClientSettings.Builder<CertificateAuthorityServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(CertificateAuthorityServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(CertificateAuthorityServiceStubSettings.newBuilder());
     }
 
     protected Builder(CertificateAuthorityServiceSettings settings) {
@@ -376,11 +360,15 @@ public class CertificateAuthorityServiceSettings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(CertificateAuthorityServiceStubSettings.newBuilder());
+    }
+
     public CertificateAuthorityServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((CertificateAuthorityServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -430,8 +418,6 @@ public class CertificateAuthorityServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to activateCertificateAuthority. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ActivateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         activateCertificateAuthorityOperationSettings() {
@@ -445,8 +431,6 @@ public class CertificateAuthorityServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to createCertificateAuthority. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         createCertificateAuthorityOperationSettings() {
@@ -460,8 +444,6 @@ public class CertificateAuthorityServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to disableCertificateAuthority. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DisableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         disableCertificateAuthorityOperationSettings() {
@@ -475,8 +457,6 @@ public class CertificateAuthorityServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to enableCertificateAuthority. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             EnableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         enableCertificateAuthorityOperationSettings() {
@@ -512,8 +492,6 @@ public class CertificateAuthorityServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to restoreCertificateAuthority. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RestoreCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         restoreCertificateAuthorityOperationSettings() {
@@ -531,8 +509,6 @@ public class CertificateAuthorityServiceSettings
     /**
      * Returns the builder for the settings used for calls to scheduleDeleteCertificateAuthority.
      */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ScheduleDeleteCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         scheduleDeleteCertificateAuthorityOperationSettings() {
@@ -546,8 +522,6 @@ public class CertificateAuthorityServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to updateCertificateAuthority. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         updateCertificateAuthorityOperationSettings() {
@@ -576,8 +550,6 @@ public class CertificateAuthorityServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to updateCertificateRevocationList. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
         updateCertificateRevocationListOperationSettings() {

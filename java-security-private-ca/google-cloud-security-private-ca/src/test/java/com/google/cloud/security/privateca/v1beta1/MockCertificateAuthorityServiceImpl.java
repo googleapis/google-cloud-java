@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.security.privateca.v1beta1;
 
 import com.google.api.core.BetaApi;
@@ -24,9 +25,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockCertificateAuthorityServiceImpl extends CertificateAuthorityServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -63,10 +65,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Certificate) {
       requests.add(request);
-      responseObserver.onNext((Certificate) response);
+      responseObserver.onNext(((Certificate) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -78,10 +80,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Certificate) {
       requests.add(request);
-      responseObserver.onNext((Certificate) response);
+      responseObserver.onNext(((Certificate) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -93,10 +95,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof ListCertificatesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListCertificatesResponse) response);
+      responseObserver.onNext(((ListCertificatesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -108,10 +110,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Certificate) {
       requests.add(request);
-      responseObserver.onNext((Certificate) response);
+      responseObserver.onNext(((Certificate) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -123,10 +125,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Certificate) {
       requests.add(request);
-      responseObserver.onNext((Certificate) response);
+      responseObserver.onNext(((Certificate) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -138,10 +140,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -153,10 +155,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -168,10 +170,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -183,10 +185,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -199,10 +201,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof FetchCertificateAuthorityCsrResponse) {
       requests.add(request);
-      responseObserver.onNext((FetchCertificateAuthorityCsrResponse) response);
+      responseObserver.onNext(((FetchCertificateAuthorityCsrResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -215,10 +217,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof CertificateAuthority) {
       requests.add(request);
-      responseObserver.onNext((CertificateAuthority) response);
+      responseObserver.onNext(((CertificateAuthority) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -231,10 +233,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof ListCertificateAuthoritiesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListCertificateAuthoritiesResponse) response);
+      responseObserver.onNext(((ListCertificateAuthoritiesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -246,10 +248,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -262,10 +264,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -277,10 +279,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -293,10 +295,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof CertificateRevocationList) {
       requests.add(request);
-      responseObserver.onNext((CertificateRevocationList) response);
+      responseObserver.onNext(((CertificateRevocationList) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -309,10 +311,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof ListCertificateRevocationListsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListCertificateRevocationListsResponse) response);
+      responseObserver.onNext(((ListCertificateRevocationListsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -324,10 +326,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -339,10 +341,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof ReusableConfig) {
       requests.add(request);
-      responseObserver.onNext((ReusableConfig) response);
+      responseObserver.onNext(((ReusableConfig) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -355,10 +357,10 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
     Object response = responses.remove();
     if (response instanceof ListReusableConfigsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListReusableConfigsResponse) response);
+      responseObserver.onNext(((ListReusableConfigsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

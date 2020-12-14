@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.security.privateca.v1beta1.stub;
 
 import static com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient.ListCertificateAuthoritiesPagedResponse;
@@ -20,7 +21,6 @@ import static com.google.cloud.security.privateca.v1beta1.CertificateAuthoritySe
 import static com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient.ListCertificatesPagedResponse;
 import static com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient.ListReusableConfigsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -69,16 +69,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Certificate Authority API.
+ * gRPC stub implementation for the CertificateAuthorityService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcCertificateAuthorityServiceStub extends CertificateAuthorityServiceStub {
-
   private static final MethodDescriptor<CreateCertificateRequest, Certificate>
       createCertificateMethodDescriptor =
           MethodDescriptor.<CreateCertificateRequest, Certificate>newBuilder()
@@ -89,6 +87,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(CreateCertificateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Certificate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetCertificateRequest, Certificate>
       getCertificateMethodDescriptor =
           MethodDescriptor.<GetCertificateRequest, Certificate>newBuilder()
@@ -99,6 +98,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(GetCertificateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Certificate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListCertificatesRequest, ListCertificatesResponse>
       listCertificatesMethodDescriptor =
           MethodDescriptor.<ListCertificatesRequest, ListCertificatesResponse>newBuilder()
@@ -110,6 +110,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCertificatesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<RevokeCertificateRequest, Certificate>
       revokeCertificateMethodDescriptor =
           MethodDescriptor.<RevokeCertificateRequest, Certificate>newBuilder()
@@ -120,6 +121,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(RevokeCertificateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Certificate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateCertificateRequest, Certificate>
       updateCertificateMethodDescriptor =
           MethodDescriptor.<UpdateCertificateRequest, Certificate>newBuilder()
@@ -130,6 +132,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(UpdateCertificateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Certificate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ActivateCertificateAuthorityRequest, Operation>
       activateCertificateAuthorityMethodDescriptor =
           MethodDescriptor.<ActivateCertificateAuthorityRequest, Operation>newBuilder()
@@ -140,6 +143,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(ActivateCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateCertificateAuthorityRequest, Operation>
       createCertificateAuthorityMethodDescriptor =
           MethodDescriptor.<CreateCertificateAuthorityRequest, Operation>newBuilder()
@@ -150,6 +154,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(CreateCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DisableCertificateAuthorityRequest, Operation>
       disableCertificateAuthorityMethodDescriptor =
           MethodDescriptor.<DisableCertificateAuthorityRequest, Operation>newBuilder()
@@ -160,6 +165,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(DisableCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<EnableCertificateAuthorityRequest, Operation>
       enableCertificateAuthorityMethodDescriptor =
           MethodDescriptor.<EnableCertificateAuthorityRequest, Operation>newBuilder()
@@ -170,6 +176,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(EnableCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           FetchCertificateAuthorityCsrRequest, FetchCertificateAuthorityCsrResponse>
       fetchCertificateAuthorityCsrMethodDescriptor =
@@ -184,6 +191,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchCertificateAuthorityCsrResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthorityMethodDescriptor =
           MethodDescriptor.<GetCertificateAuthorityRequest, CertificateAuthority>newBuilder()
@@ -195,6 +203,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CertificateAuthority.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>
       listCertificateAuthoritiesMethodDescriptor =
@@ -208,6 +217,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCertificateAuthoritiesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<RestoreCertificateAuthorityRequest, Operation>
       restoreCertificateAuthorityMethodDescriptor =
           MethodDescriptor.<RestoreCertificateAuthorityRequest, Operation>newBuilder()
@@ -218,6 +228,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(RestoreCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ScheduleDeleteCertificateAuthorityRequest, Operation>
       scheduleDeleteCertificateAuthorityMethodDescriptor =
           MethodDescriptor.<ScheduleDeleteCertificateAuthorityRequest, Operation>newBuilder()
@@ -229,6 +240,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       ScheduleDeleteCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateCertificateAuthorityRequest, Operation>
       updateCertificateAuthorityMethodDescriptor =
           MethodDescriptor.<UpdateCertificateAuthorityRequest, Operation>newBuilder()
@@ -239,6 +251,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(UpdateCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           GetCertificateRevocationListRequest, CertificateRevocationList>
       getCertificateRevocationListMethodDescriptor =
@@ -252,6 +265,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CertificateRevocationList.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse>
       listCertificateRevocationListsMethodDescriptor =
@@ -267,6 +281,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(
                       ListCertificateRevocationListsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateCertificateRevocationListRequest, Operation>
       updateCertificateRevocationListMethodDescriptor =
           MethodDescriptor.<UpdateCertificateRevocationListRequest, Operation>newBuilder()
@@ -278,6 +293,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                       UpdateCertificateRevocationListRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetReusableConfigRequest, ReusableConfig>
       getReusableConfigMethodDescriptor =
           MethodDescriptor.<GetReusableConfigRequest, ReusableConfig>newBuilder()
@@ -288,6 +304,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(GetReusableConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReusableConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListReusableConfigsRequest, ListReusableConfigsResponse>
       listReusableConfigsMethodDescriptor =
           MethodDescriptor.<ListReusableConfigsRequest, ListReusableConfigsResponse>newBuilder()
@@ -299,9 +316,6 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReusableConfigsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateCertificateRequest, Certificate> createCertificateCallable;
   private final UnaryCallable<GetCertificateRequest, Certificate> getCertificateCallable;
@@ -375,6 +389,8 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
   private final UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsPagedResponse>
       listReusableConfigsPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcCertificateAuthorityServiceStub create(
@@ -753,7 +769,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             activateCertificateAuthorityTransportSettings,
             settings.activateCertificateAuthorityOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.createCertificateAuthorityCallable =
         callableFactory.createUnaryCallable(
             createCertificateAuthorityTransportSettings,
@@ -764,7 +780,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             createCertificateAuthorityTransportSettings,
             settings.createCertificateAuthorityOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.disableCertificateAuthorityCallable =
         callableFactory.createUnaryCallable(
             disableCertificateAuthorityTransportSettings,
@@ -775,7 +791,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             disableCertificateAuthorityTransportSettings,
             settings.disableCertificateAuthorityOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.enableCertificateAuthorityCallable =
         callableFactory.createUnaryCallable(
             enableCertificateAuthorityTransportSettings,
@@ -786,7 +802,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             enableCertificateAuthorityTransportSettings,
             settings.enableCertificateAuthorityOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.fetchCertificateAuthorityCsrCallable =
         callableFactory.createUnaryCallable(
             fetchCertificateAuthorityCsrTransportSettings,
@@ -817,7 +833,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             restoreCertificateAuthorityTransportSettings,
             settings.restoreCertificateAuthorityOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.scheduleDeleteCertificateAuthorityCallable =
         callableFactory.createUnaryCallable(
             scheduleDeleteCertificateAuthorityTransportSettings,
@@ -828,7 +844,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             scheduleDeleteCertificateAuthorityTransportSettings,
             settings.scheduleDeleteCertificateAuthorityOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateCertificateAuthorityCallable =
         callableFactory.createUnaryCallable(
             updateCertificateAuthorityTransportSettings,
@@ -839,7 +855,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             updateCertificateAuthorityTransportSettings,
             settings.updateCertificateAuthorityOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getCertificateRevocationListCallable =
         callableFactory.createUnaryCallable(
             getCertificateRevocationListTransportSettings,
@@ -865,7 +881,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             updateCertificateRevocationListTransportSettings,
             settings.updateCertificateRevocationListOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getReusableConfigCallable =
         callableFactory.createUnaryCallable(
             getReusableConfigTransportSettings,
@@ -882,10 +898,10 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             settings.listReusableConfigsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -898,14 +914,14 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return getCertificateCallable;
   }
 
-  public UnaryCallable<ListCertificatesRequest, ListCertificatesPagedResponse>
-      listCertificatesPagedCallable() {
-    return listCertificatesPagedCallable;
-  }
-
   public UnaryCallable<ListCertificatesRequest, ListCertificatesResponse>
       listCertificatesCallable() {
     return listCertificatesCallable;
+  }
+
+  public UnaryCallable<ListCertificatesRequest, ListCertificatesPagedResponse>
+      listCertificatesPagedCallable() {
+    return listCertificatesPagedCallable;
   }
 
   public UnaryCallable<RevokeCertificateRequest, Certificate> revokeCertificateCallable() {
@@ -916,23 +932,15 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return updateCertificateCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          ActivateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
-      activateCertificateAuthorityOperationCallable() {
-    return activateCertificateAuthorityOperationCallable;
-  }
-
   public UnaryCallable<ActivateCertificateAuthorityRequest, Operation>
       activateCertificateAuthorityCallable() {
     return activateCertificateAuthorityCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
-          CreateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
-      createCertificateAuthorityOperationCallable() {
-    return createCertificateAuthorityOperationCallable;
+          ActivateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
+      activateCertificateAuthorityOperationCallable() {
+    return activateCertificateAuthorityOperationCallable;
   }
 
   public UnaryCallable<CreateCertificateAuthorityRequest, Operation>
@@ -940,11 +948,10 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return createCertificateAuthorityCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
-          DisableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
-      disableCertificateAuthorityOperationCallable() {
-    return disableCertificateAuthorityOperationCallable;
+          CreateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
+      createCertificateAuthorityOperationCallable() {
+    return createCertificateAuthorityOperationCallable;
   }
 
   public UnaryCallable<DisableCertificateAuthorityRequest, Operation>
@@ -952,16 +959,21 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return disableCertificateAuthorityCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
-          EnableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
-      enableCertificateAuthorityOperationCallable() {
-    return enableCertificateAuthorityOperationCallable;
+          DisableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
+      disableCertificateAuthorityOperationCallable() {
+    return disableCertificateAuthorityOperationCallable;
   }
 
   public UnaryCallable<EnableCertificateAuthorityRequest, Operation>
       enableCertificateAuthorityCallable() {
     return enableCertificateAuthorityCallable;
+  }
+
+  public OperationCallable<
+          EnableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
+      enableCertificateAuthorityOperationCallable() {
+    return enableCertificateAuthorityOperationCallable;
   }
 
   public UnaryCallable<FetchCertificateAuthorityCsrRequest, FetchCertificateAuthorityCsrResponse>
@@ -974,21 +986,14 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return getCertificateAuthorityCallable;
   }
 
-  public UnaryCallable<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesPagedResponse>
-      listCertificateAuthoritiesPagedCallable() {
-    return listCertificateAuthoritiesPagedCallable;
-  }
-
   public UnaryCallable<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>
       listCertificateAuthoritiesCallable() {
     return listCertificateAuthoritiesCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          RestoreCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
-      restoreCertificateAuthorityOperationCallable() {
-    return restoreCertificateAuthorityOperationCallable;
+  public UnaryCallable<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesPagedResponse>
+      listCertificateAuthoritiesPagedCallable() {
+    return listCertificateAuthoritiesPagedCallable;
   }
 
   public UnaryCallable<RestoreCertificateAuthorityRequest, Operation>
@@ -996,11 +1001,10 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return restoreCertificateAuthorityCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
-          ScheduleDeleteCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
-      scheduleDeleteCertificateAuthorityOperationCallable() {
-    return scheduleDeleteCertificateAuthorityOperationCallable;
+          RestoreCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
+      restoreCertificateAuthorityOperationCallable() {
+    return restoreCertificateAuthorityOperationCallable;
   }
 
   public UnaryCallable<ScheduleDeleteCertificateAuthorityRequest, Operation>
@@ -1008,16 +1012,21 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return scheduleDeleteCertificateAuthorityCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
-          UpdateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
-      updateCertificateAuthorityOperationCallable() {
-    return updateCertificateAuthorityOperationCallable;
+          ScheduleDeleteCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
+      scheduleDeleteCertificateAuthorityOperationCallable() {
+    return scheduleDeleteCertificateAuthorityOperationCallable;
   }
 
   public UnaryCallable<UpdateCertificateAuthorityRequest, Operation>
       updateCertificateAuthorityCallable() {
     return updateCertificateAuthorityCallable;
+  }
+
+  public OperationCallable<
+          UpdateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
+      updateCertificateAuthorityOperationCallable() {
+    return updateCertificateAuthorityOperationCallable;
   }
 
   public UnaryCallable<GetCertificateRevocationListRequest, CertificateRevocationList>
@@ -1026,22 +1035,15 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
   }
 
   public UnaryCallable<
-          ListCertificateRevocationListsRequest, ListCertificateRevocationListsPagedResponse>
-      listCertificateRevocationListsPagedCallable() {
-    return listCertificateRevocationListsPagedCallable;
-  }
-
-  public UnaryCallable<
           ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse>
       listCertificateRevocationListsCallable() {
     return listCertificateRevocationListsCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          UpdateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
-      updateCertificateRevocationListOperationCallable() {
-    return updateCertificateRevocationListOperationCallable;
+  public UnaryCallable<
+          ListCertificateRevocationListsRequest, ListCertificateRevocationListsPagedResponse>
+      listCertificateRevocationListsPagedCallable() {
+    return listCertificateRevocationListsPagedCallable;
   }
 
   public UnaryCallable<UpdateCertificateRevocationListRequest, Operation>
@@ -1049,18 +1051,24 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return updateCertificateRevocationListCallable;
   }
 
-  public UnaryCallable<GetReusableConfigRequest, ReusableConfig> getReusableConfigCallable() {
-    return getReusableConfigCallable;
+  public OperationCallable<
+          UpdateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
+      updateCertificateRevocationListOperationCallable() {
+    return updateCertificateRevocationListOperationCallable;
   }
 
-  public UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsPagedResponse>
-      listReusableConfigsPagedCallable() {
-    return listReusableConfigsPagedCallable;
+  public UnaryCallable<GetReusableConfigRequest, ReusableConfig> getReusableConfigCallable() {
+    return getReusableConfigCallable;
   }
 
   public UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsResponse>
       listReusableConfigsCallable() {
     return listReusableConfigsCallable;
+  }
+
+  public UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsPagedResponse>
+      listReusableConfigsPagedCallable() {
+    return listReusableConfigsPagedCallable;
   }
 
   @Override

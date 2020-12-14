@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,36 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class CertificateRevocationListName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/certificateAuthorities/{certificate_authority}/certificateRevocationLists/{certificate_revocation_list}");
-
+  private static final PathTemplate
+      PROJECT_LOCATION_CERTIFICATE_AUTHORITY_CERTIFICATE_REVOCATION_LIST =
+          PathTemplate.createWithoutUrlEncoding(
+              "projects/{project}/locations/{location}/certificateAuthorities/{certificate_authority}/certificateRevocationLists/{certificate_revocation_list}");
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String certificateAuthority;
   private final String certificateRevocationList;
+
+  @Deprecated
+  protected CertificateRevocationListName() {
+    project = null;
+    location = null;
+    certificateAuthority = null;
+    certificateRevocationList = null;
+  }
+
+  private CertificateRevocationListName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    certificateAuthority = Preconditions.checkNotNull(builder.getCertificateAuthority());
+    certificateRevocationList = Preconditions.checkNotNull(builder.getCertificateRevocationList());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +76,6 @@ public class CertificateRevocationListName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private CertificateRevocationListName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    certificateAuthority = Preconditions.checkNotNull(builder.getCertificateAuthority());
-    certificateRevocationList = Preconditions.checkNotNull(builder.getCertificateRevocationList());
   }
 
   public static CertificateRevocationListName of(
@@ -102,7 +110,7 @@ public class CertificateRevocationListName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_CERTIFICATE_AUTHORITY_CERTIFICATE_REVOCATION_LIST.validatedMatch(
             formattedString,
             "CertificateRevocationListName.parse: formattedString not in valid format");
     return of(
@@ -121,7 +129,7 @@ public class CertificateRevocationListName implements ResourceName {
   }
 
   public static List<String> toStringList(List<CertificateRevocationListName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (CertificateRevocationListName value : values) {
       if (value == null) {
         list.add("");
@@ -133,18 +141,28 @@ public class CertificateRevocationListName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_CERTIFICATE_AUTHORITY_CERTIFICATE_REVOCATION_LIST.matches(
+        formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("certificateAuthority", certificateAuthority);
-          fieldMapBuilder.put("certificateRevocationList", certificateRevocationList);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (certificateAuthority != null) {
+            fieldMapBuilder.put("certificate_authority", certificateAuthority);
+          }
+          if (certificateRevocationList != null) {
+            fieldMapBuilder.put("certificate_revocation_list", certificateRevocationList);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -158,7 +176,7 @@ public class CertificateRevocationListName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_CERTIFICATE_AUTHORITY_CERTIFICATE_REVOCATION_LIST.instantiate(
         "project",
         project,
         "location",
@@ -169,13 +187,46 @@ public class CertificateRevocationListName implements ResourceName {
         certificateRevocationList);
   }
 
-  /** Builder for CertificateRevocationListName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      CertificateRevocationListName that = ((CertificateRevocationListName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.certificateAuthority, that.certificateAuthority)
+          && Objects.equals(this.certificateRevocationList, that.certificateRevocationList);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(certificateAuthority);
+    h *= 1000003;
+    h ^= Objects.hashCode(certificateRevocationList);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/certificateAuthorities/{certificate_authority}/certificateRevocationLists/{certificate_revocation_list}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String certificateAuthority;
     private String certificateRevocationList;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -213,8 +264,6 @@ public class CertificateRevocationListName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(CertificateRevocationListName certificateRevocationListName) {
       project = certificateRevocationListName.project;
       location = certificateRevocationListName.location;
@@ -225,34 +274,5 @@ public class CertificateRevocationListName implements ResourceName {
     public CertificateRevocationListName build() {
       return new CertificateRevocationListName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof CertificateRevocationListName) {
-      CertificateRevocationListName that = (CertificateRevocationListName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.certificateAuthority.equals(that.certificateAuthority))
-          && (this.certificateRevocationList.equals(that.certificateRevocationList));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= certificateAuthority.hashCode();
-    h *= 1000003;
-    h ^= certificateRevocationList.hashCode();
-    return h;
   }
 }

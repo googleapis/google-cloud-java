@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.security.privateca.v1beta1.stub;
 
 import static com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient.ListCertificateAuthoritiesPagedResponse;
@@ -86,7 +87,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link CertificateAuthorityServiceStub}.
  *
@@ -103,22 +104,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createCertificate to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CertificateAuthorityServiceStubSettings.Builder certificateAuthorityServiceSettingsBuilder =
  *     CertificateAuthorityServiceStubSettings.newBuilder();
  * certificateAuthorityServiceSettingsBuilder
  *     .createCertificateSettings()
  *     .setRetrySettings(
- *         certificateAuthorityServiceSettingsBuilder.createCertificateSettings().getRetrySettings().toBuilder()
+ *         certificateAuthorityServiceSettingsBuilder
+ *             .createCertificateSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * CertificateAuthorityServiceStubSettings certificateAuthorityServiceSettings = certificateAuthorityServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * CertificateAuthorityServiceStubSettings certificateAuthorityServiceSettings =
+ *     certificateAuthorityServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class CertificateAuthorityServiceStubSettings
     extends StubSettings<CertificateAuthorityServiceStubSettings> {
   /** The default scopes of the service. */
@@ -195,6 +198,285 @@ public class CertificateAuthorityServiceStubSettings
           ListReusableConfigsRequest, ListReusableConfigsResponse, ListReusableConfigsPagedResponse>
       listReusableConfigsSettings;
 
+  private static final PagedListDescriptor<
+          ListCertificatesRequest, ListCertificatesResponse, Certificate>
+      LIST_CERTIFICATES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCertificatesRequest, ListCertificatesResponse, Certificate>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCertificatesRequest injectToken(
+                ListCertificatesRequest payload, String token) {
+              return ListCertificatesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCertificatesRequest injectPageSize(
+                ListCertificatesRequest payload, int pageSize) {
+              return ListCertificatesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCertificatesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCertificatesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Certificate> extractResources(ListCertificatesResponse payload) {
+              return payload.getCertificatesList() == null
+                  ? ImmutableList.<Certificate>of()
+                  : payload.getCertificatesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCertificateAuthoritiesRequest,
+          ListCertificateAuthoritiesResponse,
+          CertificateAuthority>
+      LIST_CERTIFICATE_AUTHORITIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCertificateAuthoritiesRequest,
+              ListCertificateAuthoritiesResponse,
+              CertificateAuthority>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCertificateAuthoritiesRequest injectToken(
+                ListCertificateAuthoritiesRequest payload, String token) {
+              return ListCertificateAuthoritiesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListCertificateAuthoritiesRequest injectPageSize(
+                ListCertificateAuthoritiesRequest payload, int pageSize) {
+              return ListCertificateAuthoritiesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCertificateAuthoritiesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCertificateAuthoritiesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CertificateAuthority> extractResources(
+                ListCertificateAuthoritiesResponse payload) {
+              return payload.getCertificateAuthoritiesList() == null
+                  ? ImmutableList.<CertificateAuthority>of()
+                  : payload.getCertificateAuthoritiesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCertificateRevocationListsRequest,
+          ListCertificateRevocationListsResponse,
+          CertificateRevocationList>
+      LIST_CERTIFICATE_REVOCATION_LISTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCertificateRevocationListsRequest,
+              ListCertificateRevocationListsResponse,
+              CertificateRevocationList>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCertificateRevocationListsRequest injectToken(
+                ListCertificateRevocationListsRequest payload, String token) {
+              return ListCertificateRevocationListsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListCertificateRevocationListsRequest injectPageSize(
+                ListCertificateRevocationListsRequest payload, int pageSize) {
+              return ListCertificateRevocationListsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCertificateRevocationListsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCertificateRevocationListsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CertificateRevocationList> extractResources(
+                ListCertificateRevocationListsResponse payload) {
+              return payload.getCertificateRevocationListsList() == null
+                  ? ImmutableList.<CertificateRevocationList>of()
+                  : payload.getCertificateRevocationListsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListReusableConfigsRequest, ListReusableConfigsResponse, ReusableConfig>
+      LIST_REUSABLE_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListReusableConfigsRequest, ListReusableConfigsResponse, ReusableConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListReusableConfigsRequest injectToken(
+                ListReusableConfigsRequest payload, String token) {
+              return ListReusableConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListReusableConfigsRequest injectPageSize(
+                ListReusableConfigsRequest payload, int pageSize) {
+              return ListReusableConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListReusableConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListReusableConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ReusableConfig> extractResources(ListReusableConfigsResponse payload) {
+              return payload.getReusableConfigsList() == null
+                  ? ImmutableList.<ReusableConfig>of()
+                  : payload.getReusableConfigsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCertificatesRequest, ListCertificatesResponse, ListCertificatesPagedResponse>
+      LIST_CERTIFICATES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCertificatesRequest, ListCertificatesResponse, ListCertificatesPagedResponse>() {
+            @Override
+            public ApiFuture<ListCertificatesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCertificatesRequest, ListCertificatesResponse> callable,
+                ListCertificatesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCertificatesResponse> futureResponse) {
+              PageContext<ListCertificatesRequest, ListCertificatesResponse, Certificate>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CERTIFICATES_PAGE_STR_DESC, request, context);
+              return ListCertificatesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCertificateAuthoritiesRequest,
+          ListCertificateAuthoritiesResponse,
+          ListCertificateAuthoritiesPagedResponse>
+      LIST_CERTIFICATE_AUTHORITIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCertificateAuthoritiesRequest,
+              ListCertificateAuthoritiesResponse,
+              ListCertificateAuthoritiesPagedResponse>() {
+            @Override
+            public ApiFuture<ListCertificateAuthoritiesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>
+                    callable,
+                ListCertificateAuthoritiesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCertificateAuthoritiesResponse> futureResponse) {
+              PageContext<
+                      ListCertificateAuthoritiesRequest,
+                      ListCertificateAuthoritiesResponse,
+                      CertificateAuthority>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CERTIFICATE_AUTHORITIES_PAGE_STR_DESC, request, context);
+              return ListCertificateAuthoritiesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCertificateRevocationListsRequest,
+          ListCertificateRevocationListsResponse,
+          ListCertificateRevocationListsPagedResponse>
+      LIST_CERTIFICATE_REVOCATION_LISTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCertificateRevocationListsRequest,
+              ListCertificateRevocationListsResponse,
+              ListCertificateRevocationListsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCertificateRevocationListsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListCertificateRevocationListsRequest,
+                        ListCertificateRevocationListsResponse>
+                    callable,
+                ListCertificateRevocationListsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCertificateRevocationListsResponse> futureResponse) {
+              PageContext<
+                      ListCertificateRevocationListsRequest,
+                      ListCertificateRevocationListsResponse,
+                      CertificateRevocationList>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_CERTIFICATE_REVOCATION_LISTS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListCertificateRevocationListsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListReusableConfigsRequest, ListReusableConfigsResponse, ListReusableConfigsPagedResponse>
+      LIST_REUSABLE_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListReusableConfigsRequest,
+              ListReusableConfigsResponse,
+              ListReusableConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListReusableConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsResponse> callable,
+                ListReusableConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListReusableConfigsResponse> futureResponse) {
+              PageContext<ListReusableConfigsRequest, ListReusableConfigsResponse, ReusableConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_REUSABLE_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListReusableConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to createCertificate. */
   public UnaryCallSettings<CreateCertificateRequest, Certificate> createCertificateSettings() {
     return createCertificateSettings;
@@ -229,7 +511,6 @@ public class CertificateAuthorityServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to activateCertificateAuthority. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           ActivateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       activateCertificateAuthorityOperationSettings() {
@@ -243,7 +524,6 @@ public class CertificateAuthorityServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to createCertificateAuthority. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           CreateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       createCertificateAuthorityOperationSettings() {
@@ -257,7 +537,6 @@ public class CertificateAuthorityServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to disableCertificateAuthority. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           DisableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       disableCertificateAuthorityOperationSettings() {
@@ -271,7 +550,6 @@ public class CertificateAuthorityServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to enableCertificateAuthority. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           EnableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       enableCertificateAuthorityOperationSettings() {
@@ -307,7 +585,6 @@ public class CertificateAuthorityServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to restoreCertificateAuthority. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           RestoreCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       restoreCertificateAuthorityOperationSettings() {
@@ -321,7 +598,6 @@ public class CertificateAuthorityServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to scheduleDeleteCertificateAuthority. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           ScheduleDeleteCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       scheduleDeleteCertificateAuthorityOperationSettings() {
@@ -335,7 +611,6 @@ public class CertificateAuthorityServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to updateCertificateAuthority. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           UpdateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       updateCertificateAuthorityOperationSettings() {
@@ -364,7 +639,6 @@ public class CertificateAuthorityServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to updateCertificateRevocationList. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           UpdateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
       updateCertificateRevocationListOperationSettings() {
@@ -389,10 +663,10 @@ public class CertificateAuthorityServiceStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcCertificateAuthorityServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -502,290 +776,10 @@ public class CertificateAuthorityServiceStubSettings
     listReusableConfigsSettings = settingsBuilder.listReusableConfigsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListCertificatesRequest, ListCertificatesResponse, Certificate>
-      LIST_CERTIFICATES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListCertificatesRequest, ListCertificatesResponse, Certificate>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListCertificatesRequest injectToken(
-                ListCertificatesRequest payload, String token) {
-              return ListCertificatesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListCertificatesRequest injectPageSize(
-                ListCertificatesRequest payload, int pageSize) {
-              return ListCertificatesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListCertificatesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListCertificatesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Certificate> extractResources(ListCertificatesResponse payload) {
-              return payload.getCertificatesList() != null
-                  ? payload.getCertificatesList()
-                  : ImmutableList.<Certificate>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListCertificateAuthoritiesRequest,
-          ListCertificateAuthoritiesResponse,
-          CertificateAuthority>
-      LIST_CERTIFICATE_AUTHORITIES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListCertificateAuthoritiesRequest,
-              ListCertificateAuthoritiesResponse,
-              CertificateAuthority>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListCertificateAuthoritiesRequest injectToken(
-                ListCertificateAuthoritiesRequest payload, String token) {
-              return ListCertificateAuthoritiesRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListCertificateAuthoritiesRequest injectPageSize(
-                ListCertificateAuthoritiesRequest payload, int pageSize) {
-              return ListCertificateAuthoritiesRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListCertificateAuthoritiesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListCertificateAuthoritiesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<CertificateAuthority> extractResources(
-                ListCertificateAuthoritiesResponse payload) {
-              return payload.getCertificateAuthoritiesList() != null
-                  ? payload.getCertificateAuthoritiesList()
-                  : ImmutableList.<CertificateAuthority>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListCertificateRevocationListsRequest,
-          ListCertificateRevocationListsResponse,
-          CertificateRevocationList>
-      LIST_CERTIFICATE_REVOCATION_LISTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListCertificateRevocationListsRequest,
-              ListCertificateRevocationListsResponse,
-              CertificateRevocationList>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListCertificateRevocationListsRequest injectToken(
-                ListCertificateRevocationListsRequest payload, String token) {
-              return ListCertificateRevocationListsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListCertificateRevocationListsRequest injectPageSize(
-                ListCertificateRevocationListsRequest payload, int pageSize) {
-              return ListCertificateRevocationListsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListCertificateRevocationListsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListCertificateRevocationListsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<CertificateRevocationList> extractResources(
-                ListCertificateRevocationListsResponse payload) {
-              return payload.getCertificateRevocationListsList() != null
-                  ? payload.getCertificateRevocationListsList()
-                  : ImmutableList.<CertificateRevocationList>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListReusableConfigsRequest, ListReusableConfigsResponse, ReusableConfig>
-      LIST_REUSABLE_CONFIGS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListReusableConfigsRequest, ListReusableConfigsResponse, ReusableConfig>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListReusableConfigsRequest injectToken(
-                ListReusableConfigsRequest payload, String token) {
-              return ListReusableConfigsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListReusableConfigsRequest injectPageSize(
-                ListReusableConfigsRequest payload, int pageSize) {
-              return ListReusableConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListReusableConfigsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListReusableConfigsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ReusableConfig> extractResources(ListReusableConfigsResponse payload) {
-              return payload.getReusableConfigsList() != null
-                  ? payload.getReusableConfigsList()
-                  : ImmutableList.<ReusableConfig>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListCertificatesRequest, ListCertificatesResponse, ListCertificatesPagedResponse>
-      LIST_CERTIFICATES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListCertificatesRequest, ListCertificatesResponse, ListCertificatesPagedResponse>() {
-            @Override
-            public ApiFuture<ListCertificatesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListCertificatesRequest, ListCertificatesResponse> callable,
-                ListCertificatesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListCertificatesResponse> futureResponse) {
-              PageContext<ListCertificatesRequest, ListCertificatesResponse, Certificate>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_CERTIFICATES_PAGE_STR_DESC, request, context);
-              return ListCertificatesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListCertificateAuthoritiesRequest,
-          ListCertificateAuthoritiesResponse,
-          ListCertificateAuthoritiesPagedResponse>
-      LIST_CERTIFICATE_AUTHORITIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListCertificateAuthoritiesRequest,
-              ListCertificateAuthoritiesResponse,
-              ListCertificateAuthoritiesPagedResponse>() {
-            @Override
-            public ApiFuture<ListCertificateAuthoritiesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>
-                    callable,
-                ListCertificateAuthoritiesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListCertificateAuthoritiesResponse> futureResponse) {
-              PageContext<
-                      ListCertificateAuthoritiesRequest,
-                      ListCertificateAuthoritiesResponse,
-                      CertificateAuthority>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_CERTIFICATE_AUTHORITIES_PAGE_STR_DESC, request, context);
-              return ListCertificateAuthoritiesPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListCertificateRevocationListsRequest,
-          ListCertificateRevocationListsResponse,
-          ListCertificateRevocationListsPagedResponse>
-      LIST_CERTIFICATE_REVOCATION_LISTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListCertificateRevocationListsRequest,
-              ListCertificateRevocationListsResponse,
-              ListCertificateRevocationListsPagedResponse>() {
-            @Override
-            public ApiFuture<ListCertificateRevocationListsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<
-                        ListCertificateRevocationListsRequest,
-                        ListCertificateRevocationListsResponse>
-                    callable,
-                ListCertificateRevocationListsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListCertificateRevocationListsResponse> futureResponse) {
-              PageContext<
-                      ListCertificateRevocationListsRequest,
-                      ListCertificateRevocationListsResponse,
-                      CertificateRevocationList>
-                  pageContext =
-                      PageContext.create(
-                          callable,
-                          LIST_CERTIFICATE_REVOCATION_LISTS_PAGE_STR_DESC,
-                          request,
-                          context);
-              return ListCertificateRevocationListsPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListReusableConfigsRequest, ListReusableConfigsResponse, ListReusableConfigsPagedResponse>
-      LIST_REUSABLE_CONFIGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListReusableConfigsRequest,
-              ListReusableConfigsResponse,
-              ListReusableConfigsPagedResponse>() {
-            @Override
-            public ApiFuture<ListReusableConfigsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsResponse> callable,
-                ListReusableConfigsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListReusableConfigsResponse> futureResponse) {
-              PageContext<ListReusableConfigsRequest, ListReusableConfigsResponse, ReusableConfig>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_REUSABLE_CONFIGS_PAGE_STR_DESC, request, context);
-              return ListReusableConfigsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for CertificateAuthorityServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<CertificateAuthorityServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateCertificateRequest, Certificate>
         createCertificateSettings;
     private final UnaryCallSettings.Builder<GetCertificateRequest, Certificate>
@@ -862,7 +856,6 @@ public class CertificateAuthorityServiceStubSettings
             ListReusableConfigsResponse,
             ListReusableConfigsPagedResponse>
         listReusableConfigsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -870,13 +863,12 @@ public class CertificateAuthorityServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNKNOWN,
                   StatusCode.Code.UNAVAILABLE,
                   StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -895,75 +887,46 @@ public class CertificateAuthorityServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createCertificateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getCertificateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listCertificatesSettings = PagedCallSettings.newBuilder(LIST_CERTIFICATES_PAGE_STR_FACT);
-
       revokeCertificateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateCertificateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       activateCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       activateCertificateAuthorityOperationSettings = OperationCallSettings.newBuilder();
-
       createCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createCertificateAuthorityOperationSettings = OperationCallSettings.newBuilder();
-
       disableCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       disableCertificateAuthorityOperationSettings = OperationCallSettings.newBuilder();
-
       enableCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       enableCertificateAuthorityOperationSettings = OperationCallSettings.newBuilder();
-
       fetchCertificateAuthorityCsrSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listCertificateAuthoritiesSettings =
           PagedCallSettings.newBuilder(LIST_CERTIFICATE_AUTHORITIES_PAGE_STR_FACT);
-
       restoreCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       restoreCertificateAuthorityOperationSettings = OperationCallSettings.newBuilder();
-
       scheduleDeleteCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       scheduleDeleteCertificateAuthorityOperationSettings = OperationCallSettings.newBuilder();
-
       updateCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateCertificateAuthorityOperationSettings = OperationCallSettings.newBuilder();
-
       getCertificateRevocationListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listCertificateRevocationListsSettings =
           PagedCallSettings.newBuilder(LIST_CERTIFICATE_REVOCATION_LISTS_PAGE_STR_FACT);
-
       updateCertificateRevocationListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateCertificateRevocationListOperationSettings = OperationCallSettings.newBuilder();
-
       getReusableConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listReusableConfigsSettings =
           PagedCallSettings.newBuilder(LIST_REUSABLE_CONFIGS_PAGE_STR_FACT);
 
@@ -989,315 +952,7 @@ public class CertificateAuthorityServiceStubSettings
               updateCertificateRevocationListSettings,
               getReusableConfigSettings,
               listReusableConfigsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createCertificateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getCertificateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listCertificatesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .revokeCertificateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateCertificateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .activateCertificateAuthoritySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createCertificateAuthoritySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .disableCertificateAuthoritySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .enableCertificateAuthoritySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .fetchCertificateAuthorityCsrSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getCertificateAuthoritySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listCertificateAuthoritiesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .restoreCertificateAuthoritySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .scheduleDeleteCertificateAuthoritySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateCertificateAuthoritySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getCertificateRevocationListSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listCertificateRevocationListsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateCertificateRevocationListSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getReusableConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listReusableConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-      builder
-          .activateCertificateAuthorityOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<ActivateCertificateAuthorityRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .createCertificateAuthorityOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateCertificateAuthorityRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .disableCertificateAuthorityOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DisableCertificateAuthorityRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .enableCertificateAuthorityOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<EnableCertificateAuthorityRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .restoreCertificateAuthorityOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<RestoreCertificateAuthorityRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .scheduleDeleteCertificateAuthorityOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<ScheduleDeleteCertificateAuthorityRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .updateCertificateAuthorityOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateCertificateAuthorityRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .updateCertificateRevocationListOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateCertificateRevocationListRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(
-                  CertificateRevocationList.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(CertificateAuthorityServiceStubSettings settings) {
@@ -1372,7 +1027,323 @@ public class CertificateAuthorityServiceStubSettings
               listReusableConfigsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createCertificateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCertificateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCertificatesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .revokeCertificateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCertificateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .activateCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .disableCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .enableCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .fetchCertificateAuthorityCsrSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCertificateAuthoritiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .restoreCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .scheduleDeleteCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCertificateRevocationListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCertificateRevocationListsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCertificateRevocationListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getReusableConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listReusableConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .activateCertificateAuthorityOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ActivateCertificateAuthorityRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createCertificateAuthorityOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateCertificateAuthorityRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .disableCertificateAuthorityOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DisableCertificateAuthorityRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .enableCertificateAuthorityOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EnableCertificateAuthorityRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .restoreCertificateAuthorityOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RestoreCertificateAuthorityRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .scheduleDeleteCertificateAuthorityOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ScheduleDeleteCertificateAuthorityRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateCertificateAuthorityOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateCertificateAuthorityRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CertificateAuthority.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateCertificateRevocationListOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateCertificateRevocationListRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  CertificateRevocationList.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
