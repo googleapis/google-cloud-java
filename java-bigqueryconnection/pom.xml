@@ -63,7 +63,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigqueryconnection-parent</site.installationModule>
-    <google.cloud.shared-dependencies.version>0.16.0</google.cloud.shared-dependencies.version>
+    <google.cloud.shared-dependencies.version>0.16.1</google.cloud.shared-dependencies.version>
   </properties>
 
   <dependencyManagement>
