@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-cloudbuild.git",
-        "sha": "f5b9edf5c3ce923d30663ec42884488434428c7d"
+        "sha": "82ebd948c5527899c1af8bf3cef510f3433f6b08"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "7d1ee3207371ef72a1ca931a0964c4007e687280"
+        "sha": "996775eca5fd934edac3c2ae34b80ff0395b1717"
       }
     }
   ]
