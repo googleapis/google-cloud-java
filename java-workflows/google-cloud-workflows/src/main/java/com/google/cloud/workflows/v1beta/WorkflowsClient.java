@@ -275,7 +275,7 @@ public class WorkflowsClient implements BackgroundResource {
    * @param parent Required. Project and location in which the workflow should be created. Format:
    *     projects/{project}/locations/{location}
    * @param workflow Required. Workflow to be created.
-   * @param workflow_id Required. The ID of the workflow to be created. It has to fulfill the
+   * @param workflowId Required. The ID of the workflow to be created. It has to fulfill the
    *     following requirements:
    *     <ul>
    *       <li>Must contain only letters, numbers, underscores and hyphens.
@@ -307,7 +307,7 @@ public class WorkflowsClient implements BackgroundResource {
    * @param parent Required. Project and location in which the workflow should be created. Format:
    *     projects/{project}/locations/{location}
    * @param workflow Required. Workflow to be created.
-   * @param workflow_id Required. The ID of the workflow to be created. It has to fulfill the
+   * @param workflowId Required. The ID of the workflow to be created. It has to fulfill the
    *     following requirements:
    *     <ul>
    *       <li>Must contain only letters, numbers, underscores and hyphens.
@@ -441,7 +441,7 @@ public class WorkflowsClient implements BackgroundResource {
    * update operation. In that case, such revision will be used in new workflow executions.
    *
    * @param workflow Required. Workflow to be updated.
-   * @param update_mask List of fields to be updated. If not present, the entire workflow will be
+   * @param updateMask List of fields to be updated. If not present, the entire workflow will be
    *     updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

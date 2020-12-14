@@ -134,11 +134,21 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
         WorkflowsStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcWorkflowsStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcWorkflowsStub(WorkflowsStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcWorkflowsCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcWorkflowsStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcWorkflowsStub(
       WorkflowsStubSettings settings,
       ClientContext clientContext,
