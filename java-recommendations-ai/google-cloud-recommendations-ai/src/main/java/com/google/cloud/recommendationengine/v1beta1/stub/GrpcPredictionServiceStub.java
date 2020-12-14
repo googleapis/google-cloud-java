@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1.stub;
 
 import static com.google.cloud.recommendationengine.v1beta1.PredictionServiceClient.PredictPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommendationengine.v1beta1.PredictRequest;
 import com.google.cloud.recommendationengine.v1beta1.PredictResponse;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -35,16 +36,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Recommendations AI.
+ * gRPC stub implementation for the PredictionService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcPredictionServiceStub extends PredictionServiceStub {
-
   private static final MethodDescriptor<PredictRequest, PredictResponse> predictMethodDescriptor =
       MethodDescriptor.<PredictRequest, PredictResponse>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -53,11 +52,11 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(PredictResponse.getDefaultInstance()))
           .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;
   private final UnaryCallable<PredictRequest, PredictPagedResponse> predictPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcPredictionServiceStub create(PredictionServiceStubSettings settings)
@@ -98,6 +97,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<PredictRequest, PredictResponse> predictTransportSettings =
         GrpcCallSettings.<PredictRequest, PredictResponse>newBuilder()
@@ -120,15 +120,20 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
         callableFactory.createPagedCallable(
             predictTransportSettings, settings.predictSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<PredictRequest, PredictPagedResponse> predictPagedCallable() {
-    return predictPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return predictCallable;
+  }
+
+  public UnaryCallable<PredictRequest, PredictPagedResponse> predictPagedCallable() {
+    return predictPagedCallable;
   }
 
   @Override

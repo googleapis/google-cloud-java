@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1.stub;
 
 import static com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistryClient.ListPredictionApiKeyRegistrationsPagedResponse;
@@ -54,7 +55,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link PredictionApiKeyRegistryStub}.
  *
@@ -72,22 +73,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createPredictionApiKeyRegistration to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionApiKeyRegistryStubSettings.Builder predictionApiKeyRegistrySettingsBuilder =
  *     PredictionApiKeyRegistryStubSettings.newBuilder();
  * predictionApiKeyRegistrySettingsBuilder
  *     .createPredictionApiKeyRegistrationSettings()
  *     .setRetrySettings(
- *         predictionApiKeyRegistrySettingsBuilder.createPredictionApiKeyRegistrationSettings().getRetrySettings().toBuilder()
+ *         predictionApiKeyRegistrySettingsBuilder
+ *             .createPredictionApiKeyRegistrationSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * PredictionApiKeyRegistryStubSettings predictionApiKeyRegistrySettings = predictionApiKeyRegistrySettingsBuilder.build();
- * </code>
- * </pre>
+ * PredictionApiKeyRegistryStubSettings predictionApiKeyRegistrySettings =
+ *     predictionApiKeyRegistrySettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class PredictionApiKeyRegistryStubSettings
     extends StubSettings<PredictionApiKeyRegistryStubSettings> {
   /** The default scopes of the service. */
@@ -104,6 +107,88 @@ public class PredictionApiKeyRegistryStubSettings
       listPredictionApiKeyRegistrationsSettings;
   private final UnaryCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
       deletePredictionApiKeyRegistrationSettings;
+
+  private static final PagedListDescriptor<
+          ListPredictionApiKeyRegistrationsRequest,
+          ListPredictionApiKeyRegistrationsResponse,
+          PredictionApiKeyRegistration>
+      LIST_PREDICTION_API_KEY_REGISTRATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPredictionApiKeyRegistrationsRequest,
+              ListPredictionApiKeyRegistrationsResponse,
+              PredictionApiKeyRegistration>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPredictionApiKeyRegistrationsRequest injectToken(
+                ListPredictionApiKeyRegistrationsRequest payload, String token) {
+              return ListPredictionApiKeyRegistrationsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListPredictionApiKeyRegistrationsRequest injectPageSize(
+                ListPredictionApiKeyRegistrationsRequest payload, int pageSize) {
+              return ListPredictionApiKeyRegistrationsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPredictionApiKeyRegistrationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPredictionApiKeyRegistrationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PredictionApiKeyRegistration> extractResources(
+                ListPredictionApiKeyRegistrationsResponse payload) {
+              return payload.getPredictionApiKeyRegistrationsList() == null
+                  ? ImmutableList.<PredictionApiKeyRegistration>of()
+                  : payload.getPredictionApiKeyRegistrationsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPredictionApiKeyRegistrationsRequest,
+          ListPredictionApiKeyRegistrationsResponse,
+          ListPredictionApiKeyRegistrationsPagedResponse>
+      LIST_PREDICTION_API_KEY_REGISTRATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPredictionApiKeyRegistrationsRequest,
+              ListPredictionApiKeyRegistrationsResponse,
+              ListPredictionApiKeyRegistrationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPredictionApiKeyRegistrationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListPredictionApiKeyRegistrationsRequest,
+                        ListPredictionApiKeyRegistrationsResponse>
+                    callable,
+                ListPredictionApiKeyRegistrationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPredictionApiKeyRegistrationsResponse> futureResponse) {
+              PageContext<
+                      ListPredictionApiKeyRegistrationsRequest,
+                      ListPredictionApiKeyRegistrationsResponse,
+                      PredictionApiKeyRegistration>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_PREDICTION_API_KEY_REGISTRATIONS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListPredictionApiKeyRegistrationsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createPredictionApiKeyRegistration. */
   public UnaryCallSettings<CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
@@ -132,10 +217,10 @@ public class PredictionApiKeyRegistryStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcPredictionApiKeyRegistryStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -203,93 +288,10 @@ public class PredictionApiKeyRegistryStubSettings
         settingsBuilder.deletePredictionApiKeyRegistrationSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListPredictionApiKeyRegistrationsRequest,
-          ListPredictionApiKeyRegistrationsResponse,
-          PredictionApiKeyRegistration>
-      LIST_PREDICTION_API_KEY_REGISTRATIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListPredictionApiKeyRegistrationsRequest,
-              ListPredictionApiKeyRegistrationsResponse,
-              PredictionApiKeyRegistration>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListPredictionApiKeyRegistrationsRequest injectToken(
-                ListPredictionApiKeyRegistrationsRequest payload, String token) {
-              return ListPredictionApiKeyRegistrationsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListPredictionApiKeyRegistrationsRequest injectPageSize(
-                ListPredictionApiKeyRegistrationsRequest payload, int pageSize) {
-              return ListPredictionApiKeyRegistrationsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListPredictionApiKeyRegistrationsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListPredictionApiKeyRegistrationsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<PredictionApiKeyRegistration> extractResources(
-                ListPredictionApiKeyRegistrationsResponse payload) {
-              return payload.getPredictionApiKeyRegistrationsList() != null
-                  ? payload.getPredictionApiKeyRegistrationsList()
-                  : ImmutableList.<PredictionApiKeyRegistration>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListPredictionApiKeyRegistrationsRequest,
-          ListPredictionApiKeyRegistrationsResponse,
-          ListPredictionApiKeyRegistrationsPagedResponse>
-      LIST_PREDICTION_API_KEY_REGISTRATIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListPredictionApiKeyRegistrationsRequest,
-              ListPredictionApiKeyRegistrationsResponse,
-              ListPredictionApiKeyRegistrationsPagedResponse>() {
-            @Override
-            public ApiFuture<ListPredictionApiKeyRegistrationsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<
-                        ListPredictionApiKeyRegistrationsRequest,
-                        ListPredictionApiKeyRegistrationsResponse>
-                    callable,
-                ListPredictionApiKeyRegistrationsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListPredictionApiKeyRegistrationsResponse> futureResponse) {
-              PageContext<
-                      ListPredictionApiKeyRegistrationsRequest,
-                      ListPredictionApiKeyRegistrationsResponse,
-                      PredictionApiKeyRegistration>
-                  pageContext =
-                      PageContext.create(
-                          callable,
-                          LIST_PREDICTION_API_KEY_REGISTRATIONS_PAGE_STR_DESC,
-                          request,
-                          context);
-              return ListPredictionApiKeyRegistrationsPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
   /** Builder for PredictionApiKeyRegistryStubSettings. */
   public static class Builder
       extends StubSettings.Builder<PredictionApiKeyRegistryStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<
             CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
         createPredictionApiKeyRegistrationSettings;
@@ -300,7 +302,6 @@ public class PredictionApiKeyRegistryStubSettings
         listPredictionApiKeyRegistrationsSettings;
     private final UnaryCallSettings.Builder<DeletePredictionApiKeyRegistrationRequest, Empty>
         deletePredictionApiKeyRegistrationSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -308,11 +309,10 @@ public class PredictionApiKeyRegistryStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -331,24 +331,20 @@ public class PredictionApiKeyRegistryStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createPredictionApiKeyRegistrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listPredictionApiKeyRegistrationsSettings =
           PagedCallSettings.newBuilder(LIST_PREDICTION_API_KEY_REGISTRATIONS_PAGE_STR_FACT);
-
       deletePredictionApiKeyRegistrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -356,37 +352,7 @@ public class PredictionApiKeyRegistryStubSettings
               createPredictionApiKeyRegistrationSettings,
               listPredictionApiKeyRegistrationsSettings,
               deletePredictionApiKeyRegistrationSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createPredictionApiKeyRegistrationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listPredictionApiKeyRegistrationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deletePredictionApiKeyRegistrationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(PredictionApiKeyRegistryStubSettings settings) {
@@ -406,7 +372,37 @@ public class PredictionApiKeyRegistryStubSettings
               deletePredictionApiKeyRegistrationSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createPredictionApiKeyRegistrationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPredictionApiKeyRegistrationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deletePredictionApiKeyRegistrationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

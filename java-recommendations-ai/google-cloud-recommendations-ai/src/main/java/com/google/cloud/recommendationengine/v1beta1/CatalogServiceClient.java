@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -39,24 +40,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service for ingesting catalog information of the customer's website.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
- *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
- *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
- *   CatalogItem response = catalogServiceClient.createCatalogItem(parent, catalogItem);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the catalogServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the CatalogServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -84,30 +75,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CatalogServiceSettings catalogServiceSettings =
  *     CatalogServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * CatalogServiceClient catalogServiceClient =
- *     CatalogServiceClient.create(catalogServiceSettings);
- * </code>
- * </pre>
+ * CatalogServiceClient catalogServiceClient = CatalogServiceClient.create(catalogServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CatalogServiceSettings catalogServiceSettings =
  *     CatalogServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * CatalogServiceClient catalogServiceClient =
- *     CatalogServiceClient.create(catalogServiceSettings);
- * </code>
- * </pre>
+ * CatalogServiceClient catalogServiceClient = CatalogServiceClient.create(catalogServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class CatalogServiceClient implements BackgroundResource {
   private final CatalogServiceSettings settings;
   private final CatalogServiceStub stub;
@@ -129,7 +116,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of CatalogServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use CatalogServiceSettings}.
+   * for advanced usage - prefer using create(CatalogServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CatalogServiceClient create(CatalogServiceStub stub) {
@@ -167,205 +154,13 @@ public class CatalogServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Bulk import of multiple catalog items. Request processing may be synchronous. No partial
-   * updating supported. Non-existing items will be created.
-   *
-   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
-   * items to be successfully updated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   String requestId = "";
-   *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
-   *   ImportCatalogItemsResponse response = catalogServiceClient.importCatalogItemsAsync(parent, requestId, inputConfig, errorsConfig).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. "projects/1234/locations/global/catalogs/default_catalog"
-   * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
-   *     scope. Ensures idempotency and used for request deduplication. Server-generated if
-   *     unspecified. Up to 128 characters long. This is returned as
-   *     google.longrunning.Operation.name in the response.
-   * @param inputConfig Required. The desired input location of the data.
-   * @param errorsConfig Optional. The desired location of errors incurred during the Import.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportCatalogItemsResponse, ImportMetadata> importCatalogItemsAsync(
-      CatalogName parent,
-      String requestId,
-      InputConfig inputConfig,
-      ImportErrorsConfig errorsConfig) {
-    ImportCatalogItemsRequest request =
-        ImportCatalogItemsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setRequestId(requestId)
-            .setInputConfig(inputConfig)
-            .setErrorsConfig(errorsConfig)
-            .build();
-    return importCatalogItemsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Bulk import of multiple catalog items. Request processing may be synchronous. No partial
-   * updating supported. Non-existing items will be created.
-   *
-   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
-   * items to be successfully updated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   String requestId = "";
-   *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
-   *   ImportCatalogItemsResponse response = catalogServiceClient.importCatalogItemsAsync(parent.toString(), requestId, inputConfig, errorsConfig).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. "projects/1234/locations/global/catalogs/default_catalog"
-   * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
-   *     scope. Ensures idempotency and used for request deduplication. Server-generated if
-   *     unspecified. Up to 128 characters long. This is returned as
-   *     google.longrunning.Operation.name in the response.
-   * @param inputConfig Required. The desired input location of the data.
-   * @param errorsConfig Optional. The desired location of errors incurred during the Import.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportCatalogItemsResponse, ImportMetadata> importCatalogItemsAsync(
-      String parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig) {
-    ImportCatalogItemsRequest request =
-        ImportCatalogItemsRequest.newBuilder()
-            .setParent(parent)
-            .setRequestId(requestId)
-            .setInputConfig(inputConfig)
-            .setErrorsConfig(errorsConfig)
-            .build();
-    return importCatalogItemsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Bulk import of multiple catalog items. Request processing may be synchronous. No partial
-   * updating supported. Non-existing items will be created.
-   *
-   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
-   * items to be successfully updated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportCatalogItemsRequest request = ImportCatalogItemsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
-   *     .build();
-   *   ImportCatalogItemsResponse response = catalogServiceClient.importCatalogItemsAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportCatalogItemsResponse, ImportMetadata> importCatalogItemsAsync(
-      ImportCatalogItemsRequest request) {
-    return importCatalogItemsOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Bulk import of multiple catalog items. Request processing may be synchronous. No partial
-   * updating supported. Non-existing items will be created.
-   *
-   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
-   * items to be successfully updated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportCatalogItemsRequest request = ImportCatalogItemsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
-   *     .build();
-   *   OperationFuture&lt;ImportCatalogItemsResponse, ImportMetadata&gt; future = catalogServiceClient.importCatalogItemsOperationCallable().futureCall(request);
-   *   // Do something
-   *   ImportCatalogItemsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<
-          ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-      importCatalogItemsOperationCallable() {
-    return stub.importCatalogItemsOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Bulk import of multiple catalog items. Request processing may be synchronous. No partial
-   * updating supported. Non-existing items will be created.
-   *
-   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
-   * items to be successfully updated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportCatalogItemsRequest request = ImportCatalogItemsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = catalogServiceClient.importCatalogItemsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ImportCatalogItemsRequest, Operation> importCatalogItemsCallable() {
-    return stub.importCatalogItemsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
-   *   CatalogItem response = catalogServiceClient.createCatalogItem(parent, catalogItem);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent catalog resource name, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog".
@@ -381,19 +176,9 @@ public class CatalogServiceClient implements BackgroundResource {
     return createCatalogItem(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
-   *   CatalogItem response = catalogServiceClient.createCatalogItem(parent.toString(), catalogItem);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent catalog resource name, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog".
@@ -406,23 +191,9 @@ public class CatalogServiceClient implements BackgroundResource {
     return createCatalogItem(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
-   *   CreateCatalogItemRequest request = CreateCatalogItemRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setCatalogItem(catalogItem)
-   *     .build();
-   *   CatalogItem response = catalogServiceClient.createCatalogItem(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -431,42 +202,19 @@ public class CatalogServiceClient implements BackgroundResource {
     return createCatalogItemCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a catalog item.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
-   *   CreateCatalogItemRequest request = CreateCatalogItemRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setCatalogItem(catalogItem)
-   *     .build();
-   *   ApiFuture&lt;CatalogItem&gt; future = catalogServiceClient.createCatalogItemCallable().futureCall(request);
-   *   // Do something
-   *   CatalogItem response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateCatalogItemRequest, CatalogItem> createCatalogItemCallable() {
     return stub.createCatalogItemCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a specific catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   CatalogItem response = catalogServiceClient.getCatalogItem(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
@@ -478,18 +226,9 @@ public class CatalogServiceClient implements BackgroundResource {
     return getCatalogItem(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a specific catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   CatalogItem response = catalogServiceClient.getCatalogItem(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
@@ -500,21 +239,9 @@ public class CatalogServiceClient implements BackgroundResource {
     return getCatalogItem(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a specific catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   GetCatalogItemRequest request = GetCatalogItemRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   CatalogItem response = catalogServiceClient.getCatalogItem(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -523,43 +250,19 @@ public class CatalogServiceClient implements BackgroundResource {
     return getCatalogItemCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a specific catalog item.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   GetCatalogItemRequest request = GetCatalogItemRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;CatalogItem&gt; future = catalogServiceClient.getCatalogItemCallable().futureCall(request);
-   *   // Do something
-   *   CatalogItem response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetCatalogItemRequest, CatalogItem> getCatalogItemCallable() {
     return stub.getCatalogItemCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of catalog items.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   String filter = "";
-   *   for (CatalogItem element : catalogServiceClient.listCatalogItems(parent, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent catalog resource name, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog".
@@ -575,21 +278,9 @@ public class CatalogServiceClient implements BackgroundResource {
     return listCatalogItems(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of catalog items.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   String filter = "";
-   *   for (CatalogItem element : catalogServiceClient.listCatalogItems(parent.toString(), filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent catalog resource name, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog".
@@ -602,23 +293,9 @@ public class CatalogServiceClient implements BackgroundResource {
     return listCatalogItems(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of catalog items.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   ListCatalogItemsRequest request = ListCatalogItemsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (CatalogItem element : catalogServiceClient.listCatalogItems(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -627,77 +304,31 @@ public class CatalogServiceClient implements BackgroundResource {
     return listCatalogItemsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of catalog items.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   ListCatalogItemsRequest request = ListCatalogItemsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListCatalogItemsPagedResponse&gt; future = catalogServiceClient.listCatalogItemsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (CatalogItem element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListCatalogItemsRequest, ListCatalogItemsPagedResponse>
       listCatalogItemsPagedCallable() {
     return stub.listCatalogItemsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of catalog items.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-   *   ListCatalogItemsRequest request = ListCatalogItemsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListCatalogItemsResponse response = catalogServiceClient.listCatalogItemsCallable().call(request);
-   *     for (CatalogItem element : response.getCatalogItemsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListCatalogItemsRequest, ListCatalogItemsResponse>
       listCatalogItemsCallable() {
     return stub.listCatalogItemsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a catalog item. Partial updating is supported. Non-existing items will be created.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   CatalogItem response = catalogServiceClient.updateCatalogItem(name, catalogItem, updateMask);
-   * }
-   * </code></pre>
    *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
@@ -718,20 +349,9 @@ public class CatalogServiceClient implements BackgroundResource {
     return updateCatalogItem(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a catalog item. Partial updating is supported. Non-existing items will be created.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   CatalogItem response = catalogServiceClient.updateCatalogItem(name.toString(), catalogItem, updateMask);
-   * }
-   * </code></pre>
    *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
@@ -752,23 +372,9 @@ public class CatalogServiceClient implements BackgroundResource {
     return updateCatalogItem(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a catalog item. Partial updating is supported. Non-existing items will be created.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
-   *   UpdateCatalogItemRequest request = UpdateCatalogItemRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setCatalogItem(catalogItem)
-   *     .build();
-   *   CatalogItem response = catalogServiceClient.updateCatalogItem(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -777,42 +383,19 @@ public class CatalogServiceClient implements BackgroundResource {
     return updateCatalogItemCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a catalog item. Partial updating is supported. Non-existing items will be created.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
-   *   UpdateCatalogItemRequest request = UpdateCatalogItemRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setCatalogItem(catalogItem)
-   *     .build();
-   *   ApiFuture&lt;CatalogItem&gt; future = catalogServiceClient.updateCatalogItemCallable().futureCall(request);
-   *   // Do something
-   *   CatalogItem response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemCallable() {
     return stub.updateCatalogItemCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   catalogServiceClient.deleteCatalogItem(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
@@ -826,18 +409,9 @@ public class CatalogServiceClient implements BackgroundResource {
     deleteCatalogItem(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   catalogServiceClient.deleteCatalogItem(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
@@ -848,21 +422,9 @@ public class CatalogServiceClient implements BackgroundResource {
     deleteCatalogItem(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   DeleteCatalogItemRequest request = DeleteCatalogItemRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   catalogServiceClient.deleteCatalogItem(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -871,26 +433,121 @@ public class CatalogServiceClient implements BackgroundResource {
     deleteCatalogItemCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a catalog item.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   DeleteCatalogItemRequest request = DeleteCatalogItemRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = catalogServiceClient.deleteCatalogItemCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable() {
     return stub.deleteCatalogItemCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk import of multiple catalog items. Request processing may be synchronous. No partial
+   * updating supported. Non-existing items will be created.
+   *
+   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
+   * items to be successfully updated.
+   *
+   * @param parent Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
+   *     scope. Ensures idempotency and used for request deduplication. Server-generated if
+   *     unspecified. Up to 128 characters long. This is returned as
+   *     google.longrunning.Operation.name in the response.
+   * @param inputConfig Required. The desired input location of the data.
+   * @param errorsConfig Optional. The desired location of errors incurred during the Import.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportCatalogItemsResponse, ImportMetadata> importCatalogItemsAsync(
+      CatalogName parent,
+      String requestId,
+      InputConfig inputConfig,
+      ImportErrorsConfig errorsConfig) {
+    ImportCatalogItemsRequest request =
+        ImportCatalogItemsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRequestId(requestId)
+            .setInputConfig(inputConfig)
+            .setErrorsConfig(errorsConfig)
+            .build();
+    return importCatalogItemsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk import of multiple catalog items. Request processing may be synchronous. No partial
+   * updating supported. Non-existing items will be created.
+   *
+   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
+   * items to be successfully updated.
+   *
+   * @param parent Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
+   *     scope. Ensures idempotency and used for request deduplication. Server-generated if
+   *     unspecified. Up to 128 characters long. This is returned as
+   *     google.longrunning.Operation.name in the response.
+   * @param inputConfig Required. The desired input location of the data.
+   * @param errorsConfig Optional. The desired location of errors incurred during the Import.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportCatalogItemsResponse, ImportMetadata> importCatalogItemsAsync(
+      String parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig) {
+    ImportCatalogItemsRequest request =
+        ImportCatalogItemsRequest.newBuilder()
+            .setParent(parent)
+            .setRequestId(requestId)
+            .setInputConfig(inputConfig)
+            .setErrorsConfig(errorsConfig)
+            .build();
+    return importCatalogItemsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk import of multiple catalog items. Request processing may be synchronous. No partial
+   * updating supported. Non-existing items will be created.
+   *
+   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
+   * items to be successfully updated.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportCatalogItemsResponse, ImportMetadata> importCatalogItemsAsync(
+      ImportCatalogItemsRequest request) {
+    return importCatalogItemsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk import of multiple catalog items. Request processing may be synchronous. No partial
+   * updating supported. Non-existing items will be created.
+   *
+   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
+   * items to be successfully updated.
+   *
+   * <p>Sample code:
+   */
+  public final OperationCallable<
+          ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
+      importCatalogItemsOperationCallable() {
+    return stub.importCatalogItemsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk import of multiple catalog items. Request processing may be synchronous. No partial
+   * updating supported. Non-existing items will be created.
+   *
+   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
+   * items to be successfully updated.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<ImportCatalogItemsRequest, Operation> importCatalogItemsCallable() {
+    return stub.importCatalogItemsCallable();
   }
 
   @Override

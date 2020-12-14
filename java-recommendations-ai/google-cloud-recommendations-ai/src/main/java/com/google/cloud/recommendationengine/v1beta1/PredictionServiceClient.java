@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -33,26 +34,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service for making recommendation prediction.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
- *   UserEvent userEvent = UserEvent.newBuilder().build();
- *   for (PredictResponse.PredictionResult element : predictionServiceClient.predict(name, userEvent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the predictionServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the PredictionServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -81,30 +70,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionServiceSettings predictionServiceSettings =
  *     PredictionServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * PredictionServiceClient predictionServiceClient =
  *     PredictionServiceClient.create(predictionServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionServiceSettings predictionServiceSettings =
  *     PredictionServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PredictionServiceClient predictionServiceClient =
  *     PredictionServiceClient.create(predictionServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class PredictionServiceClient implements BackgroundResource {
   private final PredictionServiceSettings settings;
   private final PredictionServiceStub stub;
@@ -125,7 +112,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of PredictionServiceClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use PredictionServiceSettings}.
+   * is for advanced usage - prefer using create(PredictionServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PredictionServiceClient create(PredictionServiceStub stub) {
@@ -157,43 +144,39 @@ public class PredictionServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes a recommendation prediction. If using API Key based authentication, the API Key must be
    * registered using the
    * [PredictionApiKeyRegistry][google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry]
    * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
-   *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   for (PredictResponse.PredictionResult element : predictionServiceClient.predict(name, userEvent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
    * @param name Required. Full resource name of the format:
    *     {name=projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}
    *     The id of the recommendation engine placement. This id is used to identify the set of
    *     models that will be used to make the prediction.
    *     <p>We currently support three placements with the following IDs by default:
-   *     <p>&#42; `shopping_cart`: Predicts items frequently bought together with one or more
-   *     catalog items in the same shopping session. Commonly displayed after `add-to-cart` events,
-   *     on product detail pages, or on the shopping cart page.
-   *     <p>&#42; `home_page`: Predicts the next product that a user will most likely engage with or
-   *     purchase based on the shopping or viewing history of the specified `userId` or `visitorId`.
-   *     For example - Recommendations for you.
-   *     <p>&#42; `product_detail`: Predicts the next product that a user will most likely engage
-   *     with or purchase. The prediction is based on the shopping or viewing history of the
-   *     specified `userId` or `visitorId` and its relevance to a specified `CatalogItem`. Typically
-   *     used on product detail pages. For example - More items like this.
-   *     <p>&#42; `recently_viewed_default`: Returns up to 75 items recently viewed by the specified
-   *     `userId` or `visitorId`, most recent ones first. Returns nothing if neither of them has
-   *     viewed any items yet. For example - Recently viewed.
+   *     <ul>
+   *       <li>`shopping_cart`: Predicts items frequently bought together with one or more catalog
+   *           items in the same shopping session. Commonly displayed after `add-to-cart` events, on
+   *           product detail pages, or on the shopping cart page.
+   *     </ul>
+   *     <ul>
+   *       <li>`home_page`: Predicts the next product that a user will most likely engage with or
+   *           purchase based on the shopping or viewing history of the specified `userId` or
+   *           `visitorId`. For example - Recommendations for you.
+   *     </ul>
+   *     <ul>
+   *       <li>`product_detail`: Predicts the next product that a user will most likely engage with
+   *           or purchase. The prediction is based on the shopping or viewing history of the
+   *           specified `userId` or `visitorId` and its relevance to a specified `CatalogItem`.
+   *           Typically used on product detail pages. For example - More items like this.
+   *     </ul>
+   *     <ul>
+   *       <li>`recently_viewed_default`: Returns up to 75 items recently viewed by the specified
+   *           `userId` or `visitorId`, most recent ones first. Returns nothing if neither of them
+   *           has viewed any items yet. For example - Recently viewed.
+   *     </ul>
    *     <p>The full list of available placements can be seen at
    *     https://console.cloud.google.com/recommendation/datafeeds/default_catalog/dashboard
    * @param userEvent Required. Context about the user, what they are looking at and what action
@@ -211,43 +194,39 @@ public class PredictionServiceClient implements BackgroundResource {
     return predict(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes a recommendation prediction. If using API Key based authentication, the API Key must be
    * registered using the
    * [PredictionApiKeyRegistry][google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry]
    * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
-   *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   for (PredictResponse.PredictionResult element : predictionServiceClient.predict(name.toString(), userEvent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
    * @param name Required. Full resource name of the format:
    *     {name=projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}
    *     The id of the recommendation engine placement. This id is used to identify the set of
    *     models that will be used to make the prediction.
    *     <p>We currently support three placements with the following IDs by default:
-   *     <p>&#42; `shopping_cart`: Predicts items frequently bought together with one or more
-   *     catalog items in the same shopping session. Commonly displayed after `add-to-cart` events,
-   *     on product detail pages, or on the shopping cart page.
-   *     <p>&#42; `home_page`: Predicts the next product that a user will most likely engage with or
-   *     purchase based on the shopping or viewing history of the specified `userId` or `visitorId`.
-   *     For example - Recommendations for you.
-   *     <p>&#42; `product_detail`: Predicts the next product that a user will most likely engage
-   *     with or purchase. The prediction is based on the shopping or viewing history of the
-   *     specified `userId` or `visitorId` and its relevance to a specified `CatalogItem`. Typically
-   *     used on product detail pages. For example - More items like this.
-   *     <p>&#42; `recently_viewed_default`: Returns up to 75 items recently viewed by the specified
-   *     `userId` or `visitorId`, most recent ones first. Returns nothing if neither of them has
-   *     viewed any items yet. For example - Recently viewed.
+   *     <ul>
+   *       <li>`shopping_cart`: Predicts items frequently bought together with one or more catalog
+   *           items in the same shopping session. Commonly displayed after `add-to-cart` events, on
+   *           product detail pages, or on the shopping cart page.
+   *     </ul>
+   *     <ul>
+   *       <li>`home_page`: Predicts the next product that a user will most likely engage with or
+   *           purchase based on the shopping or viewing history of the specified `userId` or
+   *           `visitorId`. For example - Recommendations for you.
+   *     </ul>
+   *     <ul>
+   *       <li>`product_detail`: Predicts the next product that a user will most likely engage with
+   *           or purchase. The prediction is based on the shopping or viewing history of the
+   *           specified `userId` or `visitorId` and its relevance to a specified `CatalogItem`.
+   *           Typically used on product detail pages. For example - More items like this.
+   *     </ul>
+   *     <ul>
+   *       <li>`recently_viewed_default`: Returns up to 75 items recently viewed by the specified
+   *           `userId` or `visitorId`, most recent ones first. Returns nothing if neither of them
+   *           has viewed any items yet. For example - Recently viewed.
+   *     </ul>
    *     <p>The full list of available placements can be seen at
    *     https://console.cloud.google.com/recommendation/datafeeds/default_catalog/dashboard
    * @param userEvent Required. Context about the user, what they are looking at and what action
@@ -262,28 +241,12 @@ public class PredictionServiceClient implements BackgroundResource {
     return predict(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes a recommendation prediction. If using API Key based authentication, the API Key must be
    * registered using the
    * [PredictionApiKeyRegistry][google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry]
    * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
-   *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setUserEvent(userEvent)
-   *     .build();
-   *   for (PredictResponse.PredictionResult element : predictionServiceClient.predict(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -292,7 +255,7 @@ public class PredictionServiceClient implements BackgroundResource {
     return predictPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes a recommendation prediction. If using API Key based authentication, the API Key must be
    * registered using the
@@ -300,28 +263,12 @@ public class PredictionServiceClient implements BackgroundResource {
    * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
-   *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setUserEvent(userEvent)
-   *     .build();
-   *   ApiFuture&lt;PredictPagedResponse&gt; future = predictionServiceClient.predictPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (PredictResponse.PredictionResult element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<PredictRequest, PredictPagedResponse> predictPagedCallable() {
     return stub.predictPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes a recommendation prediction. If using API Key based authentication, the API Key must be
    * registered using the
@@ -329,29 +276,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
-   *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setUserEvent(userEvent)
-   *     .build();
-   *   while (true) {
-   *     PredictResponse response = predictionServiceClient.predictCallable().call(request);
-   *     for (PredictResponse.PredictionResult element : response.getResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return stub.predictCallable();

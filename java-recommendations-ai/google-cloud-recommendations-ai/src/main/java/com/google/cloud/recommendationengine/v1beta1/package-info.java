@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,27 +15,15 @@
  */
 
 /**
- * A client to Recommendations AI.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>==================== CatalogServiceClient ====================
+ * <p>======================= CatalogServiceClient =======================
  *
  * <p>Service Description: Service for ingesting catalog information of the customer's website.
  *
  * <p>Sample for CatalogServiceClient:
  *
- * <pre>
- * <code>
- * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
- *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
- *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
- *   CatalogItem response = catalogServiceClient.createCatalogItem(parent, catalogItem);
- * }
- * </code>
- * </pre>
- *
- * ============================== PredictionApiKeyRegistryClient ==============================
+ * <p>======================= PredictionApiKeyRegistryClient =======================
  *
  * <p>Service Description: Service for registering API keys for use with the `predict` method. If
  * you use an API key to request predictions, you must first register the API key. Otherwise, your
@@ -44,49 +32,19 @@
  *
  * <p>Sample for PredictionApiKeyRegistryClient:
  *
- * <pre>
- * <code>
- * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
- *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
- *   PredictionApiKeyRegistration predictionApiKeyRegistration = PredictionApiKeyRegistration.newBuilder().build();
- *   PredictionApiKeyRegistration response = predictionApiKeyRegistryClient.createPredictionApiKeyRegistration(parent, predictionApiKeyRegistration);
- * }
- * </code>
- * </pre>
- *
- * ======================= PredictionServiceClient =======================
+ * <p>======================= PredictionServiceClient =======================
  *
  * <p>Service Description: Service for making recommendation prediction.
  *
  * <p>Sample for PredictionServiceClient:
  *
- * <pre>
- * <code>
- * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   PlacementName name = PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
- *   UserEvent userEvent = UserEvent.newBuilder().build();
- *   PredictPagedResponse response = predictionServiceClient.predict(name, userEvent);
- * }
- * </code>
- * </pre>
- *
- * ====================== UserEventServiceClient ======================
+ * <p>======================= UserEventServiceClient =======================
  *
  * <p>Service Description: Service for ingesting end user actions on the customer website.
  *
  * <p>Sample for UserEventServiceClient:
- *
- * <pre>
- * <code>
- * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
- *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
- *   UserEvent userEvent = UserEvent.newBuilder().build();
- *   UserEvent response = userEventServiceClient.writeUserEvent(parent, userEvent);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.recommendationengine.v1beta1;
 
 import javax.annotation.Generated;

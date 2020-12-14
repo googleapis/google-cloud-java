@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1.stub;
 
 import static com.google.cloud.recommendationengine.v1beta1.CatalogServiceClient.ListCatalogItemsPagedResponse;
@@ -64,7 +65,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link CatalogServiceStub}.
  *
@@ -82,31 +83,28 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createCatalogItem to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CatalogServiceStubSettings.Builder catalogServiceSettingsBuilder =
  *     CatalogServiceStubSettings.newBuilder();
  * catalogServiceSettingsBuilder
  *     .createCatalogItemSettings()
  *     .setRetrySettings(
- *         catalogServiceSettingsBuilder.createCatalogItemSettings().getRetrySettings().toBuilder()
+ *         catalogServiceSettingsBuilder
+ *             .createCatalogItemSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CatalogServiceStubSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings;
-  private final OperationCallSettings<
-          ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-      importCatalogItemsOperationSettings;
   private final UnaryCallSettings<CreateCatalogItemRequest, CatalogItem> createCatalogItemSettings;
   private final UnaryCallSettings<GetCatalogItemRequest, CatalogItem> getCatalogItemSettings;
   private final PagedCallSettings<
@@ -114,19 +112,69 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       listCatalogItemsSettings;
   private final UnaryCallSettings<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemSettings;
   private final UnaryCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings;
-
-  /** Returns the object with the settings used for calls to importCatalogItems. */
-  public UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings() {
-    return importCatalogItemsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to importCatalogItems. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
+  private final UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings;
+  private final OperationCallSettings<
           ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-      importCatalogItemsOperationSettings() {
-    return importCatalogItemsOperationSettings;
-  }
+      importCatalogItemsOperationSettings;
+
+  private static final PagedListDescriptor<
+          ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem>
+      LIST_CATALOG_ITEMS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCatalogItemsRequest injectToken(
+                ListCatalogItemsRequest payload, String token) {
+              return ListCatalogItemsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCatalogItemsRequest injectPageSize(
+                ListCatalogItemsRequest payload, int pageSize) {
+              return ListCatalogItemsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCatalogItemsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCatalogItemsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CatalogItem> extractResources(ListCatalogItemsResponse payload) {
+              return payload.getCatalogItemsList() == null
+                  ? ImmutableList.<CatalogItem>of()
+                  : payload.getCatalogItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCatalogItemsRequest, ListCatalogItemsResponse, ListCatalogItemsPagedResponse>
+      LIST_CATALOG_ITEMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCatalogItemsRequest, ListCatalogItemsResponse, ListCatalogItemsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCatalogItemsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCatalogItemsRequest, ListCatalogItemsResponse> callable,
+                ListCatalogItemsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCatalogItemsResponse> futureResponse) {
+              PageContext<ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CATALOG_ITEMS_PAGE_STR_DESC, request, context);
+              return ListCatalogItemsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createCatalogItem. */
   public UnaryCallSettings<CreateCatalogItemRequest, CatalogItem> createCatalogItemSettings() {
@@ -155,16 +203,28 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     return deleteCatalogItemSettings;
   }
 
+  /** Returns the object with the settings used for calls to importCatalogItems. */
+  public UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings() {
+    return importCatalogItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importCatalogItems. */
+  public OperationCallSettings<
+          ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
+      importCatalogItemsOperationSettings() {
+    return importCatalogItemsOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CatalogServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcCatalogServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -224,84 +284,19 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   protected CatalogServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    importCatalogItemsSettings = settingsBuilder.importCatalogItemsSettings().build();
-    importCatalogItemsOperationSettings =
-        settingsBuilder.importCatalogItemsOperationSettings().build();
     createCatalogItemSettings = settingsBuilder.createCatalogItemSettings().build();
     getCatalogItemSettings = settingsBuilder.getCatalogItemSettings().build();
     listCatalogItemsSettings = settingsBuilder.listCatalogItemsSettings().build();
     updateCatalogItemSettings = settingsBuilder.updateCatalogItemSettings().build();
     deleteCatalogItemSettings = settingsBuilder.deleteCatalogItemSettings().build();
+    importCatalogItemsSettings = settingsBuilder.importCatalogItemsSettings().build();
+    importCatalogItemsOperationSettings =
+        settingsBuilder.importCatalogItemsOperationSettings().build();
   }
-
-  private static final PagedListDescriptor<
-          ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem>
-      LIST_CATALOG_ITEMS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListCatalogItemsRequest injectToken(
-                ListCatalogItemsRequest payload, String token) {
-              return ListCatalogItemsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListCatalogItemsRequest injectPageSize(
-                ListCatalogItemsRequest payload, int pageSize) {
-              return ListCatalogItemsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListCatalogItemsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListCatalogItemsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<CatalogItem> extractResources(ListCatalogItemsResponse payload) {
-              return payload.getCatalogItemsList() != null
-                  ? payload.getCatalogItemsList()
-                  : ImmutableList.<CatalogItem>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListCatalogItemsRequest, ListCatalogItemsResponse, ListCatalogItemsPagedResponse>
-      LIST_CATALOG_ITEMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListCatalogItemsRequest, ListCatalogItemsResponse, ListCatalogItemsPagedResponse>() {
-            @Override
-            public ApiFuture<ListCatalogItemsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListCatalogItemsRequest, ListCatalogItemsResponse> callable,
-                ListCatalogItemsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListCatalogItemsResponse> futureResponse) {
-              PageContext<ListCatalogItemsRequest, ListCatalogItemsResponse, CatalogItem>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_CATALOG_ITEMS_PAGE_STR_DESC, request, context);
-              return ListCatalogItemsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
 
   /** Builder for CatalogServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<CatalogServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
-        importCatalogItemsSettings;
-    private final OperationCallSettings.Builder<
-            ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-        importCatalogItemsOperationSettings;
     private final UnaryCallSettings.Builder<CreateCatalogItemRequest, CatalogItem>
         createCatalogItemSettings;
     private final UnaryCallSettings.Builder<GetCatalogItemRequest, CatalogItem>
@@ -313,7 +308,11 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
         updateCatalogItemSettings;
     private final UnaryCallSettings.Builder<DeleteCatalogItemRequest, Empty>
         deleteCatalogItemSettings;
-
+    private final UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
+        importCatalogItemsSettings;
+    private final OperationCallSettings.Builder<
+            ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
+        importCatalogItemsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -321,11 +320,10 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -344,92 +342,107 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      importCatalogItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      importCatalogItemsOperationSettings = OperationCallSettings.newBuilder();
-
       createCatalogItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getCatalogItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listCatalogItemsSettings = PagedCallSettings.newBuilder(LIST_CATALOG_ITEMS_PAGE_STR_FACT);
-
       updateCatalogItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteCatalogItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importCatalogItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importCatalogItemsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              importCatalogItemsSettings,
               createCatalogItemSettings,
               getCatalogItemSettings,
               listCatalogItemsSettings,
               updateCatalogItemSettings,
-              deleteCatalogItemSettings);
-
+              deleteCatalogItemSettings,
+              importCatalogItemsSettings);
       initDefaults(this);
     }
 
+    protected Builder(CatalogServiceStubSettings settings) {
+      super(settings);
+
+      createCatalogItemSettings = settings.createCatalogItemSettings.toBuilder();
+      getCatalogItemSettings = settings.getCatalogItemSettings.toBuilder();
+      listCatalogItemsSettings = settings.listCatalogItemsSettings.toBuilder();
+      updateCatalogItemSettings = settings.updateCatalogItemSettings.toBuilder();
+      deleteCatalogItemSettings = settings.deleteCatalogItemSettings.toBuilder();
+      importCatalogItemsSettings = settings.importCatalogItemsSettings.toBuilder();
+      importCatalogItemsOperationSettings =
+          settings.importCatalogItemsOperationSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createCatalogItemSettings,
+              getCatalogItemSettings,
+              listCatalogItemsSettings,
+              updateCatalogItemSettings,
+              deleteCatalogItemSettings,
+              importCatalogItemsSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
-      builder
-          .importCatalogItemsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
       builder
           .createCatalogItemSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getCatalogItemSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listCatalogItemsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateCatalogItemSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteCatalogItemSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .importCatalogItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       builder
           .importCatalogItemsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ImportCatalogItemsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
@@ -442,38 +455,16 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
                       .setInitialRetryDelay(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
                       .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
     }
 
-    protected Builder(CatalogServiceStubSettings settings) {
-      super(settings);
-
-      importCatalogItemsSettings = settings.importCatalogItemsSettings.toBuilder();
-      importCatalogItemsOperationSettings =
-          settings.importCatalogItemsOperationSettings.toBuilder();
-      createCatalogItemSettings = settings.createCatalogItemSettings.toBuilder();
-      getCatalogItemSettings = settings.getCatalogItemSettings.toBuilder();
-      listCatalogItemsSettings = settings.listCatalogItemsSettings.toBuilder();
-      updateCatalogItemSettings = settings.updateCatalogItemSettings.toBuilder();
-      deleteCatalogItemSettings = settings.deleteCatalogItemSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              importCatalogItemsSettings,
-              createCatalogItemSettings,
-              getCatalogItemSettings,
-              listCatalogItemsSettings,
-              updateCatalogItemSettings,
-              deleteCatalogItemSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -487,21 +478,6 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to importCatalogItems. */
-    public UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
-        importCatalogItemsSettings() {
-      return importCatalogItemsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to importCatalogItems. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-        importCatalogItemsOperationSettings() {
-      return importCatalogItemsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createCatalogItem. */
@@ -531,6 +507,21 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     /** Returns the builder for the settings used for calls to deleteCatalogItem. */
     public UnaryCallSettings.Builder<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
       return deleteCatalogItemSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importCatalogItems. */
+    public UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
+        importCatalogItemsSettings() {
+      return importCatalogItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importCatalogItems. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
+        importCatalogItemsOperationSettings() {
+      return importCatalogItemsOperationSettings;
     }
 
     @Override

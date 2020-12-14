@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1;
 
 import static com.google.cloud.recommendationengine.v1beta1.CatalogServiceClient.ListCatalogItemsPagedResponse;
@@ -31,13 +32,15 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.Status;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -45,42 +48,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class CatalogServiceClientTest {
   private static MockCatalogService mockCatalogService;
-  private static MockPredictionApiKeyRegistry mockPredictionApiKeyRegistry;
-  private static MockPredictionService mockPredictionService;
-  private static MockUserEventService mockUserEventService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private CatalogServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockCatalogService = new MockCatalogService();
-    mockPredictionApiKeyRegistry = new MockPredictionApiKeyRegistry();
-    mockPredictionService = new MockPredictionService();
-    mockUserEventService = new MockUserEventService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockCatalogService,
-                mockPredictionApiKeyRegistry,
-                mockPredictionService,
-                mockUserEventService));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockCatalogService));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     CatalogServiceSettings settings =
         CatalogServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -95,76 +87,17 @@ public class CatalogServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void importCatalogItemsTest() throws Exception {
-    ImportCatalogItemsResponse expectedResponse = ImportCatalogItemsResponse.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("importCatalogItemsTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockCatalogService.addResponse(resultOperation);
-
-    CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-    String requestId = "requestId37109963";
-    InputConfig inputConfig = InputConfig.newBuilder().build();
-    ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
-
-    ImportCatalogItemsResponse actualResponse =
-        client.importCatalogItemsAsync(parent, requestId, inputConfig, errorsConfig).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ImportCatalogItemsRequest actualRequest = (ImportCatalogItemsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, CatalogName.parse(actualRequest.getParent()));
-    Assert.assertEquals(requestId, actualRequest.getRequestId());
-    Assert.assertEquals(inputConfig, actualRequest.getInputConfig());
-    Assert.assertEquals(errorsConfig, actualRequest.getErrorsConfig());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void importCatalogItemsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCatalogService.addException(exception);
-
-    try {
-      CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
-      String requestId = "requestId37109963";
-      InputConfig inputConfig = InputConfig.newBuilder().build();
-      ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
-
-      client.importCatalogItemsAsync(parent, requestId, inputConfig, errorsConfig).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createCatalogItemTest() {
-    String id = "id3355";
-    String title = "title110371416";
-    String description = "description-1724546052";
-    String languageCode = "languageCode-412800396";
-    String itemGroupId = "itemGroupId894431879";
+  public void createCatalogItemTest() throws Exception {
     CatalogItem expectedResponse =
         CatalogItem.newBuilder()
-            .setId(id)
-            .setTitle(title)
-            .setDescription(description)
-            .setLanguageCode(languageCode)
-            .setItemGroupId(itemGroupId)
+            .setId("id3355")
+            .addAllCategoryHierarchies(new ArrayList<CatalogItem.CategoryHierarchy>())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setItemAttributes(FeatureMap.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .addAllTags(new ArrayList<String>())
+            .setItemGroupId("itemGroupId-240489113")
             .build();
     mockCatalogService.addResponse(expectedResponse);
 
@@ -176,9 +109,9 @@ public class CatalogServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateCatalogItemRequest actualRequest = (CreateCatalogItemRequest) actualRequests.get(0);
+    CreateCatalogItemRequest actualRequest = ((CreateCatalogItemRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, CatalogName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(catalogItem, actualRequest.getCatalogItem());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -187,37 +120,80 @@ public class CatalogServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createCatalogItemExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockCatalogService.addException(exception);
 
     try {
       CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
       CatalogItem catalogItem = CatalogItem.newBuilder().build();
-
       client.createCatalogItem(parent, catalogItem);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getCatalogItemTest() {
-    String id = "id3355";
-    String title = "title110371416";
-    String description = "description-1724546052";
-    String languageCode = "languageCode-412800396";
-    String itemGroupId = "itemGroupId894431879";
+  public void createCatalogItemTest2() throws Exception {
     CatalogItem expectedResponse =
         CatalogItem.newBuilder()
-            .setId(id)
-            .setTitle(title)
-            .setDescription(description)
-            .setLanguageCode(languageCode)
-            .setItemGroupId(itemGroupId)
+            .setId("id3355")
+            .addAllCategoryHierarchies(new ArrayList<CatalogItem.CategoryHierarchy>())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setItemAttributes(FeatureMap.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .addAllTags(new ArrayList<String>())
+            .setItemGroupId("itemGroupId-240489113")
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    CatalogItem catalogItem = CatalogItem.newBuilder().build();
+
+    CatalogItem actualResponse = client.createCatalogItem(parent, catalogItem);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCatalogItemRequest actualRequest = ((CreateCatalogItemRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(catalogItem, actualRequest.getCatalogItem());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCatalogItemExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      CatalogItem catalogItem = CatalogItem.newBuilder().build();
+      client.createCatalogItem(parent, catalogItem);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCatalogItemTest() throws Exception {
+    CatalogItem expectedResponse =
+        CatalogItem.newBuilder()
+            .setId("id3355")
+            .addAllCategoryHierarchies(new ArrayList<CatalogItem.CategoryHierarchy>())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setItemAttributes(FeatureMap.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .addAllTags(new ArrayList<String>())
+            .setItemGroupId("itemGroupId-240489113")
             .build();
     mockCatalogService.addResponse(expectedResponse);
 
@@ -229,9 +205,9 @@ public class CatalogServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetCatalogItemRequest actualRequest = (GetCatalogItemRequest) actualRequests.get(0);
+    GetCatalogItemRequest actualRequest = ((GetCatalogItemRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, CatalogItemPathName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -239,32 +215,72 @@ public class CatalogServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getCatalogItemExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockCatalogService.addException(exception);
 
     try {
       CatalogItemPathName name =
           CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-
       client.getCatalogItem(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listCatalogItemsTest() {
-    String nextPageToken = "";
-    CatalogItem catalogItemsElement = CatalogItem.newBuilder().build();
-    List<CatalogItem> catalogItems = Arrays.asList(catalogItemsElement);
+  public void getCatalogItemTest2() throws Exception {
+    CatalogItem expectedResponse =
+        CatalogItem.newBuilder()
+            .setId("id3355")
+            .addAllCategoryHierarchies(new ArrayList<CatalogItem.CategoryHierarchy>())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setItemAttributes(FeatureMap.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .addAllTags(new ArrayList<String>())
+            .setItemGroupId("itemGroupId-240489113")
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CatalogItem actualResponse = client.getCatalogItem(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCatalogItemRequest actualRequest = ((GetCatalogItemRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCatalogItemExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getCatalogItem(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCatalogItemsTest() throws Exception {
+    CatalogItem responsesElement = CatalogItem.newBuilder().build();
     ListCatalogItemsResponse expectedResponse =
         ListCatalogItemsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllCatalogItems(catalogItems)
+            .setNextPageToken("")
+            .addAllCatalogItems(Arrays.asList(responsesElement))
             .build();
     mockCatalogService.addResponse(expectedResponse);
 
@@ -274,14 +290,15 @@ public class CatalogServiceClientTest {
     ListCatalogItemsPagedResponse pagedListResponse = client.listCatalogItems(parent, filter);
 
     List<CatalogItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getCatalogItemsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListCatalogItemsRequest actualRequest = (ListCatalogItemsRequest) actualRequests.get(0);
+    ListCatalogItemsRequest actualRequest = ((ListCatalogItemsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, CatalogName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -290,37 +307,79 @@ public class CatalogServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listCatalogItemsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockCatalogService.addException(exception);
 
     try {
       CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
       String filter = "filter-1274492040";
-
       client.listCatalogItems(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateCatalogItemTest() {
-    String id = "id3355";
-    String title = "title110371416";
-    String description = "description-1724546052";
-    String languageCode = "languageCode-412800396";
-    String itemGroupId = "itemGroupId894431879";
+  public void listCatalogItemsTest2() throws Exception {
+    CatalogItem responsesElement = CatalogItem.newBuilder().build();
+    ListCatalogItemsResponse expectedResponse =
+        ListCatalogItemsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCatalogItems(Arrays.asList(responsesElement))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String filter = "filter-1274492040";
+
+    ListCatalogItemsPagedResponse pagedListResponse = client.listCatalogItems(parent, filter);
+
+    List<CatalogItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCatalogItemsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCatalogItemsRequest actualRequest = ((ListCatalogItemsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listCatalogItemsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String filter = "filter-1274492040";
+      client.listCatalogItems(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCatalogItemTest() throws Exception {
     CatalogItem expectedResponse =
         CatalogItem.newBuilder()
-            .setId(id)
-            .setTitle(title)
-            .setDescription(description)
-            .setLanguageCode(languageCode)
-            .setItemGroupId(itemGroupId)
+            .setId("id3355")
+            .addAllCategoryHierarchies(new ArrayList<CatalogItem.CategoryHierarchy>())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setItemAttributes(FeatureMap.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .addAllTags(new ArrayList<String>())
+            .setItemGroupId("itemGroupId-240489113")
             .build();
     mockCatalogService.addResponse(expectedResponse);
 
@@ -334,9 +393,9 @@ public class CatalogServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateCatalogItemRequest actualRequest = (UpdateCatalogItemRequest) actualRequests.get(0);
+    UpdateCatalogItemRequest actualRequest = ((UpdateCatalogItemRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, CatalogItemPathName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertEquals(catalogItem, actualRequest.getCatalogItem());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
@@ -346,9 +405,8 @@ public class CatalogServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateCatalogItemExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockCatalogService.addException(exception);
 
     try {
@@ -356,17 +414,66 @@ public class CatalogServiceClientTest {
           CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
       CatalogItem catalogItem = CatalogItem.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateCatalogItem(name, catalogItem, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteCatalogItemTest() {
+  public void updateCatalogItemTest2() throws Exception {
+    CatalogItem expectedResponse =
+        CatalogItem.newBuilder()
+            .setId("id3355")
+            .addAllCategoryHierarchies(new ArrayList<CatalogItem.CategoryHierarchy>())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setItemAttributes(FeatureMap.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .addAllTags(new ArrayList<String>())
+            .setItemGroupId("itemGroupId-240489113")
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    CatalogItem catalogItem = CatalogItem.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CatalogItem actualResponse = client.updateCatalogItem(name, catalogItem, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateCatalogItemRequest actualRequest = ((UpdateCatalogItemRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(catalogItem, actualRequest.getCatalogItem());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateCatalogItemExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      CatalogItem catalogItem = CatalogItem.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCatalogItem(name, catalogItem, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCatalogItemTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockCatalogService.addResponse(expectedResponse);
 
@@ -377,9 +484,9 @@ public class CatalogServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteCatalogItemRequest actualRequest = (DeleteCatalogItemRequest) actualRequests.get(0);
+    DeleteCatalogItemRequest actualRequest = ((DeleteCatalogItemRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, CatalogItemPathName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -387,19 +494,165 @@ public class CatalogServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteCatalogItemExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockCatalogService.addException(exception);
 
     try {
       CatalogItemPathName name =
           CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-
       client.deleteCatalogItem(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCatalogItemTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteCatalogItem(name);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCatalogItemRequest actualRequest = ((DeleteCatalogItemRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCatalogItemExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteCatalogItem(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void importCatalogItemsTest() throws Exception {
+    ImportCatalogItemsResponse expectedResponse =
+        ImportCatalogItemsResponse.newBuilder()
+            .addAllErrorSamples(new ArrayList<Status>())
+            .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importCatalogItemsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCatalogService.addResponse(resultOperation);
+
+    CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+    String requestId = "requestId693933066";
+    InputConfig inputConfig = InputConfig.newBuilder().build();
+    ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
+
+    ImportCatalogItemsResponse actualResponse =
+        client.importCatalogItemsAsync(parent, requestId, inputConfig, errorsConfig).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportCatalogItemsRequest actualRequest = ((ImportCatalogItemsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(requestId, actualRequest.getRequestId());
+    Assert.assertEquals(inputConfig, actualRequest.getInputConfig());
+    Assert.assertEquals(errorsConfig, actualRequest.getErrorsConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importCatalogItemsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+      String requestId = "requestId693933066";
+      InputConfig inputConfig = InputConfig.newBuilder().build();
+      ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
+      client.importCatalogItemsAsync(parent, requestId, inputConfig, errorsConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importCatalogItemsTest2() throws Exception {
+    ImportCatalogItemsResponse expectedResponse =
+        ImportCatalogItemsResponse.newBuilder()
+            .addAllErrorSamples(new ArrayList<Status>())
+            .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importCatalogItemsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCatalogService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    String requestId = "requestId693933066";
+    InputConfig inputConfig = InputConfig.newBuilder().build();
+    ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
+
+    ImportCatalogItemsResponse actualResponse =
+        client.importCatalogItemsAsync(parent, requestId, inputConfig, errorsConfig).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportCatalogItemsRequest actualRequest = ((ImportCatalogItemsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(requestId, actualRequest.getRequestId());
+    Assert.assertEquals(inputConfig, actualRequest.getInputConfig());
+    Assert.assertEquals(errorsConfig, actualRequest.getErrorsConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importCatalogItemsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String requestId = "requestId693933066";
+      InputConfig inputConfig = InputConfig.newBuilder().build();
+      ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
+      client.importCatalogItemsAsync(parent, requestId, inputConfig, errorsConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

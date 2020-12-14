@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1.stub;
 
 import static com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistryClient.ListPredictionApiKeyRegistrationsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -31,6 +31,7 @@ import com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistr
 import com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsResponse;
 import com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -39,16 +40,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Recommendations AI.
+ * gRPC stub implementation for the PredictionApiKeyRegistry service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistryStub {
-
   private static final MethodDescriptor<
           CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
       createPredictionApiKeyRegistrationMethodDescriptor =
@@ -63,6 +62,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PredictionApiKeyRegistration.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse>
       listPredictionApiKeyRegistrationsMethodDescriptor =
@@ -79,6 +79,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                   ProtoUtils.marshaller(
                       ListPredictionApiKeyRegistrationsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeletePredictionApiKeyRegistrationRequest, Empty>
       deletePredictionApiKeyRegistrationMethodDescriptor =
           MethodDescriptor.<DeletePredictionApiKeyRegistrationRequest, Empty>newBuilder()
@@ -90,8 +91,6 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                       DeletePredictionApiKeyRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<
           CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
@@ -105,6 +104,8 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
   private final UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
       deletePredictionApiKeyRegistrationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcPredictionApiKeyRegistryStub create(
@@ -146,6 +147,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
         createPredictionApiKeyRegistrationTransportSettings =
@@ -220,7 +222,12 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
             settings.deletePredictionApiKeyRegistrationSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
@@ -229,15 +236,15 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
   }
 
   public UnaryCallable<
-          ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsPagedResponse>
-      listPredictionApiKeyRegistrationsPagedCallable() {
-    return listPredictionApiKeyRegistrationsPagedCallable;
-  }
-
-  public UnaryCallable<
           ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse>
       listPredictionApiKeyRegistrationsCallable() {
     return listPredictionApiKeyRegistrationsCallable;
+  }
+
+  public UnaryCallable<
+          ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsPagedResponse>
+      listPredictionApiKeyRegistrationsPagedCallable() {
+    return listPredictionApiKeyRegistrationsPagedCallable;
   }
 
   public UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>

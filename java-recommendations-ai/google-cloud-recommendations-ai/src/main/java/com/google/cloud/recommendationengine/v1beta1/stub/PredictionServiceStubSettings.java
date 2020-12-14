@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1.stub;
 
 import static com.google.cloud.recommendationengine.v1beta1.PredictionServiceClient.PredictPagedResponse;
@@ -50,7 +51,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link PredictionServiceStub}.
  *
@@ -68,22 +69,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of predict to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionServiceStubSettings.Builder predictionServiceSettingsBuilder =
  *     PredictionServiceStubSettings.newBuilder();
  * predictionServiceSettingsBuilder
  *     .predictSettings()
  *     .setRetrySettings(
- *         predictionServiceSettingsBuilder.predictSettings().getRetrySettings().toBuilder()
+ *         predictionServiceSettingsBuilder
+ *             .predictSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * PredictionServiceStubSettings predictionServiceSettings = predictionServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * PredictionServiceStubSettings predictionServiceSettings =
+ *     predictionServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class PredictionServiceStubSettings extends StubSettings<PredictionServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -91,6 +94,62 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
   private final PagedCallSettings<PredictRequest, PredictResponse, PredictPagedResponse>
       predictSettings;
+
+  private static final PagedListDescriptor<
+          PredictRequest, PredictResponse, PredictResponse.PredictionResult>
+      PREDICT_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              PredictRequest, PredictResponse, PredictResponse.PredictionResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public PredictRequest injectToken(PredictRequest payload, String token) {
+              return PredictRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public PredictRequest injectPageSize(PredictRequest payload, int pageSize) {
+              return PredictRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(PredictRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(PredictResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PredictResponse.PredictionResult> extractResources(
+                PredictResponse payload) {
+              return payload.getResultsList() == null
+                  ? ImmutableList.<PredictResponse.PredictionResult>of()
+                  : payload.getResultsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          PredictRequest, PredictResponse, PredictPagedResponse>
+      PREDICT_PAGE_STR_FACT =
+          new PagedListResponseFactory<PredictRequest, PredictResponse, PredictPagedResponse>() {
+            @Override
+            public ApiFuture<PredictPagedResponse> getFuturePagedResponse(
+                UnaryCallable<PredictRequest, PredictResponse> callable,
+                PredictRequest request,
+                ApiCallContext context,
+                ApiFuture<PredictResponse> futureResponse) {
+              PageContext<PredictRequest, PredictResponse, PredictResponse.PredictionResult>
+                  pageContext =
+                      PageContext.create(callable, PREDICT_PAGE_STR_DESC, request, context);
+              return PredictPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to predict. */
   public PagedCallSettings<PredictRequest, PredictResponse, PredictPagedResponse>
@@ -104,10 +163,10 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcPredictionServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -170,69 +229,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     predictSettings = settingsBuilder.predictSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          PredictRequest, PredictResponse, PredictResponse.PredictionResult>
-      PREDICT_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              PredictRequest, PredictResponse, PredictResponse.PredictionResult>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public PredictRequest injectToken(PredictRequest payload, String token) {
-              return PredictRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public PredictRequest injectPageSize(PredictRequest payload, int pageSize) {
-              return PredictRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(PredictRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(PredictResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<PredictResponse.PredictionResult> extractResources(
-                PredictResponse payload) {
-              return payload.getResultsList() != null
-                  ? payload.getResultsList()
-                  : ImmutableList.<PredictResponse.PredictionResult>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          PredictRequest, PredictResponse, PredictPagedResponse>
-      PREDICT_PAGE_STR_FACT =
-          new PagedListResponseFactory<PredictRequest, PredictResponse, PredictPagedResponse>() {
-            @Override
-            public ApiFuture<PredictPagedResponse> getFuturePagedResponse(
-                UnaryCallable<PredictRequest, PredictResponse> callable,
-                PredictRequest request,
-                ApiCallContext context,
-                ApiFuture<PredictResponse> futureResponse) {
-              PageContext<PredictRequest, PredictResponse, PredictResponse.PredictionResult>
-                  pageContext =
-                      PageContext.create(callable, PREDICT_PAGE_STR_DESC, request, context);
-              return PredictPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for PredictionServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<PredictionServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<PredictRequest, PredictResponse, PredictPagedResponse>
         predictSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -240,11 +241,10 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -263,14 +263,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
@@ -280,27 +278,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(predictSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .predictSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(PredictionServiceStubSettings settings) {
@@ -312,7 +290,27 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(predictSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .predictSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

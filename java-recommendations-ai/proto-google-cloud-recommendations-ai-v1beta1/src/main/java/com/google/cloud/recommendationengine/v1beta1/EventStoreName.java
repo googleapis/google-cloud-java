@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class EventStoreName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_CATALOG_EVENT_STORE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/catalogs/{catalog}/eventStores/{event_store}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String catalog;
   private final String eventStore;
+
+  @Deprecated
+  protected EventStoreName() {
+    project = null;
+    location = null;
+    catalog = null;
+    eventStore = null;
+  }
+
+  private EventStoreName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    catalog = Preconditions.checkNotNull(builder.getCatalog());
+    eventStore = Preconditions.checkNotNull(builder.getEventStore());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class EventStoreName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private EventStoreName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    catalog = Preconditions.checkNotNull(builder.getCatalog());
-    eventStore = Preconditions.checkNotNull(builder.getEventStore());
   }
 
   public static EventStoreName of(
@@ -95,7 +102,7 @@ public class EventStoreName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_CATALOG_EVENT_STORE.validatedMatch(
             formattedString, "EventStoreName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -113,7 +120,7 @@ public class EventStoreName implements ResourceName {
   }
 
   public static List<String> toStringList(List<EventStoreName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (EventStoreName value : values) {
       if (value == null) {
         list.add("");
@@ -125,18 +132,27 @@ public class EventStoreName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_CATALOG_EVENT_STORE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("catalog", catalog);
-          fieldMapBuilder.put("eventStore", eventStore);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (catalog != null) {
+            fieldMapBuilder.put("catalog", catalog);
+          }
+          if (eventStore != null) {
+            fieldMapBuilder.put("event_store", eventStore);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -150,17 +166,50 @@ public class EventStoreName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_CATALOG_EVENT_STORE.instantiate(
         "project", project, "location", location, "catalog", catalog, "event_store", eventStore);
   }
 
-  /** Builder for EventStoreName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      EventStoreName that = ((EventStoreName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.catalog, that.catalog)
+          && Objects.equals(this.eventStore, that.eventStore);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(catalog);
+    h *= 1000003;
+    h ^= Objects.hashCode(eventStore);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/catalogs/{catalog}/eventStores/{event_store}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String catalog;
     private String eventStore;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -198,8 +247,6 @@ public class EventStoreName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(EventStoreName eventStoreName) {
       project = eventStoreName.project;
       location = eventStoreName.location;
@@ -210,34 +257,5 @@ public class EventStoreName implements ResourceName {
     public EventStoreName build() {
       return new EventStoreName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof EventStoreName) {
-      EventStoreName that = (EventStoreName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.catalog.equals(that.catalog))
-          && (this.eventStore.equals(that.eventStore));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= catalog.hashCode();
-    h *= 1000003;
-    h ^= eventStore.hashCode();
-    return h;
   }
 }

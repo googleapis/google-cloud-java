@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,22 +23,38 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class PlacementName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_CATALOG_EVENT_STORE_PLACEMENT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/catalogs/{catalog}/eventStores/{event_store}/placements/{placement}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String catalog;
   private final String eventStore;
   private final String placement;
+
+  @Deprecated
+  protected PlacementName() {
+    project = null;
+    location = null;
+    catalog = null;
+    eventStore = null;
+    placement = null;
+  }
+
+  private PlacementName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    catalog = Preconditions.checkNotNull(builder.getCatalog());
+    eventStore = Preconditions.checkNotNull(builder.getEventStore());
+    placement = Preconditions.checkNotNull(builder.getPlacement());
+  }
 
   public String getProject() {
     return project;
@@ -66,14 +82,6 @@ public class PlacementName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private PlacementName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    catalog = Preconditions.checkNotNull(builder.getCatalog());
-    eventStore = Preconditions.checkNotNull(builder.getEventStore());
-    placement = Preconditions.checkNotNull(builder.getPlacement());
   }
 
   public static PlacementName of(
@@ -104,7 +112,7 @@ public class PlacementName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_CATALOG_EVENT_STORE_PLACEMENT.validatedMatch(
             formattedString, "PlacementName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -123,7 +131,7 @@ public class PlacementName implements ResourceName {
   }
 
   public static List<String> toStringList(List<PlacementName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (PlacementName value : values) {
       if (value == null) {
         list.add("");
@@ -135,19 +143,30 @@ public class PlacementName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_CATALOG_EVENT_STORE_PLACEMENT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("catalog", catalog);
-          fieldMapBuilder.put("eventStore", eventStore);
-          fieldMapBuilder.put("placement", placement);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (catalog != null) {
+            fieldMapBuilder.put("catalog", catalog);
+          }
+          if (eventStore != null) {
+            fieldMapBuilder.put("event_store", eventStore);
+          }
+          if (placement != null) {
+            fieldMapBuilder.put("placement", placement);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -161,7 +180,7 @@ public class PlacementName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_CATALOG_EVENT_STORE_PLACEMENT.instantiate(
         "project",
         project,
         "location",
@@ -174,14 +193,50 @@ public class PlacementName implements ResourceName {
         placement);
   }
 
-  /** Builder for PlacementName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      PlacementName that = ((PlacementName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.catalog, that.catalog)
+          && Objects.equals(this.eventStore, that.eventStore)
+          && Objects.equals(this.placement, that.placement);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(catalog);
+    h *= 1000003;
+    h ^= Objects.hashCode(eventStore);
+    h *= 1000003;
+    h ^= Objects.hashCode(placement);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/catalogs/{catalog}/eventStores/{event_store}/placements/{placement}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String catalog;
     private String eventStore;
     private String placement;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -228,8 +283,6 @@ public class PlacementName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(PlacementName placementName) {
       project = placementName.project;
       location = placementName.location;
@@ -241,37 +294,5 @@ public class PlacementName implements ResourceName {
     public PlacementName build() {
       return new PlacementName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof PlacementName) {
-      PlacementName that = (PlacementName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.catalog.equals(that.catalog))
-          && (this.eventStore.equals(that.eventStore))
-          && (this.placement.equals(that.placement));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= catalog.hashCode();
-    h *= 1000003;
-    h ^= eventStore.hashCode();
-    h *= 1000003;
-    h ^= placement.hashCode();
-    return h;
   }
 }

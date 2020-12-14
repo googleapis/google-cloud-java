@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1;
 
 import static com.google.cloud.recommendationengine.v1beta1.CatalogServiceClient.ListCatalogItemsPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link CatalogServiceClient}.
  *
@@ -54,36 +55,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createCatalogItem to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CatalogServiceSettings.Builder catalogServiceSettingsBuilder =
  *     CatalogServiceSettings.newBuilder();
  * catalogServiceSettingsBuilder
  *     .createCatalogItemSettings()
  *     .setRetrySettings(
- *         catalogServiceSettingsBuilder.createCatalogItemSettings().getRetrySettings().toBuilder()
+ *         catalogServiceSettingsBuilder
+ *             .createCatalogItemSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CatalogServiceSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class CatalogServiceSettings extends ClientSettings<CatalogServiceSettings> {
-  /** Returns the object with the settings used for calls to importCatalogItems. */
-  public UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings() {
-    return ((CatalogServiceStubSettings) getStubSettings()).importCatalogItemsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to importCatalogItems. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-      importCatalogItemsOperationSettings() {
-    return ((CatalogServiceStubSettings) getStubSettings()).importCatalogItemsOperationSettings();
-  }
 
   /** Returns the object with the settings used for calls to createCatalogItem. */
   public UnaryCallSettings<CreateCatalogItemRequest, CatalogItem> createCatalogItemSettings() {
@@ -110,6 +98,18 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
   /** Returns the object with the settings used for calls to deleteCatalogItem. */
   public UnaryCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).deleteCatalogItemSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importCatalogItems. */
+  public UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).importCatalogItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importCatalogItems. */
+  public OperationCallSettings<
+          ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
+      importCatalogItemsOperationSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).importCatalogItemsOperationSettings();
   }
 
   public static final CatalogServiceSettings create(CatalogServiceStubSettings stub)
@@ -172,16 +172,13 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
 
   /** Builder for CatalogServiceSettings. */
   public static class Builder extends ClientSettings.Builder<CatalogServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(CatalogServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(CatalogServiceStubSettings.newBuilder());
     }
 
     protected Builder(CatalogServiceSettings settings) {
@@ -192,11 +189,15 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(CatalogServiceStubSettings.newBuilder());
+    }
+
     public CatalogServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((CatalogServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -207,21 +208,6 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
-    }
-
-    /** Returns the builder for the settings used for calls to importCatalogItems. */
-    public UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
-        importCatalogItemsSettings() {
-      return getStubSettingsBuilder().importCatalogItemsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to importCatalogItems. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
-        importCatalogItemsOperationSettings() {
-      return getStubSettingsBuilder().importCatalogItemsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createCatalogItem. */
@@ -251,6 +237,19 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     /** Returns the builder for the settings used for calls to deleteCatalogItem. */
     public UnaryCallSettings.Builder<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
       return getStubSettingsBuilder().deleteCatalogItemSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importCatalogItems. */
+    public UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
+        importCatalogItemsSettings() {
+      return getStubSettingsBuilder().importCatalogItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importCatalogItems. */
+    public OperationCallSettings.Builder<
+            ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
+        importCatalogItemsOperationSettings() {
+      return getStubSettingsBuilder().importCatalogItemsOperationSettings();
     }
 
     @Override

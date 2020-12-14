@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1;
 
 import com.google.api.HttpBody;
@@ -38,24 +39,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service for ingesting end user actions on the customer website.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
- *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
- *   UserEvent userEvent = UserEvent.newBuilder().build();
- *   UserEvent response = userEventServiceClient.writeUserEvent(parent, userEvent);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the userEventServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the UserEventServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -84,30 +75,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * UserEventServiceSettings userEventServiceSettings =
  *     UserEventServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * UserEventServiceClient userEventServiceClient =
  *     UserEventServiceClient.create(userEventServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * UserEventServiceSettings userEventServiceSettings =
  *     UserEventServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * UserEventServiceClient userEventServiceClient =
  *     UserEventServiceClient.create(userEventServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class UserEventServiceClient implements BackgroundResource {
   private final UserEventServiceSettings settings;
   private final UserEventServiceStub stub;
@@ -129,7 +118,7 @@ public class UserEventServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of UserEventServiceClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use UserEventServiceSettings}.
+   * is for advanced usage - prefer using create(UserEventServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final UserEventServiceClient create(UserEventServiceStub stub) {
@@ -167,391 +156,13 @@ public class UserEventServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes permanently all user events specified by the filter provided. Depending on the number
-   * of events specified by the filter, this operation could take hours or days to complete. To test
-   * a filter, use the list command first.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String filter = "";
-   *   boolean force = false;
-   *   PurgeUserEventsResponse response = userEventServiceClient.purgeUserEventsAsync(parent, filter, force).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the event_store under which the events are
-   *     created. The format is
-   *     "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
-   * @param filter Required. The filter string to specify the events to be deleted. Empty string
-   *     filter is not allowed. This filter can also be used with ListUserEvents API to list events
-   *     that will be deleted. The eligible fields for filtering are: &#42; eventType -
-   *     UserEvent.eventType field of type string. &#42; eventTime - in ISO 8601 "zulu" format.
-   *     &#42; visitorId - field of type string. Specifying this will delete all events associated
-   *     with a visitor. &#42; userId - field of type string. Specifying this will delete all events
-   *     associated with a user. Example 1: Deleting all events in a time range. `eventTime &gt;
-   *     "2012-04-23T18:25:43.511Z" eventTime &lt; "2012-04-23T18:30:43.511Z"` Example 2: Deleting
-   *     specific eventType in time range. `eventTime &gt; "2012-04-23T18:25:43.511Z" eventType =
-   *     "detail-page-view"` Example 3: Deleting all events for a specific visitor `visitorId =
-   *     visitor1024` The filtering fields are assumed to have an implicit AND.
-   * @param force Optional. The default value is false. Override this flag to true to actually
-   *     perform the purge. If the field is not set to true, a sampling of events to be deleted will
-   *     be returned.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<PurgeUserEventsResponse, PurgeUserEventsMetadata>
-      purgeUserEventsAsync(EventStoreName parent, String filter, boolean force) {
-    PurgeUserEventsRequest request =
-        PurgeUserEventsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setFilter(filter)
-            .setForce(force)
-            .build();
-    return purgeUserEventsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes permanently all user events specified by the filter provided. Depending on the number
-   * of events specified by the filter, this operation could take hours or days to complete. To test
-   * a filter, use the list command first.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String filter = "";
-   *   boolean force = false;
-   *   PurgeUserEventsResponse response = userEventServiceClient.purgeUserEventsAsync(parent.toString(), filter, force).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the event_store under which the events are
-   *     created. The format is
-   *     "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
-   * @param filter Required. The filter string to specify the events to be deleted. Empty string
-   *     filter is not allowed. This filter can also be used with ListUserEvents API to list events
-   *     that will be deleted. The eligible fields for filtering are: &#42; eventType -
-   *     UserEvent.eventType field of type string. &#42; eventTime - in ISO 8601 "zulu" format.
-   *     &#42; visitorId - field of type string. Specifying this will delete all events associated
-   *     with a visitor. &#42; userId - field of type string. Specifying this will delete all events
-   *     associated with a user. Example 1: Deleting all events in a time range. `eventTime &gt;
-   *     "2012-04-23T18:25:43.511Z" eventTime &lt; "2012-04-23T18:30:43.511Z"` Example 2: Deleting
-   *     specific eventType in time range. `eventTime &gt; "2012-04-23T18:25:43.511Z" eventType =
-   *     "detail-page-view"` Example 3: Deleting all events for a specific visitor `visitorId =
-   *     visitor1024` The filtering fields are assumed to have an implicit AND.
-   * @param force Optional. The default value is false. Override this flag to true to actually
-   *     perform the purge. If the field is not set to true, a sampling of events to be deleted will
-   *     be returned.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<PurgeUserEventsResponse, PurgeUserEventsMetadata>
-      purgeUserEventsAsync(String parent, String filter, boolean force) {
-    PurgeUserEventsRequest request =
-        PurgeUserEventsRequest.newBuilder()
-            .setParent(parent)
-            .setFilter(filter)
-            .setForce(force)
-            .build();
-    return purgeUserEventsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes permanently all user events specified by the filter provided. Depending on the number
-   * of events specified by the filter, this operation could take hours or days to complete. To test
-   * a filter, use the list command first.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String filter = "";
-   *   PurgeUserEventsRequest request = PurgeUserEventsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setFilter(filter)
-   *     .build();
-   *   PurgeUserEventsResponse response = userEventServiceClient.purgeUserEventsAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<PurgeUserEventsResponse, PurgeUserEventsMetadata>
-      purgeUserEventsAsync(PurgeUserEventsRequest request) {
-    return purgeUserEventsOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes permanently all user events specified by the filter provided. Depending on the number
-   * of events specified by the filter, this operation could take hours or days to complete. To test
-   * a filter, use the list command first.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String filter = "";
-   *   PurgeUserEventsRequest request = PurgeUserEventsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setFilter(filter)
-   *     .build();
-   *   OperationFuture&lt;PurgeUserEventsResponse, PurgeUserEventsMetadata&gt; future = userEventServiceClient.purgeUserEventsOperationCallable().futureCall(request);
-   *   // Do something
-   *   PurgeUserEventsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<
-          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
-      purgeUserEventsOperationCallable() {
-    return stub.purgeUserEventsOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes permanently all user events specified by the filter provided. Depending on the number
-   * of events specified by the filter, this operation could take hours or days to complete. To test
-   * a filter, use the list command first.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String filter = "";
-   *   PurgeUserEventsRequest request = PurgeUserEventsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setFilter(filter)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = userEventServiceClient.purgeUserEventsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable() {
-    return stub.purgeUserEventsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Bulk import of User events. Request processing might be synchronous. Events that already exist
-   * are skipped. Use this method for backfilling historical user events.
-   *
-   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
-   * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String requestId = "";
-   *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
-   *   ImportUserEventsResponse response = userEventServiceClient.importUserEventsAsync(parent, requestId, inputConfig, errorsConfig).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required.
-   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
-   * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
-   *     scope. Ensures idempotency for expensive long running operations. Server-generated if
-   *     unspecified. Up to 128 characters long. This is returned as
-   *     google.longrunning.Operation.name in the response. Note that this field must not be set if
-   *     the desired input config is catalog_inline_source.
-   * @param inputConfig Required. The desired input location of the data.
-   * @param errorsConfig Optional. The desired location of errors incurred during the Import.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportUserEventsResponse, ImportMetadata> importUserEventsAsync(
-      EventStoreName parent,
-      String requestId,
-      InputConfig inputConfig,
-      ImportErrorsConfig errorsConfig) {
-    ImportUserEventsRequest request =
-        ImportUserEventsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setRequestId(requestId)
-            .setInputConfig(inputConfig)
-            .setErrorsConfig(errorsConfig)
-            .build();
-    return importUserEventsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Bulk import of User events. Request processing might be synchronous. Events that already exist
-   * are skipped. Use this method for backfilling historical user events.
-   *
-   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
-   * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String requestId = "";
-   *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
-   *   ImportUserEventsResponse response = userEventServiceClient.importUserEventsAsync(parent.toString(), requestId, inputConfig, errorsConfig).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required.
-   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
-   * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
-   *     scope. Ensures idempotency for expensive long running operations. Server-generated if
-   *     unspecified. Up to 128 characters long. This is returned as
-   *     google.longrunning.Operation.name in the response. Note that this field must not be set if
-   *     the desired input config is catalog_inline_source.
-   * @param inputConfig Required. The desired input location of the data.
-   * @param errorsConfig Optional. The desired location of errors incurred during the Import.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportUserEventsResponse, ImportMetadata> importUserEventsAsync(
-      String parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig) {
-    ImportUserEventsRequest request =
-        ImportUserEventsRequest.newBuilder()
-            .setParent(parent)
-            .setRequestId(requestId)
-            .setInputConfig(inputConfig)
-            .setErrorsConfig(errorsConfig)
-            .build();
-    return importUserEventsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Bulk import of User events. Request processing might be synchronous. Events that already exist
-   * are skipped. Use this method for backfilling historical user events.
-   *
-   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
-   * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportUserEventsRequest request = ImportUserEventsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
-   *     .build();
-   *   ImportUserEventsResponse response = userEventServiceClient.importUserEventsAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportUserEventsResponse, ImportMetadata> importUserEventsAsync(
-      ImportUserEventsRequest request) {
-    return importUserEventsOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Bulk import of User events. Request processing might be synchronous. Events that already exist
-   * are skipped. Use this method for backfilling historical user events.
-   *
-   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
-   * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportUserEventsRequest request = ImportUserEventsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
-   *     .build();
-   *   OperationFuture&lt;ImportUserEventsResponse, ImportMetadata&gt; future = userEventServiceClient.importUserEventsOperationCallable().futureCall(request);
-   *   // Do something
-   *   ImportUserEventsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
-      importUserEventsOperationCallable() {
-    return stub.importUserEventsOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Bulk import of User events. Request processing might be synchronous. Events that already exist
-   * are skipped. Use this method for backfilling historical user events.
-   *
-   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
-   * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   ImportUserEventsRequest request = ImportUserEventsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = userEventServiceClient.importUserEventsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable() {
-    return stub.importUserEventsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Writes a single user event.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   UserEvent response = userEventServiceClient.writeUserEvent(parent, userEvent);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent eventStore resource name, such as
    *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
@@ -567,19 +178,9 @@ public class UserEventServiceClient implements BackgroundResource {
     return writeUserEvent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Writes a single user event.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   UserEvent response = userEventServiceClient.writeUserEvent(parent.toString(), userEvent);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent eventStore resource name, such as
    *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
@@ -592,23 +193,9 @@ public class UserEventServiceClient implements BackgroundResource {
     return writeUserEvent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Writes a single user event.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   WriteUserEventRequest request = WriteUserEventRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setUserEvent(userEvent)
-   *     .build();
-   *   UserEvent response = userEventServiceClient.writeUserEvent(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -617,49 +204,23 @@ public class UserEventServiceClient implements BackgroundResource {
     return writeUserEventCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Writes a single user event.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   UserEvent userEvent = UserEvent.newBuilder().build();
-   *   WriteUserEventRequest request = WriteUserEventRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setUserEvent(userEvent)
-   *     .build();
-   *   ApiFuture&lt;UserEvent&gt; future = userEventServiceClient.writeUserEventCallable().futureCall(request);
-   *   // Do something
-   *   UserEvent response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable() {
     return stub.writeUserEventCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Writes a single user event from the browser. This uses a GET request to due to browser
    * restriction of POST-ing to a 3rd party domain.
    *
    * <p>This method is used only by the Recommendations AI JavaScript pixel. Users should not call
    * this method directly.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String userEvent = "";
-   *   String uri = "";
-   *   long ets = 0L;
-   *   HttpBody response = userEventServiceClient.collectUserEvent(parent, userEvent, uri, ets);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent eventStore name, such as
    *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
@@ -684,25 +245,13 @@ public class UserEventServiceClient implements BackgroundResource {
     return collectUserEvent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Writes a single user event from the browser. This uses a GET request to due to browser
    * restriction of POST-ing to a 3rd party domain.
    *
    * <p>This method is used only by the Recommendations AI JavaScript pixel. Users should not call
    * this method directly.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String userEvent = "";
-   *   String uri = "";
-   *   long ets = 0L;
-   *   HttpBody response = userEventServiceClient.collectUserEvent(parent.toString(), userEvent, uri, ets);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent eventStore name, such as
    *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
@@ -726,27 +275,13 @@ public class UserEventServiceClient implements BackgroundResource {
     return collectUserEvent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Writes a single user event from the browser. This uses a GET request to due to browser
    * restriction of POST-ing to a 3rd party domain.
    *
    * <p>This method is used only by the Recommendations AI JavaScript pixel. Users should not call
    * this method directly.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String userEvent = "";
-   *   CollectUserEventRequest request = CollectUserEventRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setUserEvent(userEvent)
-   *     .build();
-   *   HttpBody response = userEventServiceClient.collectUserEvent(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -755,7 +290,7 @@ public class UserEventServiceClient implements BackgroundResource {
     return collectUserEventCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Writes a single user event from the browser. This uses a GET request to due to browser
    * restriction of POST-ing to a 3rd party domain.
@@ -764,40 +299,14 @@ public class UserEventServiceClient implements BackgroundResource {
    * this method directly.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String userEvent = "";
-   *   CollectUserEventRequest request = CollectUserEventRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setUserEvent(userEvent)
-   *     .build();
-   *   ApiFuture&lt;HttpBody&gt; future = userEventServiceClient.collectUserEventCallable().futureCall(request);
-   *   // Do something
-   *   HttpBody response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
     return stub.collectUserEventCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of user events within a time range, with potential filtering.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String filter = "";
-   *   for (UserEvent element : userEventServiceClient.listUserEvents(parent, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent eventStore resource name, such as
    *     "projects/&#42;/locations/&#42;/catalogs/default_catalog/eventStores/default_event_store".
@@ -832,21 +341,9 @@ public class UserEventServiceClient implements BackgroundResource {
     return listUserEvents(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of user events within a time range, with potential filtering.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   String filter = "";
-   *   for (UserEvent element : userEventServiceClient.listUserEvents(parent.toString(), filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent eventStore resource name, such as
    *     "projects/&#42;/locations/&#42;/catalogs/default_catalog/eventStores/default_event_store".
@@ -878,23 +375,9 @@ public class UserEventServiceClient implements BackgroundResource {
     return listUserEvents(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of user events within a time range, with potential filtering.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   ListUserEventsRequest request = ListUserEventsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (UserEvent element : userEventServiceClient.listUserEvents(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -903,61 +386,258 @@ public class UserEventServiceClient implements BackgroundResource {
     return listUserEventsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of user events within a time range, with potential filtering.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   ListUserEventsRequest request = ListUserEventsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListUserEventsPagedResponse&gt; future = userEventServiceClient.listUserEventsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (UserEvent element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListUserEventsRequest, ListUserEventsPagedResponse>
       listUserEventsPagedCallable() {
     return stub.listUserEventsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of user events within a time range, with potential filtering.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
-   *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
-   *   ListUserEventsRequest request = ListUserEventsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListUserEventsResponse response = userEventServiceClient.listUserEventsCallable().call(request);
-   *     for (UserEvent element : response.getUserEventsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListUserEventsRequest, ListUserEventsResponse>
       listUserEventsCallable() {
     return stub.listUserEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes permanently all user events specified by the filter provided. Depending on the number
+   * of events specified by the filter, this operation could take hours or days to complete. To test
+   * a filter, use the list command first.
+   *
+   * @param parent Required. The resource name of the event_store under which the events are
+   *     created. The format is
+   *     "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+   * @param filter Required. The filter string to specify the events to be deleted. Empty string
+   *     filter is not allowed. This filter can also be used with ListUserEvents API to list events
+   *     that will be deleted. The eligible fields for filtering are:
+   *     <ul>
+   *       <li>eventType - UserEvent.eventType field of type string.
+   *       <li>eventTime - in ISO 8601 "zulu" format.
+   *       <li>visitorId - field of type string. Specifying this will delete all events associated
+   *           with a visitor.
+   *       <li>userId - field of type string. Specifying this will delete all events associated with
+   *           a user. Example 1: Deleting all events in a time range. `eventTime &gt;
+   *           "2012-04-23T18:25:43.511Z" eventTime &lt; "2012-04-23T18:30:43.511Z"` Example 2:
+   *           Deleting specific eventType in time range. `eventTime &gt; "2012-04-23T18:25:43.511Z"
+   *           eventType = "detail-page-view"` Example 3: Deleting all events for a specific visitor
+   *           `visitorId = visitor1024` The filtering fields are assumed to have an implicit AND.
+   *     </ul>
+   *
+   * @param force Optional. The default value is false. Override this flag to true to actually
+   *     perform the purge. If the field is not set to true, a sampling of events to be deleted will
+   *     be returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsAsync(EventStoreName parent, String filter, boolean force) {
+    PurgeUserEventsRequest request =
+        PurgeUserEventsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .setForce(force)
+            .build();
+    return purgeUserEventsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes permanently all user events specified by the filter provided. Depending on the number
+   * of events specified by the filter, this operation could take hours or days to complete. To test
+   * a filter, use the list command first.
+   *
+   * @param parent Required. The resource name of the event_store under which the events are
+   *     created. The format is
+   *     "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+   * @param filter Required. The filter string to specify the events to be deleted. Empty string
+   *     filter is not allowed. This filter can also be used with ListUserEvents API to list events
+   *     that will be deleted. The eligible fields for filtering are:
+   *     <ul>
+   *       <li>eventType - UserEvent.eventType field of type string.
+   *       <li>eventTime - in ISO 8601 "zulu" format.
+   *       <li>visitorId - field of type string. Specifying this will delete all events associated
+   *           with a visitor.
+   *       <li>userId - field of type string. Specifying this will delete all events associated with
+   *           a user. Example 1: Deleting all events in a time range. `eventTime &gt;
+   *           "2012-04-23T18:25:43.511Z" eventTime &lt; "2012-04-23T18:30:43.511Z"` Example 2:
+   *           Deleting specific eventType in time range. `eventTime &gt; "2012-04-23T18:25:43.511Z"
+   *           eventType = "detail-page-view"` Example 3: Deleting all events for a specific visitor
+   *           `visitorId = visitor1024` The filtering fields are assumed to have an implicit AND.
+   *     </ul>
+   *
+   * @param force Optional. The default value is false. Override this flag to true to actually
+   *     perform the purge. If the field is not set to true, a sampling of events to be deleted will
+   *     be returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsAsync(String parent, String filter, boolean force) {
+    PurgeUserEventsRequest request =
+        PurgeUserEventsRequest.newBuilder()
+            .setParent(parent)
+            .setFilter(filter)
+            .setForce(force)
+            .build();
+    return purgeUserEventsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes permanently all user events specified by the filter provided. Depending on the number
+   * of events specified by the filter, this operation could take hours or days to complete. To test
+   * a filter, use the list command first.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsAsync(PurgeUserEventsRequest request) {
+    return purgeUserEventsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes permanently all user events specified by the filter provided. Depending on the number
+   * of events specified by the filter, this operation could take hours or days to complete. To test
+   * a filter, use the list command first.
+   *
+   * <p>Sample code:
+   */
+  public final OperationCallable<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationCallable() {
+    return stub.purgeUserEventsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes permanently all user events specified by the filter provided. Depending on the number
+   * of events specified by the filter, this operation could take hours or days to complete. To test
+   * a filter, use the list command first.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable() {
+    return stub.purgeUserEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk import of User events. Request processing might be synchronous. Events that already exist
+   * are skipped. Use this method for backfilling historical user events.
+   *
+   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
+   * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
+   *
+   * @param parent Required.
+   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
+   *     scope. Ensures idempotency for expensive long running operations. Server-generated if
+   *     unspecified. Up to 128 characters long. This is returned as
+   *     google.longrunning.Operation.name in the response. Note that this field must not be set if
+   *     the desired input config is catalog_inline_source.
+   * @param inputConfig Required. The desired input location of the data.
+   * @param errorsConfig Optional. The desired location of errors incurred during the Import.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportUserEventsResponse, ImportMetadata> importUserEventsAsync(
+      EventStoreName parent,
+      String requestId,
+      InputConfig inputConfig,
+      ImportErrorsConfig errorsConfig) {
+    ImportUserEventsRequest request =
+        ImportUserEventsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRequestId(requestId)
+            .setInputConfig(inputConfig)
+            .setErrorsConfig(errorsConfig)
+            .build();
+    return importUserEventsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk import of User events. Request processing might be synchronous. Events that already exist
+   * are skipped. Use this method for backfilling historical user events.
+   *
+   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
+   * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
+   *
+   * @param parent Required.
+   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
+   *     scope. Ensures idempotency for expensive long running operations. Server-generated if
+   *     unspecified. Up to 128 characters long. This is returned as
+   *     google.longrunning.Operation.name in the response. Note that this field must not be set if
+   *     the desired input config is catalog_inline_source.
+   * @param inputConfig Required. The desired input location of the data.
+   * @param errorsConfig Optional. The desired location of errors incurred during the Import.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportUserEventsResponse, ImportMetadata> importUserEventsAsync(
+      String parent, String requestId, InputConfig inputConfig, ImportErrorsConfig errorsConfig) {
+    ImportUserEventsRequest request =
+        ImportUserEventsRequest.newBuilder()
+            .setParent(parent)
+            .setRequestId(requestId)
+            .setInputConfig(inputConfig)
+            .setErrorsConfig(errorsConfig)
+            .build();
+    return importUserEventsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk import of User events. Request processing might be synchronous. Events that already exist
+   * are skipped. Use this method for backfilling historical user events.
+   *
+   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
+   * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportUserEventsResponse, ImportMetadata> importUserEventsAsync(
+      ImportUserEventsRequest request) {
+    return importUserEventsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk import of User events. Request processing might be synchronous. Events that already exist
+   * are skipped. Use this method for backfilling historical user events.
+   *
+   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
+   * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
+   *
+   * <p>Sample code:
+   */
+  public final OperationCallable<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
+      importUserEventsOperationCallable() {
+    return stub.importUserEventsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bulk import of User events. Request processing might be synchronous. Events that already exist
+   * are skipped. Use this method for backfilling historical user events.
+   *
+   * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
+   * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable() {
+    return stub.importUserEventsCallable();
   }
 
   @Override

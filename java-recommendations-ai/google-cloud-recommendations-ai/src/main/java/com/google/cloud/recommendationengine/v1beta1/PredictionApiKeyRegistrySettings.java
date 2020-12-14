@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1;
 
 import static com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistryClient.ListPredictionApiKeyRegistrationsPagedResponse;
@@ -34,7 +35,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link PredictionApiKeyRegistryClient}.
  *
@@ -52,24 +53,26 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createPredictionApiKeyRegistration to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionApiKeyRegistrySettings.Builder predictionApiKeyRegistrySettingsBuilder =
  *     PredictionApiKeyRegistrySettings.newBuilder();
  * predictionApiKeyRegistrySettingsBuilder
  *     .createPredictionApiKeyRegistrationSettings()
  *     .setRetrySettings(
- *         predictionApiKeyRegistrySettingsBuilder.createPredictionApiKeyRegistrationSettings().getRetrySettings().toBuilder()
+ *         predictionApiKeyRegistrySettingsBuilder
+ *             .createPredictionApiKeyRegistrationSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * PredictionApiKeyRegistrySettings predictionApiKeyRegistrySettings = predictionApiKeyRegistrySettingsBuilder.build();
- * </code>
- * </pre>
+ * PredictionApiKeyRegistrySettings predictionApiKeyRegistrySettings =
+ *     predictionApiKeyRegistrySettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class PredictionApiKeyRegistrySettings
     extends ClientSettings<PredictionApiKeyRegistrySettings> {
+
   /** Returns the object with the settings used for calls to createPredictionApiKeyRegistration. */
   public UnaryCallSettings<CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
       createPredictionApiKeyRegistrationSettings() {
@@ -155,16 +158,13 @@ public class PredictionApiKeyRegistrySettings
   /** Builder for PredictionApiKeyRegistrySettings. */
   public static class Builder
       extends ClientSettings.Builder<PredictionApiKeyRegistrySettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(PredictionApiKeyRegistryStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(PredictionApiKeyRegistryStubSettings.newBuilder());
     }
 
     protected Builder(PredictionApiKeyRegistrySettings settings) {
@@ -175,11 +175,15 @@ public class PredictionApiKeyRegistrySettings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(PredictionApiKeyRegistryStubSettings.newBuilder());
+    }
+
     public PredictionApiKeyRegistryStubSettings.Builder getStubSettingsBuilder() {
       return ((PredictionApiKeyRegistryStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommendationengine.v1beta1.stub;
 
 import static com.google.cloud.recommendationengine.v1beta1.UserEventServiceClient.ListUserEventsPagedResponse;
@@ -65,7 +66,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link UserEventServiceStub}.
  *
@@ -83,27 +84,33 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of writeUserEvent to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * UserEventServiceStubSettings.Builder userEventServiceSettingsBuilder =
  *     UserEventServiceStubSettings.newBuilder();
  * userEventServiceSettingsBuilder
  *     .writeUserEventSettings()
  *     .setRetrySettings(
- *         userEventServiceSettingsBuilder.writeUserEventSettings().getRetrySettings().toBuilder()
+ *         userEventServiceSettingsBuilder
+ *             .writeUserEventSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * UserEventServiceStubSettings userEventServiceSettings = userEventServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class UserEventServiceStubSettings extends StubSettings<UserEventServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings;
+  private final UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings;
+  private final PagedCallSettings<
+          ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
+      listUserEventsSettings;
   private final UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings;
   private final OperationCallSettings<
           PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
@@ -112,36 +119,60 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   private final OperationCallSettings<
           ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationSettings;
-  private final UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings;
-  private final UnaryCallSettings<CollectUserEventRequest, HttpBody> collectUserEventSettings;
-  private final PagedCallSettings<
+
+  private static final PagedListDescriptor<ListUserEventsRequest, ListUserEventsResponse, UserEvent>
+      LIST_USER_EVENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListUserEventsRequest, ListUserEventsResponse, UserEvent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUserEventsRequest injectToken(ListUserEventsRequest payload, String token) {
+              return ListUserEventsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUserEventsRequest injectPageSize(
+                ListUserEventsRequest payload, int pageSize) {
+              return ListUserEventsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUserEventsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUserEventsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UserEvent> extractResources(ListUserEventsResponse payload) {
+              return payload.getUserEventsList() == null
+                  ? ImmutableList.<UserEvent>of()
+                  : payload.getUserEventsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
-      listUserEventsSettings;
-
-  /** Returns the object with the settings used for calls to purgeUserEvents. */
-  public UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
-    return purgeUserEventsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to purgeUserEvents. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
-      purgeUserEventsOperationSettings() {
-    return purgeUserEventsOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to importUserEvents. */
-  public UnaryCallSettings<ImportUserEventsRequest, Operation> importUserEventsSettings() {
-    return importUserEventsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to importUserEvents. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
-      importUserEventsOperationSettings() {
-    return importUserEventsOperationSettings;
-  }
+      LIST_USER_EVENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>() {
+            @Override
+            public ApiFuture<ListUserEventsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUserEventsRequest, ListUserEventsResponse> callable,
+                ListUserEventsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUserEventsResponse> futureResponse) {
+              PageContext<ListUserEventsRequest, ListUserEventsResponse, UserEvent> pageContext =
+                  PageContext.create(callable, LIST_USER_EVENTS_PAGE_STR_DESC, request, context);
+              return ListUserEventsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to writeUserEvent. */
   public UnaryCallSettings<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
@@ -160,16 +191,39 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     return listUserEventsSettings;
   }
 
+  /** Returns the object with the settings used for calls to purgeUserEvents. */
+  public UnaryCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsSettings() {
+    return purgeUserEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeUserEvents. */
+  public OperationCallSettings<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationSettings() {
+    return purgeUserEventsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importUserEvents. */
+  public UnaryCallSettings<ImportUserEventsRequest, Operation> importUserEventsSettings() {
+    return importUserEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importUserEvents. */
+  public OperationCallSettings<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
+      importUserEventsOperationSettings() {
+    return importUserEventsOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public UserEventServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcUserEventServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -229,73 +283,25 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
   protected UserEventServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    writeUserEventSettings = settingsBuilder.writeUserEventSettings().build();
+    collectUserEventSettings = settingsBuilder.collectUserEventSettings().build();
+    listUserEventsSettings = settingsBuilder.listUserEventsSettings().build();
     purgeUserEventsSettings = settingsBuilder.purgeUserEventsSettings().build();
     purgeUserEventsOperationSettings = settingsBuilder.purgeUserEventsOperationSettings().build();
     importUserEventsSettings = settingsBuilder.importUserEventsSettings().build();
     importUserEventsOperationSettings = settingsBuilder.importUserEventsOperationSettings().build();
-    writeUserEventSettings = settingsBuilder.writeUserEventSettings().build();
-    collectUserEventSettings = settingsBuilder.collectUserEventSettings().build();
-    listUserEventsSettings = settingsBuilder.listUserEventsSettings().build();
   }
-
-  private static final PagedListDescriptor<ListUserEventsRequest, ListUserEventsResponse, UserEvent>
-      LIST_USER_EVENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListUserEventsRequest, ListUserEventsResponse, UserEvent>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListUserEventsRequest injectToken(ListUserEventsRequest payload, String token) {
-              return ListUserEventsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListUserEventsRequest injectPageSize(
-                ListUserEventsRequest payload, int pageSize) {
-              return ListUserEventsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListUserEventsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListUserEventsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<UserEvent> extractResources(ListUserEventsResponse payload) {
-              return payload.getUserEventsList() != null
-                  ? payload.getUserEventsList()
-                  : ImmutableList.<UserEvent>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
-      LIST_USER_EVENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>() {
-            @Override
-            public ApiFuture<ListUserEventsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListUserEventsRequest, ListUserEventsResponse> callable,
-                ListUserEventsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListUserEventsResponse> futureResponse) {
-              PageContext<ListUserEventsRequest, ListUserEventsResponse, UserEvent> pageContext =
-                  PageContext.create(callable, LIST_USER_EVENTS_PAGE_STR_DESC, request, context);
-              return ListUserEventsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
 
   /** Builder for UserEventServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<UserEventServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
+    private final UnaryCallSettings.Builder<WriteUserEventRequest, UserEvent>
+        writeUserEventSettings;
+    private final UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody>
+        collectUserEventSettings;
+    private final PagedCallSettings.Builder<
+            ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
+        listUserEventsSettings;
     private final UnaryCallSettings.Builder<PurgeUserEventsRequest, Operation>
         purgeUserEventsSettings;
     private final OperationCallSettings.Builder<
@@ -306,14 +312,6 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     private final OperationCallSettings.Builder<
             ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
         importUserEventsOperationSettings;
-    private final UnaryCallSettings.Builder<WriteUserEventRequest, UserEvent>
-        writeUserEventSettings;
-    private final UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody>
-        collectUserEventSettings;
-    private final PagedCallSettings.Builder<
-            ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
-        listUserEventsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -321,11 +319,10 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -344,86 +341,99 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      purgeUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      purgeUserEventsOperationSettings = OperationCallSettings.newBuilder();
-
-      importUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      importUserEventsOperationSettings = OperationCallSettings.newBuilder();
-
       writeUserEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       collectUserEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listUserEventsSettings = PagedCallSettings.newBuilder(LIST_USER_EVENTS_PAGE_STR_FACT);
+      purgeUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeUserEventsOperationSettings = OperationCallSettings.newBuilder();
+      importUserEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importUserEventsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              purgeUserEventsSettings,
-              importUserEventsSettings,
               writeUserEventSettings,
               collectUserEventSettings,
-              listUserEventsSettings);
-
+              listUserEventsSettings,
+              purgeUserEventsSettings,
+              importUserEventsSettings);
       initDefaults(this);
     }
 
+    protected Builder(UserEventServiceStubSettings settings) {
+      super(settings);
+
+      writeUserEventSettings = settings.writeUserEventSettings.toBuilder();
+      collectUserEventSettings = settings.collectUserEventSettings.toBuilder();
+      listUserEventsSettings = settings.listUserEventsSettings.toBuilder();
+      purgeUserEventsSettings = settings.purgeUserEventsSettings.toBuilder();
+      purgeUserEventsOperationSettings = settings.purgeUserEventsOperationSettings.toBuilder();
+      importUserEventsSettings = settings.importUserEventsSettings.toBuilder();
+      importUserEventsOperationSettings = settings.importUserEventsOperationSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              writeUserEventSettings,
+              collectUserEventSettings,
+              listUserEventsSettings,
+              purgeUserEventsSettings,
+              importUserEventsSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
-      builder
-          .purgeUserEventsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .importUserEventsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
       builder
           .writeUserEventSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .collectUserEventSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listUserEventsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .purgeUserEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .importUserEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       builder
           .purgeUserEventsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<PurgeUserEventsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(PurgeUserEventsResponse.class))
@@ -435,18 +445,19 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
                       .setInitialRetryDelay(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
                       .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
+
       builder
           .importUserEventsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ImportUserEventsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(ImportUserEventsResponse.class))
@@ -458,36 +469,16 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
                       .setInitialRetryDelay(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
                       .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
     }
 
-    protected Builder(UserEventServiceStubSettings settings) {
-      super(settings);
-
-      purgeUserEventsSettings = settings.purgeUserEventsSettings.toBuilder();
-      purgeUserEventsOperationSettings = settings.purgeUserEventsOperationSettings.toBuilder();
-      importUserEventsSettings = settings.importUserEventsSettings.toBuilder();
-      importUserEventsOperationSettings = settings.importUserEventsOperationSettings.toBuilder();
-      writeUserEventSettings = settings.writeUserEventSettings.toBuilder();
-      collectUserEventSettings = settings.collectUserEventSettings.toBuilder();
-      listUserEventsSettings = settings.listUserEventsSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              purgeUserEventsSettings,
-              importUserEventsSettings,
-              writeUserEventSettings,
-              collectUserEventSettings,
-              listUserEventsSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -501,6 +492,23 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to writeUserEvent. */
+    public UnaryCallSettings.Builder<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
+      return writeUserEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to collectUserEvent. */
+    public UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
+      return collectUserEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUserEvents. */
+    public PagedCallSettings.Builder<
+            ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
+        listUserEventsSettings() {
+      return listUserEventsSettings;
     }
 
     /** Returns the builder for the settings used for calls to purgeUserEvents. */
@@ -530,23 +538,6 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
             ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
         importUserEventsOperationSettings() {
       return importUserEventsOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to writeUserEvent. */
-    public UnaryCallSettings.Builder<WriteUserEventRequest, UserEvent> writeUserEventSettings() {
-      return writeUserEventSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to collectUserEvent. */
-    public UnaryCallSettings.Builder<CollectUserEventRequest, HttpBody> collectUserEventSettings() {
-      return collectUserEventSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listUserEvents. */
-    public PagedCallSettings.Builder<
-            ListUserEventsRequest, ListUserEventsResponse, ListUserEventsPagedResponse>
-        listUserEventsSettings() {
-      return listUserEventsSettings;
     }
 
     @Override
