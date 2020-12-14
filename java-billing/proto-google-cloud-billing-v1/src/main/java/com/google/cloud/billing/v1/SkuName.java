@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class SkuName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate SERVICE_SKU =
       PathTemplate.createWithoutUrlEncoding("services/{service}/skus/{sku}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String service;
   private final String sku;
+
+  @Deprecated
+  protected SkuName() {
+    service = null;
+    sku = null;
+  }
+
+  private SkuName(Builder builder) {
+    service = Preconditions.checkNotNull(builder.getService());
+    sku = Preconditions.checkNotNull(builder.getSku());
+  }
 
   public String getService() {
     return service;
@@ -52,11 +62,6 @@ public class SkuName implements ResourceName {
     return new Builder(this);
   }
 
-  private SkuName(Builder builder) {
-    service = Preconditions.checkNotNull(builder.getService());
-    sku = Preconditions.checkNotNull(builder.getSku());
-  }
-
   public static SkuName of(String service, String sku) {
     return newBuilder().setService(service).setSku(sku).build();
   }
@@ -70,7 +75,7 @@ public class SkuName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        SERVICE_SKU.validatedMatch(
             formattedString, "SkuName.parse: formattedString not in valid format");
     return of(matchMap.get("service"), matchMap.get("sku"));
   }
@@ -84,7 +89,7 @@ public class SkuName implements ResourceName {
   }
 
   public static List<String> toStringList(List<SkuName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (SkuName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class SkuName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return SERVICE_SKU.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("service", service);
-          fieldMapBuilder.put("sku", sku);
+          if (service != null) {
+            fieldMapBuilder.put("service", service);
+          }
+          if (sku != null) {
+            fieldMapBuilder.put("sku", sku);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,37 @@ public class SkuName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("service", service, "sku", sku);
+    return SERVICE_SKU.instantiate("service", service, "sku", sku);
   }
 
-  /** Builder for SkuName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      SkuName that = ((SkuName) o);
+      return Objects.equals(this.service, that.service) && Objects.equals(this.sku, that.sku);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(service);
+    h *= 1000003;
+    h ^= Objects.hashCode(sku);
+    return h;
+  }
+
+  /** Builder for services/{service}/skus/{sku}. */
+  public static class Builder {
     private String service;
     private String sku;
+
+    protected Builder() {}
 
     public String getService() {
       return service;
@@ -146,8 +179,6 @@ public class SkuName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(SkuName skuName) {
       service = skuName.service;
       sku = skuName.sku;
@@ -156,27 +187,5 @@ public class SkuName implements ResourceName {
     public SkuName build() {
       return new SkuName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof SkuName) {
-      SkuName that = (SkuName) o;
-      return (this.service.equals(that.service)) && (this.sku.equals(that.sku));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= service.hashCode();
-    h *= 1000003;
-    h ^= sku.hashCode();
-    return h;
   }
 }

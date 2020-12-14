@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.billing.v1.stub;
 
 import static com.google.cloud.billing.v1.CloudBillingClient.ListBillingAccountsPagedResponse;
 import static com.google.cloud.billing.v1.CloudBillingClient.ListProjectBillingInfoPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -43,6 +43,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -50,16 +51,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Billing API.
+ * gRPC stub implementation for the CloudBilling service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcCloudBillingStub extends CloudBillingStub {
-
   private static final MethodDescriptor<GetBillingAccountRequest, BillingAccount>
       getBillingAccountMethodDescriptor =
           MethodDescriptor.<GetBillingAccountRequest, BillingAccount>newBuilder()
@@ -69,6 +68,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   ProtoUtils.marshaller(GetBillingAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BillingAccount.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListBillingAccountsRequest, ListBillingAccountsResponse>
       listBillingAccountsMethodDescriptor =
           MethodDescriptor.<ListBillingAccountsRequest, ListBillingAccountsResponse>newBuilder()
@@ -79,6 +79,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBillingAccountsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateBillingAccountRequest, BillingAccount>
       updateBillingAccountMethodDescriptor =
           MethodDescriptor.<UpdateBillingAccountRequest, BillingAccount>newBuilder()
@@ -88,6 +89,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   ProtoUtils.marshaller(UpdateBillingAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BillingAccount.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateBillingAccountRequest, BillingAccount>
       createBillingAccountMethodDescriptor =
           MethodDescriptor.<CreateBillingAccountRequest, BillingAccount>newBuilder()
@@ -97,6 +99,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   ProtoUtils.marshaller(CreateBillingAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BillingAccount.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListProjectBillingInfoRequest, ListProjectBillingInfoResponse>
       listProjectBillingInfoMethodDescriptor =
@@ -109,6 +112,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProjectBillingInfoResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetProjectBillingInfoRequest, ProjectBillingInfo>
       getProjectBillingInfoMethodDescriptor =
           MethodDescriptor.<GetProjectBillingInfoRequest, ProjectBillingInfo>newBuilder()
@@ -118,6 +122,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   ProtoUtils.marshaller(GetProjectBillingInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProjectBillingInfo.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateProjectBillingInfoRequest, ProjectBillingInfo>
       updateProjectBillingInfoMethodDescriptor =
           MethodDescriptor.<UpdateProjectBillingInfoRequest, ProjectBillingInfo>newBuilder()
@@ -127,6 +132,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   ProtoUtils.marshaller(UpdateProjectBillingInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProjectBillingInfo.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -134,6 +140,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -141,6 +148,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -151,8 +159,6 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<GetBillingAccountRequest, BillingAccount> getBillingAccountCallable;
   private final UnaryCallable<ListBillingAccountsRequest, ListBillingAccountsResponse>
@@ -176,6 +182,8 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcCloudBillingStub create(CloudBillingStubSettings settings)
@@ -214,6 +222,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<GetBillingAccountRequest, BillingAccount> getBillingAccountTransportSettings =
         GrpcCallSettings.<GetBillingAccountRequest, BillingAccount>newBuilder()
@@ -393,21 +402,26 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<GetBillingAccountRequest, BillingAccount> getBillingAccountCallable() {
     return getBillingAccountCallable;
   }
 
-  public UnaryCallable<ListBillingAccountsRequest, ListBillingAccountsPagedResponse>
-      listBillingAccountsPagedCallable() {
-    return listBillingAccountsPagedCallable;
-  }
-
   public UnaryCallable<ListBillingAccountsRequest, ListBillingAccountsResponse>
       listBillingAccountsCallable() {
     return listBillingAccountsCallable;
+  }
+
+  public UnaryCallable<ListBillingAccountsRequest, ListBillingAccountsPagedResponse>
+      listBillingAccountsPagedCallable() {
+    return listBillingAccountsPagedCallable;
   }
 
   public UnaryCallable<UpdateBillingAccountRequest, BillingAccount> updateBillingAccountCallable() {
@@ -418,14 +432,14 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
     return createBillingAccountCallable;
   }
 
-  public UnaryCallable<ListProjectBillingInfoRequest, ListProjectBillingInfoPagedResponse>
-      listProjectBillingInfoPagedCallable() {
-    return listProjectBillingInfoPagedCallable;
-  }
-
   public UnaryCallable<ListProjectBillingInfoRequest, ListProjectBillingInfoResponse>
       listProjectBillingInfoCallable() {
     return listProjectBillingInfoCallable;
+  }
+
+  public UnaryCallable<ListProjectBillingInfoRequest, ListProjectBillingInfoPagedResponse>
+      listProjectBillingInfoPagedCallable() {
+    return listProjectBillingInfoPagedCallable;
   }
 
   public UnaryCallable<GetProjectBillingInfoRequest, ProjectBillingInfo>

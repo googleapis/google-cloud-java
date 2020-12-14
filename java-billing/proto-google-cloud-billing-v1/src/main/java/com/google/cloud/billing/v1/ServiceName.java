@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,17 +23,25 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class ServiceName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate SERVICE =
       PathTemplate.createWithoutUrlEncoding("services/{service}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String service;
+
+  @Deprecated
+  protected ServiceName() {
+    service = null;
+  }
+
+  private ServiceName(Builder builder) {
+    service = Preconditions.checkNotNull(builder.getService());
+  }
 
   public String getService() {
     return service;
@@ -45,10 +53,6 @@ public class ServiceName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private ServiceName(Builder builder) {
-    service = Preconditions.checkNotNull(builder.getService());
   }
 
   public static ServiceName of(String service) {
@@ -64,7 +68,7 @@ public class ServiceName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        SERVICE.validatedMatch(
             formattedString, "ServiceName.parse: formattedString not in valid format");
     return of(matchMap.get("service"));
   }
@@ -78,7 +82,7 @@ public class ServiceName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ServiceName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ServiceName value : values) {
       if (value == null) {
         list.add("");
@@ -90,15 +94,18 @@ public class ServiceName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return SERVICE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("service", service);
+          if (service != null) {
+            fieldMapBuilder.put("service", service);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -112,13 +119,34 @@ public class ServiceName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("service", service);
+    return SERVICE.instantiate("service", service);
   }
 
-  /** Builder for ServiceName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ServiceName that = ((ServiceName) o);
+      return Objects.equals(this.service, that.service);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(service);
+    return h;
+  }
+
+  /** Builder for services/{service}. */
+  public static class Builder {
     private String service;
+
+    protected Builder() {}
 
     public String getService() {
       return service;
@@ -129,8 +157,6 @@ public class ServiceName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(ServiceName serviceName) {
       service = serviceName.service;
     }
@@ -138,25 +164,5 @@ public class ServiceName implements ResourceName {
     public ServiceName build() {
       return new ServiceName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof ServiceName) {
-      ServiceName that = (ServiceName) o;
-      return (this.service.equals(that.service));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= service.hashCode();
-    return h;
   }
 }

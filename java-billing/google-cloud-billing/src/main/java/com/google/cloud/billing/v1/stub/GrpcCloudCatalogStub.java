@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.billing.v1.stub;
 
 import static com.google.cloud.billing.v1.CloudCatalogClient.ListServicesPagedResponse;
 import static com.google.cloud.billing.v1.CloudCatalogClient.ListSkusPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -31,6 +31,7 @@ import com.google.cloud.billing.v1.ListServicesResponse;
 import com.google.cloud.billing.v1.ListSkusRequest;
 import com.google.cloud.billing.v1.ListSkusResponse;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -38,16 +39,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Billing API.
+ * gRPC stub implementation for the CloudCatalog service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcCloudCatalogStub extends CloudCatalogStub {
-
   private static final MethodDescriptor<ListServicesRequest, ListServicesResponse>
       listServicesMethodDescriptor =
           MethodDescriptor.<ListServicesRequest, ListServicesResponse>newBuilder()
@@ -57,6 +56,7 @@ public class GrpcCloudCatalogStub extends CloudCatalogStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListSkusRequest, ListSkusResponse>
       listSkusMethodDescriptor =
           MethodDescriptor.<ListSkusRequest, ListSkusResponse>newBuilder()
@@ -66,14 +66,14 @@ public class GrpcCloudCatalogStub extends CloudCatalogStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListSkusResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable;
   private final UnaryCallable<ListServicesRequest, ListServicesPagedResponse>
       listServicesPagedCallable;
   private final UnaryCallable<ListSkusRequest, ListSkusResponse> listSkusCallable;
   private final UnaryCallable<ListSkusRequest, ListSkusPagedResponse> listSkusPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcCloudCatalogStub create(CloudCatalogStubSettings settings)
@@ -112,6 +112,7 @@ public class GrpcCloudCatalogStub extends CloudCatalogStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         GrpcCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
@@ -144,23 +145,28 @@ public class GrpcCloudCatalogStub extends CloudCatalogStub {
         callableFactory.createPagedCallable(
             listSkusTransportSettings, settings.listSkusSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListServicesRequest, ListServicesPagedResponse> listServicesPagedCallable() {
-    return listServicesPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return listServicesCallable;
   }
 
-  public UnaryCallable<ListSkusRequest, ListSkusPagedResponse> listSkusPagedCallable() {
-    return listSkusPagedCallable;
+  public UnaryCallable<ListServicesRequest, ListServicesPagedResponse> listServicesPagedCallable() {
+    return listServicesPagedCallable;
   }
 
   public UnaryCallable<ListSkusRequest, ListSkusResponse> listSkusCallable() {
     return listSkusCallable;
+  }
+
+  public UnaryCallable<ListSkusRequest, ListSkusPagedResponse> listSkusPagedCallable() {
+    return listSkusPagedCallable;
   }
 
   @Override

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.billing.v1.stub;
 
 import static com.google.cloud.billing.v1.CloudCatalogClient.ListServicesPagedResponse;
@@ -55,7 +56,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link CloudCatalogStub}.
  *
@@ -72,22 +73,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of listServices to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CloudCatalogStubSettings.Builder cloudCatalogSettingsBuilder =
  *     CloudCatalogStubSettings.newBuilder();
  * cloudCatalogSettingsBuilder
  *     .listServicesSettings()
  *     .setRetrySettings(
- *         cloudCatalogSettingsBuilder.listServicesSettings().getRetrySettings().toBuilder()
+ *         cloudCatalogSettingsBuilder
+ *             .listServicesSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudCatalogStubSettings cloudCatalogSettings = cloudCatalogSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -98,6 +100,111 @@ public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSetti
       listServicesSettings;
   private final PagedCallSettings<ListSkusRequest, ListSkusResponse, ListSkusPagedResponse>
       listSkusSettings;
+
+  private static final PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>
+      LIST_SERVICES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListServicesRequest injectToken(ListServicesRequest payload, String token) {
+              return ListServicesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListServicesRequest injectPageSize(ListServicesRequest payload, int pageSize) {
+              return ListServicesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListServicesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListServicesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Service> extractResources(ListServicesResponse payload) {
+              return payload.getServicesList() == null
+                  ? ImmutableList.<Service>of()
+                  : payload.getServicesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListSkusRequest, ListSkusResponse, Sku>
+      LIST_SKUS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSkusRequest, ListSkusResponse, Sku>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSkusRequest injectToken(ListSkusRequest payload, String token) {
+              return ListSkusRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSkusRequest injectPageSize(ListSkusRequest payload, int pageSize) {
+              return ListSkusRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSkusRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSkusResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Sku> extractResources(ListSkusResponse payload) {
+              return payload.getSkusList() == null
+                  ? ImmutableList.<Sku>of()
+                  : payload.getSkusList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
+      LIST_SERVICES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>() {
+            @Override
+            public ApiFuture<ListServicesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListServicesRequest, ListServicesResponse> callable,
+                ListServicesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListServicesResponse> futureResponse) {
+              PageContext<ListServicesRequest, ListServicesResponse, Service> pageContext =
+                  PageContext.create(callable, LIST_SERVICES_PAGE_STR_DESC, request, context);
+              return ListServicesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSkusRequest, ListSkusResponse, ListSkusPagedResponse>
+      LIST_SKUS_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListSkusRequest, ListSkusResponse, ListSkusPagedResponse>() {
+            @Override
+            public ApiFuture<ListSkusPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSkusRequest, ListSkusResponse> callable,
+                ListSkusRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSkusResponse> futureResponse) {
+              PageContext<ListSkusRequest, ListSkusResponse, Sku> pageContext =
+                  PageContext.create(callable, LIST_SKUS_PAGE_STR_DESC, request, context);
+              return ListSkusPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listServices. */
   public PagedCallSettings<ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
@@ -117,10 +224,10 @@ public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSetti
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcCloudCatalogStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -184,122 +291,15 @@ public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSetti
     listSkusSettings = settingsBuilder.listSkusSettings().build();
   }
 
-  private static final PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>
-      LIST_SERVICES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListServicesRequest injectToken(ListServicesRequest payload, String token) {
-              return ListServicesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListServicesRequest injectPageSize(ListServicesRequest payload, int pageSize) {
-              return ListServicesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListServicesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListServicesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Service> extractResources(ListServicesResponse payload) {
-              return payload.getServicesList() != null
-                  ? payload.getServicesList()
-                  : ImmutableList.<Service>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListSkusRequest, ListSkusResponse, Sku>
-      LIST_SKUS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListSkusRequest, ListSkusResponse, Sku>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSkusRequest injectToken(ListSkusRequest payload, String token) {
-              return ListSkusRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSkusRequest injectPageSize(ListSkusRequest payload, int pageSize) {
-              return ListSkusRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSkusRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSkusResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Sku> extractResources(ListSkusResponse payload) {
-              return payload.getSkusList() != null
-                  ? payload.getSkusList()
-                  : ImmutableList.<Sku>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
-      LIST_SERVICES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>() {
-            @Override
-            public ApiFuture<ListServicesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListServicesRequest, ListServicesResponse> callable,
-                ListServicesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListServicesResponse> futureResponse) {
-              PageContext<ListServicesRequest, ListServicesResponse, Service> pageContext =
-                  PageContext.create(callable, LIST_SERVICES_PAGE_STR_DESC, request, context);
-              return ListServicesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSkusRequest, ListSkusResponse, ListSkusPagedResponse>
-      LIST_SKUS_PAGE_STR_FACT =
-          new PagedListResponseFactory<ListSkusRequest, ListSkusResponse, ListSkusPagedResponse>() {
-            @Override
-            public ApiFuture<ListSkusPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSkusRequest, ListSkusResponse> callable,
-                ListSkusRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSkusResponse> futureResponse) {
-              PageContext<ListSkusRequest, ListSkusResponse, Sku> pageContext =
-                  PageContext.create(callable, LIST_SKUS_PAGE_STR_DESC, request, context);
-              return ListSkusPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for CloudCatalogStubSettings. */
   public static class Builder extends StubSettings.Builder<CloudCatalogStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
         listServicesSettings;
     private final PagedCallSettings.Builder<
             ListSkusRequest, ListSkusResponse, ListSkusPagedResponse>
         listSkusSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -307,15 +307,7 @@ public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSetti
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
           "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -324,27 +316,6 @@ public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSetti
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -357,33 +328,42 @@ public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSetti
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listServicesSettings = PagedCallSettings.newBuilder(LIST_SERVICES_PAGE_STR_FACT);
-
       listSkusSettings = PagedCallSettings.newBuilder(LIST_SKUS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(listServicesSettings, listSkusSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(CloudCatalogStubSettings settings) {
+      super(settings);
+
+      listServicesSettings = settings.listServicesSettings.toBuilder();
+      listSkusSettings = settings.listSkusSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(listServicesSettings, listSkusSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .listServicesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
@@ -397,17 +377,7 @@ public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSetti
       return builder;
     }
 
-    protected Builder(CloudCatalogStubSettings settings) {
-      super(settings);
-
-      listServicesSettings = settings.listServicesSettings.toBuilder();
-      listSkusSettings = settings.listSkusSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(listServicesSettings, listSkusSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

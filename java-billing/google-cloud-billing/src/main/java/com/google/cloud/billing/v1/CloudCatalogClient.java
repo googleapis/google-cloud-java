@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.billing.v1;
 
 import com.google.api.core.ApiFunction;
@@ -33,7 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A catalog of Google Cloud Platform services and SKUs. Provides pricing
  * information and metadata on Google Cloud Platform services and SKUs.
@@ -41,18 +42,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
- *
- *   for (Service element : cloudCatalogClient.listServices().iterateAll()) {
- *     // doThingsWith(element);
- *   }
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the cloudCatalogClient object to clean up resources such
+ * <p>Note: close() needs to be called on the CloudCatalogClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +70,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CloudCatalogSettings cloudCatalogSettings =
  *     CloudCatalogSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * CloudCatalogClient cloudCatalogClient =
- *     CloudCatalogClient.create(cloudCatalogSettings);
- * </code>
- * </pre>
+ * CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create(cloudCatalogSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CloudCatalogSettings cloudCatalogSettings =
  *     CloudCatalogSettings.newBuilder().setEndpoint(myEndpoint).build();
- * CloudCatalogClient cloudCatalogClient =
- *     CloudCatalogClient.create(cloudCatalogSettings);
- * </code>
- * </pre>
+ * CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create(cloudCatalogSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class CloudCatalogClient implements BackgroundResource {
   private final CloudCatalogSettings settings;
   private final CloudCatalogStub stub;
@@ -123,7 +109,7 @@ public class CloudCatalogClient implements BackgroundResource {
 
   /**
    * Constructs an instance of CloudCatalogClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use CloudCatalogSettings}.
+   * for advanced usage - prefer using create(CloudCatalogSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudCatalogClient create(CloudCatalogStub stub) {
@@ -155,21 +141,11 @@ public class CloudCatalogClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all public cloud services.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
-   *
-   *   for (Service element : cloudCatalogClient.listServices().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
+   * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices() {
@@ -177,20 +153,9 @@ public class CloudCatalogClient implements BackgroundResource {
     return listServices(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all public cloud services.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
-   *   ListServicesRequest request = ListServicesRequest.newBuilder().build();
-   *   for (Service element : cloudCatalogClient.listServices(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -199,70 +164,30 @@ public class CloudCatalogClient implements BackgroundResource {
     return listServicesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all public cloud services.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
-   *   ListServicesRequest request = ListServicesRequest.newBuilder().build();
-   *   ApiFuture&lt;ListServicesPagedResponse&gt; future = cloudCatalogClient.listServicesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Service element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListServicesRequest, ListServicesPagedResponse>
       listServicesPagedCallable() {
     return stub.listServicesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all public cloud services.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
-   *   ListServicesRequest request = ListServicesRequest.newBuilder().build();
-   *   while (true) {
-   *     ListServicesResponse response = cloudCatalogClient.listServicesCallable().call(request);
-   *     for (Service element : response.getServicesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return stub.listServicesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all publicly available SKUs for a given cloud service.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
-   *   ServiceName parent = ServiceName.of("[SERVICE]");
-   *   for (Sku element : cloudCatalogClient.listSkus(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the service. Example: "services/DA34-426B-A397"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -273,20 +198,9 @@ public class CloudCatalogClient implements BackgroundResource {
     return listSkus(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all publicly available SKUs for a given cloud service.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
-   *   ServiceName parent = ServiceName.of("[SERVICE]");
-   *   for (Sku element : cloudCatalogClient.listSkus(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the service. Example: "services/DA34-426B-A397"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -296,23 +210,9 @@ public class CloudCatalogClient implements BackgroundResource {
     return listSkus(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all publicly available SKUs for a given cloud service.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
-   *   ServiceName parent = ServiceName.of("[SERVICE]");
-   *   ListSkusRequest request = ListSkusRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Sku element : cloudCatalogClient.listSkus(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -321,56 +221,21 @@ public class CloudCatalogClient implements BackgroundResource {
     return listSkusPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all publicly available SKUs for a given cloud service.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
-   *   ServiceName parent = ServiceName.of("[SERVICE]");
-   *   ListSkusRequest request = ListSkusRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListSkusPagedResponse&gt; future = cloudCatalogClient.listSkusPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Sku element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListSkusRequest, ListSkusPagedResponse> listSkusPagedCallable() {
     return stub.listSkusPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all publicly available SKUs for a given cloud service.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
-   *   ServiceName parent = ServiceName.of("[SERVICE]");
-   *   ListSkusRequest request = ListSkusRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListSkusResponse response = cloudCatalogClient.listSkusCallable().call(request);
-   *     for (Sku element : response.getSkusList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListSkusRequest, ListSkusResponse> listSkusCallable() {
     return stub.listSkusCallable();
