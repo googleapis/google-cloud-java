@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.memcache.v1beta2.stub;
 
 import static com.google.cloud.memcache.v1beta2.CloudMemcacheClient.ListInstancesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -47,16 +47,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Memorystore for Memcached API.
+ * gRPC stub implementation for the CloudMemcache service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
-
   private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
       listInstancesMethodDescriptor =
           MethodDescriptor.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -67,6 +65,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
       MethodDescriptor.<GetInstanceRequest, Instance>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -74,6 +73,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
       createInstanceMethodDescriptor =
           MethodDescriptor.<CreateInstanceRequest, Operation>newBuilder()
@@ -83,6 +83,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateInstanceRequest, Operation>
       updateInstanceMethodDescriptor =
           MethodDescriptor.<UpdateInstanceRequest, Operation>newBuilder()
@@ -92,6 +93,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateParametersRequest, Operation>
       updateParametersMethodDescriptor =
           MethodDescriptor.<UpdateParametersRequest, Operation>newBuilder()
@@ -101,6 +103,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   ProtoUtils.marshaller(UpdateParametersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
       deleteInstanceMethodDescriptor =
           MethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
@@ -110,6 +113,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ApplyParametersRequest, Operation>
       applyParametersMethodDescriptor =
           MethodDescriptor.<ApplyParametersRequest, Operation>newBuilder()
@@ -119,9 +123,6 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   ProtoUtils.marshaller(ApplyParametersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
@@ -143,6 +144,8 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
   private final OperationCallable<ApplyParametersRequest, Instance, OperationMetadata>
       applyParametersOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcCloudMemcacheStub create(CloudMemcacheStubSettings settings)
@@ -292,7 +295,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
             createInstanceTransportSettings,
             settings.createInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateInstanceCallable =
         callableFactory.createUnaryCallable(
             updateInstanceTransportSettings, settings.updateInstanceSettings(), clientContext);
@@ -301,7 +304,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
             updateInstanceTransportSettings,
             settings.updateInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateParametersCallable =
         callableFactory.createUnaryCallable(
             updateParametersTransportSettings, settings.updateParametersSettings(), clientContext);
@@ -310,7 +313,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
             updateParametersTransportSettings,
             settings.updateParametersOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteInstanceCallable =
         callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
@@ -319,7 +322,7 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
             deleteInstanceTransportSettings,
             settings.deleteInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.applyParametersCallable =
         callableFactory.createUnaryCallable(
             applyParametersTransportSettings, settings.applyParametersSettings(), clientContext);
@@ -328,14 +331,18 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
             applyParametersTransportSettings,
             settings.applyParametersOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
+    return listInstancesCallable;
   }
 
   public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
@@ -343,62 +350,53 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
     return listInstancesPagedCallable;
   }
 
-  public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
-    return listInstancesCallable;
-  }
-
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
-      createInstanceOperationCallable() {
-    return createInstanceOperationCallable;
   }
 
   public UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     return createInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
-      updateInstanceOperationCallable() {
-    return updateInstanceOperationCallable;
+  public OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
+      createInstanceOperationCallable() {
+    return createInstanceOperationCallable;
   }
 
   public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
     return updateInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateParametersRequest, Instance, OperationMetadata>
-      updateParametersOperationCallable() {
-    return updateParametersOperationCallable;
+  public OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
+      updateInstanceOperationCallable() {
+    return updateInstanceOperationCallable;
   }
 
   public UnaryCallable<UpdateParametersRequest, Operation> updateParametersCallable() {
     return updateParametersCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
-      deleteInstanceOperationCallable() {
-    return deleteInstanceOperationCallable;
+  public OperationCallable<UpdateParametersRequest, Instance, OperationMetadata>
+      updateParametersOperationCallable() {
+    return updateParametersOperationCallable;
   }
 
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return deleteInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ApplyParametersRequest, Instance, OperationMetadata>
-      applyParametersOperationCallable() {
-    return applyParametersOperationCallable;
+  public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
+      deleteInstanceOperationCallable() {
+    return deleteInstanceOperationCallable;
   }
 
   public UnaryCallable<ApplyParametersRequest, Operation> applyParametersCallable() {
     return applyParametersCallable;
+  }
+
+  public OperationCallable<ApplyParametersRequest, Instance, OperationMetadata>
+      applyParametersOperationCallable() {
+    return applyParametersOperationCallable;
   }
 
   @Override

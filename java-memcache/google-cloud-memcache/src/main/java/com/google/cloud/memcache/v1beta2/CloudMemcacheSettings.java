@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.memcache.v1beta2;
 
 import static com.google.cloud.memcache.v1beta2.CloudMemcacheClient.ListInstancesPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link CloudMemcacheClient}.
  *
@@ -53,23 +54,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getInstance to 30 seconds:
  *
- * <pre>
- * <code>
- * CloudMemcacheSettings.Builder cloudMemcacheSettingsBuilder =
- *     CloudMemcacheSettings.newBuilder();
+ * <pre>{@code
+ * CloudMemcacheSettings.Builder cloudMemcacheSettingsBuilder = CloudMemcacheSettings.newBuilder();
  * cloudMemcacheSettingsBuilder
  *     .getInstanceSettings()
  *     .setRetrySettings(
- *         cloudMemcacheSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *         cloudMemcacheSettingsBuilder
+ *             .getInstanceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudMemcacheSettings cloudMemcacheSettings = cloudMemcacheSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings> {
+
   /** Returns the object with the settings used for calls to listInstances. */
   public PagedCallSettings<ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       listInstancesSettings() {
@@ -87,8 +88,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationSettings() {
     return ((CloudMemcacheStubSettings) getStubSettings()).createInstanceOperationSettings();
@@ -100,8 +99,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
   }
 
   /** Returns the object with the settings used for calls to updateInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationSettings() {
     return ((CloudMemcacheStubSettings) getStubSettings()).updateInstanceOperationSettings();
@@ -113,8 +110,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
   }
 
   /** Returns the object with the settings used for calls to updateParameters. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateParametersRequest, Instance, OperationMetadata>
       updateParametersOperationSettings() {
     return ((CloudMemcacheStubSettings) getStubSettings()).updateParametersOperationSettings();
@@ -126,8 +121,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
   }
 
   /** Returns the object with the settings used for calls to deleteInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationSettings() {
     return ((CloudMemcacheStubSettings) getStubSettings()).deleteInstanceOperationSettings();
@@ -139,8 +132,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
   }
 
   /** Returns the object with the settings used for calls to applyParameters. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ApplyParametersRequest, Instance, OperationMetadata>
       applyParametersOperationSettings() {
     return ((CloudMemcacheStubSettings) getStubSettings()).applyParametersOperationSettings();
@@ -206,16 +197,13 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
 
   /** Builder for CloudMemcacheSettings. */
   public static class Builder extends ClientSettings.Builder<CloudMemcacheSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(CloudMemcacheStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(CloudMemcacheStubSettings.newBuilder());
     }
 
     protected Builder(CloudMemcacheSettings settings) {
@@ -226,11 +214,15 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(CloudMemcacheStubSettings.newBuilder());
+    }
+
     public CloudMemcacheStubSettings.Builder getStubSettingsBuilder() {
       return ((CloudMemcacheStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -261,8 +253,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, OperationMetadata>
         createInstanceOperationSettings() {
       return getStubSettingsBuilder().createInstanceOperationSettings();
@@ -274,8 +264,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
         updateInstanceOperationSettings() {
       return getStubSettingsBuilder().updateInstanceOperationSettings();
@@ -288,8 +276,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateParameters. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateParametersRequest, Instance, OperationMetadata>
         updateParametersOperationSettings() {
       return getStubSettingsBuilder().updateParametersOperationSettings();
@@ -301,8 +287,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return getStubSettingsBuilder().deleteInstanceOperationSettings();
@@ -314,8 +298,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
     }
 
     /** Returns the builder for the settings used for calls to applyParameters. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ApplyParametersRequest, Instance, OperationMetadata>
         applyParametersOperationSettings() {
       return getStubSettingsBuilder().applyParametersOperationSettings();
