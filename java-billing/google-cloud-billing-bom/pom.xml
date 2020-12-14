@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-billing-bom</artifactId>
-  <version>1.1.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-billing:current} -->
+  <version>1.1.10</version><!-- {x-version-update:google-cloud-billing:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -63,17 +63,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-billing-v1</artifactId>
-        <version>1.1.10-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-billing-v1:current} -->
+        <version>1.1.10</version><!-- {x-version-update:proto-google-cloud-billing-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-billing-v1</artifactId>
-        <version>1.1.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-billing-v1:current} -->
+        <version>1.1.10</version><!-- {x-version-update:grpc-google-cloud-billing-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-billing</artifactId>
-        <version>1.1.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-billing:current} -->
+        <version>1.1.10</version><!-- {x-version-update:google-cloud-billing:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
