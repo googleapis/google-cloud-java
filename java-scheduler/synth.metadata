@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-scheduler.git",
-        "sha": "c5269b06eb8f669f48f79292c41bdcf7caf2dced"
+        "sha": "9be57d92e65d3357d8c19b223a7df06eab6cc6f3"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0802ed4df3b96e4062874ee9102c914c78e2f4a2",
-        "internalRef": "316906134"
+        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
+        "internalRef": "347036369"
       }
     },
     {

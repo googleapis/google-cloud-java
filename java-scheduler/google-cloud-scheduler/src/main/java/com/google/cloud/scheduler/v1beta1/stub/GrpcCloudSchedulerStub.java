@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.scheduler.v1beta1.stub;
 
 import static com.google.cloud.scheduler.v1beta1.CloudSchedulerClient.ListJobsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -36,6 +36,7 @@ import com.google.cloud.scheduler.v1beta1.ResumeJobRequest;
 import com.google.cloud.scheduler.v1beta1.RunJobRequest;
 import com.google.cloud.scheduler.v1beta1.UpdateJobRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -44,16 +45,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Scheduler API.
+ * gRPC stub implementation for the CloudScheduler service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
-
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
       listJobsMethodDescriptor =
           MethodDescriptor.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -62,6 +61,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
       MethodDescriptor.<GetJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -69,6 +69,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateJobRequest, Job> createJobMethodDescriptor =
       MethodDescriptor.<CreateJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -76,6 +77,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
       MethodDescriptor.<UpdateJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -83,6 +85,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
       MethodDescriptor.<DeleteJobRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -90,6 +93,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<PauseJobRequest, Job> pauseJobMethodDescriptor =
       MethodDescriptor.<PauseJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -97,6 +101,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(PauseJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ResumeJobRequest, Job> resumeJobMethodDescriptor =
       MethodDescriptor.<ResumeJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -104,6 +109,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ResumeJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<RunJobRequest, Job> runJobMethodDescriptor =
       MethodDescriptor.<RunJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -111,8 +117,6 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(RunJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
@@ -124,6 +128,8 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
   private final UnaryCallable<ResumeJobRequest, Job> resumeJobCallable;
   private final UnaryCallable<RunJobRequest, Job> runJobCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcCloudSchedulerStub create(CloudSchedulerStubSettings settings)
@@ -164,6 +170,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -298,15 +305,20 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
         callableFactory.createUnaryCallable(
             runJobTransportSettings, settings.runJobSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
-    return listJobsPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return listJobsCallable;
+  }
+
+  public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
+    return listJobsPagedCallable;
   }
 
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {

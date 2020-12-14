@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.scheduler.v1beta1.stub;
 
 import static com.google.cloud.scheduler.v1beta1.CloudSchedulerClient.ListJobsPagedResponse;
@@ -59,7 +60,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link CloudSchedulerStub}.
  *
@@ -77,22 +78,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getJob to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * CloudSchedulerStubSettings.Builder cloudSchedulerSettingsBuilder =
  *     CloudSchedulerStubSettings.newBuilder();
  * cloudSchedulerSettingsBuilder
  *     .getJobSettings()
  *     .setRetrySettings(
- *         cloudSchedulerSettingsBuilder.getJobSettings().getRetrySettings().toBuilder()
+ *         cloudSchedulerSettingsBuilder
+ *             .getJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudSchedulerStubSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -107,6 +109,58 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
   private final UnaryCallSettings<PauseJobRequest, Job> pauseJobSettings;
   private final UnaryCallSettings<ResumeJobRequest, Job> resumeJobSettings;
   private final UnaryCallSettings<RunJobRequest, Job> runJobSettings;
+
+  private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
+      LIST_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListJobsRequest injectToken(ListJobsRequest payload, String token) {
+              return ListJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListJobsRequest injectPageSize(ListJobsRequest payload, int pageSize) {
+              return ListJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Job> extractResources(ListJobsResponse payload) {
+              return payload.getJobsList() == null
+                  ? ImmutableList.<Job>of()
+                  : payload.getJobsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
+      LIST_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListJobsRequest, ListJobsResponse> callable,
+                ListJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListJobsResponse> futureResponse) {
+              PageContext<ListJobsRequest, ListJobsResponse, Job> pageContext =
+                  PageContext.create(callable, LIST_JOBS_PAGE_STR_DESC, request, context);
+              return ListJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listJobs. */
   public PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
@@ -155,10 +209,10 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcCloudSchedulerStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -228,62 +282,9 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     runJobSettings = settingsBuilder.runJobSettings().build();
   }
 
-  private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
-      LIST_JOBS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListJobsRequest injectToken(ListJobsRequest payload, String token) {
-              return ListJobsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListJobsRequest injectPageSize(ListJobsRequest payload, int pageSize) {
-              return ListJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListJobsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListJobsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Job> extractResources(ListJobsResponse payload) {
-              return payload.getJobsList() != null
-                  ? payload.getJobsList()
-                  : ImmutableList.<Job>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
-      LIST_JOBS_PAGE_STR_FACT =
-          new PagedListResponseFactory<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>() {
-            @Override
-            public ApiFuture<ListJobsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListJobsRequest, ListJobsResponse> callable,
-                ListJobsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListJobsResponse> futureResponse) {
-              PageContext<ListJobsRequest, ListJobsResponse, Job> pageContext =
-                  PageContext.create(callable, LIST_JOBS_PAGE_STR_DESC, request, context);
-              return ListJobsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for CloudSchedulerStubSettings. */
   public static class Builder extends StubSettings.Builder<CloudSchedulerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
         listJobsSettings;
@@ -294,7 +295,6 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     private final UnaryCallSettings.Builder<PauseJobRequest, Job> pauseJobSettings;
     private final UnaryCallSettings.Builder<ResumeJobRequest, Job> resumeJobSettings;
     private final UnaryCallSettings.Builder<RunJobRequest, Job> runJobSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -302,11 +302,10 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -327,9 +326,7 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(600000L))
@@ -342,26 +339,19 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listJobsSettings = PagedCallSettings.newBuilder(LIST_JOBS_PAGE_STR_FACT);
-
       getJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       pauseJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       resumeJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       runJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -374,62 +364,7 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
               pauseJobSettings,
               resumeJobSettings,
               runJobSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .pauseJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .resumeJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .runJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(CloudSchedulerStubSettings settings) {
@@ -456,7 +391,62 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
               runJobSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .pauseJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .resumeJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .runJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

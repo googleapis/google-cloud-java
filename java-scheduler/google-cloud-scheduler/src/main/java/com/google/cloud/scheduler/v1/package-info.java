@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,27 +15,16 @@
  */
 
 /**
- * A client to Cloud Scheduler API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>==================== CloudSchedulerClient ====================
+ * <p>======================= CloudSchedulerClient =======================
  *
  * <p>Service Description: The Cloud Scheduler API allows external entities to reliably schedule
  * asynchronous jobs.
  *
  * <p>Sample for CloudSchedulerClient:
- *
- * <pre>
- * <code>
- * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
- *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
- *   Job response = cloudSchedulerClient.getJob(name);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.scheduler.v1;
 
 import javax.annotation.Generated;
