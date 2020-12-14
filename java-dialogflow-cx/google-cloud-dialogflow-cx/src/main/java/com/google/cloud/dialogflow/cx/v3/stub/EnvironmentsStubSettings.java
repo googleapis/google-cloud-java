@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListEnvironmentsPagedResponse;
@@ -65,7 +66,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link EnvironmentsStub}.
  *
@@ -82,21 +83,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getEnvironment to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EnvironmentsStubSettings.Builder environmentsSettingsBuilder =
  *     EnvironmentsStubSettings.newBuilder();
  * environmentsSettingsBuilder
  *     .getEnvironmentSettings()
  *     .setRetrySettings(
- *         environmentsSettingsBuilder.getEnvironmentSettings().getRetrySettings().toBuilder()
+ *         environmentsSettingsBuilder
+ *             .getEnvironmentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EnvironmentsStubSettings environmentsSettings = environmentsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -122,6 +125,137 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistorySettings;
 
+  private static final PagedListDescriptor<
+          ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+      LIST_ENVIRONMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEnvironmentsRequest injectToken(
+                ListEnvironmentsRequest payload, String token) {
+              return ListEnvironmentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEnvironmentsRequest injectPageSize(
+                ListEnvironmentsRequest payload, int pageSize) {
+              return ListEnvironmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEnvironmentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEnvironmentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Environment> extractResources(ListEnvironmentsResponse payload) {
+              return payload.getEnvironmentsList() == null
+                  ? ImmutableList.<Environment>of()
+                  : payload.getEnvironmentsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse, Environment>
+      LOOKUP_ENVIRONMENT_HISTORY_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse, Environment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public LookupEnvironmentHistoryRequest injectToken(
+                LookupEnvironmentHistoryRequest payload, String token) {
+              return LookupEnvironmentHistoryRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public LookupEnvironmentHistoryRequest injectPageSize(
+                LookupEnvironmentHistoryRequest payload, int pageSize) {
+              return LookupEnvironmentHistoryRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(LookupEnvironmentHistoryRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(LookupEnvironmentHistoryResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Environment> extractResources(
+                LookupEnvironmentHistoryResponse payload) {
+              return payload.getEnvironmentsList() == null
+                  ? ImmutableList.<Environment>of()
+                  : payload.getEnvironmentsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
+      LIST_ENVIRONMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListEnvironmentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse> callable,
+                ListEnvironmentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEnvironmentsResponse> futureResponse) {
+              PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ENVIRONMENTS_PAGE_STR_DESC, request, context);
+              return ListEnvironmentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          LookupEnvironmentHistoryRequest,
+          LookupEnvironmentHistoryResponse,
+          LookupEnvironmentHistoryPagedResponse>
+      LOOKUP_ENVIRONMENT_HISTORY_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              LookupEnvironmentHistoryRequest,
+              LookupEnvironmentHistoryResponse,
+              LookupEnvironmentHistoryPagedResponse>() {
+            @Override
+            public ApiFuture<LookupEnvironmentHistoryPagedResponse> getFuturePagedResponse(
+                UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>
+                    callable,
+                LookupEnvironmentHistoryRequest request,
+                ApiCallContext context,
+                ApiFuture<LookupEnvironmentHistoryResponse> futureResponse) {
+              PageContext<
+                      LookupEnvironmentHistoryRequest,
+                      LookupEnvironmentHistoryResponse,
+                      Environment>
+                  pageContext =
+                      PageContext.create(
+                          callable, LOOKUP_ENVIRONMENT_HISTORY_PAGE_STR_DESC, request, context);
+              return LookupEnvironmentHistoryPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listEnvironments. */
   public PagedCallSettings<
           ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
@@ -140,7 +274,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
   }
 
   /** Returns the object with the settings used for calls to createEnvironment. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateEnvironmentRequest, Environment, Struct>
       createEnvironmentOperationSettings() {
     return createEnvironmentOperationSettings;
@@ -152,7 +285,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
   }
 
   /** Returns the object with the settings used for calls to updateEnvironment. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateEnvironmentRequest, Environment, Struct>
       updateEnvironmentOperationSettings() {
     return updateEnvironmentOperationSettings;
@@ -178,10 +310,10 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcEnvironmentsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -253,141 +385,9 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     lookupEnvironmentHistorySettings = settingsBuilder.lookupEnvironmentHistorySettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
-      LIST_ENVIRONMENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListEnvironmentsRequest injectToken(
-                ListEnvironmentsRequest payload, String token) {
-              return ListEnvironmentsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListEnvironmentsRequest injectPageSize(
-                ListEnvironmentsRequest payload, int pageSize) {
-              return ListEnvironmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListEnvironmentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListEnvironmentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Environment> extractResources(ListEnvironmentsResponse payload) {
-              return payload.getEnvironmentsList() != null
-                  ? payload.getEnvironmentsList()
-                  : ImmutableList.<Environment>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse, Environment>
-      LOOKUP_ENVIRONMENT_HISTORY_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse, Environment>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public LookupEnvironmentHistoryRequest injectToken(
-                LookupEnvironmentHistoryRequest payload, String token) {
-              return LookupEnvironmentHistoryRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public LookupEnvironmentHistoryRequest injectPageSize(
-                LookupEnvironmentHistoryRequest payload, int pageSize) {
-              return LookupEnvironmentHistoryRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(LookupEnvironmentHistoryRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(LookupEnvironmentHistoryResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Environment> extractResources(
-                LookupEnvironmentHistoryResponse payload) {
-              return payload.getEnvironmentsList() != null
-                  ? payload.getEnvironmentsList()
-                  : ImmutableList.<Environment>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
-      LIST_ENVIRONMENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>() {
-            @Override
-            public ApiFuture<ListEnvironmentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse> callable,
-                ListEnvironmentsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListEnvironmentsResponse> futureResponse) {
-              PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_ENVIRONMENTS_PAGE_STR_DESC, request, context);
-              return ListEnvironmentsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          LookupEnvironmentHistoryRequest,
-          LookupEnvironmentHistoryResponse,
-          LookupEnvironmentHistoryPagedResponse>
-      LOOKUP_ENVIRONMENT_HISTORY_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              LookupEnvironmentHistoryRequest,
-              LookupEnvironmentHistoryResponse,
-              LookupEnvironmentHistoryPagedResponse>() {
-            @Override
-            public ApiFuture<LookupEnvironmentHistoryPagedResponse> getFuturePagedResponse(
-                UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>
-                    callable,
-                LookupEnvironmentHistoryRequest request,
-                ApiCallContext context,
-                ApiFuture<LookupEnvironmentHistoryResponse> futureResponse) {
-              PageContext<
-                      LookupEnvironmentHistoryRequest,
-                      LookupEnvironmentHistoryResponse,
-                      Environment>
-                  pageContext =
-                      PageContext.create(
-                          callable, LOOKUP_ENVIRONMENT_HISTORY_PAGE_STR_DESC, request, context);
-              return LookupEnvironmentHistoryPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for EnvironmentsStubSettings. */
   public static class Builder extends StubSettings.Builder<EnvironmentsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
         listEnvironmentsSettings;
@@ -408,7 +408,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             LookupEnvironmentHistoryResponse,
             LookupEnvironmentHistoryPagedResponse>
         lookupEnvironmentHistorySettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -416,14 +415,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -442,52 +435,24 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listEnvironmentsSettings = PagedCallSettings.newBuilder(LIST_ENVIRONMENTS_PAGE_STR_FACT);
-
       getEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createEnvironmentOperationSettings = OperationCallSettings.newBuilder();
-
       updateEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateEnvironmentOperationSettings = OperationCallSettings.newBuilder();
-
       deleteEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       lookupEnvironmentHistorySettings =
           PagedCallSettings.newBuilder(LOOKUP_ENVIRONMENT_HISTORY_PAGE_STR_FACT);
 
@@ -499,98 +464,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               updateEnvironmentSettings,
               deleteEnvironmentSettings,
               lookupEnvironmentHistorySettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listEnvironmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getEnvironmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createEnvironmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateEnvironmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteEnvironmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .lookupEnvironmentHistorySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-      builder
-          .createEnvironmentOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateEnvironmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Environment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .updateEnvironmentOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateEnvironmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Environment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(EnvironmentsStubSettings settings) {
@@ -615,7 +489,100 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               lookupEnvironmentHistorySettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listEnvironmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getEnvironmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createEnvironmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateEnvironmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteEnvironmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .lookupEnvironmentHistorySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createEnvironmentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateEnvironmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Environment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateEnvironmentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateEnvironmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Environment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

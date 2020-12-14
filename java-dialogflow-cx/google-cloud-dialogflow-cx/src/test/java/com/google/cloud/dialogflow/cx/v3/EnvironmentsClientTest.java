@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3;
 
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListEnvironmentsPagedResponse;
@@ -32,13 +33,15 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -46,66 +49,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class EnvironmentsClientTest {
-  private static MockPages mockPages;
-  private static MockFlows mockFlows;
-  private static MockAgents mockAgents;
-  private static MockEntityTypes mockEntityTypes;
-  private static MockEnvironments mockEnvironments;
-  private static MockIntents mockIntents;
-  private static MockSecuritySettingsService mockSecuritySettingsService;
-  private static MockSessionEntityTypes mockSessionEntityTypes;
-  private static MockSessions mockSessions;
-  private static MockTransitionRouteGroups mockTransitionRouteGroups;
-  private static MockVersions mockVersions;
-  private static MockWebhooks mockWebhooks;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private EnvironmentsClient client;
+  private static MockEnvironments mockEnvironments;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockPages = new MockPages();
-    mockFlows = new MockFlows();
-    mockAgents = new MockAgents();
-    mockEntityTypes = new MockEntityTypes();
     mockEnvironments = new MockEnvironments();
-    mockIntents = new MockIntents();
-    mockSecuritySettingsService = new MockSecuritySettingsService();
-    mockSessionEntityTypes = new MockSessionEntityTypes();
-    mockSessions = new MockSessions();
-    mockTransitionRouteGroups = new MockTransitionRouteGroups();
-    mockVersions = new MockVersions();
-    mockWebhooks = new MockWebhooks();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockPages,
-                mockFlows,
-                mockAgents,
-                mockEntityTypes,
-                mockEnvironments,
-                mockIntents,
-                mockSecuritySettingsService,
-                mockSessionEntityTypes,
-                mockSessions,
-                mockTransitionRouteGroups,
-                mockVersions,
-                mockWebhooks));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockEnvironments));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     EnvironmentsSettings settings =
         EnvironmentsSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -120,15 +88,12 @@ public class EnvironmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listEnvironmentsTest() {
-    String nextPageToken = "";
-    Environment environmentsElement = Environment.newBuilder().build();
-    List<Environment> environments = Arrays.asList(environmentsElement);
+  public void listEnvironmentsTest() throws Exception {
+    Environment responsesElement = Environment.newBuilder().build();
     ListEnvironmentsResponse expectedResponse =
         ListEnvironmentsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllEnvironments(environments)
+            .setNextPageToken("")
+            .addAllEnvironments(Arrays.asList(responsesElement))
             .build();
     mockEnvironments.addResponse(expectedResponse);
 
@@ -137,14 +102,15 @@ public class EnvironmentsClientTest {
     ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(parent);
 
     List<Environment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getEnvironmentsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListEnvironmentsRequest actualRequest = (ListEnvironmentsRequest) actualRequests.get(0);
+    ListEnvironmentsRequest actualRequest = ((ListEnvironmentsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -152,33 +118,74 @@ public class EnvironmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listEnvironmentsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEnvironments.addException(exception);
 
     try {
       AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-
       client.listEnvironments(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getEnvironmentTest() {
-    EnvironmentName name2 =
-        EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
+  public void listEnvironmentsTest2() throws Exception {
+    Environment responsesElement = Environment.newBuilder().build();
+    ListEnvironmentsResponse expectedResponse =
+        ListEnvironmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnvironments(Arrays.asList(responsesElement))
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(parent);
+
+    List<Environment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnvironmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEnvironmentsRequest actualRequest = ((ListEnvironmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEnvironmentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEnvironments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
+            .setName(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockEnvironments.addResponse(expectedResponse);
 
@@ -190,9 +197,9 @@ public class EnvironmentsClientTest {
 
     List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetEnvironmentRequest actualRequest = (GetEnvironmentRequest) actualRequests.get(0);
+    GetEnvironmentRequest actualRequest = ((GetEnvironmentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, EnvironmentName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -200,34 +207,75 @@ public class EnvironmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getEnvironmentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEnvironments.addException(exception);
 
     try {
       EnvironmentName name =
           EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
-
       client.getEnvironment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createEnvironmentTest() throws Exception {
-    EnvironmentName name =
-        EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
+  public void getEnvironmentTest2() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
+            .setName(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Environment actualResponse = client.getEnvironment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEnvironmentRequest actualRequest = ((GetEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEnvironmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEnvironment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEnvironmentTest() throws Exception {
+    Environment expectedResponse =
+        Environment.newBuilder()
+            .setName(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -245,9 +293,9 @@ public class EnvironmentsClientTest {
 
     List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateEnvironmentRequest actualRequest = (CreateEnvironmentRequest) actualRequests.get(0);
+    CreateEnvironmentRequest actualRequest = ((CreateEnvironmentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(environment, actualRequest.getEnvironment());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -256,36 +304,88 @@ public class EnvironmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createEnvironmentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEnvironments.addException(exception);
 
     try {
       AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
       Environment environment = Environment.newBuilder().build();
-
       client.createEnvironmentAsync(parent, environment).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateEnvironmentTest() throws Exception {
-    EnvironmentName name =
-        EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
+  public void createEnvironmentTest2() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
+            .setName(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEnvironmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEnvironments.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Environment environment = Environment.newBuilder().build();
+
+    Environment actualResponse = client.createEnvironmentAsync(parent, environment).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEnvironmentRequest actualRequest = ((CreateEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(environment, actualRequest.getEnvironment());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEnvironmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Environment environment = Environment.newBuilder().build();
+      client.createEnvironmentAsync(parent, environment).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateEnvironmentTest() throws Exception {
+    Environment expectedResponse =
+        Environment.newBuilder()
+            .setName(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -303,7 +403,7 @@ public class EnvironmentsClientTest {
 
     List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateEnvironmentRequest actualRequest = (UpdateEnvironmentRequest) actualRequests.get(0);
+    UpdateEnvironmentRequest actualRequest = ((UpdateEnvironmentRequest) actualRequests.get(0));
 
     Assert.assertEquals(environment, actualRequest.getEnvironment());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
@@ -314,27 +414,24 @@ public class EnvironmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateEnvironmentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEnvironments.addException(exception);
 
     try {
       Environment environment = Environment.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateEnvironmentAsync(environment, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteEnvironmentTest() {
+  public void deleteEnvironmentTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockEnvironments.addResponse(expectedResponse);
 
@@ -345,9 +442,9 @@ public class EnvironmentsClientTest {
 
     List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteEnvironmentRequest actualRequest = (DeleteEnvironmentRequest) actualRequests.get(0);
+    DeleteEnvironmentRequest actualRequest = ((DeleteEnvironmentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, EnvironmentName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -355,32 +452,61 @@ public class EnvironmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteEnvironmentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEnvironments.addException(exception);
 
     try {
       EnvironmentName name =
           EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
-
       client.deleteEnvironment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void lookupEnvironmentHistoryTest() {
-    String nextPageToken = "";
-    Environment environmentsElement = Environment.newBuilder().build();
-    List<Environment> environments = Arrays.asList(environmentsElement);
+  public void deleteEnvironmentTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteEnvironment(name);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEnvironmentRequest actualRequest = ((DeleteEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEnvironmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteEnvironment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupEnvironmentHistoryTest() throws Exception {
+    Environment responsesElement = Environment.newBuilder().build();
     LookupEnvironmentHistoryResponse expectedResponse =
         LookupEnvironmentHistoryResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllEnvironments(environments)
+            .setNextPageToken("")
+            .addAllEnvironments(Arrays.asList(responsesElement))
             .build();
     mockEnvironments.addResponse(expectedResponse);
 
@@ -390,15 +516,16 @@ public class EnvironmentsClientTest {
     LookupEnvironmentHistoryPagedResponse pagedListResponse = client.lookupEnvironmentHistory(name);
 
     List<Environment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getEnvironmentsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     LookupEnvironmentHistoryRequest actualRequest =
-        (LookupEnvironmentHistoryRequest) actualRequests.get(0);
+        ((LookupEnvironmentHistoryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, EnvironmentName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -406,19 +533,62 @@ public class EnvironmentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void lookupEnvironmentHistoryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEnvironments.addException(exception);
 
     try {
       EnvironmentName name =
           EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
-
       client.lookupEnvironmentHistory(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupEnvironmentHistoryTest2() throws Exception {
+    Environment responsesElement = Environment.newBuilder().build();
+    LookupEnvironmentHistoryResponse expectedResponse =
+        LookupEnvironmentHistoryResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnvironments(Arrays.asList(responsesElement))
+            .build();
+    mockEnvironments.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    LookupEnvironmentHistoryPagedResponse pagedListResponse = client.lookupEnvironmentHistory(name);
+
+    List<Environment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnvironmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LookupEnvironmentHistoryRequest actualRequest =
+        ((LookupEnvironmentHistoryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void lookupEnvironmentHistoryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.lookupEnvironmentHistory(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

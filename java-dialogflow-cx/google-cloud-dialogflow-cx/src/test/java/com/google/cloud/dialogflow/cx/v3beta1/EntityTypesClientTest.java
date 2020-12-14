@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.EntityTypesClient.ListEntityTypesPagedResponse;
@@ -28,12 +29,13 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -41,63 +43,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class EntityTypesClientTest {
-  private static MockPages mockPages;
-  private static MockFlows mockFlows;
-  private static MockAgents mockAgents;
   private static MockEntityTypes mockEntityTypes;
-  private static MockEnvironments mockEnvironments;
-  private static MockIntents mockIntents;
-  private static MockSessionEntityTypes mockSessionEntityTypes;
-  private static MockSessions mockSessions;
-  private static MockTransitionRouteGroups mockTransitionRouteGroups;
-  private static MockVersions mockVersions;
-  private static MockWebhooks mockWebhooks;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private EntityTypesClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockPages = new MockPages();
-    mockFlows = new MockFlows();
-    mockAgents = new MockAgents();
     mockEntityTypes = new MockEntityTypes();
-    mockEnvironments = new MockEnvironments();
-    mockIntents = new MockIntents();
-    mockSessionEntityTypes = new MockSessionEntityTypes();
-    mockSessions = new MockSessions();
-    mockTransitionRouteGroups = new MockTransitionRouteGroups();
-    mockVersions = new MockVersions();
-    mockWebhooks = new MockWebhooks();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockPages,
-                mockFlows,
-                mockAgents,
-                mockEntityTypes,
-                mockEnvironments,
-                mockIntents,
-                mockSessionEntityTypes,
-                mockSessions,
-                mockTransitionRouteGroups,
-                mockVersions,
-                mockWebhooks));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockEntityTypes));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     EntityTypesSettings settings =
         EntityTypesSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -112,15 +82,12 @@ public class EntityTypesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listEntityTypesTest() {
-    String nextPageToken = "";
-    EntityType entityTypesElement = EntityType.newBuilder().build();
-    List<EntityType> entityTypes = Arrays.asList(entityTypesElement);
+  public void listEntityTypesTest() throws Exception {
+    EntityType responsesElement = EntityType.newBuilder().build();
     ListEntityTypesResponse expectedResponse =
         ListEntityTypesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllEntityTypes(entityTypes)
+            .setNextPageToken("")
+            .addAllEntityTypes(Arrays.asList(responsesElement))
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
@@ -129,14 +96,15 @@ public class EntityTypesClientTest {
     ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
 
     List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListEntityTypesRequest actualRequest = (ListEntityTypesRequest) actualRequests.get(0);
+    ListEntityTypesRequest actualRequest = ((ListEntityTypesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -144,32 +112,73 @@ public class EntityTypesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listEntityTypesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEntityTypes.addException(exception);
 
     try {
       AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-
       client.listEntityTypes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getEntityTypeTest() {
-    EntityTypeName name2 = EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]");
-    String displayName = "displayName1615086568";
-    boolean enableFuzzyExtraction = true;
+  public void listEntityTypesTest2() throws Exception {
+    EntityType responsesElement = EntityType.newBuilder().build();
+    ListEntityTypesResponse expectedResponse =
+        ListEntityTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntityTypes(Arrays.asList(responsesElement))
+            .build();
+    mockEntityTypes.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
+
+    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEntityTypesRequest actualRequest = ((ListEntityTypesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEntityTypesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEntityTypes.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEntityTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEntityTypeTest() throws Exception {
     EntityType expectedResponse =
         EntityType.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setEnableFuzzyExtraction(enableFuzzyExtraction)
+            .setName(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllEntities(new ArrayList<EntityType.Entity>())
+            .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
+            .setEnableFuzzyExtraction(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
@@ -180,9 +189,9 @@ public class EntityTypesClientTest {
 
     List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetEntityTypeRequest actualRequest = (GetEntityTypeRequest) actualRequests.get(0);
+    GetEntityTypeRequest actualRequest = ((GetEntityTypeRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, EntityTypeName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -190,33 +199,73 @@ public class EntityTypesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getEntityTypeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEntityTypes.addException(exception);
 
     try {
       EntityTypeName name =
           EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]");
-
       client.getEntityType(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createEntityTypeTest() {
-    EntityTypeName name = EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]");
-    String displayName = "displayName1615086568";
-    boolean enableFuzzyExtraction = true;
+  public void getEntityTypeTest2() throws Exception {
     EntityType expectedResponse =
         EntityType.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setEnableFuzzyExtraction(enableFuzzyExtraction)
+            .setName(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllEntities(new ArrayList<EntityType.Entity>())
+            .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
+            .setEnableFuzzyExtraction(true)
+            .build();
+    mockEntityTypes.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    EntityType actualResponse = client.getEntityType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEntityTypeRequest actualRequest = ((GetEntityTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEntityTypeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEntityTypes.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEntityType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEntityTypeTest() throws Exception {
+    EntityType expectedResponse =
+        EntityType.newBuilder()
+            .setName(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllEntities(new ArrayList<EntityType.Entity>())
+            .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
+            .setEnableFuzzyExtraction(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
@@ -228,9 +277,9 @@ public class EntityTypesClientTest {
 
     List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateEntityTypeRequest actualRequest = (CreateEntityTypeRequest) actualRequests.get(0);
+    CreateEntityTypeRequest actualRequest = ((CreateEntityTypeRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(entityType, actualRequest.getEntityType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -239,33 +288,76 @@ public class EntityTypesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createEntityTypeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEntityTypes.addException(exception);
 
     try {
       AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
       EntityType entityType = EntityType.newBuilder().build();
-
       client.createEntityType(parent, entityType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateEntityTypeTest() {
-    EntityTypeName name = EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]");
-    String displayName = "displayName1615086568";
-    boolean enableFuzzyExtraction = true;
+  public void createEntityTypeTest2() throws Exception {
     EntityType expectedResponse =
         EntityType.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setEnableFuzzyExtraction(enableFuzzyExtraction)
+            .setName(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllEntities(new ArrayList<EntityType.Entity>())
+            .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
+            .setEnableFuzzyExtraction(true)
+            .build();
+    mockEntityTypes.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    EntityType entityType = EntityType.newBuilder().build();
+
+    EntityType actualResponse = client.createEntityType(parent, entityType);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEntityTypeRequest actualRequest = ((CreateEntityTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(entityType, actualRequest.getEntityType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEntityTypeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEntityTypes.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      EntityType entityType = EntityType.newBuilder().build();
+      client.createEntityType(parent, entityType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEntityTypeTest() throws Exception {
+    EntityType expectedResponse =
+        EntityType.newBuilder()
+            .setName(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllEntities(new ArrayList<EntityType.Entity>())
+            .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
+            .setEnableFuzzyExtraction(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
@@ -277,7 +369,7 @@ public class EntityTypesClientTest {
 
     List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateEntityTypeRequest actualRequest = (UpdateEntityTypeRequest) actualRequests.get(0);
+    UpdateEntityTypeRequest actualRequest = ((UpdateEntityTypeRequest) actualRequests.get(0));
 
     Assert.assertEquals(entityType, actualRequest.getEntityType());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
@@ -288,25 +380,22 @@ public class EntityTypesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateEntityTypeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEntityTypes.addException(exception);
 
     try {
       EntityType entityType = EntityType.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateEntityType(entityType, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteEntityTypeTest() {
+  public void deleteEntityTypeTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockEntityTypes.addResponse(expectedResponse);
 
@@ -316,9 +405,9 @@ public class EntityTypesClientTest {
 
     List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteEntityTypeRequest actualRequest = (DeleteEntityTypeRequest) actualRequests.get(0);
+    DeleteEntityTypeRequest actualRequest = ((DeleteEntityTypeRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, EntityTypeName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -326,19 +415,51 @@ public class EntityTypesClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteEntityTypeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEntityTypes.addException(exception);
 
     try {
       EntityTypeName name =
           EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]");
-
       client.deleteEntityType(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEntityTypeTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockEntityTypes.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteEntityType(name);
+
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntityTypeRequest actualRequest = ((DeleteEntityTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEntityTypeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEntityTypes.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteEntityType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

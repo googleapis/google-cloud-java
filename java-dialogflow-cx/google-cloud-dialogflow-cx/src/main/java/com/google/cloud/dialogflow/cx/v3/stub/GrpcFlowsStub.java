@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.FlowsClient.ListFlowsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -46,16 +46,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Dialogflow API.
+ * gRPC stub implementation for the Flows service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcFlowsStub extends FlowsStub {
-
   private static final MethodDescriptor<CreateFlowRequest, Flow> createFlowMethodDescriptor =
       MethodDescriptor.<CreateFlowRequest, Flow>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -63,6 +61,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Flow.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteFlowRequest, Empty> deleteFlowMethodDescriptor =
       MethodDescriptor.<DeleteFlowRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -70,6 +69,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListFlowsRequest, ListFlowsResponse>
       listFlowsMethodDescriptor =
           MethodDescriptor.<ListFlowsRequest, ListFlowsResponse>newBuilder()
@@ -78,6 +78,7 @@ public class GrpcFlowsStub extends FlowsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFlowsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListFlowsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetFlowRequest, Flow> getFlowMethodDescriptor =
       MethodDescriptor.<GetFlowRequest, Flow>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -85,6 +86,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Flow.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateFlowRequest, Flow> updateFlowMethodDescriptor =
       MethodDescriptor.<UpdateFlowRequest, Flow>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -92,6 +94,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Flow.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TrainFlowRequest, Operation> trainFlowMethodDescriptor =
       MethodDescriptor.<TrainFlowRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -99,9 +102,6 @@ public class GrpcFlowsStub extends FlowsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(TrainFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateFlowRequest, Flow> createFlowCallable;
   private final UnaryCallable<DeleteFlowRequest, Empty> deleteFlowCallable;
@@ -112,6 +112,8 @@ public class GrpcFlowsStub extends FlowsStub {
   private final UnaryCallable<TrainFlowRequest, Operation> trainFlowCallable;
   private final OperationCallable<TrainFlowRequest, Empty, Struct> trainFlowOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcFlowsStub create(FlowsStubSettings settings) throws IOException {
@@ -254,12 +256,12 @@ public class GrpcFlowsStub extends FlowsStub {
             trainFlowTransportSettings,
             settings.trainFlowOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -272,12 +274,12 @@ public class GrpcFlowsStub extends FlowsStub {
     return deleteFlowCallable;
   }
 
-  public UnaryCallable<ListFlowsRequest, ListFlowsPagedResponse> listFlowsPagedCallable() {
-    return listFlowsPagedCallable;
-  }
-
   public UnaryCallable<ListFlowsRequest, ListFlowsResponse> listFlowsCallable() {
     return listFlowsCallable;
+  }
+
+  public UnaryCallable<ListFlowsRequest, ListFlowsPagedResponse> listFlowsPagedCallable() {
+    return listFlowsPagedCallable;
   }
 
   public UnaryCallable<GetFlowRequest, Flow> getFlowCallable() {
@@ -288,13 +290,12 @@ public class GrpcFlowsStub extends FlowsStub {
     return updateFlowCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<TrainFlowRequest, Empty, Struct> trainFlowOperationCallable() {
-    return trainFlowOperationCallable;
-  }
-
   public UnaryCallable<TrainFlowRequest, Operation> trainFlowCallable() {
     return trainFlowCallable;
+  }
+
+  public OperationCallable<TrainFlowRequest, Empty, Struct> trainFlowOperationCallable() {
+    return trainFlowOperationCallable;
   }
 
   @Override

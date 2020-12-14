@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.EntityTypesClient.ListEntityTypesPagedResponse;
@@ -56,7 +57,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link EntityTypesStub}.
  *
@@ -73,22 +74,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getEntityType to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EntityTypesStubSettings.Builder entityTypesSettingsBuilder =
  *     EntityTypesStubSettings.newBuilder();
  * entityTypesSettingsBuilder
  *     .getEntityTypeSettings()
  *     .setRetrySettings(
- *         entityTypesSettingsBuilder.getEntityTypeSettings().getRetrySettings().toBuilder()
+ *         entityTypesSettingsBuilder
+ *             .getEntityTypeSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EntityTypesStubSettings entityTypesSettings = entityTypesSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -104,6 +106,62 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   private final UnaryCallSettings<CreateEntityTypeRequest, EntityType> createEntityTypeSettings;
   private final UnaryCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeSettings;
   private final UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings;
+
+  private static final PagedListDescriptor<
+          ListEntityTypesRequest, ListEntityTypesResponse, EntityType>
+      LIST_ENTITY_TYPES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListEntityTypesRequest, ListEntityTypesResponse, EntityType>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEntityTypesRequest injectToken(
+                ListEntityTypesRequest payload, String token) {
+              return ListEntityTypesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEntityTypesRequest injectPageSize(
+                ListEntityTypesRequest payload, int pageSize) {
+              return ListEntityTypesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEntityTypesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEntityTypesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EntityType> extractResources(ListEntityTypesResponse payload) {
+              return payload.getEntityTypesList() == null
+                  ? ImmutableList.<EntityType>of()
+                  : payload.getEntityTypesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+      LIST_ENTITY_TYPES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>() {
+            @Override
+            public ApiFuture<ListEntityTypesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> callable,
+                ListEntityTypesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEntityTypesResponse> futureResponse) {
+              PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> pageContext =
+                  PageContext.create(callable, LIST_ENTITY_TYPES_PAGE_STR_DESC, request, context);
+              return ListEntityTypesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listEntityTypes. */
   public PagedCallSettings<
@@ -138,10 +196,10 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcEntityTypesStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -208,66 +266,9 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     deleteEntityTypeSettings = settingsBuilder.deleteEntityTypeSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListEntityTypesRequest, ListEntityTypesResponse, EntityType>
-      LIST_ENTITY_TYPES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListEntityTypesRequest, ListEntityTypesResponse, EntityType>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListEntityTypesRequest injectToken(
-                ListEntityTypesRequest payload, String token) {
-              return ListEntityTypesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListEntityTypesRequest injectPageSize(
-                ListEntityTypesRequest payload, int pageSize) {
-              return ListEntityTypesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListEntityTypesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListEntityTypesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<EntityType> extractResources(ListEntityTypesResponse payload) {
-              return payload.getEntityTypesList() != null
-                  ? payload.getEntityTypesList()
-                  : ImmutableList.<EntityType>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-      LIST_ENTITY_TYPES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>() {
-            @Override
-            public ApiFuture<ListEntityTypesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> callable,
-                ListEntityTypesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListEntityTypesResponse> futureResponse) {
-              PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> pageContext =
-                  PageContext.create(callable, LIST_ENTITY_TYPES_PAGE_STR_DESC, request, context);
-              return ListEntityTypesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for EntityTypesStubSettings. */
   public static class Builder extends StubSettings.Builder<EntityTypesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
         listEntityTypesSettings;
@@ -278,7 +279,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
         updateEntityTypeSettings;
     private final UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty>
         deleteEntityTypeSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -286,14 +286,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -312,46 +306,21 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listEntityTypesSettings = PagedCallSettings.newBuilder(LIST_ENTITY_TYPES_PAGE_STR_FACT);
-
       getEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -361,47 +330,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
               createEntityTypeSettings,
               updateEntityTypeSettings,
               deleteEntityTypeSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listEntityTypesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getEntityTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createEntityTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateEntityTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteEntityTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(EntityTypesStubSettings settings) {
@@ -422,7 +351,47 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
               deleteEntityTypeSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listEntityTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

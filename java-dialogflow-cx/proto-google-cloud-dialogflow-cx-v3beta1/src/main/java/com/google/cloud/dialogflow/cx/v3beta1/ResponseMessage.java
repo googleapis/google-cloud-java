@@ -3926,6 +3926,1264 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public interface PlayAudioOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
+     * value. It is specific to the client that reads it.
+     * </pre>
+     *
+     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The audioUri.
+     */
+    java.lang.String getAudioUri();
+    /**
+     *
+     *
+     * <pre>
+     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
+     * value. It is specific to the client that reads it.
+     * </pre>
+     *
+     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for audioUri.
+     */
+    com.google.protobuf.ByteString getAudioUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the playback of this message can be interrupted by the end
+     * user's speech and the client can then starts the next Dialogflow
+     * request.
+     * </pre>
+     *
+     * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The allowPlaybackInterruption.
+     */
+    boolean getAllowPlaybackInterruption();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies an audio clip to be played by the client as part of the response.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio}
+   */
+  public static final class PlayAudio extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+      PlayAudioOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PlayAudio.newBuilder() to construct.
+    private PlayAudio(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PlayAudio() {
+      audioUri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PlayAudio();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PlayAudio(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                audioUri_ = s;
+                break;
+              }
+            case 16:
+              {
+                allowPlaybackInterruption_ = input.readBool();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.class,
+              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.Builder.class);
+    }
+
+    public static final int AUDIO_URI_FIELD_NUMBER = 1;
+    private volatile java.lang.Object audioUri_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
+     * value. It is specific to the client that reads it.
+     * </pre>
+     *
+     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The audioUri.
+     */
+    @java.lang.Override
+    public java.lang.String getAudioUri() {
+      java.lang.Object ref = audioUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        audioUri_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
+     * value. It is specific to the client that reads it.
+     * </pre>
+     *
+     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for audioUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAudioUriBytes() {
+      java.lang.Object ref = audioUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        audioUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALLOW_PLAYBACK_INTERRUPTION_FIELD_NUMBER = 2;
+    private boolean allowPlaybackInterruption_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the playback of this message can be interrupted by the end
+     * user's speech and the client can then starts the next Dialogflow
+     * request.
+     * </pre>
+     *
+     * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The allowPlaybackInterruption.
+     */
+    @java.lang.Override
+    public boolean getAllowPlaybackInterruption() {
+      return allowPlaybackInterruption_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getAudioUriBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, audioUri_);
+      }
+      if (allowPlaybackInterruption_ != false) {
+        output.writeBool(2, allowPlaybackInterruption_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAudioUriBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, audioUri_);
+      }
+      if (allowPlaybackInterruption_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowPlaybackInterruption_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio other =
+          (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) obj;
+
+      if (!getAudioUri().equals(other.getAudioUri())) return false;
+      if (getAllowPlaybackInterruption() != other.getAllowPlaybackInterruption()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUDIO_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getAudioUri().hashCode();
+      hash = (37 * hash) + ALLOW_PLAYBACK_INTERRUPTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowPlaybackInterruption());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies an audio clip to be played by the client as part of the response.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudioOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.class,
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        audioUri_ = "";
+
+        allowPlaybackInterruption_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio build() {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio result =
+            new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio(this);
+        result.audioUri_ = audioUri_;
+        result.allowPlaybackInterruption_ = allowPlaybackInterruption_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+                .getDefaultInstance()) return this;
+        if (!other.getAudioUri().isEmpty()) {
+          audioUri_ = other.audioUri_;
+          onChanged();
+        }
+        if (other.getAllowPlaybackInterruption() != false) {
+          setAllowPlaybackInterruption(other.getAllowPlaybackInterruption());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object audioUri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
+       * value. It is specific to the client that reads it.
+       * </pre>
+       *
+       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The audioUri.
+       */
+      public java.lang.String getAudioUri() {
+        java.lang.Object ref = audioUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          audioUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
+       * value. It is specific to the client that reads it.
+       * </pre>
+       *
+       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for audioUri.
+       */
+      public com.google.protobuf.ByteString getAudioUriBytes() {
+        java.lang.Object ref = audioUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          audioUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
+       * value. It is specific to the client that reads it.
+       * </pre>
+       *
+       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The audioUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        audioUri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
+       * value. It is specific to the client that reads it.
+       * </pre>
+       *
+       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAudioUri() {
+
+        audioUri_ = getDefaultInstance().getAudioUri();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
+       * value. It is specific to the client that reads it.
+       * </pre>
+       *
+       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for audioUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        audioUri_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean allowPlaybackInterruption_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether the playback of this message can be interrupted by the end
+       * user's speech and the client can then starts the next Dialogflow
+       * request.
+       * </pre>
+       *
+       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The allowPlaybackInterruption.
+       */
+      @java.lang.Override
+      public boolean getAllowPlaybackInterruption() {
+        return allowPlaybackInterruption_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether the playback of this message can be interrupted by the end
+       * user's speech and the client can then starts the next Dialogflow
+       * request.
+       * </pre>
+       *
+       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The allowPlaybackInterruption to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowPlaybackInterruption(boolean value) {
+
+        allowPlaybackInterruption_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether the playback of this message can be interrupted by the end
+       * user's speech and the client can then starts the next Dialogflow
+       * request.
+       * </pre>
+       *
+       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowPlaybackInterruption() {
+
+        allowPlaybackInterruption_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PlayAudio> PARSER =
+        new com.google.protobuf.AbstractParser<PlayAudio>() {
+          @java.lang.Override
+          public PlayAudio parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PlayAudio(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PlayAudio> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PlayAudio> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface EndInteractionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Indicates that interaction with the Dialogflow agent has ended.
+   * This message is generated by Dialogflow only and not supposed to be
+   * defined by the user.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction}
+   */
+  public static final class EndInteraction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
+      EndInteractionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use EndInteraction.newBuilder() to construct.
+    private EndInteraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EndInteraction() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EndInteraction();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private EndInteraction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction.class,
+              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction other =
+          (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that interaction with the Dialogflow agent has ended.
+     * This message is generated by Dialogflow only and not supposed to be
+     * defined by the user.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteractionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction.class,
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction build() {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction result =
+            new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EndInteraction> PARSER =
+        new com.google.protobuf.AbstractParser<EndInteraction>() {
+          @java.lang.Override
+          public EndInteraction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new EndInteraction(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<EndInteraction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EndInteraction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface MixedAudioOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.MixedAudio)
@@ -6087,1264 +7345,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.MixedAudio
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
-  public interface EndInteractionOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
-      com.google.protobuf.MessageOrBuilder {}
-  /**
-   *
-   *
-   * <pre>
-   * Indicates that interaction with the Dialogflow agent has ended.
-   * This message is generated by Dialogflow only and not supposed to be
-   * defined by the user.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction}
-   */
-  public static final class EndInteraction extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
-      EndInteractionOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use EndInteraction.newBuilder() to construct.
-    private EndInteraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private EndInteraction() {}
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new EndInteraction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    private EndInteraction(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction.class,
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction other =
-          (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
-        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
-        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates that interaction with the Dialogflow agent has ended.
-     * This message is generated by Dialogflow only and not supposed to be
-     * defined by the user.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteractionOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction.class,
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction.Builder
-                    .class);
-      }
-
-      // Construct using
-      // com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
-          getDefaultInstanceForType() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction build() {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction result =
-            buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction buildPartial() {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction result =
-            new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other
-            instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction) {
-          return mergeFrom(
-              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction other) {
-        if (other
-            == com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
-                .getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
-                  e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction)
-    private static final com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE =
-          new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction();
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<EndInteraction> PARSER =
-        new com.google.protobuf.AbstractParser<EndInteraction>() {
-          @java.lang.Override
-          public EndInteraction parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new EndInteraction(input, extensionRegistry);
-          }
-        };
-
-    public static com.google.protobuf.Parser<EndInteraction> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<EndInteraction> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
-  public interface PlayAudioOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
-     * </pre>
-     *
-     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The audioUri.
-     */
-    java.lang.String getAudioUri();
-    /**
-     *
-     *
-     * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
-     * </pre>
-     *
-     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for audioUri.
-     */
-    com.google.protobuf.ByteString getAudioUriBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
-     * request.
-     * </pre>
-     *
-     * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The allowPlaybackInterruption.
-     */
-    boolean getAllowPlaybackInterruption();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Specifies an audio clip to be played by the client as part of the response.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio}
-   */
-  public static final class PlayAudio extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-      PlayAudioOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use PlayAudio.newBuilder() to construct.
-    private PlayAudio(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private PlayAudio() {
-      audioUri_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new PlayAudio();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    private PlayAudio(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                audioUri_ = s;
-                break;
-              }
-            case 16:
-              {
-                allowPlaybackInterruption_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.class,
-              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.Builder.class);
-    }
-
-    public static final int AUDIO_URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object audioUri_;
-    /**
-     *
-     *
-     * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
-     * </pre>
-     *
-     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The audioUri.
-     */
-    @java.lang.Override
-    public java.lang.String getAudioUri() {
-      java.lang.Object ref = audioUri_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        audioUri_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
-     * </pre>
-     *
-     * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for audioUri.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getAudioUriBytes() {
-      java.lang.Object ref = audioUri_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        audioUri_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ALLOW_PLAYBACK_INTERRUPTION_FIELD_NUMBER = 2;
-    private boolean allowPlaybackInterruption_;
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
-     * request.
-     * </pre>
-     *
-     * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The allowPlaybackInterruption.
-     */
-    @java.lang.Override
-    public boolean getAllowPlaybackInterruption() {
-      return allowPlaybackInterruption_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!getAudioUriBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, audioUri_);
-      }
-      if (allowPlaybackInterruption_ != false) {
-        output.writeBool(2, allowPlaybackInterruption_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getAudioUriBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, audioUri_);
-      }
-      if (allowPlaybackInterruption_ != false) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowPlaybackInterruption_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio other =
-          (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) obj;
-
-      if (!getAudioUri().equals(other.getAudioUri())) return false;
-      if (getAllowPlaybackInterruption() != other.getAllowPlaybackInterruption()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AUDIO_URI_FIELD_NUMBER;
-      hash = (53 * hash) + getAudioUri().hashCode();
-      hash = (37 * hash) + ALLOW_PLAYBACK_INTERRUPTION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowPlaybackInterruption());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies an audio clip to be played by the client as part of the response.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudioOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.class,
-                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.Builder.class);
-      }
-
-      // Construct using
-      // com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        audioUri_ = "";
-
-        allowPlaybackInterruption_ = false;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
-            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-          getDefaultInstanceForType() {
-        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio build() {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio buildPartial() {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio result =
-            new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio(this);
-        result.audioUri_ = audioUri_;
-        result.allowPlaybackInterruption_ = allowPlaybackInterruption_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) {
-          return mergeFrom(
-              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio other) {
-        if (other
-            == com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-                .getDefaultInstance()) return this;
-        if (!other.getAudioUri().isEmpty()) {
-          audioUri_ = other.audioUri_;
-          onChanged();
-        }
-        if (other.getAllowPlaybackInterruption() != false) {
-          setAllowPlaybackInterruption(other.getAllowPlaybackInterruption());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-                  e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object audioUri_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
-       * </pre>
-       *
-       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return The audioUri.
-       */
-      public java.lang.String getAudioUri() {
-        java.lang.Object ref = audioUri_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          audioUri_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
-       * </pre>
-       *
-       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return The bytes for audioUri.
-       */
-      public com.google.protobuf.ByteString getAudioUriBytes() {
-        java.lang.Object ref = audioUri_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          audioUri_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
-       * </pre>
-       *
-       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @param value The audioUri to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAudioUri(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        audioUri_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
-       * </pre>
-       *
-       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearAudioUri() {
-
-        audioUri_ = getDefaultInstance().getAudioUri();
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
-       * </pre>
-       *
-       * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @param value The bytes for audioUri to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAudioUriBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        audioUri_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean allowPlaybackInterruption_;
-      /**
-       *
-       *
-       * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
-       * request.
-       * </pre>
-       *
-       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
-       *
-       * @return The allowPlaybackInterruption.
-       */
-      @java.lang.Override
-      public boolean getAllowPlaybackInterruption() {
-        return allowPlaybackInterruption_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
-       * request.
-       * </pre>
-       *
-       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
-       *
-       * @param value The allowPlaybackInterruption to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAllowPlaybackInterruption(boolean value) {
-
-        allowPlaybackInterruption_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
-       * request.
-       * </pre>
-       *
-       * <code>bool allow_playback_interruption = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearAllowPlaybackInterruption() {
-
-        allowPlaybackInterruption_ = false;
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio)
-    private static final com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio();
-    }
-
-    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PlayAudio> PARSER =
-        new com.google.protobuf.AbstractParser<PlayAudio>() {
-          @java.lang.Override
-          public PlayAudio parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PlayAudio(input, extensionRegistry);
-          }
-        };
-
-    public static com.google.protobuf.Parser<PlayAudio> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PlayAudio> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }

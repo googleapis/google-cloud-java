@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import com.google.api.core.BetaApi;
@@ -25,7 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A session represents an interaction with a user. You retrieve user input and
  * pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to
@@ -34,21 +35,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (SessionsClient sessionsClient = SessionsClient.create()) {
- *   SessionName session = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
- *   QueryInput queryInput = QueryInput.newBuilder().build();
- *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
- *     .setSession(session.toString())
- *     .setQueryInput(queryInput)
- *     .build();
- *   DetectIntentResponse response = sessionsClient.detectIntent(request);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the sessionsClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the SessionsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -76,30 +63,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SessionsSettings sessionsSettings =
  *     SessionsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * SessionsClient sessionsClient =
- *     SessionsClient.create(sessionsSettings);
- * </code>
- * </pre>
+ * SessionsClient sessionsClient = SessionsClient.create(sessionsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SessionsSettings sessionsSettings =
  *     SessionsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * SessionsClient sessionsClient =
- *     SessionsClient.create(sessionsSettings);
- * </code>
- * </pre>
+ * SessionsClient sessionsClient = SessionsClient.create(sessionsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class SessionsClient implements BackgroundResource {
   private final SessionsSettings settings;
   private final SessionsStub stub;
@@ -119,7 +102,7 @@ public class SessionsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of SessionsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use SessionsSettings}.
+   * advanced usage - prefer using create(SessionsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SessionsClient create(SessionsStub stub) {
@@ -150,25 +133,14 @@ public class SessionsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a natural language query and returns structured, actionable data as a result. This
    * method is not idempotent, because it may cause session entity types to be updated, which in
    * turn might affect results of future queries.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   QueryInput queryInput = QueryInput.newBuilder().build();
-   *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
-   *     .setSession(session.toString())
-   *     .setQueryInput(queryInput)
-   *     .build();
-   *   DetectIntentResponse response = sessionsClient.detectIntent(request);
-   * }
-   * </code></pre>
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -177,78 +149,40 @@ public class SessionsClient implements BackgroundResource {
     return detectIntentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a natural language query and returns structured, actionable data as a result. This
    * method is not idempotent, because it may cause session entity types to be updated, which in
    * turn might affect results of future queries.
    *
-   * <p>Sample code:
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
    *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   QueryInput queryInput = QueryInput.newBuilder().build();
-   *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
-   *     .setSession(session.toString())
-   *     .setQueryInput(queryInput)
-   *     .build();
-   *   ApiFuture&lt;DetectIntentResponse&gt; future = sessionsClient.detectIntentCallable().futureCall(request);
-   *   // Do something
-   *   DetectIntentResponse response = future.get();
-   * }
-   * </code></pre>
+   * <p>Sample code:
    */
   public final UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
     return stub.detectIntentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a natural language query in audio format in a streaming fashion and returns
    * structured, actionable data as a result. This method is only available via the gRPC API (not
    * REST).
    *
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+   *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   BidiStream&lt;StreamingDetectIntentRequest, StreamingDetectIntentResponse&gt; bidiStream =
-   *       sessionsClient.streamingDetectIntentCallable().call();
-   *
-   *   QueryInput queryInput = QueryInput.newBuilder().build();
-   *   StreamingDetectIntentRequest request = StreamingDetectIntentRequest.newBuilder()
-   *     .setQueryInput(queryInput)
-   *     .build();
-   *   bidiStream.send(request);
-   *   for (StreamingDetectIntentResponse response : bidiStream) {
-   *     // Do something when receive a response
-   *   }
-   * }
-   * </code></pre>
    */
   public final BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable() {
     return stub.streamingDetectIntentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns preliminary intent match results, doesn't change the session status.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   QueryInput queryInput = QueryInput.newBuilder().build();
-   *   MatchIntentRequest request = MatchIntentRequest.newBuilder()
-   *     .setSession(session.toString())
-   *     .setQueryInput(queryInput)
-   *     .build();
-   *   MatchIntentResponse response = sessionsClient.matchIntent(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -257,46 +191,23 @@ public class SessionsClient implements BackgroundResource {
     return matchIntentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns preliminary intent match results, doesn't change the session status.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   QueryInput queryInput = QueryInput.newBuilder().build();
-   *   MatchIntentRequest request = MatchIntentRequest.newBuilder()
-   *     .setSession(session.toString())
-   *     .setQueryInput(queryInput)
-   *     .build();
-   *   ApiFuture&lt;MatchIntentResponse&gt; future = sessionsClient.matchIntentCallable().futureCall(request);
-   *   // Do something
-   *   MatchIntentResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<MatchIntentRequest, MatchIntentResponse> matchIntentCallable() {
     return stub.matchIntentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Fulfills a matched intent returned by
    * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent]. Must be called after
    * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
    * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the
    * behavior is undefined.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   FulfillIntentRequest request = FulfillIntentRequest.newBuilder().build();
-   *   FulfillIntentResponse response = sessionsClient.fulfillIntent(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -305,7 +216,7 @@ public class SessionsClient implements BackgroundResource {
     return fulfillIntentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Fulfills a matched intent returned by
    * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent]. Must be called after
@@ -314,15 +225,6 @@ public class SessionsClient implements BackgroundResource {
    * behavior is undefined.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   FulfillIntentRequest request = FulfillIntentRequest.newBuilder().build();
-   *   ApiFuture&lt;FulfillIntentResponse&gt; future = sessionsClient.fulfillIntentCallable().futureCall(request);
-   *   // Do something
-   *   FulfillIntentResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentCallable() {
     return stub.fulfillIntentCallable();

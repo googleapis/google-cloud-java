@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class EnvironmentName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_AGENT_ENVIRONMENT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agents/{agent}/environments/{environment}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String agent;
   private final String environment;
+
+  @Deprecated
+  protected EnvironmentName() {
+    project = null;
+    location = null;
+    agent = null;
+    environment = null;
+  }
+
+  private EnvironmentName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    agent = Preconditions.checkNotNull(builder.getAgent());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class EnvironmentName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private EnvironmentName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    agent = Preconditions.checkNotNull(builder.getAgent());
-    environment = Preconditions.checkNotNull(builder.getEnvironment());
   }
 
   public static EnvironmentName of(
@@ -95,7 +102,7 @@ public class EnvironmentName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_AGENT_ENVIRONMENT.validatedMatch(
             formattedString, "EnvironmentName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -113,7 +120,7 @@ public class EnvironmentName implements ResourceName {
   }
 
   public static List<String> toStringList(List<EnvironmentName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (EnvironmentName value : values) {
       if (value == null) {
         list.add("");
@@ -125,18 +132,27 @@ public class EnvironmentName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_AGENT_ENVIRONMENT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("agent", agent);
-          fieldMapBuilder.put("environment", environment);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (agent != null) {
+            fieldMapBuilder.put("agent", agent);
+          }
+          if (environment != null) {
+            fieldMapBuilder.put("environment", environment);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -150,17 +166,49 @@ public class EnvironmentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_AGENT_ENVIRONMENT.instantiate(
         "project", project, "location", location, "agent", agent, "environment", environment);
   }
 
-  /** Builder for EnvironmentName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      EnvironmentName that = ((EnvironmentName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.agent, that.agent)
+          && Objects.equals(this.environment, that.environment);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(agent);
+    h *= 1000003;
+    h ^= Objects.hashCode(environment);
+    return h;
+  }
+
+  /**
+   * Builder for projects/{project}/locations/{location}/agents/{agent}/environments/{environment}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String agent;
     private String environment;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -198,8 +246,6 @@ public class EnvironmentName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(EnvironmentName environmentName) {
       project = environmentName.project;
       location = environmentName.location;
@@ -210,34 +256,5 @@ public class EnvironmentName implements ResourceName {
     public EnvironmentName build() {
       return new EnvironmentName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof EnvironmentName) {
-      EnvironmentName that = (EnvironmentName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.agent.equals(that.agent))
-          && (this.environment.equals(that.environment));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= agent.hashCode();
-    h *= 1000003;
-    h ^= environment.hashCode();
-    return h;
   }
 }

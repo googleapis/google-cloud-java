@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class FlowName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_AGENT_FLOW =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String agent;
   private final String flow;
+
+  @Deprecated
+  protected FlowName() {
+    project = null;
+    location = null;
+    agent = null;
+    flow = null;
+  }
+
+  private FlowName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    agent = Preconditions.checkNotNull(builder.getAgent());
+    flow = Preconditions.checkNotNull(builder.getFlow());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class FlowName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private FlowName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    agent = Preconditions.checkNotNull(builder.getAgent());
-    flow = Preconditions.checkNotNull(builder.getFlow());
   }
 
   public static FlowName of(String project, String location, String agent, String flow) {
@@ -94,7 +101,7 @@ public class FlowName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_AGENT_FLOW.validatedMatch(
             formattedString, "FlowName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -112,7 +119,7 @@ public class FlowName implements ResourceName {
   }
 
   public static List<String> toStringList(List<FlowName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (FlowName value : values) {
       if (value == null) {
         list.add("");
@@ -124,18 +131,27 @@ public class FlowName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_AGENT_FLOW.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("agent", agent);
-          fieldMapBuilder.put("flow", flow);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (agent != null) {
+            fieldMapBuilder.put("agent", agent);
+          }
+          if (flow != null) {
+            fieldMapBuilder.put("flow", flow);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -149,17 +165,47 @@ public class FlowName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_AGENT_FLOW.instantiate(
         "project", project, "location", location, "agent", agent, "flow", flow);
   }
 
-  /** Builder for FlowName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      FlowName that = ((FlowName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.agent, that.agent)
+          && Objects.equals(this.flow, that.flow);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(agent);
+    h *= 1000003;
+    h ^= Objects.hashCode(flow);
+    return h;
+  }
+
+  /** Builder for projects/{project}/locations/{location}/agents/{agent}/flows/{flow}. */
+  public static class Builder {
     private String project;
     private String location;
     private String agent;
     private String flow;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -197,8 +243,6 @@ public class FlowName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(FlowName flowName) {
       project = flowName.project;
       location = flowName.location;
@@ -209,34 +253,5 @@ public class FlowName implements ResourceName {
     public FlowName build() {
       return new FlowName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof FlowName) {
-      FlowName that = (FlowName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.agent.equals(that.agent))
-          && (this.flow.equals(that.flow));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= agent.hashCode();
-    h *= 1000003;
-    h ^= flow.hashCode();
-    return h;
   }
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class WebhookName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_AGENT_WEBHOOK =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String agent;
   private final String webhook;
+
+  @Deprecated
+  protected WebhookName() {
+    project = null;
+    location = null;
+    agent = null;
+    webhook = null;
+  }
+
+  private WebhookName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    agent = Preconditions.checkNotNull(builder.getAgent());
+    webhook = Preconditions.checkNotNull(builder.getWebhook());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class WebhookName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private WebhookName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    agent = Preconditions.checkNotNull(builder.getAgent());
-    webhook = Preconditions.checkNotNull(builder.getWebhook());
   }
 
   public static WebhookName of(String project, String location, String agent, String webhook) {
@@ -94,7 +101,7 @@ public class WebhookName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_AGENT_WEBHOOK.validatedMatch(
             formattedString, "WebhookName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -112,7 +119,7 @@ public class WebhookName implements ResourceName {
   }
 
   public static List<String> toStringList(List<WebhookName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (WebhookName value : values) {
       if (value == null) {
         list.add("");
@@ -124,18 +131,27 @@ public class WebhookName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_AGENT_WEBHOOK.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("agent", agent);
-          fieldMapBuilder.put("webhook", webhook);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (agent != null) {
+            fieldMapBuilder.put("agent", agent);
+          }
+          if (webhook != null) {
+            fieldMapBuilder.put("webhook", webhook);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -149,17 +165,47 @@ public class WebhookName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_AGENT_WEBHOOK.instantiate(
         "project", project, "location", location, "agent", agent, "webhook", webhook);
   }
 
-  /** Builder for WebhookName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      WebhookName that = ((WebhookName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.agent, that.agent)
+          && Objects.equals(this.webhook, that.webhook);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(agent);
+    h *= 1000003;
+    h ^= Objects.hashCode(webhook);
+    return h;
+  }
+
+  /** Builder for projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}. */
+  public static class Builder {
     private String project;
     private String location;
     private String agent;
     private String webhook;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -197,8 +243,6 @@ public class WebhookName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(WebhookName webhookName) {
       project = webhookName.project;
       location = webhookName.location;
@@ -209,34 +253,5 @@ public class WebhookName implements ResourceName {
     public WebhookName build() {
       return new WebhookName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof WebhookName) {
-      WebhookName that = (WebhookName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.agent.equals(that.agent))
-          && (this.webhook.equals(that.webhook));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= agent.hashCode();
-    h *= 1000003;
-    h ^= webhook.hashCode();
-    return h;
   }
 }

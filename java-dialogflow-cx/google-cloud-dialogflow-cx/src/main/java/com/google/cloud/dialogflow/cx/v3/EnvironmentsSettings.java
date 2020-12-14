@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3;
 
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListEnvironmentsPagedResponse;
@@ -38,7 +39,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link EnvironmentsClient}.
  *
@@ -55,22 +56,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getEnvironment to 30 seconds:
  *
- * <pre>
- * <code>
- * EnvironmentsSettings.Builder environmentsSettingsBuilder =
- *     EnvironmentsSettings.newBuilder();
+ * <pre>{@code
+ * EnvironmentsSettings.Builder environmentsSettingsBuilder = EnvironmentsSettings.newBuilder();
  * environmentsSettingsBuilder
  *     .getEnvironmentSettings()
  *     .setRetrySettings(
- *         environmentsSettingsBuilder.getEnvironmentSettings().getRetrySettings().toBuilder()
+ *         environmentsSettingsBuilder
+ *             .getEnvironmentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EnvironmentsSettings environmentsSettings = environmentsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
+
   /** Returns the object with the settings used for calls to listEnvironments. */
   public PagedCallSettings<
           ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
@@ -89,8 +91,6 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to createEnvironment. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateEnvironmentRequest, Environment, Struct>
       createEnvironmentOperationSettings() {
     return ((EnvironmentsStubSettings) getStubSettings()).createEnvironmentOperationSettings();
@@ -102,8 +102,6 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to updateEnvironment. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateEnvironmentRequest, Environment, Struct>
       updateEnvironmentOperationSettings() {
     return ((EnvironmentsStubSettings) getStubSettings()).updateEnvironmentOperationSettings();
@@ -183,16 +181,13 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
 
   /** Builder for EnvironmentsSettings. */
   public static class Builder extends ClientSettings.Builder<EnvironmentsSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(EnvironmentsStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(EnvironmentsStubSettings.newBuilder());
     }
 
     protected Builder(EnvironmentsSettings settings) {
@@ -203,11 +198,15 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(EnvironmentsStubSettings.newBuilder());
+    }
+
     public EnvironmentsStubSettings.Builder getStubSettingsBuilder() {
       return ((EnvironmentsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -239,8 +238,6 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createEnvironment. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEnvironmentRequest, Environment, Struct>
         createEnvironmentOperationSettings() {
       return getStubSettingsBuilder().createEnvironmentOperationSettings();
@@ -253,8 +250,6 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateEnvironment. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateEnvironmentRequest, Environment, Struct>
         updateEnvironmentOperationSettings() {
       return getStubSettingsBuilder().updateEnvironmentOperationSettings();

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.PagesClient.ListPagesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,6 +33,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.ListPagesResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Page;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Dialogflow API.
+ * gRPC stub implementation for the Pages service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcPagesStub extends PagesStub {
-
   private static final MethodDescriptor<ListPagesRequest, ListPagesResponse>
       listPagesMethodDescriptor =
           MethodDescriptor.<ListPagesRequest, ListPagesResponse>newBuilder()
@@ -59,6 +58,7 @@ public class GrpcPagesStub extends PagesStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListPagesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListPagesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetPageRequest, Page> getPageMethodDescriptor =
       MethodDescriptor.<GetPageRequest, Page>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -66,6 +66,7 @@ public class GrpcPagesStub extends PagesStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetPageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Page.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreatePageRequest, Page> createPageMethodDescriptor =
       MethodDescriptor.<CreatePageRequest, Page>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -73,6 +74,7 @@ public class GrpcPagesStub extends PagesStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreatePageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Page.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdatePageRequest, Page> updatePageMethodDescriptor =
       MethodDescriptor.<UpdatePageRequest, Page>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -80,6 +82,7 @@ public class GrpcPagesStub extends PagesStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdatePageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Page.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeletePageRequest, Empty> deletePageMethodDescriptor =
       MethodDescriptor.<DeletePageRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -88,8 +91,6 @@ public class GrpcPagesStub extends PagesStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<ListPagesRequest, ListPagesResponse> listPagesCallable;
   private final UnaryCallable<ListPagesRequest, ListPagesPagedResponse> listPagesPagedCallable;
   private final UnaryCallable<GetPageRequest, Page> getPageCallable;
@@ -97,6 +98,8 @@ public class GrpcPagesStub extends PagesStub {
   private final UnaryCallable<UpdatePageRequest, Page> updatePageCallable;
   private final UnaryCallable<DeletePageRequest, Empty> deletePageCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcPagesStub create(PagesStubSettings settings) throws IOException {
@@ -132,6 +135,7 @@ public class GrpcPagesStub extends PagesStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListPagesRequest, ListPagesResponse> listPagesTransportSettings =
         GrpcCallSettings.<ListPagesRequest, ListPagesResponse>newBuilder()
@@ -218,15 +222,20 @@ public class GrpcPagesStub extends PagesStub {
         callableFactory.createUnaryCallable(
             deletePageTransportSettings, settings.deletePageSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListPagesRequest, ListPagesPagedResponse> listPagesPagedCallable() {
-    return listPagesPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListPagesRequest, ListPagesResponse> listPagesCallable() {
     return listPagesCallable;
+  }
+
+  public UnaryCallable<ListPagesRequest, ListPagesPagedResponse> listPagesPagedCallable() {
+    return listPagesPagedCallable;
   }
 
   public UnaryCallable<GetPageRequest, Page> getPageCallable() {

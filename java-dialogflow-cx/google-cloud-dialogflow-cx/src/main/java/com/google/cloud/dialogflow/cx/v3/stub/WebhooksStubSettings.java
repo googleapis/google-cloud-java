@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.WebhooksClient.ListWebhooksPagedResponse;
@@ -56,7 +57,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link WebhooksStub}.
  *
@@ -73,21 +74,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getWebhook to 30 seconds:
  *
- * <pre>
- * <code>
- * WebhooksStubSettings.Builder webhooksSettingsBuilder =
- *     WebhooksStubSettings.newBuilder();
+ * <pre>{@code
+ * WebhooksStubSettings.Builder webhooksSettingsBuilder = WebhooksStubSettings.newBuilder();
  * webhooksSettingsBuilder
  *     .getWebhookSettings()
  *     .setRetrySettings(
- *         webhooksSettingsBuilder.getWebhookSettings().getRetrySettings().toBuilder()
+ *         webhooksSettingsBuilder
+ *             .getWebhookSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * WebhooksStubSettings webhooksSettings = webhooksSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -103,6 +105,59 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
   private final UnaryCallSettings<CreateWebhookRequest, Webhook> createWebhookSettings;
   private final UnaryCallSettings<UpdateWebhookRequest, Webhook> updateWebhookSettings;
   private final UnaryCallSettings<DeleteWebhookRequest, Empty> deleteWebhookSettings;
+
+  private static final PagedListDescriptor<ListWebhooksRequest, ListWebhooksResponse, Webhook>
+      LIST_WEBHOOKS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListWebhooksRequest, ListWebhooksResponse, Webhook>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListWebhooksRequest injectToken(ListWebhooksRequest payload, String token) {
+              return ListWebhooksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListWebhooksRequest injectPageSize(ListWebhooksRequest payload, int pageSize) {
+              return ListWebhooksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListWebhooksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListWebhooksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Webhook> extractResources(ListWebhooksResponse payload) {
+              return payload.getWebhooksList() == null
+                  ? ImmutableList.<Webhook>of()
+                  : payload.getWebhooksList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListWebhooksRequest, ListWebhooksResponse, ListWebhooksPagedResponse>
+      LIST_WEBHOOKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListWebhooksRequest, ListWebhooksResponse, ListWebhooksPagedResponse>() {
+            @Override
+            public ApiFuture<ListWebhooksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListWebhooksRequest, ListWebhooksResponse> callable,
+                ListWebhooksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListWebhooksResponse> futureResponse) {
+              PageContext<ListWebhooksRequest, ListWebhooksResponse, Webhook> pageContext =
+                  PageContext.create(callable, LIST_WEBHOOKS_PAGE_STR_DESC, request, context);
+              return ListWebhooksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listWebhooks. */
   public PagedCallSettings<ListWebhooksRequest, ListWebhooksResponse, ListWebhooksPagedResponse>
@@ -136,10 +191,10 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcWebhooksStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -205,63 +260,9 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
     deleteWebhookSettings = settingsBuilder.deleteWebhookSettings().build();
   }
 
-  private static final PagedListDescriptor<ListWebhooksRequest, ListWebhooksResponse, Webhook>
-      LIST_WEBHOOKS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListWebhooksRequest, ListWebhooksResponse, Webhook>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListWebhooksRequest injectToken(ListWebhooksRequest payload, String token) {
-              return ListWebhooksRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListWebhooksRequest injectPageSize(ListWebhooksRequest payload, int pageSize) {
-              return ListWebhooksRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListWebhooksRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListWebhooksResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Webhook> extractResources(ListWebhooksResponse payload) {
-              return payload.getWebhooksList() != null
-                  ? payload.getWebhooksList()
-                  : ImmutableList.<Webhook>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListWebhooksRequest, ListWebhooksResponse, ListWebhooksPagedResponse>
-      LIST_WEBHOOKS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListWebhooksRequest, ListWebhooksResponse, ListWebhooksPagedResponse>() {
-            @Override
-            public ApiFuture<ListWebhooksPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListWebhooksRequest, ListWebhooksResponse> callable,
-                ListWebhooksRequest request,
-                ApiCallContext context,
-                ApiFuture<ListWebhooksResponse> futureResponse) {
-              PageContext<ListWebhooksRequest, ListWebhooksResponse, Webhook> pageContext =
-                  PageContext.create(callable, LIST_WEBHOOKS_PAGE_STR_DESC, request, context);
-              return ListWebhooksPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for WebhooksStubSettings. */
   public static class Builder extends StubSettings.Builder<WebhooksStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListWebhooksRequest, ListWebhooksResponse, ListWebhooksPagedResponse>
         listWebhooksSettings;
@@ -269,7 +270,6 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
     private final UnaryCallSettings.Builder<CreateWebhookRequest, Webhook> createWebhookSettings;
     private final UnaryCallSettings.Builder<UpdateWebhookRequest, Webhook> updateWebhookSettings;
     private final UnaryCallSettings.Builder<DeleteWebhookRequest, Empty> deleteWebhookSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -277,14 +277,8 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -303,46 +297,21 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listWebhooksSettings = PagedCallSettings.newBuilder(LIST_WEBHOOKS_PAGE_STR_FACT);
-
       getWebhookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createWebhookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateWebhookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteWebhookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -352,47 +321,7 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
               createWebhookSettings,
               updateWebhookSettings,
               deleteWebhookSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listWebhooksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getWebhookSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createWebhookSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateWebhookSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteWebhookSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(WebhooksStubSettings settings) {
@@ -413,7 +342,47 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
               deleteWebhookSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listWebhooksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getWebhookSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createWebhookSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateWebhookSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteWebhookSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

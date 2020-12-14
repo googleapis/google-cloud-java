@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupsClient.ListTransitionRouteGroupsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,6 +33,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Dialogflow API.
+ * gRPC stub implementation for the TransitionRouteGroups service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
-
   private static final MethodDescriptor<
           ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse>
       listTransitionRouteGroupsMethodDescriptor =
@@ -64,6 +63,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransitionRouteGroupsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetTransitionRouteGroupRequest, TransitionRouteGroup>
       getTransitionRouteGroupMethodDescriptor =
           MethodDescriptor.<GetTransitionRouteGroupRequest, TransitionRouteGroup>newBuilder()
@@ -75,6 +75,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransitionRouteGroup.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateTransitionRouteGroupRequest, TransitionRouteGroup>
       createTransitionRouteGroupMethodDescriptor =
           MethodDescriptor.<CreateTransitionRouteGroupRequest, TransitionRouteGroup>newBuilder()
@@ -86,6 +87,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransitionRouteGroup.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateTransitionRouteGroupRequest, TransitionRouteGroup>
       updateTransitionRouteGroupMethodDescriptor =
           MethodDescriptor.<UpdateTransitionRouteGroupRequest, TransitionRouteGroup>newBuilder()
@@ -97,6 +99,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransitionRouteGroup.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteTransitionRouteGroupRequest, Empty>
       deleteTransitionRouteGroupMethodDescriptor =
           MethodDescriptor.<DeleteTransitionRouteGroupRequest, Empty>newBuilder()
@@ -107,8 +110,6 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
                   ProtoUtils.marshaller(DeleteTransitionRouteGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse>
       listTransitionRouteGroupsCallable;
@@ -124,6 +125,8 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
   private final UnaryCallable<DeleteTransitionRouteGroupRequest, Empty>
       deleteTransitionRouteGroupCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcTransitionRouteGroupsStub create(
@@ -164,6 +167,7 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse>
         listTransitionRouteGroupsTransportSettings =
@@ -273,17 +277,22 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
             settings.deleteTransitionRouteGroupSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsPagedResponse>
-      listTransitionRouteGroupsPagedCallable() {
-    return listTransitionRouteGroupsPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse>
       listTransitionRouteGroupsCallable() {
     return listTransitionRouteGroupsCallable;
+  }
+
+  public UnaryCallable<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsPagedResponse>
+      listTransitionRouteGroupsPagedCallable() {
+    return listTransitionRouteGroupsPagedCallable;
   }
 
   public UnaryCallable<GetTransitionRouteGroupRequest, TransitionRouteGroup>

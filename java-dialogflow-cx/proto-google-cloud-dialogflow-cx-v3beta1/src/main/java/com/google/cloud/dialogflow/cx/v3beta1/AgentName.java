@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class AgentName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_AGENT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agents/{agent}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String agent;
+
+  @Deprecated
+  protected AgentName() {
+    project = null;
+    location = null;
+    agent = null;
+  }
+
+  private AgentName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    agent = Preconditions.checkNotNull(builder.getAgent());
+  }
 
   public String getProject() {
     return project;
@@ -58,12 +70,6 @@ public class AgentName implements ResourceName {
     return new Builder(this);
   }
 
-  private AgentName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    agent = Preconditions.checkNotNull(builder.getAgent());
-  }
-
   public static AgentName of(String project, String location, String agent) {
     return newBuilder().setProject(project).setLocation(location).setAgent(agent).build();
   }
@@ -82,7 +88,7 @@ public class AgentName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_AGENT.validatedMatch(
             formattedString, "AgentName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("agent"));
   }
@@ -96,7 +102,7 @@ public class AgentName implements ResourceName {
   }
 
   public static List<String> toStringList(List<AgentName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (AgentName value : values) {
       if (value == null) {
         list.add("");
@@ -108,17 +114,24 @@ public class AgentName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_AGENT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("agent", agent);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (agent != null) {
+            fieldMapBuilder.put("agent", agent);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -132,15 +145,43 @@ public class AgentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "agent", agent);
+    return PROJECT_LOCATION_AGENT.instantiate(
+        "project", project, "location", location, "agent", agent);
   }
 
-  /** Builder for AgentName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      AgentName that = ((AgentName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.agent, that.agent);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(agent);
+    return h;
+  }
+
+  /** Builder for projects/{project}/locations/{location}/agents/{agent}. */
+  public static class Builder {
     private String project;
     private String location;
     private String agent;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -169,8 +210,6 @@ public class AgentName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(AgentName agentName) {
       project = agentName.project;
       location = agentName.location;
@@ -180,31 +219,5 @@ public class AgentName implements ResourceName {
     public AgentName build() {
       return new AgentName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof AgentName) {
-      AgentName that = (AgentName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.agent.equals(that.agent));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= agent.hashCode();
-    return h;
   }
 }

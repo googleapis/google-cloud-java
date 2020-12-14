@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.VersionsClient.ListVersionsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -47,16 +47,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Dialogflow API.
+ * gRPC stub implementation for the Versions service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcVersionsStub extends VersionsStub {
-
   private static final MethodDescriptor<ListVersionsRequest, ListVersionsResponse>
       listVersionsMethodDescriptor =
           MethodDescriptor.<ListVersionsRequest, ListVersionsResponse>newBuilder()
@@ -66,6 +64,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVersionsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetVersionRequest, Version> getVersionMethodDescriptor =
       MethodDescriptor.<GetVersionRequest, Version>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -73,6 +72,7 @@ public class GrpcVersionsStub extends VersionsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetVersionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Version.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateVersionRequest, Operation>
       createVersionMethodDescriptor =
           MethodDescriptor.<CreateVersionRequest, Operation>newBuilder()
@@ -82,6 +82,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   ProtoUtils.marshaller(CreateVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateVersionRequest, Version>
       updateVersionMethodDescriptor =
           MethodDescriptor.<UpdateVersionRequest, Version>newBuilder()
@@ -91,6 +92,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   ProtoUtils.marshaller(UpdateVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Version.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteVersionRequest, Empty> deleteVersionMethodDescriptor =
       MethodDescriptor.<DeleteVersionRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -98,6 +100,7 @@ public class GrpcVersionsStub extends VersionsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteVersionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<LoadVersionRequest, Operation> loadVersionMethodDescriptor =
       MethodDescriptor.<LoadVersionRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -105,9 +108,6 @@ public class GrpcVersionsStub extends VersionsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(LoadVersionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListVersionsRequest, ListVersionsResponse> listVersionsCallable;
   private final UnaryCallable<ListVersionsRequest, ListVersionsPagedResponse>
@@ -121,6 +121,8 @@ public class GrpcVersionsStub extends VersionsStub {
   private final UnaryCallable<LoadVersionRequest, Operation> loadVersionCallable;
   private final OperationCallable<LoadVersionRequest, Empty, Struct> loadVersionOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcVersionsStub create(VersionsStubSettings settings) throws IOException {
@@ -254,7 +256,7 @@ public class GrpcVersionsStub extends VersionsStub {
             createVersionTransportSettings,
             settings.createVersionOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateVersionCallable =
         callableFactory.createUnaryCallable(
             updateVersionTransportSettings, settings.updateVersionSettings(), clientContext);
@@ -269,36 +271,35 @@ public class GrpcVersionsStub extends VersionsStub {
             loadVersionTransportSettings,
             settings.loadVersionOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<ListVersionsRequest, ListVersionsPagedResponse> listVersionsPagedCallable() {
-    return listVersionsPagedCallable;
   }
 
   public UnaryCallable<ListVersionsRequest, ListVersionsResponse> listVersionsCallable() {
     return listVersionsCallable;
   }
 
+  public UnaryCallable<ListVersionsRequest, ListVersionsPagedResponse> listVersionsPagedCallable() {
+    return listVersionsPagedCallable;
+  }
+
   public UnaryCallable<GetVersionRequest, Version> getVersionCallable() {
     return getVersionCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<CreateVersionRequest, Operation> createVersionCallable() {
+    return createVersionCallable;
+  }
+
   public OperationCallable<CreateVersionRequest, Version, CreateVersionOperationMetadata>
       createVersionOperationCallable() {
     return createVersionOperationCallable;
-  }
-
-  public UnaryCallable<CreateVersionRequest, Operation> createVersionCallable() {
-    return createVersionCallable;
   }
 
   public UnaryCallable<UpdateVersionRequest, Version> updateVersionCallable() {
@@ -309,13 +310,12 @@ public class GrpcVersionsStub extends VersionsStub {
     return deleteVersionCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<LoadVersionRequest, Empty, Struct> loadVersionOperationCallable() {
-    return loadVersionOperationCallable;
-  }
-
   public UnaryCallable<LoadVersionRequest, Operation> loadVersionCallable() {
     return loadVersionCallable;
+  }
+
+  public OperationCallable<LoadVersionRequest, Empty, Struct> loadVersionOperationCallable() {
+    return loadVersionOperationCallable;
   }
 
   @Override

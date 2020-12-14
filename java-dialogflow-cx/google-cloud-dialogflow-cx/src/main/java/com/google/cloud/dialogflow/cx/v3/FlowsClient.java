@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3;
 
 import com.google.api.core.ApiFunction;
@@ -40,24 +41,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service for managing [Flows][google.cloud.dialogflow.cx.v3.Flow].
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (FlowsClient flowsClient = FlowsClient.create()) {
- *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
- *   Flow flow = Flow.newBuilder().build();
- *   Flow response = flowsClient.createFlow(parent, flow);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the flowsClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the FlowsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -85,28 +76,24 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * FlowsSettings flowsSettings =
  *     FlowsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * FlowsClient flowsClient =
- *     FlowsClient.create(flowsSettings);
- * </code>
- * </pre>
+ * FlowsClient flowsClient = FlowsClient.create(flowsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
- * FlowsSettings flowsSettings =
- *     FlowsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * FlowsClient flowsClient =
- *     FlowsClient.create(flowsSettings);
- * </code>
- * </pre>
+ * <pre>{@code
+ * FlowsSettings flowsSettings = FlowsSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * FlowsClient flowsClient = FlowsClient.create(flowsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@BetaApi
 @Generated("by gapic-generator")
 public class FlowsClient implements BackgroundResource {
   private final FlowsSettings settings;
@@ -128,7 +115,7 @@ public class FlowsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of FlowsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use FlowsSettings}.
+   * advanced usage - prefer using create(FlowsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FlowsClient create(FlowsStub stub) {
@@ -165,25 +152,13 @@ public class FlowsClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a flow in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   Flow flow = Flow.newBuilder().build();
-   *   Flow response = flowsClient.createFlow(parent, flow);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The agent to create a flow for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -199,19 +174,9 @@ public class FlowsClient implements BackgroundResource {
     return createFlow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a flow in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   Flow flow = Flow.newBuilder().build();
-   *   Flow response = flowsClient.createFlow(parent.toString(), flow);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The agent to create a flow for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -224,23 +189,9 @@ public class FlowsClient implements BackgroundResource {
     return createFlow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a flow in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   Flow flow = Flow.newBuilder().build();
-   *   CreateFlowRequest request = CreateFlowRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setFlow(flow)
-   *     .build();
-   *   Flow response = flowsClient.createFlow(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -249,42 +200,19 @@ public class FlowsClient implements BackgroundResource {
     return createFlowCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a flow in the specified agent.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   Flow flow = Flow.newBuilder().build();
-   *   CreateFlowRequest request = CreateFlowRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setFlow(flow)
-   *     .build();
-   *   ApiFuture&lt;Flow&gt; future = flowsClient.createFlowCallable().futureCall(request);
-   *   // Do something
-   *   Flow response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateFlowRequest, Flow> createFlowCallable() {
     return stub.createFlowCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a specified flow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   flowsClient.deleteFlow(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the flow to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
@@ -296,18 +224,9 @@ public class FlowsClient implements BackgroundResource {
     deleteFlow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a specified flow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   flowsClient.deleteFlow(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the flow to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
@@ -318,21 +237,9 @@ public class FlowsClient implements BackgroundResource {
     deleteFlow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a specified flow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   DeleteFlowRequest request = DeleteFlowRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   flowsClient.deleteFlow(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -341,42 +248,19 @@ public class FlowsClient implements BackgroundResource {
     deleteFlowCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a specified flow.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   DeleteFlowRequest request = DeleteFlowRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = flowsClient.deleteFlowCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteFlowRequest, Empty> deleteFlowCallable() {
     return stub.deleteFlowCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all flows in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   for (Flow element : flowsClient.listFlows(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The agent containing the flows. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -388,20 +272,9 @@ public class FlowsClient implements BackgroundResource {
     return listFlows(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all flows in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   for (Flow element : flowsClient.listFlows(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The agent containing the flows. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -412,23 +285,9 @@ public class FlowsClient implements BackgroundResource {
     return listFlows(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all flows in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   ListFlowsRequest request = ListFlowsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Flow element : flowsClient.listFlows(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -437,73 +296,29 @@ public class FlowsClient implements BackgroundResource {
     return listFlowsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all flows in the specified agent.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   ListFlowsRequest request = ListFlowsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListFlowsPagedResponse&gt; future = flowsClient.listFlowsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Flow element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListFlowsRequest, ListFlowsPagedResponse> listFlowsPagedCallable() {
     return stub.listFlowsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all flows in the specified agent.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   ListFlowsRequest request = ListFlowsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListFlowsResponse response = flowsClient.listFlowsCallable().call(request);
-   *     for (Flow element : response.getFlowsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListFlowsRequest, ListFlowsResponse> listFlowsCallable() {
     return stub.listFlowsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified flow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   Flow response = flowsClient.getFlow(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the flow to get. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
@@ -515,18 +330,9 @@ public class FlowsClient implements BackgroundResource {
     return getFlow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified flow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   Flow response = flowsClient.getFlow(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the flow to get. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
@@ -537,21 +343,9 @@ public class FlowsClient implements BackgroundResource {
     return getFlow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified flow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   GetFlowRequest request = GetFlowRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Flow response = flowsClient.getFlow(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -560,41 +354,19 @@ public class FlowsClient implements BackgroundResource {
     return getFlowCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified flow.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   GetFlowRequest request = GetFlowRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Flow&gt; future = flowsClient.getFlowCallable().futureCall(request);
-   *   // Do something
-   *   Flow response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetFlowRequest, Flow> getFlowCallable() {
     return stub.getFlowCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified flow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   Flow flow = Flow.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Flow response = flowsClient.updateFlow(flow, updateMask);
-   * }
-   * </code></pre>
    *
    * @param flow Required. The flow to update.
    * @param updateMask Required. The mask to control which fields get updated. If `update_mask` is
@@ -607,23 +379,9 @@ public class FlowsClient implements BackgroundResource {
     return updateFlow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified flow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   Flow flow = Flow.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateFlowRequest request = UpdateFlowRequest.newBuilder()
-   *     .setFlow(flow)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   Flow response = flowsClient.updateFlow(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -632,144 +390,69 @@ public class FlowsClient implements BackgroundResource {
     return updateFlowCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified flow.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   Flow flow = Flow.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateFlowRequest request = UpdateFlowRequest.newBuilder()
-   *     .setFlow(flow)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Flow&gt; future = flowsClient.updateFlowCallable().futureCall(request);
-   *   // Do something
-   *   Flow response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateFlowRequest, Flow> updateFlowCallable() {
     return stub.updateFlowCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   flowsClient.trainFlowAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The flow to train. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> trainFlowAsync(FlowName name) {
     TrainFlowRequest request =
         TrainFlowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return trainFlowAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   flowsClient.trainFlowAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The flow to train. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> trainFlowAsync(String name) {
     TrainFlowRequest request = TrainFlowRequest.newBuilder().setName(name).build();
     return trainFlowAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   TrainFlowRequest request = TrainFlowRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   flowsClient.trainFlowAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> trainFlowAsync(TrainFlowRequest request) {
     return trainFlowOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   TrainFlowRequest request = TrainFlowRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, Struct&gt; future = flowsClient.trainFlowOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<TrainFlowRequest, Empty, Struct> trainFlowOperationCallable() {
     return stub.trainFlowOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Trains the specified flow. Note that only the flow in 'draft' environment is trained.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (FlowsClient flowsClient = FlowsClient.create()) {
-   *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
-   *   TrainFlowRequest request = TrainFlowRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = flowsClient.trainFlowCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<TrainFlowRequest, Operation> trainFlowCallable() {
     return stub.trainFlowCallable();

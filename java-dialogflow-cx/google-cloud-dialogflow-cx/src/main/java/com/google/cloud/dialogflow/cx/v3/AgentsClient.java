@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3;
 
 import com.google.api.core.ApiFunction;
@@ -40,23 +41,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
- *   Agent response = agentsClient.getAgent(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the agentsClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the AgentsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -84,28 +76,24 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AgentsSettings agentsSettings =
  *     AgentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * AgentsClient agentsClient =
- *     AgentsClient.create(agentsSettings);
- * </code>
- * </pre>
+ * AgentsClient agentsClient = AgentsClient.create(agentsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
- * AgentsSettings agentsSettings =
- *     AgentsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * AgentsClient agentsClient =
- *     AgentsClient.create(agentsSettings);
- * </code>
- * </pre>
+ * <pre>{@code
+ * AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * AgentsClient agentsClient = AgentsClient.create(agentsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@BetaApi
 @Generated("by gapic-generator")
 public class AgentsClient implements BackgroundResource {
   private final AgentsSettings settings;
@@ -127,7 +115,7 @@ public class AgentsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of AgentsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use AgentsSettings}.
+   * advanced usage - prefer using create(AgentsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AgentsClient create(AgentsStub stub) {
@@ -164,26 +152,13 @@ public class AgentsClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all agents in the specified location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Agent element : agentsClient.listAgents(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The location to list all agents for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;`.
@@ -195,20 +170,9 @@ public class AgentsClient implements BackgroundResource {
     return listAgents(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all agents in the specified location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Agent element : agentsClient.listAgents(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The location to list all agents for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;`.
@@ -219,23 +183,9 @@ public class AgentsClient implements BackgroundResource {
     return listAgents(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all agents in the specified location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListAgentsRequest request = ListAgentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Agent element : agentsClient.listAgents(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -244,73 +194,29 @@ public class AgentsClient implements BackgroundResource {
     return listAgentsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all agents in the specified location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListAgentsRequest request = ListAgentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListAgentsPagedResponse&gt; future = agentsClient.listAgentsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Agent element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAgentsRequest, ListAgentsPagedResponse> listAgentsPagedCallable() {
     return stub.listAgentsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all agents in the specified location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListAgentsRequest request = ListAgentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListAgentsResponse response = agentsClient.listAgentsCallable().call(request);
-   *     for (Agent element : response.getAgentsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAgentsRequest, ListAgentsResponse> listAgentsCallable() {
     return stub.listAgentsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   Agent response = agentsClient.getAgent(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the agent. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -322,18 +228,9 @@ public class AgentsClient implements BackgroundResource {
     return getAgent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   Agent response = agentsClient.getAgent(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the agent. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -344,21 +241,9 @@ public class AgentsClient implements BackgroundResource {
     return getAgent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   GetAgentRequest request = GetAgentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Agent response = agentsClient.getAgent(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -367,41 +252,19 @@ public class AgentsClient implements BackgroundResource {
     return getAgentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified agent.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   GetAgentRequest request = GetAgentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Agent&gt; future = agentsClient.getAgentCallable().futureCall(request);
-   *   // Do something
-   *   Agent response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
     return stub.getAgentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an agent in the specified location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Agent agent = Agent.newBuilder().build();
-   *   Agent response = agentsClient.createAgent(parent, agent);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The location to create a agent for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;`.
@@ -417,19 +280,9 @@ public class AgentsClient implements BackgroundResource {
     return createAgent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an agent in the specified location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Agent agent = Agent.newBuilder().build();
-   *   Agent response = agentsClient.createAgent(parent.toString(), agent);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The location to create a agent for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;`.
@@ -442,23 +295,9 @@ public class AgentsClient implements BackgroundResource {
     return createAgent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an agent in the specified location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Agent agent = Agent.newBuilder().build();
-   *   CreateAgentRequest request = CreateAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setAgent(agent)
-   *     .build();
-   *   Agent response = agentsClient.createAgent(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -467,43 +306,19 @@ public class AgentsClient implements BackgroundResource {
     return createAgentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an agent in the specified location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Agent agent = Agent.newBuilder().build();
-   *   CreateAgentRequest request = CreateAgentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setAgent(agent)
-   *     .build();
-   *   ApiFuture&lt;Agent&gt; future = agentsClient.createAgentCallable().futureCall(request);
-   *   // Do something
-   *   Agent response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateAgentRequest, Agent> createAgentCallable() {
     return stub.createAgentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   Agent agent = Agent.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Agent response = agentsClient.updateAgent(agent, updateMask);
-   * }
-   * </code></pre>
    *
    * @param agent Required. The agent to update.
    * @param updateMask The mask to control which fields get updated. If the mask is not present, all
@@ -516,21 +331,9 @@ public class AgentsClient implements BackgroundResource {
     return updateAgent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   Agent agent = Agent.newBuilder().build();
-   *   UpdateAgentRequest request = UpdateAgentRequest.newBuilder()
-   *     .setAgent(agent)
-   *     .build();
-   *   Agent response = agentsClient.updateAgent(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -539,40 +342,19 @@ public class AgentsClient implements BackgroundResource {
     return updateAgentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified agent.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   Agent agent = Agent.newBuilder().build();
-   *   UpdateAgentRequest request = UpdateAgentRequest.newBuilder()
-   *     .setAgent(agent)
-   *     .build();
-   *   ApiFuture&lt;Agent&gt; future = agentsClient.updateAgentCallable().futureCall(request);
-   *   // Do something
-   *   Agent response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateAgentRequest, Agent> updateAgentCallable() {
     return stub.updateAgentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   agentsClient.deleteAgent(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the agent to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -584,18 +366,9 @@ public class AgentsClient implements BackgroundResource {
     deleteAgent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   agentsClient.deleteAgent(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the agent to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -606,21 +379,9 @@ public class AgentsClient implements BackgroundResource {
     deleteAgent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   DeleteAgentRequest request = DeleteAgentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   agentsClient.deleteAgent(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -629,129 +390,64 @@ public class AgentsClient implements BackgroundResource {
     deleteAgentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified agent.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   DeleteAgentRequest request = DeleteAgentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = agentsClient.deleteAgentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
     return stub.deleteAgentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports the specified agent to a binary file.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ExportAgentResponse response = agentsClient.exportAgentAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(
       ExportAgentRequest request) {
     return exportAgentOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports the specified agent to a binary file.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;ExportAgentResponse, Struct&gt; future = agentsClient.exportAgentOperationCallable().futureCall(request);
-   *   // Do something
-   *   ExportAgentResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<ExportAgentRequest, ExportAgentResponse, Struct>
       exportAgentOperationCallable() {
     return stub.exportAgentOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports the specified agent to a binary file.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = agentsClient.exportAgentCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ExportAgentRequest, Operation> exportAgentCallable() {
     return stub.exportAgentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Restores the specified agent from a binary file.
    *
    * <p>Replaces the current agent with a new one. Note that all existing resources in agent (e.g.
    * intents, entity types, flows) will be removed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   agentsClient.restoreAgentAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, Struct> restoreAgentAsync(RestoreAgentRequest request) {
     return restoreAgentOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Restores the specified agent from a binary file.
    *
@@ -759,26 +455,13 @@ public class AgentsClient implements BackgroundResource {
    * intents, entity types, flows) will be removed.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.restoreAgentOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<RestoreAgentRequest, Empty, Struct>
       restoreAgentOperationCallable() {
     return stub.restoreAgentOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Restores the specified agent from a binary file.
    *
@@ -786,18 +469,6 @@ public class AgentsClient implements BackgroundResource {
    * intents, entity types, flows) will be removed.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = agentsClient.restoreAgentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     return stub.restoreAgentCallable();

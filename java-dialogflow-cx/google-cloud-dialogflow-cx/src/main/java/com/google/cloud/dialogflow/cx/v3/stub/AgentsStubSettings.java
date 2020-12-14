@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.AgentsClient.ListAgentsPagedResponse;
@@ -65,7 +66,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AgentsStub}.
  *
@@ -82,21 +83,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getAgent to 30 seconds:
  *
- * <pre>
- * <code>
- * AgentsStubSettings.Builder agentsSettingsBuilder =
- *     AgentsStubSettings.newBuilder();
+ * <pre>{@code
+ * AgentsStubSettings.Builder agentsSettingsBuilder = AgentsStubSettings.newBuilder();
  * agentsSettingsBuilder
  *     .getAgentSettings()
  *     .setRetrySettings(
- *         agentsSettingsBuilder.getAgentSettings().getRetrySettings().toBuilder()
+ *         agentsSettingsBuilder
+ *             .getAgentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AgentsStubSettings agentsSettings = agentsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -117,6 +119,59 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   private final UnaryCallSettings<RestoreAgentRequest, Operation> restoreAgentSettings;
   private final OperationCallSettings<RestoreAgentRequest, Empty, Struct>
       restoreAgentOperationSettings;
+
+  private static final PagedListDescriptor<ListAgentsRequest, ListAgentsResponse, Agent>
+      LIST_AGENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAgentsRequest, ListAgentsResponse, Agent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAgentsRequest injectToken(ListAgentsRequest payload, String token) {
+              return ListAgentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAgentsRequest injectPageSize(ListAgentsRequest payload, int pageSize) {
+              return ListAgentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAgentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAgentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Agent> extractResources(ListAgentsResponse payload) {
+              return payload.getAgentsList() == null
+                  ? ImmutableList.<Agent>of()
+                  : payload.getAgentsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAgentsRequest, ListAgentsResponse, ListAgentsPagedResponse>
+      LIST_AGENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAgentsRequest, ListAgentsResponse, ListAgentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAgentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAgentsRequest, ListAgentsResponse> callable,
+                ListAgentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAgentsResponse> futureResponse) {
+              PageContext<ListAgentsRequest, ListAgentsResponse, Agent> pageContext =
+                  PageContext.create(callable, LIST_AGENTS_PAGE_STR_DESC, request, context);
+              return ListAgentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listAgents. */
   public PagedCallSettings<ListAgentsRequest, ListAgentsResponse, ListAgentsPagedResponse>
@@ -150,7 +205,6 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to exportAgent. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<ExportAgentRequest, ExportAgentResponse, Struct>
       exportAgentOperationSettings() {
     return exportAgentOperationSettings;
@@ -162,7 +216,6 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to restoreAgent. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<RestoreAgentRequest, Empty, Struct> restoreAgentOperationSettings() {
     return restoreAgentOperationSettings;
   }
@@ -173,10 +226,10 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcAgentsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -246,63 +299,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     restoreAgentOperationSettings = settingsBuilder.restoreAgentOperationSettings().build();
   }
 
-  private static final PagedListDescriptor<ListAgentsRequest, ListAgentsResponse, Agent>
-      LIST_AGENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListAgentsRequest, ListAgentsResponse, Agent>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListAgentsRequest injectToken(ListAgentsRequest payload, String token) {
-              return ListAgentsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListAgentsRequest injectPageSize(ListAgentsRequest payload, int pageSize) {
-              return ListAgentsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListAgentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListAgentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Agent> extractResources(ListAgentsResponse payload) {
-              return payload.getAgentsList() != null
-                  ? payload.getAgentsList()
-                  : ImmutableList.<Agent>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListAgentsRequest, ListAgentsResponse, ListAgentsPagedResponse>
-      LIST_AGENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListAgentsRequest, ListAgentsResponse, ListAgentsPagedResponse>() {
-            @Override
-            public ApiFuture<ListAgentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListAgentsRequest, ListAgentsResponse> callable,
-                ListAgentsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListAgentsResponse> futureResponse) {
-              PageContext<ListAgentsRequest, ListAgentsResponse, Agent> pageContext =
-                  PageContext.create(callable, LIST_AGENTS_PAGE_STR_DESC, request, context);
-              return ListAgentsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for AgentsStubSettings. */
   public static class Builder extends StubSettings.Builder<AgentsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListAgentsRequest, ListAgentsResponse, ListAgentsPagedResponse>
         listAgentsSettings;
@@ -316,7 +315,6 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     private final UnaryCallSettings.Builder<RestoreAgentRequest, Operation> restoreAgentSettings;
     private final OperationCallSettings.Builder<RestoreAgentRequest, Empty, Struct>
         restoreAgentOperationSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -324,14 +322,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -350,54 +342,25 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listAgentsSettings = PagedCallSettings.newBuilder(LIST_AGENTS_PAGE_STR_FACT);
-
       getAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       exportAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       exportAgentOperationSettings = OperationCallSettings.newBuilder();
-
       restoreAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       restoreAgentOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
@@ -409,102 +372,7 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
               deleteAgentSettings,
               exportAgentSettings,
               restoreAgentSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listAgentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .exportAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .restoreAgentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-      builder
-          .exportAgentOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<ExportAgentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(ExportAgentResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .restoreAgentOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<RestoreAgentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(AgentsStubSettings settings) {
@@ -531,7 +399,104 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
               restoreAgentSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listAgentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exportAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .restoreAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exportAgentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ExportAgentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExportAgentResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .restoreAgentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RestoreAgentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

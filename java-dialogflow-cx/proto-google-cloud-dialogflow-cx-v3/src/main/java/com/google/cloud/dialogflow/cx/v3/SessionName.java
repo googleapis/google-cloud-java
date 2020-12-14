@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,30 +26,52 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class SessionName implements ResourceName {
-
-  @Deprecated
-  protected SessionName() {}
-
-  private static final PathTemplate PROJECT_LOCATION_AGENT_SESSION_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_AGENT_SESSION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agents/{agent}/sessions/{session}");
-  private static final PathTemplate PROJECT_LOCATION_AGENT_ENVIRONMENT_SESSION_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_AGENT_ENVIRONMENT_SESSION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agents/{agent}/environments/{environment}/sessions/{session}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String location;
+  private final String agent;
+  private final String session;
+  private final String environment;
 
-  private String project;
-  private String location;
-  private String agent;
-  private String session;
-  private String environment;
+  @Deprecated
+  protected SessionName() {
+    project = null;
+    location = null;
+    agent = null;
+    session = null;
+    environment = null;
+  }
+
+  private SessionName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    agent = Preconditions.checkNotNull(builder.getAgent());
+    session = Preconditions.checkNotNull(builder.getSession());
+    environment = null;
+    pathTemplate = PROJECT_LOCATION_AGENT_SESSION;
+  }
+
+  private SessionName(ProjectLocationAgentEnvironmentSessionBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    agent = Preconditions.checkNotNull(builder.getAgent());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+    session = Preconditions.checkNotNull(builder.getSession());
+    pathTemplate = PROJECT_LOCATION_AGENT_ENVIRONMENT_SESSION;
+  }
 
   public String getProject() {
     return project;
@@ -69,23 +91,6 @@ public class SessionName implements ResourceName {
 
   public String getEnvironment() {
     return environment;
-  }
-
-  private SessionName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    agent = Preconditions.checkNotNull(builder.getAgent());
-    session = Preconditions.checkNotNull(builder.getSession());
-    pathTemplate = PROJECT_LOCATION_AGENT_SESSION_PATH_TEMPLATE;
-  }
-
-  private SessionName(ProjectLocationAgentEnvironmentSessionBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    agent = Preconditions.checkNotNull(builder.getAgent());
-    environment = Preconditions.checkNotNull(builder.getEnvironment());
-    session = Preconditions.checkNotNull(builder.getSession());
-    pathTemplate = PROJECT_LOCATION_AGENT_ENVIRONMENT_SESSION_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -108,7 +113,7 @@ public class SessionName implements ResourceName {
   }
 
   public static SessionName of(String project, String location, String agent, String session) {
-    return newProjectLocationAgentSessionBuilder()
+    return newBuilder()
         .setProject(project)
         .setLocation(location)
         .setAgent(agent)
@@ -119,7 +124,7 @@ public class SessionName implements ResourceName {
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionName ofProjectLocationAgentSessionName(
       String project, String location, String agent, String session) {
-    return newProjectLocationAgentSessionBuilder()
+    return newBuilder()
         .setProject(project)
         .setLocation(location)
         .setAgent(agent)
@@ -178,17 +183,16 @@ public class SessionName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_LOCATION_AGENT_SESSION_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_AGENT_SESSION_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_LOCATION_AGENT_SESSION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_AGENT_SESSION.match(formattedString);
       return ofProjectLocationAgentSessionName(
           matchMap.get("project"),
           matchMap.get("location"),
           matchMap.get("agent"),
           matchMap.get("session"));
-    } else if (PROJECT_LOCATION_AGENT_ENVIRONMENT_SESSION_PATH_TEMPLATE.matches(formattedString)) {
+    } else if (PROJECT_LOCATION_AGENT_ENVIRONMENT_SESSION.matches(formattedString)) {
       Map<String, String> matchMap =
-          PROJECT_LOCATION_AGENT_ENVIRONMENT_SESSION_PATH_TEMPLATE.match(formattedString);
+          PROJECT_LOCATION_AGENT_ENVIRONMENT_SESSION.match(formattedString);
       return ofProjectLocationAgentEnvironmentSessionName(
           matchMap.get("project"),
           matchMap.get("location"),
@@ -196,7 +200,7 @@ public class SessionName implements ResourceName {
           matchMap.get("environment"),
           matchMap.get("session"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("SessionName.parse: formattedString not in valid format");
   }
 
   public static List<SessionName> parseList(List<String> formattedStrings) {
@@ -220,8 +224,8 @@ public class SessionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_AGENT_SESSION_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_AGENT_ENVIRONMENT_SESSION_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_AGENT_SESSION.matches(formattedString)
+        || PROJECT_LOCATION_AGENT_ENVIRONMENT_SESSION.matches(formattedString);
   }
 
   @Override
@@ -261,9 +265,42 @@ public class SessionName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      SessionName that = ((SessionName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.agent, that.agent)
+          && Objects.equals(this.session, that.session)
+          && Objects.equals(this.environment, that.environment);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(agent);
+    h *= 1000003;
+    h ^= Objects.hashCode(session);
+    h *= 1000003;
+    h ^= Objects.hashCode(environment);
+    return h;
+  }
+
   /** Builder for projects/{project}/locations/{location}/agents/{agent}/sessions/{session}. */
   public static class Builder {
-
     private String project;
     private String location;
     private String agent;
@@ -309,9 +346,8 @@ public class SessionName implements ResourceName {
 
     private Builder(SessionName sessionName) {
       Preconditions.checkArgument(
-          sessionName.pathTemplate == PROJECT_LOCATION_AGENT_SESSION_PATH_TEMPLATE,
-          "toBuilder is only supported when SessionName has the pattern of "
-              + "projects/{project}/locations/{location}/agents/{agent}/sessions/{session}.");
+          Objects.equals(sessionName.pathTemplate, PROJECT_LOCATION_AGENT_SESSION),
+          "toBuilder is only supported when SessionName has the pattern of projects/{project}/locations/{location}/agents/{agent}/sessions/{session}");
       project = sessionName.project;
       location = sessionName.location;
       agent = sessionName.agent;
@@ -329,14 +365,13 @@ public class SessionName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationAgentEnvironmentSessionBuilder {
-
     private String project;
     private String location;
     private String agent;
     private String environment;
     private String session;
 
-    private ProjectLocationAgentEnvironmentSessionBuilder() {}
+    protected ProjectLocationAgentEnvironmentSessionBuilder() {}
 
     public String getProject() {
       return project;
@@ -386,39 +421,5 @@ public class SessionName implements ResourceName {
     public SessionName build() {
       return new SessionName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      SessionName that = (SessionName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.location, that.location))
-          && (Objects.equals(this.agent, that.agent))
-          && (Objects.equals(this.session, that.session))
-          && (Objects.equals(this.environment, that.environment));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    h *= 1000003;
-    h ^= Objects.hashCode(agent);
-    h *= 1000003;
-    h ^= Objects.hashCode(session);
-    h *= 1000003;
-    h ^= Objects.hashCode(environment);
-    return h;
   }
 }

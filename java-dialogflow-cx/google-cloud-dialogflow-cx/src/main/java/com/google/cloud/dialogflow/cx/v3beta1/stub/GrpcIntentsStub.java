@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.IntentsClient.ListIntentsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,6 +33,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.ListIntentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListIntentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateIntentRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Dialogflow API.
+ * gRPC stub implementation for the Intents service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcIntentsStub extends IntentsStub {
-
   private static final MethodDescriptor<ListIntentsRequest, ListIntentsResponse>
       listIntentsMethodDescriptor =
           MethodDescriptor.<ListIntentsRequest, ListIntentsResponse>newBuilder()
@@ -60,6 +59,7 @@ public class GrpcIntentsStub extends IntentsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIntentsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetIntentRequest, Intent> getIntentMethodDescriptor =
       MethodDescriptor.<GetIntentRequest, Intent>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -67,6 +67,7 @@ public class GrpcIntentsStub extends IntentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIntentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Intent.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateIntentRequest, Intent> createIntentMethodDescriptor =
       MethodDescriptor.<CreateIntentRequest, Intent>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -74,6 +75,7 @@ public class GrpcIntentsStub extends IntentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateIntentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Intent.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateIntentRequest, Intent> updateIntentMethodDescriptor =
       MethodDescriptor.<UpdateIntentRequest, Intent>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -81,6 +83,7 @@ public class GrpcIntentsStub extends IntentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateIntentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Intent.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteIntentRequest, Empty> deleteIntentMethodDescriptor =
       MethodDescriptor.<DeleteIntentRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -88,8 +91,6 @@ public class GrpcIntentsStub extends IntentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteIntentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListIntentsRequest, ListIntentsResponse> listIntentsCallable;
   private final UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse>
@@ -99,6 +100,8 @@ public class GrpcIntentsStub extends IntentsStub {
   private final UnaryCallable<UpdateIntentRequest, Intent> updateIntentCallable;
   private final UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcIntentsStub create(IntentsStubSettings settings) throws IOException {
@@ -134,6 +137,7 @@ public class GrpcIntentsStub extends IntentsStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListIntentsRequest, ListIntentsResponse> listIntentsTransportSettings =
         GrpcCallSettings.<ListIntentsRequest, ListIntentsResponse>newBuilder()
@@ -220,15 +224,20 @@ public class GrpcIntentsStub extends IntentsStub {
         callableFactory.createUnaryCallable(
             deleteIntentTransportSettings, settings.deleteIntentSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse> listIntentsPagedCallable() {
-    return listIntentsPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListIntentsRequest, ListIntentsResponse> listIntentsCallable() {
     return listIntentsCallable;
+  }
+
+  public UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse> listIntentsPagedCallable() {
+    return listIntentsPagedCallable;
   }
 
   public UnaryCallable<GetIntentRequest, Intent> getIntentCallable() {

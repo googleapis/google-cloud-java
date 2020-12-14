@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.SecuritySettingsServiceClient.ListSecuritySettingsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,6 +33,7 @@ import com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse;
 import com.google.cloud.dialogflow.cx.v3.SecuritySettings;
 import com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Dialogflow API.
+ * gRPC stub implementation for the SecuritySettingsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub {
-
   private static final MethodDescriptor<CreateSecuritySettingsRequest, SecuritySettings>
       createSecuritySettingsMethodDescriptor =
           MethodDescriptor.<CreateSecuritySettingsRequest, SecuritySettings>newBuilder()
@@ -61,6 +60,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                   ProtoUtils.marshaller(CreateSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetSecuritySettingsRequest, SecuritySettings>
       getSecuritySettingsMethodDescriptor =
           MethodDescriptor.<GetSecuritySettingsRequest, SecuritySettings>newBuilder()
@@ -71,6 +71,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                   ProtoUtils.marshaller(GetSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateSecuritySettingsRequest, SecuritySettings>
       updateSecuritySettingsMethodDescriptor =
           MethodDescriptor.<UpdateSecuritySettingsRequest, SecuritySettings>newBuilder()
@@ -81,6 +82,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                   ProtoUtils.marshaller(UpdateSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListSecuritySettingsRequest, ListSecuritySettingsResponse>
       listSecuritySettingsMethodDescriptor =
           MethodDescriptor.<ListSecuritySettingsRequest, ListSecuritySettingsResponse>newBuilder()
@@ -92,6 +94,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSecuritySettingsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteSecuritySettingsRequest, Empty>
       deleteSecuritySettingsMethodDescriptor =
           MethodDescriptor.<DeleteSecuritySettingsRequest, Empty>newBuilder()
@@ -102,8 +105,6 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                   ProtoUtils.marshaller(DeleteSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateSecuritySettingsRequest, SecuritySettings>
       createSecuritySettingsCallable;
@@ -117,6 +118,8 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
       listSecuritySettingsPagedCallable;
   private final UnaryCallable<DeleteSecuritySettingsRequest, Empty> deleteSecuritySettingsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcSecuritySettingsServiceStub create(
@@ -158,6 +161,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateSecuritySettingsRequest, SecuritySettings>
         createSecuritySettingsTransportSettings =
@@ -262,7 +266,12 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
             settings.deleteSecuritySettingsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateSecuritySettingsRequest, SecuritySettings>
@@ -279,14 +288,14 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
     return updateSecuritySettingsCallable;
   }
 
-  public UnaryCallable<ListSecuritySettingsRequest, ListSecuritySettingsPagedResponse>
-      listSecuritySettingsPagedCallable() {
-    return listSecuritySettingsPagedCallable;
-  }
-
   public UnaryCallable<ListSecuritySettingsRequest, ListSecuritySettingsResponse>
       listSecuritySettingsCallable() {
     return listSecuritySettingsCallable;
+  }
+
+  public UnaryCallable<ListSecuritySettingsRequest, ListSecuritySettingsPagedResponse>
+      listSecuritySettingsPagedCallable() {
+    return listSecuritySettingsPagedCallable;
   }
 
   public UnaryCallable<DeleteSecuritySettingsRequest, Empty> deleteSecuritySettingsCallable() {

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3;
 
 import com.google.api.core.ApiFunction;
@@ -35,7 +36,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service for managing
  * [SessionEntityTypes][google.cloud.dialogflow.cx.v3.SessionEntityType].
@@ -43,16 +44,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
- *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
- *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the sessionEntityTypesClient object to clean up resources
+ * <p>Note: close() needs to be called on the SessionEntityTypesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -81,28 +73,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SessionEntityTypesSettings sessionEntityTypesSettings =
  *     SessionEntityTypesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * SessionEntityTypesClient sessionEntityTypesClient =
  *     SessionEntityTypesClient.create(sessionEntityTypesSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SessionEntityTypesSettings sessionEntityTypesSettings =
  *     SessionEntityTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SessionEntityTypesClient sessionEntityTypesClient =
  *     SessionEntityTypesClient.create(sessionEntityTypesSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@BetaApi
 @Generated("by gapic-generator")
 public class SessionEntityTypesClient implements BackgroundResource {
   private final SessionEntityTypesSettings settings;
@@ -124,7 +115,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
 
   /**
    * Constructs an instance of SessionEntityTypesClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use SessionEntityTypesSettings}.
+   * is for advanced usage - prefer using create(SessionEntityTypesSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SessionEntityTypesClient create(SessionEntityTypesStub stub) {
@@ -156,20 +147,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all session entity types in the specified session.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   for (SessionEntityType element : sessionEntityTypesClient.listSessionEntityTypes(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The session to list all session entity types from. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -186,20 +166,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return listSessionEntityTypes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all session entity types in the specified session.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   for (SessionEntityType element : sessionEntityTypesClient.listSessionEntityTypes(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The session to list all session entity types from. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -214,23 +183,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return listSessionEntityTypes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all session entity types in the specified session.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   ListSessionEntityTypesRequest request = ListSessionEntityTypesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (SessionEntityType element : sessionEntityTypesClient.listSessionEntityTypes(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -240,75 +195,31 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return listSessionEntityTypesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all session entity types in the specified session.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   ListSessionEntityTypesRequest request = ListSessionEntityTypesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListSessionEntityTypesPagedResponse&gt; future = sessionEntityTypesClient.listSessionEntityTypesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (SessionEntityType element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesPagedResponse>
       listSessionEntityTypesPagedCallable() {
     return stub.listSessionEntityTypesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all session entity types in the specified session.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   ListSessionEntityTypesRequest request = ListSessionEntityTypesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListSessionEntityTypesResponse response = sessionEntityTypesClient.listSessionEntityTypesCallable().call(request);
-   *     for (SessionEntityType element : response.getSessionEntityTypesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
       listSessionEntityTypesCallable() {
     return stub.listSessionEntityTypesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the session entity type. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/sessions/&lt;Session
@@ -326,18 +237,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return getSessionEntityType(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the session entity type. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/sessions/&lt;Session
@@ -353,21 +255,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return getSessionEntityType(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   GetSessionEntityTypeRequest request = GetSessionEntityTypeRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -376,44 +266,22 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return getSessionEntityTypeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified session entity type.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   GetSessionEntityTypeRequest request = GetSessionEntityTypeRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;SessionEntityType&gt; future = sessionEntityTypesClient.getSessionEntityTypeCallable().futureCall(request);
-   *   // Do something
-   *   SessionEntityType response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetSessionEntityTypeRequest, SessionEntityType>
       getSessionEntityTypeCallable() {
     return stub.getSessionEntityTypeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a session entity type.
    *
    * <p>If the specified session entity type already exists, overrides the session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-   *   SessionEntityType response = sessionEntityTypesClient.createSessionEntityType(parent, sessionEntityType);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The session to create a session entity type for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -433,21 +301,11 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return createSessionEntityType(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a session entity type.
    *
    * <p>If the specified session entity type already exists, overrides the session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-   *   SessionEntityType response = sessionEntityTypesClient.createSessionEntityType(parent.toString(), sessionEntityType);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The session to create a session entity type for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -467,25 +325,11 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return createSessionEntityType(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a session entity type.
    *
    * <p>If the specified session entity type already exists, overrides the session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-   *   CreateSessionEntityTypeRequest request = CreateSessionEntityTypeRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSessionEntityType(sessionEntityType)
-   *     .build();
-   *   SessionEntityType response = sessionEntityTypesClient.createSessionEntityType(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -494,46 +338,22 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return createSessionEntityTypeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a session entity type.
    *
    * <p>If the specified session entity type already exists, overrides the session entity type.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionName parent = SessionName.ofProjectLocationAgentSessionName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-   *   CreateSessionEntityTypeRequest request = CreateSessionEntityTypeRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSessionEntityType(sessionEntityType)
-   *     .build();
-   *   ApiFuture&lt;SessionEntityType&gt; future = sessionEntityTypesClient.createSessionEntityTypeCallable().futureCall(request);
-   *   // Do something
-   *   SessionEntityType response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateSessionEntityTypeRequest, SessionEntityType>
       createSessionEntityTypeCallable() {
     return stub.createSessionEntityTypeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   SessionEntityType response = sessionEntityTypesClient.updateSessionEntityType(sessionEntityType, updateMask);
-   * }
-   * </code></pre>
    *
    * @param sessionEntityType Required. The session entity type to update. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -555,21 +375,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return updateSessionEntityType(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-   *   UpdateSessionEntityTypeRequest request = UpdateSessionEntityTypeRequest.newBuilder()
-   *     .setSessionEntityType(sessionEntityType)
-   *     .build();
-   *   SessionEntityType response = sessionEntityTypesClient.updateSessionEntityType(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -578,41 +386,20 @@ public class SessionEntityTypesClient implements BackgroundResource {
     return updateSessionEntityTypeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified session entity type.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
-   *   UpdateSessionEntityTypeRequest request = UpdateSessionEntityTypeRequest.newBuilder()
-   *     .setSessionEntityType(sessionEntityType)
-   *     .build();
-   *   ApiFuture&lt;SessionEntityType&gt; future = sessionEntityTypesClient.updateSessionEntityTypeCallable().futureCall(request);
-   *   // Do something
-   *   SessionEntityType response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeCallable() {
     return stub.updateSessionEntityTypeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   sessionEntityTypesClient.deleteSessionEntityType(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the session entity type to delete. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -631,18 +418,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
     deleteSessionEntityType(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   sessionEntityTypesClient.deleteSessionEntityType(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the session entity type to delete. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -659,21 +437,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
     deleteSessionEntityType(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified session entity type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   DeleteSessionEntityTypeRequest request = DeleteSessionEntityTypeRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   sessionEntityTypesClient.deleteSessionEntityType(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -682,23 +448,11 @@ public class SessionEntityTypesClient implements BackgroundResource {
     deleteSessionEntityTypeCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified session entity type.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
-   *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
-   *   DeleteSessionEntityTypeRequest request = DeleteSessionEntityTypeRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = sessionEntityTypesClient.deleteSessionEntityTypeCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteSessionEntityTypeRequest, Empty>
       deleteSessionEntityTypeCallable() {

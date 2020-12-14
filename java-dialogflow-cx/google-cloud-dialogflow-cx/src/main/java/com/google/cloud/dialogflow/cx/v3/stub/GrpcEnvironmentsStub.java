@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.LookupEnvironmentHistoryPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -48,16 +48,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Dialogflow API.
+ * gRPC stub implementation for the Environments service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcEnvironmentsStub extends EnvironmentsStub {
-
   private static final MethodDescriptor<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsMethodDescriptor =
           MethodDescriptor.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
@@ -68,6 +66,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEnvironmentsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetEnvironmentRequest, Environment>
       getEnvironmentMethodDescriptor =
           MethodDescriptor.<GetEnvironmentRequest, Environment>newBuilder()
@@ -77,6 +76,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(GetEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateEnvironmentRequest, Operation>
       createEnvironmentMethodDescriptor =
           MethodDescriptor.<CreateEnvironmentRequest, Operation>newBuilder()
@@ -86,6 +86,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(CreateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateEnvironmentRequest, Operation>
       updateEnvironmentMethodDescriptor =
           MethodDescriptor.<UpdateEnvironmentRequest, Operation>newBuilder()
@@ -95,6 +96,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(UpdateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteEnvironmentRequest, Empty>
       deleteEnvironmentMethodDescriptor =
           MethodDescriptor.<DeleteEnvironmentRequest, Empty>newBuilder()
@@ -104,6 +106,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(DeleteEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>
       lookupEnvironmentHistoryMethodDescriptor =
@@ -117,9 +120,6 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(LookupEnvironmentHistoryResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable;
@@ -139,6 +139,8 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
           LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistoryPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcEnvironmentsStub create(EnvironmentsStubSettings settings)
@@ -281,7 +283,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
             createEnvironmentTransportSettings,
             settings.createEnvironmentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateEnvironmentCallable =
         callableFactory.createUnaryCallable(
             updateEnvironmentTransportSettings,
@@ -292,7 +294,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
             updateEnvironmentTransportSettings,
             settings.updateEnvironmentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteEnvironmentCallable =
         callableFactory.createUnaryCallable(
             deleteEnvironmentTransportSettings,
@@ -309,17 +311,12 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
             settings.lookupEnvironmentHistorySettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
-      listEnvironmentsPagedCallable() {
-    return listEnvironmentsPagedCallable;
   }
 
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
@@ -327,42 +324,45 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
     return listEnvironmentsCallable;
   }
 
-  public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
-    return getEnvironmentCallable;
+  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
+      listEnvironmentsPagedCallable() {
+    return listEnvironmentsPagedCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateEnvironmentRequest, Environment, Struct>
-      createEnvironmentOperationCallable() {
-    return createEnvironmentOperationCallable;
+  public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
+    return getEnvironmentCallable;
   }
 
   public UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
     return createEnvironmentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateEnvironmentRequest, Environment, Struct>
-      updateEnvironmentOperationCallable() {
-    return updateEnvironmentOperationCallable;
+  public OperationCallable<CreateEnvironmentRequest, Environment, Struct>
+      createEnvironmentOperationCallable() {
+    return createEnvironmentOperationCallable;
   }
 
   public UnaryCallable<UpdateEnvironmentRequest, Operation> updateEnvironmentCallable() {
     return updateEnvironmentCallable;
   }
 
-  public UnaryCallable<DeleteEnvironmentRequest, Empty> deleteEnvironmentCallable() {
-    return deleteEnvironmentCallable;
+  public OperationCallable<UpdateEnvironmentRequest, Environment, Struct>
+      updateEnvironmentOperationCallable() {
+    return updateEnvironmentOperationCallable;
   }
 
-  public UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryPagedResponse>
-      lookupEnvironmentHistoryPagedCallable() {
-    return lookupEnvironmentHistoryPagedCallable;
+  public UnaryCallable<DeleteEnvironmentRequest, Empty> deleteEnvironmentCallable() {
+    return deleteEnvironmentCallable;
   }
 
   public UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>
       lookupEnvironmentHistoryCallable() {
     return lookupEnvironmentHistoryCallable;
+  }
+
+  public UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryPagedResponse>
+      lookupEnvironmentHistoryPagedCallable() {
+    return lookupEnvironmentHistoryPagedCallable;
   }
 
   @Override

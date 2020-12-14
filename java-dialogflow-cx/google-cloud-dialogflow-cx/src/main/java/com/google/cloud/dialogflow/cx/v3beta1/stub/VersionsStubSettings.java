@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.VersionsClient.ListVersionsPagedResponse;
@@ -64,7 +65,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link VersionsStub}.
  *
@@ -81,22 +82,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getVersion to 30 seconds:
  *
- * <pre>
- * <code>
- * VersionsStubSettings.Builder versionsSettingsBuilder =
- *     VersionsStubSettings.newBuilder();
+ * <pre>{@code
+ * VersionsStubSettings.Builder versionsSettingsBuilder = VersionsStubSettings.newBuilder();
  * versionsSettingsBuilder
  *     .getVersionSettings()
  *     .setRetrySettings(
- *         versionsSettingsBuilder.getVersionSettings().getRetrySettings().toBuilder()
+ *         versionsSettingsBuilder
+ *             .getVersionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VersionsStubSettings versionsSettings = versionsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -118,6 +119,59 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
   private final OperationCallSettings<LoadVersionRequest, Empty, Struct>
       loadVersionOperationSettings;
 
+  private static final PagedListDescriptor<ListVersionsRequest, ListVersionsResponse, Version>
+      LIST_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListVersionsRequest, ListVersionsResponse, Version>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListVersionsRequest injectToken(ListVersionsRequest payload, String token) {
+              return ListVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListVersionsRequest injectPageSize(ListVersionsRequest payload, int pageSize) {
+              return ListVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Version> extractResources(ListVersionsResponse payload) {
+              return payload.getVersionsList() == null
+                  ? ImmutableList.<Version>of()
+                  : payload.getVersionsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListVersionsRequest, ListVersionsResponse, ListVersionsPagedResponse>
+      LIST_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListVersionsRequest, ListVersionsResponse, ListVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListVersionsRequest, ListVersionsResponse> callable,
+                ListVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListVersionsResponse> futureResponse) {
+              PageContext<ListVersionsRequest, ListVersionsResponse, Version> pageContext =
+                  PageContext.create(callable, LIST_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listVersions. */
   public PagedCallSettings<ListVersionsRequest, ListVersionsResponse, ListVersionsPagedResponse>
       listVersionsSettings() {
@@ -135,7 +189,6 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to createVersion. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateVersionRequest, Version, CreateVersionOperationMetadata>
       createVersionOperationSettings() {
     return createVersionOperationSettings;
@@ -157,7 +210,6 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to loadVersion. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<LoadVersionRequest, Empty, Struct> loadVersionOperationSettings() {
     return loadVersionOperationSettings;
   }
@@ -168,10 +220,10 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcVersionsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -240,63 +292,9 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     loadVersionOperationSettings = settingsBuilder.loadVersionOperationSettings().build();
   }
 
-  private static final PagedListDescriptor<ListVersionsRequest, ListVersionsResponse, Version>
-      LIST_VERSIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListVersionsRequest, ListVersionsResponse, Version>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListVersionsRequest injectToken(ListVersionsRequest payload, String token) {
-              return ListVersionsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListVersionsRequest injectPageSize(ListVersionsRequest payload, int pageSize) {
-              return ListVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListVersionsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListVersionsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Version> extractResources(ListVersionsResponse payload) {
-              return payload.getVersionsList() != null
-                  ? payload.getVersionsList()
-                  : ImmutableList.<Version>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListVersionsRequest, ListVersionsResponse, ListVersionsPagedResponse>
-      LIST_VERSIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListVersionsRequest, ListVersionsResponse, ListVersionsPagedResponse>() {
-            @Override
-            public ApiFuture<ListVersionsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListVersionsRequest, ListVersionsResponse> callable,
-                ListVersionsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListVersionsResponse> futureResponse) {
-              PageContext<ListVersionsRequest, ListVersionsResponse, Version> pageContext =
-                  PageContext.create(callable, LIST_VERSIONS_PAGE_STR_DESC, request, context);
-              return ListVersionsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for VersionsStubSettings. */
   public static class Builder extends StubSettings.Builder<VersionsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListVersionsRequest, ListVersionsResponse, ListVersionsPagedResponse>
         listVersionsSettings;
@@ -310,7 +308,6 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     private final UnaryCallSettings.Builder<LoadVersionRequest, Operation> loadVersionSettings;
     private final OperationCallSettings.Builder<LoadVersionRequest, Empty, Struct>
         loadVersionOperationSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -318,14 +315,8 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -344,52 +335,24 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listVersionsSettings = PagedCallSettings.newBuilder(LIST_VERSIONS_PAGE_STR_FACT);
-
       getVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createVersionOperationSettings = OperationCallSettings.newBuilder();
-
       updateVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       loadVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       loadVersionOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
@@ -400,98 +363,7 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
               updateVersionSettings,
               deleteVersionSettings,
               loadVersionSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listVersionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .loadVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-      builder
-          .createVersionOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Version.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  CreateVersionOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .loadVersionOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<LoadVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(VersionsStubSettings settings) {
@@ -516,7 +388,100 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
               loadVersionSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .loadVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Version.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CreateVersionOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .loadVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<LoadVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3;
 
 import static com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupsClient.ListTransitionRouteGroupsPagedResponse;
@@ -34,7 +35,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link TransitionRouteGroupsClient}.
  *
@@ -51,22 +52,25 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getTransitionRouteGroup to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TransitionRouteGroupsSettings.Builder transitionRouteGroupsSettingsBuilder =
  *     TransitionRouteGroupsSettings.newBuilder();
  * transitionRouteGroupsSettingsBuilder
  *     .getTransitionRouteGroupSettings()
  *     .setRetrySettings(
- *         transitionRouteGroupsSettingsBuilder.getTransitionRouteGroupSettings().getRetrySettings().toBuilder()
+ *         transitionRouteGroupsSettingsBuilder
+ *             .getTransitionRouteGroupSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * TransitionRouteGroupsSettings transitionRouteGroupsSettings = transitionRouteGroupsSettingsBuilder.build();
- * </code>
- * </pre>
+ * TransitionRouteGroupsSettings transitionRouteGroupsSettings =
+ *     transitionRouteGroupsSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRouteGroupsSettings> {
+
   /** Returns the object with the settings used for calls to listTransitionRouteGroups. */
   public PagedCallSettings<
           ListTransitionRouteGroupsRequest,
@@ -166,16 +170,13 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
   /** Builder for TransitionRouteGroupsSettings. */
   public static class Builder
       extends ClientSettings.Builder<TransitionRouteGroupsSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(TransitionRouteGroupsStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(TransitionRouteGroupsStubSettings.newBuilder());
     }
 
     protected Builder(TransitionRouteGroupsSettings settings) {
@@ -186,11 +187,15 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(TransitionRouteGroupsStubSettings.newBuilder());
+    }
+
     public TransitionRouteGroupsStubSettings.Builder getStubSettingsBuilder() {
       return ((TransitionRouteGroupsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

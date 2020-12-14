@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.VersionsClient.ListVersionsPagedResponse;
@@ -37,7 +38,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link VersionsClient}.
  *
@@ -54,23 +55,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getVersion to 30 seconds:
  *
- * <pre>
- * <code>
- * VersionsSettings.Builder versionsSettingsBuilder =
- *     VersionsSettings.newBuilder();
+ * <pre>{@code
+ * VersionsSettings.Builder versionsSettingsBuilder = VersionsSettings.newBuilder();
  * versionsSettingsBuilder
  *     .getVersionSettings()
  *     .setRetrySettings(
- *         versionsSettingsBuilder.getVersionSettings().getRetrySettings().toBuilder()
+ *         versionsSettingsBuilder
+ *             .getVersionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VersionsSettings versionsSettings = versionsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class VersionsSettings extends ClientSettings<VersionsSettings> {
+
   /** Returns the object with the settings used for calls to listVersions. */
   public PagedCallSettings<ListVersionsRequest, ListVersionsResponse, ListVersionsPagedResponse>
       listVersionsSettings() {
@@ -88,8 +89,6 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
   }
 
   /** Returns the object with the settings used for calls to createVersion. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateVersionRequest, Version, CreateVersionOperationMetadata>
       createVersionOperationSettings() {
     return ((VersionsStubSettings) getStubSettings()).createVersionOperationSettings();
@@ -111,8 +110,6 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
   }
 
   /** Returns the object with the settings used for calls to loadVersion. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<LoadVersionRequest, Empty, Struct> loadVersionOperationSettings() {
     return ((VersionsStubSettings) getStubSettings()).loadVersionOperationSettings();
   }
@@ -176,16 +173,13 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
 
   /** Builder for VersionsSettings. */
   public static class Builder extends ClientSettings.Builder<VersionsSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(VersionsStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(VersionsStubSettings.newBuilder());
     }
 
     protected Builder(VersionsSettings settings) {
@@ -196,11 +190,15 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(VersionsStubSettings.newBuilder());
+    }
+
     public VersionsStubSettings.Builder getStubSettingsBuilder() {
       return ((VersionsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -231,8 +229,6 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createVersion. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateVersionRequest, Version, CreateVersionOperationMetadata>
         createVersionOperationSettings() {
@@ -255,8 +251,6 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to loadVersion. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<LoadVersionRequest, Empty, Struct>
         loadVersionOperationSettings() {
       return getStubSettingsBuilder().loadVersionOperationSettings();

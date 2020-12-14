@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.PagesClient.ListPagesPagedResponse;
@@ -56,7 +57,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link PagesStub}.
  *
@@ -73,21 +74,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getPage to 30 seconds:
  *
- * <pre>
- * <code>
- * PagesStubSettings.Builder pagesSettingsBuilder =
- *     PagesStubSettings.newBuilder();
+ * <pre>{@code
+ * PagesStubSettings.Builder pagesSettingsBuilder = PagesStubSettings.newBuilder();
  * pagesSettingsBuilder
  *     .getPageSettings()
  *     .setRetrySettings(
- *         pagesSettingsBuilder.getPageSettings().getRetrySettings().toBuilder()
+ *         pagesSettingsBuilder
+ *             .getPageSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PagesStubSettings pagesSettings = pagesSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class PagesStubSettings extends StubSettings<PagesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -102,6 +104,59 @@ public class PagesStubSettings extends StubSettings<PagesStubSettings> {
   private final UnaryCallSettings<CreatePageRequest, Page> createPageSettings;
   private final UnaryCallSettings<UpdatePageRequest, Page> updatePageSettings;
   private final UnaryCallSettings<DeletePageRequest, Empty> deletePageSettings;
+
+  private static final PagedListDescriptor<ListPagesRequest, ListPagesResponse, Page>
+      LIST_PAGES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListPagesRequest, ListPagesResponse, Page>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPagesRequest injectToken(ListPagesRequest payload, String token) {
+              return ListPagesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPagesRequest injectPageSize(ListPagesRequest payload, int pageSize) {
+              return ListPagesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPagesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPagesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Page> extractResources(ListPagesResponse payload) {
+              return payload.getPagesList() == null
+                  ? ImmutableList.<Page>of()
+                  : payload.getPagesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPagesRequest, ListPagesResponse, ListPagesPagedResponse>
+      LIST_PAGES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPagesRequest, ListPagesResponse, ListPagesPagedResponse>() {
+            @Override
+            public ApiFuture<ListPagesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPagesRequest, ListPagesResponse> callable,
+                ListPagesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPagesResponse> futureResponse) {
+              PageContext<ListPagesRequest, ListPagesResponse, Page> pageContext =
+                  PageContext.create(callable, LIST_PAGES_PAGE_STR_DESC, request, context);
+              return ListPagesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listPages. */
   public PagedCallSettings<ListPagesRequest, ListPagesResponse, ListPagesPagedResponse>
@@ -135,10 +190,10 @@ public class PagesStubSettings extends StubSettings<PagesStubSettings> {
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcPagesStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -204,63 +259,9 @@ public class PagesStubSettings extends StubSettings<PagesStubSettings> {
     deletePageSettings = settingsBuilder.deletePageSettings().build();
   }
 
-  private static final PagedListDescriptor<ListPagesRequest, ListPagesResponse, Page>
-      LIST_PAGES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListPagesRequest, ListPagesResponse, Page>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListPagesRequest injectToken(ListPagesRequest payload, String token) {
-              return ListPagesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListPagesRequest injectPageSize(ListPagesRequest payload, int pageSize) {
-              return ListPagesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListPagesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListPagesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Page> extractResources(ListPagesResponse payload) {
-              return payload.getPagesList() != null
-                  ? payload.getPagesList()
-                  : ImmutableList.<Page>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListPagesRequest, ListPagesResponse, ListPagesPagedResponse>
-      LIST_PAGES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListPagesRequest, ListPagesResponse, ListPagesPagedResponse>() {
-            @Override
-            public ApiFuture<ListPagesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListPagesRequest, ListPagesResponse> callable,
-                ListPagesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListPagesResponse> futureResponse) {
-              PageContext<ListPagesRequest, ListPagesResponse, Page> pageContext =
-                  PageContext.create(callable, LIST_PAGES_PAGE_STR_DESC, request, context);
-              return ListPagesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for PagesStubSettings. */
   public static class Builder extends StubSettings.Builder<PagesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListPagesRequest, ListPagesResponse, ListPagesPagedResponse>
         listPagesSettings;
@@ -268,7 +269,6 @@ public class PagesStubSettings extends StubSettings<PagesStubSettings> {
     private final UnaryCallSettings.Builder<CreatePageRequest, Page> createPageSettings;
     private final UnaryCallSettings.Builder<UpdatePageRequest, Page> updatePageSettings;
     private final UnaryCallSettings.Builder<DeletePageRequest, Empty> deletePageSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -276,14 +276,8 @@ public class PagesStubSettings extends StubSettings<PagesStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -302,46 +296,21 @@ public class PagesStubSettings extends StubSettings<PagesStubSettings> {
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listPagesSettings = PagedCallSettings.newBuilder(LIST_PAGES_PAGE_STR_FACT);
-
       getPageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createPageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updatePageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deletePageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -351,47 +320,7 @@ public class PagesStubSettings extends StubSettings<PagesStubSettings> {
               createPageSettings,
               updatePageSettings,
               deletePageSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listPagesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getPageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createPageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updatePageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deletePageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(PagesStubSettings settings) {
@@ -412,7 +341,47 @@ public class PagesStubSettings extends StubSettings<PagesStubSettings> {
               deletePageSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listPagesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getPageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createPageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updatePageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deletePageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

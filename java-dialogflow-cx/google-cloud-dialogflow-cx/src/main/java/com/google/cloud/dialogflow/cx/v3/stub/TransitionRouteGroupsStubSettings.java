@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupsClient.ListTransitionRouteGroupsPagedResponse;
@@ -56,7 +57,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link TransitionRouteGroupsStub}.
  *
@@ -73,21 +74,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getTransitionRouteGroup to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TransitionRouteGroupsStubSettings.Builder transitionRouteGroupsSettingsBuilder =
  *     TransitionRouteGroupsStubSettings.newBuilder();
  * transitionRouteGroupsSettingsBuilder
  *     .getTransitionRouteGroupSettings()
  *     .setRetrySettings(
- *         transitionRouteGroupsSettingsBuilder.getTransitionRouteGroupSettings().getRetrySettings().toBuilder()
+ *         transitionRouteGroupsSettingsBuilder
+ *             .getTransitionRouteGroupSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * TransitionRouteGroupsStubSettings transitionRouteGroupsSettings = transitionRouteGroupsSettingsBuilder.build();
- * </code>
- * </pre>
+ * TransitionRouteGroupsStubSettings transitionRouteGroupsSettings =
+ *     transitionRouteGroupsSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class TransitionRouteGroupsStubSettings
     extends StubSettings<TransitionRouteGroupsStubSettings> {
   /** The default scopes of the service. */
@@ -110,6 +114,81 @@ public class TransitionRouteGroupsStubSettings
       updateTransitionRouteGroupSettings;
   private final UnaryCallSettings<DeleteTransitionRouteGroupRequest, Empty>
       deleteTransitionRouteGroupSettings;
+
+  private static final PagedListDescriptor<
+          ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse, TransitionRouteGroup>
+      LIST_TRANSITION_ROUTE_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTransitionRouteGroupsRequest,
+              ListTransitionRouteGroupsResponse,
+              TransitionRouteGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTransitionRouteGroupsRequest injectToken(
+                ListTransitionRouteGroupsRequest payload, String token) {
+              return ListTransitionRouteGroupsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListTransitionRouteGroupsRequest injectPageSize(
+                ListTransitionRouteGroupsRequest payload, int pageSize) {
+              return ListTransitionRouteGroupsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTransitionRouteGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTransitionRouteGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TransitionRouteGroup> extractResources(
+                ListTransitionRouteGroupsResponse payload) {
+              return payload.getTransitionRouteGroupsList() == null
+                  ? ImmutableList.<TransitionRouteGroup>of()
+                  : payload.getTransitionRouteGroupsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTransitionRouteGroupsRequest,
+          ListTransitionRouteGroupsResponse,
+          ListTransitionRouteGroupsPagedResponse>
+      LIST_TRANSITION_ROUTE_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTransitionRouteGroupsRequest,
+              ListTransitionRouteGroupsResponse,
+              ListTransitionRouteGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTransitionRouteGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse>
+                    callable,
+                ListTransitionRouteGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTransitionRouteGroupsResponse> futureResponse) {
+              PageContext<
+                      ListTransitionRouteGroupsRequest,
+                      ListTransitionRouteGroupsResponse,
+                      TransitionRouteGroup>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TRANSITION_ROUTE_GROUPS_PAGE_STR_DESC, request, context);
+              return ListTransitionRouteGroupsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listTransitionRouteGroups. */
   public PagedCallSettings<
@@ -150,10 +229,10 @@ public class TransitionRouteGroupsStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcTransitionRouteGroupsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -223,86 +302,10 @@ public class TransitionRouteGroupsStubSettings
         settingsBuilder.deleteTransitionRouteGroupSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse, TransitionRouteGroup>
-      LIST_TRANSITION_ROUTE_GROUPS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListTransitionRouteGroupsRequest,
-              ListTransitionRouteGroupsResponse,
-              TransitionRouteGroup>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTransitionRouteGroupsRequest injectToken(
-                ListTransitionRouteGroupsRequest payload, String token) {
-              return ListTransitionRouteGroupsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListTransitionRouteGroupsRequest injectPageSize(
-                ListTransitionRouteGroupsRequest payload, int pageSize) {
-              return ListTransitionRouteGroupsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTransitionRouteGroupsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTransitionRouteGroupsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<TransitionRouteGroup> extractResources(
-                ListTransitionRouteGroupsResponse payload) {
-              return payload.getTransitionRouteGroupsList() != null
-                  ? payload.getTransitionRouteGroupsList()
-                  : ImmutableList.<TransitionRouteGroup>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTransitionRouteGroupsRequest,
-          ListTransitionRouteGroupsResponse,
-          ListTransitionRouteGroupsPagedResponse>
-      LIST_TRANSITION_ROUTE_GROUPS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTransitionRouteGroupsRequest,
-              ListTransitionRouteGroupsResponse,
-              ListTransitionRouteGroupsPagedResponse>() {
-            @Override
-            public ApiFuture<ListTransitionRouteGroupsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse>
-                    callable,
-                ListTransitionRouteGroupsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTransitionRouteGroupsResponse> futureResponse) {
-              PageContext<
-                      ListTransitionRouteGroupsRequest,
-                      ListTransitionRouteGroupsResponse,
-                      TransitionRouteGroup>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_TRANSITION_ROUTE_GROUPS_PAGE_STR_DESC, request, context);
-              return ListTransitionRouteGroupsPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
   /** Builder for TransitionRouteGroupsStubSettings. */
   public static class Builder
       extends StubSettings.Builder<TransitionRouteGroupsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListTransitionRouteGroupsRequest,
             ListTransitionRouteGroupsResponse,
@@ -316,7 +319,6 @@ public class TransitionRouteGroupsStubSettings
         updateTransitionRouteGroupSettings;
     private final UnaryCallSettings.Builder<DeleteTransitionRouteGroupRequest, Empty>
         deleteTransitionRouteGroupSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -324,14 +326,8 @@ public class TransitionRouteGroupsStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -350,33 +346,12 @@ public class TransitionRouteGroupsStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
@@ -384,13 +359,9 @@ public class TransitionRouteGroupsStubSettings
 
       listTransitionRouteGroupsSettings =
           PagedCallSettings.newBuilder(LIST_TRANSITION_ROUTE_GROUPS_PAGE_STR_FACT);
-
       getTransitionRouteGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createTransitionRouteGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateTransitionRouteGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteTransitionRouteGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -400,47 +371,7 @@ public class TransitionRouteGroupsStubSettings
               createTransitionRouteGroupSettings,
               updateTransitionRouteGroupSettings,
               deleteTransitionRouteGroupSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listTransitionRouteGroupsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getTransitionRouteGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createTransitionRouteGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateTransitionRouteGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteTransitionRouteGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(TransitionRouteGroupsStubSettings settings) {
@@ -461,7 +392,47 @@ public class TransitionRouteGroupsStubSettings
               deleteTransitionRouteGroupSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listTransitionRouteGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getTransitionRouteGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createTransitionRouteGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateTransitionRouteGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteTransitionRouteGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
