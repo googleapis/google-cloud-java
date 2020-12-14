@@ -603,8 +603,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Indicates whether this Property is soft-deleted or not. Deleted properties
-   * are excluded from List results unless specifically requested.
+   * Output only. Indicates whether this Property is soft-deleted or not.
+   * Deleted properties are excluded from List results unless specifically
+   * requested.
    * </pre>
    *
    * <code>bool deleted = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2191,8 +2192,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether this Property is soft-deleted or not. Deleted properties
-     * are excluded from List results unless specifically requested.
+     * Output only. Indicates whether this Property is soft-deleted or not.
+     * Deleted properties are excluded from List results unless specifically
+     * requested.
      * </pre>
      *
      * <code>bool deleted = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2207,8 +2209,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether this Property is soft-deleted or not. Deleted properties
-     * are excluded from List results unless specifically requested.
+     * Output only. Indicates whether this Property is soft-deleted or not.
+     * Deleted properties are excluded from List results unless specifically
+     * requested.
      * </pre>
      *
      * <code>bool deleted = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2226,8 +2229,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether this Property is soft-deleted or not. Deleted properties
-     * are excluded from List results unless specifically requested.
+     * Output only. Indicates whether this Property is soft-deleted or not.
+     * Deleted properties are excluded from List results unless specifically
+     * requested.
      * </pre>
      *
      * <code>bool deleted = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

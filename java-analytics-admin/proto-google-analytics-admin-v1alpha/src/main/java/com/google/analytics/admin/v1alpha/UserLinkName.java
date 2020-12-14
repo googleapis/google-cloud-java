@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,26 +26,42 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class UserLinkName implements ResourceName {
-
-  @Deprecated
-  protected UserLinkName() {}
-
-  private static final PathTemplate ACCOUNT_USER_LINK_PATH_TEMPLATE =
+  private static final PathTemplate ACCOUNT_USER_LINK =
       PathTemplate.createWithoutUrlEncoding("accounts/{account}/userLinks/{user_link}");
-  private static final PathTemplate PROPERTY_USER_LINK_PATH_TEMPLATE =
+  private static final PathTemplate PROPERTY_USER_LINK =
       PathTemplate.createWithoutUrlEncoding("properties/{property}/userLinks/{user_link}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String account;
+  private final String userLink;
+  private final String property;
 
-  private String account;
-  private String userLink;
-  private String property;
+  @Deprecated
+  protected UserLinkName() {
+    account = null;
+    userLink = null;
+    property = null;
+  }
+
+  private UserLinkName(Builder builder) {
+    account = Preconditions.checkNotNull(builder.getAccount());
+    userLink = Preconditions.checkNotNull(builder.getUserLink());
+    property = null;
+    pathTemplate = ACCOUNT_USER_LINK;
+  }
+
+  private UserLinkName(PropertyUserLinkBuilder builder) {
+    property = Preconditions.checkNotNull(builder.getProperty());
+    userLink = Preconditions.checkNotNull(builder.getUserLink());
+    account = null;
+    pathTemplate = PROPERTY_USER_LINK;
+  }
 
   public String getAccount() {
     return account;
@@ -57,18 +73,6 @@ public class UserLinkName implements ResourceName {
 
   public String getProperty() {
     return property;
-  }
-
-  private UserLinkName(Builder builder) {
-    account = Preconditions.checkNotNull(builder.getAccount());
-    userLink = Preconditions.checkNotNull(builder.getUserLink());
-    pathTemplate = ACCOUNT_USER_LINK_PATH_TEMPLATE;
-  }
-
-  private UserLinkName(PropertyUserLinkBuilder builder) {
-    property = Preconditions.checkNotNull(builder.getProperty());
-    userLink = Preconditions.checkNotNull(builder.getUserLink());
-    pathTemplate = PROPERTY_USER_LINK_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -90,12 +94,12 @@ public class UserLinkName implements ResourceName {
   }
 
   public static UserLinkName of(String account, String userLink) {
-    return newAccountUserLinkBuilder().setAccount(account).setUserLink(userLink).build();
+    return newBuilder().setAccount(account).setUserLink(userLink).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static UserLinkName ofAccountUserLinkName(String account, String userLink) {
-    return newAccountUserLinkBuilder().setAccount(account).setUserLink(userLink).build();
+    return newBuilder().setAccount(account).setUserLink(userLink).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -125,14 +129,14 @@ public class UserLinkName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (ACCOUNT_USER_LINK_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = ACCOUNT_USER_LINK_PATH_TEMPLATE.match(formattedString);
+    if (ACCOUNT_USER_LINK.matches(formattedString)) {
+      Map<String, String> matchMap = ACCOUNT_USER_LINK.match(formattedString);
       return ofAccountUserLinkName(matchMap.get("account"), matchMap.get("user_link"));
-    } else if (PROPERTY_USER_LINK_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROPERTY_USER_LINK_PATH_TEMPLATE.match(formattedString);
+    } else if (PROPERTY_USER_LINK.matches(formattedString)) {
+      Map<String, String> matchMap = PROPERTY_USER_LINK.match(formattedString);
       return ofPropertyUserLinkName(matchMap.get("property"), matchMap.get("user_link"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("UserLinkName.parse: formattedString not in valid format");
   }
 
   public static List<UserLinkName> parseList(List<String> formattedStrings) {
@@ -156,8 +160,8 @@ public class UserLinkName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ACCOUNT_USER_LINK_PATH_TEMPLATE.matches(formattedString)
-        || PROPERTY_USER_LINK_PATH_TEMPLATE.matches(formattedString);
+    return ACCOUNT_USER_LINK.matches(formattedString)
+        || PROPERTY_USER_LINK.matches(formattedString);
   }
 
   @Override
@@ -191,9 +195,36 @@ public class UserLinkName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      UserLinkName that = ((UserLinkName) o);
+      return Objects.equals(this.account, that.account)
+          && Objects.equals(this.userLink, that.userLink)
+          && Objects.equals(this.property, that.property);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(account);
+    h *= 1000003;
+    h ^= Objects.hashCode(userLink);
+    h *= 1000003;
+    h ^= Objects.hashCode(property);
+    return h;
+  }
+
   /** Builder for accounts/{account}/userLinks/{user_link}. */
   public static class Builder {
-
     private String account;
     private String userLink;
 
@@ -219,9 +250,8 @@ public class UserLinkName implements ResourceName {
 
     private Builder(UserLinkName userLinkName) {
       Preconditions.checkArgument(
-          userLinkName.pathTemplate == ACCOUNT_USER_LINK_PATH_TEMPLATE,
-          "toBuilder is only supported when UserLinkName has the pattern of "
-              + "accounts/{account}/userLinks/{user_link}.");
+          Objects.equals(userLinkName.pathTemplate, ACCOUNT_USER_LINK),
+          "toBuilder is only supported when UserLinkName has the pattern of accounts/{account}/userLinks/{user_link}");
       account = userLinkName.account;
       userLink = userLinkName.userLink;
     }
@@ -234,11 +264,10 @@ public class UserLinkName implements ResourceName {
   /** Builder for properties/{property}/userLinks/{user_link}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class PropertyUserLinkBuilder {
-
     private String property;
     private String userLink;
 
-    private PropertyUserLinkBuilder() {}
+    protected PropertyUserLinkBuilder() {}
 
     public String getProperty() {
       return property;
@@ -261,33 +290,5 @@ public class UserLinkName implements ResourceName {
     public UserLinkName build() {
       return new UserLinkName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      UserLinkName that = (UserLinkName) o;
-      return (Objects.equals(this.account, that.account))
-          && (Objects.equals(this.userLink, that.userLink))
-          && (Objects.equals(this.property, that.property));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(account);
-    h *= 1000003;
-    h ^= Objects.hashCode(userLink);
-    h *= 1000003;
-    h ^= Objects.hashCode(property);
-    return h;
   }
 }

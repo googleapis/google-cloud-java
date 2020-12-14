@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.analytics.admin.v1alpha.stub;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
@@ -132,7 +133,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AnalyticsAdminServiceStub}.
  *
@@ -150,22 +151,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getAccount to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AnalyticsAdminServiceStubSettings.Builder analyticsAdminServiceSettingsBuilder =
  *     AnalyticsAdminServiceStubSettings.newBuilder();
  * analyticsAdminServiceSettingsBuilder
  *     .getAccountSettings()
  *     .setRetrySettings(
- *         analyticsAdminServiceSettingsBuilder.getAccountSettings().getRetrySettings().toBuilder()
+ *         analyticsAdminServiceSettingsBuilder
+ *             .getAccountSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * AnalyticsAdminServiceStubSettings analyticsAdminServiceSettings = analyticsAdminServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * AnalyticsAdminServiceStubSettings analyticsAdminServiceSettings =
+ *     analyticsAdminServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class AnalyticsAdminServiceStubSettings
     extends StubSettings<AnalyticsAdminServiceStubSettings> {
   /** The default scopes of the service. */
@@ -273,6 +276,548 @@ public class AnalyticsAdminServiceStubSettings
       listGoogleAdsLinksSettings;
   private final UnaryCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsSettings;
+
+  private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
+      LIST_ACCOUNTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAccountsRequest injectToken(ListAccountsRequest payload, String token) {
+              return ListAccountsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAccountsRequest injectPageSize(ListAccountsRequest payload, int pageSize) {
+              return ListAccountsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAccountsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAccountsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Account> extractResources(ListAccountsResponse payload) {
+              return payload.getAccountsList() == null
+                  ? ImmutableList.<Account>of()
+                  : payload.getAccountsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+      LIST_ACCOUNT_SUMMARIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAccountSummariesRequest injectToken(
+                ListAccountSummariesRequest payload, String token) {
+              return ListAccountSummariesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAccountSummariesRequest injectPageSize(
+                ListAccountSummariesRequest payload, int pageSize) {
+              return ListAccountSummariesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAccountSummariesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAccountSummariesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AccountSummary> extractResources(ListAccountSummariesResponse payload) {
+              return payload.getAccountSummariesList() == null
+                  ? ImmutableList.<AccountSummary>of()
+                  : payload.getAccountSummariesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListPropertiesRequest, ListPropertiesResponse, Property>
+      LIST_PROPERTIES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListPropertiesRequest, ListPropertiesResponse, Property>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPropertiesRequest injectToken(ListPropertiesRequest payload, String token) {
+              return ListPropertiesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPropertiesRequest injectPageSize(
+                ListPropertiesRequest payload, int pageSize) {
+              return ListPropertiesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPropertiesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPropertiesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Property> extractResources(ListPropertiesResponse payload) {
+              return payload.getPropertiesList() == null
+                  ? ImmutableList.<Property>of()
+                  : payload.getPropertiesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListUserLinksRequest, ListUserLinksResponse, UserLink>
+      LIST_USER_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListUserLinksRequest, ListUserLinksResponse, UserLink>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUserLinksRequest injectToken(ListUserLinksRequest payload, String token) {
+              return ListUserLinksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUserLinksRequest injectPageSize(ListUserLinksRequest payload, int pageSize) {
+              return ListUserLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUserLinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUserLinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UserLink> extractResources(ListUserLinksResponse payload) {
+              return payload.getUserLinksList() == null
+                  ? ImmutableList.<UserLink>of()
+                  : payload.getUserLinksList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink>
+      AUDIT_USER_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AuditUserLinksRequest injectToken(AuditUserLinksRequest payload, String token) {
+              return AuditUserLinksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public AuditUserLinksRequest injectPageSize(
+                AuditUserLinksRequest payload, int pageSize) {
+              return AuditUserLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(AuditUserLinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(AuditUserLinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AuditUserLink> extractResources(AuditUserLinksResponse payload) {
+              return payload.getUserLinksList() == null
+                  ? ImmutableList.<AuditUserLink>of()
+                  : payload.getUserLinksList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream>
+      LIST_WEB_DATA_STREAMS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListWebDataStreamsRequest injectToken(
+                ListWebDataStreamsRequest payload, String token) {
+              return ListWebDataStreamsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListWebDataStreamsRequest injectPageSize(
+                ListWebDataStreamsRequest payload, int pageSize) {
+              return ListWebDataStreamsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListWebDataStreamsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListWebDataStreamsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<WebDataStream> extractResources(ListWebDataStreamsResponse payload) {
+              return payload.getWebDataStreamsList() == null
+                  ? ImmutableList.<WebDataStream>of()
+                  : payload.getWebDataStreamsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream>
+      LIST_IOS_APP_DATA_STREAMS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListIosAppDataStreamsRequest injectToken(
+                ListIosAppDataStreamsRequest payload, String token) {
+              return ListIosAppDataStreamsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListIosAppDataStreamsRequest injectPageSize(
+                ListIosAppDataStreamsRequest payload, int pageSize) {
+              return ListIosAppDataStreamsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListIosAppDataStreamsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListIosAppDataStreamsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<IosAppDataStream> extractResources(
+                ListIosAppDataStreamsResponse payload) {
+              return payload.getIosAppDataStreamsList() == null
+                  ? ImmutableList.<IosAppDataStream>of()
+                  : payload.getIosAppDataStreamsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse, AndroidAppDataStream>
+      LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAndroidAppDataStreamsRequest,
+              ListAndroidAppDataStreamsResponse,
+              AndroidAppDataStream>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAndroidAppDataStreamsRequest injectToken(
+                ListAndroidAppDataStreamsRequest payload, String token) {
+              return ListAndroidAppDataStreamsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListAndroidAppDataStreamsRequest injectPageSize(
+                ListAndroidAppDataStreamsRequest payload, int pageSize) {
+              return ListAndroidAppDataStreamsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAndroidAppDataStreamsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAndroidAppDataStreamsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AndroidAppDataStream> extractResources(
+                ListAndroidAppDataStreamsResponse payload) {
+              return payload.getAndroidAppDataStreamsList() == null
+                  ? ImmutableList.<AndroidAppDataStream>of()
+                  : payload.getAndroidAppDataStreamsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink>
+      LIST_GOOGLE_ADS_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGoogleAdsLinksRequest injectToken(
+                ListGoogleAdsLinksRequest payload, String token) {
+              return ListGoogleAdsLinksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListGoogleAdsLinksRequest injectPageSize(
+                ListGoogleAdsLinksRequest payload, int pageSize) {
+              return ListGoogleAdsLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGoogleAdsLinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGoogleAdsLinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<GoogleAdsLink> extractResources(ListGoogleAdsLinksResponse payload) {
+              return payload.getGoogleAdsLinksList() == null
+                  ? ImmutableList.<GoogleAdsLink>of()
+                  : payload.getGoogleAdsLinksList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
+      LIST_ACCOUNTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAccountsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAccountsRequest, ListAccountsResponse> callable,
+                ListAccountsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAccountsResponse> futureResponse) {
+              PageContext<ListAccountsRequest, ListAccountsResponse, Account> pageContext =
+                  PageContext.create(callable, LIST_ACCOUNTS_PAGE_STR_DESC, request, context);
+              return ListAccountsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAccountSummariesRequest,
+          ListAccountSummariesResponse,
+          ListAccountSummariesPagedResponse>
+      LIST_ACCOUNT_SUMMARIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAccountSummariesRequest,
+              ListAccountSummariesResponse,
+              ListAccountSummariesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAccountSummariesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesResponse> callable,
+                ListAccountSummariesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAccountSummariesResponse> futureResponse) {
+              PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ACCOUNT_SUMMARIES_PAGE_STR_DESC, request, context);
+              return ListAccountSummariesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPropertiesRequest, ListPropertiesResponse, ListPropertiesPagedResponse>
+      LIST_PROPERTIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPropertiesRequest, ListPropertiesResponse, ListPropertiesPagedResponse>() {
+            @Override
+            public ApiFuture<ListPropertiesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPropertiesRequest, ListPropertiesResponse> callable,
+                ListPropertiesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPropertiesResponse> futureResponse) {
+              PageContext<ListPropertiesRequest, ListPropertiesResponse, Property> pageContext =
+                  PageContext.create(callable, LIST_PROPERTIES_PAGE_STR_DESC, request, context);
+              return ListPropertiesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUserLinksRequest, ListUserLinksResponse, ListUserLinksPagedResponse>
+      LIST_USER_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUserLinksRequest, ListUserLinksResponse, ListUserLinksPagedResponse>() {
+            @Override
+            public ApiFuture<ListUserLinksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> callable,
+                ListUserLinksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUserLinksResponse> futureResponse) {
+              PageContext<ListUserLinksRequest, ListUserLinksResponse, UserLink> pageContext =
+                  PageContext.create(callable, LIST_USER_LINKS_PAGE_STR_DESC, request, context);
+              return ListUserLinksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLinksPagedResponse>
+      AUDIT_USER_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLinksPagedResponse>() {
+            @Override
+            public ApiFuture<AuditUserLinksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse> callable,
+                AuditUserLinksRequest request,
+                ApiCallContext context,
+                ApiFuture<AuditUserLinksResponse> futureResponse) {
+              PageContext<AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink>
+                  pageContext =
+                      PageContext.create(
+                          callable, AUDIT_USER_LINKS_PAGE_STR_DESC, request, context);
+              return AuditUserLinksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListWebDataStreamsRequest, ListWebDataStreamsResponse, ListWebDataStreamsPagedResponse>
+      LIST_WEB_DATA_STREAMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListWebDataStreamsRequest,
+              ListWebDataStreamsResponse,
+              ListWebDataStreamsPagedResponse>() {
+            @Override
+            public ApiFuture<ListWebDataStreamsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsResponse> callable,
+                ListWebDataStreamsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListWebDataStreamsResponse> futureResponse) {
+              PageContext<ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_WEB_DATA_STREAMS_PAGE_STR_DESC, request, context);
+              return ListWebDataStreamsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListIosAppDataStreamsRequest,
+          ListIosAppDataStreamsResponse,
+          ListIosAppDataStreamsPagedResponse>
+      LIST_IOS_APP_DATA_STREAMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListIosAppDataStreamsRequest,
+              ListIosAppDataStreamsResponse,
+              ListIosAppDataStreamsPagedResponse>() {
+            @Override
+            public ApiFuture<ListIosAppDataStreamsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse> callable,
+                ListIosAppDataStreamsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListIosAppDataStreamsResponse> futureResponse) {
+              PageContext<
+                      ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_IOS_APP_DATA_STREAMS_PAGE_STR_DESC, request, context);
+              return ListIosAppDataStreamsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAndroidAppDataStreamsRequest,
+          ListAndroidAppDataStreamsResponse,
+          ListAndroidAppDataStreamsPagedResponse>
+      LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAndroidAppDataStreamsRequest,
+              ListAndroidAppDataStreamsResponse,
+              ListAndroidAppDataStreamsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAndroidAppDataStreamsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
+                    callable,
+                ListAndroidAppDataStreamsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAndroidAppDataStreamsResponse> futureResponse) {
+              PageContext<
+                      ListAndroidAppDataStreamsRequest,
+                      ListAndroidAppDataStreamsResponse,
+                      AndroidAppDataStream>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_DESC, request, context);
+              return ListAndroidAppDataStreamsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, ListGoogleAdsLinksPagedResponse>
+      LIST_GOOGLE_ADS_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGoogleAdsLinksRequest,
+              ListGoogleAdsLinksResponse,
+              ListGoogleAdsLinksPagedResponse>() {
+            @Override
+            public ApiFuture<ListGoogleAdsLinksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse> callable,
+                ListGoogleAdsLinksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGoogleAdsLinksResponse> futureResponse) {
+              PageContext<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GOOGLE_ADS_LINKS_PAGE_STR_DESC, request, context);
+              return ListGoogleAdsLinksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to getAccount. */
   public UnaryCallSettings<GetAccountRequest, Account> getAccountSettings() {
@@ -561,10 +1106,10 @@ public class AnalyticsAdminServiceStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcAnalyticsAdminServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -679,553 +1224,10 @@ public class AnalyticsAdminServiceStubSettings
     getDataSharingSettingsSettings = settingsBuilder.getDataSharingSettingsSettings().build();
   }
 
-  private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
-      LIST_ACCOUNTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListAccountsRequest injectToken(ListAccountsRequest payload, String token) {
-              return ListAccountsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListAccountsRequest injectPageSize(ListAccountsRequest payload, int pageSize) {
-              return ListAccountsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListAccountsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListAccountsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Account> extractResources(ListAccountsResponse payload) {
-              return payload.getAccountsList() != null
-                  ? payload.getAccountsList()
-                  : ImmutableList.<Account>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
-      LIST_ACCOUNT_SUMMARIES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListAccountSummariesRequest injectToken(
-                ListAccountSummariesRequest payload, String token) {
-              return ListAccountSummariesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListAccountSummariesRequest injectPageSize(
-                ListAccountSummariesRequest payload, int pageSize) {
-              return ListAccountSummariesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListAccountSummariesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListAccountSummariesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<AccountSummary> extractResources(ListAccountSummariesResponse payload) {
-              return payload.getAccountSummariesList() != null
-                  ? payload.getAccountSummariesList()
-                  : ImmutableList.<AccountSummary>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListPropertiesRequest, ListPropertiesResponse, Property>
-      LIST_PROPERTIES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListPropertiesRequest, ListPropertiesResponse, Property>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListPropertiesRequest injectToken(ListPropertiesRequest payload, String token) {
-              return ListPropertiesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListPropertiesRequest injectPageSize(
-                ListPropertiesRequest payload, int pageSize) {
-              return ListPropertiesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListPropertiesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListPropertiesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Property> extractResources(ListPropertiesResponse payload) {
-              return payload.getPropertiesList() != null
-                  ? payload.getPropertiesList()
-                  : ImmutableList.<Property>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListUserLinksRequest, ListUserLinksResponse, UserLink>
-      LIST_USER_LINKS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListUserLinksRequest, ListUserLinksResponse, UserLink>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListUserLinksRequest injectToken(ListUserLinksRequest payload, String token) {
-              return ListUserLinksRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListUserLinksRequest injectPageSize(ListUserLinksRequest payload, int pageSize) {
-              return ListUserLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListUserLinksRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListUserLinksResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<UserLink> extractResources(ListUserLinksResponse payload) {
-              return payload.getUserLinksList() != null
-                  ? payload.getUserLinksList()
-                  : ImmutableList.<UserLink>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink>
-      AUDIT_USER_LINKS_PAGE_STR_DESC =
-          new PagedListDescriptor<AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public AuditUserLinksRequest injectToken(AuditUserLinksRequest payload, String token) {
-              return AuditUserLinksRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public AuditUserLinksRequest injectPageSize(
-                AuditUserLinksRequest payload, int pageSize) {
-              return AuditUserLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(AuditUserLinksRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(AuditUserLinksResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<AuditUserLink> extractResources(AuditUserLinksResponse payload) {
-              return payload.getUserLinksList() != null
-                  ? payload.getUserLinksList()
-                  : ImmutableList.<AuditUserLink>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream>
-      LIST_WEB_DATA_STREAMS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListWebDataStreamsRequest injectToken(
-                ListWebDataStreamsRequest payload, String token) {
-              return ListWebDataStreamsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListWebDataStreamsRequest injectPageSize(
-                ListWebDataStreamsRequest payload, int pageSize) {
-              return ListWebDataStreamsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListWebDataStreamsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListWebDataStreamsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<WebDataStream> extractResources(ListWebDataStreamsResponse payload) {
-              return payload.getWebDataStreamsList() != null
-                  ? payload.getWebDataStreamsList()
-                  : ImmutableList.<WebDataStream>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream>
-      LIST_IOS_APP_DATA_STREAMS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListIosAppDataStreamsRequest injectToken(
-                ListIosAppDataStreamsRequest payload, String token) {
-              return ListIosAppDataStreamsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListIosAppDataStreamsRequest injectPageSize(
-                ListIosAppDataStreamsRequest payload, int pageSize) {
-              return ListIosAppDataStreamsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListIosAppDataStreamsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListIosAppDataStreamsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<IosAppDataStream> extractResources(
-                ListIosAppDataStreamsResponse payload) {
-              return payload.getIosAppDataStreamsList() != null
-                  ? payload.getIosAppDataStreamsList()
-                  : ImmutableList.<IosAppDataStream>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse, AndroidAppDataStream>
-      LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListAndroidAppDataStreamsRequest,
-              ListAndroidAppDataStreamsResponse,
-              AndroidAppDataStream>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListAndroidAppDataStreamsRequest injectToken(
-                ListAndroidAppDataStreamsRequest payload, String token) {
-              return ListAndroidAppDataStreamsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListAndroidAppDataStreamsRequest injectPageSize(
-                ListAndroidAppDataStreamsRequest payload, int pageSize) {
-              return ListAndroidAppDataStreamsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListAndroidAppDataStreamsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListAndroidAppDataStreamsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<AndroidAppDataStream> extractResources(
-                ListAndroidAppDataStreamsResponse payload) {
-              return payload.getAndroidAppDataStreamsList() != null
-                  ? payload.getAndroidAppDataStreamsList()
-                  : ImmutableList.<AndroidAppDataStream>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink>
-      LIST_GOOGLE_ADS_LINKS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListGoogleAdsLinksRequest injectToken(
-                ListGoogleAdsLinksRequest payload, String token) {
-              return ListGoogleAdsLinksRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListGoogleAdsLinksRequest injectPageSize(
-                ListGoogleAdsLinksRequest payload, int pageSize) {
-              return ListGoogleAdsLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListGoogleAdsLinksRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListGoogleAdsLinksResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<GoogleAdsLink> extractResources(ListGoogleAdsLinksResponse payload) {
-              return payload.getGoogleAdsLinksList() != null
-                  ? payload.getGoogleAdsLinksList()
-                  : ImmutableList.<GoogleAdsLink>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
-      LIST_ACCOUNTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>() {
-            @Override
-            public ApiFuture<ListAccountsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListAccountsRequest, ListAccountsResponse> callable,
-                ListAccountsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListAccountsResponse> futureResponse) {
-              PageContext<ListAccountsRequest, ListAccountsResponse, Account> pageContext =
-                  PageContext.create(callable, LIST_ACCOUNTS_PAGE_STR_DESC, request, context);
-              return ListAccountsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListAccountSummariesRequest,
-          ListAccountSummariesResponse,
-          ListAccountSummariesPagedResponse>
-      LIST_ACCOUNT_SUMMARIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListAccountSummariesRequest,
-              ListAccountSummariesResponse,
-              ListAccountSummariesPagedResponse>() {
-            @Override
-            public ApiFuture<ListAccountSummariesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesResponse> callable,
-                ListAccountSummariesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListAccountSummariesResponse> futureResponse) {
-              PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_ACCOUNT_SUMMARIES_PAGE_STR_DESC, request, context);
-              return ListAccountSummariesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListPropertiesRequest, ListPropertiesResponse, ListPropertiesPagedResponse>
-      LIST_PROPERTIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListPropertiesRequest, ListPropertiesResponse, ListPropertiesPagedResponse>() {
-            @Override
-            public ApiFuture<ListPropertiesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListPropertiesRequest, ListPropertiesResponse> callable,
-                ListPropertiesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListPropertiesResponse> futureResponse) {
-              PageContext<ListPropertiesRequest, ListPropertiesResponse, Property> pageContext =
-                  PageContext.create(callable, LIST_PROPERTIES_PAGE_STR_DESC, request, context);
-              return ListPropertiesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListUserLinksRequest, ListUserLinksResponse, ListUserLinksPagedResponse>
-      LIST_USER_LINKS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListUserLinksRequest, ListUserLinksResponse, ListUserLinksPagedResponse>() {
-            @Override
-            public ApiFuture<ListUserLinksPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> callable,
-                ListUserLinksRequest request,
-                ApiCallContext context,
-                ApiFuture<ListUserLinksResponse> futureResponse) {
-              PageContext<ListUserLinksRequest, ListUserLinksResponse, UserLink> pageContext =
-                  PageContext.create(callable, LIST_USER_LINKS_PAGE_STR_DESC, request, context);
-              return ListUserLinksPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLinksPagedResponse>
-      AUDIT_USER_LINKS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLinksPagedResponse>() {
-            @Override
-            public ApiFuture<AuditUserLinksPagedResponse> getFuturePagedResponse(
-                UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse> callable,
-                AuditUserLinksRequest request,
-                ApiCallContext context,
-                ApiFuture<AuditUserLinksResponse> futureResponse) {
-              PageContext<AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink>
-                  pageContext =
-                      PageContext.create(
-                          callable, AUDIT_USER_LINKS_PAGE_STR_DESC, request, context);
-              return AuditUserLinksPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListWebDataStreamsRequest, ListWebDataStreamsResponse, ListWebDataStreamsPagedResponse>
-      LIST_WEB_DATA_STREAMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListWebDataStreamsRequest,
-              ListWebDataStreamsResponse,
-              ListWebDataStreamsPagedResponse>() {
-            @Override
-            public ApiFuture<ListWebDataStreamsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsResponse> callable,
-                ListWebDataStreamsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListWebDataStreamsResponse> futureResponse) {
-              PageContext<ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_WEB_DATA_STREAMS_PAGE_STR_DESC, request, context);
-              return ListWebDataStreamsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
-          ListIosAppDataStreamsPagedResponse>
-      LIST_IOS_APP_DATA_STREAMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListIosAppDataStreamsRequest,
-              ListIosAppDataStreamsResponse,
-              ListIosAppDataStreamsPagedResponse>() {
-            @Override
-            public ApiFuture<ListIosAppDataStreamsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse> callable,
-                ListIosAppDataStreamsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListIosAppDataStreamsResponse> futureResponse) {
-              PageContext<
-                      ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_IOS_APP_DATA_STREAMS_PAGE_STR_DESC, request, context);
-              return ListIosAppDataStreamsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
-          ListAndroidAppDataStreamsPagedResponse>
-      LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListAndroidAppDataStreamsRequest,
-              ListAndroidAppDataStreamsResponse,
-              ListAndroidAppDataStreamsPagedResponse>() {
-            @Override
-            public ApiFuture<ListAndroidAppDataStreamsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
-                    callable,
-                ListAndroidAppDataStreamsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListAndroidAppDataStreamsResponse> futureResponse) {
-              PageContext<
-                      ListAndroidAppDataStreamsRequest,
-                      ListAndroidAppDataStreamsResponse,
-                      AndroidAppDataStream>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_DESC, request, context);
-              return ListAndroidAppDataStreamsPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, ListGoogleAdsLinksPagedResponse>
-      LIST_GOOGLE_ADS_LINKS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListGoogleAdsLinksRequest,
-              ListGoogleAdsLinksResponse,
-              ListGoogleAdsLinksPagedResponse>() {
-            @Override
-            public ApiFuture<ListGoogleAdsLinksPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse> callable,
-                ListGoogleAdsLinksRequest request,
-                ApiCallContext context,
-                ApiFuture<ListGoogleAdsLinksResponse> futureResponse) {
-              PageContext<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_GOOGLE_ADS_LINKS_PAGE_STR_DESC, request, context);
-              return ListGoogleAdsLinksPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for AnalyticsAdminServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<AnalyticsAdminServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<GetAccountRequest, Account> getAccountSettings;
     private final PagedCallSettings.Builder<
             ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
@@ -1331,7 +1333,6 @@ public class AnalyticsAdminServiceStubSettings
         listGoogleAdsLinksSettings;
     private final UnaryCallSettings.Builder<GetDataSharingSettingsRequest, DataSharingSettings>
         getDataSharingSettingsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1339,13 +1340,12 @@ public class AnalyticsAdminServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -1356,6 +1356,14 @@ public class AnalyticsAdminServiceStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
@@ -1364,126 +1372,69 @@ public class AnalyticsAdminServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       getAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listAccountsSettings = PagedCallSettings.newBuilder(LIST_ACCOUNTS_PAGE_STR_FACT);
-
       deleteAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       provisionAccountTicketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listAccountSummariesSettings =
           PagedCallSettings.newBuilder(LIST_ACCOUNT_SUMMARIES_PAGE_STR_FACT);
-
       getPropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listPropertiesSettings = PagedCallSettings.newBuilder(LIST_PROPERTIES_PAGE_STR_FACT);
-
       createPropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deletePropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updatePropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getUserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchGetUserLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listUserLinksSettings = PagedCallSettings.newBuilder(LIST_USER_LINKS_PAGE_STR_FACT);
-
       auditUserLinksSettings = PagedCallSettings.newBuilder(AUDIT_USER_LINKS_PAGE_STR_FACT);
-
       createUserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchCreateUserLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateUserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchUpdateUserLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteUserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchDeleteUserLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getWebDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteWebDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateWebDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createWebDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listWebDataStreamsSettings =
           PagedCallSettings.newBuilder(LIST_WEB_DATA_STREAMS_PAGE_STR_FACT);
-
       getIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createIosAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listIosAppDataStreamsSettings =
           PagedCallSettings.newBuilder(LIST_IOS_APP_DATA_STREAMS_PAGE_STR_FACT);
-
       getAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createAndroidAppDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listAndroidAppDataStreamsSettings =
           PagedCallSettings.newBuilder(LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_FACT);
-
       getEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listFirebaseLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getGlobalSiteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createGoogleAdsLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateGoogleAdsLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteGoogleAdsLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listGoogleAdsLinksSettings =
           PagedCallSettings.newBuilder(LIST_GOOGLE_ADS_LINKS_PAGE_STR_FACT);
-
       getDataSharingSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -1536,21 +1487,127 @@ public class AnalyticsAdminServiceStubSettings
               deleteGoogleAdsLinkSettings,
               listGoogleAdsLinksSettings,
               getDataSharingSettingsSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(AnalyticsAdminServiceStubSettings settings) {
+      super(settings);
+
+      getAccountSettings = settings.getAccountSettings.toBuilder();
+      listAccountsSettings = settings.listAccountsSettings.toBuilder();
+      deleteAccountSettings = settings.deleteAccountSettings.toBuilder();
+      updateAccountSettings = settings.updateAccountSettings.toBuilder();
+      provisionAccountTicketSettings = settings.provisionAccountTicketSettings.toBuilder();
+      listAccountSummariesSettings = settings.listAccountSummariesSettings.toBuilder();
+      getPropertySettings = settings.getPropertySettings.toBuilder();
+      listPropertiesSettings = settings.listPropertiesSettings.toBuilder();
+      createPropertySettings = settings.createPropertySettings.toBuilder();
+      deletePropertySettings = settings.deletePropertySettings.toBuilder();
+      updatePropertySettings = settings.updatePropertySettings.toBuilder();
+      getUserLinkSettings = settings.getUserLinkSettings.toBuilder();
+      batchGetUserLinksSettings = settings.batchGetUserLinksSettings.toBuilder();
+      listUserLinksSettings = settings.listUserLinksSettings.toBuilder();
+      auditUserLinksSettings = settings.auditUserLinksSettings.toBuilder();
+      createUserLinkSettings = settings.createUserLinkSettings.toBuilder();
+      batchCreateUserLinksSettings = settings.batchCreateUserLinksSettings.toBuilder();
+      updateUserLinkSettings = settings.updateUserLinkSettings.toBuilder();
+      batchUpdateUserLinksSettings = settings.batchUpdateUserLinksSettings.toBuilder();
+      deleteUserLinkSettings = settings.deleteUserLinkSettings.toBuilder();
+      batchDeleteUserLinksSettings = settings.batchDeleteUserLinksSettings.toBuilder();
+      getWebDataStreamSettings = settings.getWebDataStreamSettings.toBuilder();
+      deleteWebDataStreamSettings = settings.deleteWebDataStreamSettings.toBuilder();
+      updateWebDataStreamSettings = settings.updateWebDataStreamSettings.toBuilder();
+      createWebDataStreamSettings = settings.createWebDataStreamSettings.toBuilder();
+      listWebDataStreamsSettings = settings.listWebDataStreamsSettings.toBuilder();
+      getIosAppDataStreamSettings = settings.getIosAppDataStreamSettings.toBuilder();
+      deleteIosAppDataStreamSettings = settings.deleteIosAppDataStreamSettings.toBuilder();
+      updateIosAppDataStreamSettings = settings.updateIosAppDataStreamSettings.toBuilder();
+      createIosAppDataStreamSettings = settings.createIosAppDataStreamSettings.toBuilder();
+      listIosAppDataStreamsSettings = settings.listIosAppDataStreamsSettings.toBuilder();
+      getAndroidAppDataStreamSettings = settings.getAndroidAppDataStreamSettings.toBuilder();
+      deleteAndroidAppDataStreamSettings = settings.deleteAndroidAppDataStreamSettings.toBuilder();
+      updateAndroidAppDataStreamSettings = settings.updateAndroidAppDataStreamSettings.toBuilder();
+      createAndroidAppDataStreamSettings = settings.createAndroidAppDataStreamSettings.toBuilder();
+      listAndroidAppDataStreamsSettings = settings.listAndroidAppDataStreamsSettings.toBuilder();
+      getEnhancedMeasurementSettingsSettings =
+          settings.getEnhancedMeasurementSettingsSettings.toBuilder();
+      updateEnhancedMeasurementSettingsSettings =
+          settings.updateEnhancedMeasurementSettingsSettings.toBuilder();
+      createFirebaseLinkSettings = settings.createFirebaseLinkSettings.toBuilder();
+      updateFirebaseLinkSettings = settings.updateFirebaseLinkSettings.toBuilder();
+      deleteFirebaseLinkSettings = settings.deleteFirebaseLinkSettings.toBuilder();
+      listFirebaseLinksSettings = settings.listFirebaseLinksSettings.toBuilder();
+      getGlobalSiteTagSettings = settings.getGlobalSiteTagSettings.toBuilder();
+      createGoogleAdsLinkSettings = settings.createGoogleAdsLinkSettings.toBuilder();
+      updateGoogleAdsLinkSettings = settings.updateGoogleAdsLinkSettings.toBuilder();
+      deleteGoogleAdsLinkSettings = settings.deleteGoogleAdsLinkSettings.toBuilder();
+      listGoogleAdsLinksSettings = settings.listGoogleAdsLinksSettings.toBuilder();
+      getDataSharingSettingsSettings = settings.getDataSharingSettingsSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getAccountSettings,
+              listAccountsSettings,
+              deleteAccountSettings,
+              updateAccountSettings,
+              provisionAccountTicketSettings,
+              listAccountSummariesSettings,
+              getPropertySettings,
+              listPropertiesSettings,
+              createPropertySettings,
+              deletePropertySettings,
+              updatePropertySettings,
+              getUserLinkSettings,
+              batchGetUserLinksSettings,
+              listUserLinksSettings,
+              auditUserLinksSettings,
+              createUserLinkSettings,
+              batchCreateUserLinksSettings,
+              updateUserLinkSettings,
+              batchUpdateUserLinksSettings,
+              deleteUserLinkSettings,
+              batchDeleteUserLinksSettings,
+              getWebDataStreamSettings,
+              deleteWebDataStreamSettings,
+              updateWebDataStreamSettings,
+              createWebDataStreamSettings,
+              listWebDataStreamsSettings,
+              getIosAppDataStreamSettings,
+              deleteIosAppDataStreamSettings,
+              updateIosAppDataStreamSettings,
+              createIosAppDataStreamSettings,
+              listIosAppDataStreamsSettings,
+              getAndroidAppDataStreamSettings,
+              deleteAndroidAppDataStreamSettings,
+              updateAndroidAppDataStreamSettings,
+              createAndroidAppDataStreamSettings,
+              listAndroidAppDataStreamsSettings,
+              getEnhancedMeasurementSettingsSettings,
+              updateEnhancedMeasurementSettingsSettings,
+              createFirebaseLinkSettings,
+              updateFirebaseLinkSettings,
+              deleteFirebaseLinkSettings,
+              listFirebaseLinksSettings,
+              getGlobalSiteTagSettings,
+              createGoogleAdsLinkSettings,
+              updateGoogleAdsLinkSettings,
+              deleteGoogleAdsLinkSettings,
+              listGoogleAdsLinksSettings,
+              getDataSharingSettingsSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .getAccountSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -1578,8 +1635,8 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .listAccountSummariesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getPropertySettings()
@@ -1663,8 +1720,8 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .deleteWebDataStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateWebDataStreamSettings()
@@ -1788,119 +1845,13 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getDataSharingSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       return builder;
     }
 
-    protected Builder(AnalyticsAdminServiceStubSettings settings) {
-      super(settings);
-
-      getAccountSettings = settings.getAccountSettings.toBuilder();
-      listAccountsSettings = settings.listAccountsSettings.toBuilder();
-      deleteAccountSettings = settings.deleteAccountSettings.toBuilder();
-      updateAccountSettings = settings.updateAccountSettings.toBuilder();
-      provisionAccountTicketSettings = settings.provisionAccountTicketSettings.toBuilder();
-      listAccountSummariesSettings = settings.listAccountSummariesSettings.toBuilder();
-      getPropertySettings = settings.getPropertySettings.toBuilder();
-      listPropertiesSettings = settings.listPropertiesSettings.toBuilder();
-      createPropertySettings = settings.createPropertySettings.toBuilder();
-      deletePropertySettings = settings.deletePropertySettings.toBuilder();
-      updatePropertySettings = settings.updatePropertySettings.toBuilder();
-      getUserLinkSettings = settings.getUserLinkSettings.toBuilder();
-      batchGetUserLinksSettings = settings.batchGetUserLinksSettings.toBuilder();
-      listUserLinksSettings = settings.listUserLinksSettings.toBuilder();
-      auditUserLinksSettings = settings.auditUserLinksSettings.toBuilder();
-      createUserLinkSettings = settings.createUserLinkSettings.toBuilder();
-      batchCreateUserLinksSettings = settings.batchCreateUserLinksSettings.toBuilder();
-      updateUserLinkSettings = settings.updateUserLinkSettings.toBuilder();
-      batchUpdateUserLinksSettings = settings.batchUpdateUserLinksSettings.toBuilder();
-      deleteUserLinkSettings = settings.deleteUserLinkSettings.toBuilder();
-      batchDeleteUserLinksSettings = settings.batchDeleteUserLinksSettings.toBuilder();
-      getWebDataStreamSettings = settings.getWebDataStreamSettings.toBuilder();
-      deleteWebDataStreamSettings = settings.deleteWebDataStreamSettings.toBuilder();
-      updateWebDataStreamSettings = settings.updateWebDataStreamSettings.toBuilder();
-      createWebDataStreamSettings = settings.createWebDataStreamSettings.toBuilder();
-      listWebDataStreamsSettings = settings.listWebDataStreamsSettings.toBuilder();
-      getIosAppDataStreamSettings = settings.getIosAppDataStreamSettings.toBuilder();
-      deleteIosAppDataStreamSettings = settings.deleteIosAppDataStreamSettings.toBuilder();
-      updateIosAppDataStreamSettings = settings.updateIosAppDataStreamSettings.toBuilder();
-      createIosAppDataStreamSettings = settings.createIosAppDataStreamSettings.toBuilder();
-      listIosAppDataStreamsSettings = settings.listIosAppDataStreamsSettings.toBuilder();
-      getAndroidAppDataStreamSettings = settings.getAndroidAppDataStreamSettings.toBuilder();
-      deleteAndroidAppDataStreamSettings = settings.deleteAndroidAppDataStreamSettings.toBuilder();
-      updateAndroidAppDataStreamSettings = settings.updateAndroidAppDataStreamSettings.toBuilder();
-      createAndroidAppDataStreamSettings = settings.createAndroidAppDataStreamSettings.toBuilder();
-      listAndroidAppDataStreamsSettings = settings.listAndroidAppDataStreamsSettings.toBuilder();
-      getEnhancedMeasurementSettingsSettings =
-          settings.getEnhancedMeasurementSettingsSettings.toBuilder();
-      updateEnhancedMeasurementSettingsSettings =
-          settings.updateEnhancedMeasurementSettingsSettings.toBuilder();
-      createFirebaseLinkSettings = settings.createFirebaseLinkSettings.toBuilder();
-      updateFirebaseLinkSettings = settings.updateFirebaseLinkSettings.toBuilder();
-      deleteFirebaseLinkSettings = settings.deleteFirebaseLinkSettings.toBuilder();
-      listFirebaseLinksSettings = settings.listFirebaseLinksSettings.toBuilder();
-      getGlobalSiteTagSettings = settings.getGlobalSiteTagSettings.toBuilder();
-      createGoogleAdsLinkSettings = settings.createGoogleAdsLinkSettings.toBuilder();
-      updateGoogleAdsLinkSettings = settings.updateGoogleAdsLinkSettings.toBuilder();
-      deleteGoogleAdsLinkSettings = settings.deleteGoogleAdsLinkSettings.toBuilder();
-      listGoogleAdsLinksSettings = settings.listGoogleAdsLinksSettings.toBuilder();
-      getDataSharingSettingsSettings = settings.getDataSharingSettingsSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getAccountSettings,
-              listAccountsSettings,
-              deleteAccountSettings,
-              updateAccountSettings,
-              provisionAccountTicketSettings,
-              listAccountSummariesSettings,
-              getPropertySettings,
-              listPropertiesSettings,
-              createPropertySettings,
-              deletePropertySettings,
-              updatePropertySettings,
-              getUserLinkSettings,
-              batchGetUserLinksSettings,
-              listUserLinksSettings,
-              auditUserLinksSettings,
-              createUserLinkSettings,
-              batchCreateUserLinksSettings,
-              updateUserLinkSettings,
-              batchUpdateUserLinksSettings,
-              deleteUserLinkSettings,
-              batchDeleteUserLinksSettings,
-              getWebDataStreamSettings,
-              deleteWebDataStreamSettings,
-              updateWebDataStreamSettings,
-              createWebDataStreamSettings,
-              listWebDataStreamsSettings,
-              getIosAppDataStreamSettings,
-              deleteIosAppDataStreamSettings,
-              updateIosAppDataStreamSettings,
-              createIosAppDataStreamSettings,
-              listIosAppDataStreamsSettings,
-              getAndroidAppDataStreamSettings,
-              deleteAndroidAppDataStreamSettings,
-              updateAndroidAppDataStreamSettings,
-              createAndroidAppDataStreamSettings,
-              listAndroidAppDataStreamsSettings,
-              getEnhancedMeasurementSettingsSettings,
-              updateEnhancedMeasurementSettingsSettings,
-              createFirebaseLinkSettings,
-              updateFirebaseLinkSettings,
-              deleteFirebaseLinkSettings,
-              listFirebaseLinksSettings,
-              getGlobalSiteTagSettings,
-              createGoogleAdsLinkSettings,
-              updateGoogleAdsLinkSettings,
-              deleteGoogleAdsLinkSettings,
-              listGoogleAdsLinksSettings,
-              getDataSharingSettingsSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

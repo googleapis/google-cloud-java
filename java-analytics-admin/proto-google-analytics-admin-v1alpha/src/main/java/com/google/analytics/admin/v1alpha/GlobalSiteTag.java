@@ -40,6 +40,7 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
 
   private GlobalSiteTag() {
     snippet_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
@@ -76,6 +77,13 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               snippet_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
           default:
@@ -118,8 +126,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-   * every webpage to measure.
+   * Immutable. JavaScript code snippet to be pasted as the first item into the
+   * head tag of every webpage to measure.
    * </pre>
    *
    * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -142,8 +150,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-   * every webpage to measure.
+   * Immutable. JavaScript code snippet to be pasted as the first item into the
+   * head tag of every webpage to measure.
    * </pre>
    *
    * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -157,6 +165,55 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       snippet_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of this tag.
+   * </pre>
+   *
+   * <code>string name = 2;</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of this tag.
+   * </pre>
+   *
+   * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -180,6 +237,9 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
     if (!getSnippetBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, snippet_);
     }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -191,6 +251,9 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!getSnippetBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, snippet_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -209,6 +272,7 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
         (com.google.analytics.admin.v1alpha.GlobalSiteTag) obj;
 
     if (!getSnippet().equals(other.getSnippet())) return false;
+    if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -222,6 +286,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SNIPPET_FIELD_NUMBER;
     hash = (53 * hash) + getSnippet().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -370,6 +436,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       snippet_ = "";
 
+      name_ = "";
+
       return this;
     }
 
@@ -398,6 +466,7 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
       com.google.analytics.admin.v1alpha.GlobalSiteTag result =
           new com.google.analytics.admin.v1alpha.GlobalSiteTag(this);
       result.snippet_ = snippet_;
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -452,6 +521,10 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
         snippet_ = other.snippet_;
         onChanged();
       }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -486,8 +559,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-     * every webpage to measure.
+     * Immutable. JavaScript code snippet to be pasted as the first item into the
+     * head tag of every webpage to measure.
      * </pre>
      *
      * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -509,8 +582,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-     * every webpage to measure.
+     * Immutable. JavaScript code snippet to be pasted as the first item into the
+     * head tag of every webpage to measure.
      * </pre>
      *
      * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -532,8 +605,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-     * every webpage to measure.
+     * Immutable. JavaScript code snippet to be pasted as the first item into the
+     * head tag of every webpage to measure.
      * </pre>
      *
      * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -554,8 +627,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-     * every webpage to measure.
+     * Immutable. JavaScript code snippet to be pasted as the first item into the
+     * head tag of every webpage to measure.
      * </pre>
      *
      * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -572,8 +645,8 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-     * every webpage to measure.
+     * Immutable. JavaScript code snippet to be pasted as the first item into the
+     * head tag of every webpage to measure.
      * </pre>
      *
      * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -588,6 +661,112 @@ public final class GlobalSiteTag extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       snippet_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of this tag.
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of this tag.
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of this tag.
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of this tag.
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of this tag.
+     * </pre>
+     *
+     * <code>string name = 2;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
       onChanged();
       return this;
     }

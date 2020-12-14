@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,19 +23,29 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class GoogleAdsLinkName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROPERTY_GOOGLE_ADS_LINK =
       PathTemplate.createWithoutUrlEncoding(
           "properties/{property}/googleAdsLinks/{google_ads_link}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String property;
   private final String googleAdsLink;
+
+  @Deprecated
+  protected GoogleAdsLinkName() {
+    property = null;
+    googleAdsLink = null;
+  }
+
+  private GoogleAdsLinkName(Builder builder) {
+    property = Preconditions.checkNotNull(builder.getProperty());
+    googleAdsLink = Preconditions.checkNotNull(builder.getGoogleAdsLink());
+  }
 
   public String getProperty() {
     return property;
@@ -53,11 +63,6 @@ public class GoogleAdsLinkName implements ResourceName {
     return new Builder(this);
   }
 
-  private GoogleAdsLinkName(Builder builder) {
-    property = Preconditions.checkNotNull(builder.getProperty());
-    googleAdsLink = Preconditions.checkNotNull(builder.getGoogleAdsLink());
-  }
-
   public static GoogleAdsLinkName of(String property, String googleAdsLink) {
     return newBuilder().setProperty(property).setGoogleAdsLink(googleAdsLink).build();
   }
@@ -71,7 +76,7 @@ public class GoogleAdsLinkName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROPERTY_GOOGLE_ADS_LINK.validatedMatch(
             formattedString, "GoogleAdsLinkName.parse: formattedString not in valid format");
     return of(matchMap.get("property"), matchMap.get("google_ads_link"));
   }
@@ -85,7 +90,7 @@ public class GoogleAdsLinkName implements ResourceName {
   }
 
   public static List<String> toStringList(List<GoogleAdsLinkName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (GoogleAdsLinkName value : values) {
       if (value == null) {
         list.add("");
@@ -97,16 +102,21 @@ public class GoogleAdsLinkName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROPERTY_GOOGLE_ADS_LINK.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("property", property);
-          fieldMapBuilder.put("googleAdsLink", googleAdsLink);
+          if (property != null) {
+            fieldMapBuilder.put("property", property);
+          }
+          if (googleAdsLink != null) {
+            fieldMapBuilder.put("google_ads_link", googleAdsLink);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -120,14 +130,39 @@ public class GoogleAdsLinkName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("property", property, "google_ads_link", googleAdsLink);
+    return PROPERTY_GOOGLE_ADS_LINK.instantiate(
+        "property", property, "google_ads_link", googleAdsLink);
   }
 
-  /** Builder for GoogleAdsLinkName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      GoogleAdsLinkName that = ((GoogleAdsLinkName) o);
+      return Objects.equals(this.property, that.property)
+          && Objects.equals(this.googleAdsLink, that.googleAdsLink);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(property);
+    h *= 1000003;
+    h ^= Objects.hashCode(googleAdsLink);
+    return h;
+  }
+
+  /** Builder for properties/{property}/googleAdsLinks/{google_ads_link}. */
+  public static class Builder {
     private String property;
     private String googleAdsLink;
+
+    protected Builder() {}
 
     public String getProperty() {
       return property;
@@ -147,8 +182,6 @@ public class GoogleAdsLinkName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(GoogleAdsLinkName googleAdsLinkName) {
       property = googleAdsLinkName.property;
       googleAdsLink = googleAdsLinkName.googleAdsLink;
@@ -157,28 +190,5 @@ public class GoogleAdsLinkName implements ResourceName {
     public GoogleAdsLinkName build() {
       return new GoogleAdsLinkName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof GoogleAdsLinkName) {
-      GoogleAdsLinkName that = (GoogleAdsLinkName) o;
-      return (this.property.equals(that.property))
-          && (this.googleAdsLink.equals(that.googleAdsLink));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= property.hashCode();
-    h *= 1000003;
-    h ^= googleAdsLink.hashCode();
-    return h;
   }
 }

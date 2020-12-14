@@ -27,8 +27,8 @@ public interface GlobalSiteTagOrBuilder
    *
    *
    * <pre>
-   * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-   * every webpage to measure.
+   * Immutable. JavaScript code snippet to be pasted as the first item into the
+   * head tag of every webpage to measure.
    * </pre>
    *
    * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -40,8 +40,8 @@ public interface GlobalSiteTagOrBuilder
    *
    *
    * <pre>
-   * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
-   * every webpage to measure.
+   * Immutable. JavaScript code snippet to be pasted as the first item into the
+   * head tag of every webpage to measure.
    * </pre>
    *
    * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -49,4 +49,29 @@ public interface GlobalSiteTagOrBuilder
    * @return The bytes for snippet.
    */
   com.google.protobuf.ByteString getSnippetBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of this tag.
+   * </pre>
+   *
+   * <code>string name = 2;</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of this tag.
+   * </pre>
+   *
+   * <code>string name = 2;</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
 }

@@ -52,9 +52,9 @@ public interface FirebaseLinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Firebase project resource name. When creating a FirebaseLink, you may
-   * provide this resource name using either a project number or project ID.
-   * Once this resource has been created, returned FirebaseLinks will always
+   * Immutable. Firebase project resource name. When creating a FirebaseLink,
+   * you may provide this resource name using either a project number or project
+   * ID. Once this resource has been created, returned FirebaseLinks will always
    * have a project_name that contains a project number.
    * Format: 'projects/{project number}'
    * Example: 'projects/1234'
@@ -69,9 +69,9 @@ public interface FirebaseLinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Firebase project resource name. When creating a FirebaseLink, you may
-   * provide this resource name using either a project number or project ID.
-   * Once this resource has been created, returned FirebaseLinks will always
+   * Immutable. Firebase project resource name. When creating a FirebaseLink,
+   * you may provide this resource name using either a project number or project
+   * ID. Once this resource has been created, returned FirebaseLinks will always
    * have a project_name that contains a project number.
    * Format: 'projects/{project number}'
    * Example: 'projects/1234'

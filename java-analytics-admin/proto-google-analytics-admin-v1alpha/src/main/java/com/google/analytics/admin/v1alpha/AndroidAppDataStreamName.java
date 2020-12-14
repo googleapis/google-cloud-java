@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,19 +23,29 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class AndroidAppDataStreamName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROPERTY_ANDROID_APP_DATA_STREAM =
       PathTemplate.createWithoutUrlEncoding(
           "properties/{property}/androidAppDataStreams/{android_app_data_stream}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String property;
   private final String androidAppDataStream;
+
+  @Deprecated
+  protected AndroidAppDataStreamName() {
+    property = null;
+    androidAppDataStream = null;
+  }
+
+  private AndroidAppDataStreamName(Builder builder) {
+    property = Preconditions.checkNotNull(builder.getProperty());
+    androidAppDataStream = Preconditions.checkNotNull(builder.getAndroidAppDataStream());
+  }
 
   public String getProperty() {
     return property;
@@ -51,11 +61,6 @@ public class AndroidAppDataStreamName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private AndroidAppDataStreamName(Builder builder) {
-    property = Preconditions.checkNotNull(builder.getProperty());
-    androidAppDataStream = Preconditions.checkNotNull(builder.getAndroidAppDataStream());
   }
 
   public static AndroidAppDataStreamName of(String property, String androidAppDataStream) {
@@ -75,7 +80,7 @@ public class AndroidAppDataStreamName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROPERTY_ANDROID_APP_DATA_STREAM.validatedMatch(
             formattedString, "AndroidAppDataStreamName.parse: formattedString not in valid format");
     return of(matchMap.get("property"), matchMap.get("android_app_data_stream"));
   }
@@ -89,7 +94,7 @@ public class AndroidAppDataStreamName implements ResourceName {
   }
 
   public static List<String> toStringList(List<AndroidAppDataStreamName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (AndroidAppDataStreamName value : values) {
       if (value == null) {
         list.add("");
@@ -101,16 +106,21 @@ public class AndroidAppDataStreamName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROPERTY_ANDROID_APP_DATA_STREAM.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("property", property);
-          fieldMapBuilder.put("androidAppDataStream", androidAppDataStream);
+          if (property != null) {
+            fieldMapBuilder.put("property", property);
+          }
+          if (androidAppDataStream != null) {
+            fieldMapBuilder.put("android_app_data_stream", androidAppDataStream);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -124,15 +134,39 @@ public class AndroidAppDataStreamName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROPERTY_ANDROID_APP_DATA_STREAM.instantiate(
         "property", property, "android_app_data_stream", androidAppDataStream);
   }
 
-  /** Builder for AndroidAppDataStreamName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      AndroidAppDataStreamName that = ((AndroidAppDataStreamName) o);
+      return Objects.equals(this.property, that.property)
+          && Objects.equals(this.androidAppDataStream, that.androidAppDataStream);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(property);
+    h *= 1000003;
+    h ^= Objects.hashCode(androidAppDataStream);
+    return h;
+  }
+
+  /** Builder for properties/{property}/androidAppDataStreams/{android_app_data_stream}. */
+  public static class Builder {
     private String property;
     private String androidAppDataStream;
+
+    protected Builder() {}
 
     public String getProperty() {
       return property;
@@ -152,8 +186,6 @@ public class AndroidAppDataStreamName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(AndroidAppDataStreamName androidAppDataStreamName) {
       property = androidAppDataStreamName.property;
       androidAppDataStream = androidAppDataStreamName.androidAppDataStream;
@@ -162,28 +194,5 @@ public class AndroidAppDataStreamName implements ResourceName {
     public AndroidAppDataStreamName build() {
       return new AndroidAppDataStreamName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof AndroidAppDataStreamName) {
-      AndroidAppDataStreamName that = (AndroidAppDataStreamName) o;
-      return (this.property.equals(that.property))
-          && (this.androidAppDataStream.equals(that.androidAppDataStream));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= property.hashCode();
-    h *= 1000003;
-    h ^= androidAppDataStream.hashCode();
-    return h;
   }
 }

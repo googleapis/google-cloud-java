@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,19 +23,29 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class IosAppDataStreamName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROPERTY_IOS_APP_DATA_STREAM =
       PathTemplate.createWithoutUrlEncoding(
           "properties/{property}/iosAppDataStreams/{ios_app_data_stream}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String property;
   private final String iosAppDataStream;
+
+  @Deprecated
+  protected IosAppDataStreamName() {
+    property = null;
+    iosAppDataStream = null;
+  }
+
+  private IosAppDataStreamName(Builder builder) {
+    property = Preconditions.checkNotNull(builder.getProperty());
+    iosAppDataStream = Preconditions.checkNotNull(builder.getIosAppDataStream());
+  }
 
   public String getProperty() {
     return property;
@@ -51,11 +61,6 @@ public class IosAppDataStreamName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private IosAppDataStreamName(Builder builder) {
-    property = Preconditions.checkNotNull(builder.getProperty());
-    iosAppDataStream = Preconditions.checkNotNull(builder.getIosAppDataStream());
   }
 
   public static IosAppDataStreamName of(String property, String iosAppDataStream) {
@@ -75,7 +80,7 @@ public class IosAppDataStreamName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROPERTY_IOS_APP_DATA_STREAM.validatedMatch(
             formattedString, "IosAppDataStreamName.parse: formattedString not in valid format");
     return of(matchMap.get("property"), matchMap.get("ios_app_data_stream"));
   }
@@ -89,7 +94,7 @@ public class IosAppDataStreamName implements ResourceName {
   }
 
   public static List<String> toStringList(List<IosAppDataStreamName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (IosAppDataStreamName value : values) {
       if (value == null) {
         list.add("");
@@ -101,16 +106,21 @@ public class IosAppDataStreamName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROPERTY_IOS_APP_DATA_STREAM.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("property", property);
-          fieldMapBuilder.put("iosAppDataStream", iosAppDataStream);
+          if (property != null) {
+            fieldMapBuilder.put("property", property);
+          }
+          if (iosAppDataStream != null) {
+            fieldMapBuilder.put("ios_app_data_stream", iosAppDataStream);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -124,14 +134,39 @@ public class IosAppDataStreamName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("property", property, "ios_app_data_stream", iosAppDataStream);
+    return PROPERTY_IOS_APP_DATA_STREAM.instantiate(
+        "property", property, "ios_app_data_stream", iosAppDataStream);
   }
 
-  /** Builder for IosAppDataStreamName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      IosAppDataStreamName that = ((IosAppDataStreamName) o);
+      return Objects.equals(this.property, that.property)
+          && Objects.equals(this.iosAppDataStream, that.iosAppDataStream);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(property);
+    h *= 1000003;
+    h ^= Objects.hashCode(iosAppDataStream);
+    return h;
+  }
+
+  /** Builder for properties/{property}/iosAppDataStreams/{ios_app_data_stream}. */
+  public static class Builder {
     private String property;
     private String iosAppDataStream;
+
+    protected Builder() {}
 
     public String getProperty() {
       return property;
@@ -151,8 +186,6 @@ public class IosAppDataStreamName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(IosAppDataStreamName iosAppDataStreamName) {
       property = iosAppDataStreamName.property;
       iosAppDataStream = iosAppDataStreamName.iosAppDataStream;
@@ -161,28 +194,5 @@ public class IosAppDataStreamName implements ResourceName {
     public IosAppDataStreamName build() {
       return new IosAppDataStreamName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof IosAppDataStreamName) {
-      IosAppDataStreamName that = (IosAppDataStreamName) o;
-      return (this.property.equals(that.property))
-          && (this.iosAppDataStream.equals(that.iosAppDataStream));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= property.hashCode();
-    h *= 1000003;
-    h ^= iosAppDataStream.hashCode();
-    return h;
   }
 }

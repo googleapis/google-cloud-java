@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.analytics.admin.v1alpha.stub;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
@@ -98,20 +99,18 @@ import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
 import com.google.analytics.admin.v1alpha.WebDataStream;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Base stub class for Google Analytics Admin API.
+ * Base stub class for the AnalyticsAdminService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetAccountRequest, Account> getAccountCallable() {

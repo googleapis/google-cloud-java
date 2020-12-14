@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.analytics.admin.v1alpha.stub;
 
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
@@ -98,7 +99,6 @@ import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
 import com.google.analytics.admin.v1alpha.WebDataStream;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -107,6 +107,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -115,16 +116,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Google Analytics Admin API.
+ * gRPC stub implementation for the AnalyticsAdminService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
-
   private static final MethodDescriptor<GetAccountRequest, Account> getAccountMethodDescriptor =
       MethodDescriptor.<GetAccountRequest, Account>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -132,6 +131,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetAccountRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListAccountsRequest, ListAccountsResponse>
       listAccountsMethodDescriptor =
           MethodDescriptor.<ListAccountsRequest, ListAccountsResponse>newBuilder()
@@ -142,6 +142,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteAccountRequest, Empty> deleteAccountMethodDescriptor =
       MethodDescriptor.<DeleteAccountRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -149,6 +150,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAccountRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateAccountRequest, Account>
       updateAccountMethodDescriptor =
           MethodDescriptor.<UpdateAccountRequest, Account>newBuilder()
@@ -159,6 +161,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(UpdateAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
       provisionAccountTicketMethodDescriptor =
@@ -172,6 +175,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ProvisionAccountTicketResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListAccountSummariesRequest, ListAccountSummariesResponse>
       listAccountSummariesMethodDescriptor =
           MethodDescriptor.<ListAccountSummariesRequest, ListAccountSummariesResponse>newBuilder()
@@ -183,6 +187,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountSummariesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetPropertyRequest, Property> getPropertyMethodDescriptor =
       MethodDescriptor.<GetPropertyRequest, Property>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -190,6 +195,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetPropertyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListPropertiesRequest, ListPropertiesResponse>
       listPropertiesMethodDescriptor =
           MethodDescriptor.<ListPropertiesRequest, ListPropertiesResponse>newBuilder()
@@ -201,6 +207,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPropertiesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreatePropertyRequest, Property>
       createPropertyMethodDescriptor =
           MethodDescriptor.<CreatePropertyRequest, Property>newBuilder()
@@ -211,6 +218,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(CreatePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeletePropertyRequest, Empty>
       deletePropertyMethodDescriptor =
           MethodDescriptor.<DeletePropertyRequest, Empty>newBuilder()
@@ -221,6 +229,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(DeletePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdatePropertyRequest, Property>
       updatePropertyMethodDescriptor =
           MethodDescriptor.<UpdatePropertyRequest, Property>newBuilder()
@@ -231,6 +240,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(UpdatePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetUserLinkRequest, UserLink> getUserLinkMethodDescriptor =
       MethodDescriptor.<GetUserLinkRequest, UserLink>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -238,6 +248,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetUserLinkRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(UserLink.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
       batchGetUserLinksMethodDescriptor =
           MethodDescriptor.<BatchGetUserLinksRequest, BatchGetUserLinksResponse>newBuilder()
@@ -249,6 +260,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchGetUserLinksResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListUserLinksRequest, ListUserLinksResponse>
       listUserLinksMethodDescriptor =
           MethodDescriptor.<ListUserLinksRequest, ListUserLinksResponse>newBuilder()
@@ -260,6 +272,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUserLinksResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<AuditUserLinksRequest, AuditUserLinksResponse>
       auditUserLinksMethodDescriptor =
           MethodDescriptor.<AuditUserLinksRequest, AuditUserLinksResponse>newBuilder()
@@ -271,6 +284,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AuditUserLinksResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateUserLinkRequest, UserLink>
       createUserLinkMethodDescriptor =
           MethodDescriptor.<CreateUserLinkRequest, UserLink>newBuilder()
@@ -281,6 +295,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(CreateUserLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UserLink.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
       batchCreateUserLinksMethodDescriptor =
           MethodDescriptor.<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>newBuilder()
@@ -292,6 +307,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateUserLinksResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateUserLinkRequest, UserLink>
       updateUserLinkMethodDescriptor =
           MethodDescriptor.<UpdateUserLinkRequest, UserLink>newBuilder()
@@ -302,6 +318,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(UpdateUserLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UserLink.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
       batchUpdateUserLinksMethodDescriptor =
           MethodDescriptor.<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>newBuilder()
@@ -313,6 +330,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchUpdateUserLinksResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteUserLinkRequest, Empty>
       deleteUserLinkMethodDescriptor =
           MethodDescriptor.<DeleteUserLinkRequest, Empty>newBuilder()
@@ -323,6 +341,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(DeleteUserLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<BatchDeleteUserLinksRequest, Empty>
       batchDeleteUserLinksMethodDescriptor =
           MethodDescriptor.<BatchDeleteUserLinksRequest, Empty>newBuilder()
@@ -333,6 +352,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(BatchDeleteUserLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetWebDataStreamRequest, WebDataStream>
       getWebDataStreamMethodDescriptor =
           MethodDescriptor.<GetWebDataStreamRequest, WebDataStream>newBuilder()
@@ -343,6 +363,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(GetWebDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WebDataStream.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteWebDataStreamRequest, Empty>
       deleteWebDataStreamMethodDescriptor =
           MethodDescriptor.<DeleteWebDataStreamRequest, Empty>newBuilder()
@@ -353,6 +374,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(DeleteWebDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateWebDataStreamRequest, WebDataStream>
       updateWebDataStreamMethodDescriptor =
           MethodDescriptor.<UpdateWebDataStreamRequest, WebDataStream>newBuilder()
@@ -363,6 +385,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(UpdateWebDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WebDataStream.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateWebDataStreamRequest, WebDataStream>
       createWebDataStreamMethodDescriptor =
           MethodDescriptor.<CreateWebDataStreamRequest, WebDataStream>newBuilder()
@@ -373,6 +396,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(CreateWebDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WebDataStream.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListWebDataStreamsRequest, ListWebDataStreamsResponse>
       listWebDataStreamsMethodDescriptor =
           MethodDescriptor.<ListWebDataStreamsRequest, ListWebDataStreamsResponse>newBuilder()
@@ -384,6 +408,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWebDataStreamsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetIosAppDataStreamRequest, IosAppDataStream>
       getIosAppDataStreamMethodDescriptor =
           MethodDescriptor.<GetIosAppDataStreamRequest, IosAppDataStream>newBuilder()
@@ -394,6 +419,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(GetIosAppDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(IosAppDataStream.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteIosAppDataStreamRequest, Empty>
       deleteIosAppDataStreamMethodDescriptor =
           MethodDescriptor.<DeleteIosAppDataStreamRequest, Empty>newBuilder()
@@ -404,6 +430,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(DeleteIosAppDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateIosAppDataStreamRequest, IosAppDataStream>
       updateIosAppDataStreamMethodDescriptor =
           MethodDescriptor.<UpdateIosAppDataStreamRequest, IosAppDataStream>newBuilder()
@@ -414,6 +441,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(UpdateIosAppDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(IosAppDataStream.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateIosAppDataStreamRequest, IosAppDataStream>
       createIosAppDataStreamMethodDescriptor =
           MethodDescriptor.<CreateIosAppDataStreamRequest, IosAppDataStream>newBuilder()
@@ -424,6 +452,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(CreateIosAppDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(IosAppDataStream.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
       listIosAppDataStreamsMethodDescriptor =
           MethodDescriptor.<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>newBuilder()
@@ -435,6 +464,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIosAppDataStreamsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
       getAndroidAppDataStreamMethodDescriptor =
           MethodDescriptor.<GetAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
@@ -446,6 +476,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AndroidAppDataStream.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteAndroidAppDataStreamRequest, Empty>
       deleteAndroidAppDataStreamMethodDescriptor =
           MethodDescriptor.<DeleteAndroidAppDataStreamRequest, Empty>newBuilder()
@@ -456,6 +487,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(DeleteAndroidAppDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
       updateAndroidAppDataStreamMethodDescriptor =
           MethodDescriptor.<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
@@ -467,6 +499,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AndroidAppDataStream.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
       createAndroidAppDataStreamMethodDescriptor =
           MethodDescriptor.<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>newBuilder()
@@ -478,6 +511,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AndroidAppDataStream.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
       listAndroidAppDataStreamsMethodDescriptor =
@@ -491,6 +525,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAndroidAppDataStreamsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
       getEnhancedMeasurementSettingsMethodDescriptor =
@@ -504,6 +539,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EnhancedMeasurementSettings.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
       updateEnhancedMeasurementSettingsMethodDescriptor =
@@ -518,6 +554,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EnhancedMeasurementSettings.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateFirebaseLinkRequest, FirebaseLink>
       createFirebaseLinkMethodDescriptor =
           MethodDescriptor.<CreateFirebaseLinkRequest, FirebaseLink>newBuilder()
@@ -528,6 +565,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(CreateFirebaseLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirebaseLink.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateFirebaseLinkRequest, FirebaseLink>
       updateFirebaseLinkMethodDescriptor =
           MethodDescriptor.<UpdateFirebaseLinkRequest, FirebaseLink>newBuilder()
@@ -538,6 +576,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(UpdateFirebaseLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirebaseLink.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteFirebaseLinkRequest, Empty>
       deleteFirebaseLinkMethodDescriptor =
           MethodDescriptor.<DeleteFirebaseLinkRequest, Empty>newBuilder()
@@ -548,6 +587,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(DeleteFirebaseLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
       listFirebaseLinksMethodDescriptor =
           MethodDescriptor.<ListFirebaseLinksRequest, ListFirebaseLinksResponse>newBuilder()
@@ -559,6 +599,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFirebaseLinksResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetGlobalSiteTagRequest, GlobalSiteTag>
       getGlobalSiteTagMethodDescriptor =
           MethodDescriptor.<GetGlobalSiteTagRequest, GlobalSiteTag>newBuilder()
@@ -569,6 +610,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(GetGlobalSiteTagRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GlobalSiteTag.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateGoogleAdsLinkRequest, GoogleAdsLink>
       createGoogleAdsLinkMethodDescriptor =
           MethodDescriptor.<CreateGoogleAdsLinkRequest, GoogleAdsLink>newBuilder()
@@ -579,6 +621,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(CreateGoogleAdsLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GoogleAdsLink.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateGoogleAdsLinkRequest, GoogleAdsLink>
       updateGoogleAdsLinkMethodDescriptor =
           MethodDescriptor.<UpdateGoogleAdsLinkRequest, GoogleAdsLink>newBuilder()
@@ -589,6 +632,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(UpdateGoogleAdsLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GoogleAdsLink.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteGoogleAdsLinkRequest, Empty>
       deleteGoogleAdsLinkMethodDescriptor =
           MethodDescriptor.<DeleteGoogleAdsLinkRequest, Empty>newBuilder()
@@ -599,6 +643,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(DeleteGoogleAdsLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
       listGoogleAdsLinksMethodDescriptor =
           MethodDescriptor.<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>newBuilder()
@@ -610,6 +655,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGoogleAdsLinksResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsMethodDescriptor =
           MethodDescriptor.<GetDataSharingSettingsRequest, DataSharingSettings>newBuilder()
@@ -621,8 +667,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DataSharingSettings.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
@@ -716,6 +760,8 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAnalyticsAdminServiceStub create(
@@ -756,6 +802,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<GetAccountRequest, Account> getAccountTransportSettings =
         GrpcCallSettings.<GetAccountRequest, Account>newBuilder()
@@ -1628,19 +1675,24 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             settings.getDataSharingSettingsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<GetAccountRequest, Account> getAccountCallable() {
     return getAccountCallable;
   }
 
-  public UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse> listAccountsPagedCallable() {
-    return listAccountsPagedCallable;
-  }
-
   public UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable() {
     return listAccountsCallable;
+  }
+
+  public UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse> listAccountsPagedCallable() {
+    return listAccountsPagedCallable;
   }
 
   public UnaryCallable<DeleteAccountRequest, Empty> deleteAccountCallable() {
@@ -1656,27 +1708,27 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     return provisionAccountTicketCallable;
   }
 
-  public UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesPagedResponse>
-      listAccountSummariesPagedCallable() {
-    return listAccountSummariesPagedCallable;
-  }
-
   public UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesResponse>
       listAccountSummariesCallable() {
     return listAccountSummariesCallable;
+  }
+
+  public UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesPagedResponse>
+      listAccountSummariesPagedCallable() {
+    return listAccountSummariesPagedCallable;
   }
 
   public UnaryCallable<GetPropertyRequest, Property> getPropertyCallable() {
     return getPropertyCallable;
   }
 
+  public UnaryCallable<ListPropertiesRequest, ListPropertiesResponse> listPropertiesCallable() {
+    return listPropertiesCallable;
+  }
+
   public UnaryCallable<ListPropertiesRequest, ListPropertiesPagedResponse>
       listPropertiesPagedCallable() {
     return listPropertiesPagedCallable;
-  }
-
-  public UnaryCallable<ListPropertiesRequest, ListPropertiesResponse> listPropertiesCallable() {
-    return listPropertiesCallable;
   }
 
   public UnaryCallable<CreatePropertyRequest, Property> createPropertyCallable() {
@@ -1700,22 +1752,22 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     return batchGetUserLinksCallable;
   }
 
+  public UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> listUserLinksCallable() {
+    return listUserLinksCallable;
+  }
+
   public UnaryCallable<ListUserLinksRequest, ListUserLinksPagedResponse>
       listUserLinksPagedCallable() {
     return listUserLinksPagedCallable;
   }
 
-  public UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> listUserLinksCallable() {
-    return listUserLinksCallable;
+  public UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse> auditUserLinksCallable() {
+    return auditUserLinksCallable;
   }
 
   public UnaryCallable<AuditUserLinksRequest, AuditUserLinksPagedResponse>
       auditUserLinksPagedCallable() {
     return auditUserLinksPagedCallable;
-  }
-
-  public UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse> auditUserLinksCallable() {
-    return auditUserLinksCallable;
   }
 
   public UnaryCallable<CreateUserLinkRequest, UserLink> createUserLinkCallable() {
@@ -1760,14 +1812,14 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     return createWebDataStreamCallable;
   }
 
-  public UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsPagedResponse>
-      listWebDataStreamsPagedCallable() {
-    return listWebDataStreamsPagedCallable;
-  }
-
   public UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsResponse>
       listWebDataStreamsCallable() {
     return listWebDataStreamsCallable;
+  }
+
+  public UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsPagedResponse>
+      listWebDataStreamsPagedCallable() {
+    return listWebDataStreamsPagedCallable;
   }
 
   public UnaryCallable<GetIosAppDataStreamRequest, IosAppDataStream> getIosAppDataStreamCallable() {
@@ -1788,14 +1840,14 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     return createIosAppDataStreamCallable;
   }
 
-  public UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsPagedResponse>
-      listIosAppDataStreamsPagedCallable() {
-    return listIosAppDataStreamsPagedCallable;
-  }
-
   public UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
       listIosAppDataStreamsCallable() {
     return listIosAppDataStreamsCallable;
+  }
+
+  public UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsPagedResponse>
+      listIosAppDataStreamsPagedCallable() {
+    return listIosAppDataStreamsPagedCallable;
   }
 
   public UnaryCallable<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
@@ -1818,14 +1870,14 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     return createAndroidAppDataStreamCallable;
   }
 
-  public UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsPagedResponse>
-      listAndroidAppDataStreamsPagedCallable() {
-    return listAndroidAppDataStreamsPagedCallable;
-  }
-
   public UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
       listAndroidAppDataStreamsCallable() {
     return listAndroidAppDataStreamsCallable;
+  }
+
+  public UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsPagedResponse>
+      listAndroidAppDataStreamsPagedCallable() {
+    return listAndroidAppDataStreamsPagedCallable;
   }
 
   public UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
@@ -1871,14 +1923,14 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     return deleteGoogleAdsLinkCallable;
   }
 
-  public UnaryCallable<ListGoogleAdsLinksRequest, ListGoogleAdsLinksPagedResponse>
-      listGoogleAdsLinksPagedCallable() {
-    return listGoogleAdsLinksPagedCallable;
-  }
-
   public UnaryCallable<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
       listGoogleAdsLinksCallable() {
     return listGoogleAdsLinksCallable;
+  }
+
+  public UnaryCallable<ListGoogleAdsLinksRequest, ListGoogleAdsLinksPagedResponse>
+      listGoogleAdsLinksPagedCallable() {
+    return listGoogleAdsLinksPagedCallable;
   }
 
   public UnaryCallable<GetDataSharingSettingsRequest, DataSharingSettings>

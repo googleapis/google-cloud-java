@@ -288,8 +288,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. If enabled, capture a page view event each time a page loads or the
-   * website changes the browser history state.
+   * Output only. If enabled, capture a page view event each time a page loads
+   * or the website changes the browser history state.
    * </pre>
    *
    * <code>bool page_views_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1452,8 +1452,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. If enabled, capture a page view event each time a page loads or the
-     * website changes the browser history state.
+     * Output only. If enabled, capture a page view event each time a page loads
+     * or the website changes the browser history state.
      * </pre>
      *
      * <code>bool page_views_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1468,8 +1468,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. If enabled, capture a page view event each time a page loads or the
-     * website changes the browser history state.
+     * Output only. If enabled, capture a page view event each time a page loads
+     * or the website changes the browser history state.
      * </pre>
      *
      * <code>bool page_views_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1487,8 +1487,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. If enabled, capture a page view event each time a page loads or the
-     * website changes the browser history state.
+     * Output only. If enabled, capture a page view event each time a page loads
+     * or the website changes the browser history state.
      * </pre>
      *
      * <code>bool page_views_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

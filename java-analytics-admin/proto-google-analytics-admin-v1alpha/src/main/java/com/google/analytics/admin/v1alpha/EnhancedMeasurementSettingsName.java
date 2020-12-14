@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,19 +23,29 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class EnhancedMeasurementSettingsName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROPERTY_WEB_DATA_STREAM =
       PathTemplate.createWithoutUrlEncoding(
           "properties/{property}/webDataStreams/{web_data_stream}/enhancedMeasurementSettings");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String property;
   private final String webDataStream;
+
+  @Deprecated
+  protected EnhancedMeasurementSettingsName() {
+    property = null;
+    webDataStream = null;
+  }
+
+  private EnhancedMeasurementSettingsName(Builder builder) {
+    property = Preconditions.checkNotNull(builder.getProperty());
+    webDataStream = Preconditions.checkNotNull(builder.getWebDataStream());
+  }
 
   public String getProperty() {
     return property;
@@ -53,11 +63,6 @@ public class EnhancedMeasurementSettingsName implements ResourceName {
     return new Builder(this);
   }
 
-  private EnhancedMeasurementSettingsName(Builder builder) {
-    property = Preconditions.checkNotNull(builder.getProperty());
-    webDataStream = Preconditions.checkNotNull(builder.getWebDataStream());
-  }
-
   public static EnhancedMeasurementSettingsName of(String property, String webDataStream) {
     return newBuilder().setProperty(property).setWebDataStream(webDataStream).build();
   }
@@ -71,7 +76,7 @@ public class EnhancedMeasurementSettingsName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROPERTY_WEB_DATA_STREAM.validatedMatch(
             formattedString,
             "EnhancedMeasurementSettingsName.parse: formattedString not in valid format");
     return of(matchMap.get("property"), matchMap.get("web_data_stream"));
@@ -86,7 +91,7 @@ public class EnhancedMeasurementSettingsName implements ResourceName {
   }
 
   public static List<String> toStringList(List<EnhancedMeasurementSettingsName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (EnhancedMeasurementSettingsName value : values) {
       if (value == null) {
         list.add("");
@@ -98,16 +103,21 @@ public class EnhancedMeasurementSettingsName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROPERTY_WEB_DATA_STREAM.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("property", property);
-          fieldMapBuilder.put("webDataStream", webDataStream);
+          if (property != null) {
+            fieldMapBuilder.put("property", property);
+          }
+          if (webDataStream != null) {
+            fieldMapBuilder.put("web_data_stream", webDataStream);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -121,14 +131,41 @@ public class EnhancedMeasurementSettingsName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("property", property, "web_data_stream", webDataStream);
+    return PROPERTY_WEB_DATA_STREAM.instantiate(
+        "property", property, "web_data_stream", webDataStream);
   }
 
-  /** Builder for EnhancedMeasurementSettingsName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      EnhancedMeasurementSettingsName that = ((EnhancedMeasurementSettingsName) o);
+      return Objects.equals(this.property, that.property)
+          && Objects.equals(this.webDataStream, that.webDataStream);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(property);
+    h *= 1000003;
+    h ^= Objects.hashCode(webDataStream);
+    return h;
+  }
+
+  /**
+   * Builder for properties/{property}/webDataStreams/{web_data_stream}/enhancedMeasurementSettings.
+   */
+  public static class Builder {
     private String property;
     private String webDataStream;
+
+    protected Builder() {}
 
     public String getProperty() {
       return property;
@@ -148,8 +185,6 @@ public class EnhancedMeasurementSettingsName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(EnhancedMeasurementSettingsName enhancedMeasurementSettingsName) {
       property = enhancedMeasurementSettingsName.property;
       webDataStream = enhancedMeasurementSettingsName.webDataStream;
@@ -158,28 +193,5 @@ public class EnhancedMeasurementSettingsName implements ResourceName {
     public EnhancedMeasurementSettingsName build() {
       return new EnhancedMeasurementSettingsName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof EnhancedMeasurementSettingsName) {
-      EnhancedMeasurementSettingsName that = (EnhancedMeasurementSettingsName) o;
-      return (this.property.equals(that.property))
-          && (this.webDataStream.equals(that.webDataStream));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= property.hashCode();
-    h *= 1000003;
-    h ^= webDataStream.hashCode();
-    return h;
   }
 }

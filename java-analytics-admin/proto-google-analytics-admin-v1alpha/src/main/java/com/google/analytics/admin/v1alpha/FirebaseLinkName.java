@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class FirebaseLinkName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROPERTY_FIREBASE_LINK =
       PathTemplate.createWithoutUrlEncoding("properties/{property}/firebaseLinks/{firebase_link}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String property;
   private final String firebaseLink;
+
+  @Deprecated
+  protected FirebaseLinkName() {
+    property = null;
+    firebaseLink = null;
+  }
+
+  private FirebaseLinkName(Builder builder) {
+    property = Preconditions.checkNotNull(builder.getProperty());
+    firebaseLink = Preconditions.checkNotNull(builder.getFirebaseLink());
+  }
 
   public String getProperty() {
     return property;
@@ -52,11 +62,6 @@ public class FirebaseLinkName implements ResourceName {
     return new Builder(this);
   }
 
-  private FirebaseLinkName(Builder builder) {
-    property = Preconditions.checkNotNull(builder.getProperty());
-    firebaseLink = Preconditions.checkNotNull(builder.getFirebaseLink());
-  }
-
   public static FirebaseLinkName of(String property, String firebaseLink) {
     return newBuilder().setProperty(property).setFirebaseLink(firebaseLink).build();
   }
@@ -70,7 +75,7 @@ public class FirebaseLinkName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROPERTY_FIREBASE_LINK.validatedMatch(
             formattedString, "FirebaseLinkName.parse: formattedString not in valid format");
     return of(matchMap.get("property"), matchMap.get("firebase_link"));
   }
@@ -84,7 +89,7 @@ public class FirebaseLinkName implements ResourceName {
   }
 
   public static List<String> toStringList(List<FirebaseLinkName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (FirebaseLinkName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class FirebaseLinkName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROPERTY_FIREBASE_LINK.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("property", property);
-          fieldMapBuilder.put("firebaseLink", firebaseLink);
+          if (property != null) {
+            fieldMapBuilder.put("property", property);
+          }
+          if (firebaseLink != null) {
+            fieldMapBuilder.put("firebase_link", firebaseLink);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,38 @@ public class FirebaseLinkName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("property", property, "firebase_link", firebaseLink);
+    return PROPERTY_FIREBASE_LINK.instantiate("property", property, "firebase_link", firebaseLink);
   }
 
-  /** Builder for FirebaseLinkName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      FirebaseLinkName that = ((FirebaseLinkName) o);
+      return Objects.equals(this.property, that.property)
+          && Objects.equals(this.firebaseLink, that.firebaseLink);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(property);
+    h *= 1000003;
+    h ^= Objects.hashCode(firebaseLink);
+    return h;
+  }
+
+  /** Builder for properties/{property}/firebaseLinks/{firebase_link}. */
+  public static class Builder {
     private String property;
     private String firebaseLink;
+
+    protected Builder() {}
 
     public String getProperty() {
       return property;
@@ -146,8 +180,6 @@ public class FirebaseLinkName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(FirebaseLinkName firebaseLinkName) {
       property = firebaseLinkName.property;
       firebaseLink = firebaseLinkName.firebaseLink;
@@ -156,27 +188,5 @@ public class FirebaseLinkName implements ResourceName {
     public FirebaseLinkName build() {
       return new FirebaseLinkName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof FirebaseLinkName) {
-      FirebaseLinkName that = (FirebaseLinkName) o;
-      return (this.property.equals(that.property)) && (this.firebaseLink.equals(that.firebaseLink));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= property.hashCode();
-    h *= 1000003;
-    h ^= firebaseLink.hashCode();
-    return h;
   }
 }
