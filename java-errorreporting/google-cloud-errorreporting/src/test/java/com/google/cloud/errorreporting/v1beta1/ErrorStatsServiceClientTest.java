@@ -146,7 +146,7 @@ public class ErrorStatsServiceClientTest {
             .build();
     mockErrorStatsService.addResponse(expectedResponse);
 
-    String projectName = "project_name939388913";
+    String projectName = "projectName-940047036";
     QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
 
     ListGroupStatsPagedResponse pagedListResponse = client.listGroupStats(projectName, timeRange);
@@ -174,7 +174,7 @@ public class ErrorStatsServiceClientTest {
     mockErrorStatsService.addException(exception);
 
     try {
-      String projectName = "project_name939388913";
+      String projectName = "projectName-940047036";
       QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
       client.listGroupStats(projectName, timeRange);
       Assert.fail("No exception raised");
@@ -194,7 +194,7 @@ public class ErrorStatsServiceClientTest {
     mockErrorStatsService.addResponse(expectedResponse);
 
     ProjectName projectName = ProjectName.of("[PROJECT]");
-    String groupId = "group_id506361563";
+    String groupId = "groupId293428218";
 
     ListEventsPagedResponse pagedListResponse = client.listEvents(projectName, groupId);
 
@@ -222,7 +222,7 @@ public class ErrorStatsServiceClientTest {
 
     try {
       ProjectName projectName = ProjectName.of("[PROJECT]");
-      String groupId = "group_id506361563";
+      String groupId = "groupId293428218";
       client.listEvents(projectName, groupId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -240,8 +240,8 @@ public class ErrorStatsServiceClientTest {
             .build();
     mockErrorStatsService.addResponse(expectedResponse);
 
-    String projectName = "project_name939388913";
-    String groupId = "group_id506361563";
+    String projectName = "projectName-940047036";
+    String groupId = "groupId293428218";
 
     ListEventsPagedResponse pagedListResponse = client.listEvents(projectName, groupId);
 
@@ -268,8 +268,8 @@ public class ErrorStatsServiceClientTest {
     mockErrorStatsService.addException(exception);
 
     try {
-      String projectName = "project_name939388913";
-      String groupId = "group_id506361563";
+      String projectName = "projectName-940047036";
+      String groupId = "groupId293428218";
       client.listEvents(projectName, groupId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -317,7 +317,7 @@ public class ErrorStatsServiceClientTest {
     DeleteEventsResponse expectedResponse = DeleteEventsResponse.newBuilder().build();
     mockErrorStatsService.addResponse(expectedResponse);
 
-    String projectName = "project_name939388913";
+    String projectName = "projectName-940047036";
 
     DeleteEventsResponse actualResponse = client.deleteEvents(projectName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -339,7 +339,7 @@ public class ErrorStatsServiceClientTest {
     mockErrorStatsService.addException(exception);
 
     try {
-      String projectName = "project_name939388913";
+      String projectName = "projectName-940047036";
       client.deleteEvents(projectName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

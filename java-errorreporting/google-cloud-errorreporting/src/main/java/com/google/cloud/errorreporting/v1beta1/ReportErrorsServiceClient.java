@@ -154,8 +154,8 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>`POST
    * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
    *
-   * @param project_name Required. The resource name of the Google Cloud Platform project. Written
-   *     as `projects/` plus the [Google Cloud Platform project
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @param event Required. The error event to be reported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -185,8 +185,8 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>`POST
    * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456`
    *
-   * @param project_name Required. The resource name of the Google Cloud Platform project. Written
-   *     as `projects/` plus the [Google Cloud Platform project
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @param event Required. The error event to be reported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

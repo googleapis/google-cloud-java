@@ -159,15 +159,15 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   /**
    * Lists the specified groups.
    *
-   * @param project_name Required. The resource name of the Google Cloud Platform project. Written
-   *     as &lt;code&gt;projects/&lt;/code&gt; plus the &lt;a
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     &lt;code&gt;projects/&lt;/code&gt; plus the &lt;a
    *     href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud Platform project
    *     ID&lt;/a&gt;.
    *     <p>Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
-   * @param time_range Optional. List data for the given time range. If not set, a default time
-   *     range is used. The field &lt;code&gt;time_range_begin&lt;/code&gt; in the response will
-   *     specify the beginning of this time range. Only &lt;code&gt;ErrorGroupStats&lt;/code&gt;
-   *     with a non-zero count in the given time range are returned, unless the request contains an
+   * @param timeRange Optional. List data for the given time range. If not set, a default time range
+   *     is used. The field &lt;code&gt;time_range_begin&lt;/code&gt; in the response will specify
+   *     the beginning of this time range. Only &lt;code&gt;ErrorGroupStats&lt;/code&gt; with a
+   *     non-zero count in the given time range are returned, unless the request contains an
    *     explicit &lt;code&gt;group_id&lt;/code&gt; list. If a &lt;code&gt;group_id&lt;/code&gt;
    *     list is given, also &lt;code&gt;ErrorGroupStats&lt;/code&gt; with zero occurrences are
    *     returned.
@@ -187,15 +187,15 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   /**
    * Lists the specified groups.
    *
-   * @param project_name Required. The resource name of the Google Cloud Platform project. Written
-   *     as &lt;code&gt;projects/&lt;/code&gt; plus the &lt;a
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     &lt;code&gt;projects/&lt;/code&gt; plus the &lt;a
    *     href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud Platform project
    *     ID&lt;/a&gt;.
    *     <p>Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
-   * @param time_range Optional. List data for the given time range. If not set, a default time
-   *     range is used. The field &lt;code&gt;time_range_begin&lt;/code&gt; in the response will
-   *     specify the beginning of this time range. Only &lt;code&gt;ErrorGroupStats&lt;/code&gt;
-   *     with a non-zero count in the given time range are returned, unless the request contains an
+   * @param timeRange Optional. List data for the given time range. If not set, a default time range
+   *     is used. The field &lt;code&gt;time_range_begin&lt;/code&gt; in the response will specify
+   *     the beginning of this time range. Only &lt;code&gt;ErrorGroupStats&lt;/code&gt; with a
+   *     non-zero count in the given time range are returned, unless the request contains an
    *     explicit &lt;code&gt;group_id&lt;/code&gt; list. If a &lt;code&gt;group_id&lt;/code&gt;
    *     list is given, also &lt;code&gt;ErrorGroupStats&lt;/code&gt; with zero occurrences are
    *     returned.
@@ -248,10 +248,10 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   /**
    * Lists the specified events.
    *
-   * @param project_name Required. The resource name of the Google Cloud Platform project. Written
-   *     as `projects/` plus the [Google Cloud Platform project
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
-   * @param group_id Required. The group for which events shall be returned.
+   * @param groupId Required. The group for which events shall be returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventsPagedResponse listEvents(ProjectName projectName, String groupId) {
@@ -267,10 +267,10 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   /**
    * Lists the specified events.
    *
-   * @param project_name Required. The resource name of the Google Cloud Platform project. Written
-   *     as `projects/` plus the [Google Cloud Platform project
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
-   * @param group_id Required. The group for which events shall be returned.
+   * @param groupId Required. The group for which events shall be returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventsPagedResponse listEvents(String projectName, String groupId) {
@@ -314,8 +314,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   /**
    * Deletes all error events of a given project.
    *
-   * @param project_name Required. The resource name of the Google Cloud Platform project. Written
-   *     as `projects/` plus the [Google Cloud Platform project
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -331,8 +331,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
   /**
    * Deletes all error events of a given project.
    *
-   * @param project_name Required. The resource name of the Google Cloud Platform project. Written
-   *     as `projects/` plus the [Google Cloud Platform project
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     `projects/` plus the [Google Cloud Platform project
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

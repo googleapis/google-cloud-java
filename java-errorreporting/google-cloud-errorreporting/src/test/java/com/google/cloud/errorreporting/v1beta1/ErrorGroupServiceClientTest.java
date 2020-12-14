@@ -86,7 +86,7 @@ public class ErrorGroupServiceClientTest {
     ErrorGroup expectedResponse =
         ErrorGroup.newBuilder()
             .setName(ErrorGroupName.of("[PROJECT]", "[GROUP]").toString())
-            .setGroupId("group_id506361563")
+            .setGroupId("groupId293428218")
             .addAllTrackingIssues(new ArrayList<TrackingIssue>())
             .build();
     mockErrorGroupService.addResponse(expectedResponse);
@@ -126,12 +126,12 @@ public class ErrorGroupServiceClientTest {
     ErrorGroup expectedResponse =
         ErrorGroup.newBuilder()
             .setName(ErrorGroupName.of("[PROJECT]", "[GROUP]").toString())
-            .setGroupId("group_id506361563")
+            .setGroupId("groupId293428218")
             .addAllTrackingIssues(new ArrayList<TrackingIssue>())
             .build();
     mockErrorGroupService.addResponse(expectedResponse);
 
-    String groupName = "group_name1282307147";
+    String groupName = "groupName-1483174486";
 
     ErrorGroup actualResponse = client.getGroup(groupName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -153,7 +153,7 @@ public class ErrorGroupServiceClientTest {
     mockErrorGroupService.addException(exception);
 
     try {
-      String groupName = "group_name1282307147";
+      String groupName = "groupName-1483174486";
       client.getGroup(groupName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -166,7 +166,7 @@ public class ErrorGroupServiceClientTest {
     ErrorGroup expectedResponse =
         ErrorGroup.newBuilder()
             .setName(ErrorGroupName.of("[PROJECT]", "[GROUP]").toString())
-            .setGroupId("group_id506361563")
+            .setGroupId("groupId293428218")
             .addAllTrackingIssues(new ArrayList<TrackingIssue>())
             .build();
     mockErrorGroupService.addResponse(expectedResponse);

@@ -122,7 +122,7 @@ public class ReportErrorsServiceClientTest {
     ReportErrorEventResponse expectedResponse = ReportErrorEventResponse.newBuilder().build();
     mockReportErrorsService.addResponse(expectedResponse);
 
-    String projectName = "project_name939388913";
+    String projectName = "projectName-940047036";
     ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
 
     ReportErrorEventResponse actualResponse = client.reportErrorEvent(projectName, event);
@@ -146,7 +146,7 @@ public class ReportErrorsServiceClientTest {
     mockReportErrorsService.addException(exception);
 
     try {
-      String projectName = "project_name939388913";
+      String projectName = "projectName-940047036";
       ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
       client.reportErrorEvent(projectName, event);
       Assert.fail("No exception raised");

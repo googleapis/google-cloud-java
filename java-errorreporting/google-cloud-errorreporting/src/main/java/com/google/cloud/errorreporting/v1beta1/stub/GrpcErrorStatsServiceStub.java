@@ -110,11 +110,21 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
         ErrorStatsServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcErrorStatsServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
   protected GrpcErrorStatsServiceStub(
       ErrorStatsServiceStubSettings settings, ClientContext clientContext) throws IOException {
     this(settings, clientContext, new GrpcErrorStatsServiceCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcErrorStatsServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
   protected GrpcErrorStatsServiceStub(
       ErrorStatsServiceStubSettings settings,
       ClientContext clientContext,
