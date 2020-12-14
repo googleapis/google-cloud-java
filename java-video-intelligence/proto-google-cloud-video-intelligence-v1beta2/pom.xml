@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-video-intelligence-v1beta2</artifactId>
-  <version>0.87.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta2:current} -->
+  <version>0.87.7</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta2:current} -->
   <name>proto-google-cloud-video-intelligence-v1beta2</name>
   <description>PROTO library for proto-google-cloud-video-intelligence-v1beta2</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-video-intelligence-parent</artifactId>
-    <version>1.5.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+    <version>1.5.7</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   </parent>
   <dependencies>
     <dependency>

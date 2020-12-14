@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.5.7](https://www.github.com/googleapis/java-video-intelligence/compare/v1.5.6...v1.5.7) (2020-12-14)
+
+
+### Bug Fixes
+
+* incorrect and misleading attribute description for person detection samples ([6fc6bb1](https://www.github.com/googleapis/java-video-intelligence/commit/6fc6bb1adc0153b5fd17395b5fe9b71016ffd936))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.1 ([#357](https://www.github.com/googleapis/java-video-intelligence/issues/357)) ([e237f15](https://www.github.com/googleapis/java-video-intelligence/commit/e237f1574142dd1ca40d1c4ed32a94c62a4a3cef))
+
 ### [1.5.6](https://www.github.com/googleapis/java-video-intelligence/compare/v1.5.5...v1.5.6) (2020-12-02)
 
 
