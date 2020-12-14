@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.phishingprotection.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -26,12 +27,12 @@ import com.google.phishingprotection.v1beta1.ProjectName;
 import com.google.phishingprotection.v1beta1.ReportPhishingRequest;
 import com.google.phishingprotection.v1beta1.ReportPhishingResponse;
 import com.google.protobuf.AbstractMessage;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -39,32 +40,32 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class PhishingProtectionServiceV1Beta1ClientTest {
-  private static MockPhishingProtectionServiceV1Beta1 mockPhishingProtectionServiceV1Beta1;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private PhishingProtectionServiceV1Beta1Client client;
+  private static MockPhishingProtectionServiceV1Beta1 mockPhishingProtectionServiceV1Beta1;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockPhishingProtectionServiceV1Beta1 = new MockPhishingProtectionServiceV1Beta1();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(mockPhishingProtectionServiceV1Beta1));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     PhishingProtectionServiceV1Beta1Settings settings =
         PhishingProtectionServiceV1Beta1Settings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -79,8 +80,7 @@ public class PhishingProtectionServiceV1Beta1ClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void reportPhishingTest() {
+  public void reportPhishingTest() throws Exception {
     ReportPhishingResponse expectedResponse = ReportPhishingResponse.newBuilder().build();
     mockPhishingProtectionServiceV1Beta1.addResponse(expectedResponse);
 
@@ -92,9 +92,9 @@ public class PhishingProtectionServiceV1Beta1ClientTest {
 
     List<AbstractMessage> actualRequests = mockPhishingProtectionServiceV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ReportPhishingRequest actualRequest = (ReportPhishingRequest) actualRequests.get(0);
+    ReportPhishingRequest actualRequest = ((ReportPhishingRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(uri, actualRequest.getUri());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -103,19 +103,55 @@ public class PhishingProtectionServiceV1Beta1ClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void reportPhishingExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockPhishingProtectionServiceV1Beta1.addException(exception);
 
     try {
       ProjectName parent = ProjectName.of("[PROJECT]");
       String uri = "uri116076";
-
       client.reportPhishing(parent, uri);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void reportPhishingTest2() throws Exception {
+    ReportPhishingResponse expectedResponse = ReportPhishingResponse.newBuilder().build();
+    mockPhishingProtectionServiceV1Beta1.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String uri = "uri116076";
+
+    ReportPhishingResponse actualResponse = client.reportPhishing(parent, uri);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPhishingProtectionServiceV1Beta1.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReportPhishingRequest actualRequest = ((ReportPhishingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(uri, actualRequest.getUri());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void reportPhishingExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPhishingProtectionServiceV1Beta1.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String uri = "uri116076";
+      client.reportPhishing(parent, uri);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

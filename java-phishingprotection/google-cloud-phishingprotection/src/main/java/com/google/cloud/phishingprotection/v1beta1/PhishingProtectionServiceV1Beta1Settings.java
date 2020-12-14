@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.phishingprotection.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -32,7 +33,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link PhishingProtectionServiceV1Beta1Client}.
  *
@@ -50,24 +51,27 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of reportPhishing to 30 seconds:
  *
- * <pre>
- * <code>
- * PhishingProtectionServiceV1Beta1Settings.Builder phishingProtectionServiceV1Beta1SettingsBuilder =
- *     PhishingProtectionServiceV1Beta1Settings.newBuilder();
+ * <pre>{@code
+ * PhishingProtectionServiceV1Beta1Settings.Builder
+ *     phishingProtectionServiceV1Beta1SettingsBuilder =
+ *         PhishingProtectionServiceV1Beta1Settings.newBuilder();
  * phishingProtectionServiceV1Beta1SettingsBuilder
  *     .reportPhishingSettings()
  *     .setRetrySettings(
- *         phishingProtectionServiceV1Beta1SettingsBuilder.reportPhishingSettings().getRetrySettings().toBuilder()
+ *         phishingProtectionServiceV1Beta1SettingsBuilder
+ *             .reportPhishingSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * PhishingProtectionServiceV1Beta1Settings phishingProtectionServiceV1Beta1Settings = phishingProtectionServiceV1Beta1SettingsBuilder.build();
- * </code>
- * </pre>
+ * PhishingProtectionServiceV1Beta1Settings phishingProtectionServiceV1Beta1Settings =
+ *     phishingProtectionServiceV1Beta1SettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class PhishingProtectionServiceV1Beta1Settings
     extends ClientSettings<PhishingProtectionServiceV1Beta1Settings> {
+
   /** Returns the object with the settings used for calls to reportPhishing. */
   public UnaryCallSettings<ReportPhishingRequest, ReportPhishingResponse> reportPhishingSettings() {
     return ((PhishingProtectionServiceV1Beta1StubSettings) getStubSettings())
@@ -135,16 +139,13 @@ public class PhishingProtectionServiceV1Beta1Settings
   /** Builder for PhishingProtectionServiceV1Beta1Settings. */
   public static class Builder
       extends ClientSettings.Builder<PhishingProtectionServiceV1Beta1Settings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(PhishingProtectionServiceV1Beta1StubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(PhishingProtectionServiceV1Beta1StubSettings.newBuilder());
     }
 
     protected Builder(PhishingProtectionServiceV1Beta1Settings settings) {
@@ -155,11 +156,15 @@ public class PhishingProtectionServiceV1Beta1Settings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(PhishingProtectionServiceV1Beta1StubSettings.newBuilder());
+    }
+
     public PhishingProtectionServiceV1Beta1StubSettings.Builder getStubSettingsBuilder() {
       return ((PhishingProtectionServiceV1Beta1StubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,28 +15,15 @@
  */
 
 /**
- * A client to Phishing Protection API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>====================================== PhishingProtectionServiceV1Beta1Client
- * ======================================
+ * <p>======================= PhishingProtectionServiceV1Beta1Client =======================
  *
  * <p>Service Description: Service to report phishing URIs.
  *
  * <p>Sample for PhishingProtectionServiceV1Beta1Client:
- *
- * <pre>
- * <code>
- * try (PhishingProtectionServiceV1Beta1Client phishingProtectionServiceV1Beta1Client = PhishingProtectionServiceV1Beta1Client.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   String uri = "";
- *   ReportPhishingResponse response = phishingProtectionServiceV1Beta1Client.reportPhishing(parent, uri);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.phishingprotection.v1beta1;
 
 import javax.annotation.Generated;

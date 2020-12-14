@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.phishingprotection.v1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.phishingprotection.v1beta1.ReportPhishingRequest;
 import com.google.phishingprotection.v1beta1.ReportPhishingResponse;
 import io.grpc.MethodDescriptor;
@@ -33,16 +34,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Phishing Protection API.
+ * gRPC stub implementation for the PhishingProtectionServiceV1Beta1 service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcPhishingProtectionServiceV1Beta1Stub extends PhishingProtectionServiceV1Beta1Stub {
-
   private static final MethodDescriptor<ReportPhishingRequest, ReportPhishingResponse>
       reportPhishingMethodDescriptor =
           MethodDescriptor.<ReportPhishingRequest, ReportPhishingResponse>newBuilder()
@@ -55,10 +54,10 @@ public class GrpcPhishingProtectionServiceV1Beta1Stub extends PhishingProtection
                   ProtoUtils.marshaller(ReportPhishingResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<ReportPhishingRequest, ReportPhishingResponse> reportPhishingCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcPhishingProtectionServiceV1Beta1Stub create(
@@ -102,6 +101,7 @@ public class GrpcPhishingProtectionServiceV1Beta1Stub extends PhishingProtection
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ReportPhishingRequest, ReportPhishingResponse>
         reportPhishingTransportSettings =
@@ -122,7 +122,12 @@ public class GrpcPhishingProtectionServiceV1Beta1Stub extends PhishingProtection
         callableFactory.createUnaryCallable(
             reportPhishingTransportSettings, settings.reportPhishingSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ReportPhishingRequest, ReportPhishingResponse> reportPhishingCallable() {
