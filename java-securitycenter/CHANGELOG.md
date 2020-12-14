@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.3.4](https://www.github.com/googleapis/java-securitycenter/compare/v1.3.3...v1.3.4) (2020-12-14)
+
+
+### Documentation
+
+* Wrap samples with future prefix ([#325](https://www.github.com/googleapis/java-securitycenter/issues/325)) ([3239d29](https://www.github.com/googleapis/java-securitycenter/commit/3239d29654eb7e09fb7a5a6393cbb57aa7a9a58f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.1 ([#330](https://www.github.com/googleapis/java-securitycenter/issues/330)) ([5a253a6](https://www.github.com/googleapis/java-securitycenter/commit/5a253a60210cb28102e178ee16d543b77566caff))
+
 ### [1.3.3](https://www.github.com/googleapis/java-securitycenter/compare/v1.3.2...v1.3.3) (2020-12-02)
 
 
