@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datacatalog.v1beta1.stub;
 
 import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListPolicyTagsPagedResponse;
 import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListTaxonomiesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -46,6 +46,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -54,16 +55,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Google Cloud Data Catalog API.
+ * gRPC stub implementation for the PolicyTagManager service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
-
   private static final MethodDescriptor<CreateTaxonomyRequest, Taxonomy>
       createTaxonomyMethodDescriptor =
           MethodDescriptor.<CreateTaxonomyRequest, Taxonomy>newBuilder()
@@ -73,6 +72,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   ProtoUtils.marshaller(CreateTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Taxonomy.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteTaxonomyRequest, Empty>
       deleteTaxonomyMethodDescriptor =
           MethodDescriptor.<DeleteTaxonomyRequest, Empty>newBuilder()
@@ -82,6 +82,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   ProtoUtils.marshaller(DeleteTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateTaxonomyRequest, Taxonomy>
       updateTaxonomyMethodDescriptor =
           MethodDescriptor.<UpdateTaxonomyRequest, Taxonomy>newBuilder()
@@ -91,6 +92,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   ProtoUtils.marshaller(UpdateTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Taxonomy.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListTaxonomiesRequest, ListTaxonomiesResponse>
       listTaxonomiesMethodDescriptor =
           MethodDescriptor.<ListTaxonomiesRequest, ListTaxonomiesResponse>newBuilder()
@@ -101,6 +103,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTaxonomiesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetTaxonomyRequest, Taxonomy> getTaxonomyMethodDescriptor =
       MethodDescriptor.<GetTaxonomyRequest, Taxonomy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -108,6 +111,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaxonomyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Taxonomy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreatePolicyTagRequest, PolicyTag>
       createPolicyTagMethodDescriptor =
           MethodDescriptor.<CreatePolicyTagRequest, PolicyTag>newBuilder()
@@ -118,6 +122,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   ProtoUtils.marshaller(CreatePolicyTagRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PolicyTag.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeletePolicyTagRequest, Empty>
       deletePolicyTagMethodDescriptor =
           MethodDescriptor.<DeletePolicyTagRequest, Empty>newBuilder()
@@ -128,6 +133,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   ProtoUtils.marshaller(DeletePolicyTagRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdatePolicyTagRequest, PolicyTag>
       updatePolicyTagMethodDescriptor =
           MethodDescriptor.<UpdatePolicyTagRequest, PolicyTag>newBuilder()
@@ -138,6 +144,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   ProtoUtils.marshaller(UpdatePolicyTagRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PolicyTag.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListPolicyTagsRequest, ListPolicyTagsResponse>
       listPolicyTagsMethodDescriptor =
           MethodDescriptor.<ListPolicyTagsRequest, ListPolicyTagsResponse>newBuilder()
@@ -148,6 +155,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPolicyTagsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetPolicyTagRequest, PolicyTag>
       getPolicyTagMethodDescriptor =
           MethodDescriptor.<GetPolicyTagRequest, PolicyTag>newBuilder()
@@ -156,6 +164,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetPolicyTagRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PolicyTag.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -163,6 +172,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -170,6 +180,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -181,8 +192,6 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateTaxonomyRequest, Taxonomy> createTaxonomyCallable;
   private final UnaryCallable<DeleteTaxonomyRequest, Empty> deleteTaxonomyCallable;
@@ -203,6 +212,8 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcPolicyTagManagerStub create(PolicyTagManagerStubSettings settings)
@@ -243,6 +254,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateTaxonomyRequest, Taxonomy> createTaxonomyTransportSettings =
         GrpcCallSettings.<CreateTaxonomyRequest, Taxonomy>newBuilder()
@@ -465,7 +477,12 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateTaxonomyRequest, Taxonomy> createTaxonomyCallable() {
@@ -480,13 +497,13 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
     return updateTaxonomyCallable;
   }
 
+  public UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesResponse> listTaxonomiesCallable() {
+    return listTaxonomiesCallable;
+  }
+
   public UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesPagedResponse>
       listTaxonomiesPagedCallable() {
     return listTaxonomiesPagedCallable;
-  }
-
-  public UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesResponse> listTaxonomiesCallable() {
-    return listTaxonomiesCallable;
   }
 
   public UnaryCallable<GetTaxonomyRequest, Taxonomy> getTaxonomyCallable() {
@@ -505,13 +522,13 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
     return updatePolicyTagCallable;
   }
 
+  public UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsResponse> listPolicyTagsCallable() {
+    return listPolicyTagsCallable;
+  }
+
   public UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsPagedResponse>
       listPolicyTagsPagedCallable() {
     return listPolicyTagsPagedCallable;
-  }
-
-  public UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsResponse> listPolicyTagsCallable() {
-    return listPolicyTagsCallable;
   }
 
   public UnaryCallable<GetPolicyTagRequest, PolicyTag> getPolicyTagCallable() {

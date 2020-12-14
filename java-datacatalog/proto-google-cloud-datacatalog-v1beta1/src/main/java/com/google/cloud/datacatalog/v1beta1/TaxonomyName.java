@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class TaxonomyName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_TAXONOMY =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/taxonomies/{taxonomy}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String taxonomy;
+
+  @Deprecated
+  protected TaxonomyName() {
+    project = null;
+    location = null;
+    taxonomy = null;
+  }
+
+  private TaxonomyName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    taxonomy = Preconditions.checkNotNull(builder.getTaxonomy());
+  }
 
   public String getProject() {
     return project;
@@ -58,12 +70,6 @@ public class TaxonomyName implements ResourceName {
     return new Builder(this);
   }
 
-  private TaxonomyName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    taxonomy = Preconditions.checkNotNull(builder.getTaxonomy());
-  }
-
   public static TaxonomyName of(String project, String location, String taxonomy) {
     return newBuilder().setProject(project).setLocation(location).setTaxonomy(taxonomy).build();
   }
@@ -82,7 +88,7 @@ public class TaxonomyName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_TAXONOMY.validatedMatch(
             formattedString, "TaxonomyName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("taxonomy"));
   }
@@ -96,7 +102,7 @@ public class TaxonomyName implements ResourceName {
   }
 
   public static List<String> toStringList(List<TaxonomyName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (TaxonomyName value : values) {
       if (value == null) {
         list.add("");
@@ -108,17 +114,24 @@ public class TaxonomyName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_TAXONOMY.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("taxonomy", taxonomy);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (taxonomy != null) {
+            fieldMapBuilder.put("taxonomy", taxonomy);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -132,16 +145,43 @@ public class TaxonomyName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_TAXONOMY.instantiate(
         "project", project, "location", location, "taxonomy", taxonomy);
   }
 
-  /** Builder for TaxonomyName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      TaxonomyName that = ((TaxonomyName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.taxonomy, that.taxonomy);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(taxonomy);
+    return h;
+  }
+
+  /** Builder for projects/{project}/locations/{location}/taxonomies/{taxonomy}. */
+  public static class Builder {
     private String project;
     private String location;
     private String taxonomy;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -170,8 +210,6 @@ public class TaxonomyName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(TaxonomyName taxonomyName) {
       project = taxonomyName.project;
       location = taxonomyName.location;
@@ -181,31 +219,5 @@ public class TaxonomyName implements ResourceName {
     public TaxonomyName build() {
       return new TaxonomyName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof TaxonomyName) {
-      TaxonomyName that = (TaxonomyName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.taxonomy.equals(that.taxonomy));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= taxonomy.hashCode();
-    return h;
   }
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datacatalog.v1beta1.stub;
 
 import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListPolicyTagsPagedResponse;
@@ -67,9 +68,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link PolicyTagManagerStub}.
  *
@@ -86,22 +86,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createTaxonomy to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PolicyTagManagerStubSettings.Builder policyTagManagerSettingsBuilder =
  *     PolicyTagManagerStubSettings.newBuilder();
  * policyTagManagerSettingsBuilder
  *     .createTaxonomySettings()
  *     .setRetrySettings(
- *         policyTagManagerSettingsBuilder.createTaxonomySettings().getRetrySettings().toBuilder()
+ *         policyTagManagerSettingsBuilder
+ *             .createTaxonomySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PolicyTagManagerStubSettings policyTagManagerSettings = policyTagManagerSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -125,6 +126,114 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy>
+      LIST_TAXONOMIES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTaxonomiesRequest injectToken(ListTaxonomiesRequest payload, String token) {
+              return ListTaxonomiesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTaxonomiesRequest injectPageSize(
+                ListTaxonomiesRequest payload, int pageSize) {
+              return ListTaxonomiesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTaxonomiesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTaxonomiesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Taxonomy> extractResources(ListTaxonomiesResponse payload) {
+              return payload.getTaxonomiesList() == null
+                  ? ImmutableList.<Taxonomy>of()
+                  : payload.getTaxonomiesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag>
+      LIST_POLICY_TAGS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPolicyTagsRequest injectToken(ListPolicyTagsRequest payload, String token) {
+              return ListPolicyTagsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPolicyTagsRequest injectPageSize(
+                ListPolicyTagsRequest payload, int pageSize) {
+              return ListPolicyTagsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPolicyTagsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPolicyTagsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PolicyTag> extractResources(ListPolicyTagsResponse payload) {
+              return payload.getPolicyTagsList() == null
+                  ? ImmutableList.<PolicyTag>of()
+                  : payload.getPolicyTagsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>
+      LIST_TAXONOMIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>() {
+            @Override
+            public ApiFuture<ListTaxonomiesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesResponse> callable,
+                ListTaxonomiesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTaxonomiesResponse> futureResponse) {
+              PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> pageContext =
+                  PageContext.create(callable, LIST_TAXONOMIES_PAGE_STR_DESC, request, context);
+              return ListTaxonomiesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>
+      LIST_POLICY_TAGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPolicyTagsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsResponse> callable,
+                ListPolicyTagsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPolicyTagsResponse> futureResponse) {
+              PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> pageContext =
+                  PageContext.create(callable, LIST_POLICY_TAGS_PAGE_STR_DESC, request, context);
+              return ListPolicyTagsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createTaxonomy. */
   public UnaryCallSettings<CreateTaxonomyRequest, Taxonomy> createTaxonomySettings() {
@@ -202,10 +311,10 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcPolicyTagManagerStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -280,118 +389,9 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  private static final PagedListDescriptor<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy>
-      LIST_TAXONOMIES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTaxonomiesRequest injectToken(ListTaxonomiesRequest payload, String token) {
-              return ListTaxonomiesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTaxonomiesRequest injectPageSize(
-                ListTaxonomiesRequest payload, int pageSize) {
-              return ListTaxonomiesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTaxonomiesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTaxonomiesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Taxonomy> extractResources(ListTaxonomiesResponse payload) {
-              return payload.getTaxonomiesList() != null
-                  ? payload.getTaxonomiesList()
-                  : ImmutableList.<Taxonomy>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag>
-      LIST_POLICY_TAGS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListPolicyTagsRequest injectToken(ListPolicyTagsRequest payload, String token) {
-              return ListPolicyTagsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListPolicyTagsRequest injectPageSize(
-                ListPolicyTagsRequest payload, int pageSize) {
-              return ListPolicyTagsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListPolicyTagsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListPolicyTagsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<PolicyTag> extractResources(ListPolicyTagsResponse payload) {
-              return payload.getPolicyTagsList() != null
-                  ? payload.getPolicyTagsList()
-                  : ImmutableList.<PolicyTag>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>
-      LIST_TAXONOMIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>() {
-            @Override
-            public ApiFuture<ListTaxonomiesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesResponse> callable,
-                ListTaxonomiesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTaxonomiesResponse> futureResponse) {
-              PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> pageContext =
-                  PageContext.create(callable, LIST_TAXONOMIES_PAGE_STR_DESC, request, context);
-              return ListTaxonomiesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>
-      LIST_POLICY_TAGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>() {
-            @Override
-            public ApiFuture<ListPolicyTagsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsResponse> callable,
-                ListPolicyTagsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListPolicyTagsResponse> futureResponse) {
-              PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> pageContext =
-                  PageContext.create(callable, LIST_POLICY_TAGS_PAGE_STR_DESC, request, context);
-              return ListPolicyTagsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for PolicyTagManagerStubSettings. */
   public static class Builder extends StubSettings.Builder<PolicyTagManagerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateTaxonomyRequest, Taxonomy> createTaxonomySettings;
     private final UnaryCallSettings.Builder<DeleteTaxonomyRequest, Empty> deleteTaxonomySettings;
     private final UnaryCallSettings.Builder<UpdateTaxonomyRequest, Taxonomy> updateTaxonomySettings;
@@ -412,21 +412,13 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put(
-          "retry_policy_1_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -435,61 +427,30 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("retry_policy_1_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createTaxonomySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteTaxonomySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateTaxonomySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listTaxonomiesSettings = PagedCallSettings.newBuilder(LIST_TAXONOMIES_PAGE_STR_FACT);
-
       getTaxonomySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createPolicyTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deletePolicyTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updatePolicyTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listPolicyTagsSettings = PagedCallSettings.newBuilder(LIST_POLICY_TAGS_PAGE_STR_FACT);
-
       getPolicyTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -507,21 +468,55 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
               getIamPolicySettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(PolicyTagManagerStubSettings settings) {
+      super(settings);
+
+      createTaxonomySettings = settings.createTaxonomySettings.toBuilder();
+      deleteTaxonomySettings = settings.deleteTaxonomySettings.toBuilder();
+      updateTaxonomySettings = settings.updateTaxonomySettings.toBuilder();
+      listTaxonomiesSettings = settings.listTaxonomiesSettings.toBuilder();
+      getTaxonomySettings = settings.getTaxonomySettings.toBuilder();
+      createPolicyTagSettings = settings.createPolicyTagSettings.toBuilder();
+      deletePolicyTagSettings = settings.deletePolicyTagSettings.toBuilder();
+      updatePolicyTagSettings = settings.updatePolicyTagSettings.toBuilder();
+      listPolicyTagsSettings = settings.listPolicyTagsSettings.toBuilder();
+      getPolicyTagSettings = settings.getPolicyTagSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createTaxonomySettings,
+              deleteTaxonomySettings,
+              updateTaxonomySettings,
+              listTaxonomiesSettings,
+              getTaxonomySettings,
+              createPolicyTagSettings,
+              deletePolicyTagSettings,
+              updatePolicyTagSettings,
+              listPolicyTagsSettings,
+              getPolicyTagSettings,
+              getIamPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .createTaxonomySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
@@ -574,57 +569,23 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
 
       builder
           .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
 
-    protected Builder(PolicyTagManagerStubSettings settings) {
-      super(settings);
-
-      createTaxonomySettings = settings.createTaxonomySettings.toBuilder();
-      deleteTaxonomySettings = settings.deleteTaxonomySettings.toBuilder();
-      updateTaxonomySettings = settings.updateTaxonomySettings.toBuilder();
-      listTaxonomiesSettings = settings.listTaxonomiesSettings.toBuilder();
-      getTaxonomySettings = settings.getTaxonomySettings.toBuilder();
-      createPolicyTagSettings = settings.createPolicyTagSettings.toBuilder();
-      deletePolicyTagSettings = settings.deletePolicyTagSettings.toBuilder();
-      updatePolicyTagSettings = settings.updatePolicyTagSettings.toBuilder();
-      listPolicyTagsSettings = settings.listPolicyTagsSettings.toBuilder();
-      getPolicyTagSettings = settings.getPolicyTagSettings.toBuilder();
-      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
-      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createTaxonomySettings,
-              deleteTaxonomySettings,
-              updateTaxonomySettings,
-              listTaxonomiesSettings,
-              getTaxonomySettings,
-              createPolicyTagSettings,
-              deletePolicyTagSettings,
-              updatePolicyTagSettings,
-              listPolicyTagsSettings,
-              getPolicyTagSettings,
-              getIamPolicySettings,
-              setIamPolicySettings,
-              testIamPermissionsSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

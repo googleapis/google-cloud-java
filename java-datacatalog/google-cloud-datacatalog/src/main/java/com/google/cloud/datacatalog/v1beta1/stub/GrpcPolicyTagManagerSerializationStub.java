@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datacatalog.v1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -28,6 +28,7 @@ import com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse;
 import com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest;
 import com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesResponse;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -35,16 +36,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Google Cloud Data Catalog API.
+ * gRPC stub implementation for the PolicyTagManagerSerialization service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSerializationStub {
-
   private static final MethodDescriptor<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
       importTaxonomiesMethodDescriptor =
           MethodDescriptor.<ImportTaxonomiesRequest, ImportTaxonomiesResponse>newBuilder()
@@ -56,6 +55,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ImportTaxonomiesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
       exportTaxonomiesMethodDescriptor =
           MethodDescriptor.<ExportTaxonomiesRequest, ExportTaxonomiesResponse>newBuilder()
@@ -68,13 +68,13 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                   ProtoUtils.marshaller(ExportTaxonomiesResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
       importTaxonomiesCallable;
   private final UnaryCallable<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
       exportTaxonomiesCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcPolicyTagManagerSerializationStub create(
@@ -118,6 +118,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
         importTaxonomiesTransportSettings =
@@ -155,7 +156,12 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
         callableFactory.createUnaryCallable(
             exportTaxonomiesTransportSettings, settings.exportTaxonomiesSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ImportTaxonomiesRequest, ImportTaxonomiesResponse>

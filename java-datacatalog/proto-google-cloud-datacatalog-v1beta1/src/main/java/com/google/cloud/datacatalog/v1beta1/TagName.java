@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,22 +23,38 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class TagName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_ENTRY_GROUP_ENTRY_TAG =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}/tags/{tag}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String entryGroup;
   private final String entry;
   private final String tag;
+
+  @Deprecated
+  protected TagName() {
+    project = null;
+    location = null;
+    entryGroup = null;
+    entry = null;
+    tag = null;
+  }
+
+  private TagName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    entryGroup = Preconditions.checkNotNull(builder.getEntryGroup());
+    entry = Preconditions.checkNotNull(builder.getEntry());
+    tag = Preconditions.checkNotNull(builder.getTag());
+  }
 
   public String getProject() {
     return project;
@@ -66,14 +82,6 @@ public class TagName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private TagName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    entryGroup = Preconditions.checkNotNull(builder.getEntryGroup());
-    entry = Preconditions.checkNotNull(builder.getEntry());
-    tag = Preconditions.checkNotNull(builder.getTag());
   }
 
   public static TagName of(
@@ -104,7 +112,7 @@ public class TagName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_ENTRY_GROUP_ENTRY_TAG.validatedMatch(
             formattedString, "TagName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -123,7 +131,7 @@ public class TagName implements ResourceName {
   }
 
   public static List<String> toStringList(List<TagName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (TagName value : values) {
       if (value == null) {
         list.add("");
@@ -135,19 +143,30 @@ public class TagName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_ENTRY_GROUP_ENTRY_TAG.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("entryGroup", entryGroup);
-          fieldMapBuilder.put("entry", entry);
-          fieldMapBuilder.put("tag", tag);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (entryGroup != null) {
+            fieldMapBuilder.put("entry_group", entryGroup);
+          }
+          if (entry != null) {
+            fieldMapBuilder.put("entry", entry);
+          }
+          if (tag != null) {
+            fieldMapBuilder.put("tag", tag);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -161,7 +180,7 @@ public class TagName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_ENTRY_GROUP_ENTRY_TAG.instantiate(
         "project",
         project,
         "location",
@@ -174,14 +193,50 @@ public class TagName implements ResourceName {
         tag);
   }
 
-  /** Builder for TagName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      TagName that = ((TagName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.entryGroup, that.entryGroup)
+          && Objects.equals(this.entry, that.entry)
+          && Objects.equals(this.tag, that.tag);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(entryGroup);
+    h *= 1000003;
+    h ^= Objects.hashCode(entry);
+    h *= 1000003;
+    h ^= Objects.hashCode(tag);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}/tags/{tag}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String entryGroup;
     private String entry;
     private String tag;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -228,8 +283,6 @@ public class TagName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(TagName tagName) {
       project = tagName.project;
       location = tagName.location;
@@ -241,37 +294,5 @@ public class TagName implements ResourceName {
     public TagName build() {
       return new TagName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof TagName) {
-      TagName that = (TagName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.entryGroup.equals(that.entryGroup))
-          && (this.entry.equals(that.entry))
-          && (this.tag.equals(that.tag));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= entryGroup.hashCode();
-    h *= 1000003;
-    h ^= entry.hashCode();
-    h *= 1000003;
-    h ^= tag.hashCode();
-    return h;
   }
 }

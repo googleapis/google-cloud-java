@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datacatalog.v1beta1;
 
 import com.google.api.core.BetaApi;
@@ -24,7 +25,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Policy tag manager serialization API service allows clients to manipulate
  * their taxonomies and policy tags data with serialized format.
@@ -32,19 +33,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient = PolicyTagManagerSerializationClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   ImportTaxonomiesRequest request = ImportTaxonomiesRequest.newBuilder()
- *     .setParent(parent.toString())
- *     .build();
- *   ImportTaxonomiesResponse response = policyTagManagerSerializationClient.importTaxonomies(request);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the policyTagManagerSerializationClient object to clean up
+ * <p>Note: close() needs to be called on the PolicyTagManagerSerializationClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -73,30 +62,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PolicyTagManagerSerializationSettings policyTagManagerSerializationSettings =
  *     PolicyTagManagerSerializationSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * PolicyTagManagerSerializationClient policyTagManagerSerializationClient =
  *     PolicyTagManagerSerializationClient.create(policyTagManagerSerializationSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PolicyTagManagerSerializationSettings policyTagManagerSerializationSettings =
  *     PolicyTagManagerSerializationSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PolicyTagManagerSerializationClient policyTagManagerSerializationClient =
  *     PolicyTagManagerSerializationClient.create(policyTagManagerSerializationSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class PolicyTagManagerSerializationClient implements BackgroundResource {
   private final PolicyTagManagerSerializationSettings settings;
   private final PolicyTagManagerSerializationStub stub;
@@ -118,7 +105,7 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
 
   /**
    * Constructs an instance of PolicyTagManagerSerializationClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use PolicyTagManagerSerializationSettings}.
+   * calls. This is for advanced usage - prefer using create(PolicyTagManagerSerializationSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PolicyTagManagerSerializationClient create(
@@ -153,23 +140,11 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports all taxonomies and their policy tags to a project as new taxonomies.
    *
    * <p>This method provides a bulk taxonomy / policy tag creation using nested proto structure.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient = PolicyTagManagerSerializationClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportTaxonomiesRequest request = ImportTaxonomiesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ImportTaxonomiesResponse response = policyTagManagerSerializationClient.importTaxonomies(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -178,51 +153,25 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
     return importTaxonomiesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports all taxonomies and their policy tags to a project as new taxonomies.
    *
    * <p>This method provides a bulk taxonomy / policy tag creation using nested proto structure.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient = PolicyTagManagerSerializationClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportTaxonomiesRequest request = ImportTaxonomiesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ImportTaxonomiesResponse&gt; future = policyTagManagerSerializationClient.importTaxonomiesCallable().futureCall(request);
-   *   // Do something
-   *   ImportTaxonomiesResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
       importTaxonomiesCallable() {
     return stub.importTaxonomiesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports all taxonomies and their policy tags in a project.
    *
    * <p>This method generates SerializedTaxonomy protos with nested policy tags that can be used as
    * an input for future ImportTaxonomies calls.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient = PolicyTagManagerSerializationClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   List&lt;TaxonomyName&gt; taxonomies = new ArrayList&lt;&gt;();
-   *   ExportTaxonomiesRequest request = ExportTaxonomiesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllTaxonomies(TaxonomyName.toStringList(taxonomies))
-   *     .build();
-   *   ExportTaxonomiesResponse response = policyTagManagerSerializationClient.exportTaxonomies(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -231,7 +180,7 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
     return exportTaxonomiesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports all taxonomies and their policy tags in a project.
    *
@@ -239,20 +188,6 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
    * an input for future ImportTaxonomies calls.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient = PolicyTagManagerSerializationClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   List&lt;TaxonomyName&gt; taxonomies = new ArrayList&lt;&gt;();
-   *   ExportTaxonomiesRequest request = ExportTaxonomiesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllTaxonomies(TaxonomyName.toStringList(taxonomies))
-   *     .build();
-   *   ApiFuture&lt;ExportTaxonomiesResponse&gt; future = policyTagManagerSerializationClient.exportTaxonomiesCallable().futureCall(request);
-   *   // Do something
-   *   ExportTaxonomiesResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
       exportTaxonomiesCallable() {

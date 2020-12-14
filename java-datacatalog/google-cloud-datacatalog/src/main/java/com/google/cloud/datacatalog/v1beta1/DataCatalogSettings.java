@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datacatalog.v1beta1;
 
 import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.ListEntriesPagedResponse;
@@ -42,7 +43,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DataCatalogClient}.
  *
@@ -57,39 +58,29 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getEntry to 30 seconds:
+ * <p>For example, to set the total timeout of createEntryGroup to 30 seconds:
  *
- * <pre>
- * <code>
- * DataCatalogSettings.Builder dataCatalogSettingsBuilder =
- *     DataCatalogSettings.newBuilder();
+ * <pre>{@code
+ * DataCatalogSettings.Builder dataCatalogSettingsBuilder = DataCatalogSettings.newBuilder();
  * dataCatalogSettingsBuilder
- *     .getEntrySettings()
+ *     .createEntryGroupSettings()
  *     .setRetrySettings(
- *         dataCatalogSettingsBuilder.getEntrySettings().getRetrySettings().toBuilder()
+ *         dataCatalogSettingsBuilder
+ *             .createEntryGroupSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataCatalogSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
+
   /** Returns the object with the settings used for calls to searchCatalog. */
   public PagedCallSettings<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
       searchCatalogSettings() {
     return ((DataCatalogStubSettings) getStubSettings()).searchCatalogSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getEntry. */
-  public UnaryCallSettings<GetEntryRequest, Entry> getEntrySettings() {
-    return ((DataCatalogStubSettings) getStubSettings()).getEntrySettings();
-  }
-
-  /** Returns the object with the settings used for calls to lookupEntry. */
-  public UnaryCallSettings<LookupEntryRequest, Entry> lookupEntrySettings() {
-    return ((DataCatalogStubSettings) getStubSettings()).lookupEntrySettings();
   }
 
   /** Returns the object with the settings used for calls to createEntryGroup. */
@@ -132,6 +123,16 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
   /** Returns the object with the settings used for calls to deleteEntry. */
   public UnaryCallSettings<DeleteEntryRequest, Empty> deleteEntrySettings() {
     return ((DataCatalogStubSettings) getStubSettings()).deleteEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEntry. */
+  public UnaryCallSettings<GetEntryRequest, Entry> getEntrySettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).getEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to lookupEntry. */
+  public UnaryCallSettings<LookupEntryRequest, Entry> lookupEntrySettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).lookupEntrySettings();
   }
 
   /** Returns the object with the settings used for calls to listEntries. */
@@ -279,16 +280,13 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
 
   /** Builder for DataCatalogSettings. */
   public static class Builder extends ClientSettings.Builder<DataCatalogSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(DataCatalogStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(DataCatalogStubSettings.newBuilder());
     }
 
     protected Builder(DataCatalogSettings settings) {
@@ -299,11 +297,15 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(DataCatalogStubSettings.newBuilder());
+    }
+
     public DataCatalogStubSettings.Builder getStubSettingsBuilder() {
       return ((DataCatalogStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -321,16 +323,6 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
             SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
         searchCatalogSettings() {
       return getStubSettingsBuilder().searchCatalogSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getEntry. */
-    public UnaryCallSettings.Builder<GetEntryRequest, Entry> getEntrySettings() {
-      return getStubSettingsBuilder().getEntrySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to lookupEntry. */
-    public UnaryCallSettings.Builder<LookupEntryRequest, Entry> lookupEntrySettings() {
-      return getStubSettingsBuilder().lookupEntrySettings();
     }
 
     /** Returns the builder for the settings used for calls to createEntryGroup. */
@@ -375,6 +367,16 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     /** Returns the builder for the settings used for calls to deleteEntry. */
     public UnaryCallSettings.Builder<DeleteEntryRequest, Empty> deleteEntrySettings() {
       return getStubSettingsBuilder().deleteEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEntry. */
+    public UnaryCallSettings.Builder<GetEntryRequest, Entry> getEntrySettings() {
+      return getStubSettingsBuilder().getEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to lookupEntry. */
+    public UnaryCallSettings.Builder<LookupEntryRequest, Entry> lookupEntrySettings() {
+      return getStubSettingsBuilder().lookupEntrySettings();
     }
 
     /** Returns the builder for the settings used for calls to listEntries. */

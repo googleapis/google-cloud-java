@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datacatalog.v1.stub;
 
 import static com.google.cloud.datacatalog.v1.DataCatalogClient.ListEntriesPagedResponse;
@@ -91,7 +92,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DataCatalogStub}.
  *
@@ -108,22 +109,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createEntryGroup to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DataCatalogStubSettings.Builder dataCatalogSettingsBuilder =
  *     DataCatalogStubSettings.newBuilder();
  * dataCatalogSettingsBuilder
  *     .createEntryGroupSettings()
  *     .setRetrySettings(
- *         dataCatalogSettingsBuilder.createEntryGroupSettings().getRetrySettings().toBuilder()
+ *         dataCatalogSettingsBuilder
+ *             .createEntryGroupSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataCatalogStubSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -167,6 +169,223 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<
+          SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>
+      SEARCH_CATALOG_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchCatalogRequest injectToken(SearchCatalogRequest payload, String token) {
+              return SearchCatalogRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchCatalogRequest injectPageSize(SearchCatalogRequest payload, int pageSize) {
+              return SearchCatalogRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchCatalogRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchCatalogResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SearchCatalogResult> extractResources(SearchCatalogResponse payload) {
+              return payload.getResultsList() == null
+                  ? ImmutableList.<SearchCatalogResult>of()
+                  : payload.getResultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup>
+      LIST_ENTRY_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEntryGroupsRequest injectToken(
+                ListEntryGroupsRequest payload, String token) {
+              return ListEntryGroupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEntryGroupsRequest injectPageSize(
+                ListEntryGroupsRequest payload, int pageSize) {
+              return ListEntryGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEntryGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEntryGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EntryGroup> extractResources(ListEntryGroupsResponse payload) {
+              return payload.getEntryGroupsList() == null
+                  ? ImmutableList.<EntryGroup>of()
+                  : payload.getEntryGroupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListEntriesRequest, ListEntriesResponse, Entry>
+      LIST_ENTRIES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListEntriesRequest, ListEntriesResponse, Entry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEntriesRequest injectToken(ListEntriesRequest payload, String token) {
+              return ListEntriesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEntriesRequest injectPageSize(ListEntriesRequest payload, int pageSize) {
+              return ListEntriesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEntriesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEntriesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Entry> extractResources(ListEntriesResponse payload) {
+              return payload.getEntriesList() == null
+                  ? ImmutableList.<Entry>of()
+                  : payload.getEntriesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListTagsRequest, ListTagsResponse, Tag>
+      LIST_TAGS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListTagsRequest, ListTagsResponse, Tag>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTagsRequest injectToken(ListTagsRequest payload, String token) {
+              return ListTagsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTagsRequest injectPageSize(ListTagsRequest payload, int pageSize) {
+              return ListTagsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTagsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTagsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Tag> extractResources(ListTagsResponse payload) {
+              return payload.getTagsList() == null
+                  ? ImmutableList.<Tag>of()
+                  : payload.getTagsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
+      SEARCH_CATALOG_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>() {
+            @Override
+            public ApiFuture<SearchCatalogPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> callable,
+                SearchCatalogRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchCatalogResponse> futureResponse) {
+              PageContext<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>
+                  pageContext =
+                      PageContext.create(callable, SEARCH_CATALOG_PAGE_STR_DESC, request, context);
+              return SearchCatalogPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEntryGroupsRequest, ListEntryGroupsResponse, ListEntryGroupsPagedResponse>
+      LIST_ENTRY_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEntryGroupsRequest, ListEntryGroupsResponse, ListEntryGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListEntryGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> callable,
+                ListEntryGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEntryGroupsResponse> futureResponse) {
+              PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> pageContext =
+                  PageContext.create(callable, LIST_ENTRY_GROUPS_PAGE_STR_DESC, request, context);
+              return ListEntryGroupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEntriesRequest, ListEntriesResponse, ListEntriesPagedResponse>
+      LIST_ENTRIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEntriesRequest, ListEntriesResponse, ListEntriesPagedResponse>() {
+            @Override
+            public ApiFuture<ListEntriesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEntriesRequest, ListEntriesResponse> callable,
+                ListEntriesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEntriesResponse> futureResponse) {
+              PageContext<ListEntriesRequest, ListEntriesResponse, Entry> pageContext =
+                  PageContext.create(callable, LIST_ENTRIES_PAGE_STR_DESC, request, context);
+              return ListEntriesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
+      LIST_TAGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTagsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTagsRequest, ListTagsResponse> callable,
+                ListTagsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTagsResponse> futureResponse) {
+              PageContext<ListTagsRequest, ListTagsResponse, Tag> pageContext =
+                  PageContext.create(callable, LIST_TAGS_PAGE_STR_DESC, request, context);
+              return ListTagsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to searchCatalog. */
   public PagedCallSettings<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
@@ -318,10 +537,10 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcDataCatalogStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -410,227 +629,9 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>
-      SEARCH_CATALOG_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public SearchCatalogRequest injectToken(SearchCatalogRequest payload, String token) {
-              return SearchCatalogRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public SearchCatalogRequest injectPageSize(SearchCatalogRequest payload, int pageSize) {
-              return SearchCatalogRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(SearchCatalogRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(SearchCatalogResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<SearchCatalogResult> extractResources(SearchCatalogResponse payload) {
-              return payload.getResultsList() != null
-                  ? payload.getResultsList()
-                  : ImmutableList.<SearchCatalogResult>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup>
-      LIST_ENTRY_GROUPS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListEntryGroupsRequest injectToken(
-                ListEntryGroupsRequest payload, String token) {
-              return ListEntryGroupsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListEntryGroupsRequest injectPageSize(
-                ListEntryGroupsRequest payload, int pageSize) {
-              return ListEntryGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListEntryGroupsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListEntryGroupsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<EntryGroup> extractResources(ListEntryGroupsResponse payload) {
-              return payload.getEntryGroupsList() != null
-                  ? payload.getEntryGroupsList()
-                  : ImmutableList.<EntryGroup>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListEntriesRequest, ListEntriesResponse, Entry>
-      LIST_ENTRIES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListEntriesRequest, ListEntriesResponse, Entry>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListEntriesRequest injectToken(ListEntriesRequest payload, String token) {
-              return ListEntriesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListEntriesRequest injectPageSize(ListEntriesRequest payload, int pageSize) {
-              return ListEntriesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListEntriesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListEntriesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Entry> extractResources(ListEntriesResponse payload) {
-              return payload.getEntriesList() != null
-                  ? payload.getEntriesList()
-                  : ImmutableList.<Entry>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListTagsRequest, ListTagsResponse, Tag>
-      LIST_TAGS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListTagsRequest, ListTagsResponse, Tag>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTagsRequest injectToken(ListTagsRequest payload, String token) {
-              return ListTagsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTagsRequest injectPageSize(ListTagsRequest payload, int pageSize) {
-              return ListTagsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTagsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTagsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Tag> extractResources(ListTagsResponse payload) {
-              return payload.getTagsList() != null
-                  ? payload.getTagsList()
-                  : ImmutableList.<Tag>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
-      SEARCH_CATALOG_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>() {
-            @Override
-            public ApiFuture<SearchCatalogPagedResponse> getFuturePagedResponse(
-                UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> callable,
-                SearchCatalogRequest request,
-                ApiCallContext context,
-                ApiFuture<SearchCatalogResponse> futureResponse) {
-              PageContext<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult>
-                  pageContext =
-                      PageContext.create(callable, SEARCH_CATALOG_PAGE_STR_DESC, request, context);
-              return SearchCatalogPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListEntryGroupsRequest, ListEntryGroupsResponse, ListEntryGroupsPagedResponse>
-      LIST_ENTRY_GROUPS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListEntryGroupsRequest, ListEntryGroupsResponse, ListEntryGroupsPagedResponse>() {
-            @Override
-            public ApiFuture<ListEntryGroupsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> callable,
-                ListEntryGroupsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListEntryGroupsResponse> futureResponse) {
-              PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> pageContext =
-                  PageContext.create(callable, LIST_ENTRY_GROUPS_PAGE_STR_DESC, request, context);
-              return ListEntryGroupsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListEntriesRequest, ListEntriesResponse, ListEntriesPagedResponse>
-      LIST_ENTRIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListEntriesRequest, ListEntriesResponse, ListEntriesPagedResponse>() {
-            @Override
-            public ApiFuture<ListEntriesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListEntriesRequest, ListEntriesResponse> callable,
-                ListEntriesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListEntriesResponse> futureResponse) {
-              PageContext<ListEntriesRequest, ListEntriesResponse, Entry> pageContext =
-                  PageContext.create(callable, LIST_ENTRIES_PAGE_STR_DESC, request, context);
-              return ListEntriesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
-      LIST_TAGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>() {
-            @Override
-            public ApiFuture<ListTagsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTagsRequest, ListTagsResponse> callable,
-                ListTagsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTagsResponse> futureResponse) {
-              PageContext<ListTagsRequest, ListTagsResponse, Tag> pageContext =
-                  PageContext.create(callable, LIST_TAGS_PAGE_STR_DESC, request, context);
-              return ListTagsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for DataCatalogStubSettings. */
   public static class Builder extends StubSettings.Builder<DataCatalogStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
         searchCatalogSettings;
@@ -678,7 +679,6 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -688,9 +688,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -710,8 +709,6 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -719,69 +716,43 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("no_retry_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       searchCatalogSettings = PagedCallSettings.newBuilder(SEARCH_CATALOG_PAGE_STR_FACT);
-
       createEntryGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getEntryGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateEntryGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteEntryGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listEntryGroupsSettings = PagedCallSettings.newBuilder(LIST_ENTRY_GROUPS_PAGE_STR_FACT);
-
       createEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       lookupEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listEntriesSettings = PagedCallSettings.newBuilder(LIST_ENTRIES_PAGE_STR_FACT);
-
       createTagTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getTagTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateTagTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteTagTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createTagTemplateFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateTagTemplateFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       renameTagTemplateFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteTagTemplateFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listTagsSettings = PagedCallSettings.newBuilder(LIST_TAGS_PAGE_STR_FACT);
-
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -813,157 +784,7 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .searchCatalogSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createEntryGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getEntryGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateEntryGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteEntryGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listEntryGroupsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createEntrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateEntrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteEntrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getEntrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .lookupEntrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listEntriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createTagTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getTagTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateTagTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteTagTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createTagTemplateFieldSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateTagTemplateFieldSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .renameTagTemplateFieldSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteTagTemplateFieldSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createTagSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateTagSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteTagSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listTagsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(DataCatalogStubSettings settings) {
@@ -1028,7 +849,157 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               testIamPermissionsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .searchCatalogSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createEntryGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getEntryGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateEntryGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteEntryGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listEntryGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .lookupEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listEntriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createTagTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getTagTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateTagTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteTagTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createTagTemplateFieldSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateTagTemplateFieldSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .renameTagTemplateFieldSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteTagTemplateFieldSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createTagSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateTagSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteTagSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listTagsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

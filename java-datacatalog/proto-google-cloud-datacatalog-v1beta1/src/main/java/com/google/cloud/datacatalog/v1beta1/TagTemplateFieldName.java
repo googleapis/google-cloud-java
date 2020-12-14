@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class TagTemplateFieldName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_TAG_TEMPLATE_FIELD =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/tagTemplates/{tag_template}/fields/{field}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String tagTemplate;
   private final String field;
+
+  @Deprecated
+  protected TagTemplateFieldName() {
+    project = null;
+    location = null;
+    tagTemplate = null;
+    field = null;
+  }
+
+  private TagTemplateFieldName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    tagTemplate = Preconditions.checkNotNull(builder.getTagTemplate());
+    field = Preconditions.checkNotNull(builder.getField());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class TagTemplateFieldName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private TagTemplateFieldName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    tagTemplate = Preconditions.checkNotNull(builder.getTagTemplate());
-    field = Preconditions.checkNotNull(builder.getField());
   }
 
   public static TagTemplateFieldName of(
@@ -95,7 +102,7 @@ public class TagTemplateFieldName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_TAG_TEMPLATE_FIELD.validatedMatch(
             formattedString, "TagTemplateFieldName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -113,7 +120,7 @@ public class TagTemplateFieldName implements ResourceName {
   }
 
   public static List<String> toStringList(List<TagTemplateFieldName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (TagTemplateFieldName value : values) {
       if (value == null) {
         list.add("");
@@ -125,18 +132,27 @@ public class TagTemplateFieldName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_TAG_TEMPLATE_FIELD.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("tagTemplate", tagTemplate);
-          fieldMapBuilder.put("field", field);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (tagTemplate != null) {
+            fieldMapBuilder.put("tag_template", tagTemplate);
+          }
+          if (field != null) {
+            fieldMapBuilder.put("field", field);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -150,17 +166,49 @@ public class TagTemplateFieldName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_TAG_TEMPLATE_FIELD.instantiate(
         "project", project, "location", location, "tag_template", tagTemplate, "field", field);
   }
 
-  /** Builder for TagTemplateFieldName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      TagTemplateFieldName that = ((TagTemplateFieldName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.tagTemplate, that.tagTemplate)
+          && Objects.equals(this.field, that.field);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(tagTemplate);
+    h *= 1000003;
+    h ^= Objects.hashCode(field);
+    return h;
+  }
+
+  /**
+   * Builder for projects/{project}/locations/{location}/tagTemplates/{tag_template}/fields/{field}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String tagTemplate;
     private String field;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -198,8 +246,6 @@ public class TagTemplateFieldName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(TagTemplateFieldName tagTemplateFieldName) {
       project = tagTemplateFieldName.project;
       location = tagTemplateFieldName.location;
@@ -210,34 +256,5 @@ public class TagTemplateFieldName implements ResourceName {
     public TagTemplateFieldName build() {
       return new TagTemplateFieldName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof TagTemplateFieldName) {
-      TagTemplateFieldName that = (TagTemplateFieldName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.tagTemplate.equals(that.tagTemplate))
-          && (this.field.equals(that.field));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= tagTemplate.hashCode();
-    h *= 1000003;
-    h ^= field.hashCode();
-    return h;
   }
 }

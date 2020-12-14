@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,29 +15,16 @@
  */
 
 /**
- * A client to Google Cloud Data Catalog API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>================= DataCatalogClient =================
+ * <p>======================= DataCatalogClient =======================
  *
  * <p>Service Description: Data Catalog API service allows clients to discover, understand, and
  * manage their data.
  *
  * <p>Sample for DataCatalogClient:
- *
- * <pre>
- * <code>
- * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   String entryGroupId = "";
- *   EntryGroup entryGroup = EntryGroup.newBuilder().build();
- *   EntryGroup response = dataCatalogClient.createEntryGroup(parent, entryGroupId, entryGroup);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.datacatalog.v1;
 
 import javax.annotation.Generated;

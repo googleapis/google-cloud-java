@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.datacatalog.v1.stub;
 
 import static com.google.cloud.datacatalog.v1.DataCatalogClient.ListEntriesPagedResponse;
@@ -20,7 +21,6 @@ import static com.google.cloud.datacatalog.v1.DataCatalogClient.ListEntryGroupsP
 import static com.google.cloud.datacatalog.v1.DataCatalogClient.ListTagsPagedResponse;
 import static com.google.cloud.datacatalog.v1.DataCatalogClient.SearchCatalogPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -67,6 +67,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -75,16 +76,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Google Cloud Data Catalog API.
+ * gRPC stub implementation for the DataCatalog service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcDataCatalogStub extends DataCatalogStub {
-
   private static final MethodDescriptor<SearchCatalogRequest, SearchCatalogResponse>
       searchCatalogMethodDescriptor =
           MethodDescriptor.<SearchCatalogRequest, SearchCatalogResponse>newBuilder()
@@ -95,6 +94,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchCatalogResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateEntryGroupRequest, EntryGroup>
       createEntryGroupMethodDescriptor =
           MethodDescriptor.<CreateEntryGroupRequest, EntryGroup>newBuilder()
@@ -104,6 +104,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(CreateEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetEntryGroupRequest, EntryGroup>
       getEntryGroupMethodDescriptor =
           MethodDescriptor.<GetEntryGroupRequest, EntryGroup>newBuilder()
@@ -113,6 +114,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(GetEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateEntryGroupRequest, EntryGroup>
       updateEntryGroupMethodDescriptor =
           MethodDescriptor.<UpdateEntryGroupRequest, EntryGroup>newBuilder()
@@ -122,6 +124,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(UpdateEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteEntryGroupRequest, Empty>
       deleteEntryGroupMethodDescriptor =
           MethodDescriptor.<DeleteEntryGroupRequest, Empty>newBuilder()
@@ -131,6 +134,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(DeleteEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListEntryGroupsRequest, ListEntryGroupsResponse>
       listEntryGroupsMethodDescriptor =
           MethodDescriptor.<ListEntryGroupsRequest, ListEntryGroupsResponse>newBuilder()
@@ -141,6 +145,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntryGroupsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateEntryRequest, Entry> createEntryMethodDescriptor =
       MethodDescriptor.<CreateEntryRequest, Entry>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -148,6 +153,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateEntryRequest, Entry> updateEntryMethodDescriptor =
       MethodDescriptor.<UpdateEntryRequest, Entry>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -155,6 +161,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteEntryRequest, Empty> deleteEntryMethodDescriptor =
       MethodDescriptor.<DeleteEntryRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -162,6 +169,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetEntryRequest, Entry> getEntryMethodDescriptor =
       MethodDescriptor.<GetEntryRequest, Entry>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -169,6 +177,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<LookupEntryRequest, Entry> lookupEntryMethodDescriptor =
       MethodDescriptor.<LookupEntryRequest, Entry>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -176,6 +185,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(LookupEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListEntriesRequest, ListEntriesResponse>
       listEntriesMethodDescriptor =
           MethodDescriptor.<ListEntriesRequest, ListEntriesResponse>newBuilder()
@@ -185,6 +195,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntriesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateTagTemplateRequest, TagTemplate>
       createTagTemplateMethodDescriptor =
           MethodDescriptor.<CreateTagTemplateRequest, TagTemplate>newBuilder()
@@ -194,6 +205,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(CreateTagTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetTagTemplateRequest, TagTemplate>
       getTagTemplateMethodDescriptor =
           MethodDescriptor.<GetTagTemplateRequest, TagTemplate>newBuilder()
@@ -203,6 +215,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(GetTagTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateTagTemplateRequest, TagTemplate>
       updateTagTemplateMethodDescriptor =
           MethodDescriptor.<UpdateTagTemplateRequest, TagTemplate>newBuilder()
@@ -212,6 +225,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(UpdateTagTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteTagTemplateRequest, Empty>
       deleteTagTemplateMethodDescriptor =
           MethodDescriptor.<DeleteTagTemplateRequest, Empty>newBuilder()
@@ -221,6 +235,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(DeleteTagTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateTagTemplateFieldRequest, TagTemplateField>
       createTagTemplateFieldMethodDescriptor =
           MethodDescriptor.<CreateTagTemplateFieldRequest, TagTemplateField>newBuilder()
@@ -230,6 +245,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(CreateTagTemplateFieldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateTagTemplateFieldRequest, TagTemplateField>
       updateTagTemplateFieldMethodDescriptor =
           MethodDescriptor.<UpdateTagTemplateFieldRequest, TagTemplateField>newBuilder()
@@ -239,6 +255,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(UpdateTagTemplateFieldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldMethodDescriptor =
           MethodDescriptor.<RenameTagTemplateFieldRequest, TagTemplateField>newBuilder()
@@ -248,6 +265,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(RenameTagTemplateFieldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteTagTemplateFieldRequest, Empty>
       deleteTagTemplateFieldMethodDescriptor =
           MethodDescriptor.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
@@ -257,6 +275,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(DeleteTagTemplateFieldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateTagRequest, Tag> createTagMethodDescriptor =
       MethodDescriptor.<CreateTagRequest, Tag>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -264,6 +283,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tag.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateTagRequest, Tag> updateTagMethodDescriptor =
       MethodDescriptor.<UpdateTagRequest, Tag>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -271,6 +291,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tag.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteTagRequest, Empty> deleteTagMethodDescriptor =
       MethodDescriptor.<DeleteTagRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -278,6 +299,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListTagsRequest, ListTagsResponse>
       listTagsMethodDescriptor =
           MethodDescriptor.<ListTagsRequest, ListTagsResponse>newBuilder()
@@ -286,6 +308,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTagsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTagsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -293,6 +316,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -300,6 +324,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -310,8 +335,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable;
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
@@ -353,6 +376,8 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcDataCatalogStub create(DataCatalogStubSettings settings)
@@ -391,6 +416,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<SearchCatalogRequest, SearchCatalogResponse> searchCatalogTransportSettings =
         GrpcCallSettings.<SearchCatalogRequest, SearchCatalogResponse>newBuilder()
@@ -843,16 +869,21 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  public UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable() {
+    return searchCatalogCallable;
   }
 
   public UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable() {
     return searchCatalogPagedCallable;
-  }
-
-  public UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable() {
-    return searchCatalogCallable;
   }
 
   public UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable() {
@@ -871,13 +902,13 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     return deleteEntryGroupCallable;
   }
 
+  public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> listEntryGroupsCallable() {
+    return listEntryGroupsCallable;
+  }
+
   public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsPagedResponse>
       listEntryGroupsPagedCallable() {
     return listEntryGroupsPagedCallable;
-  }
-
-  public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> listEntryGroupsCallable() {
-    return listEntryGroupsCallable;
   }
 
   public UnaryCallable<CreateEntryRequest, Entry> createEntryCallable() {
@@ -900,12 +931,12 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     return lookupEntryCallable;
   }
 
-  public UnaryCallable<ListEntriesRequest, ListEntriesPagedResponse> listEntriesPagedCallable() {
-    return listEntriesPagedCallable;
-  }
-
   public UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
     return listEntriesCallable;
+  }
+
+  public UnaryCallable<ListEntriesRequest, ListEntriesPagedResponse> listEntriesPagedCallable() {
+    return listEntriesPagedCallable;
   }
 
   public UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable() {
@@ -955,12 +986,12 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     return deleteTagCallable;
   }
 
-  public UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
-    return listTagsPagedCallable;
-  }
-
   public UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable() {
     return listTagsCallable;
+  }
+
+  public UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
+    return listTagsPagedCallable;
   }
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
