@@ -18,7 +18,7 @@ jobs:
         with:
           java-version: 11
       - run: "mvn com.coveo:fmt-maven-plugin:format"
-      - uses: googleapis/code-suggester@v1.8.0
+      - uses: googleapis/code-suggester@v1
         with:
           command: review
           pull_number: ${{ github.event.pull_request.number }}
