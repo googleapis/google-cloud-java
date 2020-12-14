@@ -38,18 +38,18 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-redis</artifactId>
-  <version>1.1.5</version>
+  <version>1.1.6</version>
 </dependency>
 
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-redis:1.1.5'
+compile 'com.google.cloud:google-cloud-redis:1.1.6'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-redis" % "1.1.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-redis" % "1.1.6"
 ```
 
 ## Authentication
@@ -126,6 +126,8 @@ Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
 Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
+
+Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/memorystore/docs/redis/
 [javadocs]: https://googleapis.dev/java/google-cloud-redis/latest/
