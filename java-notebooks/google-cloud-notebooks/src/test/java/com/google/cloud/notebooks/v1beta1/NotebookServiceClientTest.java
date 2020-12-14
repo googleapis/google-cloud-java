@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.notebooks.v1beta1;
 
 import static com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListEnvironmentsPagedResponse;
@@ -31,13 +32,16 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -45,31 +49,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class NotebookServiceClientTest {
+  private static MockServiceHelper mockServiceHelper;
   private static MockNotebookService mockNotebookService;
-  private static MockServiceHelper serviceHelper;
   private NotebookServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockNotebookService = new MockNotebookService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockNotebookService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     NotebookServiceSettings settings =
         NotebookServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -84,32 +88,36 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listInstancesTest() {
-    String nextPageToken = "";
-    Instance instancesElement = Instance.newBuilder().build();
-    List<Instance> instances = Arrays.asList(instancesElement);
+  public void listInstancesTest() throws Exception {
+    Instance responsesElement = Instance.newBuilder().build();
     ListInstancesResponse expectedResponse =
         ListInstancesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllInstances(instances)
+            .setNextPageToken("")
+            .addAllInstances(Arrays.asList(responsesElement))
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
-    ListInstancesRequest request = ListInstancesRequest.newBuilder().setParent(parent).build();
+    ListInstancesRequest request =
+        ListInstancesRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
 
     ListInstancesPagedResponse pagedListResponse = client.listInstances(request);
 
     List<Instance> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getInstancesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListInstancesRequest actualRequest = (ListInstancesRequest) actualRequests.get(0);
+    ListInstancesRequest actualRequest = ((ListInstancesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -117,71 +125,61 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listInstancesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
-      ListInstancesRequest request = ListInstancesRequest.newBuilder().setParent(parent).build();
-
+      ListInstancesRequest request =
+          ListInstancesRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
       client.listInstances(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getInstanceTest() {
-    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
+  public void getInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
-    String name = "name3373707";
-    GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name).build();
+    GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
 
     Instance actualResponse = client.getInstance(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetInstanceRequest actualRequest = (GetInstanceRequest) actualRequests.get(0);
+    GetInstanceRequest actualRequest = ((GetInstanceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -189,57 +187,43 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getInstanceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name).build();
-
+      GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
       client.getInstance(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createInstanceTest() throws Exception {
-    InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -249,14 +233,11 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String parent = "parent-995424086";
-    String instanceId = "instanceId-2101995259";
-    Instance instance = Instance.newBuilder().build();
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
-            .setParent(parent)
-            .setInstanceId(instanceId)
-            .setInstance(instance)
+            .setParent("parent-995424086")
+            .setInstanceId("instanceId902024336")
+            .setInstance(Instance.newBuilder().build())
             .build();
 
     Instance actualResponse = client.createInstanceAsync(request).get();
@@ -264,11 +245,11 @@ public class NotebookServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateInstanceRequest actualRequest = (CreateInstanceRequest) actualRequests.get(0);
+    CreateInstanceRequest actualRequest = ((CreateInstanceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(instanceId, actualRequest.getInstanceId());
-    Assert.assertEquals(instance, actualRequest.getInstance());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getInstanceId(), actualRequest.getInstanceId());
+    Assert.assertEquals(request.getInstance(), actualRequest.getInstance());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -276,66 +257,50 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createInstanceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
-      String instanceId = "instanceId-2101995259";
-      Instance instance = Instance.newBuilder().build();
       CreateInstanceRequest request =
           CreateInstanceRequest.newBuilder()
-              .setParent(parent)
-              .setInstanceId(instanceId)
-              .setInstance(instance)
+              .setParent("parent-995424086")
+              .setInstanceId("instanceId902024336")
+              .setInstance(Instance.newBuilder().build())
               .build();
-
       client.createInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void registerInstanceTest() throws Exception {
-    InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -345,20 +310,21 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String parent = "parent-995424086";
-    String instanceId = "instanceId-2101995259";
     RegisterInstanceRequest request =
-        RegisterInstanceRequest.newBuilder().setParent(parent).setInstanceId(instanceId).build();
+        RegisterInstanceRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setInstanceId("instanceId902024336")
+            .build();
 
     Instance actualResponse = client.registerInstanceAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    RegisterInstanceRequest actualRequest = (RegisterInstanceRequest) actualRequests.get(0);
+    RegisterInstanceRequest actualRequest = ((RegisterInstanceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(instanceId, actualRequest.getInstanceId());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getInstanceId(), actualRequest.getInstanceId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -366,61 +332,49 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void registerInstanceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
-      String instanceId = "instanceId-2101995259";
       RegisterInstanceRequest request =
-          RegisterInstanceRequest.newBuilder().setParent(parent).setInstanceId(instanceId).build();
-
+          RegisterInstanceRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setInstanceId("instanceId902024336")
+              .build();
       client.registerInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setInstanceAcceleratorTest() throws Exception {
-    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -430,14 +384,10 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    Instance.AcceleratorType type = Instance.AcceleratorType.ACCELERATOR_TYPE_UNSPECIFIED;
-    long coreCount = 1963855761L;
     SetInstanceAcceleratorRequest request =
         SetInstanceAcceleratorRequest.newBuilder()
-            .setName(name)
-            .setType(type)
-            .setCoreCount(coreCount)
+            .setName("name3373707")
+            .setCoreCount(-1963855761)
             .build();
 
     Instance actualResponse = client.setInstanceAcceleratorAsync(request).get();
@@ -446,11 +396,11 @@ public class NotebookServiceClientTest {
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetInstanceAcceleratorRequest actualRequest =
-        (SetInstanceAcceleratorRequest) actualRequests.get(0);
+        ((SetInstanceAcceleratorRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertEquals(type, actualRequest.getType());
-    Assert.assertEquals(coreCount, actualRequest.getCoreCount());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getType(), actualRequest.getType());
+    Assert.assertEquals(request.getCoreCount(), actualRequest.getCoreCount());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -458,66 +408,49 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setInstanceAcceleratorExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      Instance.AcceleratorType type = Instance.AcceleratorType.ACCELERATOR_TYPE_UNSPECIFIED;
-      long coreCount = 1963855761L;
       SetInstanceAcceleratorRequest request =
           SetInstanceAcceleratorRequest.newBuilder()
-              .setName(name)
-              .setType(type)
-              .setCoreCount(coreCount)
+              .setName("name3373707")
+              .setCoreCount(-1963855761)
               .build();
-
       client.setInstanceAcceleratorAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setInstanceMachineTypeTest() throws Exception {
-    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType2 = "machineType21397579621";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType2)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -527,12 +460,10 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    String machineType = "machineType1838323762";
     SetInstanceMachineTypeRequest request =
         SetInstanceMachineTypeRequest.newBuilder()
-            .setName(name)
-            .setMachineType(machineType)
+            .setName("name3373707")
+            .setMachineType("machineType-218117087")
             .build();
 
     Instance actualResponse = client.setInstanceMachineTypeAsync(request).get();
@@ -541,10 +472,10 @@ public class NotebookServiceClientTest {
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetInstanceMachineTypeRequest actualRequest =
-        (SetInstanceMachineTypeRequest) actualRequests.get(0);
+        ((SetInstanceMachineTypeRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertEquals(machineType, actualRequest.getMachineType());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getMachineType(), actualRequest.getMachineType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -552,64 +483,49 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setInstanceMachineTypeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      String machineType = "machineType1838323762";
       SetInstanceMachineTypeRequest request =
           SetInstanceMachineTypeRequest.newBuilder()
-              .setName(name)
-              .setMachineType(machineType)
+              .setName("name3373707")
+              .setMachineType("machineType-218117087")
               .build();
-
       client.setInstanceMachineTypeAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setInstanceLabelsTest() throws Exception {
-    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -619,17 +535,21 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    SetInstanceLabelsRequest request = SetInstanceLabelsRequest.newBuilder().setName(name).build();
+    SetInstanceLabelsRequest request =
+        SetInstanceLabelsRequest.newBuilder()
+            .setName("name3373707")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
 
     Instance actualResponse = client.setInstanceLabelsAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetInstanceLabelsRequest actualRequest = (SetInstanceLabelsRequest) actualRequests.get(0);
+    SetInstanceLabelsRequest actualRequest = ((SetInstanceLabelsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -637,27 +557,26 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setInstanceLabelsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
       SetInstanceLabelsRequest request =
-          SetInstanceLabelsRequest.newBuilder().setName(name).build();
-
+          SetInstanceLabelsRequest.newBuilder()
+              .setName("name3373707")
+              .putAllLabels(new HashMap<String, String>())
+              .build();
       client.setInstanceLabelsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteInstanceTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -668,17 +587,16 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder().setName(name).build();
+    DeleteInstanceRequest request =
+        DeleteInstanceRequest.newBuilder().setName("name3373707").build();
 
-    Empty actualResponse = client.deleteInstanceAsync(request).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    client.deleteInstanceAsync(request).get();
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteInstanceRequest actualRequest = (DeleteInstanceRequest) actualRequests.get(0);
+    DeleteInstanceRequest actualRequest = ((DeleteInstanceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -686,59 +604,46 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteInstanceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder().setName(name).build();
-
+      DeleteInstanceRequest request =
+          DeleteInstanceRequest.newBuilder().setName("name3373707").build();
       client.deleteInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void startInstanceTest() throws Exception {
-    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -748,17 +653,16 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    StartInstanceRequest request = StartInstanceRequest.newBuilder().setName(name).build();
+    StartInstanceRequest request = StartInstanceRequest.newBuilder().setName("name3373707").build();
 
     Instance actualResponse = client.startInstanceAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    StartInstanceRequest actualRequest = (StartInstanceRequest) actualRequests.get(0);
+    StartInstanceRequest actualRequest = ((StartInstanceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -766,59 +670,46 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void startInstanceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      StartInstanceRequest request = StartInstanceRequest.newBuilder().setName(name).build();
-
+      StartInstanceRequest request =
+          StartInstanceRequest.newBuilder().setName("name3373707").build();
       client.startInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void stopInstanceTest() throws Exception {
-    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -828,17 +719,16 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    StopInstanceRequest request = StopInstanceRequest.newBuilder().setName(name).build();
+    StopInstanceRequest request = StopInstanceRequest.newBuilder().setName("name3373707").build();
 
     Instance actualResponse = client.stopInstanceAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    StopInstanceRequest actualRequest = (StopInstanceRequest) actualRequests.get(0);
+    StopInstanceRequest actualRequest = ((StopInstanceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -846,59 +736,45 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void stopInstanceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      StopInstanceRequest request = StopInstanceRequest.newBuilder().setName(name).build();
-
+      StopInstanceRequest request = StopInstanceRequest.newBuilder().setName("name3373707").build();
       client.stopInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void resetInstanceTest() throws Exception {
-    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -908,17 +784,16 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    ResetInstanceRequest request = ResetInstanceRequest.newBuilder().setName(name).build();
+    ResetInstanceRequest request = ResetInstanceRequest.newBuilder().setName("name3373707").build();
 
     Instance actualResponse = client.resetInstanceAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ResetInstanceRequest actualRequest = (ResetInstanceRequest) actualRequests.get(0);
+    ResetInstanceRequest actualRequest = ((ResetInstanceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -926,59 +801,46 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void resetInstanceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      ResetInstanceRequest request = ResetInstanceRequest.newBuilder().setName(name).build();
-
+      ResetInstanceRequest request =
+          ResetInstanceRequest.newBuilder().setName("name3373707").build();
       client.resetInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void reportInstanceInfoTest() throws Exception {
-    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -988,20 +850,23 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    String vmId = "vmId112317347";
     ReportInstanceInfoRequest request =
-        ReportInstanceInfoRequest.newBuilder().setName(name).setVmId(vmId).build();
+        ReportInstanceInfoRequest.newBuilder()
+            .setName("name3373707")
+            .setVmId("vmId3622450")
+            .putAllMetadata(new HashMap<String, String>())
+            .build();
 
     Instance actualResponse = client.reportInstanceInfoAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ReportInstanceInfoRequest actualRequest = (ReportInstanceInfoRequest) actualRequests.get(0);
+    ReportInstanceInfoRequest actualRequest = ((ReportInstanceInfoRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertEquals(vmId, actualRequest.getVmId());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getVmId(), actualRequest.getVmId());
+    Assert.assertEquals(request.getMetadataMap(), actualRequest.getMetadataMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1009,43 +874,40 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void reportInstanceInfoExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      String vmId = "vmId112317347";
       ReportInstanceInfoRequest request =
-          ReportInstanceInfoRequest.newBuilder().setName(name).setVmId(vmId).build();
-
+          ReportInstanceInfoRequest.newBuilder()
+              .setName("name3373707")
+              .setVmId("vmId3622450")
+              .putAllMetadata(new HashMap<String, String>())
+              .build();
       client.reportInstanceInfoAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void isInstanceUpgradeableTest() {
-    boolean upgradeable = true;
-    String upgradeVersion = "upgradeVersion1040155061";
-    String upgradeInfo = "upgradeInfo-1337232143";
+  public void isInstanceUpgradeableTest() throws Exception {
     IsInstanceUpgradeableResponse expectedResponse =
         IsInstanceUpgradeableResponse.newBuilder()
-            .setUpgradeable(upgradeable)
-            .setUpgradeVersion(upgradeVersion)
-            .setUpgradeInfo(upgradeInfo)
+            .setUpgradeable(true)
+            .setUpgradeVersion("upgradeVersion-392903908")
+            .setUpgradeInfo("upgradeInfo-1844902678")
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
-    String notebookInstance = "notebookInstance-1078982023";
     IsInstanceUpgradeableRequest request =
-        IsInstanceUpgradeableRequest.newBuilder().setNotebookInstance(notebookInstance).build();
+        IsInstanceUpgradeableRequest.newBuilder()
+            .setNotebookInstance("notebookInstance-544239728")
+            .build();
 
     IsInstanceUpgradeableResponse actualResponse = client.isInstanceUpgradeable(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1053,9 +915,9 @@ public class NotebookServiceClientTest {
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     IsInstanceUpgradeableRequest actualRequest =
-        (IsInstanceUpgradeableRequest) actualRequests.get(0);
+        ((IsInstanceUpgradeableRequest) actualRequests.get(0));
 
-    Assert.assertEquals(notebookInstance, actualRequest.getNotebookInstance());
+    Assert.assertEquals(request.getNotebookInstance(), actualRequest.getNotebookInstance());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1063,58 +925,46 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void isInstanceUpgradeableExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String notebookInstance = "notebookInstance-1078982023";
       IsInstanceUpgradeableRequest request =
-          IsInstanceUpgradeableRequest.newBuilder().setNotebookInstance(notebookInstance).build();
-
+          IsInstanceUpgradeableRequest.newBuilder()
+              .setNotebookInstance("notebookInstance-544239728")
+              .build();
       client.isInstanceUpgradeable(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void upgradeInstanceTest() throws Exception {
-    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1124,17 +974,17 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    UpgradeInstanceRequest request = UpgradeInstanceRequest.newBuilder().setName(name).build();
+    UpgradeInstanceRequest request =
+        UpgradeInstanceRequest.newBuilder().setName("name3373707").build();
 
     Instance actualResponse = client.upgradeInstanceAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpgradeInstanceRequest actualRequest = (UpgradeInstanceRequest) actualRequests.get(0);
+    UpgradeInstanceRequest actualRequest = ((UpgradeInstanceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1142,59 +992,46 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void upgradeInstanceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      UpgradeInstanceRequest request = UpgradeInstanceRequest.newBuilder().setName(name).build();
-
+      UpgradeInstanceRequest request =
+          UpgradeInstanceRequest.newBuilder().setName("name3373707").build();
       client.upgradeInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void upgradeInstanceInternalTest() throws Exception {
-    InstanceName name2 = InstanceName.of("[PROJECT]", "[INSTANCE]");
-    String postStartupScript = "postStartupScript355382860";
-    String proxyUri = "proxyUri-475670501";
-    String serviceAccount = "serviceAccount-1948028253";
-    String machineType = "machineType1838323762";
-    boolean installGpuDriver = false;
-    String customGpuDriverPath = "customGpuDriverPath1863223803";
-    long bootDiskSizeGb = 1398920548L;
-    long dataDiskSizeGb = 1668379732L;
-    boolean noRemoveDataDisk = false;
-    String kmsKey = "kmsKey-591635343";
-    boolean noPublicIp = false;
-    boolean noProxyAccess = false;
-    String network = "network1843485230";
-    String subnet = "subnet-891534499";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2.toString())
-            .setPostStartupScript(postStartupScript)
-            .setProxyUri(proxyUri)
-            .setServiceAccount(serviceAccount)
-            .setMachineType(machineType)
-            .setInstallGpuDriver(installGpuDriver)
-            .setCustomGpuDriverPath(customGpuDriverPath)
-            .setBootDiskSizeGb(bootDiskSizeGb)
-            .setDataDiskSizeGb(dataDiskSizeGb)
-            .setNoRemoveDataDisk(noRemoveDataDisk)
-            .setKmsKey(kmsKey)
-            .setNoPublicIp(noPublicIp)
-            .setNoProxyAccess(noProxyAccess)
-            .setNetwork(network)
-            .setSubnet(subnet)
+            .setName(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+            .setPostStartupScript("postStartupScript870779112")
+            .setProxyUri("proxyUri-985185250")
+            .addAllInstanceOwners(new ArrayList<String>())
+            .setServiceAccount("serviceAccount1079137720")
+            .setMachineType("machineType-218117087")
+            .setInstallGpuDriver(true)
+            .setCustomGpuDriverPath("customGpuDriverPath509224520")
+            .setBootDiskSizeGb(1398920548)
+            .setDataDiskSizeGb(-1668379732)
+            .setNoRemoveDataDisk(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setNoPublicIp(true)
+            .setNoProxyAccess(true)
+            .setNetwork("network1843485230")
+            .setSubnet("subnet-891534499")
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1204,10 +1041,11 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    String vmId = "vmId112317347";
     UpgradeInstanceInternalRequest request =
-        UpgradeInstanceInternalRequest.newBuilder().setName(name).setVmId(vmId).build();
+        UpgradeInstanceInternalRequest.newBuilder()
+            .setName("name3373707")
+            .setVmId("vmId3622450")
+            .build();
 
     Instance actualResponse = client.upgradeInstanceInternalAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1215,10 +1053,10 @@ public class NotebookServiceClientTest {
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpgradeInstanceInternalRequest actualRequest =
-        (UpgradeInstanceInternalRequest) actualRequests.get(0);
+        ((UpgradeInstanceInternalRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertEquals(vmId, actualRequest.getVmId());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getVmId(), actualRequest.getVmId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1226,54 +1064,56 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void upgradeInstanceInternalExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      String vmId = "vmId112317347";
       UpgradeInstanceInternalRequest request =
-          UpgradeInstanceInternalRequest.newBuilder().setName(name).setVmId(vmId).build();
-
+          UpgradeInstanceInternalRequest.newBuilder()
+              .setName("name3373707")
+              .setVmId("vmId3622450")
+              .build();
       client.upgradeInstanceInternalAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listEnvironmentsTest() {
-    String nextPageToken = "";
-    Environment environmentsElement = Environment.newBuilder().build();
-    List<Environment> environments = Arrays.asList(environmentsElement);
+  public void listEnvironmentsTest() throws Exception {
+    Environment responsesElement = Environment.newBuilder().build();
     ListEnvironmentsResponse expectedResponse =
         ListEnvironmentsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllEnvironments(environments)
+            .setNextPageToken("")
+            .addAllEnvironments(Arrays.asList(responsesElement))
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
     ListEnvironmentsRequest request =
-        ListEnvironmentsRequest.newBuilder().setParent(parent).build();
+        ListEnvironmentsRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
 
     ListEnvironmentsPagedResponse pagedListResponse = client.listEnvironments(request);
 
     List<Environment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getEnvironmentsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListEnvironmentsRequest actualRequest = (ListEnvironmentsRequest) actualRequests.get(0);
+    ListEnvironmentsRequest actualRequest = ((ListEnvironmentsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1281,50 +1121,47 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listEnvironmentsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
       ListEnvironmentsRequest request =
-          ListEnvironmentsRequest.newBuilder().setParent(parent).build();
-
+          ListEnvironmentsRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
       client.listEnvironments(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getEnvironmentTest() {
-    EnvironmentName name2 = EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    String postStartupScript = "postStartupScript355382860";
+  public void getEnvironmentTest() throws Exception {
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .setPostStartupScript(postStartupScript)
+            .setName(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setPostStartupScript("postStartupScript870779112")
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
-    String name = "name3373707";
-    GetEnvironmentRequest request = GetEnvironmentRequest.newBuilder().setName(name).build();
+    GetEnvironmentRequest request =
+        GetEnvironmentRequest.newBuilder().setName("name3373707").build();
 
     Environment actualResponse = client.getEnvironment(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetEnvironmentRequest actualRequest = (GetEnvironmentRequest) actualRequests.get(0);
+    GetEnvironmentRequest actualRequest = ((GetEnvironmentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1332,35 +1169,29 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getEnvironmentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
-      GetEnvironmentRequest request = GetEnvironmentRequest.newBuilder().setName(name).build();
-
+      GetEnvironmentRequest request =
+          GetEnvironmentRequest.newBuilder().setName("name3373707").build();
       client.getEnvironment(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createEnvironmentTest() throws Exception {
-    EnvironmentName name = EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    String postStartupScript = "postStartupScript355382860";
     Environment expectedResponse =
         Environment.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .setPostStartupScript(postStartupScript)
+            .setName(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setPostStartupScript("postStartupScript870779112")
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1370,14 +1201,11 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String parent = "parent-995424086";
-    String environmentId = "environmentId608412359";
-    Environment environment = Environment.newBuilder().build();
     CreateEnvironmentRequest request =
         CreateEnvironmentRequest.newBuilder()
-            .setParent(parent)
-            .setEnvironmentId(environmentId)
-            .setEnvironment(environment)
+            .setParent("parent-995424086")
+            .setEnvironmentId("environmentId-950205810")
+            .setEnvironment(Environment.newBuilder().build())
             .build();
 
     Environment actualResponse = client.createEnvironmentAsync(request).get();
@@ -1385,11 +1213,11 @@ public class NotebookServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateEnvironmentRequest actualRequest = (CreateEnvironmentRequest) actualRequests.get(0);
+    CreateEnvironmentRequest actualRequest = ((CreateEnvironmentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(environmentId, actualRequest.getEnvironmentId());
-    Assert.assertEquals(environment, actualRequest.getEnvironment());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getEnvironmentId(), actualRequest.getEnvironmentId());
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1397,33 +1225,27 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createEnvironmentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
-      String environmentId = "environmentId608412359";
-      Environment environment = Environment.newBuilder().build();
       CreateEnvironmentRequest request =
           CreateEnvironmentRequest.newBuilder()
-              .setParent(parent)
-              .setEnvironmentId(environmentId)
-              .setEnvironment(environment)
+              .setParent("parent-995424086")
+              .setEnvironmentId("environmentId-950205810")
+              .setEnvironment(Environment.newBuilder().build())
               .build();
-
       client.createEnvironmentAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteEnvironmentTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -1434,17 +1256,16 @@ public class NotebookServiceClientTest {
             .build();
     mockNotebookService.addResponse(resultOperation);
 
-    String name = "name3373707";
-    DeleteEnvironmentRequest request = DeleteEnvironmentRequest.newBuilder().setName(name).build();
+    DeleteEnvironmentRequest request =
+        DeleteEnvironmentRequest.newBuilder().setName("name3373707").build();
 
-    Empty actualResponse = client.deleteEnvironmentAsync(request).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    client.deleteEnvironmentAsync(request).get();
 
     List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteEnvironmentRequest actualRequest = (DeleteEnvironmentRequest) actualRequests.get(0);
+    DeleteEnvironmentRequest actualRequest = ((DeleteEnvironmentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1452,21 +1273,18 @@ public class NotebookServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteEnvironmentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockNotebookService.addException(exception);
 
     try {
-      String name = "name3373707";
       DeleteEnvironmentRequest request =
-          DeleteEnvironmentRequest.newBuilder().setName(name).build();
-
+          DeleteEnvironmentRequest.newBuilder().setName("name3373707").build();
       client.deleteEnvironmentAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }

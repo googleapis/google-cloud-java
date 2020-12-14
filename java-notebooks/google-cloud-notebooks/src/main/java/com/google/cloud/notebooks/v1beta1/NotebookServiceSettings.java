@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.notebooks.v1beta1;
 
 import static com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListEnvironmentsPagedResponse;
@@ -37,7 +38,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link NotebookServiceClient}.
  *
@@ -54,23 +55,24 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getInstance to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NotebookServiceSettings.Builder notebookServiceSettingsBuilder =
  *     NotebookServiceSettings.newBuilder();
  * notebookServiceSettingsBuilder
  *     .getInstanceSettings()
  *     .setRetrySettings(
- *         notebookServiceSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *         notebookServiceSettingsBuilder
+ *             .getInstanceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NotebookServiceSettings notebookServiceSettings = notebookServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class NotebookServiceSettings extends ClientSettings<NotebookServiceSettings> {
+
   /** Returns the object with the settings used for calls to listInstances. */
   public PagedCallSettings<ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       listInstancesSettings() {
@@ -88,8 +90,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).createInstanceOperationSettings();
@@ -101,8 +101,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to registerInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<RegisterInstanceRequest, Instance, OperationMetadata>
       registerInstanceOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).registerInstanceOperationSettings();
@@ -115,8 +113,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to setInstanceAccelerator. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<SetInstanceAcceleratorRequest, Instance, OperationMetadata>
       setInstanceAcceleratorOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings())
@@ -130,8 +126,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to setInstanceMachineType. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<SetInstanceMachineTypeRequest, Instance, OperationMetadata>
       setInstanceMachineTypeOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings())
@@ -144,8 +138,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to setInstanceLabels. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<SetInstanceLabelsRequest, Instance, OperationMetadata>
       setInstanceLabelsOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).setInstanceLabelsOperationSettings();
@@ -157,8 +149,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to deleteInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).deleteInstanceOperationSettings();
@@ -170,8 +160,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to startInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<StartInstanceRequest, Instance, OperationMetadata>
       startInstanceOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).startInstanceOperationSettings();
@@ -183,8 +171,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to stopInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<StopInstanceRequest, Instance, OperationMetadata>
       stopInstanceOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).stopInstanceOperationSettings();
@@ -196,8 +182,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to resetInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ResetInstanceRequest, Instance, OperationMetadata>
       resetInstanceOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).resetInstanceOperationSettings();
@@ -209,8 +193,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to reportInstanceInfo. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ReportInstanceInfoRequest, Instance, OperationMetadata>
       reportInstanceInfoOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).reportInstanceInfoOperationSettings();
@@ -228,8 +210,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to upgradeInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpgradeInstanceRequest, Instance, OperationMetadata>
       upgradeInstanceOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).upgradeInstanceOperationSettings();
@@ -242,8 +222,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to upgradeInstanceInternal. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpgradeInstanceInternalRequest, Instance, OperationMetadata>
       upgradeInstanceInternalOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings())
@@ -268,8 +246,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to createEnvironment. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateEnvironmentRequest, Environment, OperationMetadata>
       createEnvironmentOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).createEnvironmentOperationSettings();
@@ -281,8 +257,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns the object with the settings used for calls to deleteEnvironment. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).deleteEnvironmentOperationSettings();
@@ -348,16 +322,13 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
 
   /** Builder for NotebookServiceSettings. */
   public static class Builder extends ClientSettings.Builder<NotebookServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(NotebookServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(NotebookServiceStubSettings.newBuilder());
     }
 
     protected Builder(NotebookServiceSettings settings) {
@@ -368,11 +339,15 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(NotebookServiceStubSettings.newBuilder());
+    }
+
     public NotebookServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((NotebookServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -403,8 +378,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, OperationMetadata>
         createInstanceOperationSettings() {
       return getStubSettingsBuilder().createInstanceOperationSettings();
@@ -417,8 +390,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to registerInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RegisterInstanceRequest, Instance, OperationMetadata>
         registerInstanceOperationSettings() {
       return getStubSettingsBuilder().registerInstanceOperationSettings();
@@ -431,8 +402,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to setInstanceAccelerator. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetInstanceAcceleratorRequest, Instance, OperationMetadata>
         setInstanceAcceleratorOperationSettings() {
       return getStubSettingsBuilder().setInstanceAcceleratorOperationSettings();
@@ -445,8 +414,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to setInstanceMachineType. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetInstanceMachineTypeRequest, Instance, OperationMetadata>
         setInstanceMachineTypeOperationSettings() {
       return getStubSettingsBuilder().setInstanceMachineTypeOperationSettings();
@@ -459,8 +426,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to setInstanceLabels. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetInstanceLabelsRequest, Instance, OperationMetadata>
         setInstanceLabelsOperationSettings() {
       return getStubSettingsBuilder().setInstanceLabelsOperationSettings();
@@ -472,8 +437,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return getStubSettingsBuilder().deleteInstanceOperationSettings();
@@ -485,8 +448,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to startInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StartInstanceRequest, Instance, OperationMetadata>
         startInstanceOperationSettings() {
       return getStubSettingsBuilder().startInstanceOperationSettings();
@@ -498,8 +459,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to stopInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StopInstanceRequest, Instance, OperationMetadata>
         stopInstanceOperationSettings() {
       return getStubSettingsBuilder().stopInstanceOperationSettings();
@@ -511,8 +470,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to resetInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResetInstanceRequest, Instance, OperationMetadata>
         resetInstanceOperationSettings() {
       return getStubSettingsBuilder().resetInstanceOperationSettings();
@@ -525,8 +482,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to reportInstanceInfo. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ReportInstanceInfoRequest, Instance, OperationMetadata>
         reportInstanceInfoOperationSettings() {
       return getStubSettingsBuilder().reportInstanceInfoOperationSettings();
@@ -544,8 +499,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to upgradeInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpgradeInstanceRequest, Instance, OperationMetadata>
         upgradeInstanceOperationSettings() {
       return getStubSettingsBuilder().upgradeInstanceOperationSettings();
@@ -558,8 +511,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to upgradeInstanceInternal. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpgradeInstanceInternalRequest, Instance, OperationMetadata>
         upgradeInstanceInternalOperationSettings() {
@@ -585,8 +536,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to createEnvironment. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEnvironmentRequest, Environment, OperationMetadata>
         createEnvironmentOperationSettings() {
       return getStubSettingsBuilder().createEnvironmentOperationSettings();
@@ -599,8 +548,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteEnvironment. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
         deleteEnvironmentOperationSettings() {
       return getStubSettingsBuilder().deleteEnvironmentOperationSettings();

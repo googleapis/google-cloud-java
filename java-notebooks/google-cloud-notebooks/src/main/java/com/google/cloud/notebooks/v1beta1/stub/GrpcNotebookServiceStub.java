@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.notebooks.v1beta1.stub;
 
 import static com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListInstancesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -63,16 +63,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Notebooks API.
+ * gRPC stub implementation for the NotebookService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcNotebookServiceStub extends NotebookServiceStub {
-
   private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
       listInstancesMethodDescriptor =
           MethodDescriptor.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -83,6 +81,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
       MethodDescriptor.<GetInstanceRequest, Instance>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -90,6 +89,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
       createInstanceMethodDescriptor =
           MethodDescriptor.<CreateInstanceRequest, Operation>newBuilder()
@@ -99,6 +99,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<RegisterInstanceRequest, Operation>
       registerInstanceMethodDescriptor =
           MethodDescriptor.<RegisterInstanceRequest, Operation>newBuilder()
@@ -108,6 +109,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(RegisterInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SetInstanceAcceleratorRequest, Operation>
       setInstanceAcceleratorMethodDescriptor =
           MethodDescriptor.<SetInstanceAcceleratorRequest, Operation>newBuilder()
@@ -118,6 +120,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(SetInstanceAcceleratorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SetInstanceMachineTypeRequest, Operation>
       setInstanceMachineTypeMethodDescriptor =
           MethodDescriptor.<SetInstanceMachineTypeRequest, Operation>newBuilder()
@@ -128,6 +131,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(SetInstanceMachineTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SetInstanceLabelsRequest, Operation>
       setInstanceLabelsMethodDescriptor =
           MethodDescriptor.<SetInstanceLabelsRequest, Operation>newBuilder()
@@ -137,6 +141,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(SetInstanceLabelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
       deleteInstanceMethodDescriptor =
           MethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
@@ -146,6 +151,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<StartInstanceRequest, Operation>
       startInstanceMethodDescriptor =
           MethodDescriptor.<StartInstanceRequest, Operation>newBuilder()
@@ -155,6 +161,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(StartInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<StopInstanceRequest, Operation>
       stopInstanceMethodDescriptor =
           MethodDescriptor.<StopInstanceRequest, Operation>newBuilder()
@@ -163,6 +170,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(StopInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ResetInstanceRequest, Operation>
       resetInstanceMethodDescriptor =
           MethodDescriptor.<ResetInstanceRequest, Operation>newBuilder()
@@ -172,6 +180,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(ResetInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ReportInstanceInfoRequest, Operation>
       reportInstanceInfoMethodDescriptor =
           MethodDescriptor.<ReportInstanceInfoRequest, Operation>newBuilder()
@@ -182,6 +191,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(ReportInstanceInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<IsInstanceUpgradeableRequest, IsInstanceUpgradeableResponse>
       isInstanceUpgradeableMethodDescriptor =
           MethodDescriptor.<IsInstanceUpgradeableRequest, IsInstanceUpgradeableResponse>newBuilder()
@@ -193,6 +203,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(IsInstanceUpgradeableResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpgradeInstanceRequest, Operation>
       upgradeInstanceMethodDescriptor =
           MethodDescriptor.<UpgradeInstanceRequest, Operation>newBuilder()
@@ -202,6 +213,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(UpgradeInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalMethodDescriptor =
           MethodDescriptor.<UpgradeInstanceInternalRequest, Operation>newBuilder()
@@ -212,6 +224,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(UpgradeInstanceInternalRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsMethodDescriptor =
           MethodDescriptor.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
@@ -222,6 +235,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEnvironmentsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetEnvironmentRequest, Environment>
       getEnvironmentMethodDescriptor =
           MethodDescriptor.<GetEnvironmentRequest, Environment>newBuilder()
@@ -231,6 +245,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(GetEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Environment.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateEnvironmentRequest, Operation>
       createEnvironmentMethodDescriptor =
           MethodDescriptor.<CreateEnvironmentRequest, Operation>newBuilder()
@@ -240,6 +255,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(CreateEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteEnvironmentRequest, Operation>
       deleteEnvironmentMethodDescriptor =
           MethodDescriptor.<DeleteEnvironmentRequest, Operation>newBuilder()
@@ -249,9 +265,6 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   ProtoUtils.marshaller(DeleteEnvironmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
@@ -310,6 +323,8 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
   private final OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcNotebookServiceStub create(NotebookServiceStubSettings settings)
@@ -624,7 +639,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             createInstanceTransportSettings,
             settings.createInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.registerInstanceCallable =
         callableFactory.createUnaryCallable(
             registerInstanceTransportSettings, settings.registerInstanceSettings(), clientContext);
@@ -633,7 +648,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             registerInstanceTransportSettings,
             settings.registerInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.setInstanceAcceleratorCallable =
         callableFactory.createUnaryCallable(
             setInstanceAcceleratorTransportSettings,
@@ -644,7 +659,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             setInstanceAcceleratorTransportSettings,
             settings.setInstanceAcceleratorOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.setInstanceMachineTypeCallable =
         callableFactory.createUnaryCallable(
             setInstanceMachineTypeTransportSettings,
@@ -655,7 +670,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             setInstanceMachineTypeTransportSettings,
             settings.setInstanceMachineTypeOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.setInstanceLabelsCallable =
         callableFactory.createUnaryCallable(
             setInstanceLabelsTransportSettings,
@@ -666,7 +681,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             setInstanceLabelsTransportSettings,
             settings.setInstanceLabelsOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteInstanceCallable =
         callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
@@ -675,7 +690,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             deleteInstanceTransportSettings,
             settings.deleteInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.startInstanceCallable =
         callableFactory.createUnaryCallable(
             startInstanceTransportSettings, settings.startInstanceSettings(), clientContext);
@@ -684,7 +699,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             startInstanceTransportSettings,
             settings.startInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.stopInstanceCallable =
         callableFactory.createUnaryCallable(
             stopInstanceTransportSettings, settings.stopInstanceSettings(), clientContext);
@@ -693,7 +708,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             stopInstanceTransportSettings,
             settings.stopInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.resetInstanceCallable =
         callableFactory.createUnaryCallable(
             resetInstanceTransportSettings, settings.resetInstanceSettings(), clientContext);
@@ -702,7 +717,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             resetInstanceTransportSettings,
             settings.resetInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.reportInstanceInfoCallable =
         callableFactory.createUnaryCallable(
             reportInstanceInfoTransportSettings,
@@ -713,7 +728,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             reportInstanceInfoTransportSettings,
             settings.reportInstanceInfoOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.isInstanceUpgradeableCallable =
         callableFactory.createUnaryCallable(
             isInstanceUpgradeableTransportSettings,
@@ -727,7 +742,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             upgradeInstanceTransportSettings,
             settings.upgradeInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.upgradeInstanceInternalCallable =
         callableFactory.createUnaryCallable(
             upgradeInstanceInternalTransportSettings,
@@ -738,7 +753,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             upgradeInstanceInternalTransportSettings,
             settings.upgradeInstanceInternalOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.listEnvironmentsCallable =
         callableFactory.createUnaryCallable(
             listEnvironmentsTransportSettings, settings.listEnvironmentsSettings(), clientContext);
@@ -758,7 +773,7 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             createEnvironmentTransportSettings,
             settings.createEnvironmentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteEnvironmentCallable =
         callableFactory.createUnaryCallable(
             deleteEnvironmentTransportSettings,
@@ -769,14 +784,18 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             deleteEnvironmentTransportSettings,
             settings.deleteEnvironmentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
+    return listInstancesCallable;
   }
 
   public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
@@ -784,112 +803,98 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
     return listInstancesPagedCallable;
   }
 
-  public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
-    return listInstancesCallable;
-  }
-
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
-      createInstanceOperationCallable() {
-    return createInstanceOperationCallable;
   }
 
   public UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     return createInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<RegisterInstanceRequest, Instance, OperationMetadata>
-      registerInstanceOperationCallable() {
-    return registerInstanceOperationCallable;
+  public OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
+      createInstanceOperationCallable() {
+    return createInstanceOperationCallable;
   }
 
   public UnaryCallable<RegisterInstanceRequest, Operation> registerInstanceCallable() {
     return registerInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<SetInstanceAcceleratorRequest, Instance, OperationMetadata>
-      setInstanceAcceleratorOperationCallable() {
-    return setInstanceAcceleratorOperationCallable;
+  public OperationCallable<RegisterInstanceRequest, Instance, OperationMetadata>
+      registerInstanceOperationCallable() {
+    return registerInstanceOperationCallable;
   }
 
   public UnaryCallable<SetInstanceAcceleratorRequest, Operation> setInstanceAcceleratorCallable() {
     return setInstanceAcceleratorCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<SetInstanceMachineTypeRequest, Instance, OperationMetadata>
-      setInstanceMachineTypeOperationCallable() {
-    return setInstanceMachineTypeOperationCallable;
+  public OperationCallable<SetInstanceAcceleratorRequest, Instance, OperationMetadata>
+      setInstanceAcceleratorOperationCallable() {
+    return setInstanceAcceleratorOperationCallable;
   }
 
   public UnaryCallable<SetInstanceMachineTypeRequest, Operation> setInstanceMachineTypeCallable() {
     return setInstanceMachineTypeCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<SetInstanceLabelsRequest, Instance, OperationMetadata>
-      setInstanceLabelsOperationCallable() {
-    return setInstanceLabelsOperationCallable;
+  public OperationCallable<SetInstanceMachineTypeRequest, Instance, OperationMetadata>
+      setInstanceMachineTypeOperationCallable() {
+    return setInstanceMachineTypeOperationCallable;
   }
 
   public UnaryCallable<SetInstanceLabelsRequest, Operation> setInstanceLabelsCallable() {
     return setInstanceLabelsCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
-      deleteInstanceOperationCallable() {
-    return deleteInstanceOperationCallable;
+  public OperationCallable<SetInstanceLabelsRequest, Instance, OperationMetadata>
+      setInstanceLabelsOperationCallable() {
+    return setInstanceLabelsOperationCallable;
   }
 
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return deleteInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<StartInstanceRequest, Instance, OperationMetadata>
-      startInstanceOperationCallable() {
-    return startInstanceOperationCallable;
+  public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
+      deleteInstanceOperationCallable() {
+    return deleteInstanceOperationCallable;
   }
 
   public UnaryCallable<StartInstanceRequest, Operation> startInstanceCallable() {
     return startInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<StopInstanceRequest, Instance, OperationMetadata>
-      stopInstanceOperationCallable() {
-    return stopInstanceOperationCallable;
+  public OperationCallable<StartInstanceRequest, Instance, OperationMetadata>
+      startInstanceOperationCallable() {
+    return startInstanceOperationCallable;
   }
 
   public UnaryCallable<StopInstanceRequest, Operation> stopInstanceCallable() {
     return stopInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ResetInstanceRequest, Instance, OperationMetadata>
-      resetInstanceOperationCallable() {
-    return resetInstanceOperationCallable;
+  public OperationCallable<StopInstanceRequest, Instance, OperationMetadata>
+      stopInstanceOperationCallable() {
+    return stopInstanceOperationCallable;
   }
 
   public UnaryCallable<ResetInstanceRequest, Operation> resetInstanceCallable() {
     return resetInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ReportInstanceInfoRequest, Instance, OperationMetadata>
-      reportInstanceInfoOperationCallable() {
-    return reportInstanceInfoOperationCallable;
+  public OperationCallable<ResetInstanceRequest, Instance, OperationMetadata>
+      resetInstanceOperationCallable() {
+    return resetInstanceOperationCallable;
   }
 
   public UnaryCallable<ReportInstanceInfoRequest, Operation> reportInstanceInfoCallable() {
     return reportInstanceInfoCallable;
+  }
+
+  public OperationCallable<ReportInstanceInfoRequest, Instance, OperationMetadata>
+      reportInstanceInfoOperationCallable() {
+    return reportInstanceInfoOperationCallable;
   }
 
   public UnaryCallable<IsInstanceUpgradeableRequest, IsInstanceUpgradeableResponse>
@@ -897,20 +902,13 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
     return isInstanceUpgradeableCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpgradeInstanceRequest, Instance, OperationMetadata>
-      upgradeInstanceOperationCallable() {
-    return upgradeInstanceOperationCallable;
-  }
-
   public UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
     return upgradeInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpgradeInstanceInternalRequest, Instance, OperationMetadata>
-      upgradeInstanceInternalOperationCallable() {
-    return upgradeInstanceInternalOperationCallable;
+  public OperationCallable<UpgradeInstanceRequest, Instance, OperationMetadata>
+      upgradeInstanceOperationCallable() {
+    return upgradeInstanceOperationCallable;
   }
 
   public UnaryCallable<UpgradeInstanceInternalRequest, Operation>
@@ -918,9 +916,9 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
     return upgradeInstanceInternalCallable;
   }
 
-  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
-      listEnvironmentsPagedCallable() {
-    return listEnvironmentsPagedCallable;
+  public OperationCallable<UpgradeInstanceInternalRequest, Instance, OperationMetadata>
+      upgradeInstanceInternalOperationCallable() {
+    return upgradeInstanceInternalOperationCallable;
   }
 
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
@@ -928,28 +926,31 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
     return listEnvironmentsCallable;
   }
 
-  public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
-    return getEnvironmentCallable;
+  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
+      listEnvironmentsPagedCallable() {
+    return listEnvironmentsPagedCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
-      createEnvironmentOperationCallable() {
-    return createEnvironmentOperationCallable;
+  public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
+    return getEnvironmentCallable;
   }
 
   public UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
     return createEnvironmentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
-      deleteEnvironmentOperationCallable() {
-    return deleteEnvironmentOperationCallable;
+  public OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
+      createEnvironmentOperationCallable() {
+    return createEnvironmentOperationCallable;
   }
 
   public UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable() {
     return deleteEnvironmentCallable;
+  }
+
+  public OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
+      deleteEnvironmentOperationCallable() {
+    return deleteEnvironmentOperationCallable;
   }
 
   @Override

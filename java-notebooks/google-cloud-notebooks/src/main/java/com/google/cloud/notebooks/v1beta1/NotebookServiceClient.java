@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.notebooks.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -38,26 +39,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: API v1beta1 service for Cloud AI Platform Notebooks.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
- *   String name = "";
- *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
- *     .setName(name)
- *     .build();
- *   Instance response = notebookServiceClient.getInstance(request);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the notebookServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the NotebookServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -86,30 +75,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NotebookServiceSettings notebookServiceSettings =
  *     NotebookServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * NotebookServiceClient notebookServiceClient =
  *     NotebookServiceClient.create(notebookServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NotebookServiceSettings notebookServiceSettings =
  *     NotebookServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NotebookServiceClient notebookServiceClient =
  *     NotebookServiceClient.create(notebookServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class NotebookServiceClient implements BackgroundResource {
   private final NotebookServiceSettings settings;
   private final NotebookServiceStub stub;
@@ -131,7 +118,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of NotebookServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use NotebookServiceSettings}.
+   * for advanced usage - prefer using create(NotebookServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NotebookServiceClient create(NotebookServiceStub stub) {
@@ -169,29 +156,13 @@ public class NotebookServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists instances in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   for (Instance element : notebookServiceClient.listInstances(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -200,77 +171,30 @@ public class NotebookServiceClient implements BackgroundResource {
     return listInstancesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists instances in a given project and location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   ApiFuture&lt;ListInstancesPagedResponse&gt; future = notebookServiceClient.listInstancesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Instance element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable() {
     return stub.listInstancesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists instances in a given project and location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   while (true) {
-   *     ListInstancesResponse response = notebookServiceClient.listInstancesCallable().call(request);
-   *     for (Instance element : response.getInstancesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
     return stub.listInstancesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   Instance response = notebookServiceClient.getInstance(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -279,819 +203,363 @@ public class NotebookServiceClient implements BackgroundResource {
     return getInstanceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Instance&gt; future = notebookServiceClient.getInstanceCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return stub.getInstanceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Instance in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   String instanceId = "";
-   *   Instance instance = Instance.newBuilder().build();
-   *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setInstanceId(instanceId)
-   *     .setInstance(instance)
-   *     .build();
-   *   Instance response = notebookServiceClient.createInstanceAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
       CreateInstanceRequest request) {
     return createInstanceOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Instance in a given project and location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   String instanceId = "";
-   *   Instance instance = Instance.newBuilder().build();
-   *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setInstanceId(instanceId)
-   *     .setInstance(instance)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.createInstanceOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationCallable() {
     return stub.createInstanceOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Instance in a given project and location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   String instanceId = "";
-   *   Instance instance = Instance.newBuilder().build();
-   *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setInstanceId(instanceId)
-   *     .setInstance(instance)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.createInstanceCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     return stub.createInstanceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Registers an existing legacy notebook instance to the Notebooks API server. Legacy instances
    * are instances created with the legacy Compute Engine calls. They are not manageable by the
    * Notebooks API out of the box. This call makes these instances manageable by the Notebooks API.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   String instanceId = "";
-   *   RegisterInstanceRequest request = RegisterInstanceRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setInstanceId(instanceId)
-   *     .build();
-   *   Instance response = notebookServiceClient.registerInstanceAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> registerInstanceAsync(
       RegisterInstanceRequest request) {
     return registerInstanceOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Registers an existing legacy notebook instance to the Notebooks API server. Legacy instances
    * are instances created with the legacy Compute Engine calls. They are not manageable by the
    * Notebooks API out of the box. This call makes these instances manageable by the Notebooks API.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   String instanceId = "";
-   *   RegisterInstanceRequest request = RegisterInstanceRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setInstanceId(instanceId)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.registerInstanceOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<RegisterInstanceRequest, Instance, OperationMetadata>
       registerInstanceOperationCallable() {
     return stub.registerInstanceOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Registers an existing legacy notebook instance to the Notebooks API server. Legacy instances
    * are instances created with the legacy Compute Engine calls. They are not manageable by the
    * Notebooks API out of the box. This call makes these instances manageable by the Notebooks API.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   String instanceId = "";
-   *   RegisterInstanceRequest request = RegisterInstanceRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setInstanceId(instanceId)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.registerInstanceCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<RegisterInstanceRequest, Operation> registerInstanceCallable() {
     return stub.registerInstanceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the guest accelerators of a single Instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   Instance.AcceleratorType type = Instance.AcceleratorType.ACCELERATOR_TYPE_UNSPECIFIED;
-   *   long coreCount = 0L;
-   *   SetInstanceAcceleratorRequest request = SetInstanceAcceleratorRequest.newBuilder()
-   *     .setName(name)
-   *     .setType(type)
-   *     .setCoreCount(coreCount)
-   *     .build();
-   *   Instance response = notebookServiceClient.setInstanceAcceleratorAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> setInstanceAcceleratorAsync(
       SetInstanceAcceleratorRequest request) {
     return setInstanceAcceleratorOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the guest accelerators of a single Instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   Instance.AcceleratorType type = Instance.AcceleratorType.ACCELERATOR_TYPE_UNSPECIFIED;
-   *   long coreCount = 0L;
-   *   SetInstanceAcceleratorRequest request = SetInstanceAcceleratorRequest.newBuilder()
-   *     .setName(name)
-   *     .setType(type)
-   *     .setCoreCount(coreCount)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.setInstanceAcceleratorOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<SetInstanceAcceleratorRequest, Instance, OperationMetadata>
       setInstanceAcceleratorOperationCallable() {
     return stub.setInstanceAcceleratorOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the guest accelerators of a single Instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   Instance.AcceleratorType type = Instance.AcceleratorType.ACCELERATOR_TYPE_UNSPECIFIED;
-   *   long coreCount = 0L;
-   *   SetInstanceAcceleratorRequest request = SetInstanceAcceleratorRequest.newBuilder()
-   *     .setName(name)
-   *     .setType(type)
-   *     .setCoreCount(coreCount)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.setInstanceAcceleratorCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SetInstanceAcceleratorRequest, Operation>
       setInstanceAcceleratorCallable() {
     return stub.setInstanceAcceleratorCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the machine type of a single Instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   String machineType = "";
-   *   SetInstanceMachineTypeRequest request = SetInstanceMachineTypeRequest.newBuilder()
-   *     .setName(name)
-   *     .setMachineType(machineType)
-   *     .build();
-   *   Instance response = notebookServiceClient.setInstanceMachineTypeAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> setInstanceMachineTypeAsync(
       SetInstanceMachineTypeRequest request) {
     return setInstanceMachineTypeOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the machine type of a single Instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   String machineType = "";
-   *   SetInstanceMachineTypeRequest request = SetInstanceMachineTypeRequest.newBuilder()
-   *     .setName(name)
-   *     .setMachineType(machineType)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.setInstanceMachineTypeOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<SetInstanceMachineTypeRequest, Instance, OperationMetadata>
       setInstanceMachineTypeOperationCallable() {
     return stub.setInstanceMachineTypeOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the machine type of a single Instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   String machineType = "";
-   *   SetInstanceMachineTypeRequest request = SetInstanceMachineTypeRequest.newBuilder()
-   *     .setName(name)
-   *     .setMachineType(machineType)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.setInstanceMachineTypeCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SetInstanceMachineTypeRequest, Operation>
       setInstanceMachineTypeCallable() {
     return stub.setInstanceMachineTypeCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the labels of an Instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   SetInstanceLabelsRequest request = SetInstanceLabelsRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   Instance response = notebookServiceClient.setInstanceLabelsAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> setInstanceLabelsAsync(
       SetInstanceLabelsRequest request) {
     return setInstanceLabelsOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the labels of an Instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   SetInstanceLabelsRequest request = SetInstanceLabelsRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.setInstanceLabelsOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<SetInstanceLabelsRequest, Instance, OperationMetadata>
       setInstanceLabelsOperationCallable() {
     return stub.setInstanceLabelsOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the labels of an Instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   SetInstanceLabelsRequest request = SetInstanceLabelsRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.setInstanceLabelsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SetInstanceLabelsRequest, Operation> setInstanceLabelsCallable() {
     return stub.setInstanceLabelsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   notebookServiceClient.deleteInstanceAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(
       DeleteInstanceRequest request) {
     return deleteInstanceOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = notebookServiceClient.deleteInstanceOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable() {
     return stub.deleteInstanceOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.deleteInstanceCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return stub.deleteInstanceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a notebook instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   StartInstanceRequest request = StartInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   Instance response = notebookServiceClient.startInstanceAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> startInstanceAsync(
       StartInstanceRequest request) {
     return startInstanceOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a notebook instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   StartInstanceRequest request = StartInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.startInstanceOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<StartInstanceRequest, Instance, OperationMetadata>
       startInstanceOperationCallable() {
     return stub.startInstanceOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a notebook instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   StartInstanceRequest request = StartInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.startInstanceCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<StartInstanceRequest, Operation> startInstanceCallable() {
     return stub.startInstanceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Stops a notebook instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   StopInstanceRequest request = StopInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   Instance response = notebookServiceClient.stopInstanceAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> stopInstanceAsync(
       StopInstanceRequest request) {
     return stopInstanceOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Stops a notebook instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   StopInstanceRequest request = StopInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.stopInstanceOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<StopInstanceRequest, Instance, OperationMetadata>
       stopInstanceOperationCallable() {
     return stub.stopInstanceOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Stops a notebook instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   StopInstanceRequest request = StopInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.stopInstanceCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<StopInstanceRequest, Operation> stopInstanceCallable() {
     return stub.stopInstanceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resets a notebook instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   ResetInstanceRequest request = ResetInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   Instance response = notebookServiceClient.resetInstanceAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> resetInstanceAsync(
       ResetInstanceRequest request) {
     return resetInstanceOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resets a notebook instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   ResetInstanceRequest request = ResetInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.resetInstanceOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<ResetInstanceRequest, Instance, OperationMetadata>
       resetInstanceOperationCallable() {
     return stub.resetInstanceOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resets a notebook instance.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   ResetInstanceRequest request = ResetInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.resetInstanceCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ResetInstanceRequest, Operation> resetInstanceCallable() {
     return stub.resetInstanceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Allows notebook instances to report their latest instance information to the Notebooks API
    * server. The server will merge the reported information to the instance metadata store. Do not
    * use this method directly.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   String vmId = "";
-   *   ReportInstanceInfoRequest request = ReportInstanceInfoRequest.newBuilder()
-   *     .setName(name)
-   *     .setVmId(vmId)
-   *     .build();
-   *   Instance response = notebookServiceClient.reportInstanceInfoAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> reportInstanceInfoAsync(
       ReportInstanceInfoRequest request) {
     return reportInstanceInfoOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Allows notebook instances to report their latest instance information to the Notebooks API
    * server. The server will merge the reported information to the instance metadata store. Do not
    * use this method directly.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   String vmId = "";
-   *   ReportInstanceInfoRequest request = ReportInstanceInfoRequest.newBuilder()
-   *     .setName(name)
-   *     .setVmId(vmId)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.reportInstanceInfoOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<ReportInstanceInfoRequest, Instance, OperationMetadata>
       reportInstanceInfoOperationCallable() {
     return stub.reportInstanceInfoOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Allows notebook instances to report their latest instance information to the Notebooks API
    * server. The server will merge the reported information to the instance metadata store. Do not
    * use this method directly.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   String vmId = "";
-   *   ReportInstanceInfoRequest request = ReportInstanceInfoRequest.newBuilder()
-   *     .setName(name)
-   *     .setVmId(vmId)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.reportInstanceInfoCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ReportInstanceInfoRequest, Operation> reportInstanceInfoCallable() {
     return stub.reportInstanceInfoCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Check if a notebook instance is upgradable.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String notebookInstance = "";
-   *   IsInstanceUpgradeableRequest request = IsInstanceUpgradeableRequest.newBuilder()
-   *     .setNotebookInstance(notebookInstance)
-   *     .build();
-   *   IsInstanceUpgradeableResponse response = notebookServiceClient.isInstanceUpgradeable(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1101,200 +569,90 @@ public class NotebookServiceClient implements BackgroundResource {
     return isInstanceUpgradeableCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Check if a notebook instance is upgradable.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String notebookInstance = "";
-   *   IsInstanceUpgradeableRequest request = IsInstanceUpgradeableRequest.newBuilder()
-   *     .setNotebookInstance(notebookInstance)
-   *     .build();
-   *   ApiFuture&lt;IsInstanceUpgradeableResponse&gt; future = notebookServiceClient.isInstanceUpgradeableCallable().futureCall(request);
-   *   // Do something
-   *   IsInstanceUpgradeableResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<IsInstanceUpgradeableRequest, IsInstanceUpgradeableResponse>
       isInstanceUpgradeableCallable() {
     return stub.isInstanceUpgradeableCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Upgrades a notebook instance to the latest version.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   UpgradeInstanceRequest request = UpgradeInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   Instance response = notebookServiceClient.upgradeInstanceAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> upgradeInstanceAsync(
       UpgradeInstanceRequest request) {
     return upgradeInstanceOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Upgrades a notebook instance to the latest version.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   UpgradeInstanceRequest request = UpgradeInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.upgradeInstanceOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<UpgradeInstanceRequest, Instance, OperationMetadata>
       upgradeInstanceOperationCallable() {
     return stub.upgradeInstanceOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Upgrades a notebook instance to the latest version.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   UpgradeInstanceRequest request = UpgradeInstanceRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.upgradeInstanceCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
     return stub.upgradeInstanceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Allows notebook instances to call this endpoint to upgrade themselves. Do not use this method
    * directly.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   String vmId = "";
-   *   UpgradeInstanceInternalRequest request = UpgradeInstanceInternalRequest.newBuilder()
-   *     .setName(name)
-   *     .setVmId(vmId)
-   *     .build();
-   *   Instance response = notebookServiceClient.upgradeInstanceInternalAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, OperationMetadata> upgradeInstanceInternalAsync(
       UpgradeInstanceInternalRequest request) {
     return upgradeInstanceInternalOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Allows notebook instances to call this endpoint to upgrade themselves. Do not use this method
    * directly.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   String vmId = "";
-   *   UpgradeInstanceInternalRequest request = UpgradeInstanceInternalRequest.newBuilder()
-   *     .setName(name)
-   *     .setVmId(vmId)
-   *     .build();
-   *   OperationFuture&lt;Instance, OperationMetadata&gt; future = notebookServiceClient.upgradeInstanceInternalOperationCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<UpgradeInstanceInternalRequest, Instance, OperationMetadata>
       upgradeInstanceInternalOperationCallable() {
     return stub.upgradeInstanceInternalOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Allows notebook instances to call this endpoint to upgrade themselves. Do not use this method
    * directly.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   String vmId = "";
-   *   UpgradeInstanceInternalRequest request = UpgradeInstanceInternalRequest.newBuilder()
-   *     .setName(name)
-   *     .setVmId(vmId)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.upgradeInstanceInternalCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalCallable() {
     return stub.upgradeInstanceInternalCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists environments in a project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   for (Environment element : notebookServiceClient.listEnvironments(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1303,78 +661,31 @@ public class NotebookServiceClient implements BackgroundResource {
     return listEnvironmentsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists environments in a project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   ApiFuture&lt;ListEnvironmentsPagedResponse&gt; future = notebookServiceClient.listEnvironmentsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Environment element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable() {
     return stub.listEnvironmentsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists environments in a project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   while (true) {
-   *     ListEnvironmentsResponse response = notebookServiceClient.listEnvironmentsCallable().call(request);
-   *     for (Environment element : response.getEnvironmentsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {
     return stub.listEnvironmentsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Environment.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   GetEnvironmentRequest request = GetEnvironmentRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   Environment response = notebookServiceClient.getEnvironment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1383,179 +694,77 @@ public class NotebookServiceClient implements BackgroundResource {
     return getEnvironmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Environment.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   GetEnvironmentRequest request = GetEnvironmentRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Environment&gt; future = notebookServiceClient.getEnvironmentCallable().futureCall(request);
-   *   // Do something
-   *   Environment response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
     return stub.getEnvironmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Environment.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   String environmentId = "";
-   *   Environment environment = Environment.newBuilder().build();
-   *   CreateEnvironmentRequest request = CreateEnvironmentRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setEnvironmentId(environmentId)
-   *     .setEnvironment(environment)
-   *     .build();
-   *   Environment response = notebookServiceClient.createEnvironmentAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Environment, OperationMetadata> createEnvironmentAsync(
       CreateEnvironmentRequest request) {
     return createEnvironmentOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Environment.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   String environmentId = "";
-   *   Environment environment = Environment.newBuilder().build();
-   *   CreateEnvironmentRequest request = CreateEnvironmentRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setEnvironmentId(environmentId)
-   *     .setEnvironment(environment)
-   *     .build();
-   *   OperationFuture&lt;Environment, OperationMetadata&gt; future = notebookServiceClient.createEnvironmentOperationCallable().futureCall(request);
-   *   // Do something
-   *   Environment response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
       createEnvironmentOperationCallable() {
     return stub.createEnvironmentOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Environment.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String parent = "";
-   *   String environmentId = "";
-   *   Environment environment = Environment.newBuilder().build();
-   *   CreateEnvironmentRequest request = CreateEnvironmentRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setEnvironmentId(environmentId)
-   *     .setEnvironment(environment)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.createEnvironmentCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
     return stub.createEnvironmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Environment.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   DeleteEnvironmentRequest request = DeleteEnvironmentRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   notebookServiceClient.deleteEnvironmentAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteEnvironmentAsync(
       DeleteEnvironmentRequest request) {
     return deleteEnvironmentOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Environment.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   DeleteEnvironmentRequest request = DeleteEnvironmentRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = notebookServiceClient.deleteEnvironmentOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationCallable() {
     return stub.deleteEnvironmentOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Environment.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
-   *   String name = "";
-   *   DeleteEnvironmentRequest request = DeleteEnvironmentRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = notebookServiceClient.deleteEnvironmentCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable() {
     return stub.deleteEnvironmentCallable();
