@@ -573,7 +573,10 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
       return this;
     }
 
-    /** Sets the number of pullers used to pull messages from the subscription. Defaults to one. */
+    /**
+     * Sets the number of StreamingPull streams to pull messages from the subscription. Defaults to
+     * one.
+     */
     public Builder setParallelPullCount(int parallelPullCount) {
       this.parallelPullCount = parallelPullCount;
       return this;
