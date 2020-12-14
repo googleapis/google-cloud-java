@@ -20,6 +20,7 @@ import com.google.api.MonitoredResource;
 import com.google.cloud.monitoring.v3.UptimeCheckServiceClient;
 import com.google.cloud.monitoring.v3.UptimeCheckServiceClient.ListUptimeCheckConfigsPagedResponse;
 import com.google.cloud.monitoring.v3.UptimeCheckServiceClient.ListUptimeCheckIpsPagedResponse;
+import com.google.cloud.monitoring.v3.UptimeCheckServiceSettings;
 import com.google.common.base.Strings;
 import com.google.monitoring.v3.CreateUptimeCheckConfigRequest;
 import com.google.monitoring.v3.ListUptimeCheckConfigsRequest;
@@ -82,8 +83,9 @@ public class UptimeSample {
           .addOption(DISPLAY_NAME_OPTION)
           .addOption(HOST_NAME_OPTION)
           .addOption(PATH_NAME_OPTION);
-
   private static final CommandLineParser PARSER = new DefaultParser();
+  private static final org.threeten.bp.Duration MAX_RECONNECT_BACKOFF_TIME =
+      org.threeten.bp.Duration.ofSeconds(60);
 
   public static void main(String... args) throws IOException {
     CommandLine cl;
@@ -126,7 +128,7 @@ public class UptimeSample {
         listUptimeChecks(projectId);
         break;
       case "listips":
-        listUptimeCheckIPs();
+        listUptimeCheckIps();
         break;
       case "get":
         getUptimeCheckConfig(
@@ -214,7 +216,7 @@ public class UptimeSample {
   // [END monitoring_uptime_check_list_configs]]
 
   // [START monitoring_uptime_check_list_ips]]
-  private static void listUptimeCheckIPs() throws IOException {
+  private static void listUptimeCheckIps() throws IOException {
     try (UptimeCheckServiceClient client = UptimeCheckServiceClient.create()) {
       ListUptimeCheckIpsPagedResponse response =
           client.listUptimeCheckIps(ListUptimeCheckIpsRequest.newBuilder().build());
@@ -230,7 +232,31 @@ public class UptimeSample {
 
   // [START monitoring_uptime_check_get]]
   private static void getUptimeCheckConfig(String projectId, String checkName) throws IOException {
-    try (UptimeCheckServiceClient client = UptimeCheckServiceClient.create()) {
+    // Create UptimeCheckServiceSettings instance for add retry mechanism
+    UptimeCheckServiceSettings.Builder uptimeCheckServiceSettingsBuilder =
+        UptimeCheckServiceSettings.newBuilder();
+    uptimeCheckServiceSettingsBuilder
+        .getUptimeCheckConfigSettings()
+        .setRetrySettings(
+            uptimeCheckServiceSettingsBuilder
+                .getUptimeCheckConfigSettings()
+                .getRetrySettings()
+                .toBuilder()
+                .setInitialRetryDelay(org.threeten.bp.Duration.ofMillis(100L))
+                .setRetryDelayMultiplier(1.3)
+                .setMaxRetryDelay(MAX_RECONNECT_BACKOFF_TIME)
+                .setInitialRpcTimeout(MAX_RECONNECT_BACKOFF_TIME)
+                .setRpcTimeoutMultiplier(1.0)
+                .setMaxRpcTimeout(MAX_RECONNECT_BACKOFF_TIME)
+                .setTotalTimeout(MAX_RECONNECT_BACKOFF_TIME)
+                .setMaxAttempts(6)
+                .build());
+    UptimeCheckServiceSettings uptimeCheckServiceSettings =
+        uptimeCheckServiceSettingsBuilder.build();
+
+    // create UptimeCheckServiceClient with retry setting
+    try (UptimeCheckServiceClient client =
+        UptimeCheckServiceClient.create(uptimeCheckServiceSettings)) {
       String fullCheckName = UptimeCheckConfigName.format(projectId, checkName);
       UptimeCheckConfig config = client.getUptimeCheckConfig(fullCheckName);
       if (config != null) {
