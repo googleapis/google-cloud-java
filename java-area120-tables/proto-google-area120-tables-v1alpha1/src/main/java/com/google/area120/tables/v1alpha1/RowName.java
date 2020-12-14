@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class RowName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate TABLE_ROW =
       PathTemplate.createWithoutUrlEncoding("tables/{table}/rows/{row}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String table;
   private final String row;
+
+  @Deprecated
+  protected RowName() {
+    table = null;
+    row = null;
+  }
+
+  private RowName(Builder builder) {
+    table = Preconditions.checkNotNull(builder.getTable());
+    row = Preconditions.checkNotNull(builder.getRow());
+  }
 
   public String getTable() {
     return table;
@@ -52,11 +62,6 @@ public class RowName implements ResourceName {
     return new Builder(this);
   }
 
-  private RowName(Builder builder) {
-    table = Preconditions.checkNotNull(builder.getTable());
-    row = Preconditions.checkNotNull(builder.getRow());
-  }
-
   public static RowName of(String table, String row) {
     return newBuilder().setTable(table).setRow(row).build();
   }
@@ -70,7 +75,7 @@ public class RowName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        TABLE_ROW.validatedMatch(
             formattedString, "RowName.parse: formattedString not in valid format");
     return of(matchMap.get("table"), matchMap.get("row"));
   }
@@ -84,7 +89,7 @@ public class RowName implements ResourceName {
   }
 
   public static List<String> toStringList(List<RowName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (RowName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class RowName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return TABLE_ROW.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("table", table);
-          fieldMapBuilder.put("row", row);
+          if (table != null) {
+            fieldMapBuilder.put("table", table);
+          }
+          if (row != null) {
+            fieldMapBuilder.put("row", row);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,37 @@ public class RowName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("table", table, "row", row);
+    return TABLE_ROW.instantiate("table", table, "row", row);
   }
 
-  /** Builder for RowName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      RowName that = ((RowName) o);
+      return Objects.equals(this.table, that.table) && Objects.equals(this.row, that.row);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(table);
+    h *= 1000003;
+    h ^= Objects.hashCode(row);
+    return h;
+  }
+
+  /** Builder for tables/{table}/rows/{row}. */
+  public static class Builder {
     private String table;
     private String row;
+
+    protected Builder() {}
 
     public String getTable() {
       return table;
@@ -146,8 +179,6 @@ public class RowName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(RowName rowName) {
       table = rowName.table;
       row = rowName.row;
@@ -156,27 +187,5 @@ public class RowName implements ResourceName {
     public RowName build() {
       return new RowName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof RowName) {
-      RowName that = (RowName) o;
-      return (this.table.equals(that.table)) && (this.row.equals(that.row));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= table.hashCode();
-    h *= 1000003;
-    h ^= row.hashCode();
-    return h;
   }
 }

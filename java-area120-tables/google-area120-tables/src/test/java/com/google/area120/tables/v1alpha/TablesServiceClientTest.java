@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.area120.tables.v1alpha;
 
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListRowsPagedResponse;
@@ -29,6 +30,7 @@ import com.google.area120.tables.v1alpha1.BatchCreateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsResponse;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse;
+import com.google.area120.tables.v1alpha1.ColumnDescription;
 import com.google.area120.tables.v1alpha1.CreateRowRequest;
 import com.google.area120.tables.v1alpha1.DeleteRowRequest;
 import com.google.area120.tables.v1alpha1.GetRowRequest;
@@ -46,13 +48,15 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.Status;
+import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -60,31 +64,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class TablesServiceClientTest {
-  private static MockTablesService mockTablesService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private TablesServiceClient client;
   private LocalChannelProvider channelProvider;
+  private static MockTablesService mockTablesService;
 
   @BeforeClass
   public static void startStaticServer() {
     mockTablesService = new MockTablesService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockTablesService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     TablesServiceSettings settings =
         TablesServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -99,12 +103,13 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getTableTest() {
-    TableName name2 = TableName.of("[TABLE]");
-    String displayName = "displayName1615086568";
+  public void getTableTest() throws Exception {
     Table expectedResponse =
-        Table.newBuilder().setName(name2.toString()).setDisplayName(displayName).build();
+        Table.newBuilder()
+            .setName(TableName.of("[TABLE]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllColumns(new ArrayList<ColumnDescription>())
+            .build();
     mockTablesService.addResponse(expectedResponse);
 
     String name = "name3373707";
@@ -114,7 +119,7 @@ public class TablesServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockTablesService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetTableRequest actualRequest = (GetTableRequest) actualRequests.get(0);
+    GetTableRequest actualRequest = ((GetTableRequest) actualRequests.get(0));
 
     Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
@@ -124,46 +129,48 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getTableExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
     try {
       String name = "name3373707";
-
       client.getTable(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listTablesTest() {
-    String nextPageToken = "";
-    Table tablesElement = Table.newBuilder().build();
-    List<Table> tables = Arrays.asList(tablesElement);
+  public void listTablesTest() throws Exception {
+    Table responsesElement = Table.newBuilder().build();
     ListTablesResponse expectedResponse =
         ListTablesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllTables(tables)
+            .setNextPageToken("")
+            .addAllTables(Arrays.asList(responsesElement))
             .build();
     mockTablesService.addResponse(expectedResponse);
 
-    ListTablesRequest request = ListTablesRequest.newBuilder().build();
+    ListTablesRequest request =
+        ListTablesRequest.newBuilder()
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
 
     ListTablesPagedResponse pagedListResponse = client.listTables(request);
 
     List<Table> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTablesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockTablesService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListTablesRequest actualRequest = (ListTablesRequest) actualRequests.get(0);
+    ListTablesRequest actualRequest = ((ListTablesRequest) actualRequests.get(0));
 
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -171,26 +178,30 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listTablesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
     try {
-      ListTablesRequest request = ListTablesRequest.newBuilder().build();
-
+      ListTablesRequest request =
+          ListTablesRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
       client.listTables(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getRowTest() {
-    RowName name2 = RowName.of("[TABLE]", "[ROW]");
-    Row expectedResponse = Row.newBuilder().setName(name2.toString()).build();
+  public void getRowTest() throws Exception {
+    Row expectedResponse =
+        Row.newBuilder()
+            .setName(RowName.of("[TABLE]", "[ROW]").toString())
+            .putAllValues(new HashMap<String, Value>())
+            .build();
     mockTablesService.addResponse(expectedResponse);
 
     String name = "name3373707";
@@ -200,7 +211,7 @@ public class TablesServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockTablesService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetRowRequest actualRequest = (GetRowRequest) actualRequests.get(0);
+    GetRowRequest actualRequest = ((GetRowRequest) actualRequests.get(0));
 
     Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
@@ -210,29 +221,27 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getRowExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
     try {
       String name = "name3373707";
-
       client.getRow(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listRowsTest() {
-    String nextPageToken = "";
-    Row rowsElement = Row.newBuilder().build();
-    List<Row> rows = Arrays.asList(rowsElement);
+  public void listRowsTest() throws Exception {
+    Row responsesElement = Row.newBuilder().build();
     ListRowsResponse expectedResponse =
-        ListRowsResponse.newBuilder().setNextPageToken(nextPageToken).addAllRows(rows).build();
+        ListRowsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRows(Arrays.asList(responsesElement))
+            .build();
     mockTablesService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -240,12 +249,13 @@ public class TablesServiceClientTest {
     ListRowsPagedResponse pagedListResponse = client.listRows(parent);
 
     List<Row> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getRowsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockTablesService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListRowsRequest actualRequest = (ListRowsRequest) actualRequests.get(0);
+    ListRowsRequest actualRequest = ((ListRowsRequest) actualRequests.get(0));
 
     Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
@@ -255,26 +265,26 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listRowsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
     try {
       String parent = "parent-995424086";
-
       client.listRows(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createRowTest() {
-    RowName name = RowName.of("[TABLE]", "[ROW]");
-    Row expectedResponse = Row.newBuilder().setName(name.toString()).build();
+  public void createRowTest() throws Exception {
+    Row expectedResponse =
+        Row.newBuilder()
+            .setName(RowName.of("[TABLE]", "[ROW]").toString())
+            .putAllValues(new HashMap<String, Value>())
+            .build();
     mockTablesService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -285,7 +295,7 @@ public class TablesServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockTablesService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateRowRequest actualRequest = (CreateRowRequest) actualRequests.get(0);
+    CreateRowRequest actualRequest = ((CreateRowRequest) actualRequests.get(0));
 
     Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertEquals(row, actualRequest.getRow());
@@ -296,42 +306,41 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createRowExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
     try {
       String parent = "parent-995424086";
       Row row = Row.newBuilder().build();
-
       client.createRow(parent, row);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void batchCreateRowsTest() {
-    BatchCreateRowsResponse expectedResponse = BatchCreateRowsResponse.newBuilder().build();
+  public void batchCreateRowsTest() throws Exception {
+    BatchCreateRowsResponse expectedResponse =
+        BatchCreateRowsResponse.newBuilder().addAllRows(new ArrayList<Row>()).build();
     mockTablesService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
-    List<CreateRowRequest> requests = new ArrayList<>();
     BatchCreateRowsRequest request =
-        BatchCreateRowsRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
+        BatchCreateRowsRequest.newBuilder()
+            .setParent("parent-995424086")
+            .addAllRequests(new ArrayList<CreateRowRequest>())
+            .build();
 
     BatchCreateRowsResponse actualResponse = client.batchCreateRows(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTablesService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    BatchCreateRowsRequest actualRequest = (BatchCreateRowsRequest) actualRequests.get(0);
+    BatchCreateRowsRequest actualRequest = ((BatchCreateRowsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -339,29 +348,30 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void batchCreateRowsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
-      List<CreateRowRequest> requests = new ArrayList<>();
       BatchCreateRowsRequest request =
-          BatchCreateRowsRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
-
+          BatchCreateRowsRequest.newBuilder()
+              .setParent("parent-995424086")
+              .addAllRequests(new ArrayList<CreateRowRequest>())
+              .build();
       client.batchCreateRows(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateRowTest() {
-    RowName name = RowName.of("[TABLE]", "[ROW]");
-    Row expectedResponse = Row.newBuilder().setName(name.toString()).build();
+  public void updateRowTest() throws Exception {
+    Row expectedResponse =
+        Row.newBuilder()
+            .setName(RowName.of("[TABLE]", "[ROW]").toString())
+            .putAllValues(new HashMap<String, Value>())
+            .build();
     mockTablesService.addResponse(expectedResponse);
 
     Row row = Row.newBuilder().build();
@@ -372,7 +382,7 @@ public class TablesServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockTablesService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateRowRequest actualRequest = (UpdateRowRequest) actualRequests.get(0);
+    UpdateRowRequest actualRequest = ((UpdateRowRequest) actualRequests.get(0));
 
     Assert.assertEquals(row, actualRequest.getRow());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
@@ -383,42 +393,41 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateRowExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
     try {
       Row row = Row.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateRow(row, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void batchUpdateRowsTest() {
-    BatchUpdateRowsResponse expectedResponse = BatchUpdateRowsResponse.newBuilder().build();
+  public void batchUpdateRowsTest() throws Exception {
+    BatchUpdateRowsResponse expectedResponse =
+        BatchUpdateRowsResponse.newBuilder().addAllRows(new ArrayList<Row>()).build();
     mockTablesService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
-    List<UpdateRowRequest> requests = new ArrayList<>();
     BatchUpdateRowsRequest request =
-        BatchUpdateRowsRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
+        BatchUpdateRowsRequest.newBuilder()
+            .setParent("parent-995424086")
+            .addAllRequests(new ArrayList<UpdateRowRequest>())
+            .build();
 
     BatchUpdateRowsResponse actualResponse = client.batchUpdateRows(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTablesService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    BatchUpdateRowsRequest actualRequest = (BatchUpdateRowsRequest) actualRequests.get(0);
+    BatchUpdateRowsRequest actualRequest = ((BatchUpdateRowsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -426,27 +435,25 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void batchUpdateRowsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
-      List<UpdateRowRequest> requests = new ArrayList<>();
       BatchUpdateRowsRequest request =
-          BatchUpdateRowsRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
-
+          BatchUpdateRowsRequest.newBuilder()
+              .setParent("parent-995424086")
+              .addAllRequests(new ArrayList<UpdateRowRequest>())
+              .build();
       client.batchUpdateRows(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteRowTest() {
+  public void deleteRowTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockTablesService.addResponse(expectedResponse);
 
@@ -456,9 +463,9 @@ public class TablesServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockTablesService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteRowRequest actualRequest = (DeleteRowRequest) actualRequests.get(0);
+    DeleteRowRequest actualRequest = ((DeleteRowRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, RowName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -466,18 +473,50 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteRowExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
     try {
       RowName name = RowName.of("[TABLE]", "[ROW]");
-
       client.deleteRow(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRowTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTablesService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteRow(name);
+
+    List<AbstractMessage> actualRequests = mockTablesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRowRequest actualRequest = ((DeleteRowRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRowExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTablesService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteRow(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

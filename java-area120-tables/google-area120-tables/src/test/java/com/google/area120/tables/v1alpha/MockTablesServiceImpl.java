@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.area120.tables.v1alpha;
 
 import com.google.api.core.BetaApi;
@@ -39,9 +40,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockTablesServiceImpl extends TablesServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -77,10 +79,10 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Table) {
       requests.add(request);
-      responseObserver.onNext((Table) response);
+      responseObserver.onNext(((Table) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -92,10 +94,10 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListTablesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListTablesResponse) response);
+      responseObserver.onNext(((ListTablesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -106,10 +108,10 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Row) {
       requests.add(request);
-      responseObserver.onNext((Row) response);
+      responseObserver.onNext(((Row) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -120,10 +122,10 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListRowsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListRowsResponse) response);
+      responseObserver.onNext(((ListRowsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -134,10 +136,10 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Row) {
       requests.add(request);
-      responseObserver.onNext((Row) response);
+      responseObserver.onNext(((Row) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -149,10 +151,10 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     Object response = responses.remove();
     if (response instanceof BatchCreateRowsResponse) {
       requests.add(request);
-      responseObserver.onNext((BatchCreateRowsResponse) response);
+      responseObserver.onNext(((BatchCreateRowsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -163,10 +165,10 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Row) {
       requests.add(request);
-      responseObserver.onNext((Row) response);
+      responseObserver.onNext(((Row) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -178,10 +180,10 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     Object response = responses.remove();
     if (response instanceof BatchUpdateRowsResponse) {
       requests.add(request);
-      responseObserver.onNext((BatchUpdateRowsResponse) response);
+      responseObserver.onNext(((BatchUpdateRowsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -192,10 +194,10 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.area120.tables.v1alpha.stub;
 
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListRowsPagedResponse;
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListTablesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -42,6 +42,7 @@ import com.google.area120.tables.v1alpha1.Row;
 import com.google.area120.tables.v1alpha1.Table;
 import com.google.area120.tables.v1alpha1.UpdateRowRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -50,16 +51,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Area120 Tables API.
+ * gRPC stub implementation for the TablesService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcTablesServiceStub extends TablesServiceStub {
-
   private static final MethodDescriptor<GetTableRequest, Table> getTableMethodDescriptor =
       MethodDescriptor.<GetTableRequest, Table>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -67,6 +66,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListTablesRequest, ListTablesResponse>
       listTablesMethodDescriptor =
           MethodDescriptor.<ListTablesRequest, ListTablesResponse>newBuilder()
@@ -75,6 +75,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTablesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTablesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetRowRequest, Row> getRowMethodDescriptor =
       MethodDescriptor.<GetRowRequest, Row>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -82,6 +83,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetRowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Row.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListRowsRequest, ListRowsResponse>
       listRowsMethodDescriptor =
           MethodDescriptor.<ListRowsRequest, ListRowsResponse>newBuilder()
@@ -90,6 +92,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListRowsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateRowRequest, Row> createRowMethodDescriptor =
       MethodDescriptor.<CreateRowRequest, Row>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -97,6 +100,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateRowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Row.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<BatchCreateRowsRequest, BatchCreateRowsResponse>
       batchCreateRowsMethodDescriptor =
           MethodDescriptor.<BatchCreateRowsRequest, BatchCreateRowsResponse>newBuilder()
@@ -107,6 +111,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateRowsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateRowRequest, Row> updateRowMethodDescriptor =
       MethodDescriptor.<UpdateRowRequest, Row>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -114,6 +119,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateRowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Row.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<BatchUpdateRowsRequest, BatchUpdateRowsResponse>
       batchUpdateRowsMethodDescriptor =
           MethodDescriptor.<BatchUpdateRowsRequest, BatchUpdateRowsResponse>newBuilder()
@@ -124,6 +130,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchUpdateRowsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteRowRequest, Empty> deleteRowMethodDescriptor =
       MethodDescriptor.<DeleteRowRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -131,8 +138,6 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<GetTableRequest, Table> getTableCallable;
   private final UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable;
@@ -148,6 +153,8 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
       batchUpdateRowsCallable;
   private final UnaryCallable<DeleteRowRequest, Empty> deleteRowCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcTablesServiceStub create(TablesServiceStubSettings settings)
@@ -186,6 +193,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<GetTableRequest, Table> getTableTransportSettings =
         GrpcCallSettings.<GetTableRequest, Table>newBuilder()
@@ -332,31 +340,36 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
         callableFactory.createUnaryCallable(
             deleteRowTransportSettings, settings.deleteRowSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<GetTableRequest, Table> getTableCallable() {
     return getTableCallable;
   }
 
-  public UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable() {
-    return listTablesPagedCallable;
-  }
-
   public UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable() {
     return listTablesCallable;
+  }
+
+  public UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable() {
+    return listTablesPagedCallable;
   }
 
   public UnaryCallable<GetRowRequest, Row> getRowCallable() {
     return getRowCallable;
   }
 
-  public UnaryCallable<ListRowsRequest, ListRowsPagedResponse> listRowsPagedCallable() {
-    return listRowsPagedCallable;
-  }
-
   public UnaryCallable<ListRowsRequest, ListRowsResponse> listRowsCallable() {
     return listRowsCallable;
+  }
+
+  public UnaryCallable<ListRowsRequest, ListRowsPagedResponse> listRowsPagedCallable() {
+    return listRowsPagedCallable;
   }
 
   public UnaryCallable<CreateRowRequest, Row> createRowCallable() {

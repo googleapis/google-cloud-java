@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,11 +15,9 @@
  */
 
 /**
- * A client to Area120 Tables API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>=================== TablesServiceClient ===================
+ * <p>======================= TablesServiceClient =======================
  *
  * <p>Service Description: The Tables Service provides an API for reading and updating tables. It
  * defines the following resource model:
@@ -31,17 +29,8 @@
  * `tables/&#42;/rows/&#42;`
  *
  * <p>Sample for TablesServiceClient:
- *
- * <pre>
- * <code>
- * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
- *   String name = "";
- *   Table response = tablesServiceClient.getTable(name);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.area120.tables.v1alpha;
 
 import javax.annotation.Generated;

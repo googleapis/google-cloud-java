@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.area120.tables.v1alpha.stub;
 
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListRowsPagedResponse;
@@ -65,7 +66,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link TablesServiceStub}.
  *
@@ -82,22 +83,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getTable to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TablesServiceStubSettings.Builder tablesServiceSettingsBuilder =
  *     TablesServiceStubSettings.newBuilder();
  * tablesServiceSettingsBuilder
  *     .getTableSettings()
  *     .setRetrySettings(
- *         tablesServiceSettingsBuilder.getTableSettings().getRetrySettings().toBuilder()
+ *         tablesServiceSettingsBuilder
+ *             .getTableSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TablesServiceStubSettings tablesServiceSettings = tablesServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -122,6 +124,111 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
   private final UnaryCallSettings<BatchUpdateRowsRequest, BatchUpdateRowsResponse>
       batchUpdateRowsSettings;
   private final UnaryCallSettings<DeleteRowRequest, Empty> deleteRowSettings;
+
+  private static final PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>
+      LIST_TABLES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTablesRequest injectToken(ListTablesRequest payload, String token) {
+              return ListTablesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTablesRequest injectPageSize(ListTablesRequest payload, int pageSize) {
+              return ListTablesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTablesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTablesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Table> extractResources(ListTablesResponse payload) {
+              return payload.getTablesList() == null
+                  ? ImmutableList.<Table>of()
+                  : payload.getTablesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListRowsRequest, ListRowsResponse, Row>
+      LIST_ROWS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListRowsRequest, ListRowsResponse, Row>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRowsRequest injectToken(ListRowsRequest payload, String token) {
+              return ListRowsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRowsRequest injectPageSize(ListRowsRequest payload, int pageSize) {
+              return ListRowsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRowsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRowsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Row> extractResources(ListRowsResponse payload) {
+              return payload.getRowsList() == null
+                  ? ImmutableList.<Row>of()
+                  : payload.getRowsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
+      LIST_TABLES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>() {
+            @Override
+            public ApiFuture<ListTablesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTablesRequest, ListTablesResponse> callable,
+                ListTablesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTablesResponse> futureResponse) {
+              PageContext<ListTablesRequest, ListTablesResponse, Table> pageContext =
+                  PageContext.create(callable, LIST_TABLES_PAGE_STR_DESC, request, context);
+              return ListTablesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRowsRequest, ListRowsResponse, ListRowsPagedResponse>
+      LIST_ROWS_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListRowsRequest, ListRowsResponse, ListRowsPagedResponse>() {
+            @Override
+            public ApiFuture<ListRowsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRowsRequest, ListRowsResponse> callable,
+                ListRowsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRowsResponse> futureResponse) {
+              PageContext<ListRowsRequest, ListRowsResponse, Row> pageContext =
+                  PageContext.create(callable, LIST_ROWS_PAGE_STR_DESC, request, context);
+              return ListRowsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to getTable. */
   public UnaryCallSettings<GetTableRequest, Table> getTableSettings() {
@@ -178,10 +285,10 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcTablesServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -252,115 +359,9 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     deleteRowSettings = settingsBuilder.deleteRowSettings().build();
   }
 
-  private static final PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>
-      LIST_TABLES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTablesRequest injectToken(ListTablesRequest payload, String token) {
-              return ListTablesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTablesRequest injectPageSize(ListTablesRequest payload, int pageSize) {
-              return ListTablesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTablesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTablesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Table> extractResources(ListTablesResponse payload) {
-              return payload.getTablesList() != null
-                  ? payload.getTablesList()
-                  : ImmutableList.<Table>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListRowsRequest, ListRowsResponse, Row>
-      LIST_ROWS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListRowsRequest, ListRowsResponse, Row>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListRowsRequest injectToken(ListRowsRequest payload, String token) {
-              return ListRowsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListRowsRequest injectPageSize(ListRowsRequest payload, int pageSize) {
-              return ListRowsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListRowsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListRowsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Row> extractResources(ListRowsResponse payload) {
-              return payload.getRowsList() != null
-                  ? payload.getRowsList()
-                  : ImmutableList.<Row>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
-      LIST_TABLES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>() {
-            @Override
-            public ApiFuture<ListTablesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTablesRequest, ListTablesResponse> callable,
-                ListTablesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTablesResponse> futureResponse) {
-              PageContext<ListTablesRequest, ListTablesResponse, Table> pageContext =
-                  PageContext.create(callable, LIST_TABLES_PAGE_STR_DESC, request, context);
-              return ListTablesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListRowsRequest, ListRowsResponse, ListRowsPagedResponse>
-      LIST_ROWS_PAGE_STR_FACT =
-          new PagedListResponseFactory<ListRowsRequest, ListRowsResponse, ListRowsPagedResponse>() {
-            @Override
-            public ApiFuture<ListRowsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListRowsRequest, ListRowsResponse> callable,
-                ListRowsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListRowsResponse> futureResponse) {
-              PageContext<ListRowsRequest, ListRowsResponse, Row> pageContext =
-                  PageContext.create(callable, LIST_ROWS_PAGE_STR_DESC, request, context);
-              return ListRowsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for TablesServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<TablesServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<GetTableRequest, Table> getTableSettings;
     private final PagedCallSettings.Builder<
             ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
@@ -376,14 +377,12 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     private final UnaryCallSettings.Builder<BatchUpdateRowsRequest, BatchUpdateRowsResponse>
         batchUpdateRowsSettings;
     private final UnaryCallSettings.Builder<DeleteRowRequest, Empty> deleteRowSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -394,8 +393,6 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -408,28 +405,20 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       getTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listTablesSettings = PagedCallSettings.newBuilder(LIST_TABLES_PAGE_STR_FACT);
-
       getRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listRowsSettings = PagedCallSettings.newBuilder(LIST_ROWS_PAGE_STR_FACT);
-
       createRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchCreateRowsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchUpdateRowsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -443,21 +432,47 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
               updateRowSettings,
               batchUpdateRowsSettings,
               deleteRowSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(TablesServiceStubSettings settings) {
+      super(settings);
+
+      getTableSettings = settings.getTableSettings.toBuilder();
+      listTablesSettings = settings.listTablesSettings.toBuilder();
+      getRowSettings = settings.getRowSettings.toBuilder();
+      listRowsSettings = settings.listRowsSettings.toBuilder();
+      createRowSettings = settings.createRowSettings.toBuilder();
+      batchCreateRowsSettings = settings.batchCreateRowsSettings.toBuilder();
+      updateRowSettings = settings.updateRowSettings.toBuilder();
+      batchUpdateRowsSettings = settings.batchUpdateRowsSettings.toBuilder();
+      deleteRowSettings = settings.deleteRowSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getTableSettings,
+              listTablesSettings,
+              getRowSettings,
+              listRowsSettings,
+              createRowSettings,
+              batchCreateRowsSettings,
+              updateRowSettings,
+              batchUpdateRowsSettings,
+              deleteRowSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .getTableSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -506,33 +521,7 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
       return builder;
     }
 
-    protected Builder(TablesServiceStubSettings settings) {
-      super(settings);
-
-      getTableSettings = settings.getTableSettings.toBuilder();
-      listTablesSettings = settings.listTablesSettings.toBuilder();
-      getRowSettings = settings.getRowSettings.toBuilder();
-      listRowsSettings = settings.listRowsSettings.toBuilder();
-      createRowSettings = settings.createRowSettings.toBuilder();
-      batchCreateRowsSettings = settings.batchCreateRowsSettings.toBuilder();
-      updateRowSettings = settings.updateRowSettings.toBuilder();
-      batchUpdateRowsSettings = settings.batchUpdateRowsSettings.toBuilder();
-      deleteRowSettings = settings.deleteRowSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getTableSettings,
-              listTablesSettings,
-              getRowSettings,
-              listRowsSettings,
-              createRowSettings,
-              batchCreateRowsSettings,
-              updateRowSettings,
-              batchUpdateRowsSettings,
-              deleteRowSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

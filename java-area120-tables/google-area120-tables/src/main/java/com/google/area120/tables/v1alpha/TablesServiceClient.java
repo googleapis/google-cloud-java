@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.area120.tables.v1alpha;
 
 import com.google.api.core.ApiFunction;
@@ -51,7 +52,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Tables Service provides an API for reading and updating tables. It
  * defines the following resource model:
@@ -65,16 +66,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
- *   String name = "";
- *   Table response = tablesServiceClient.getTable(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the tablesServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the TablesServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -102,30 +94,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TablesServiceSettings tablesServiceSettings =
  *     TablesServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * TablesServiceClient tablesServiceClient =
- *     TablesServiceClient.create(tablesServiceSettings);
- * </code>
- * </pre>
+ * TablesServiceClient tablesServiceClient = TablesServiceClient.create(tablesServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TablesServiceSettings tablesServiceSettings =
  *     TablesServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * TablesServiceClient tablesServiceClient =
- *     TablesServiceClient.create(tablesServiceSettings);
- * </code>
- * </pre>
+ * TablesServiceClient tablesServiceClient = TablesServiceClient.create(tablesServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class TablesServiceClient implements BackgroundResource {
   private final TablesServiceSettings settings;
   private final TablesServiceStub stub;
@@ -146,7 +134,7 @@ public class TablesServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TablesServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use TablesServiceSettings}.
+   * for advanced usage - prefer using create(TablesServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TablesServiceClient create(TablesServiceStub stub) {
@@ -178,18 +166,9 @@ public class TablesServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a table. Returns NOT_FOUND if the table does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String name = "";
-   *   Table response = tablesServiceClient.getTable(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the table to retrieve. Format: tables/{table}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -199,21 +178,9 @@ public class TablesServiceClient implements BackgroundResource {
     return getTable(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a table. Returns NOT_FOUND if the table does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String name = "";
-   *   GetTableRequest request = GetTableRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   Table response = tablesServiceClient.getTable(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -222,42 +189,19 @@ public class TablesServiceClient implements BackgroundResource {
     return getTableCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a table. Returns NOT_FOUND if the table does not exist.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String name = "";
-   *   GetTableRequest request = GetTableRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Table&gt; future = tablesServiceClient.getTableCallable().futureCall(request);
-   *   // Do something
-   *   Table response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetTableRequest, Table> getTableCallable() {
     return stub.getTableCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists tables for the user.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   ListTablesRequest request = ListTablesRequest.newBuilder().build();
-   *   for (Table element : tablesServiceClient.listTables(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -266,67 +210,29 @@ public class TablesServiceClient implements BackgroundResource {
     return listTablesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists tables for the user.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   ListTablesRequest request = ListTablesRequest.newBuilder().build();
-   *   ApiFuture&lt;ListTablesPagedResponse&gt; future = tablesServiceClient.listTablesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Table element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable() {
     return stub.listTablesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists tables for the user.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   ListTablesRequest request = ListTablesRequest.newBuilder().build();
-   *   while (true) {
-   *     ListTablesResponse response = tablesServiceClient.listTablesCallable().call(request);
-   *     for (Table element : response.getTablesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable() {
     return stub.listTablesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a row. Returns NOT_FOUND if the row does not exist in the table.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String name = "";
-   *   Row response = tablesServiceClient.getRow(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the row to retrieve. Format: tables/{table}/rows/{row}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -336,21 +242,9 @@ public class TablesServiceClient implements BackgroundResource {
     return getRow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a row. Returns NOT_FOUND if the row does not exist in the table.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String name = "";
-   *   GetRowRequest request = GetRowRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   Row response = tablesServiceClient.getRow(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -359,42 +253,19 @@ public class TablesServiceClient implements BackgroundResource {
     return getRowCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a row. Returns NOT_FOUND if the row does not exist in the table.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String name = "";
-   *   GetRowRequest request = GetRowRequest.newBuilder()
-   *     .setName(name)
-   *     .build();
-   *   ApiFuture&lt;Row&gt; future = tablesServiceClient.getRowCallable().futureCall(request);
-   *   // Do something
-   *   Row response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetRowRequest, Row> getRowCallable() {
     return stub.getRowCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists rows in a table. Returns NOT_FOUND if the table does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   for (Row element : tablesServiceClient.listRows(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent table. Format: tables/{table}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -404,23 +275,9 @@ public class TablesServiceClient implements BackgroundResource {
     return listRows(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists rows in a table. Returns NOT_FOUND if the table does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   ListRowsRequest request = ListRowsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   for (Row element : tablesServiceClient.listRows(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -429,74 +286,29 @@ public class TablesServiceClient implements BackgroundResource {
     return listRowsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists rows in a table. Returns NOT_FOUND if the table does not exist.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   ListRowsRequest request = ListRowsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   ApiFuture&lt;ListRowsPagedResponse&gt; future = tablesServiceClient.listRowsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Row element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListRowsRequest, ListRowsPagedResponse> listRowsPagedCallable() {
     return stub.listRowsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists rows in a table. Returns NOT_FOUND if the table does not exist.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   ListRowsRequest request = ListRowsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   while (true) {
-   *     ListRowsResponse response = tablesServiceClient.listRowsCallable().call(request);
-   *     for (Row element : response.getRowsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListRowsRequest, ListRowsResponse> listRowsCallable() {
     return stub.listRowsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a row.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   Row row = Row.newBuilder().build();
-   *   Row response = tablesServiceClient.createRow(parent, row);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent table where this row will be created. Format: tables/{table}
    * @param row Required. The row to create.
@@ -507,23 +319,9 @@ public class TablesServiceClient implements BackgroundResource {
     return createRow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a row.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   Row row = Row.newBuilder().build();
-   *   CreateRowRequest request = CreateRowRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setRow(row)
-   *     .build();
-   *   Row response = tablesServiceClient.createRow(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -532,47 +330,19 @@ public class TablesServiceClient implements BackgroundResource {
     return createRowCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a row.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   Row row = Row.newBuilder().build();
-   *   CreateRowRequest request = CreateRowRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setRow(row)
-   *     .build();
-   *   ApiFuture&lt;Row&gt; future = tablesServiceClient.createRowCallable().futureCall(request);
-   *   // Do something
-   *   Row response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateRowRequest, Row> createRowCallable() {
     return stub.createRowCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple rows.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   List&lt;CreateRowRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchCreateRowsRequest request = BatchCreateRowsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .addAllRequests(requests)
-   *     .build();
-   *   BatchCreateRowsResponse response = tablesServiceClient.batchCreateRows(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -581,44 +351,20 @@ public class TablesServiceClient implements BackgroundResource {
     return batchCreateRowsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates multiple rows.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   List&lt;CreateRowRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchCreateRowsRequest request = BatchCreateRowsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .addAllRequests(requests)
-   *     .build();
-   *   ApiFuture&lt;BatchCreateRowsResponse&gt; future = tablesServiceClient.batchCreateRowsCallable().futureCall(request);
-   *   // Do something
-   *   BatchCreateRowsResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchCreateRowsRequest, BatchCreateRowsResponse>
       batchCreateRowsCallable() {
     return stub.batchCreateRowsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a row.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   Row row = Row.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Row response = tablesServiceClient.updateRow(row, updateMask);
-   * }
-   * </code></pre>
    *
    * @param row Required. The row to update.
    * @param updateMask The list of fields to update.
@@ -630,21 +376,9 @@ public class TablesServiceClient implements BackgroundResource {
     return updateRow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a row.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   Row row = Row.newBuilder().build();
-   *   UpdateRowRequest request = UpdateRowRequest.newBuilder()
-   *     .setRow(row)
-   *     .build();
-   *   Row response = tablesServiceClient.updateRow(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -653,45 +387,19 @@ public class TablesServiceClient implements BackgroundResource {
     return updateRowCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a row.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   Row row = Row.newBuilder().build();
-   *   UpdateRowRequest request = UpdateRowRequest.newBuilder()
-   *     .setRow(row)
-   *     .build();
-   *   ApiFuture&lt;Row&gt; future = tablesServiceClient.updateRowCallable().futureCall(request);
-   *   // Do something
-   *   Row response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateRowRequest, Row> updateRowCallable() {
     return stub.updateRowCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates multiple rows.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   List&lt;UpdateRowRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchUpdateRowsRequest request = BatchUpdateRowsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .addAllRequests(requests)
-   *     .build();
-   *   BatchUpdateRowsResponse response = tablesServiceClient.batchUpdateRows(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -700,43 +408,20 @@ public class TablesServiceClient implements BackgroundResource {
     return batchUpdateRowsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates multiple rows.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String parent = "";
-   *   List&lt;UpdateRowRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchUpdateRowsRequest request = BatchUpdateRowsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .addAllRequests(requests)
-   *     .build();
-   *   ApiFuture&lt;BatchUpdateRowsResponse&gt; future = tablesServiceClient.batchUpdateRowsCallable().futureCall(request);
-   *   // Do something
-   *   BatchUpdateRowsResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchUpdateRowsRequest, BatchUpdateRowsResponse>
       batchUpdateRowsCallable() {
     return stub.batchUpdateRowsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a row.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   RowName name = RowName.of("[TABLE]", "[ROW]");
-   *   tablesServiceClient.deleteRow(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the row to delete. Format: tables/{table}/rows/{row}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -747,18 +432,9 @@ public class TablesServiceClient implements BackgroundResource {
     deleteRow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a row.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   RowName name = RowName.of("[TABLE]", "[ROW]");
-   *   tablesServiceClient.deleteRow(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the row to delete. Format: tables/{table}/rows/{row}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -768,21 +444,9 @@ public class TablesServiceClient implements BackgroundResource {
     deleteRow(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a row.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   RowName name = RowName.of("[TABLE]", "[ROW]");
-   *   DeleteRowRequest request = DeleteRowRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   tablesServiceClient.deleteRow(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -791,23 +455,11 @@ public class TablesServiceClient implements BackgroundResource {
     deleteRowCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a row.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   RowName name = RowName.of("[TABLE]", "[ROW]");
-   *   DeleteRowRequest request = DeleteRowRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = tablesServiceClient.deleteRowCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteRowRequest, Empty> deleteRowCallable() {
     return stub.deleteRowCallable();
