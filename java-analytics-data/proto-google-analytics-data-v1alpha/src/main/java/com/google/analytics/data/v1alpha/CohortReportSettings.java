@@ -22,7 +22,7 @@ package com.google.analytics.data.v1alpha;
  *
  *
  * <pre>
- * Settings of a cohort report.
+ * Optional settings of a cohort report.
  * </pre>
  *
  * Protobuf type {@code google.analytics.data.v1alpha.CohortReportSettings}
@@ -113,7 +113,7 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * If true, accumulates the result from first visit day to the end day. Not
+   * If true, accumulates the result from first touch day to the end day. Not
    * supported in `RunReportRequest`.
    * </pre>
    *
@@ -290,7 +290,7 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Settings of a cohort report.
+   * Optional settings of a cohort report.
    * </pre>
    *
    * Protobuf type {@code google.analytics.data.v1alpha.CohortReportSettings}
@@ -449,7 +449,7 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, accumulates the result from first visit day to the end day. Not
+     * If true, accumulates the result from first touch day to the end day. Not
      * supported in `RunReportRequest`.
      * </pre>
      *
@@ -465,7 +465,7 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, accumulates the result from first visit day to the end day. Not
+     * If true, accumulates the result from first touch day to the end day. Not
      * supported in `RunReportRequest`.
      * </pre>
      *
@@ -484,7 +484,7 @@ public final class CohortReportSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, accumulates the result from first visit day to the end day. Not
+     * If true, accumulates the result from first touch day to the end day. Not
      * supported in `RunReportRequest`.
      * </pre>
      *

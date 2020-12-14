@@ -121,6 +121,11 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
               expression_ = s;
               break;
             }
+          case 56:
+            {
+              customDefinition_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -471,6 +476,24 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CUSTOM_DEFINITION_FIELD_NUMBER = 7;
+  private boolean customDefinition_;
+  /**
+   *
+   *
+   * <pre>
+   * True if the metric is a custom metric for this property.
+   * </pre>
+   *
+   * <code>bool custom_definition = 7;</code>
+   *
+   * @return The customDefinition.
+   */
+  @java.lang.Override
+  public boolean getCustomDefinition() {
+    return customDefinition_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -502,6 +525,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getExpressionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, expression_);
+    }
+    if (customDefinition_ != false) {
+      output.writeBool(7, customDefinition_);
     }
     unknownFields.writeTo(output);
   }
@@ -535,6 +561,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     if (!getExpressionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, expression_);
     }
+    if (customDefinition_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, customDefinition_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -557,6 +586,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     if (!getDeprecatedApiNamesList().equals(other.getDeprecatedApiNamesList())) return false;
     if (type_ != other.type_) return false;
     if (!getExpression().equals(other.getExpression())) return false;
+    if (getCustomDefinition() != other.getCustomDefinition()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -582,6 +612,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + type_;
     hash = (37 * hash) + EXPRESSION_FIELD_NUMBER;
     hash = (53 * hash) + getExpression().hashCode();
+    hash = (37 * hash) + CUSTOM_DEFINITION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCustomDefinition());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -739,6 +771,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
 
       expression_ = "";
 
+      customDefinition_ = false;
+
       return this;
     }
 
@@ -777,6 +811,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       result.deprecatedApiNames_ = deprecatedApiNames_;
       result.type_ = type_;
       result.expression_ = expression_;
+      result.customDefinition_ = customDefinition_;
       onBuilt();
       return result;
     }
@@ -855,6 +890,9 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       if (!other.getExpression().isEmpty()) {
         expression_ = other.expression_;
         onChanged();
+      }
+      if (other.getCustomDefinition() != false) {
+        setCustomDefinition(other.getCustomDefinition());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1613,6 +1651,58 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       expression_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean customDefinition_;
+    /**
+     *
+     *
+     * <pre>
+     * True if the metric is a custom metric for this property.
+     * </pre>
+     *
+     * <code>bool custom_definition = 7;</code>
+     *
+     * @return The customDefinition.
+     */
+    @java.lang.Override
+    public boolean getCustomDefinition() {
+      return customDefinition_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * True if the metric is a custom metric for this property.
+     * </pre>
+     *
+     * <code>bool custom_definition = 7;</code>
+     *
+     * @param value The customDefinition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomDefinition(boolean value) {
+
+      customDefinition_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * True if the metric is a custom metric for this property.
+     * </pre>
+     *
+     * <code>bool custom_definition = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomDefinition() {
+
+      customDefinition_ = false;
       onChanged();
       return this;
     }

@@ -22,7 +22,17 @@ package com.google.analytics.data.v1alpha;
  *
  *
  * <pre>
- * Specification for a cohort report.
+ * Specification of cohorts for a cohort report.
+ * Cohort reports can be used for example to create a time series of user
+ * retention for the cohort. For example, you could select the cohort of users
+ * that were acquired in the first week of September and follow that cohort for
+ * the next six weeks. Selecting the users acquired in the first week of
+ * September cohort is specified in the `cohort` object. Following that
+ * cohort for the next six weeks is specified in the `cohortsRange` object.
+ * The report response could show a weekly time series where say your app has
+ * retained 60% of this cohort after three weeks and 25% of this cohort after
+ * six weeks. These two percentages can be calculated by the metric
+ * `cohortActiveUsers/cohortTotalUsers` and will be separate rows in the report.
  * </pre>
  *
  * Protobuf type {@code google.analytics.data.v1alpha.CohortSpec}
@@ -158,7 +168,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The definition for the cohorts.
+   * Defines the selection criteria to group users into cohorts.
+   * Most cohort reports define only a single cohort. If multiple cohorts are
+   * specified, each cohort can be recognized in the report by their name.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -171,7 +183,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The definition for the cohorts.
+   * Defines the selection criteria to group users into cohorts.
+   * Most cohort reports define only a single cohort. If multiple cohorts are
+   * specified, each cohort can be recognized in the report by their name.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -185,7 +199,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The definition for the cohorts.
+   * Defines the selection criteria to group users into cohorts.
+   * Most cohort reports define only a single cohort. If multiple cohorts are
+   * specified, each cohort can be recognized in the report by their name.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -198,7 +214,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The definition for the cohorts.
+   * Defines the selection criteria to group users into cohorts.
+   * Most cohort reports define only a single cohort. If multiple cohorts are
+   * specified, each cohort can be recognized in the report by their name.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -211,7 +229,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The definition for the cohorts.
+   * Defines the selection criteria to group users into cohorts.
+   * Most cohort reports define only a single cohort. If multiple cohorts are
+   * specified, each cohort can be recognized in the report by their name.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -227,7 +247,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The data ranges of cohorts.
+   * Cohort reports follow cohorts over an extended reporting date range. This
+   * range specifies an offset duration to follow the cohorts over.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -242,7 +263,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The data ranges of cohorts.
+   * Cohort reports follow cohorts over an extended reporting date range. This
+   * range specifies an offset duration to follow the cohorts over.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -259,7 +281,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The data ranges of cohorts.
+   * Cohort reports follow cohorts over an extended reporting date range. This
+   * range specifies an offset duration to follow the cohorts over.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -275,7 +298,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings of a cohort report.
+   * Optional settings for a cohort report.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -290,7 +313,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings of a cohort report.
+   * Optional settings for a cohort report.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -307,7 +330,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings of a cohort report.
+   * Optional settings for a cohort report.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -512,7 +535,17 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specification for a cohort report.
+   * Specification of cohorts for a cohort report.
+   * Cohort reports can be used for example to create a time series of user
+   * retention for the cohort. For example, you could select the cohort of users
+   * that were acquired in the first week of September and follow that cohort for
+   * the next six weeks. Selecting the users acquired in the first week of
+   * September cohort is specified in the `cohort` object. Following that
+   * cohort for the next six weeks is specified in the `cohortsRange` object.
+   * The report response could show a weekly time series where say your app has
+   * retained 60% of this cohort after three weeks and 25% of this cohort after
+   * six weeks. These two percentages can be calculated by the metric
+   * `cohortActiveUsers/cohortTotalUsers` and will be separate rows in the report.
    * </pre>
    *
    * Protobuf type {@code google.analytics.data.v1alpha.CohortSpec}
@@ -753,7 +786,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -769,7 +804,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -785,7 +822,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -801,7 +840,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -823,7 +864,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -843,7 +886,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -865,7 +910,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -887,7 +934,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -906,7 +955,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -926,7 +977,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -946,7 +999,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -965,7 +1020,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -984,7 +1041,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -996,7 +1055,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -1012,7 +1073,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -1029,7 +1092,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -1042,7 +1107,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -1055,7 +1122,9 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The definition for the cohorts.
+     * Defines the selection criteria to group users into cohorts.
+     * Most cohort reports define only a single cohort. If multiple cohorts are
+     * specified, each cohort can be recognized in the report by their name.
      * </pre>
      *
      * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -1092,7 +1161,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data ranges of cohorts.
+     * Cohort reports follow cohorts over an extended reporting date range. This
+     * range specifies an offset duration to follow the cohorts over.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -1106,7 +1176,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data ranges of cohorts.
+     * Cohort reports follow cohorts over an extended reporting date range. This
+     * range specifies an offset duration to follow the cohorts over.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -1126,7 +1197,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data ranges of cohorts.
+     * Cohort reports follow cohorts over an extended reporting date range. This
+     * range specifies an offset duration to follow the cohorts over.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -1148,7 +1220,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data ranges of cohorts.
+     * Cohort reports follow cohorts over an extended reporting date range. This
+     * range specifies an offset duration to follow the cohorts over.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -1168,7 +1241,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data ranges of cohorts.
+     * Cohort reports follow cohorts over an extended reporting date range. This
+     * range specifies an offset duration to follow the cohorts over.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -1194,7 +1268,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data ranges of cohorts.
+     * Cohort reports follow cohorts over an extended reporting date range. This
+     * range specifies an offset duration to follow the cohorts over.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -1214,7 +1289,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data ranges of cohorts.
+     * Cohort reports follow cohorts over an extended reporting date range. This
+     * range specifies an offset duration to follow the cohorts over.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -1228,7 +1304,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data ranges of cohorts.
+     * Cohort reports follow cohorts over an extended reporting date range. This
+     * range specifies an offset duration to follow the cohorts over.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -1246,7 +1323,8 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data ranges of cohorts.
+     * Cohort reports follow cohorts over an extended reporting date range. This
+     * range specifies an offset duration to follow the cohorts over.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -1278,7 +1356,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings of a cohort report.
+     * Optional settings for a cohort report.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -1292,7 +1370,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings of a cohort report.
+     * Optional settings for a cohort report.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -1312,7 +1390,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings of a cohort report.
+     * Optional settings for a cohort report.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -1335,7 +1413,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings of a cohort report.
+     * Optional settings for a cohort report.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -1355,7 +1433,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings of a cohort report.
+     * Optional settings for a cohort report.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -1383,7 +1461,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings of a cohort report.
+     * Optional settings for a cohort report.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -1403,7 +1481,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings of a cohort report.
+     * Optional settings for a cohort report.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -1418,7 +1496,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings of a cohort report.
+     * Optional settings for a cohort report.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -1437,7 +1515,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings of a cohort report.
+     * Optional settings for a cohort report.
      * </pre>
      *
      * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>

@@ -218,4 +218,17 @@ public interface MetricMetadataOrBuilder
    * @return The bytes for expression.
    */
   com.google.protobuf.ByteString getExpressionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * True if the metric is a custom metric for this property.
+   * </pre>
+   *
+   * <code>bool custom_definition = 7;</code>
+   *
+   * @return The customDefinition.
+   */
+  boolean getCustomDefinition();
 }

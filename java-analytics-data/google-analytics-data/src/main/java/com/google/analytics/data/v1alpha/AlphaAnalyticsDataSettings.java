@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.analytics.data.v1alpha;
 
 import com.google.analytics.data.v1alpha.stub.AlphaAnalyticsDataStubSettings;
@@ -30,7 +31,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AlphaAnalyticsDataClient}.
  *
@@ -45,25 +46,27 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getMetadata to 30 seconds:
+ * <p>For example, to set the total timeout of runReport to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AlphaAnalyticsDataSettings.Builder alphaAnalyticsDataSettingsBuilder =
  *     AlphaAnalyticsDataSettings.newBuilder();
  * alphaAnalyticsDataSettingsBuilder
- *     .getMetadataSettings()
+ *     .runReportSettings()
  *     .setRetrySettings(
- *         alphaAnalyticsDataSettingsBuilder.getMetadataSettings().getRetrySettings().toBuilder()
+ *         alphaAnalyticsDataSettingsBuilder
+ *             .runReportSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * AlphaAnalyticsDataSettings alphaAnalyticsDataSettings = alphaAnalyticsDataSettingsBuilder.build();
- * </code>
- * </pre>
+ * AlphaAnalyticsDataSettings alphaAnalyticsDataSettings =
+ *     alphaAnalyticsDataSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDataSettings> {
+
   /** Returns the object with the settings used for calls to runReport. */
   public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).runReportSettings();
@@ -157,16 +160,13 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
 
   /** Builder for AlphaAnalyticsDataSettings. */
   public static class Builder extends ClientSettings.Builder<AlphaAnalyticsDataSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(AlphaAnalyticsDataStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(AlphaAnalyticsDataStubSettings.newBuilder());
     }
 
     protected Builder(AlphaAnalyticsDataSettings settings) {
@@ -177,11 +177,15 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(AlphaAnalyticsDataStubSettings.newBuilder());
+    }
+
     public AlphaAnalyticsDataStubSettings.Builder getStubSettingsBuilder() {
       return ((AlphaAnalyticsDataStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

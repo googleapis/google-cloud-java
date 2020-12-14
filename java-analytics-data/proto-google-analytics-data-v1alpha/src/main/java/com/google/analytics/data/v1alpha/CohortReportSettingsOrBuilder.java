@@ -27,7 +27,7 @@ public interface CohortReportSettingsOrBuilder
    *
    *
    * <pre>
-   * If true, accumulates the result from first visit day to the end day. Not
+   * If true, accumulates the result from first touch day to the end day. Not
    * supported in `RunReportRequest`.
    * </pre>
    *

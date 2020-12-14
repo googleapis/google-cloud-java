@@ -105,6 +105,11 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
               deprecatedApiNames_.add(s);
               break;
             }
+          case 40:
+            {
+              customDefinition_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -366,6 +371,24 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
     return deprecatedApiNames_.getByteString(index);
   }
 
+  public static final int CUSTOM_DEFINITION_FIELD_NUMBER = 5;
+  private boolean customDefinition_;
+  /**
+   *
+   *
+   * <pre>
+   * True if the dimension is a custom dimension for this property.
+   * </pre>
+   *
+   * <code>bool custom_definition = 5;</code>
+   *
+   * @return The customDefinition.
+   */
+  @java.lang.Override
+  public boolean getCustomDefinition() {
+    return customDefinition_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -391,6 +414,9 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
     }
     for (int i = 0; i < deprecatedApiNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deprecatedApiNames_.getRaw(i));
+    }
+    if (customDefinition_ != false) {
+      output.writeBool(5, customDefinition_);
     }
     unknownFields.writeTo(output);
   }
@@ -418,6 +444,9 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 1 * getDeprecatedApiNamesList().size();
     }
+    if (customDefinition_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, customDefinition_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -438,6 +467,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
     if (!getUiName().equals(other.getUiName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getDeprecatedApiNamesList().equals(other.getDeprecatedApiNamesList())) return false;
+    if (getCustomDefinition() != other.getCustomDefinition()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -459,6 +489,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + DEPRECATED_API_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getDeprecatedApiNamesList().hashCode();
     }
+    hash = (37 * hash) + CUSTOM_DEFINITION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCustomDefinition());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -612,6 +644,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
 
       deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      customDefinition_ = false;
+
       return this;
     }
 
@@ -648,6 +682,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.deprecatedApiNames_ = deprecatedApiNames_;
+      result.customDefinition_ = customDefinition_;
       onBuilt();
       return result;
     }
@@ -719,6 +754,9 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
           deprecatedApiNames_.addAll(other.deprecatedApiNames_);
         }
         onChanged();
+      }
+      if (other.getCustomDefinition() != false) {
+        setCustomDefinition(other.getCustomDefinition());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1271,6 +1309,58 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureDeprecatedApiNamesIsMutable();
       deprecatedApiNames_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private boolean customDefinition_;
+    /**
+     *
+     *
+     * <pre>
+     * True if the dimension is a custom dimension for this property.
+     * </pre>
+     *
+     * <code>bool custom_definition = 5;</code>
+     *
+     * @return The customDefinition.
+     */
+    @java.lang.Override
+    public boolean getCustomDefinition() {
+      return customDefinition_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * True if the dimension is a custom dimension for this property.
+     * </pre>
+     *
+     * <code>bool custom_definition = 5;</code>
+     *
+     * @param value The customDefinition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomDefinition(boolean value) {
+
+      customDefinition_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * True if the dimension is a custom dimension for this property.
+     * </pre>
+     *
+     * <code>bool custom_definition = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomDefinition() {
+
+      customDefinition_ = false;
       onChanged();
       return this;
     }

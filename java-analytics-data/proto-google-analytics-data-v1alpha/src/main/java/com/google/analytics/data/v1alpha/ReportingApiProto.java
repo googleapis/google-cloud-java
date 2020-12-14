@@ -116,13 +116,13 @@ public final class ReportingApiProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_data_v1alpha_Cohort_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_analytics_data_v1alpha_CohortReportSettings_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_analytics_data_v1alpha_CohortReportSettings_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_data_v1alpha_CohortsRange_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_data_v1alpha_CohortsRange_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1alpha_CohortReportSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_data_v1alpha_CohortReportSettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_data_v1alpha_ResponseMetaData_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -273,14 +273,14 @@ public final class ReportingApiProto {
           + "le.analytics.data.v1alpha.CohortReportSe"
           + "ttings\"g\n\006Cohort\022\014\n\004name\030\001 \001(\t\022\021\n\tdimens"
           + "ion\030\002 \001(\t\022<\n\ndate_range\030\003 \001(\0132(.google.a"
-          + "nalytics.data.v1alpha.DateRange\"*\n\024Cohor"
-          + "tReportSettings\022\022\n\naccumulate\030\001 \001(\010\"\326\001\n\014"
-          + "CohortsRange\022L\n\013granularity\030\001 \001(\01627.goog"
-          + "le.analytics.data.v1alpha.CohortsRange.G"
-          + "ranularity\022\024\n\014start_offset\030\002 \001(\005\022\022\n\nend_"
-          + "offset\030\003 \001(\005\"N\n\013Granularity\022\033\n\027GRANULARI"
-          + "TY_UNSPECIFIED\020\000\022\t\n\005DAILY\020\001\022\n\n\006WEEKLY\020\002\022"
-          + "\013\n\007MONTHLY\020\003\"4\n\020ResponseMetaData\022 \n\030data"
+          + "nalytics.data.v1alpha.DateRange\"\326\001\n\014Coho"
+          + "rtsRange\022L\n\013granularity\030\001 \001(\01627.google.a"
+          + "nalytics.data.v1alpha.CohortsRange.Granu"
+          + "larity\022\024\n\014start_offset\030\002 \001(\005\022\022\n\nend_offs"
+          + "et\030\003 \001(\005\"N\n\013Granularity\022\033\n\027GRANULARITY_U"
+          + "NSPECIFIED\020\000\022\t\n\005DAILY\020\001\022\n\n\006WEEKLY\020\002\022\013\n\007M"
+          + "ONTHLY\020\003\"*\n\024CohortReportSettings\022\022\n\naccu"
+          + "mulate\030\001 \001(\010\"4\n\020ResponseMetaData\022 \n\030data"
           + "_loss_from_other_row\030\003 \001(\010\"\037\n\017DimensionH"
           + "eader\022\014\n\004name\030\001 \001(\t\"U\n\014MetricHeader\022\014\n\004n"
           + "ame\030\001 \001(\t\0227\n\004type\030\002 \001(\0162).google.analyti"
@@ -307,26 +307,28 @@ public final class ReportingApiProto {
           + "rrors_per_project_per_hour\030\004 \001(\0132*.googl"
           + "e.analytics.data.v1alpha.QuotaStatus\"2\n\013"
           + "QuotaStatus\022\020\n\010consumed\030\001 \001(\005\022\021\n\tremaini"
-          + "ng\030\002 \001(\005\"i\n\021DimensionMetadata\022\020\n\010api_nam"
-          + "e\030\001 \001(\t\022\017\n\007ui_name\030\002 \001(\t\022\023\n\013description\030"
-          + "\003 \001(\t\022\034\n\024deprecated_api_names\030\004 \003(\t\"\263\001\n\016"
-          + "MetricMetadata\022\020\n\010api_name\030\001 \001(\t\022\017\n\007ui_n"
-          + "ame\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\034\n\024deprec"
-          + "ated_api_names\030\004 \003(\t\0227\n\004type\030\005 \001(\0162).goo"
-          + "gle.analytics.data.v1alpha.MetricType\022\022\n"
-          + "\nexpression\030\006 \001(\t*g\n\021MetricAggregation\022\""
-          + "\n\036METRIC_AGGREGATION_UNSPECIFIED\020\000\022\t\n\005TO"
-          + "TAL\020\001\022\013\n\007MINIMUM\020\005\022\013\n\007MAXIMUM\020\006\022\t\n\005COUNT"
-          + "\020\004*\201\002\n\nMetricType\022\033\n\027METRIC_TYPE_UNSPECI"
-          + "FIED\020\000\022\020\n\014TYPE_INTEGER\020\001\022\016\n\nTYPE_FLOAT\020\002"
-          + "\022\020\n\014TYPE_SECONDS\020\004\022\025\n\021TYPE_MILLISECONDS\020"
-          + "\005\022\020\n\014TYPE_MINUTES\020\006\022\016\n\nTYPE_HOURS\020\007\022\021\n\rT"
-          + "YPE_STANDARD\020\010\022\021\n\rTYPE_CURRENCY\020\t\022\r\n\tTYP"
-          + "E_FEET\020\n\022\016\n\nTYPE_MILES\020\013\022\017\n\013TYPE_METERS\020"
-          + "\014\022\023\n\017TYPE_KILOMETERS\020\rB{\n!com.google.ana"
-          + "lytics.data.v1alphaB\021ReportingApiProtoP\001"
-          + "ZAgoogle.golang.org/genproto/googleapis/"
-          + "analytics/data/v1alpha;datab\006proto3"
+          + "ng\030\002 \001(\005\"\204\001\n\021DimensionMetadata\022\020\n\010api_na"
+          + "me\030\001 \001(\t\022\017\n\007ui_name\030\002 \001(\t\022\023\n\013description"
+          + "\030\003 \001(\t\022\034\n\024deprecated_api_names\030\004 \003(\t\022\031\n\021"
+          + "custom_definition\030\005 \001(\010\"\316\001\n\016MetricMetada"
+          + "ta\022\020\n\010api_name\030\001 \001(\t\022\017\n\007ui_name\030\002 \001(\t\022\023\n"
+          + "\013description\030\003 \001(\t\022\034\n\024deprecated_api_nam"
+          + "es\030\004 \003(\t\0227\n\004type\030\005 \001(\0162).google.analytic"
+          + "s.data.v1alpha.MetricType\022\022\n\nexpression\030"
+          + "\006 \001(\t\022\031\n\021custom_definition\030\007 \001(\010*g\n\021Metr"
+          + "icAggregation\022\"\n\036METRIC_AGGREGATION_UNSP"
+          + "ECIFIED\020\000\022\t\n\005TOTAL\020\001\022\013\n\007MINIMUM\020\005\022\013\n\007MAX"
+          + "IMUM\020\006\022\t\n\005COUNT\020\004*\201\002\n\nMetricType\022\033\n\027METR"
+          + "IC_TYPE_UNSPECIFIED\020\000\022\020\n\014TYPE_INTEGER\020\001\022"
+          + "\016\n\nTYPE_FLOAT\020\002\022\020\n\014TYPE_SECONDS\020\004\022\025\n\021TYP"
+          + "E_MILLISECONDS\020\005\022\020\n\014TYPE_MINUTES\020\006\022\016\n\nTY"
+          + "PE_HOURS\020\007\022\021\n\rTYPE_STANDARD\020\010\022\021\n\rTYPE_CU"
+          + "RRENCY\020\t\022\r\n\tTYPE_FEET\020\n\022\016\n\nTYPE_MILES\020\013\022"
+          + "\017\n\013TYPE_METERS\020\014\022\023\n\017TYPE_KILOMETERS\020\rB{\n"
+          + "!com.google.analytics.data.v1alphaB\021Repo"
+          + "rtingApiProtoP\001ZAgoogle.golang.org/genpr"
+          + "oto/googleapis/analytics/data/v1alpha;da"
+          + "tab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -519,21 +521,21 @@ public final class ReportingApiProto {
             new java.lang.String[] {
               "Name", "Dimension", "DateRange",
             });
-    internal_static_google_analytics_data_v1alpha_CohortReportSettings_descriptor =
-        getDescriptor().getMessageTypes().get(12);
-    internal_static_google_analytics_data_v1alpha_CohortReportSettings_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_analytics_data_v1alpha_CohortReportSettings_descriptor,
-            new java.lang.String[] {
-              "Accumulate",
-            });
     internal_static_google_analytics_data_v1alpha_CohortsRange_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_analytics_data_v1alpha_CohortsRange_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_CohortsRange_descriptor,
             new java.lang.String[] {
               "Granularity", "StartOffset", "EndOffset",
+            });
+    internal_static_google_analytics_data_v1alpha_CohortReportSettings_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_analytics_data_v1alpha_CohortReportSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_data_v1alpha_CohortReportSettings_descriptor,
+            new java.lang.String[] {
+              "Accumulate",
             });
     internal_static_google_analytics_data_v1alpha_ResponseMetaData_descriptor =
         getDescriptor().getMessageTypes().get(14);
@@ -632,7 +634,7 @@ public final class ReportingApiProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_DimensionMetadata_descriptor,
             new java.lang.String[] {
-              "ApiName", "UiName", "Description", "DeprecatedApiNames",
+              "ApiName", "UiName", "Description", "DeprecatedApiNames", "CustomDefinition",
             });
     internal_static_google_analytics_data_v1alpha_MetricMetadata_descriptor =
         getDescriptor().getMessageTypes().get(26);
@@ -640,7 +642,13 @@ public final class ReportingApiProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_MetricMetadata_descriptor,
             new java.lang.String[] {
-              "ApiName", "UiName", "Description", "DeprecatedApiNames", "Type", "Expression",
+              "ApiName",
+              "UiName",
+              "Description",
+              "DeprecatedApiNames",
+              "Type",
+              "Expression",
+              "CustomDefinition",
             });
   }
 

@@ -31,7 +31,7 @@ public interface GetMetadataRequestOrBuilder
    * specified in the URL path and not URL parameters. Property is a numeric
    * Google Analytics GA4 Property identifier. To learn more, see [where to find
    * your Property
-   * ID](https://developers.google.com/analytics/trusted-testing/analytics-data/property-id).
+   * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Example: properties/1234/metadata
    * Set the Property ID to 0 for dimensions and metrics common to all
    * properties. In this special mode, this method will not return custom
@@ -53,7 +53,7 @@ public interface GetMetadataRequestOrBuilder
    * specified in the URL path and not URL parameters. Property is a numeric
    * Google Analytics GA4 Property identifier. To learn more, see [where to find
    * your Property
-   * ID](https://developers.google.com/analytics/trusted-testing/analytics-data/property-id).
+   * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Example: properties/1234/metadata
    * Set the Property ID to 0 for dimensions and metrics common to all
    * properties. In this special mode, this method will not return custom

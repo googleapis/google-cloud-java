@@ -353,7 +353,7 @@ public interface RunReportResponseOrBuilder
    * includes limit = 50 in the API request, the response will contain row_count
    * = 175 but only 50 rows.
    * To learn more about this pagination parameter, see
-   * [Pagination](basics#pagination).
+   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
    *
    * <code>int32 row_count = 12;</code>

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,17 +23,25 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class MetadataName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROPERTY =
       PathTemplate.createWithoutUrlEncoding("properties/{property}/metadata");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String property;
+
+  @Deprecated
+  protected MetadataName() {
+    property = null;
+  }
+
+  private MetadataName(Builder builder) {
+    property = Preconditions.checkNotNull(builder.getProperty());
+  }
 
   public String getProperty() {
     return property;
@@ -45,10 +53,6 @@ public class MetadataName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private MetadataName(Builder builder) {
-    property = Preconditions.checkNotNull(builder.getProperty());
   }
 
   public static MetadataName of(String property) {
@@ -64,7 +68,7 @@ public class MetadataName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROPERTY.validatedMatch(
             formattedString, "MetadataName.parse: formattedString not in valid format");
     return of(matchMap.get("property"));
   }
@@ -78,7 +82,7 @@ public class MetadataName implements ResourceName {
   }
 
   public static List<String> toStringList(List<MetadataName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (MetadataName value : values) {
       if (value == null) {
         list.add("");
@@ -90,15 +94,18 @@ public class MetadataName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROPERTY.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("property", property);
+          if (property != null) {
+            fieldMapBuilder.put("property", property);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -112,13 +119,34 @@ public class MetadataName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("property", property);
+    return PROPERTY.instantiate("property", property);
   }
 
-  /** Builder for MetadataName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      MetadataName that = ((MetadataName) o);
+      return Objects.equals(this.property, that.property);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(property);
+    return h;
+  }
+
+  /** Builder for properties/{property}/metadata. */
+  public static class Builder {
     private String property;
+
+    protected Builder() {}
 
     public String getProperty() {
       return property;
@@ -129,8 +157,6 @@ public class MetadataName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(MetadataName metadataName) {
       property = metadataName.property;
     }
@@ -138,25 +164,5 @@ public class MetadataName implements ResourceName {
     public MetadataName build() {
       return new MetadataName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof MetadataName) {
-      MetadataName that = (MetadataName) o;
-      return (this.property.equals(that.property));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= property.hashCode();
-    return h;
   }
 }

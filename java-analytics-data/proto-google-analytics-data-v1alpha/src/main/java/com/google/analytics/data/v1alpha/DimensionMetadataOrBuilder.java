@@ -164,4 +164,17 @@ public interface DimensionMetadataOrBuilder
    * @return The bytes of the deprecatedApiNames at the given index.
    */
   com.google.protobuf.ByteString getDeprecatedApiNamesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * True if the dimension is a custom dimension for this property.
+   * </pre>
+   *
+   * <code>bool custom_definition = 5;</code>
+   *
+   * @return The customDefinition.
+   */
+  boolean getCustomDefinition();
 }

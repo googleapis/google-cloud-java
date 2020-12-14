@@ -27,7 +27,9 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * The definition for the cohorts.
+   * Defines the selection criteria to group users into cohorts.
+   * Most cohort reports define only a single cohort. If multiple cohorts are
+   * specified, each cohort can be recognized in the report by their name.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -37,7 +39,9 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * The definition for the cohorts.
+   * Defines the selection criteria to group users into cohorts.
+   * Most cohort reports define only a single cohort. If multiple cohorts are
+   * specified, each cohort can be recognized in the report by their name.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -47,7 +51,9 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * The definition for the cohorts.
+   * Defines the selection criteria to group users into cohorts.
+   * Most cohort reports define only a single cohort. If multiple cohorts are
+   * specified, each cohort can be recognized in the report by their name.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -57,7 +63,9 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * The definition for the cohorts.
+   * Defines the selection criteria to group users into cohorts.
+   * Most cohort reports define only a single cohort. If multiple cohorts are
+   * specified, each cohort can be recognized in the report by their name.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -68,7 +76,9 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * The definition for the cohorts.
+   * Defines the selection criteria to group users into cohorts.
+   * Most cohort reports define only a single cohort. If multiple cohorts are
+   * specified, each cohort can be recognized in the report by their name.
    * </pre>
    *
    * <code>repeated .google.analytics.data.v1alpha.Cohort cohorts = 1;</code>
@@ -79,7 +89,8 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * The data ranges of cohorts.
+   * Cohort reports follow cohorts over an extended reporting date range. This
+   * range specifies an offset duration to follow the cohorts over.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -91,7 +102,8 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * The data ranges of cohorts.
+   * Cohort reports follow cohorts over an extended reporting date range. This
+   * range specifies an offset duration to follow the cohorts over.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -103,7 +115,8 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * The data ranges of cohorts.
+   * Cohort reports follow cohorts over an extended reporting date range. This
+   * range specifies an offset duration to follow the cohorts over.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortsRange cohorts_range = 2;</code>
@@ -114,7 +127,7 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * Settings of a cohort report.
+   * Optional settings for a cohort report.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -126,7 +139,7 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * Settings of a cohort report.
+   * Optional settings for a cohort report.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>
@@ -138,7 +151,7 @@ public interface CohortSpecOrBuilder
    *
    *
    * <pre>
-   * Settings of a cohort report.
+   * Optional settings for a cohort report.
    * </pre>
    *
    * <code>.google.analytics.data.v1alpha.CohortReportSettings cohort_report_settings = 3;</code>

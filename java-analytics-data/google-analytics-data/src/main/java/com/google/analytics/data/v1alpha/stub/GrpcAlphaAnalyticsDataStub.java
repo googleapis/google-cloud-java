@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.analytics.data.v1alpha.stub;
 
 import com.google.analytics.data.v1alpha.BatchRunPivotReportsRequest;
@@ -27,7 +28,6 @@ import com.google.analytics.data.v1alpha.RunRealtimeReportRequest;
 import com.google.analytics.data.v1alpha.RunRealtimeReportResponse;
 import com.google.analytics.data.v1alpha.RunReportRequest;
 import com.google.analytics.data.v1alpha.RunReportResponse;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -43,16 +44,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Google Analytics Data API.
+ * gRPC stub implementation for the AlphaAnalyticsData service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
-
   private static final MethodDescriptor<RunReportRequest, RunReportResponse>
       runReportMethodDescriptor =
           MethodDescriptor.<RunReportRequest, RunReportResponse>newBuilder()
@@ -61,6 +60,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setRequestMarshaller(ProtoUtils.marshaller(RunReportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RunReportResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<RunPivotReportRequest, RunPivotReportResponse>
       runPivotReportMethodDescriptor =
           MethodDescriptor.<RunPivotReportRequest, RunPivotReportResponse>newBuilder()
@@ -71,6 +71,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunPivotReportResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<BatchRunReportsRequest, BatchRunReportsResponse>
       batchRunReportsMethodDescriptor =
           MethodDescriptor.<BatchRunReportsRequest, BatchRunReportsResponse>newBuilder()
@@ -81,6 +82,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchRunReportsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
       batchRunPivotReportsMethodDescriptor =
           MethodDescriptor.<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>newBuilder()
@@ -92,6 +94,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchRunPivotReportsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetMetadataRequest, Metadata> getMetadataMethodDescriptor =
       MethodDescriptor.<GetMetadataRequest, Metadata>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -99,6 +102,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetMetadataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Metadata.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportMethodDescriptor =
           MethodDescriptor.<RunRealtimeReportRequest, RunRealtimeReportResponse>newBuilder()
@@ -111,8 +115,6 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(RunRealtimeReportResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable;
   private final UnaryCallable<RunPivotReportRequest, RunPivotReportResponse> runPivotReportCallable;
   private final UnaryCallable<BatchRunReportsRequest, BatchRunReportsResponse>
@@ -123,6 +125,8 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   private final UnaryCallable<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAlphaAnalyticsDataStub create(AlphaAnalyticsDataStubSettings settings)
@@ -163,6 +167,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<RunReportRequest, RunReportResponse> runReportTransportSettings =
         GrpcCallSettings.<RunReportRequest, RunReportResponse>newBuilder()
@@ -234,7 +239,12 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             settings.runRealtimeReportSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable() {
