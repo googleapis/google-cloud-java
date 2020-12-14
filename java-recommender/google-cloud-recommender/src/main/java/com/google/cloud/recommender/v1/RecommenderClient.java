@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommender.v1;
 
 import com.google.api.core.ApiFunction;
@@ -34,7 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Provides insights and recommendations for cloud customers for various
  * categories like performance optimization, cost savings, reliability, feature discovery, etc.
@@ -44,16 +45,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
- *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
- *   Insight response = recommenderClient.getInsight(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the recommenderClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the RecommenderClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -81,30 +73,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RecommenderSettings recommenderSettings =
  *     RecommenderSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * RecommenderClient recommenderClient =
- *     RecommenderClient.create(recommenderSettings);
- * </code>
- * </pre>
+ * RecommenderClient recommenderClient = RecommenderClient.create(recommenderSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RecommenderSettings recommenderSettings =
  *     RecommenderSettings.newBuilder().setEndpoint(myEndpoint).build();
- * RecommenderClient recommenderClient =
- *     RecommenderClient.create(recommenderSettings);
- * </code>
- * </pre>
+ * RecommenderClient recommenderClient = RecommenderClient.create(recommenderSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class RecommenderClient implements BackgroundResource {
   private final RecommenderSettings settings;
   private final RecommenderStub stub;
@@ -124,7 +112,7 @@ public class RecommenderClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RecommenderClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use RecommenderSettings}.
+   * advanced usage - prefer using create(RecommenderSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RecommenderClient create(RecommenderStub stub) {
@@ -156,21 +144,10 @@ public class RecommenderClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
    * specified insight type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
-   *   for (Insight element : recommenderClient.listInsights(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
@@ -186,21 +163,10 @@ public class RecommenderClient implements BackgroundResource {
     return listInsights(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
    * specified insight type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
-   *   for (Insight element : recommenderClient.listInsights(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
@@ -213,24 +179,10 @@ public class RecommenderClient implements BackgroundResource {
     return listInsights(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
    * specified insight type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
-   *   ListInsightsRequest request = ListInsightsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Insight element : recommenderClient.listInsights(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -239,77 +191,33 @@ public class RecommenderClient implements BackgroundResource {
     return listInsightsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
    * specified insight type.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
-   *   ListInsightsRequest request = ListInsightsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListInsightsPagedResponse&gt; future = recommenderClient.listInsightsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Insight element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse>
       listInsightsPagedCallable() {
     return stub.listInsightsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists insights for a Cloud project. Requires the recommender.&#42;.list IAM permission for the
    * specified insight type.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
-   *   ListInsightsRequest request = ListInsightsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListInsightsResponse response = recommenderClient.listInsightsCallable().call(request);
-   *     for (Insight element : response.getInsightsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable() {
     return stub.listInsightsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the requested insight. Requires the recommender.&#42;.get IAM permission for the specified
    * insight type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
-   *   Insight response = recommenderClient.getInsight(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the insight.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -320,19 +228,10 @@ public class RecommenderClient implements BackgroundResource {
     return getInsight(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the requested insight. Requires the recommender.&#42;.get IAM permission for the specified
    * insight type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
-   *   Insight response = recommenderClient.getInsight(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the insight.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -342,22 +241,10 @@ public class RecommenderClient implements BackgroundResource {
     return getInsight(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the requested insight. Requires the recommender.&#42;.get IAM permission for the specified
    * insight type.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
-   *   GetInsightRequest request = GetInsightRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Insight response = recommenderClient.getInsight(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -366,30 +253,18 @@ public class RecommenderClient implements BackgroundResource {
     return getInsightCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the requested insight. Requires the recommender.&#42;.get IAM permission for the specified
    * insight type.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
-   *   GetInsightRequest request = GetInsightRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Insight&gt; future = recommenderClient.getInsightCallable().futureCall(request);
-   *   // Do something
-   *   Insight response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetInsightRequest, Insight> getInsightCallable() {
     return stub.getInsightCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender
    * API that they have applied some action based on the insight. This stops the insight content
@@ -397,17 +272,6 @@ public class RecommenderClient implements BackgroundResource {
    *
    * <p>MarkInsightAccepted can be applied to insights in ACTIVE state. Requires the
    * recommender.&#42;.update IAM permission for the specified insight.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
-   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
-   *   String etag = "";
-   *   Insight response = recommenderClient.markInsightAccepted(name, stateMetadata, etag);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the insight.
    * @param stateMetadata Optional. State properties user wish to include with this state. Full
@@ -426,7 +290,7 @@ public class RecommenderClient implements BackgroundResource {
     return markInsightAccepted(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender
    * API that they have applied some action based on the insight. This stops the insight content
@@ -434,17 +298,6 @@ public class RecommenderClient implements BackgroundResource {
    *
    * <p>MarkInsightAccepted can be applied to insights in ACTIVE state. Requires the
    * recommender.&#42;.update IAM permission for the specified insight.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
-   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
-   *   String etag = "";
-   *   Insight response = recommenderClient.markInsightAccepted(name.toString(), stateMetadata, etag);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the insight.
    * @param stateMetadata Optional. State properties user wish to include with this state. Full
@@ -463,7 +316,7 @@ public class RecommenderClient implements BackgroundResource {
     return markInsightAccepted(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender
    * API that they have applied some action based on the insight. This stops the insight content
@@ -471,20 +324,6 @@ public class RecommenderClient implements BackgroundResource {
    *
    * <p>MarkInsightAccepted can be applied to insights in ACTIVE state. Requires the
    * recommender.&#42;.update IAM permission for the specified insight.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
-   *   String etag = "";
-   *   MarkInsightAcceptedRequest request = MarkInsightAcceptedRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setEtag(etag)
-   *     .build();
-   *   Insight response = recommenderClient.markInsightAccepted(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -493,7 +332,7 @@ public class RecommenderClient implements BackgroundResource {
     return markInsightAcceptedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Insight State as Accepted. Users can use this method to indicate to the Recommender
    * API that they have applied some action based on the insight. This stops the insight content
@@ -503,40 +342,15 @@ public class RecommenderClient implements BackgroundResource {
    * recommender.&#42;.update IAM permission for the specified insight.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
-   *   String etag = "";
-   *   MarkInsightAcceptedRequest request = MarkInsightAcceptedRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setEtag(etag)
-   *     .build();
-   *   ApiFuture&lt;Insight&gt; future = recommenderClient.markInsightAcceptedCallable().futureCall(request);
-   *   // Do something
-   *   Insight response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<MarkInsightAcceptedRequest, Insight> markInsightAcceptedCallable() {
     return stub.markInsightAcceptedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
    * for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
-   *   for (Recommendation element : recommenderClient.listRecommendations(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
@@ -552,21 +366,10 @@ public class RecommenderClient implements BackgroundResource {
     return listRecommendations(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
    * for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
-   *   for (Recommendation element : recommenderClient.listRecommendations(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
@@ -580,22 +383,10 @@ public class RecommenderClient implements BackgroundResource {
     return listRecommendations(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
    * for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
-   *   String filter = "";
-   *   for (Recommendation element : recommenderClient.listRecommendations(parent, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
@@ -615,22 +406,10 @@ public class RecommenderClient implements BackgroundResource {
     return listRecommendations(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
    * for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
-   *   String filter = "";
-   *   for (Recommendation element : recommenderClient.listRecommendations(parent.toString(), filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The container resource on which to execute the request. Acceptable
    *     formats:
@@ -646,24 +425,10 @@ public class RecommenderClient implements BackgroundResource {
     return listRecommendations(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
    * for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
-   *   ListRecommendationsRequest request = ListRecommendationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Recommendation element : recommenderClient.listRecommendations(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -673,78 +438,34 @@ public class RecommenderClient implements BackgroundResource {
     return listRecommendationsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
    * for the specified recommender.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
-   *   ListRecommendationsRequest request = ListRecommendationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListRecommendationsPagedResponse&gt; future = recommenderClient.listRecommendationsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Recommendation element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListRecommendationsRequest, ListRecommendationsPagedResponse>
       listRecommendationsPagedCallable() {
     return stub.listRecommendationsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists recommendations for a Cloud project. Requires the recommender.&#42;.list IAM permission
    * for the specified recommender.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
-   *   ListRecommendationsRequest request = ListRecommendationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListRecommendationsResponse response = recommenderClient.listRecommendationsCallable().call(request);
-   *     for (Recommendation element : response.getRecommendationsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListRecommendationsRequest, ListRecommendationsResponse>
       listRecommendationsCallable() {
     return stub.listRecommendationsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the requested recommendation. Requires the recommender.&#42;.get IAM permission for the
    * specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   Recommendation response = recommenderClient.getRecommendation(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the recommendation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -757,19 +478,10 @@ public class RecommenderClient implements BackgroundResource {
     return getRecommendation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the requested recommendation. Requires the recommender.&#42;.get IAM permission for the
    * specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   Recommendation response = recommenderClient.getRecommendation(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the recommendation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -779,22 +491,10 @@ public class RecommenderClient implements BackgroundResource {
     return getRecommendation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the requested recommendation. Requires the recommender.&#42;.get IAM permission for the
    * specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   GetRecommendationRequest request = GetRecommendationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Recommendation response = recommenderClient.getRecommendation(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -803,30 +503,18 @@ public class RecommenderClient implements BackgroundResource {
     return getRecommendationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the requested recommendation. Requires the recommender.&#42;.get IAM permission for the
    * specified recommender.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   GetRecommendationRequest request = GetRecommendationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Recommendation&gt; future = recommenderClient.getRecommendationCallable().futureCall(request);
-   *   // Do something
-   *   Recommendation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable() {
     return stub.getRecommendationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Claimed. Users can use this method to indicate to the
    * Recommender API that they are starting to apply the recommendation themselves. This stops the
@@ -837,17 +525,6 @@ public class RecommenderClient implements BackgroundResource {
    * or ACTIVE state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
-   *   String etag = "";
-   *   Recommendation response = recommenderClient.markRecommendationClaimed(name, stateMetadata, etag);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the recommendation.
    * @param stateMetadata State properties to include with this state. Overwrites any existing
@@ -867,7 +544,7 @@ public class RecommenderClient implements BackgroundResource {
     return markRecommendationClaimed(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Claimed. Users can use this method to indicate to the
    * Recommender API that they are starting to apply the recommendation themselves. This stops the
@@ -878,17 +555,6 @@ public class RecommenderClient implements BackgroundResource {
    * or ACTIVE state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
-   *   String etag = "";
-   *   Recommendation response = recommenderClient.markRecommendationClaimed(name.toString(), stateMetadata, etag);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the recommendation.
    * @param stateMetadata State properties to include with this state. Overwrites any existing
@@ -908,7 +574,7 @@ public class RecommenderClient implements BackgroundResource {
     return markRecommendationClaimed(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Claimed. Users can use this method to indicate to the
    * Recommender API that they are starting to apply the recommendation themselves. This stops the
@@ -919,20 +585,6 @@ public class RecommenderClient implements BackgroundResource {
    * or ACTIVE state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   String etag = "";
-   *   MarkRecommendationClaimedRequest request = MarkRecommendationClaimedRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setEtag(etag)
-   *     .build();
-   *   Recommendation response = recommenderClient.markRecommendationClaimed(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -941,7 +593,7 @@ public class RecommenderClient implements BackgroundResource {
     return markRecommendationClaimedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Claimed. Users can use this method to indicate to the
    * Recommender API that they are starting to apply the recommendation themselves. This stops the
@@ -954,27 +606,13 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   String etag = "";
-   *   MarkRecommendationClaimedRequest request = MarkRecommendationClaimedRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setEtag(etag)
-   *     .build();
-   *   ApiFuture&lt;Recommendation&gt; future = recommenderClient.markRecommendationClaimedCallable().futureCall(request);
-   *   // Do something
-   *   Recommendation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<MarkRecommendationClaimedRequest, Recommendation>
       markRecommendationClaimedCallable() {
     return stub.markRecommendationClaimedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Succeeded. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation was
@@ -985,17 +623,6 @@ public class RecommenderClient implements BackgroundResource {
    * or FAILED state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
-   *   String etag = "";
-   *   Recommendation response = recommenderClient.markRecommendationSucceeded(name, stateMetadata, etag);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the recommendation.
    * @param stateMetadata State properties to include with this state. Overwrites any existing
@@ -1015,7 +642,7 @@ public class RecommenderClient implements BackgroundResource {
     return markRecommendationSucceeded(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Succeeded. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation was
@@ -1026,17 +653,6 @@ public class RecommenderClient implements BackgroundResource {
    * or FAILED state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
-   *   String etag = "";
-   *   Recommendation response = recommenderClient.markRecommendationSucceeded(name.toString(), stateMetadata, etag);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the recommendation.
    * @param stateMetadata State properties to include with this state. Overwrites any existing
@@ -1056,7 +672,7 @@ public class RecommenderClient implements BackgroundResource {
     return markRecommendationSucceeded(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Succeeded. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation was
@@ -1067,20 +683,6 @@ public class RecommenderClient implements BackgroundResource {
    * or FAILED state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   String etag = "";
-   *   MarkRecommendationSucceededRequest request = MarkRecommendationSucceededRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setEtag(etag)
-   *     .build();
-   *   Recommendation response = recommenderClient.markRecommendationSucceeded(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1090,7 +692,7 @@ public class RecommenderClient implements BackgroundResource {
     return markRecommendationSucceededCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Succeeded. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation was
@@ -1103,27 +705,13 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   String etag = "";
-   *   MarkRecommendationSucceededRequest request = MarkRecommendationSucceededRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setEtag(etag)
-   *     .build();
-   *   ApiFuture&lt;Recommendation&gt; future = recommenderClient.markRecommendationSucceededCallable().futureCall(request);
-   *   // Do something
-   *   Recommendation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<MarkRecommendationSucceededRequest, Recommendation>
       markRecommendationSucceededCallable() {
     return stub.markRecommendationSucceededCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Failed. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation failed.
@@ -1134,17 +722,6 @@ public class RecommenderClient implements BackgroundResource {
    * FAILED state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
-   *   String etag = "";
-   *   Recommendation response = recommenderClient.markRecommendationFailed(name, stateMetadata, etag);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the recommendation.
    * @param stateMetadata State properties to include with this state. Overwrites any existing
@@ -1164,7 +741,7 @@ public class RecommenderClient implements BackgroundResource {
     return markRecommendationFailed(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Failed. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation failed.
@@ -1175,17 +752,6 @@ public class RecommenderClient implements BackgroundResource {
    * FAILED state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
-   *   String etag = "";
-   *   Recommendation response = recommenderClient.markRecommendationFailed(name.toString(), stateMetadata, etag);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the recommendation.
    * @param stateMetadata State properties to include with this state. Overwrites any existing
@@ -1205,7 +771,7 @@ public class RecommenderClient implements BackgroundResource {
     return markRecommendationFailed(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Failed. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation failed.
@@ -1216,20 +782,6 @@ public class RecommenderClient implements BackgroundResource {
    * FAILED state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   String etag = "";
-   *   MarkRecommendationFailedRequest request = MarkRecommendationFailedRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setEtag(etag)
-   *     .build();
-   *   Recommendation response = recommenderClient.markRecommendationFailed(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1238,7 +790,7 @@ public class RecommenderClient implements BackgroundResource {
     return markRecommendationFailedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks the Recommendation State as Failed. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation failed.
@@ -1251,20 +803,6 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
-   *   RecommendationName name = RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
-   *   String etag = "";
-   *   MarkRecommendationFailedRequest request = MarkRecommendationFailedRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setEtag(etag)
-   *     .build();
-   *   ApiFuture&lt;Recommendation&gt; future = recommenderClient.markRecommendationFailedCallable().futureCall(request);
-   *   // Do something
-   *   Recommendation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedCallable() {

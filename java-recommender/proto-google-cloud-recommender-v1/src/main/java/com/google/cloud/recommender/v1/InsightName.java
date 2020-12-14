@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class InsightName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_INSIGHT_TYPE_INSIGHT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/insightTypes/{insight_type}/insights/{insight}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String insightType;
   private final String insight;
+
+  @Deprecated
+  protected InsightName() {
+    project = null;
+    location = null;
+    insightType = null;
+    insight = null;
+  }
+
+  private InsightName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    insightType = Preconditions.checkNotNull(builder.getInsightType());
+    insight = Preconditions.checkNotNull(builder.getInsight());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class InsightName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private InsightName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    insightType = Preconditions.checkNotNull(builder.getInsightType());
-    insight = Preconditions.checkNotNull(builder.getInsight());
   }
 
   public static InsightName of(
@@ -95,7 +102,7 @@ public class InsightName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_INSIGHT_TYPE_INSIGHT.validatedMatch(
             formattedString, "InsightName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -113,7 +120,7 @@ public class InsightName implements ResourceName {
   }
 
   public static List<String> toStringList(List<InsightName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (InsightName value : values) {
       if (value == null) {
         list.add("");
@@ -125,18 +132,27 @@ public class InsightName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_INSIGHT_TYPE_INSIGHT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("insightType", insightType);
-          fieldMapBuilder.put("insight", insight);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (insightType != null) {
+            fieldMapBuilder.put("insight_type", insightType);
+          }
+          if (insight != null) {
+            fieldMapBuilder.put("insight", insight);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -150,17 +166,50 @@ public class InsightName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_INSIGHT_TYPE_INSIGHT.instantiate(
         "project", project, "location", location, "insight_type", insightType, "insight", insight);
   }
 
-  /** Builder for InsightName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      InsightName that = ((InsightName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.insightType, that.insightType)
+          && Objects.equals(this.insight, that.insight);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(insightType);
+    h *= 1000003;
+    h ^= Objects.hashCode(insight);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/insightTypes/{insight_type}/insights/{insight}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String insightType;
     private String insight;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -198,8 +247,6 @@ public class InsightName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(InsightName insightName) {
       project = insightName.project;
       location = insightName.location;
@@ -210,34 +257,5 @@ public class InsightName implements ResourceName {
     public InsightName build() {
       return new InsightName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof InsightName) {
-      InsightName that = (InsightName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.insightType.equals(that.insightType))
-          && (this.insight.equals(that.insight));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= insightType.hashCode();
-    h *= 1000003;
-    h ^= insight.hashCode();
-    return h;
   }
 }

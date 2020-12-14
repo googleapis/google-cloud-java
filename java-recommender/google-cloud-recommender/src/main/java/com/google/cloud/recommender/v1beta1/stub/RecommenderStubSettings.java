@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommender.v1beta1.stub;
 
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
@@ -61,7 +62,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link RecommenderStub}.
  *
@@ -78,22 +79,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getInsight to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RecommenderStubSettings.Builder recommenderSettingsBuilder =
  *     RecommenderStubSettings.newBuilder();
  * recommenderSettingsBuilder
  *     .getInsightSettings()
  *     .setRetrySettings(
- *         recommenderSettingsBuilder.getInsightSettings().getRetrySettings().toBuilder()
+ *         recommenderSettingsBuilder
+ *             .getInsightSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RecommenderStubSettings recommenderSettings = recommenderSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class RecommenderStubSettings extends StubSettings<RecommenderStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -115,6 +117,120 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       markRecommendationSucceededSettings;
   private final UnaryCallSettings<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedSettings;
+
+  private static final PagedListDescriptor<ListInsightsRequest, ListInsightsResponse, Insight>
+      LIST_INSIGHTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListInsightsRequest, ListInsightsResponse, Insight>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListInsightsRequest injectToken(ListInsightsRequest payload, String token) {
+              return ListInsightsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListInsightsRequest injectPageSize(ListInsightsRequest payload, int pageSize) {
+              return ListInsightsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListInsightsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListInsightsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Insight> extractResources(ListInsightsResponse payload) {
+              return payload.getInsightsList() == null
+                  ? ImmutableList.<Insight>of()
+                  : payload.getInsightsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
+      LIST_RECOMMENDATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRecommendationsRequest injectToken(
+                ListRecommendationsRequest payload, String token) {
+              return ListRecommendationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRecommendationsRequest injectPageSize(
+                ListRecommendationsRequest payload, int pageSize) {
+              return ListRecommendationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRecommendationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRecommendationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Recommendation> extractResources(ListRecommendationsResponse payload) {
+              return payload.getRecommendationsList() == null
+                  ? ImmutableList.<Recommendation>of()
+                  : payload.getRecommendationsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
+      LIST_INSIGHTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>() {
+            @Override
+            public ApiFuture<ListInsightsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListInsightsRequest, ListInsightsResponse> callable,
+                ListInsightsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListInsightsResponse> futureResponse) {
+              PageContext<ListInsightsRequest, ListInsightsResponse, Insight> pageContext =
+                  PageContext.create(callable, LIST_INSIGHTS_PAGE_STR_DESC, request, context);
+              return ListInsightsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRecommendationsRequest, ListRecommendationsResponse, ListRecommendationsPagedResponse>
+      LIST_RECOMMENDATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRecommendationsRequest,
+              ListRecommendationsResponse,
+              ListRecommendationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListRecommendationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRecommendationsRequest, ListRecommendationsResponse> callable,
+                ListRecommendationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRecommendationsResponse> futureResponse) {
+              PageContext<ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RECOMMENDATIONS_PAGE_STR_DESC, request, context);
+              return ListRecommendationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listInsights. */
   public PagedCallSettings<ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
@@ -168,10 +284,10 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcRecommenderStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -242,124 +358,9 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     markRecommendationFailedSettings = settingsBuilder.markRecommendationFailedSettings().build();
   }
 
-  private static final PagedListDescriptor<ListInsightsRequest, ListInsightsResponse, Insight>
-      LIST_INSIGHTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListInsightsRequest, ListInsightsResponse, Insight>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListInsightsRequest injectToken(ListInsightsRequest payload, String token) {
-              return ListInsightsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListInsightsRequest injectPageSize(ListInsightsRequest payload, int pageSize) {
-              return ListInsightsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListInsightsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListInsightsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Insight> extractResources(ListInsightsResponse payload) {
-              return payload.getInsightsList() != null
-                  ? payload.getInsightsList()
-                  : ImmutableList.<Insight>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
-      LIST_RECOMMENDATIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListRecommendationsRequest injectToken(
-                ListRecommendationsRequest payload, String token) {
-              return ListRecommendationsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListRecommendationsRequest injectPageSize(
-                ListRecommendationsRequest payload, int pageSize) {
-              return ListRecommendationsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListRecommendationsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListRecommendationsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Recommendation> extractResources(ListRecommendationsResponse payload) {
-              return payload.getRecommendationsList() != null
-                  ? payload.getRecommendationsList()
-                  : ImmutableList.<Recommendation>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
-      LIST_INSIGHTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>() {
-            @Override
-            public ApiFuture<ListInsightsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListInsightsRequest, ListInsightsResponse> callable,
-                ListInsightsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListInsightsResponse> futureResponse) {
-              PageContext<ListInsightsRequest, ListInsightsResponse, Insight> pageContext =
-                  PageContext.create(callable, LIST_INSIGHTS_PAGE_STR_DESC, request, context);
-              return ListInsightsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListRecommendationsRequest, ListRecommendationsResponse, ListRecommendationsPagedResponse>
-      LIST_RECOMMENDATIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListRecommendationsRequest,
-              ListRecommendationsResponse,
-              ListRecommendationsPagedResponse>() {
-            @Override
-            public ApiFuture<ListRecommendationsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListRecommendationsRequest, ListRecommendationsResponse> callable,
-                ListRecommendationsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListRecommendationsResponse> futureResponse) {
-              PageContext<ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_RECOMMENDATIONS_PAGE_STR_DESC, request, context);
-              return ListRecommendationsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for RecommenderStubSettings. */
   public static class Builder extends StubSettings.Builder<RecommenderStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
         listInsightsSettings;
@@ -379,7 +380,6 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
         markRecommendationSucceededSettings;
     private final UnaryCallSettings.Builder<MarkRecommendationFailedRequest, Recommendation>
         markRecommendationFailedSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -387,11 +387,10 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -412,9 +411,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -427,27 +424,20 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listInsightsSettings = PagedCallSettings.newBuilder(LIST_INSIGHTS_PAGE_STR_FACT);
-
       getInsightSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       markInsightAcceptedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listRecommendationsSettings =
           PagedCallSettings.newBuilder(LIST_RECOMMENDATIONS_PAGE_STR_FACT);
-
       getRecommendationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       markRecommendationClaimedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       markRecommendationSucceededSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       markRecommendationFailedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -460,62 +450,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
               markRecommendationClaimedSettings,
               markRecommendationSucceededSettings,
               markRecommendationFailedSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listInsightsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getInsightSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .markInsightAcceptedSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listRecommendationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getRecommendationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .markRecommendationClaimedSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .markRecommendationSucceededSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .markRecommendationFailedSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(RecommenderStubSettings settings) {
@@ -543,7 +478,62 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
               markRecommendationFailedSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listInsightsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getInsightSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .markInsightAcceptedSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listRecommendationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getRecommendationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .markRecommendationClaimedSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .markRecommendationSucceededSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .markRecommendationFailedSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

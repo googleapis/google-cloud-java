@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recommender.v1.stub;
 
 import static com.google.cloud.recommender.v1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1.RecommenderClient.ListRecommendationsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -39,6 +39,7 @@ import com.google.cloud.recommender.v1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1.Recommendation;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -46,16 +47,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Recommender API.
+ * gRPC stub implementation for the Recommender service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcRecommenderStub extends RecommenderStub {
-
   private static final MethodDescriptor<ListInsightsRequest, ListInsightsResponse>
       listInsightsMethodDescriptor =
           MethodDescriptor.<ListInsightsRequest, ListInsightsResponse>newBuilder()
@@ -65,6 +64,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInsightsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetInsightRequest, Insight> getInsightMethodDescriptor =
       MethodDescriptor.<GetInsightRequest, Insight>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -72,6 +72,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetInsightRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Insight.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<MarkInsightAcceptedRequest, Insight>
       markInsightAcceptedMethodDescriptor =
           MethodDescriptor.<MarkInsightAcceptedRequest, Insight>newBuilder()
@@ -81,6 +82,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   ProtoUtils.marshaller(MarkInsightAcceptedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Insight.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListRecommendationsRequest, ListRecommendationsResponse>
       listRecommendationsMethodDescriptor =
           MethodDescriptor.<ListRecommendationsRequest, ListRecommendationsResponse>newBuilder()
@@ -91,6 +93,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRecommendationsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetRecommendationRequest, Recommendation>
       getRecommendationMethodDescriptor =
           MethodDescriptor.<GetRecommendationRequest, Recommendation>newBuilder()
@@ -100,6 +103,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   ProtoUtils.marshaller(GetRecommendationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<MarkRecommendationClaimedRequest, Recommendation>
       markRecommendationClaimedMethodDescriptor =
           MethodDescriptor.<MarkRecommendationClaimedRequest, Recommendation>newBuilder()
@@ -110,6 +114,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   ProtoUtils.marshaller(MarkRecommendationClaimedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<MarkRecommendationSucceededRequest, Recommendation>
       markRecommendationSucceededMethodDescriptor =
           MethodDescriptor.<MarkRecommendationSucceededRequest, Recommendation>newBuilder()
@@ -120,6 +125,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   ProtoUtils.marshaller(MarkRecommendationSucceededRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedMethodDescriptor =
           MethodDescriptor.<MarkRecommendationFailedRequest, Recommendation>newBuilder()
@@ -129,8 +135,6 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   ProtoUtils.marshaller(MarkRecommendationFailedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable;
   private final UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse>
@@ -149,6 +153,8 @@ public class GrpcRecommenderStub extends RecommenderStub {
   private final UnaryCallable<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcRecommenderStub create(RecommenderStubSettings settings)
@@ -187,6 +193,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListInsightsRequest, ListInsightsResponse> listInsightsTransportSettings =
         GrpcCallSettings.<ListInsightsRequest, ListInsightsResponse>newBuilder()
@@ -343,15 +350,20 @@ public class GrpcRecommenderStub extends RecommenderStub {
             settings.markRecommendationFailedSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse> listInsightsPagedCallable() {
-    return listInsightsPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable() {
     return listInsightsCallable;
+  }
+
+  public UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse> listInsightsPagedCallable() {
+    return listInsightsPagedCallable;
   }
 
   public UnaryCallable<GetInsightRequest, Insight> getInsightCallable() {
@@ -362,14 +374,14 @@ public class GrpcRecommenderStub extends RecommenderStub {
     return markInsightAcceptedCallable;
   }
 
-  public UnaryCallable<ListRecommendationsRequest, ListRecommendationsPagedResponse>
-      listRecommendationsPagedCallable() {
-    return listRecommendationsPagedCallable;
-  }
-
   public UnaryCallable<ListRecommendationsRequest, ListRecommendationsResponse>
       listRecommendationsCallable() {
     return listRecommendationsCallable;
+  }
+
+  public UnaryCallable<ListRecommendationsRequest, ListRecommendationsPagedResponse>
+      listRecommendationsPagedCallable() {
+    return listRecommendationsPagedCallable;
   }
 
   public UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable() {
