@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.16.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.16.0...v0.16.1) (2020-12-14)
+
+
+### Dependencies
+
+* rollback gRPC to 1.33.1 ([#234](https://www.github.com/googleapis/java-shared-dependencies/issues/234)) ([67cc384](https://www.github.com/googleapis/java-shared-dependencies/commit/67cc384bacab8592d5bbc92db2469affee473eb7))
+* update dependency com.google.auth:google-auth-library-bom to v0.22.1 ([#229](https://www.github.com/googleapis/java-shared-dependencies/issues/229)) ([1c13161](https://www.github.com/googleapis/java-shared-dependencies/commit/1c13161fa289cd5f3923f389fd5b14f3b7b4a84d))
+* update dependency com.google.auth:google-auth-library-bom to v0.22.2 ([#235](https://www.github.com/googleapis/java-shared-dependencies/issues/235)) ([67434eb](https://www.github.com/googleapis/java-shared-dependencies/commit/67434eb4bb0789abcabb3055155672b2c2e70125))
+* update iam.version to v1.0.4 ([#231](https://www.github.com/googleapis/java-shared-dependencies/issues/231)) ([5edf99e](https://www.github.com/googleapis/java-shared-dependencies/commit/5edf99e0149a1b70eb52b8921e9eb04fb84d9160))
+
 ## [0.16.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.15.0...v0.16.0) (2020-12-02)
 
 
