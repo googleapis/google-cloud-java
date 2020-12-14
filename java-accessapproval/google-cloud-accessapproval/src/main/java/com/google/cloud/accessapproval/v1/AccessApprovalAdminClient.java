@@ -366,7 +366,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * determined by the value of field_mask.
    *
    * @param settings The new AccessApprovalSettings.
-   * @param update_mask The update mask applies to the settings. Only the top level fields of
+   * @param updateMask The update mask applies to the settings. Only the top level fields of
    *     AccessApprovalSettings (notification_emails &amp; enrolled_services) are supported. For
    *     each field, if it is included, the currently stored value will be entirely overwritten with
    *     the value of the field passed in this request.

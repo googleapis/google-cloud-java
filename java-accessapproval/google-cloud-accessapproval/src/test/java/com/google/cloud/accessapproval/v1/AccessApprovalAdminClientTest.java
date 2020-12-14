@@ -132,7 +132,7 @@ public class AccessApprovalAdminClientTest {
     ApprovalRequest expectedResponse =
         ApprovalRequest.newBuilder()
             .setName("name3373707")
-            .setRequestedResourceName("requested_resource_name-1409378037")
+            .setRequestedResourceName("requestedResourceName-1218563513")
             .setRequestedResourceProperties(ResourceProperties.newBuilder().build())
             .setRequestedReason(AccessReason.newBuilder().build())
             .setRequestedLocations(AccessLocations.newBuilder().build())
@@ -176,7 +176,7 @@ public class AccessApprovalAdminClientTest {
     ApprovalRequest expectedResponse =
         ApprovalRequest.newBuilder()
             .setName("name3373707")
-            .setRequestedResourceName("requested_resource_name-1409378037")
+            .setRequestedResourceName("requestedResourceName-1218563513")
             .setRequestedResourceProperties(ResourceProperties.newBuilder().build())
             .setRequestedReason(AccessReason.newBuilder().build())
             .setRequestedLocations(AccessLocations.newBuilder().build())
@@ -230,7 +230,7 @@ public class AccessApprovalAdminClientTest {
     ApprovalRequest expectedResponse =
         ApprovalRequest.newBuilder()
             .setName("name3373707")
-            .setRequestedResourceName("requested_resource_name-1409378037")
+            .setRequestedResourceName("requestedResourceName-1218563513")
             .setRequestedResourceProperties(ResourceProperties.newBuilder().build())
             .setRequestedReason(AccessReason.newBuilder().build())
             .setRequestedLocations(AccessLocations.newBuilder().build())

@@ -170,11 +170,21 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
         AccessApprovalStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcAccessApprovalStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcAccessApprovalStub(AccessApprovalStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcAccessApprovalCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcAccessApprovalStub, using the given settings. This is protected
+   * so that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcAccessApprovalStub(
       AccessApprovalStubSettings settings,
       ClientContext clientContext,
