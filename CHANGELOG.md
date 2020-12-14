@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.7.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.7.0...v1.7.1) (2020-12-14)
+
+
+### Bug Fixes
+
+* a build break caused by breaking change. ([#729](https://www.github.com/googleapis/java-bigquerystorage/issues/729)) ([a1b1c8e](https://www.github.com/googleapis/java-bigquerystorage/commit/a1b1c8edce87a8d33faf1067f617e3f47c4afc45))
+* A test race in JsonStreamWriterTest  ([#722](https://www.github.com/googleapis/java-bigquerystorage/issues/722)) ([35fe606](https://www.github.com/googleapis/java-bigquerystorage/commit/35fe606e43a47dfe844666bf3e385f9c2e582977))
+* Add special type tests for Json writer and fix some type mapping issues ([#725](https://www.github.com/googleapis/java-bigquerystorage/issues/725)) ([ab6213c](https://www.github.com/googleapis/java-bigquerystorage/commit/ab6213c244162c74242d3aaf543bfcf9b2eb4405))
+* Temporally disable test/code where breaking change is used to help pushing out the breaking change in unreleased Beta ([#727](https://www.github.com/googleapis/java-bigquerystorage/issues/727)) ([38c95c2](https://www.github.com/googleapis/java-bigquerystorage/commit/38c95c23459eb9c4a7215b1a3cb5243165f79815))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.1 ([d70bc3e](https://www.github.com/googleapis/java-bigquerystorage/commit/d70bc3e211ec579129ba53679572b49187f6b6e5))
+
 ## [1.7.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.6.7...v1.7.0) (2020-12-09)
 
 
