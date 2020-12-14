@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.billing.budgets.v1.stub;
 
 import static com.google.cloud.billing.budgets.v1.BudgetServiceClient.ListBudgetsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,6 +33,7 @@ import com.google.cloud.billing.budgets.v1.ListBudgetsRequest;
 import com.google.cloud.billing.budgets.v1.ListBudgetsResponse;
 import com.google.cloud.billing.budgets.v1.UpdateBudgetRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Billing Budget API.
+ * gRPC stub implementation for the BudgetService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcBudgetServiceStub extends BudgetServiceStub {
-
   private static final MethodDescriptor<CreateBudgetRequest, Budget> createBudgetMethodDescriptor =
       MethodDescriptor.<CreateBudgetRequest, Budget>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -58,6 +57,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Budget.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateBudgetRequest, Budget> updateBudgetMethodDescriptor =
       MethodDescriptor.<UpdateBudgetRequest, Budget>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -65,6 +65,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Budget.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetBudgetRequest, Budget> getBudgetMethodDescriptor =
       MethodDescriptor.<GetBudgetRequest, Budget>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -72,6 +73,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Budget.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListBudgetsRequest, ListBudgetsResponse>
       listBudgetsMethodDescriptor =
           MethodDescriptor.<ListBudgetsRequest, ListBudgetsResponse>newBuilder()
@@ -81,6 +83,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBudgetsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteBudgetRequest, Empty> deleteBudgetMethodDescriptor =
       MethodDescriptor.<DeleteBudgetRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -88,8 +91,6 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateBudgetRequest, Budget> createBudgetCallable;
   private final UnaryCallable<UpdateBudgetRequest, Budget> updateBudgetCallable;
@@ -99,6 +100,8 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
       listBudgetsPagedCallable;
   private final UnaryCallable<DeleteBudgetRequest, Empty> deleteBudgetCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcBudgetServiceStub create(BudgetServiceStubSettings settings)
@@ -137,6 +140,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateBudgetRequest, Budget> createBudgetTransportSettings =
         GrpcCallSettings.<CreateBudgetRequest, Budget>newBuilder()
@@ -223,7 +227,12 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
         callableFactory.createUnaryCallable(
             deleteBudgetTransportSettings, settings.deleteBudgetSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateBudgetRequest, Budget> createBudgetCallable() {
@@ -238,12 +247,12 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
     return getBudgetCallable;
   }
 
-  public UnaryCallable<ListBudgetsRequest, ListBudgetsPagedResponse> listBudgetsPagedCallable() {
-    return listBudgetsPagedCallable;
-  }
-
   public UnaryCallable<ListBudgetsRequest, ListBudgetsResponse> listBudgetsCallable() {
     return listBudgetsCallable;
+  }
+
+  public UnaryCallable<ListBudgetsRequest, ListBudgetsPagedResponse> listBudgetsPagedCallable() {
+    return listBudgetsPagedCallable;
   }
 
   public UnaryCallable<DeleteBudgetRequest, Empty> deleteBudgetCallable() {

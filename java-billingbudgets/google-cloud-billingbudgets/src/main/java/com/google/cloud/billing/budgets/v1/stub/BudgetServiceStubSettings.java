@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.billing.budgets.v1.stub;
 
 import static com.google.cloud.billing.budgets.v1.BudgetServiceClient.ListBudgetsPagedResponse;
@@ -56,7 +57,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link BudgetServiceStub}.
  *
@@ -74,22 +75,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createBudget to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BudgetServiceStubSettings.Builder budgetServiceSettingsBuilder =
  *     BudgetServiceStubSettings.newBuilder();
  * budgetServiceSettingsBuilder
  *     .createBudgetSettings()
  *     .setRetrySettings(
- *         budgetServiceSettingsBuilder.createBudgetSettings().getRetrySettings().toBuilder()
+ *         budgetServiceSettingsBuilder
+ *             .createBudgetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BudgetServiceStubSettings budgetServiceSettings = budgetServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -104,6 +106,59 @@ public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSet
   private final PagedCallSettings<ListBudgetsRequest, ListBudgetsResponse, ListBudgetsPagedResponse>
       listBudgetsSettings;
   private final UnaryCallSettings<DeleteBudgetRequest, Empty> deleteBudgetSettings;
+
+  private static final PagedListDescriptor<ListBudgetsRequest, ListBudgetsResponse, Budget>
+      LIST_BUDGETS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBudgetsRequest, ListBudgetsResponse, Budget>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBudgetsRequest injectToken(ListBudgetsRequest payload, String token) {
+              return ListBudgetsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBudgetsRequest injectPageSize(ListBudgetsRequest payload, int pageSize) {
+              return ListBudgetsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBudgetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBudgetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Budget> extractResources(ListBudgetsResponse payload) {
+              return payload.getBudgetsList() == null
+                  ? ImmutableList.<Budget>of()
+                  : payload.getBudgetsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBudgetsRequest, ListBudgetsResponse, ListBudgetsPagedResponse>
+      LIST_BUDGETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBudgetsRequest, ListBudgetsResponse, ListBudgetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBudgetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBudgetsRequest, ListBudgetsResponse> callable,
+                ListBudgetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBudgetsResponse> futureResponse) {
+              PageContext<ListBudgetsRequest, ListBudgetsResponse, Budget> pageContext =
+                  PageContext.create(callable, LIST_BUDGETS_PAGE_STR_DESC, request, context);
+              return ListBudgetsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createBudget. */
   public UnaryCallSettings<CreateBudgetRequest, Budget> createBudgetSettings() {
@@ -137,10 +192,10 @@ public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSet
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcBudgetServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -207,63 +262,9 @@ public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSet
     deleteBudgetSettings = settingsBuilder.deleteBudgetSettings().build();
   }
 
-  private static final PagedListDescriptor<ListBudgetsRequest, ListBudgetsResponse, Budget>
-      LIST_BUDGETS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListBudgetsRequest, ListBudgetsResponse, Budget>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListBudgetsRequest injectToken(ListBudgetsRequest payload, String token) {
-              return ListBudgetsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListBudgetsRequest injectPageSize(ListBudgetsRequest payload, int pageSize) {
-              return ListBudgetsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListBudgetsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListBudgetsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Budget> extractResources(ListBudgetsResponse payload) {
-              return payload.getBudgetsList() != null
-                  ? payload.getBudgetsList()
-                  : ImmutableList.<Budget>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListBudgetsRequest, ListBudgetsResponse, ListBudgetsPagedResponse>
-      LIST_BUDGETS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListBudgetsRequest, ListBudgetsResponse, ListBudgetsPagedResponse>() {
-            @Override
-            public ApiFuture<ListBudgetsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListBudgetsRequest, ListBudgetsResponse> callable,
-                ListBudgetsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListBudgetsResponse> futureResponse) {
-              PageContext<ListBudgetsRequest, ListBudgetsResponse, Budget> pageContext =
-                  PageContext.create(callable, LIST_BUDGETS_PAGE_STR_DESC, request, context);
-              return ListBudgetsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for BudgetServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<BudgetServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateBudgetRequest, Budget> createBudgetSettings;
     private final UnaryCallSettings.Builder<UpdateBudgetRequest, Budget> updateBudgetSettings;
     private final UnaryCallSettings.Builder<GetBudgetRequest, Budget> getBudgetSettings;
@@ -271,7 +272,6 @@ public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSet
             ListBudgetsRequest, ListBudgetsResponse, ListBudgetsPagedResponse>
         listBudgetsSettings;
     private final UnaryCallSettings.Builder<DeleteBudgetRequest, Empty> deleteBudgetSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -279,13 +279,12 @@ public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -294,6 +293,14 @@ public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSet
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -305,34 +312,20 @@ public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSet
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createBudgetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateBudgetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getBudgetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listBudgetsSettings = PagedCallSettings.newBuilder(LIST_BUDGETS_PAGE_STR_FACT);
-
       deleteBudgetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -342,25 +335,43 @@ public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSet
               getBudgetSettings,
               listBudgetsSettings,
               deleteBudgetSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(BudgetServiceStubSettings settings) {
+      super(settings);
+
+      createBudgetSettings = settings.createBudgetSettings.toBuilder();
+      updateBudgetSettings = settings.updateBudgetSettings.toBuilder();
+      getBudgetSettings = settings.getBudgetSettings.toBuilder();
+      listBudgetsSettings = settings.listBudgetsSettings.toBuilder();
+      deleteBudgetSettings = settings.deleteBudgetSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createBudgetSettings,
+              updateBudgetSettings,
+              getBudgetSettings,
+              listBudgetsSettings,
+              deleteBudgetSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .createBudgetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
           .updateBudgetSettings()
@@ -385,25 +396,7 @@ public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSet
       return builder;
     }
 
-    protected Builder(BudgetServiceStubSettings settings) {
-      super(settings);
-
-      createBudgetSettings = settings.createBudgetSettings.toBuilder();
-      updateBudgetSettings = settings.updateBudgetSettings.toBuilder();
-      getBudgetSettings = settings.getBudgetSettings.toBuilder();
-      listBudgetsSettings = settings.listBudgetsSettings.toBuilder();
-      deleteBudgetSettings = settings.deleteBudgetSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createBudgetSettings,
-              updateBudgetSettings,
-              getBudgetSettings,
-              listBudgetsSettings,
-              deleteBudgetSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

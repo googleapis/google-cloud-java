@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,17 +23,25 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class BillingAccountName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate BILLING_ACCOUNT =
       PathTemplate.createWithoutUrlEncoding("billingAccounts/{billing_account}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String billingAccount;
+
+  @Deprecated
+  protected BillingAccountName() {
+    billingAccount = null;
+  }
+
+  private BillingAccountName(Builder builder) {
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+  }
 
   public String getBillingAccount() {
     return billingAccount;
@@ -45,10 +53,6 @@ public class BillingAccountName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private BillingAccountName(Builder builder) {
-    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
   }
 
   public static BillingAccountName of(String billingAccount) {
@@ -64,7 +68,7 @@ public class BillingAccountName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        BILLING_ACCOUNT.validatedMatch(
             formattedString, "BillingAccountName.parse: formattedString not in valid format");
     return of(matchMap.get("billing_account"));
   }
@@ -78,7 +82,7 @@ public class BillingAccountName implements ResourceName {
   }
 
   public static List<String> toStringList(List<BillingAccountName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (BillingAccountName value : values) {
       if (value == null) {
         list.add("");
@@ -90,15 +94,18 @@ public class BillingAccountName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return BILLING_ACCOUNT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("billingAccount", billingAccount);
+          if (billingAccount != null) {
+            fieldMapBuilder.put("billing_account", billingAccount);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -112,13 +119,34 @@ public class BillingAccountName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("billing_account", billingAccount);
+    return BILLING_ACCOUNT.instantiate("billing_account", billingAccount);
   }
 
-  /** Builder for BillingAccountName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      BillingAccountName that = ((BillingAccountName) o);
+      return Objects.equals(this.billingAccount, that.billingAccount);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(billingAccount);
+    return h;
+  }
+
+  /** Builder for billingAccounts/{billing_account}. */
+  public static class Builder {
     private String billingAccount;
+
+    protected Builder() {}
 
     public String getBillingAccount() {
       return billingAccount;
@@ -129,8 +157,6 @@ public class BillingAccountName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(BillingAccountName billingAccountName) {
       billingAccount = billingAccountName.billingAccount;
     }
@@ -138,25 +164,5 @@ public class BillingAccountName implements ResourceName {
     public BillingAccountName build() {
       return new BillingAccountName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof BillingAccountName) {
-      BillingAccountName that = (BillingAccountName) o;
-      return (this.billingAccount.equals(that.billingAccount));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= billingAccount.hashCode();
-    return h;
   }
 }
