@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class ScanRunName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_SCAN_CONFIG_SCAN_RUN =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/scanConfigs/{scan_config}/scanRuns/{scan_run}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String scanConfig;
   private final String scanRun;
+
+  @Deprecated
+  protected ScanRunName() {
+    project = null;
+    scanConfig = null;
+    scanRun = null;
+  }
+
+  private ScanRunName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    scanConfig = Preconditions.checkNotNull(builder.getScanConfig());
+    scanRun = Preconditions.checkNotNull(builder.getScanRun());
+  }
 
   public String getProject() {
     return project;
@@ -58,12 +70,6 @@ public class ScanRunName implements ResourceName {
     return new Builder(this);
   }
 
-  private ScanRunName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    scanConfig = Preconditions.checkNotNull(builder.getScanConfig());
-    scanRun = Preconditions.checkNotNull(builder.getScanRun());
-  }
-
   public static ScanRunName of(String project, String scanConfig, String scanRun) {
     return newBuilder().setProject(project).setScanConfig(scanConfig).setScanRun(scanRun).build();
   }
@@ -82,7 +88,7 @@ public class ScanRunName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_SCAN_CONFIG_SCAN_RUN.validatedMatch(
             formattedString, "ScanRunName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("scan_config"), matchMap.get("scan_run"));
   }
@@ -96,7 +102,7 @@ public class ScanRunName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ScanRunName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ScanRunName value : values) {
       if (value == null) {
         list.add("");
@@ -108,17 +114,24 @@ public class ScanRunName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_SCAN_CONFIG_SCAN_RUN.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("scanConfig", scanConfig);
-          fieldMapBuilder.put("scanRun", scanRun);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (scanConfig != null) {
+            fieldMapBuilder.put("scan_config", scanConfig);
+          }
+          if (scanRun != null) {
+            fieldMapBuilder.put("scan_run", scanRun);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -132,16 +145,43 @@ public class ScanRunName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_SCAN_CONFIG_SCAN_RUN.instantiate(
         "project", project, "scan_config", scanConfig, "scan_run", scanRun);
   }
 
-  /** Builder for ScanRunName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ScanRunName that = ((ScanRunName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.scanConfig, that.scanConfig)
+          && Objects.equals(this.scanRun, that.scanRun);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(scanConfig);
+    h *= 1000003;
+    h ^= Objects.hashCode(scanRun);
+    return h;
+  }
+
+  /** Builder for projects/{project}/scanConfigs/{scan_config}/scanRuns/{scan_run}. */
+  public static class Builder {
     private String project;
     private String scanConfig;
     private String scanRun;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -170,8 +210,6 @@ public class ScanRunName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(ScanRunName scanRunName) {
       project = scanRunName.project;
       scanConfig = scanRunName.scanConfig;
@@ -181,31 +219,5 @@ public class ScanRunName implements ResourceName {
     public ScanRunName build() {
       return new ScanRunName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof ScanRunName) {
-      ScanRunName that = (ScanRunName) o;
-      return (this.project.equals(that.project))
-          && (this.scanConfig.equals(that.scanConfig))
-          && (this.scanRun.equals(that.scanRun));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= scanConfig.hashCode();
-    h *= 1000003;
-    h ^= scanRun.hashCode();
-    return h;
   }
 }

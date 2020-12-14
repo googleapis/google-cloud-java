@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.websecurityscanner.v1alpha.stub;
 
 import static com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClient.ListCrawledUrlsPagedResponse;
@@ -74,7 +75,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link WebSecurityScannerStub}.
  *
@@ -92,22 +93,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createScanConfig to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * WebSecurityScannerStubSettings.Builder webSecurityScannerSettingsBuilder =
  *     WebSecurityScannerStubSettings.newBuilder();
  * webSecurityScannerSettingsBuilder
  *     .createScanConfigSettings()
  *     .setRetrySettings(
- *         webSecurityScannerSettingsBuilder.createScanConfigSettings().getRetrySettings().toBuilder()
+ *         webSecurityScannerSettingsBuilder
+ *             .createScanConfigSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * WebSecurityScannerStubSettings webSecurityScannerSettings = webSecurityScannerSettingsBuilder.build();
- * </code>
- * </pre>
+ * WebSecurityScannerStubSettings webSecurityScannerSettings =
+ *     webSecurityScannerSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScannerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -135,6 +138,224 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
       listFindingsSettings;
   private final UnaryCallSettings<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
       listFindingTypeStatsSettings;
+
+  private static final PagedListDescriptor<
+          ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig>
+      LIST_SCAN_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListScanConfigsRequest injectToken(
+                ListScanConfigsRequest payload, String token) {
+              return ListScanConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListScanConfigsRequest injectPageSize(
+                ListScanConfigsRequest payload, int pageSize) {
+              return ListScanConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListScanConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListScanConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ScanConfig> extractResources(ListScanConfigsResponse payload) {
+              return payload.getScanConfigsList() == null
+                  ? ImmutableList.<ScanConfig>of()
+                  : payload.getScanConfigsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListScanRunsRequest, ListScanRunsResponse, ScanRun>
+      LIST_SCAN_RUNS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListScanRunsRequest, ListScanRunsResponse, ScanRun>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListScanRunsRequest injectToken(ListScanRunsRequest payload, String token) {
+              return ListScanRunsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListScanRunsRequest injectPageSize(ListScanRunsRequest payload, int pageSize) {
+              return ListScanRunsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListScanRunsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListScanRunsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ScanRun> extractResources(ListScanRunsResponse payload) {
+              return payload.getScanRunsList() == null
+                  ? ImmutableList.<ScanRun>of()
+                  : payload.getScanRunsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl>
+      LIST_CRAWLED_URLS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCrawledUrlsRequest injectToken(
+                ListCrawledUrlsRequest payload, String token) {
+              return ListCrawledUrlsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCrawledUrlsRequest injectPageSize(
+                ListCrawledUrlsRequest payload, int pageSize) {
+              return ListCrawledUrlsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCrawledUrlsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCrawledUrlsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CrawledUrl> extractResources(ListCrawledUrlsResponse payload) {
+              return payload.getCrawledUrlsList() == null
+                  ? ImmutableList.<CrawledUrl>of()
+                  : payload.getCrawledUrlsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListFindingsRequest, ListFindingsResponse, Finding>
+      LIST_FINDINGS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListFindingsRequest, ListFindingsResponse, Finding>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListFindingsRequest injectToken(ListFindingsRequest payload, String token) {
+              return ListFindingsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListFindingsRequest injectPageSize(ListFindingsRequest payload, int pageSize) {
+              return ListFindingsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListFindingsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListFindingsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Finding> extractResources(ListFindingsResponse payload) {
+              return payload.getFindingsList() == null
+                  ? ImmutableList.<Finding>of()
+                  : payload.getFindingsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListScanConfigsRequest, ListScanConfigsResponse, ListScanConfigsPagedResponse>
+      LIST_SCAN_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListScanConfigsRequest, ListScanConfigsResponse, ListScanConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListScanConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse> callable,
+                ListScanConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListScanConfigsResponse> futureResponse) {
+              PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> pageContext =
+                  PageContext.create(callable, LIST_SCAN_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListScanConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListScanRunsRequest, ListScanRunsResponse, ListScanRunsPagedResponse>
+      LIST_SCAN_RUNS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListScanRunsRequest, ListScanRunsResponse, ListScanRunsPagedResponse>() {
+            @Override
+            public ApiFuture<ListScanRunsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListScanRunsRequest, ListScanRunsResponse> callable,
+                ListScanRunsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListScanRunsResponse> futureResponse) {
+              PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> pageContext =
+                  PageContext.create(callable, LIST_SCAN_RUNS_PAGE_STR_DESC, request, context);
+              return ListScanRunsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCrawledUrlsRequest, ListCrawledUrlsResponse, ListCrawledUrlsPagedResponse>
+      LIST_CRAWLED_URLS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCrawledUrlsRequest, ListCrawledUrlsResponse, ListCrawledUrlsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCrawledUrlsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCrawledUrlsRequest, ListCrawledUrlsResponse> callable,
+                ListCrawledUrlsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCrawledUrlsResponse> futureResponse) {
+              PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> pageContext =
+                  PageContext.create(callable, LIST_CRAWLED_URLS_PAGE_STR_DESC, request, context);
+              return ListCrawledUrlsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
+      LIST_FINDINGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>() {
+            @Override
+            public ApiFuture<ListFindingsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListFindingsRequest, ListFindingsResponse> callable,
+                ListFindingsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListFindingsResponse> futureResponse) {
+              PageContext<ListFindingsRequest, ListFindingsResponse, Finding> pageContext =
+                  PageContext.create(callable, LIST_FINDINGS_PAGE_STR_DESC, request, context);
+              return ListFindingsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createScanConfig. */
   public UnaryCallSettings<CreateScanConfigRequest, ScanConfig> createScanConfigSettings() {
@@ -214,10 +435,10 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcWebSecurityScannerStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -292,229 +513,10 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
     listFindingTypeStatsSettings = settingsBuilder.listFindingTypeStatsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig>
-      LIST_SCAN_CONFIGS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListScanConfigsRequest injectToken(
-                ListScanConfigsRequest payload, String token) {
-              return ListScanConfigsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListScanConfigsRequest injectPageSize(
-                ListScanConfigsRequest payload, int pageSize) {
-              return ListScanConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListScanConfigsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListScanConfigsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ScanConfig> extractResources(ListScanConfigsResponse payload) {
-              return payload.getScanConfigsList() != null
-                  ? payload.getScanConfigsList()
-                  : ImmutableList.<ScanConfig>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListScanRunsRequest, ListScanRunsResponse, ScanRun>
-      LIST_SCAN_RUNS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListScanRunsRequest, ListScanRunsResponse, ScanRun>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListScanRunsRequest injectToken(ListScanRunsRequest payload, String token) {
-              return ListScanRunsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListScanRunsRequest injectPageSize(ListScanRunsRequest payload, int pageSize) {
-              return ListScanRunsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListScanRunsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListScanRunsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ScanRun> extractResources(ListScanRunsResponse payload) {
-              return payload.getScanRunsList() != null
-                  ? payload.getScanRunsList()
-                  : ImmutableList.<ScanRun>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl>
-      LIST_CRAWLED_URLS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListCrawledUrlsRequest injectToken(
-                ListCrawledUrlsRequest payload, String token) {
-              return ListCrawledUrlsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListCrawledUrlsRequest injectPageSize(
-                ListCrawledUrlsRequest payload, int pageSize) {
-              return ListCrawledUrlsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListCrawledUrlsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListCrawledUrlsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<CrawledUrl> extractResources(ListCrawledUrlsResponse payload) {
-              return payload.getCrawledUrlsList() != null
-                  ? payload.getCrawledUrlsList()
-                  : ImmutableList.<CrawledUrl>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListFindingsRequest, ListFindingsResponse, Finding>
-      LIST_FINDINGS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListFindingsRequest, ListFindingsResponse, Finding>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListFindingsRequest injectToken(ListFindingsRequest payload, String token) {
-              return ListFindingsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListFindingsRequest injectPageSize(ListFindingsRequest payload, int pageSize) {
-              return ListFindingsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListFindingsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListFindingsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Finding> extractResources(ListFindingsResponse payload) {
-              return payload.getFindingsList() != null
-                  ? payload.getFindingsList()
-                  : ImmutableList.<Finding>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListScanConfigsRequest, ListScanConfigsResponse, ListScanConfigsPagedResponse>
-      LIST_SCAN_CONFIGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListScanConfigsRequest, ListScanConfigsResponse, ListScanConfigsPagedResponse>() {
-            @Override
-            public ApiFuture<ListScanConfigsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse> callable,
-                ListScanConfigsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListScanConfigsResponse> futureResponse) {
-              PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> pageContext =
-                  PageContext.create(callable, LIST_SCAN_CONFIGS_PAGE_STR_DESC, request, context);
-              return ListScanConfigsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListScanRunsRequest, ListScanRunsResponse, ListScanRunsPagedResponse>
-      LIST_SCAN_RUNS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListScanRunsRequest, ListScanRunsResponse, ListScanRunsPagedResponse>() {
-            @Override
-            public ApiFuture<ListScanRunsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListScanRunsRequest, ListScanRunsResponse> callable,
-                ListScanRunsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListScanRunsResponse> futureResponse) {
-              PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> pageContext =
-                  PageContext.create(callable, LIST_SCAN_RUNS_PAGE_STR_DESC, request, context);
-              return ListScanRunsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListCrawledUrlsRequest, ListCrawledUrlsResponse, ListCrawledUrlsPagedResponse>
-      LIST_CRAWLED_URLS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListCrawledUrlsRequest, ListCrawledUrlsResponse, ListCrawledUrlsPagedResponse>() {
-            @Override
-            public ApiFuture<ListCrawledUrlsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListCrawledUrlsRequest, ListCrawledUrlsResponse> callable,
-                ListCrawledUrlsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListCrawledUrlsResponse> futureResponse) {
-              PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> pageContext =
-                  PageContext.create(callable, LIST_CRAWLED_URLS_PAGE_STR_DESC, request, context);
-              return ListCrawledUrlsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
-      LIST_FINDINGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>() {
-            @Override
-            public ApiFuture<ListFindingsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListFindingsRequest, ListFindingsResponse> callable,
-                ListFindingsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListFindingsResponse> futureResponse) {
-              PageContext<ListFindingsRequest, ListFindingsResponse, Finding> pageContext =
-                  PageContext.create(callable, LIST_FINDINGS_PAGE_STR_DESC, request, context);
-              return ListFindingsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for WebSecurityScannerStubSettings. */
   public static class Builder
       extends StubSettings.Builder<WebSecurityScannerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateScanConfigRequest, ScanConfig>
         createScanConfigSettings;
     private final UnaryCallSettings.Builder<DeleteScanConfigRequest, Empty>
@@ -541,7 +543,6 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
     private final UnaryCallSettings.Builder<
             ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
         listFindingTypeStatsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -549,13 +550,12 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -564,6 +564,14 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -575,50 +583,28 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createScanConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteScanConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getScanConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listScanConfigsSettings = PagedCallSettings.newBuilder(LIST_SCAN_CONFIGS_PAGE_STR_FACT);
-
       updateScanConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       startScanRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getScanRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listScanRunsSettings = PagedCallSettings.newBuilder(LIST_SCAN_RUNS_PAGE_STR_FACT);
-
       stopScanRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listCrawledUrlsSettings = PagedCallSettings.newBuilder(LIST_CRAWLED_URLS_PAGE_STR_FACT);
-
       getFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listFindingsSettings = PagedCallSettings.newBuilder(LIST_FINDINGS_PAGE_STR_FACT);
-
       listFindingTypeStatsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -636,87 +622,7 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
               getFindingSettings,
               listFindingsSettings,
               listFindingTypeStatsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createScanConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteScanConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getScanConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listScanConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateScanConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .startScanRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getScanRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listScanRunsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .stopScanRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listCrawledUrlsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getFindingSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listFindingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listFindingTypeStatsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(WebSecurityScannerStubSettings settings) {
@@ -753,7 +659,87 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
               listFindingTypeStatsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createScanConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteScanConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getScanConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listScanConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateScanConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .startScanRunSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getScanRunSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listScanRunsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .stopScanRunSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listCrawledUrlsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getFindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listFindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listFindingTypeStatsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

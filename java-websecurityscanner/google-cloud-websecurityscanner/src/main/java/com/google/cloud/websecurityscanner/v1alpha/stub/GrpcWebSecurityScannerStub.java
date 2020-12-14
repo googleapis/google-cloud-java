@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.websecurityscanner.v1alpha.stub;
 
 import static com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClient.ListCrawledUrlsPagedResponse;
@@ -20,7 +21,6 @@ import static com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClie
 import static com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClient.ListScanConfigsPagedResponse;
 import static com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClient.ListScanRunsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -50,6 +50,7 @@ import com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest;
 import com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest;
 import com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -58,16 +59,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Web Security Scanner API.
+ * gRPC stub implementation for the WebSecurityScanner service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
-
   private static final MethodDescriptor<CreateScanConfigRequest, ScanConfig>
       createScanConfigMethodDescriptor =
           MethodDescriptor.<CreateScanConfigRequest, ScanConfig>newBuilder()
@@ -78,6 +77,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   ProtoUtils.marshaller(CreateScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteScanConfigRequest, Empty>
       deleteScanConfigMethodDescriptor =
           MethodDescriptor.<DeleteScanConfigRequest, Empty>newBuilder()
@@ -88,6 +88,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   ProtoUtils.marshaller(DeleteScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetScanConfigRequest, ScanConfig>
       getScanConfigMethodDescriptor =
           MethodDescriptor.<GetScanConfigRequest, ScanConfig>newBuilder()
@@ -98,6 +99,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   ProtoUtils.marshaller(GetScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListScanConfigsRequest, ListScanConfigsResponse>
       listScanConfigsMethodDescriptor =
           MethodDescriptor.<ListScanConfigsRequest, ListScanConfigsResponse>newBuilder()
@@ -109,6 +111,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListScanConfigsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateScanConfigRequest, ScanConfig>
       updateScanConfigMethodDescriptor =
           MethodDescriptor.<UpdateScanConfigRequest, ScanConfig>newBuilder()
@@ -119,6 +122,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
                   ProtoUtils.marshaller(UpdateScanConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ScanConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<StartScanRunRequest, ScanRun> startScanRunMethodDescriptor =
       MethodDescriptor.<StartScanRunRequest, ScanRun>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -127,6 +131,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(StartScanRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ScanRun.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetScanRunRequest, ScanRun> getScanRunMethodDescriptor =
       MethodDescriptor.<GetScanRunRequest, ScanRun>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -135,6 +140,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetScanRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ScanRun.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListScanRunsRequest, ListScanRunsResponse>
       listScanRunsMethodDescriptor =
           MethodDescriptor.<ListScanRunsRequest, ListScanRunsResponse>newBuilder()
@@ -145,6 +151,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListScanRunsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<StopScanRunRequest, ScanRun> stopScanRunMethodDescriptor =
       MethodDescriptor.<StopScanRunRequest, ScanRun>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -153,6 +160,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(StopScanRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ScanRun.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListCrawledUrlsRequest, ListCrawledUrlsResponse>
       listCrawledUrlsMethodDescriptor =
           MethodDescriptor.<ListCrawledUrlsRequest, ListCrawledUrlsResponse>newBuilder()
@@ -164,6 +172,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCrawledUrlsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetFindingRequest, Finding> getFindingMethodDescriptor =
       MethodDescriptor.<GetFindingRequest, Finding>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -172,6 +181,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetFindingRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListFindingsRequest, ListFindingsResponse>
       listFindingsMethodDescriptor =
           MethodDescriptor.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -182,6 +192,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
       listFindingTypeStatsMethodDescriptor =
           MethodDescriptor.<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>newBuilder()
@@ -193,8 +204,6 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingTypeStatsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable;
   private final UnaryCallable<DeleteScanConfigRequest, Empty> deleteScanConfigCallable;
@@ -221,6 +230,8 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
   private final UnaryCallable<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
       listFindingTypeStatsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcWebSecurityScannerStub create(WebSecurityScannerStubSettings settings)
@@ -261,6 +272,7 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateScanConfigRequest, ScanConfig> createScanConfigTransportSettings =
         GrpcCallSettings.<CreateScanConfigRequest, ScanConfig>newBuilder()
@@ -490,7 +502,12 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
             settings.listFindingTypeStatsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable() {
@@ -505,13 +522,13 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
     return getScanConfigCallable;
   }
 
+  public UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse> listScanConfigsCallable() {
+    return listScanConfigsCallable;
+  }
+
   public UnaryCallable<ListScanConfigsRequest, ListScanConfigsPagedResponse>
       listScanConfigsPagedCallable() {
     return listScanConfigsPagedCallable;
-  }
-
-  public UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse> listScanConfigsCallable() {
-    return listScanConfigsCallable;
   }
 
   public UnaryCallable<UpdateScanConfigRequest, ScanConfig> updateScanConfigCallable() {
@@ -526,16 +543,20 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
     return getScanRunCallable;
   }
 
-  public UnaryCallable<ListScanRunsRequest, ListScanRunsPagedResponse> listScanRunsPagedCallable() {
-    return listScanRunsPagedCallable;
-  }
-
   public UnaryCallable<ListScanRunsRequest, ListScanRunsResponse> listScanRunsCallable() {
     return listScanRunsCallable;
   }
 
+  public UnaryCallable<ListScanRunsRequest, ListScanRunsPagedResponse> listScanRunsPagedCallable() {
+    return listScanRunsPagedCallable;
+  }
+
   public UnaryCallable<StopScanRunRequest, ScanRun> stopScanRunCallable() {
     return stopScanRunCallable;
+  }
+
+  public UnaryCallable<ListCrawledUrlsRequest, ListCrawledUrlsResponse> listCrawledUrlsCallable() {
+    return listCrawledUrlsCallable;
   }
 
   public UnaryCallable<ListCrawledUrlsRequest, ListCrawledUrlsPagedResponse>
@@ -543,20 +564,16 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
     return listCrawledUrlsPagedCallable;
   }
 
-  public UnaryCallable<ListCrawledUrlsRequest, ListCrawledUrlsResponse> listCrawledUrlsCallable() {
-    return listCrawledUrlsCallable;
-  }
-
   public UnaryCallable<GetFindingRequest, Finding> getFindingCallable() {
     return getFindingCallable;
   }
 
-  public UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse> listFindingsPagedCallable() {
-    return listFindingsPagedCallable;
-  }
-
   public UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return listFindingsCallable;
+  }
+
+  public UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse> listFindingsPagedCallable() {
+    return listFindingsPagedCallable;
   }
 
   public UnaryCallable<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>

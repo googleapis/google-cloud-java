@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.websecurityscanner.v1;
 
 import com.google.api.core.ApiFunction;
@@ -34,7 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Web Security Scanner Service identifies security vulnerabilities in web
  * applications hosted on Google Cloud. It crawls your application, and attempts to exercise as many
@@ -43,16 +44,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
- *   CreateScanConfigRequest request = CreateScanConfigRequest.newBuilder().build();
- *   ScanConfig response = webSecurityScannerClient.createScanConfig(request);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the webSecurityScannerClient object to clean up resources
+ * <p>Note: close() needs to be called on the WebSecurityScannerClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -81,30 +73,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * WebSecurityScannerSettings webSecurityScannerSettings =
  *     WebSecurityScannerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * WebSecurityScannerClient webSecurityScannerClient =
  *     WebSecurityScannerClient.create(webSecurityScannerSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * WebSecurityScannerSettings webSecurityScannerSettings =
  *     WebSecurityScannerSettings.newBuilder().setEndpoint(myEndpoint).build();
  * WebSecurityScannerClient webSecurityScannerClient =
  *     WebSecurityScannerClient.create(webSecurityScannerSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class WebSecurityScannerClient implements BackgroundResource {
   private final WebSecurityScannerSettings settings;
   private final WebSecurityScannerStub stub;
@@ -125,7 +115,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
   /**
    * Constructs an instance of WebSecurityScannerClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use WebSecurityScannerSettings}.
+   * is for advanced usage - prefer using create(WebSecurityScannerSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final WebSecurityScannerClient create(WebSecurityScannerStub stub) {
@@ -157,18 +147,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new ScanConfig.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   CreateScanConfigRequest request = CreateScanConfigRequest.newBuilder().build();
-   *   ScanConfig response = webSecurityScannerClient.createScanConfig(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -177,37 +158,19 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return createScanConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new ScanConfig.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   CreateScanConfigRequest request = CreateScanConfigRequest.newBuilder().build();
-   *   ApiFuture&lt;ScanConfig&gt; future = webSecurityScannerClient.createScanConfigCallable().futureCall(request);
-   *   // Do something
-   *   ScanConfig response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable() {
     return stub.createScanConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an existing ScanConfig and its child resources.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder().build();
-   *   webSecurityScannerClient.deleteScanConfig(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -216,37 +179,19 @@ public class WebSecurityScannerClient implements BackgroundResource {
     deleteScanConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an existing ScanConfig and its child resources.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder().build();
-   *   ApiFuture&lt;Void&gt; future = webSecurityScannerClient.deleteScanConfigCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteScanConfigRequest, Empty> deleteScanConfigCallable() {
     return stub.deleteScanConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ScanConfig.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   GetScanConfigRequest request = GetScanConfigRequest.newBuilder().build();
-   *   ScanConfig response = webSecurityScannerClient.getScanConfig(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -255,39 +200,19 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return getScanConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ScanConfig.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   GetScanConfigRequest request = GetScanConfigRequest.newBuilder().build();
-   *   ApiFuture&lt;ScanConfig&gt; future = webSecurityScannerClient.getScanConfigCallable().futureCall(request);
-   *   // Do something
-   *   ScanConfig response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetScanConfigRequest, ScanConfig> getScanConfigCallable() {
     return stub.getScanConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ScanConfigs under a given project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListScanConfigsRequest request = ListScanConfigsRequest.newBuilder().build();
-   *   for (ScanConfig element : webSecurityScannerClient.listScanConfigs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -296,69 +221,31 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return listScanConfigsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ScanConfigs under a given project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListScanConfigsRequest request = ListScanConfigsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListScanConfigsPagedResponse&gt; future = webSecurityScannerClient.listScanConfigsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ScanConfig element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListScanConfigsRequest, ListScanConfigsPagedResponse>
       listScanConfigsPagedCallable() {
     return stub.listScanConfigsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ScanConfigs under a given project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListScanConfigsRequest request = ListScanConfigsRequest.newBuilder().build();
-   *   while (true) {
-   *     ListScanConfigsResponse response = webSecurityScannerClient.listScanConfigsCallable().call(request);
-   *     for (ScanConfig element : response.getScanConfigsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse>
       listScanConfigsCallable() {
     return stub.listScanConfigsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a ScanConfig. This method support partial update of a ScanConfig.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   UpdateScanConfigRequest request = UpdateScanConfigRequest.newBuilder().build();
-   *   ScanConfig response = webSecurityScannerClient.updateScanConfig(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -367,37 +254,19 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return updateScanConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a ScanConfig. This method support partial update of a ScanConfig.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   UpdateScanConfigRequest request = UpdateScanConfigRequest.newBuilder().build();
-   *   ApiFuture&lt;ScanConfig&gt; future = webSecurityScannerClient.updateScanConfigCallable().futureCall(request);
-   *   // Do something
-   *   ScanConfig response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateScanConfigRequest, ScanConfig> updateScanConfigCallable() {
     return stub.updateScanConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Start a ScanRun according to the given ScanConfig.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   StartScanRunRequest request = StartScanRunRequest.newBuilder().build();
-   *   ScanRun response = webSecurityScannerClient.startScanRun(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -406,37 +275,19 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return startScanRunCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Start a ScanRun according to the given ScanConfig.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   StartScanRunRequest request = StartScanRunRequest.newBuilder().build();
-   *   ApiFuture&lt;ScanRun&gt; future = webSecurityScannerClient.startScanRunCallable().futureCall(request);
-   *   // Do something
-   *   ScanRun response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<StartScanRunRequest, ScanRun> startScanRunCallable() {
     return stub.startScanRunCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ScanRun.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   GetScanRunRequest request = GetScanRunRequest.newBuilder().build();
-   *   ScanRun response = webSecurityScannerClient.getScanRun(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -445,39 +296,19 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return getScanRunCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ScanRun.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   GetScanRunRequest request = GetScanRunRequest.newBuilder().build();
-   *   ApiFuture&lt;ScanRun&gt; future = webSecurityScannerClient.getScanRunCallable().futureCall(request);
-   *   // Do something
-   *   ScanRun response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetScanRunRequest, ScanRun> getScanRunCallable() {
     return stub.getScanRunCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ScanRuns under a given ScanConfig, in descending order of ScanRun stop time.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListScanRunsRequest request = ListScanRunsRequest.newBuilder().build();
-   *   for (ScanRun element : webSecurityScannerClient.listScanRuns(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -486,68 +317,30 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return listScanRunsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ScanRuns under a given ScanConfig, in descending order of ScanRun stop time.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListScanRunsRequest request = ListScanRunsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListScanRunsPagedResponse&gt; future = webSecurityScannerClient.listScanRunsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ScanRun element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListScanRunsRequest, ListScanRunsPagedResponse>
       listScanRunsPagedCallable() {
     return stub.listScanRunsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ScanRuns under a given ScanConfig, in descending order of ScanRun stop time.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListScanRunsRequest request = ListScanRunsRequest.newBuilder().build();
-   *   while (true) {
-   *     ListScanRunsResponse response = webSecurityScannerClient.listScanRunsCallable().call(request);
-   *     for (ScanRun element : response.getScanRunsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListScanRunsRequest, ListScanRunsResponse> listScanRunsCallable() {
     return stub.listScanRunsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Stops a ScanRun. The stopped ScanRun is returned.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   StopScanRunRequest request = StopScanRunRequest.newBuilder().build();
-   *   ScanRun response = webSecurityScannerClient.stopScanRun(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -556,39 +349,19 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return stopScanRunCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Stops a ScanRun. The stopped ScanRun is returned.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   StopScanRunRequest request = StopScanRunRequest.newBuilder().build();
-   *   ApiFuture&lt;ScanRun&gt; future = webSecurityScannerClient.stopScanRunCallable().futureCall(request);
-   *   // Do something
-   *   ScanRun response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<StopScanRunRequest, ScanRun> stopScanRunCallable() {
     return stub.stopScanRunCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List CrawledUrls under a given ScanRun.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListCrawledUrlsRequest request = ListCrawledUrlsRequest.newBuilder().build();
-   *   for (CrawledUrl element : webSecurityScannerClient.listCrawledUrls(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -597,69 +370,31 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return listCrawledUrlsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List CrawledUrls under a given ScanRun.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListCrawledUrlsRequest request = ListCrawledUrlsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListCrawledUrlsPagedResponse&gt; future = webSecurityScannerClient.listCrawledUrlsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (CrawledUrl element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListCrawledUrlsRequest, ListCrawledUrlsPagedResponse>
       listCrawledUrlsPagedCallable() {
     return stub.listCrawledUrlsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List CrawledUrls under a given ScanRun.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListCrawledUrlsRequest request = ListCrawledUrlsRequest.newBuilder().build();
-   *   while (true) {
-   *     ListCrawledUrlsResponse response = webSecurityScannerClient.listCrawledUrlsCallable().call(request);
-   *     for (CrawledUrl element : response.getCrawledUrlsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListCrawledUrlsRequest, ListCrawledUrlsResponse>
       listCrawledUrlsCallable() {
     return stub.listCrawledUrlsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Finding.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   GetFindingRequest request = GetFindingRequest.newBuilder().build();
-   *   Finding response = webSecurityScannerClient.getFinding(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -668,39 +403,19 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return getFindingCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Finding.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   GetFindingRequest request = GetFindingRequest.newBuilder().build();
-   *   ApiFuture&lt;Finding&gt; future = webSecurityScannerClient.getFindingCallable().futureCall(request);
-   *   // Do something
-   *   Finding response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetFindingRequest, Finding> getFindingCallable() {
     return stub.getFindingCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List Findings under a given ScanRun.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListFindingsRequest request = ListFindingsRequest.newBuilder().build();
-   *   for (Finding element : webSecurityScannerClient.listFindings(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -709,68 +424,30 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return listFindingsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List Findings under a given ScanRun.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListFindingsRequest request = ListFindingsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListFindingsPagedResponse&gt; future = webSecurityScannerClient.listFindingsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Finding element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse>
       listFindingsPagedCallable() {
     return stub.listFindingsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List Findings under a given ScanRun.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListFindingsRequest request = ListFindingsRequest.newBuilder().build();
-   *   while (true) {
-   *     ListFindingsResponse response = webSecurityScannerClient.listFindingsCallable().call(request);
-   *     for (Finding element : response.getFindingsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return stub.listFindingsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all FindingTypeStats under a given ScanRun.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListFindingTypeStatsRequest request = ListFindingTypeStatsRequest.newBuilder().build();
-   *   ListFindingTypeStatsResponse response = webSecurityScannerClient.listFindingTypeStats(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -780,20 +457,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return listFindingTypeStatsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all FindingTypeStats under a given ScanRun.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ListFindingTypeStatsRequest request = ListFindingTypeStatsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListFindingTypeStatsResponse&gt; future = webSecurityScannerClient.listFindingTypeStatsCallable().futureCall(request);
-   *   // Do something
-   *   ListFindingTypeStatsResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
       listFindingTypeStatsCallable() {

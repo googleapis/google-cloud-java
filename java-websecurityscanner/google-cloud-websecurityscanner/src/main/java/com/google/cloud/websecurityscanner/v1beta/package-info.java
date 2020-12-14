@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,29 +15,17 @@
  */
 
 /**
- * A client to Web Security Scanner API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>======================== WebSecurityScannerClient ========================
+ * <p>======================= WebSecurityScannerClient =======================
  *
  * <p>Service Description: Cloud Web Security Scanner Service identifies security vulnerabilities in
  * web applications hosted on Google Cloud Platform. It crawls your application, and attempts to
  * exercise as many user inputs and event handlers as possible.
  *
  * <p>Sample for WebSecurityScannerClient:
- *
- * <pre>
- * <code>
- * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
- *   ScanConfig response = webSecurityScannerClient.createScanConfig(parent, scanConfig);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.websecurityscanner.v1beta;
 
 import javax.annotation.Generated;
