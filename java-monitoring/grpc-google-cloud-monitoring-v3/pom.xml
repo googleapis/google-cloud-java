@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
-  <version>2.0.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
+  <version>2.0.10</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
   <name>grpc-google-cloud-monitoring-v3</name>
   <description>GRPC library for grpc-google-cloud-monitoring-v3</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-monitoring-parent</artifactId>
-    <version>2.0.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+    <version>2.0.10</version><!-- {x-version-update:google-cloud-monitoring:current} -->
   </parent>
   <dependencies>
     <dependency>
