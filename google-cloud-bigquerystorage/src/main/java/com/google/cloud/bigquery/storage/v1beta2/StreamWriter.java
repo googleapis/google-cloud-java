@@ -486,14 +486,14 @@ public class StreamWriter implements AutoCloseable {
       for (int i = 0; i < inflightRequests.size(); i++) {
         AppendRowsResponse.Builder singleResponse = response.toBuilder();
         if (offsetList.get(i) > 0) {
-          singleResponse.setOffset(offsetList.get(i));
+          // singleResponse.setOffset(offsetList.get(i));
         } else {
           long actualOffset = response.getOffset();
           for (int j = 0; j < i; j++) {
             actualOffset +=
                 inflightRequests.get(j).message.getProtoRows().getRows().getSerializedRowsCount();
           }
-          singleResponse.setOffset(actualOffset);
+          // singleResponse.setOffset(actualOffset);
         }
         inflightRequests.get(i).appendResult.set(singleResponse.build());
       }
