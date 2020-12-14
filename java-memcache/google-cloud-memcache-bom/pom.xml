@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-memcache-bom</artifactId>
-  <version>0.2.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-memcache:current} -->
+  <version>0.2.9</version><!-- {x-version-update:google-cloud-memcache:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -67,17 +67,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-memcache-v1beta2</artifactId>
-        <version>0.2.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-memcache-v1beta2:current} -->
+        <version>0.2.9</version><!-- {x-version-update:proto-google-cloud-memcache-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-memcache-v1beta2</artifactId>
-        <version>0.2.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-memcache-v1beta2:current} -->
+        <version>0.2.9</version><!-- {x-version-update:grpc-google-cloud-memcache-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-memcache</artifactId>
-        <version>0.2.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-memcache:current} -->
+        <version>0.2.9</version><!-- {x-version-update:google-cloud-memcache:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
