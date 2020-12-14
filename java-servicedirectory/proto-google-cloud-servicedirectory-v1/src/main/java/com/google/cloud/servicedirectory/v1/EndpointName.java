@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,22 +23,38 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class EndpointName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_NAMESPACE_SERVICE_ENDPOINT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}/endpoints/{endpoint}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String namespace;
   private final String service;
   private final String endpoint;
+
+  @Deprecated
+  protected EndpointName() {
+    project = null;
+    location = null;
+    namespace = null;
+    service = null;
+    endpoint = null;
+  }
+
+  private EndpointName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    namespace = Preconditions.checkNotNull(builder.getNamespace());
+    service = Preconditions.checkNotNull(builder.getService());
+    endpoint = Preconditions.checkNotNull(builder.getEndpoint());
+  }
 
   public String getProject() {
     return project;
@@ -66,14 +82,6 @@ public class EndpointName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private EndpointName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    namespace = Preconditions.checkNotNull(builder.getNamespace());
-    service = Preconditions.checkNotNull(builder.getService());
-    endpoint = Preconditions.checkNotNull(builder.getEndpoint());
   }
 
   public static EndpointName of(
@@ -104,7 +112,7 @@ public class EndpointName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_NAMESPACE_SERVICE_ENDPOINT.validatedMatch(
             formattedString, "EndpointName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -123,7 +131,7 @@ public class EndpointName implements ResourceName {
   }
 
   public static List<String> toStringList(List<EndpointName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (EndpointName value : values) {
       if (value == null) {
         list.add("");
@@ -135,19 +143,30 @@ public class EndpointName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_NAMESPACE_SERVICE_ENDPOINT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("namespace", namespace);
-          fieldMapBuilder.put("service", service);
-          fieldMapBuilder.put("endpoint", endpoint);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (namespace != null) {
+            fieldMapBuilder.put("namespace", namespace);
+          }
+          if (service != null) {
+            fieldMapBuilder.put("service", service);
+          }
+          if (endpoint != null) {
+            fieldMapBuilder.put("endpoint", endpoint);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -161,7 +180,7 @@ public class EndpointName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_NAMESPACE_SERVICE_ENDPOINT.instantiate(
         "project",
         project,
         "location",
@@ -174,14 +193,50 @@ public class EndpointName implements ResourceName {
         endpoint);
   }
 
-  /** Builder for EndpointName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      EndpointName that = ((EndpointName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.namespace, that.namespace)
+          && Objects.equals(this.service, that.service)
+          && Objects.equals(this.endpoint, that.endpoint);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(namespace);
+    h *= 1000003;
+    h ^= Objects.hashCode(service);
+    h *= 1000003;
+    h ^= Objects.hashCode(endpoint);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}/endpoints/{endpoint}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String namespace;
     private String service;
     private String endpoint;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -228,8 +283,6 @@ public class EndpointName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(EndpointName endpointName) {
       project = endpointName.project;
       location = endpointName.location;
@@ -241,37 +294,5 @@ public class EndpointName implements ResourceName {
     public EndpointName build() {
       return new EndpointName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof EndpointName) {
-      EndpointName that = (EndpointName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.namespace.equals(that.namespace))
-          && (this.service.equals(that.service))
-          && (this.endpoint.equals(that.endpoint));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= namespace.hashCode();
-    h *= 1000003;
-    h ^= service.hashCode();
-    h *= 1000003;
-    h ^= endpoint.hashCode();
-    return h;
   }
 }

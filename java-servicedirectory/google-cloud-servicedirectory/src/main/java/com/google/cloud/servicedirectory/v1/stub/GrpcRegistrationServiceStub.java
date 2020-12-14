@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.servicedirectory.v1.stub;
 
 import static com.google.cloud.servicedirectory.v1.RegistrationServiceClient.ListEndpointsPagedResponse;
 import static com.google.cloud.servicedirectory.v1.RegistrationServiceClient.ListNamespacesPagedResponse;
 import static com.google.cloud.servicedirectory.v1.RegistrationServiceClient.ListServicesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -54,6 +54,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -62,16 +63,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Service Directory API.
+ * gRPC stub implementation for the RegistrationService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
-
   private static final MethodDescriptor<CreateNamespaceRequest, Namespace>
       createNamespaceMethodDescriptor =
           MethodDescriptor.<CreateNamespaceRequest, Namespace>newBuilder()
@@ -82,6 +81,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(CreateNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Namespace.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListNamespacesRequest, ListNamespacesResponse>
       listNamespacesMethodDescriptor =
           MethodDescriptor.<ListNamespacesRequest, ListNamespacesResponse>newBuilder()
@@ -93,6 +93,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNamespacesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetNamespaceRequest, Namespace>
       getNamespaceMethodDescriptor =
           MethodDescriptor.<GetNamespaceRequest, Namespace>newBuilder()
@@ -102,6 +103,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Namespace.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateNamespaceRequest, Namespace>
       updateNamespaceMethodDescriptor =
           MethodDescriptor.<UpdateNamespaceRequest, Namespace>newBuilder()
@@ -112,6 +114,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(UpdateNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Namespace.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteNamespaceRequest, Empty>
       deleteNamespaceMethodDescriptor =
           MethodDescriptor.<DeleteNamespaceRequest, Empty>newBuilder()
@@ -122,6 +125,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(DeleteNamespaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateServiceRequest, Service>
       createServiceMethodDescriptor =
           MethodDescriptor.<CreateServiceRequest, Service>newBuilder()
@@ -132,6 +136,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(CreateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListServicesRequest, ListServicesResponse>
       listServicesMethodDescriptor =
           MethodDescriptor.<ListServicesRequest, ListServicesResponse>newBuilder()
@@ -142,6 +147,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
       MethodDescriptor.<GetServiceRequest, Service>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -149,6 +155,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateServiceRequest, Service>
       updateServiceMethodDescriptor =
           MethodDescriptor.<UpdateServiceRequest, Service>newBuilder()
@@ -159,6 +166,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(UpdateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteServiceRequest, Empty> deleteServiceMethodDescriptor =
       MethodDescriptor.<DeleteServiceRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -166,6 +174,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateEndpointRequest, Endpoint>
       createEndpointMethodDescriptor =
           MethodDescriptor.<CreateEndpointRequest, Endpoint>newBuilder()
@@ -176,6 +185,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(CreateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListEndpointsRequest, ListEndpointsResponse>
       listEndpointsMethodDescriptor =
           MethodDescriptor.<ListEndpointsRequest, ListEndpointsResponse>newBuilder()
@@ -187,6 +197,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEndpointsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetEndpointRequest, Endpoint> getEndpointMethodDescriptor =
       MethodDescriptor.<GetEndpointRequest, Endpoint>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -194,6 +205,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetEndpointRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateEndpointRequest, Endpoint>
       updateEndpointMethodDescriptor =
           MethodDescriptor.<UpdateEndpointRequest, Endpoint>newBuilder()
@@ -204,6 +216,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(UpdateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteEndpointRequest, Empty>
       deleteEndpointMethodDescriptor =
           MethodDescriptor.<DeleteEndpointRequest, Empty>newBuilder()
@@ -214,6 +227,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
                   ProtoUtils.marshaller(DeleteEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -221,6 +235,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -228,6 +243,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -239,8 +255,6 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateNamespaceRequest, Namespace> createNamespaceCallable;
   private final UnaryCallable<ListNamespacesRequest, ListNamespacesResponse> listNamespacesCallable;
@@ -268,6 +282,8 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcRegistrationServiceStub create(RegistrationServiceStubSettings settings)
@@ -308,6 +324,7 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateNamespaceRequest, Namespace> createNamespaceTransportSettings =
         GrpcCallSettings.<CreateNamespaceRequest, Namespace>newBuilder()
@@ -612,20 +629,25 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateNamespaceRequest, Namespace> createNamespaceCallable() {
     return createNamespaceCallable;
   }
 
+  public UnaryCallable<ListNamespacesRequest, ListNamespacesResponse> listNamespacesCallable() {
+    return listNamespacesCallable;
+  }
+
   public UnaryCallable<ListNamespacesRequest, ListNamespacesPagedResponse>
       listNamespacesPagedCallable() {
     return listNamespacesPagedCallable;
-  }
-
-  public UnaryCallable<ListNamespacesRequest, ListNamespacesResponse> listNamespacesCallable() {
-    return listNamespacesCallable;
   }
 
   public UnaryCallable<GetNamespaceRequest, Namespace> getNamespaceCallable() {
@@ -644,12 +666,12 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
     return createServiceCallable;
   }
 
-  public UnaryCallable<ListServicesRequest, ListServicesPagedResponse> listServicesPagedCallable() {
-    return listServicesPagedCallable;
-  }
-
   public UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return listServicesCallable;
+  }
+
+  public UnaryCallable<ListServicesRequest, ListServicesPagedResponse> listServicesPagedCallable() {
+    return listServicesPagedCallable;
   }
 
   public UnaryCallable<GetServiceRequest, Service> getServiceCallable() {
@@ -668,13 +690,13 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
     return createEndpointCallable;
   }
 
+  public UnaryCallable<ListEndpointsRequest, ListEndpointsResponse> listEndpointsCallable() {
+    return listEndpointsCallable;
+  }
+
   public UnaryCallable<ListEndpointsRequest, ListEndpointsPagedResponse>
       listEndpointsPagedCallable() {
     return listEndpointsPagedCallable;
-  }
-
-  public UnaryCallable<ListEndpointsRequest, ListEndpointsResponse> listEndpointsCallable() {
-    return listEndpointsCallable;
   }
 
   public UnaryCallable<GetEndpointRequest, Endpoint> getEndpointCallable() {

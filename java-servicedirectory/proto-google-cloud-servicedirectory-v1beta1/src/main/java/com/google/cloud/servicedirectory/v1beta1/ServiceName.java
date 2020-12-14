@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class ServiceName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_NAMESPACE_SERVICE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String namespace;
   private final String service;
+
+  @Deprecated
+  protected ServiceName() {
+    project = null;
+    location = null;
+    namespace = null;
+    service = null;
+  }
+
+  private ServiceName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    namespace = Preconditions.checkNotNull(builder.getNamespace());
+    service = Preconditions.checkNotNull(builder.getService());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class ServiceName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private ServiceName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    namespace = Preconditions.checkNotNull(builder.getNamespace());
-    service = Preconditions.checkNotNull(builder.getService());
   }
 
   public static ServiceName of(String project, String location, String namespace, String service) {
@@ -94,7 +101,7 @@ public class ServiceName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_NAMESPACE_SERVICE.validatedMatch(
             formattedString, "ServiceName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -112,7 +119,7 @@ public class ServiceName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ServiceName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ServiceName value : values) {
       if (value == null) {
         list.add("");
@@ -124,18 +131,27 @@ public class ServiceName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_NAMESPACE_SERVICE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("namespace", namespace);
-          fieldMapBuilder.put("service", service);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (namespace != null) {
+            fieldMapBuilder.put("namespace", namespace);
+          }
+          if (service != null) {
+            fieldMapBuilder.put("service", service);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -149,17 +165,49 @@ public class ServiceName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_NAMESPACE_SERVICE.instantiate(
         "project", project, "location", location, "namespace", namespace, "service", service);
   }
 
-  /** Builder for ServiceName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ServiceName that = ((ServiceName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.namespace, that.namespace)
+          && Objects.equals(this.service, that.service);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(namespace);
+    h *= 1000003;
+    h ^= Objects.hashCode(service);
+    return h;
+  }
+
+  /**
+   * Builder for projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String namespace;
     private String service;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -197,8 +245,6 @@ public class ServiceName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(ServiceName serviceName) {
       project = serviceName.project;
       location = serviceName.location;
@@ -209,34 +255,5 @@ public class ServiceName implements ResourceName {
     public ServiceName build() {
       return new ServiceName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof ServiceName) {
-      ServiceName that = (ServiceName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.namespace.equals(that.namespace))
-          && (this.service.equals(that.service));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= namespace.hashCode();
-    h *= 1000003;
-    h ^= service.hashCode();
-    return h;
   }
 }

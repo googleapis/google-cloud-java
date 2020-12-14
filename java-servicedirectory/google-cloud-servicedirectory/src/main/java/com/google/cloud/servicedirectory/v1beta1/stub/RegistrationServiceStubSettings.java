@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.servicedirectory.v1beta1.stub;
 
 import static com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient.ListEndpointsPagedResponse;
@@ -77,7 +78,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link RegistrationServiceStub}.
  *
@@ -95,22 +96,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createNamespace to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RegistrationServiceStubSettings.Builder registrationServiceSettingsBuilder =
  *     RegistrationServiceStubSettings.newBuilder();
  * registrationServiceSettingsBuilder
  *     .createNamespaceSettings()
  *     .setRetrySettings(
- *         registrationServiceSettingsBuilder.createNamespaceSettings().getRetrySettings().toBuilder()
+ *         registrationServiceSettingsBuilder
+ *             .createNamespaceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * RegistrationServiceStubSettings registrationServiceSettings = registrationServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * RegistrationServiceStubSettings registrationServiceSettings =
+ *     registrationServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class RegistrationServiceStubSettings extends StubSettings<RegistrationServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -141,6 +144,166 @@ public class RegistrationServiceStubSettings extends StubSettings<RegistrationSe
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<ListNamespacesRequest, ListNamespacesResponse, Namespace>
+      LIST_NAMESPACES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListNamespacesRequest, ListNamespacesResponse, Namespace>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListNamespacesRequest injectToken(ListNamespacesRequest payload, String token) {
+              return ListNamespacesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListNamespacesRequest injectPageSize(
+                ListNamespacesRequest payload, int pageSize) {
+              return ListNamespacesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListNamespacesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListNamespacesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Namespace> extractResources(ListNamespacesResponse payload) {
+              return payload.getNamespacesList() == null
+                  ? ImmutableList.<Namespace>of()
+                  : payload.getNamespacesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>
+      LIST_SERVICES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListServicesRequest injectToken(ListServicesRequest payload, String token) {
+              return ListServicesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListServicesRequest injectPageSize(ListServicesRequest payload, int pageSize) {
+              return ListServicesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListServicesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListServicesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Service> extractResources(ListServicesResponse payload) {
+              return payload.getServicesList() == null
+                  ? ImmutableList.<Service>of()
+                  : payload.getServicesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListEndpointsRequest, ListEndpointsResponse, Endpoint>
+      LIST_ENDPOINTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListEndpointsRequest, ListEndpointsResponse, Endpoint>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEndpointsRequest injectToken(ListEndpointsRequest payload, String token) {
+              return ListEndpointsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEndpointsRequest injectPageSize(ListEndpointsRequest payload, int pageSize) {
+              return ListEndpointsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEndpointsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEndpointsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Endpoint> extractResources(ListEndpointsResponse payload) {
+              return payload.getEndpointsList() == null
+                  ? ImmutableList.<Endpoint>of()
+                  : payload.getEndpointsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListNamespacesRequest, ListNamespacesResponse, ListNamespacesPagedResponse>
+      LIST_NAMESPACES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListNamespacesRequest, ListNamespacesResponse, ListNamespacesPagedResponse>() {
+            @Override
+            public ApiFuture<ListNamespacesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListNamespacesRequest, ListNamespacesResponse> callable,
+                ListNamespacesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListNamespacesResponse> futureResponse) {
+              PageContext<ListNamespacesRequest, ListNamespacesResponse, Namespace> pageContext =
+                  PageContext.create(callable, LIST_NAMESPACES_PAGE_STR_DESC, request, context);
+              return ListNamespacesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
+      LIST_SERVICES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>() {
+            @Override
+            public ApiFuture<ListServicesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListServicesRequest, ListServicesResponse> callable,
+                ListServicesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListServicesResponse> futureResponse) {
+              PageContext<ListServicesRequest, ListServicesResponse, Service> pageContext =
+                  PageContext.create(callable, LIST_SERVICES_PAGE_STR_DESC, request, context);
+              return ListServicesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEndpointsRequest, ListEndpointsResponse, ListEndpointsPagedResponse>
+      LIST_ENDPOINTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEndpointsRequest, ListEndpointsResponse, ListEndpointsPagedResponse>() {
+            @Override
+            public ApiFuture<ListEndpointsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEndpointsRequest, ListEndpointsResponse> callable,
+                ListEndpointsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEndpointsResponse> futureResponse) {
+              PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> pageContext =
+                  PageContext.create(callable, LIST_ENDPOINTS_PAGE_STR_DESC, request, context);
+              return ListEndpointsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createNamespace. */
   public UnaryCallSettings<CreateNamespaceRequest, Namespace> createNamespaceSettings() {
@@ -243,10 +406,10 @@ public class RegistrationServiceStubSettings extends StubSettings<RegistrationSe
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcRegistrationServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -326,171 +489,10 @@ public class RegistrationServiceStubSettings extends StubSettings<RegistrationSe
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  private static final PagedListDescriptor<ListNamespacesRequest, ListNamespacesResponse, Namespace>
-      LIST_NAMESPACES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListNamespacesRequest, ListNamespacesResponse, Namespace>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListNamespacesRequest injectToken(ListNamespacesRequest payload, String token) {
-              return ListNamespacesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListNamespacesRequest injectPageSize(
-                ListNamespacesRequest payload, int pageSize) {
-              return ListNamespacesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListNamespacesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListNamespacesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Namespace> extractResources(ListNamespacesResponse payload) {
-              return payload.getNamespacesList() != null
-                  ? payload.getNamespacesList()
-                  : ImmutableList.<Namespace>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>
-      LIST_SERVICES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListServicesRequest injectToken(ListServicesRequest payload, String token) {
-              return ListServicesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListServicesRequest injectPageSize(ListServicesRequest payload, int pageSize) {
-              return ListServicesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListServicesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListServicesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Service> extractResources(ListServicesResponse payload) {
-              return payload.getServicesList() != null
-                  ? payload.getServicesList()
-                  : ImmutableList.<Service>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListEndpointsRequest, ListEndpointsResponse, Endpoint>
-      LIST_ENDPOINTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListEndpointsRequest, ListEndpointsResponse, Endpoint>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListEndpointsRequest injectToken(ListEndpointsRequest payload, String token) {
-              return ListEndpointsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListEndpointsRequest injectPageSize(ListEndpointsRequest payload, int pageSize) {
-              return ListEndpointsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListEndpointsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListEndpointsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Endpoint> extractResources(ListEndpointsResponse payload) {
-              return payload.getEndpointsList() != null
-                  ? payload.getEndpointsList()
-                  : ImmutableList.<Endpoint>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListNamespacesRequest, ListNamespacesResponse, ListNamespacesPagedResponse>
-      LIST_NAMESPACES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListNamespacesRequest, ListNamespacesResponse, ListNamespacesPagedResponse>() {
-            @Override
-            public ApiFuture<ListNamespacesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListNamespacesRequest, ListNamespacesResponse> callable,
-                ListNamespacesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListNamespacesResponse> futureResponse) {
-              PageContext<ListNamespacesRequest, ListNamespacesResponse, Namespace> pageContext =
-                  PageContext.create(callable, LIST_NAMESPACES_PAGE_STR_DESC, request, context);
-              return ListNamespacesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
-      LIST_SERVICES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>() {
-            @Override
-            public ApiFuture<ListServicesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListServicesRequest, ListServicesResponse> callable,
-                ListServicesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListServicesResponse> futureResponse) {
-              PageContext<ListServicesRequest, ListServicesResponse, Service> pageContext =
-                  PageContext.create(callable, LIST_SERVICES_PAGE_STR_DESC, request, context);
-              return ListServicesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListEndpointsRequest, ListEndpointsResponse, ListEndpointsPagedResponse>
-      LIST_ENDPOINTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListEndpointsRequest, ListEndpointsResponse, ListEndpointsPagedResponse>() {
-            @Override
-            public ApiFuture<ListEndpointsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListEndpointsRequest, ListEndpointsResponse> callable,
-                ListEndpointsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListEndpointsResponse> futureResponse) {
-              PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> pageContext =
-                  PageContext.create(callable, LIST_ENDPOINTS_PAGE_STR_DESC, request, context);
-              return ListEndpointsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for RegistrationServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<RegistrationServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateNamespaceRequest, Namespace>
         createNamespaceSettings;
     private final PagedCallSettings.Builder<
@@ -518,7 +520,6 @@ public class RegistrationServiceStubSettings extends StubSettings<RegistrationSe
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -526,13 +527,7 @@ public class RegistrationServiceStubSettings extends StubSettings<RegistrationSe
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_2_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
@@ -554,64 +549,34 @@ public class RegistrationServiceStubSettings extends StubSettings<RegistrationSe
               .setMaxRpcTimeout(Duration.ofMillis(15000L))
               .setTotalTimeout(Duration.ofMillis(15000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(15000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(15000L))
-              .setTotalTimeout(Duration.ofMillis(15000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createNamespaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listNamespacesSettings = PagedCallSettings.newBuilder(LIST_NAMESPACES_PAGE_STR_FACT);
-
       getNamespaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateNamespaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteNamespaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listServicesSettings = PagedCallSettings.newBuilder(LIST_SERVICES_PAGE_STR_FACT);
-
       getServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listEndpointsSettings = PagedCallSettings.newBuilder(LIST_ENDPOINTS_PAGE_STR_FACT);
-
       getEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -634,112 +599,7 @@ public class RegistrationServiceStubSettings extends StubSettings<RegistrationSe
               getIamPolicySettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createNamespaceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listNamespacesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getNamespaceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateNamespaceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteNamespaceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listServicesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createEndpointSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listEndpointsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getEndpointSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateEndpointSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteEndpointSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(RegistrationServiceStubSettings settings) {
@@ -786,7 +646,112 @@ public class RegistrationServiceStubSettings extends StubSettings<RegistrationSe
               testIamPermissionsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createNamespaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listNamespacesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getNamespaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateNamespaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteNamespaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listServicesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createEndpointSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listEndpointsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getEndpointSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateEndpointSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteEndpointSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

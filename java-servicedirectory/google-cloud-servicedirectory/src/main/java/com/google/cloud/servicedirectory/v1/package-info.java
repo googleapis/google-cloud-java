@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,29 +15,15 @@
  */
 
 /**
- * A client to Service Directory API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>=================== LookupServiceClient ===================
+ * <p>======================= LookupServiceClient =======================
  *
  * <p>Service Description: Service Directory API for looking up service data at runtime.
  *
  * <p>Sample for LookupServiceClient:
  *
- * <pre>
- * <code>
- * try (LookupServiceClient lookupServiceClient = LookupServiceClient.create()) {
- *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]");
- *   ResolveServiceRequest request = ResolveServiceRequest.newBuilder()
- *     .setName(name.toString())
- *     .build();
- *   ResolveServiceResponse response = lookupServiceClient.resolveService(request);
- * }
- * </code>
- * </pre>
- *
- * ========================= RegistrationServiceClient =========================
+ * <p>======================= RegistrationServiceClient =======================
  *
  * <p>Service Description: Service Directory API for registering services. It defines the following
  * resource model:
@@ -53,19 +39,8 @@
  * `projects/&#42;/locations/&#42;/namespaces/&#42;/services/&#42;/endpoints/&#42;`.
  *
  * <p>Sample for RegistrationServiceClient:
- *
- * <pre>
- * <code>
- * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   Namespace namespace = Namespace.newBuilder().build();
- *   String namespaceId = "";
- *   Namespace response = registrationServiceClient.createNamespace(parent, namespace, namespaceId);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.servicedirectory.v1;
 
 import javax.annotation.Generated;

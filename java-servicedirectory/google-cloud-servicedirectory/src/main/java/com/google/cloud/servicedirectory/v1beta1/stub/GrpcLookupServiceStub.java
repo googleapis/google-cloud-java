@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.servicedirectory.v1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest;
 import com.google.cloud.servicedirectory.v1beta1.ResolveServiceResponse;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -33,16 +34,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Service Directory API.
+ * gRPC stub implementation for the LookupService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcLookupServiceStub extends LookupServiceStub {
-
   private static final MethodDescriptor<ResolveServiceRequest, ResolveServiceResponse>
       resolveServiceMethodDescriptor =
           MethodDescriptor.<ResolveServiceRequest, ResolveServiceResponse>newBuilder()
@@ -55,10 +54,10 @@ public class GrpcLookupServiceStub extends LookupServiceStub {
                   ProtoUtils.marshaller(ResolveServiceResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<ResolveServiceRequest, ResolveServiceResponse> resolveServiceCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcLookupServiceStub create(LookupServiceStubSettings settings)
@@ -97,6 +96,7 @@ public class GrpcLookupServiceStub extends LookupServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ResolveServiceRequest, ResolveServiceResponse>
         resolveServiceTransportSettings =
@@ -117,7 +117,12 @@ public class GrpcLookupServiceStub extends LookupServiceStub {
         callableFactory.createUnaryCallable(
             resolveServiceTransportSettings, settings.resolveServiceSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ResolveServiceRequest, ResolveServiceResponse> resolveServiceCallable() {
