@@ -39,12 +39,7 @@ public class QuickstartSample {
     try (SpeechClient speechClient = SpeechClient.create()) {
 
       // The path to the audio file to transcribe
-      String fileName = "./resources/audio.raw";
-
-      // Reads the audio file into memory
-      Path path = Paths.get(fileName);
-      byte[] data = Files.readAllBytes(path);
-      ByteString audioBytes = ByteString.copyFrom(data);
+      String gcsUri = "gs://cloud-samples-data/speech/brooklyn_bridge.raw";
 
       // Builds the sync recognize request
       RecognitionConfig config =
@@ -53,7 +48,7 @@ public class QuickstartSample {
               .setSampleRateHertz(16000)
               .setLanguageCode("en-US")
               .build();
-      RecognitionAudio audio = RecognitionAudio.newBuilder().setContent(audioBytes).build();
+      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
 
       // Performs speech recognition on the audio file
       RecognizeResponse response = speechClient.recognize(config, audio);
