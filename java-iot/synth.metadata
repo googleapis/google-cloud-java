@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-iot.git",
-        "sha": "25dff9b196c0c33512f4cb66926a11bbf6727b69"
+        "sha": "6a41ba1cf42d99bfdaccd1693dbf3503b315b8c2"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "8d582832ea028336dd285d62446cb37dbe228fa1",
-        "internalRef": "322642677"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
@@ -109,7 +109,6 @@
     "google-cloud-iot/src/main/java/com/google/cloud/iot/v1/stub/GrpcDeviceManagerCallableFactory.java",
     "google-cloud-iot/src/main/java/com/google/cloud/iot/v1/stub/GrpcDeviceManagerStub.java",
     "google-cloud-iot/src/test/java/com/google/cloud/iot/v1/DeviceManagerClientTest.java",
-    "google-cloud-iot/src/test/java/com/google/cloud/iot/v1/DeviceManagerSmokeTest.java",
     "google-cloud-iot/src/test/java/com/google/cloud/iot/v1/MockDeviceManager.java",
     "google-cloud-iot/src/test/java/com/google/cloud/iot/v1/MockDeviceManagerImpl.java",
     "grpc-google-cloud-iot-v1/src/main/java/com/google/cloud/iot/v1/DeviceManagerGrpc.java",

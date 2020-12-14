@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.iot.v1.stub;
 
 import static com.google.cloud.iot.v1.DeviceManagerClient.ListDeviceRegistriesPagedResponse;
@@ -81,7 +82,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DeviceManagerStub}.
  *
@@ -98,22 +99,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createDeviceRegistry to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DeviceManagerStubSettings.Builder deviceManagerSettingsBuilder =
  *     DeviceManagerStubSettings.newBuilder();
  * deviceManagerSettingsBuilder
  *     .createDeviceRegistrySettings()
  *     .setRetrySettings(
- *         deviceManagerSettingsBuilder.createDeviceRegistrySettings().getRetrySettings().toBuilder()
+ *         deviceManagerSettingsBuilder
+ *             .createDeviceRegistrySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DeviceManagerStubSettings deviceManagerSettings = deviceManagerSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -156,6 +158,122 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
       bindDeviceToGatewaySettings;
   private final UnaryCallSettings<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
       unbindDeviceFromGatewaySettings;
+
+  private static final PagedListDescriptor<
+          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>
+      LIST_DEVICE_REGISTRIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDeviceRegistriesRequest injectToken(
+                ListDeviceRegistriesRequest payload, String token) {
+              return ListDeviceRegistriesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDeviceRegistriesRequest injectPageSize(
+                ListDeviceRegistriesRequest payload, int pageSize) {
+              return ListDeviceRegistriesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDeviceRegistriesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDeviceRegistriesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DeviceRegistry> extractResources(ListDeviceRegistriesResponse payload) {
+              return payload.getDeviceRegistriesList() == null
+                  ? ImmutableList.<DeviceRegistry>of()
+                  : payload.getDeviceRegistriesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListDevicesRequest, ListDevicesResponse, Device>
+      LIST_DEVICES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDevicesRequest, ListDevicesResponse, Device>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDevicesRequest injectToken(ListDevicesRequest payload, String token) {
+              return ListDevicesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDevicesRequest injectPageSize(ListDevicesRequest payload, int pageSize) {
+              return ListDevicesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDevicesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDevicesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Device> extractResources(ListDevicesResponse payload) {
+              return payload.getDevicesList() == null
+                  ? ImmutableList.<Device>of()
+                  : payload.getDevicesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDeviceRegistriesRequest,
+          ListDeviceRegistriesResponse,
+          ListDeviceRegistriesPagedResponse>
+      LIST_DEVICE_REGISTRIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDeviceRegistriesRequest,
+              ListDeviceRegistriesResponse,
+              ListDeviceRegistriesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDeviceRegistriesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse> callable,
+                ListDeviceRegistriesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDeviceRegistriesResponse> futureResponse) {
+              PageContext<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DEVICE_REGISTRIES_PAGE_STR_DESC, request, context);
+              return ListDeviceRegistriesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDevicesRequest, ListDevicesResponse, ListDevicesPagedResponse>
+      LIST_DEVICES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDevicesRequest, ListDevicesResponse, ListDevicesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDevicesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDevicesRequest, ListDevicesResponse> callable,
+                ListDevicesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDevicesResponse> futureResponse) {
+              PageContext<ListDevicesRequest, ListDevicesResponse, Device> pageContext =
+                  PageContext.create(callable, LIST_DEVICES_PAGE_STR_DESC, request, context);
+              return ListDevicesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createDeviceRegistry. */
   public UnaryCallSettings<CreateDeviceRegistryRequest, DeviceRegistry>
@@ -272,10 +390,10 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcDeviceManagerStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -356,126 +474,9 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     unbindDeviceFromGatewaySettings = settingsBuilder.unbindDeviceFromGatewaySettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>
-      LIST_DEVICE_REGISTRIES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDeviceRegistriesRequest injectToken(
-                ListDeviceRegistriesRequest payload, String token) {
-              return ListDeviceRegistriesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDeviceRegistriesRequest injectPageSize(
-                ListDeviceRegistriesRequest payload, int pageSize) {
-              return ListDeviceRegistriesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDeviceRegistriesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDeviceRegistriesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<DeviceRegistry> extractResources(ListDeviceRegistriesResponse payload) {
-              return payload.getDeviceRegistriesList() != null
-                  ? payload.getDeviceRegistriesList()
-                  : ImmutableList.<DeviceRegistry>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListDevicesRequest, ListDevicesResponse, Device>
-      LIST_DEVICES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListDevicesRequest, ListDevicesResponse, Device>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDevicesRequest injectToken(ListDevicesRequest payload, String token) {
-              return ListDevicesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDevicesRequest injectPageSize(ListDevicesRequest payload, int pageSize) {
-              return ListDevicesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDevicesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDevicesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Device> extractResources(ListDevicesResponse payload) {
-              return payload.getDevicesList() != null
-                  ? payload.getDevicesList()
-                  : ImmutableList.<Device>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListDeviceRegistriesRequest,
-          ListDeviceRegistriesResponse,
-          ListDeviceRegistriesPagedResponse>
-      LIST_DEVICE_REGISTRIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListDeviceRegistriesRequest,
-              ListDeviceRegistriesResponse,
-              ListDeviceRegistriesPagedResponse>() {
-            @Override
-            public ApiFuture<ListDeviceRegistriesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse> callable,
-                ListDeviceRegistriesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListDeviceRegistriesResponse> futureResponse) {
-              PageContext<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse, DeviceRegistry>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_DEVICE_REGISTRIES_PAGE_STR_DESC, request, context);
-              return ListDeviceRegistriesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListDevicesRequest, ListDevicesResponse, ListDevicesPagedResponse>
-      LIST_DEVICES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListDevicesRequest, ListDevicesResponse, ListDevicesPagedResponse>() {
-            @Override
-            public ApiFuture<ListDevicesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDevicesRequest, ListDevicesResponse> callable,
-                ListDevicesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListDevicesResponse> futureResponse) {
-              PageContext<ListDevicesRequest, ListDevicesResponse, Device> pageContext =
-                  PageContext.create(callable, LIST_DEVICES_PAGE_STR_DESC, request, context);
-              return ListDevicesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for DeviceManagerStubSettings. */
   public static class Builder extends StubSettings.Builder<DeviceManagerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateDeviceRegistryRequest, DeviceRegistry>
         createDeviceRegistrySettings;
     private final UnaryCallSettings.Builder<GetDeviceRegistryRequest, DeviceRegistry>
@@ -514,7 +515,6 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     private final UnaryCallSettings.Builder<
             UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
         unbindDeviceFromGatewaySettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -522,11 +522,12 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_2_codes",
           ImmutableSet.copyOf(
@@ -534,8 +535,6 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
                   StatusCode.Code.UNAVAILABLE,
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.RESOURCE_EXHAUSTED)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -544,6 +543,14 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(120000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(120000L))
+              .setTotalTimeout(Duration.ofMillis(120000L))
+              .build();
+      definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -566,63 +573,35 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
               .setTotalTimeout(Duration.ofMillis(120000L))
               .build();
       definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(120000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(120000L))
-              .setTotalTimeout(Duration.ofMillis(120000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createDeviceRegistrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getDeviceRegistrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateDeviceRegistrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteDeviceRegistrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDeviceRegistriesSettings =
           PagedCallSettings.newBuilder(LIST_DEVICE_REGISTRIES_PAGE_STR_FACT);
-
       createDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDevicesSettings = PagedCallSettings.newBuilder(LIST_DEVICES_PAGE_STR_FACT);
-
       modifyCloudToDeviceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDeviceConfigVersionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDeviceStatesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       sendCommandToDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       bindDeviceToGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unbindDeviceFromGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -646,117 +625,7 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
               sendCommandToDeviceSettings,
               bindDeviceToGatewaySettings,
               unbindDeviceFromGatewaySettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createDeviceRegistrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getDeviceRegistrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateDeviceRegistrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteDeviceRegistrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listDeviceRegistriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createDeviceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getDeviceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateDeviceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteDeviceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listDevicesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .modifyCloudToDeviceConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .listDeviceConfigVersionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listDeviceStatesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .sendCommandToDeviceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .bindDeviceToGatewaySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .unbindDeviceFromGatewaySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(DeviceManagerStubSettings settings) {
@@ -805,7 +674,117 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
               unbindDeviceFromGatewaySettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createDeviceRegistrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getDeviceRegistrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateDeviceRegistrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteDeviceRegistrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listDeviceRegistriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createDeviceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getDeviceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateDeviceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteDeviceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listDevicesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .modifyCloudToDeviceConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .listDeviceConfigVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listDeviceStatesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .sendCommandToDeviceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .bindDeviceToGatewaySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .unbindDeviceFromGatewaySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

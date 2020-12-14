@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.iot.v1;
 
 import com.google.api.core.BetaApi;
@@ -29,9 +30,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockDeviceManagerImpl extends DeviceManagerImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -68,10 +70,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof DeviceRegistry) {
       requests.add(request);
-      responseObserver.onNext((DeviceRegistry) response);
+      responseObserver.onNext(((DeviceRegistry) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -83,10 +85,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof DeviceRegistry) {
       requests.add(request);
-      responseObserver.onNext((DeviceRegistry) response);
+      responseObserver.onNext(((DeviceRegistry) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -98,10 +100,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof DeviceRegistry) {
       requests.add(request);
-      responseObserver.onNext((DeviceRegistry) response);
+      responseObserver.onNext(((DeviceRegistry) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -113,10 +115,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -129,10 +131,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof ListDeviceRegistriesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListDeviceRegistriesResponse) response);
+      responseObserver.onNext(((ListDeviceRegistriesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -143,10 +145,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof Device) {
       requests.add(request);
-      responseObserver.onNext((Device) response);
+      responseObserver.onNext(((Device) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -157,10 +159,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof Device) {
       requests.add(request);
-      responseObserver.onNext((Device) response);
+      responseObserver.onNext(((Device) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -171,10 +173,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof Device) {
       requests.add(request);
-      responseObserver.onNext((Device) response);
+      responseObserver.onNext(((Device) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -185,10 +187,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -200,10 +202,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof ListDevicesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListDevicesResponse) response);
+      responseObserver.onNext(((ListDevicesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -215,10 +217,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof DeviceConfig) {
       requests.add(request);
-      responseObserver.onNext((DeviceConfig) response);
+      responseObserver.onNext(((DeviceConfig) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -231,10 +233,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof ListDeviceConfigVersionsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListDeviceConfigVersionsResponse) response);
+      responseObserver.onNext(((ListDeviceConfigVersionsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -246,10 +248,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof ListDeviceStatesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListDeviceStatesResponse) response);
+      responseObserver.onNext(((ListDeviceStatesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -260,10 +262,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof Policy) {
       requests.add(request);
-      responseObserver.onNext((Policy) response);
+      responseObserver.onNext(((Policy) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -274,10 +276,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof Policy) {
       requests.add(request);
-      responseObserver.onNext((Policy) response);
+      responseObserver.onNext(((Policy) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -290,10 +292,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
-      responseObserver.onNext((TestIamPermissionsResponse) response);
+      responseObserver.onNext(((TestIamPermissionsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -306,10 +308,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof SendCommandToDeviceResponse) {
       requests.add(request);
-      responseObserver.onNext((SendCommandToDeviceResponse) response);
+      responseObserver.onNext(((SendCommandToDeviceResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -322,10 +324,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof BindDeviceToGatewayResponse) {
       requests.add(request);
-      responseObserver.onNext((BindDeviceToGatewayResponse) response);
+      responseObserver.onNext(((BindDeviceToGatewayResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -338,10 +340,10 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     Object response = responses.remove();
     if (response instanceof UnbindDeviceFromGatewayResponse) {
       requests.add(request);
-      responseObserver.onNext((UnbindDeviceFromGatewayResponse) response);
+      responseObserver.onNext(((UnbindDeviceFromGatewayResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
