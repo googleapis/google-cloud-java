@@ -1,9 +1,9 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-talent-v4:1.0.3:1.0.4-SNAPSHOT
-proto-google-cloud-talent-v4beta1:0.40.3:0.40.4-SNAPSHOT
-grpc-google-cloud-talent-v4:1.0.3:1.0.4-SNAPSHOT
-grpc-google-cloud-talent-v4beta1:0.40.3:0.40.4-SNAPSHOT
-google-cloud-talent:1.0.3:1.0.4-SNAPSHOT
-google-cloud-talent-bom:1.0.3:1.0.4-SNAPSHOT
+proto-google-cloud-talent-v4:1.0.4:1.0.4
+proto-google-cloud-talent-v4beta1:0.40.4:0.40.4
+grpc-google-cloud-talent-v4:1.0.4:1.0.4
+grpc-google-cloud-talent-v4beta1:0.40.4:0.40.4
+google-cloud-talent:1.0.4:1.0.4
+google-cloud-talent-bom:1.0.4:1.0.4
