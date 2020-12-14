@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.94.1](https://www.github.com/googleapis/java-core/compare/v1.94.0...v1.94.1) (2020-12-11)
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.31.1 ([#331](https://www.github.com/googleapis/java-core/issues/331)) ([e01ec17](https://www.github.com/googleapis/java-core/commit/e01ec179163dfc0069ae34680abaef30b00e05e1))
+* update dependency com.google.api:gax-bom to v1.60.1 ([#340](https://www.github.com/googleapis/java-core/issues/340)) ([e3219b4](https://www.github.com/googleapis/java-core/commit/e3219b46a6a83a95795b77516426859959406d3a))
+* update dependency com.google.protobuf:protobuf-bom to v3.14.0 ([#335](https://www.github.com/googleapis/java-core/issues/335)) ([0fc6971](https://www.github.com/googleapis/java-core/commit/0fc6971a23f720102156de3bbcfe38eeff15fd94))
+
 ## [1.94.0](https://www.github.com/googleapis/java-core/compare/v1.93.10...v1.94.0) (2020-11-10)
 
 
