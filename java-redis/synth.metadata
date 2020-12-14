@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-redis.git",
-        "sha": "3f8b2fc476e9246ef6e19f02e1d4098c73b42143"
+        "sha": "d2a415019fa3cdfaf9bb1eab5d6cb754bf7029a7"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "76905ffe7e3b0605f64ef889fb88913634f9f836",
-        "internalRef": "319332818"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "76905ffe7e3b0605f64ef889fb88913634f9f836",
-        "internalRef": "319332818"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {

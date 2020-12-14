@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.redis.v1beta1.stub;
 
 import static com.google.cloud.redis.v1beta1.CloudRedisClient.ListInstancesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -49,70 +49,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Google Cloud Memorystore for Redis API.
+ * gRPC stub implementation for the CloudRedis service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcCloudRedisStub extends CloudRedisStub {
-
-  private static final MethodDescriptor<CreateInstanceRequest, Operation>
-      createInstanceMethodDescriptor =
-          MethodDescriptor.<CreateInstanceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/CreateInstance")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<UpdateInstanceRequest, Operation>
-      updateInstanceMethodDescriptor =
-          MethodDescriptor.<UpdateInstanceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/UpdateInstance")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<ImportInstanceRequest, Operation>
-      importInstanceMethodDescriptor =
-          MethodDescriptor.<ImportInstanceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/ImportInstance")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ImportInstanceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<ExportInstanceRequest, Operation>
-      exportInstanceMethodDescriptor =
-          MethodDescriptor.<ExportInstanceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/ExportInstance")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ExportInstanceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<FailoverInstanceRequest, Operation>
-      failoverInstanceMethodDescriptor =
-          MethodDescriptor.<FailoverInstanceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/FailoverInstance")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(FailoverInstanceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteInstanceRequest, Operation>
-      deleteInstanceMethodDescriptor =
-          MethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/DeleteInstance")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
       listInstancesMethodDescriptor =
           MethodDescriptor.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -123,6 +67,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
       MethodDescriptor.<GetInstanceRequest, Instance>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -130,6 +75,27 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<CreateInstanceRequest, Operation>
+      createInstanceMethodDescriptor =
+          MethodDescriptor.<CreateInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/CreateInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateInstanceRequest, Operation>
+      updateInstanceMethodDescriptor =
+          MethodDescriptor.<UpdateInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/UpdateInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<UpgradeInstanceRequest, Operation>
       upgradeInstanceMethodDescriptor =
           MethodDescriptor.<UpgradeInstanceRequest, Operation>newBuilder()
@@ -140,15 +106,59 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
+  private static final MethodDescriptor<ImportInstanceRequest, Operation>
+      importInstanceMethodDescriptor =
+          MethodDescriptor.<ImportInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/ImportInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
+  private static final MethodDescriptor<ExportInstanceRequest, Operation>
+      exportInstanceMethodDescriptor =
+          MethodDescriptor.<ExportInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/ExportInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<FailoverInstanceRequest, Operation>
+      failoverInstanceMethodDescriptor =
+          MethodDescriptor.<FailoverInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/FailoverInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FailoverInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteInstanceRequest, Operation>
+      deleteInstanceMethodDescriptor =
+          MethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/DeleteInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
+  private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
+      listInstancesPagedCallable;
+  private final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable;
   private final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable;
   private final OperationCallable<CreateInstanceRequest, Instance, Any>
       createInstanceOperationCallable;
   private final UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable;
   private final OperationCallable<UpdateInstanceRequest, Instance, Any>
       updateInstanceOperationCallable;
+  private final UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable;
+  private final OperationCallable<UpgradeInstanceRequest, Instance, Any>
+      upgradeInstanceOperationCallable;
   private final UnaryCallable<ImportInstanceRequest, Operation> importInstanceCallable;
   private final OperationCallable<ImportInstanceRequest, Instance, Any>
       importInstanceOperationCallable;
@@ -161,14 +171,9 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationCallable;
-  private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
-  private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
-      listInstancesPagedCallable;
-  private final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable;
-  private final UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable;
-  private final OperationCallable<UpgradeInstanceRequest, Instance, Any>
-      upgradeInstanceOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcCloudRedisStub create(CloudRedisStubSettings settings)
@@ -209,6 +214,32 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
+        GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
+            .setMethodDescriptor(listInstancesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListInstancesRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListInstancesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
+        GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
+            .setMethodDescriptor(getInstanceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetInstanceRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetInstanceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(createInstanceMethodDescriptor)
@@ -231,6 +262,19 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   public Map<String, String> extract(UpdateInstanceRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("instance.name", String.valueOf(request.getInstance().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceTransportSettings =
+        GrpcCallSettings.<UpgradeInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(upgradeInstanceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpgradeInstanceRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpgradeInstanceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
                     return params.build();
                   }
                 })
@@ -287,100 +331,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   }
                 })
             .build();
-    GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
-        GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
-            .setMethodDescriptor(listInstancesMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ListInstancesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListInstancesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
-        GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
-            .setMethodDescriptor(getInstanceMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceTransportSettings =
-        GrpcCallSettings.<UpgradeInstanceRequest, Operation>newBuilder()
-            .setMethodDescriptor(upgradeInstanceMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<UpgradeInstanceRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpgradeInstanceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
 
-    this.createInstanceCallable =
-        callableFactory.createUnaryCallable(
-            createInstanceTransportSettings, settings.createInstanceSettings(), clientContext);
-    this.createInstanceOperationCallable =
-        callableFactory.createOperationCallable(
-            createInstanceTransportSettings,
-            settings.createInstanceOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.updateInstanceCallable =
-        callableFactory.createUnaryCallable(
-            updateInstanceTransportSettings, settings.updateInstanceSettings(), clientContext);
-    this.updateInstanceOperationCallable =
-        callableFactory.createOperationCallable(
-            updateInstanceTransportSettings,
-            settings.updateInstanceOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.importInstanceCallable =
-        callableFactory.createUnaryCallable(
-            importInstanceTransportSettings, settings.importInstanceSettings(), clientContext);
-    this.importInstanceOperationCallable =
-        callableFactory.createOperationCallable(
-            importInstanceTransportSettings,
-            settings.importInstanceOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.exportInstanceCallable =
-        callableFactory.createUnaryCallable(
-            exportInstanceTransportSettings, settings.exportInstanceSettings(), clientContext);
-    this.exportInstanceOperationCallable =
-        callableFactory.createOperationCallable(
-            exportInstanceTransportSettings,
-            settings.exportInstanceOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.failoverInstanceCallable =
-        callableFactory.createUnaryCallable(
-            failoverInstanceTransportSettings, settings.failoverInstanceSettings(), clientContext);
-    this.failoverInstanceOperationCallable =
-        callableFactory.createOperationCallable(
-            failoverInstanceTransportSettings,
-            settings.failoverInstanceOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.deleteInstanceCallable =
-        callableFactory.createUnaryCallable(
-            deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
-    this.deleteInstanceOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteInstanceTransportSettings,
-            settings.deleteInstanceOperationSettings(),
-            clientContext,
-            this.operationsStub);
     this.listInstancesCallable =
         callableFactory.createUnaryCallable(
             listInstancesTransportSettings, settings.listInstancesSettings(), clientContext);
@@ -390,6 +341,24 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
     this.getInstanceCallable =
         callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
+    this.createInstanceCallable =
+        callableFactory.createUnaryCallable(
+            createInstanceTransportSettings, settings.createInstanceSettings(), clientContext);
+    this.createInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            createInstanceTransportSettings,
+            settings.createInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateInstanceCallable =
+        callableFactory.createUnaryCallable(
+            updateInstanceTransportSettings, settings.updateInstanceSettings(), clientContext);
+    this.updateInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            updateInstanceTransportSettings,
+            settings.updateInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.upgradeInstanceCallable =
         callableFactory.createUnaryCallable(
             upgradeInstanceTransportSettings, settings.upgradeInstanceSettings(), clientContext);
@@ -398,69 +367,54 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
             upgradeInstanceTransportSettings,
             settings.upgradeInstanceOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
+    this.importInstanceCallable =
+        callableFactory.createUnaryCallable(
+            importInstanceTransportSettings, settings.importInstanceSettings(), clientContext);
+    this.importInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            importInstanceTransportSettings,
+            settings.importInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportInstanceCallable =
+        callableFactory.createUnaryCallable(
+            exportInstanceTransportSettings, settings.exportInstanceSettings(), clientContext);
+    this.exportInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            exportInstanceTransportSettings,
+            settings.exportInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.failoverInstanceCallable =
+        callableFactory.createUnaryCallable(
+            failoverInstanceTransportSettings, settings.failoverInstanceSettings(), clientContext);
+    this.failoverInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            failoverInstanceTransportSettings,
+            settings.failoverInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteInstanceCallable =
+        callableFactory.createUnaryCallable(
+            deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
+    this.deleteInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteInstanceTransportSettings,
+            settings.deleteInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateInstanceRequest, Instance, Any> createInstanceOperationCallable() {
-    return createInstanceOperationCallable;
-  }
-
-  public UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
-    return createInstanceCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateInstanceRequest, Instance, Any> updateInstanceOperationCallable() {
-    return updateInstanceOperationCallable;
-  }
-
-  public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
-    return updateInstanceCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ImportInstanceRequest, Instance, Any> importInstanceOperationCallable() {
-    return importInstanceOperationCallable;
-  }
-
-  public UnaryCallable<ImportInstanceRequest, Operation> importInstanceCallable() {
-    return importInstanceCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ExportInstanceRequest, Instance, Any> exportInstanceOperationCallable() {
-    return exportInstanceOperationCallable;
-  }
-
-  public UnaryCallable<ExportInstanceRequest, Operation> exportInstanceCallable() {
-    return exportInstanceCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<FailoverInstanceRequest, Instance, Any>
-      failoverInstanceOperationCallable() {
-    return failoverInstanceOperationCallable;
-  }
-
-  public UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
-    return failoverInstanceCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteInstanceRequest, Empty, Any> deleteInstanceOperationCallable() {
-    return deleteInstanceOperationCallable;
-  }
-
-  public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
-    return deleteInstanceCallable;
+  public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
+    return listInstancesCallable;
   }
 
   public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
@@ -468,22 +422,66 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
     return listInstancesPagedCallable;
   }
 
-  public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
-    return listInstancesCallable;
-  }
-
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
+    return createInstanceCallable;
+  }
+
+  public OperationCallable<CreateInstanceRequest, Instance, Any> createInstanceOperationCallable() {
+    return createInstanceOperationCallable;
+  }
+
+  public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
+    return updateInstanceCallable;
+  }
+
+  public OperationCallable<UpdateInstanceRequest, Instance, Any> updateInstanceOperationCallable() {
+    return updateInstanceOperationCallable;
+  }
+
+  public UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
+    return upgradeInstanceCallable;
+  }
+
   public OperationCallable<UpgradeInstanceRequest, Instance, Any>
       upgradeInstanceOperationCallable() {
     return upgradeInstanceOperationCallable;
   }
 
-  public UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
-    return upgradeInstanceCallable;
+  public UnaryCallable<ImportInstanceRequest, Operation> importInstanceCallable() {
+    return importInstanceCallable;
+  }
+
+  public OperationCallable<ImportInstanceRequest, Instance, Any> importInstanceOperationCallable() {
+    return importInstanceOperationCallable;
+  }
+
+  public UnaryCallable<ExportInstanceRequest, Operation> exportInstanceCallable() {
+    return exportInstanceCallable;
+  }
+
+  public OperationCallable<ExportInstanceRequest, Instance, Any> exportInstanceOperationCallable() {
+    return exportInstanceOperationCallable;
+  }
+
+  public UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
+    return failoverInstanceCallable;
+  }
+
+  public OperationCallable<FailoverInstanceRequest, Instance, Any>
+      failoverInstanceOperationCallable() {
+    return failoverInstanceOperationCallable;
+  }
+
+  public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
+    return deleteInstanceCallable;
+  }
+
+  public OperationCallable<DeleteInstanceRequest, Empty, Any> deleteInstanceOperationCallable() {
+    return deleteInstanceOperationCallable;
   }
 
   @Override
