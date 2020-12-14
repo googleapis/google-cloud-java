@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.osconfig.v1.stub;
 
 import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchDeploymentsPagedResponse;
 import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchJobInstanceDetailsPagedResponse;
 import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchJobsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -27,21 +27,10 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.osconfig.v1.PatchDeployments.CreatePatchDeploymentRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.DeletePatchDeploymentRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.GetPatchDeploymentRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.ListPatchDeploymentsRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.ListPatchDeploymentsResponse;
-import com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment;
-import com.google.cloud.osconfig.v1.PatchJobs.CancelPatchJobRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ExecutePatchJobRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.GetPatchJobRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobInstanceDetailsRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobInstanceDetailsResponse;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobsRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobsResponse;
-import com.google.cloud.osconfig.v1.PatchJobs.PatchJob;
+import com.google.cloud.osconfig.v1.PatchDeployments;
+import com.google.cloud.osconfig.v1.PatchJobs;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -50,126 +39,169 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for OS Config API.
+ * gRPC stub implementation for the OsConfigService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
-
-  private static final MethodDescriptor<ExecutePatchJobRequest, PatchJob>
+  private static final MethodDescriptor<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
       executePatchJobMethodDescriptor =
-          MethodDescriptor.<ExecutePatchJobRequest, PatchJob>newBuilder()
+          MethodDescriptor.<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.osconfig.v1.OsConfigService/ExecutePatchJob")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(ExecutePatchJobRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(PatchJob.getDefaultInstance()))
+                  ProtoUtils.marshaller(PatchJobs.ExecutePatchJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PatchJobs.PatchJob.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<GetPatchJobRequest, PatchJob> getPatchJobMethodDescriptor =
-      MethodDescriptor.<GetPatchJobRequest, PatchJob>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.osconfig.v1.OsConfigService/GetPatchJob")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetPatchJobRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(PatchJob.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<CancelPatchJobRequest, PatchJob>
+
+  private static final MethodDescriptor<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
+      getPatchJobMethodDescriptor =
+          MethodDescriptor.<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.osconfig.v1.OsConfigService/GetPatchJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PatchJobs.GetPatchJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PatchJobs.PatchJob.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
       cancelPatchJobMethodDescriptor =
-          MethodDescriptor.<CancelPatchJobRequest, PatchJob>newBuilder()
+          MethodDescriptor.<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.osconfig.v1.OsConfigService/CancelPatchJob")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(CancelPatchJobRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(PatchJob.getDefaultInstance()))
+                  ProtoUtils.marshaller(PatchJobs.CancelPatchJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PatchJobs.PatchJob.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<ListPatchJobsRequest, ListPatchJobsResponse>
+
+  private static final MethodDescriptor<
+          PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
       listPatchJobsMethodDescriptor =
-          MethodDescriptor.<ListPatchJobsRequest, ListPatchJobsResponse>newBuilder()
+          MethodDescriptor
+              .<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.osconfig.v1.OsConfigService/ListPatchJobs")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListPatchJobsRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(PatchJobs.ListPatchJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListPatchJobsResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(PatchJobs.ListPatchJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
-          ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
+          PatchJobs.ListPatchJobInstanceDetailsRequest,
+          PatchJobs.ListPatchJobInstanceDetailsResponse>
       listPatchJobInstanceDetailsMethodDescriptor =
           MethodDescriptor
-              .<ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>newBuilder()
+              .<PatchJobs.ListPatchJobInstanceDetailsRequest,
+                  PatchJobs.ListPatchJobInstanceDetailsResponse>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.osconfig.v1.OsConfigService/ListPatchJobInstanceDetails")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListPatchJobInstanceDetailsRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      PatchJobs.ListPatchJobInstanceDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListPatchJobInstanceDetailsResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      PatchJobs.ListPatchJobInstanceDetailsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<CreatePatchDeploymentRequest, PatchDeployment>
+
+  private static final MethodDescriptor<
+          PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
       createPatchDeploymentMethodDescriptor =
-          MethodDescriptor.<CreatePatchDeploymentRequest, PatchDeployment>newBuilder()
+          MethodDescriptor
+              .<PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.osconfig.v1.OsConfigService/CreatePatchDeployment")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreatePatchDeploymentRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(PatchDeployment.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      PatchDeployments.CreatePatchDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<GetPatchDeploymentRequest, PatchDeployment>
+
+  private static final MethodDescriptor<
+          PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
       getPatchDeploymentMethodDescriptor =
-          MethodDescriptor.<GetPatchDeploymentRequest, PatchDeployment>newBuilder()
+          MethodDescriptor
+              .<PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.osconfig.v1.OsConfigService/GetPatchDeployment")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetPatchDeploymentRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(PatchDeployment.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      PatchDeployments.GetPatchDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>
+
+  private static final MethodDescriptor<
+          PatchDeployments.ListPatchDeploymentsRequest,
+          PatchDeployments.ListPatchDeploymentsResponse>
       listPatchDeploymentsMethodDescriptor =
-          MethodDescriptor.<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>newBuilder()
+          MethodDescriptor
+              .<PatchDeployments.ListPatchDeploymentsRequest,
+                  PatchDeployments.ListPatchDeploymentsResponse>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.osconfig.v1.OsConfigService/ListPatchDeployments")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListPatchDeploymentsRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      PatchDeployments.ListPatchDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListPatchDeploymentsResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      PatchDeployments.ListPatchDeploymentsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeletePatchDeploymentRequest, Empty>
+
+  private static final MethodDescriptor<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentMethodDescriptor =
-          MethodDescriptor.<DeletePatchDeploymentRequest, Empty>newBuilder()
+          MethodDescriptor.<PatchDeployments.DeletePatchDeploymentRequest, Empty>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.osconfig.v1.OsConfigService/DeletePatchDeployment")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeletePatchDeploymentRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      PatchDeployments.DeletePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
-  private final UnaryCallable<ExecutePatchJobRequest, PatchJob> executePatchJobCallable;
-  private final UnaryCallable<GetPatchJobRequest, PatchJob> getPatchJobCallable;
-  private final UnaryCallable<CancelPatchJobRequest, PatchJob> cancelPatchJobCallable;
-  private final UnaryCallable<ListPatchJobsRequest, ListPatchJobsResponse> listPatchJobsCallable;
-  private final UnaryCallable<ListPatchJobsRequest, ListPatchJobsPagedResponse>
+  private final UnaryCallable<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
+      executePatchJobCallable;
+  private final UnaryCallable<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob> getPatchJobCallable;
+  private final UnaryCallable<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
+      cancelPatchJobCallable;
+  private final UnaryCallable<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
+      listPatchJobsCallable;
+  private final UnaryCallable<PatchJobs.ListPatchJobsRequest, ListPatchJobsPagedResponse>
       listPatchJobsPagedCallable;
   private final UnaryCallable<
-          ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
+          PatchJobs.ListPatchJobInstanceDetailsRequest,
+          PatchJobs.ListPatchJobInstanceDetailsResponse>
       listPatchJobInstanceDetailsCallable;
   private final UnaryCallable<
-          ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsPagedResponse>
+          PatchJobs.ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsPagedResponse>
       listPatchJobInstanceDetailsPagedCallable;
-  private final UnaryCallable<CreatePatchDeploymentRequest, PatchDeployment>
+  private final UnaryCallable<
+          PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
       createPatchDeploymentCallable;
-  private final UnaryCallable<GetPatchDeploymentRequest, PatchDeployment>
+  private final UnaryCallable<
+          PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
       getPatchDeploymentCallable;
-  private final UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>
+  private final UnaryCallable<
+          PatchDeployments.ListPatchDeploymentsRequest,
+          PatchDeployments.ListPatchDeploymentsResponse>
       listPatchDeploymentsCallable;
-  private final UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsPagedResponse>
+  private final UnaryCallable<
+          PatchDeployments.ListPatchDeploymentsRequest, ListPatchDeploymentsPagedResponse>
       listPatchDeploymentsPagedCallable;
-  private final UnaryCallable<DeletePatchDeploymentRequest, Empty> deletePatchDeploymentCallable;
+  private final UnaryCallable<PatchDeployments.DeletePatchDeploymentRequest, Empty>
+      deletePatchDeploymentCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcOsConfigServiceStub create(OsConfigServiceStubSettings settings)
@@ -210,131 +242,155 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<ExecutePatchJobRequest, PatchJob> executePatchJobTransportSettings =
-        GrpcCallSettings.<ExecutePatchJobRequest, PatchJob>newBuilder()
-            .setMethodDescriptor(executePatchJobMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ExecutePatchJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExecutePatchJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<GetPatchJobRequest, PatchJob> getPatchJobTransportSettings =
-        GrpcCallSettings.<GetPatchJobRequest, PatchJob>newBuilder()
-            .setMethodDescriptor(getPatchJobMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetPatchJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetPatchJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<CancelPatchJobRequest, PatchJob> cancelPatchJobTransportSettings =
-        GrpcCallSettings.<CancelPatchJobRequest, PatchJob>newBuilder()
-            .setMethodDescriptor(cancelPatchJobMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CancelPatchJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(CancelPatchJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<ListPatchJobsRequest, ListPatchJobsResponse> listPatchJobsTransportSettings =
-        GrpcCallSettings.<ListPatchJobsRequest, ListPatchJobsResponse>newBuilder()
-            .setMethodDescriptor(listPatchJobsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ListPatchJobsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListPatchJobsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
-        listPatchJobInstanceDetailsTransportSettings =
-            GrpcCallSettings
-                .<ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
-                    newBuilder()
-                .setMethodDescriptor(listPatchJobInstanceDetailsMethodDescriptor)
+    GrpcCallSettings<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
+        executePatchJobTransportSettings =
+            GrpcCallSettings.<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>newBuilder()
+                .setMethodDescriptor(executePatchJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListPatchJobInstanceDetailsRequest>() {
+                    new RequestParamsExtractor<PatchJobs.ExecutePatchJobRequest>() {
                       @Override
-                      public Map<String, String> extract(
-                          ListPatchJobInstanceDetailsRequest request) {
+                      public Map<String, String> extract(PatchJobs.ExecutePatchJobRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("parent", String.valueOf(request.getParent()));
                         return params.build();
                       }
                     })
                 .build();
-    GrpcCallSettings<CreatePatchDeploymentRequest, PatchDeployment>
-        createPatchDeploymentTransportSettings =
-            GrpcCallSettings.<CreatePatchDeploymentRequest, PatchDeployment>newBuilder()
-                .setMethodDescriptor(createPatchDeploymentMethodDescriptor)
+    GrpcCallSettings<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
+        getPatchJobTransportSettings =
+            GrpcCallSettings.<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>newBuilder()
+                .setMethodDescriptor(getPatchJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreatePatchDeploymentRequest>() {
+                    new RequestParamsExtractor<PatchJobs.GetPatchJobRequest>() {
                       @Override
-                      public Map<String, String> extract(CreatePatchDeploymentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<GetPatchDeploymentRequest, PatchDeployment>
-        getPatchDeploymentTransportSettings =
-            GrpcCallSettings.<GetPatchDeploymentRequest, PatchDeployment>newBuilder()
-                .setMethodDescriptor(getPatchDeploymentMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<GetPatchDeploymentRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetPatchDeploymentRequest request) {
+                      public Map<String, String> extract(PatchJobs.GetPatchJobRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("name", String.valueOf(request.getName()));
                         return params.build();
                       }
                     })
                 .build();
-    GrpcCallSettings<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>
-        listPatchDeploymentsTransportSettings =
-            GrpcCallSettings.<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>newBuilder()
-                .setMethodDescriptor(listPatchDeploymentsMethodDescriptor)
+    GrpcCallSettings<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
+        cancelPatchJobTransportSettings =
+            GrpcCallSettings.<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>newBuilder()
+                .setMethodDescriptor(cancelPatchJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListPatchDeploymentsRequest>() {
+                    new RequestParamsExtractor<PatchJobs.CancelPatchJobRequest>() {
                       @Override
-                      public Map<String, String> extract(ListPatchDeploymentsRequest request) {
+                      public Map<String, String> extract(PatchJobs.CancelPatchJobRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
+        listPatchJobsTransportSettings =
+            GrpcCallSettings
+                .<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>newBuilder()
+                .setMethodDescriptor(listPatchJobsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PatchJobs.ListPatchJobsRequest>() {
+                      @Override
+                      public Map<String, String> extract(PatchJobs.ListPatchJobsRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("parent", String.valueOf(request.getParent()));
                         return params.build();
                       }
                     })
                 .build();
-    GrpcCallSettings<DeletePatchDeploymentRequest, Empty> deletePatchDeploymentTransportSettings =
-        GrpcCallSettings.<DeletePatchDeploymentRequest, Empty>newBuilder()
-            .setMethodDescriptor(deletePatchDeploymentMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeletePatchDeploymentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeletePatchDeploymentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
+    GrpcCallSettings<
+            PatchJobs.ListPatchJobInstanceDetailsRequest,
+            PatchJobs.ListPatchJobInstanceDetailsResponse>
+        listPatchJobInstanceDetailsTransportSettings =
+            GrpcCallSettings
+                .<PatchJobs.ListPatchJobInstanceDetailsRequest,
+                    PatchJobs.ListPatchJobInstanceDetailsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listPatchJobInstanceDetailsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PatchJobs.ListPatchJobInstanceDetailsRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          PatchJobs.ListPatchJobInstanceDetailsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<
+            PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        createPatchDeploymentTransportSettings =
+            GrpcCallSettings
+                .<PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
+                    newBuilder()
+                .setMethodDescriptor(createPatchDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PatchDeployments.CreatePatchDeploymentRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          PatchDeployments.CreatePatchDeploymentRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
+        getPatchDeploymentTransportSettings =
+            GrpcCallSettings
+                .<PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
+                    newBuilder()
+                .setMethodDescriptor(getPatchDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PatchDeployments.GetPatchDeploymentRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          PatchDeployments.GetPatchDeploymentRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<
+            PatchDeployments.ListPatchDeploymentsRequest,
+            PatchDeployments.ListPatchDeploymentsResponse>
+        listPatchDeploymentsTransportSettings =
+            GrpcCallSettings
+                .<PatchDeployments.ListPatchDeploymentsRequest,
+                    PatchDeployments.ListPatchDeploymentsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listPatchDeploymentsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PatchDeployments.ListPatchDeploymentsRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          PatchDeployments.ListPatchDeploymentsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
+        deletePatchDeploymentTransportSettings =
+            GrpcCallSettings.<PatchDeployments.DeletePatchDeploymentRequest, Empty>newBuilder()
+                .setMethodDescriptor(deletePatchDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PatchDeployments.DeletePatchDeploymentRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          PatchDeployments.DeletePatchDeploymentRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.executePatchJobCallable =
         callableFactory.createUnaryCallable(
@@ -387,60 +443,77 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
             settings.deletePatchDeploymentSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ExecutePatchJobRequest, PatchJob> executePatchJobCallable() {
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  public UnaryCallable<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
+      executePatchJobCallable() {
     return executePatchJobCallable;
   }
 
-  public UnaryCallable<GetPatchJobRequest, PatchJob> getPatchJobCallable() {
+  public UnaryCallable<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob> getPatchJobCallable() {
     return getPatchJobCallable;
   }
 
-  public UnaryCallable<CancelPatchJobRequest, PatchJob> cancelPatchJobCallable() {
+  public UnaryCallable<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
+      cancelPatchJobCallable() {
     return cancelPatchJobCallable;
   }
 
-  public UnaryCallable<ListPatchJobsRequest, ListPatchJobsPagedResponse>
+  public UnaryCallable<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
+      listPatchJobsCallable() {
+    return listPatchJobsCallable;
+  }
+
+  public UnaryCallable<PatchJobs.ListPatchJobsRequest, ListPatchJobsPagedResponse>
       listPatchJobsPagedCallable() {
     return listPatchJobsPagedCallable;
   }
 
-  public UnaryCallable<ListPatchJobsRequest, ListPatchJobsResponse> listPatchJobsCallable() {
-    return listPatchJobsCallable;
-  }
-
-  public UnaryCallable<ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsPagedResponse>
-      listPatchJobInstanceDetailsPagedCallable() {
-    return listPatchJobInstanceDetailsPagedCallable;
-  }
-
-  public UnaryCallable<ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
+  public UnaryCallable<
+          PatchJobs.ListPatchJobInstanceDetailsRequest,
+          PatchJobs.ListPatchJobInstanceDetailsResponse>
       listPatchJobInstanceDetailsCallable() {
     return listPatchJobInstanceDetailsCallable;
   }
 
-  public UnaryCallable<CreatePatchDeploymentRequest, PatchDeployment>
+  public UnaryCallable<
+          PatchJobs.ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsPagedResponse>
+      listPatchJobInstanceDetailsPagedCallable() {
+    return listPatchJobInstanceDetailsPagedCallable;
+  }
+
+  public UnaryCallable<
+          PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
       createPatchDeploymentCallable() {
     return createPatchDeploymentCallable;
   }
 
-  public UnaryCallable<GetPatchDeploymentRequest, PatchDeployment> getPatchDeploymentCallable() {
+  public UnaryCallable<PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
+      getPatchDeploymentCallable() {
     return getPatchDeploymentCallable;
   }
 
-  public UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsPagedResponse>
-      listPatchDeploymentsPagedCallable() {
-    return listPatchDeploymentsPagedCallable;
-  }
-
-  public UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse>
+  public UnaryCallable<
+          PatchDeployments.ListPatchDeploymentsRequest,
+          PatchDeployments.ListPatchDeploymentsResponse>
       listPatchDeploymentsCallable() {
     return listPatchDeploymentsCallable;
   }
 
-  public UnaryCallable<DeletePatchDeploymentRequest, Empty> deletePatchDeploymentCallable() {
+  public UnaryCallable<
+          PatchDeployments.ListPatchDeploymentsRequest, ListPatchDeploymentsPagedResponse>
+      listPatchDeploymentsPagedCallable() {
+    return listPatchDeploymentsPagedCallable;
+  }
+
+  public UnaryCallable<PatchDeployments.DeletePatchDeploymentRequest, Empty>
+      deletePatchDeploymentCallable() {
     return deletePatchDeploymentCallable;
   }
 

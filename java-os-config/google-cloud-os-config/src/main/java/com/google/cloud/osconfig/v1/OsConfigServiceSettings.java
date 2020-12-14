@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.osconfig.v1;
 
 import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchDeploymentsPagedResponse;
@@ -30,27 +31,13 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.osconfig.v1.PatchDeployments.CreatePatchDeploymentRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.DeletePatchDeploymentRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.GetPatchDeploymentRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.ListPatchDeploymentsRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.ListPatchDeploymentsResponse;
-import com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment;
-import com.google.cloud.osconfig.v1.PatchJobs.CancelPatchJobRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ExecutePatchJobRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.GetPatchJobRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobInstanceDetailsRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobInstanceDetailsResponse;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobsRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobsResponse;
-import com.google.cloud.osconfig.v1.PatchJobs.PatchJob;
 import com.google.cloud.osconfig.v1.stub.OsConfigServiceStubSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link OsConfigServiceClient}.
  *
@@ -65,78 +52,87 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getPatchJob to 30 seconds:
+ * <p>For example, to set the total timeout of executePatchJob to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * OsConfigServiceSettings.Builder osConfigServiceSettingsBuilder =
  *     OsConfigServiceSettings.newBuilder();
  * osConfigServiceSettingsBuilder
- *     .getPatchJobSettings()
+ *     .executePatchJobSettings()
  *     .setRetrySettings(
- *         osConfigServiceSettingsBuilder.getPatchJobSettings().getRetrySettings().toBuilder()
+ *         osConfigServiceSettingsBuilder
+ *             .executePatchJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * OsConfigServiceSettings osConfigServiceSettings = osConfigServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSettings> {
+
   /** Returns the object with the settings used for calls to executePatchJob. */
-  public UnaryCallSettings<ExecutePatchJobRequest, PatchJob> executePatchJobSettings() {
+  public UnaryCallSettings<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
+      executePatchJobSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).executePatchJobSettings();
   }
 
   /** Returns the object with the settings used for calls to getPatchJob. */
-  public UnaryCallSettings<GetPatchJobRequest, PatchJob> getPatchJobSettings() {
+  public UnaryCallSettings<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob> getPatchJobSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).getPatchJobSettings();
   }
 
   /** Returns the object with the settings used for calls to cancelPatchJob. */
-  public UnaryCallSettings<CancelPatchJobRequest, PatchJob> cancelPatchJobSettings() {
+  public UnaryCallSettings<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
+      cancelPatchJobSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).cancelPatchJobSettings();
   }
 
   /** Returns the object with the settings used for calls to listPatchJobs. */
-  public PagedCallSettings<ListPatchJobsRequest, ListPatchJobsResponse, ListPatchJobsPagedResponse>
+  public PagedCallSettings<
+          PatchJobs.ListPatchJobsRequest,
+          PatchJobs.ListPatchJobsResponse,
+          ListPatchJobsPagedResponse>
       listPatchJobsSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).listPatchJobsSettings();
   }
 
   /** Returns the object with the settings used for calls to listPatchJobInstanceDetails. */
   public PagedCallSettings<
-          ListPatchJobInstanceDetailsRequest,
-          ListPatchJobInstanceDetailsResponse,
+          PatchJobs.ListPatchJobInstanceDetailsRequest,
+          PatchJobs.ListPatchJobInstanceDetailsResponse,
           ListPatchJobInstanceDetailsPagedResponse>
       listPatchJobInstanceDetailsSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).listPatchJobInstanceDetailsSettings();
   }
 
   /** Returns the object with the settings used for calls to createPatchDeployment. */
-  public UnaryCallSettings<CreatePatchDeploymentRequest, PatchDeployment>
+  public UnaryCallSettings<
+          PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
       createPatchDeploymentSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).createPatchDeploymentSettings();
   }
 
   /** Returns the object with the settings used for calls to getPatchDeployment. */
-  public UnaryCallSettings<GetPatchDeploymentRequest, PatchDeployment>
+  public UnaryCallSettings<
+          PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
       getPatchDeploymentSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).getPatchDeploymentSettings();
   }
 
   /** Returns the object with the settings used for calls to listPatchDeployments. */
   public PagedCallSettings<
-          ListPatchDeploymentsRequest,
-          ListPatchDeploymentsResponse,
+          PatchDeployments.ListPatchDeploymentsRequest,
+          PatchDeployments.ListPatchDeploymentsResponse,
           ListPatchDeploymentsPagedResponse>
       listPatchDeploymentsSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).listPatchDeploymentsSettings();
   }
 
   /** Returns the object with the settings used for calls to deletePatchDeployment. */
-  public UnaryCallSettings<DeletePatchDeploymentRequest, Empty> deletePatchDeploymentSettings() {
+  public UnaryCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
+      deletePatchDeploymentSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).deletePatchDeploymentSettings();
   }
 
@@ -200,16 +196,13 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
 
   /** Builder for OsConfigServiceSettings. */
   public static class Builder extends ClientSettings.Builder<OsConfigServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(OsConfigServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(OsConfigServiceStubSettings.newBuilder());
     }
 
     protected Builder(OsConfigServiceSettings settings) {
@@ -220,11 +213,15 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(OsConfigServiceStubSettings.newBuilder());
+    }
+
     public OsConfigServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((OsConfigServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -238,59 +235,66 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to executePatchJob. */
-    public UnaryCallSettings.Builder<ExecutePatchJobRequest, PatchJob> executePatchJobSettings() {
+    public UnaryCallSettings.Builder<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
+        executePatchJobSettings() {
       return getStubSettingsBuilder().executePatchJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to getPatchJob. */
-    public UnaryCallSettings.Builder<GetPatchJobRequest, PatchJob> getPatchJobSettings() {
+    public UnaryCallSettings.Builder<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
+        getPatchJobSettings() {
       return getStubSettingsBuilder().getPatchJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to cancelPatchJob. */
-    public UnaryCallSettings.Builder<CancelPatchJobRequest, PatchJob> cancelPatchJobSettings() {
+    public UnaryCallSettings.Builder<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
+        cancelPatchJobSettings() {
       return getStubSettingsBuilder().cancelPatchJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to listPatchJobs. */
     public PagedCallSettings.Builder<
-            ListPatchJobsRequest, ListPatchJobsResponse, ListPatchJobsPagedResponse>
+            PatchJobs.ListPatchJobsRequest,
+            PatchJobs.ListPatchJobsResponse,
+            ListPatchJobsPagedResponse>
         listPatchJobsSettings() {
       return getStubSettingsBuilder().listPatchJobsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listPatchJobInstanceDetails. */
     public PagedCallSettings.Builder<
-            ListPatchJobInstanceDetailsRequest,
-            ListPatchJobInstanceDetailsResponse,
+            PatchJobs.ListPatchJobInstanceDetailsRequest,
+            PatchJobs.ListPatchJobInstanceDetailsResponse,
             ListPatchJobInstanceDetailsPagedResponse>
         listPatchJobInstanceDetailsSettings() {
       return getStubSettingsBuilder().listPatchJobInstanceDetailsSettings();
     }
 
     /** Returns the builder for the settings used for calls to createPatchDeployment. */
-    public UnaryCallSettings.Builder<CreatePatchDeploymentRequest, PatchDeployment>
+    public UnaryCallSettings.Builder<
+            PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
         createPatchDeploymentSettings() {
       return getStubSettingsBuilder().createPatchDeploymentSettings();
     }
 
     /** Returns the builder for the settings used for calls to getPatchDeployment. */
-    public UnaryCallSettings.Builder<GetPatchDeploymentRequest, PatchDeployment>
+    public UnaryCallSettings.Builder<
+            PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
         getPatchDeploymentSettings() {
       return getStubSettingsBuilder().getPatchDeploymentSettings();
     }
 
     /** Returns the builder for the settings used for calls to listPatchDeployments. */
     public PagedCallSettings.Builder<
-            ListPatchDeploymentsRequest,
-            ListPatchDeploymentsResponse,
+            PatchDeployments.ListPatchDeploymentsRequest,
+            PatchDeployments.ListPatchDeploymentsResponse,
             ListPatchDeploymentsPagedResponse>
         listPatchDeploymentsSettings() {
       return getStubSettingsBuilder().listPatchDeploymentsSettings();
     }
 
     /** Returns the builder for the settings used for calls to deletePatchDeployment. */
-    public UnaryCallSettings.Builder<DeletePatchDeploymentRequest, Empty>
+    public UnaryCallSettings.Builder<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentSettings() {
       return getStubSettingsBuilder().deletePatchDeploymentSettings();
     }

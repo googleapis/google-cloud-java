@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.osconfig.v1.stub;
 
 import static com.google.cloud.osconfig.v1.OsConfigServiceClient.ListPatchDeploymentsPagedResponse;
@@ -41,21 +42,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.osconfig.v1.PatchDeployments.CreatePatchDeploymentRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.DeletePatchDeploymentRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.GetPatchDeploymentRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.ListPatchDeploymentsRequest;
-import com.google.cloud.osconfig.v1.PatchDeployments.ListPatchDeploymentsResponse;
-import com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment;
-import com.google.cloud.osconfig.v1.PatchJobs.CancelPatchJobRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ExecutePatchJobRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.GetPatchJobRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobInstanceDetailsRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobInstanceDetailsResponse;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobsRequest;
-import com.google.cloud.osconfig.v1.PatchJobs.ListPatchJobsResponse;
-import com.google.cloud.osconfig.v1.PatchJobs.PatchJob;
-import com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetails;
+import com.google.cloud.osconfig.v1.PatchDeployments;
+import com.google.cloud.osconfig.v1.PatchJobs;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -66,7 +54,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link OsConfigServiceStub}.
  *
@@ -81,105 +69,352 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getPatchJob to 30 seconds:
+ * <p>For example, to set the total timeout of executePatchJob to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * OsConfigServiceStubSettings.Builder osConfigServiceSettingsBuilder =
  *     OsConfigServiceStubSettings.newBuilder();
  * osConfigServiceSettingsBuilder
- *     .getPatchJobSettings()
+ *     .executePatchJobSettings()
  *     .setRetrySettings(
- *         osConfigServiceSettingsBuilder.getPatchJobSettings().getRetrySettings().toBuilder()
+ *         osConfigServiceSettingsBuilder
+ *             .executePatchJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * OsConfigServiceStubSettings osConfigServiceSettings = osConfigServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<ExecutePatchJobRequest, PatchJob> executePatchJobSettings;
-  private final UnaryCallSettings<GetPatchJobRequest, PatchJob> getPatchJobSettings;
-  private final UnaryCallSettings<CancelPatchJobRequest, PatchJob> cancelPatchJobSettings;
+  private final UnaryCallSettings<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
+      executePatchJobSettings;
+  private final UnaryCallSettings<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
+      getPatchJobSettings;
+  private final UnaryCallSettings<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
+      cancelPatchJobSettings;
   private final PagedCallSettings<
-          ListPatchJobsRequest, ListPatchJobsResponse, ListPatchJobsPagedResponse>
+          PatchJobs.ListPatchJobsRequest,
+          PatchJobs.ListPatchJobsResponse,
+          ListPatchJobsPagedResponse>
       listPatchJobsSettings;
   private final PagedCallSettings<
-          ListPatchJobInstanceDetailsRequest,
-          ListPatchJobInstanceDetailsResponse,
+          PatchJobs.ListPatchJobInstanceDetailsRequest,
+          PatchJobs.ListPatchJobInstanceDetailsResponse,
           ListPatchJobInstanceDetailsPagedResponse>
       listPatchJobInstanceDetailsSettings;
-  private final UnaryCallSettings<CreatePatchDeploymentRequest, PatchDeployment>
+  private final UnaryCallSettings<
+          PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
       createPatchDeploymentSettings;
-  private final UnaryCallSettings<GetPatchDeploymentRequest, PatchDeployment>
+  private final UnaryCallSettings<
+          PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
       getPatchDeploymentSettings;
   private final PagedCallSettings<
-          ListPatchDeploymentsRequest,
-          ListPatchDeploymentsResponse,
+          PatchDeployments.ListPatchDeploymentsRequest,
+          PatchDeployments.ListPatchDeploymentsResponse,
           ListPatchDeploymentsPagedResponse>
       listPatchDeploymentsSettings;
-  private final UnaryCallSettings<DeletePatchDeploymentRequest, Empty>
+  private final UnaryCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentSettings;
 
+  private static final PagedListDescriptor<
+          PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob>
+      LIST_PATCH_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              PatchJobs.ListPatchJobsRequest,
+              PatchJobs.ListPatchJobsResponse,
+              PatchJobs.PatchJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public PatchJobs.ListPatchJobsRequest injectToken(
+                PatchJobs.ListPatchJobsRequest payload, String token) {
+              return PatchJobs.ListPatchJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public PatchJobs.ListPatchJobsRequest injectPageSize(
+                PatchJobs.ListPatchJobsRequest payload, int pageSize) {
+              return PatchJobs.ListPatchJobsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(PatchJobs.ListPatchJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(PatchJobs.ListPatchJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PatchJobs.PatchJob> extractResources(
+                PatchJobs.ListPatchJobsResponse payload) {
+              return payload.getPatchJobsList() == null
+                  ? ImmutableList.<PatchJobs.PatchJob>of()
+                  : payload.getPatchJobsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          PatchJobs.ListPatchJobInstanceDetailsRequest,
+          PatchJobs.ListPatchJobInstanceDetailsResponse,
+          PatchJobs.PatchJobInstanceDetails>
+      LIST_PATCH_JOB_INSTANCE_DETAILS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              PatchJobs.ListPatchJobInstanceDetailsRequest,
+              PatchJobs.ListPatchJobInstanceDetailsResponse,
+              PatchJobs.PatchJobInstanceDetails>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public PatchJobs.ListPatchJobInstanceDetailsRequest injectToken(
+                PatchJobs.ListPatchJobInstanceDetailsRequest payload, String token) {
+              return PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public PatchJobs.ListPatchJobInstanceDetailsRequest injectPageSize(
+                PatchJobs.ListPatchJobInstanceDetailsRequest payload, int pageSize) {
+              return PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(PatchJobs.ListPatchJobInstanceDetailsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(PatchJobs.ListPatchJobInstanceDetailsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PatchJobs.PatchJobInstanceDetails> extractResources(
+                PatchJobs.ListPatchJobInstanceDetailsResponse payload) {
+              return payload.getPatchJobInstanceDetailsList() == null
+                  ? ImmutableList.<PatchJobs.PatchJobInstanceDetails>of()
+                  : payload.getPatchJobInstanceDetailsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          PatchDeployments.ListPatchDeploymentsRequest,
+          PatchDeployments.ListPatchDeploymentsResponse,
+          PatchDeployments.PatchDeployment>
+      LIST_PATCH_DEPLOYMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              PatchDeployments.ListPatchDeploymentsRequest,
+              PatchDeployments.ListPatchDeploymentsResponse,
+              PatchDeployments.PatchDeployment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public PatchDeployments.ListPatchDeploymentsRequest injectToken(
+                PatchDeployments.ListPatchDeploymentsRequest payload, String token) {
+              return PatchDeployments.ListPatchDeploymentsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public PatchDeployments.ListPatchDeploymentsRequest injectPageSize(
+                PatchDeployments.ListPatchDeploymentsRequest payload, int pageSize) {
+              return PatchDeployments.ListPatchDeploymentsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(PatchDeployments.ListPatchDeploymentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(PatchDeployments.ListPatchDeploymentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PatchDeployments.PatchDeployment> extractResources(
+                PatchDeployments.ListPatchDeploymentsResponse payload) {
+              return payload.getPatchDeploymentsList() == null
+                  ? ImmutableList.<PatchDeployments.PatchDeployment>of()
+                  : payload.getPatchDeploymentsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          PatchJobs.ListPatchJobsRequest,
+          PatchJobs.ListPatchJobsResponse,
+          ListPatchJobsPagedResponse>
+      LIST_PATCH_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              PatchJobs.ListPatchJobsRequest,
+              PatchJobs.ListPatchJobsResponse,
+              ListPatchJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPatchJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
+                    callable,
+                PatchJobs.ListPatchJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<PatchJobs.ListPatchJobsResponse> futureResponse) {
+              PageContext<
+                      PatchJobs.ListPatchJobsRequest,
+                      PatchJobs.ListPatchJobsResponse,
+                      PatchJobs.PatchJob>
+                  pageContext =
+                      PageContext.create(callable, LIST_PATCH_JOBS_PAGE_STR_DESC, request, context);
+              return ListPatchJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          PatchJobs.ListPatchJobInstanceDetailsRequest,
+          PatchJobs.ListPatchJobInstanceDetailsResponse,
+          ListPatchJobInstanceDetailsPagedResponse>
+      LIST_PATCH_JOB_INSTANCE_DETAILS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              PatchJobs.ListPatchJobInstanceDetailsRequest,
+              PatchJobs.ListPatchJobInstanceDetailsResponse,
+              ListPatchJobInstanceDetailsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPatchJobInstanceDetailsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        PatchJobs.ListPatchJobInstanceDetailsRequest,
+                        PatchJobs.ListPatchJobInstanceDetailsResponse>
+                    callable,
+                PatchJobs.ListPatchJobInstanceDetailsRequest request,
+                ApiCallContext context,
+                ApiFuture<PatchJobs.ListPatchJobInstanceDetailsResponse> futureResponse) {
+              PageContext<
+                      PatchJobs.ListPatchJobInstanceDetailsRequest,
+                      PatchJobs.ListPatchJobInstanceDetailsResponse,
+                      PatchJobs.PatchJobInstanceDetails>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_PATCH_JOB_INSTANCE_DETAILS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListPatchJobInstanceDetailsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          PatchDeployments.ListPatchDeploymentsRequest,
+          PatchDeployments.ListPatchDeploymentsResponse,
+          ListPatchDeploymentsPagedResponse>
+      LIST_PATCH_DEPLOYMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              PatchDeployments.ListPatchDeploymentsRequest,
+              PatchDeployments.ListPatchDeploymentsResponse,
+              ListPatchDeploymentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPatchDeploymentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        PatchDeployments.ListPatchDeploymentsRequest,
+                        PatchDeployments.ListPatchDeploymentsResponse>
+                    callable,
+                PatchDeployments.ListPatchDeploymentsRequest request,
+                ApiCallContext context,
+                ApiFuture<PatchDeployments.ListPatchDeploymentsResponse> futureResponse) {
+              PageContext<
+                      PatchDeployments.ListPatchDeploymentsRequest,
+                      PatchDeployments.ListPatchDeploymentsResponse,
+                      PatchDeployments.PatchDeployment>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PATCH_DEPLOYMENTS_PAGE_STR_DESC, request, context);
+              return ListPatchDeploymentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to executePatchJob. */
-  public UnaryCallSettings<ExecutePatchJobRequest, PatchJob> executePatchJobSettings() {
+  public UnaryCallSettings<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
+      executePatchJobSettings() {
     return executePatchJobSettings;
   }
 
   /** Returns the object with the settings used for calls to getPatchJob. */
-  public UnaryCallSettings<GetPatchJobRequest, PatchJob> getPatchJobSettings() {
+  public UnaryCallSettings<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob> getPatchJobSettings() {
     return getPatchJobSettings;
   }
 
   /** Returns the object with the settings used for calls to cancelPatchJob. */
-  public UnaryCallSettings<CancelPatchJobRequest, PatchJob> cancelPatchJobSettings() {
+  public UnaryCallSettings<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
+      cancelPatchJobSettings() {
     return cancelPatchJobSettings;
   }
 
   /** Returns the object with the settings used for calls to listPatchJobs. */
-  public PagedCallSettings<ListPatchJobsRequest, ListPatchJobsResponse, ListPatchJobsPagedResponse>
+  public PagedCallSettings<
+          PatchJobs.ListPatchJobsRequest,
+          PatchJobs.ListPatchJobsResponse,
+          ListPatchJobsPagedResponse>
       listPatchJobsSettings() {
     return listPatchJobsSettings;
   }
 
   /** Returns the object with the settings used for calls to listPatchJobInstanceDetails. */
   public PagedCallSettings<
-          ListPatchJobInstanceDetailsRequest,
-          ListPatchJobInstanceDetailsResponse,
+          PatchJobs.ListPatchJobInstanceDetailsRequest,
+          PatchJobs.ListPatchJobInstanceDetailsResponse,
           ListPatchJobInstanceDetailsPagedResponse>
       listPatchJobInstanceDetailsSettings() {
     return listPatchJobInstanceDetailsSettings;
   }
 
   /** Returns the object with the settings used for calls to createPatchDeployment. */
-  public UnaryCallSettings<CreatePatchDeploymentRequest, PatchDeployment>
+  public UnaryCallSettings<
+          PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
       createPatchDeploymentSettings() {
     return createPatchDeploymentSettings;
   }
 
   /** Returns the object with the settings used for calls to getPatchDeployment. */
-  public UnaryCallSettings<GetPatchDeploymentRequest, PatchDeployment>
+  public UnaryCallSettings<
+          PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
       getPatchDeploymentSettings() {
     return getPatchDeploymentSettings;
   }
 
   /** Returns the object with the settings used for calls to listPatchDeployments. */
   public PagedCallSettings<
-          ListPatchDeploymentsRequest,
-          ListPatchDeploymentsResponse,
+          PatchDeployments.ListPatchDeploymentsRequest,
+          PatchDeployments.ListPatchDeploymentsResponse,
           ListPatchDeploymentsPagedResponse>
       listPatchDeploymentsSettings() {
     return listPatchDeploymentsSettings;
   }
 
   /** Returns the object with the settings used for calls to deletePatchDeployment. */
-  public UnaryCallSettings<DeletePatchDeploymentRequest, Empty> deletePatchDeploymentSettings() {
+  public UnaryCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
+      deletePatchDeploymentSettings() {
     return deletePatchDeploymentSettings;
   }
 
@@ -189,10 +424,10 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcOsConfigServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -264,233 +499,38 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     deletePatchDeploymentSettings = settingsBuilder.deletePatchDeploymentSettings().build();
   }
 
-  private static final PagedListDescriptor<ListPatchJobsRequest, ListPatchJobsResponse, PatchJob>
-      LIST_PATCH_JOBS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListPatchJobsRequest, ListPatchJobsResponse, PatchJob>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListPatchJobsRequest injectToken(ListPatchJobsRequest payload, String token) {
-              return ListPatchJobsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListPatchJobsRequest injectPageSize(ListPatchJobsRequest payload, int pageSize) {
-              return ListPatchJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListPatchJobsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListPatchJobsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<PatchJob> extractResources(ListPatchJobsResponse payload) {
-              return payload.getPatchJobsList() != null
-                  ? payload.getPatchJobsList()
-                  : ImmutableList.<PatchJob>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListPatchJobInstanceDetailsRequest,
-          ListPatchJobInstanceDetailsResponse,
-          PatchJobInstanceDetails>
-      LIST_PATCH_JOB_INSTANCE_DETAILS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListPatchJobInstanceDetailsRequest,
-              ListPatchJobInstanceDetailsResponse,
-              PatchJobInstanceDetails>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListPatchJobInstanceDetailsRequest injectToken(
-                ListPatchJobInstanceDetailsRequest payload, String token) {
-              return ListPatchJobInstanceDetailsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListPatchJobInstanceDetailsRequest injectPageSize(
-                ListPatchJobInstanceDetailsRequest payload, int pageSize) {
-              return ListPatchJobInstanceDetailsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListPatchJobInstanceDetailsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListPatchJobInstanceDetailsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<PatchJobInstanceDetails> extractResources(
-                ListPatchJobInstanceDetailsResponse payload) {
-              return payload.getPatchJobInstanceDetailsList() != null
-                  ? payload.getPatchJobInstanceDetailsList()
-                  : ImmutableList.<PatchJobInstanceDetails>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListPatchDeploymentsRequest, ListPatchDeploymentsResponse, PatchDeployment>
-      LIST_PATCH_DEPLOYMENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListPatchDeploymentsRequest, ListPatchDeploymentsResponse, PatchDeployment>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListPatchDeploymentsRequest injectToken(
-                ListPatchDeploymentsRequest payload, String token) {
-              return ListPatchDeploymentsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListPatchDeploymentsRequest injectPageSize(
-                ListPatchDeploymentsRequest payload, int pageSize) {
-              return ListPatchDeploymentsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListPatchDeploymentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListPatchDeploymentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<PatchDeployment> extractResources(
-                ListPatchDeploymentsResponse payload) {
-              return payload.getPatchDeploymentsList() != null
-                  ? payload.getPatchDeploymentsList()
-                  : ImmutableList.<PatchDeployment>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListPatchJobsRequest, ListPatchJobsResponse, ListPatchJobsPagedResponse>
-      LIST_PATCH_JOBS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListPatchJobsRequest, ListPatchJobsResponse, ListPatchJobsPagedResponse>() {
-            @Override
-            public ApiFuture<ListPatchJobsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListPatchJobsRequest, ListPatchJobsResponse> callable,
-                ListPatchJobsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListPatchJobsResponse> futureResponse) {
-              PageContext<ListPatchJobsRequest, ListPatchJobsResponse, PatchJob> pageContext =
-                  PageContext.create(callable, LIST_PATCH_JOBS_PAGE_STR_DESC, request, context);
-              return ListPatchJobsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListPatchJobInstanceDetailsRequest,
-          ListPatchJobInstanceDetailsResponse,
-          ListPatchJobInstanceDetailsPagedResponse>
-      LIST_PATCH_JOB_INSTANCE_DETAILS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListPatchJobInstanceDetailsRequest,
-              ListPatchJobInstanceDetailsResponse,
-              ListPatchJobInstanceDetailsPagedResponse>() {
-            @Override
-            public ApiFuture<ListPatchJobInstanceDetailsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<
-                        ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsResponse>
-                    callable,
-                ListPatchJobInstanceDetailsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListPatchJobInstanceDetailsResponse> futureResponse) {
-              PageContext<
-                      ListPatchJobInstanceDetailsRequest,
-                      ListPatchJobInstanceDetailsResponse,
-                      PatchJobInstanceDetails>
-                  pageContext =
-                      PageContext.create(
-                          callable,
-                          LIST_PATCH_JOB_INSTANCE_DETAILS_PAGE_STR_DESC,
-                          request,
-                          context);
-              return ListPatchJobInstanceDetailsPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListPatchDeploymentsRequest,
-          ListPatchDeploymentsResponse,
-          ListPatchDeploymentsPagedResponse>
-      LIST_PATCH_DEPLOYMENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListPatchDeploymentsRequest,
-              ListPatchDeploymentsResponse,
-              ListPatchDeploymentsPagedResponse>() {
-            @Override
-            public ApiFuture<ListPatchDeploymentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListPatchDeploymentsRequest, ListPatchDeploymentsResponse> callable,
-                ListPatchDeploymentsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListPatchDeploymentsResponse> futureResponse) {
-              PageContext<
-                      ListPatchDeploymentsRequest, ListPatchDeploymentsResponse, PatchDeployment>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_PATCH_DEPLOYMENTS_PAGE_STR_DESC, request, context);
-              return ListPatchDeploymentsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for OsConfigServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<OsConfigServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<ExecutePatchJobRequest, PatchJob>
+    private final UnaryCallSettings.Builder<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
         executePatchJobSettings;
-    private final UnaryCallSettings.Builder<GetPatchJobRequest, PatchJob> getPatchJobSettings;
-    private final UnaryCallSettings.Builder<CancelPatchJobRequest, PatchJob> cancelPatchJobSettings;
+    private final UnaryCallSettings.Builder<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
+        getPatchJobSettings;
+    private final UnaryCallSettings.Builder<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
+        cancelPatchJobSettings;
     private final PagedCallSettings.Builder<
-            ListPatchJobsRequest, ListPatchJobsResponse, ListPatchJobsPagedResponse>
+            PatchJobs.ListPatchJobsRequest,
+            PatchJobs.ListPatchJobsResponse,
+            ListPatchJobsPagedResponse>
         listPatchJobsSettings;
     private final PagedCallSettings.Builder<
-            ListPatchJobInstanceDetailsRequest,
-            ListPatchJobInstanceDetailsResponse,
+            PatchJobs.ListPatchJobInstanceDetailsRequest,
+            PatchJobs.ListPatchJobInstanceDetailsResponse,
             ListPatchJobInstanceDetailsPagedResponse>
         listPatchJobInstanceDetailsSettings;
-    private final UnaryCallSettings.Builder<CreatePatchDeploymentRequest, PatchDeployment>
+    private final UnaryCallSettings.Builder<
+            PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
         createPatchDeploymentSettings;
-    private final UnaryCallSettings.Builder<GetPatchDeploymentRequest, PatchDeployment>
+    private final UnaryCallSettings.Builder<
+            PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
         getPatchDeploymentSettings;
     private final PagedCallSettings.Builder<
-            ListPatchDeploymentsRequest,
-            ListPatchDeploymentsResponse,
+            PatchDeployments.ListPatchDeploymentsRequest,
+            PatchDeployments.ListPatchDeploymentsResponse,
             ListPatchDeploymentsPagedResponse>
         listPatchDeploymentsSettings;
-    private final UnaryCallSettings.Builder<DeletePatchDeploymentRequest, Empty>
+    private final UnaryCallSettings.Builder<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -498,9 +538,8 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -519,37 +558,27 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       executePatchJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getPatchJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       cancelPatchJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listPatchJobsSettings = PagedCallSettings.newBuilder(LIST_PATCH_JOBS_PAGE_STR_FACT);
-
       listPatchJobInstanceDetailsSettings =
           PagedCallSettings.newBuilder(LIST_PATCH_JOB_INSTANCE_DETAILS_PAGE_STR_FACT);
-
       createPatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getPatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listPatchDeploymentsSettings =
           PagedCallSettings.newBuilder(LIST_PATCH_DEPLOYMENTS_PAGE_STR_FACT);
-
       deletePatchDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -563,67 +592,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
               getPatchDeploymentSettings,
               listPatchDeploymentsSettings,
               deletePatchDeploymentSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .executePatchJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getPatchJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .cancelPatchJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listPatchJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listPatchJobInstanceDetailsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createPatchDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getPatchDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listPatchDeploymentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deletePatchDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(OsConfigServiceStubSettings settings) {
@@ -653,7 +622,67 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
               deletePatchDeploymentSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .executePatchJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getPatchJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .cancelPatchJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPatchJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPatchJobInstanceDetailsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createPatchDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getPatchDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPatchDeploymentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deletePatchDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -670,59 +699,66 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     }
 
     /** Returns the builder for the settings used for calls to executePatchJob. */
-    public UnaryCallSettings.Builder<ExecutePatchJobRequest, PatchJob> executePatchJobSettings() {
+    public UnaryCallSettings.Builder<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
+        executePatchJobSettings() {
       return executePatchJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to getPatchJob. */
-    public UnaryCallSettings.Builder<GetPatchJobRequest, PatchJob> getPatchJobSettings() {
+    public UnaryCallSettings.Builder<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
+        getPatchJobSettings() {
       return getPatchJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to cancelPatchJob. */
-    public UnaryCallSettings.Builder<CancelPatchJobRequest, PatchJob> cancelPatchJobSettings() {
+    public UnaryCallSettings.Builder<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
+        cancelPatchJobSettings() {
       return cancelPatchJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to listPatchJobs. */
     public PagedCallSettings.Builder<
-            ListPatchJobsRequest, ListPatchJobsResponse, ListPatchJobsPagedResponse>
+            PatchJobs.ListPatchJobsRequest,
+            PatchJobs.ListPatchJobsResponse,
+            ListPatchJobsPagedResponse>
         listPatchJobsSettings() {
       return listPatchJobsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listPatchJobInstanceDetails. */
     public PagedCallSettings.Builder<
-            ListPatchJobInstanceDetailsRequest,
-            ListPatchJobInstanceDetailsResponse,
+            PatchJobs.ListPatchJobInstanceDetailsRequest,
+            PatchJobs.ListPatchJobInstanceDetailsResponse,
             ListPatchJobInstanceDetailsPagedResponse>
         listPatchJobInstanceDetailsSettings() {
       return listPatchJobInstanceDetailsSettings;
     }
 
     /** Returns the builder for the settings used for calls to createPatchDeployment. */
-    public UnaryCallSettings.Builder<CreatePatchDeploymentRequest, PatchDeployment>
+    public UnaryCallSettings.Builder<
+            PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
         createPatchDeploymentSettings() {
       return createPatchDeploymentSettings;
     }
 
     /** Returns the builder for the settings used for calls to getPatchDeployment. */
-    public UnaryCallSettings.Builder<GetPatchDeploymentRequest, PatchDeployment>
+    public UnaryCallSettings.Builder<
+            PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
         getPatchDeploymentSettings() {
       return getPatchDeploymentSettings;
     }
 
     /** Returns the builder for the settings used for calls to listPatchDeployments. */
     public PagedCallSettings.Builder<
-            ListPatchDeploymentsRequest,
-            ListPatchDeploymentsResponse,
+            PatchDeployments.ListPatchDeploymentsRequest,
+            PatchDeployments.ListPatchDeploymentsResponse,
             ListPatchDeploymentsPagedResponse>
         listPatchDeploymentsSettings() {
       return listPatchDeploymentsSettings;
     }
 
     /** Returns the builder for the settings used for calls to deletePatchDeployment. */
-    public UnaryCallSettings.Builder<DeletePatchDeploymentRequest, Empty>
+    public UnaryCallSettings.Builder<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentSettings() {
       return deletePatchDeploymentSettings;
     }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,11 +15,9 @@
  */
 
 /**
- * A client to OS Config API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>===================== OsConfigServiceClient =====================
+ * <p>======================= OsConfigServiceClient =======================
  *
  * <p>Service Description: OS Config API
  *
@@ -27,17 +25,8 @@
  * installations and patch jobs for virtual machine instances.
  *
  * <p>Sample for OsConfigServiceClient:
- *
- * <pre>
- * <code>
- * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
- *   PatchJobName name = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
- *   PatchJob response = osConfigServiceClient.getPatchJob(name);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.osconfig.v1;
 
 import javax.annotation.Generated;

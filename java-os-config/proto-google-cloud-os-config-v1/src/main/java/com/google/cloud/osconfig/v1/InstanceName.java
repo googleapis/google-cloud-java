@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,19 +23,31 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class InstanceName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_ZONE_INSTANCE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/zones/{zone}/instances/{instance}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String zone;
   private final String instance;
+
+  @Deprecated
+  protected InstanceName() {
+    project = null;
+    zone = null;
+    instance = null;
+  }
+
+  private InstanceName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    zone = Preconditions.checkNotNull(builder.getZone());
+    instance = Preconditions.checkNotNull(builder.getInstance());
+  }
 
   public String getProject() {
     return project;
@@ -57,12 +69,6 @@ public class InstanceName implements ResourceName {
     return new Builder(this);
   }
 
-  private InstanceName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    zone = Preconditions.checkNotNull(builder.getZone());
-    instance = Preconditions.checkNotNull(builder.getInstance());
-  }
-
   public static InstanceName of(String project, String zone, String instance) {
     return newBuilder().setProject(project).setZone(zone).setInstance(instance).build();
   }
@@ -76,7 +82,7 @@ public class InstanceName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_ZONE_INSTANCE.validatedMatch(
             formattedString, "InstanceName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("zone"), matchMap.get("instance"));
   }
@@ -90,7 +96,7 @@ public class InstanceName implements ResourceName {
   }
 
   public static List<String> toStringList(List<InstanceName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (InstanceName value : values) {
       if (value == null) {
         list.add("");
@@ -102,17 +108,24 @@ public class InstanceName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_ZONE_INSTANCE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("zone", zone);
-          fieldMapBuilder.put("instance", instance);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (zone != null) {
+            fieldMapBuilder.put("zone", zone);
+          }
+          if (instance != null) {
+            fieldMapBuilder.put("instance", instance);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -126,15 +139,43 @@ public class InstanceName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "zone", zone, "instance", instance);
+    return PROJECT_ZONE_INSTANCE.instantiate(
+        "project", project, "zone", zone, "instance", instance);
   }
 
-  /** Builder for InstanceName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      InstanceName that = ((InstanceName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.zone, that.zone)
+          && Objects.equals(this.instance, that.instance);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(zone);
+    h *= 1000003;
+    h ^= Objects.hashCode(instance);
+    return h;
+  }
+
+  /** Builder for projects/{project}/zones/{zone}/instances/{instance}. */
+  public static class Builder {
     private String project;
     private String zone;
     private String instance;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -163,8 +204,6 @@ public class InstanceName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(InstanceName instanceName) {
       project = instanceName.project;
       zone = instanceName.zone;
@@ -174,31 +213,5 @@ public class InstanceName implements ResourceName {
     public InstanceName build() {
       return new InstanceName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof InstanceName) {
-      InstanceName that = (InstanceName) o;
-      return (this.project.equals(that.project))
-          && (this.zone.equals(that.zone))
-          && (this.instance.equals(that.instance));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= zone.hashCode();
-    h *= 1000003;
-    h ^= instance.hashCode();
-    return h;
   }
 }
