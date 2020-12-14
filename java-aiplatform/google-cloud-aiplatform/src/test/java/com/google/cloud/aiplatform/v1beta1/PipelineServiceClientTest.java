@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.PipelineServiceClient.ListTrainingPipelinesPagedResponse;
@@ -30,13 +31,17 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
+import com.google.protobuf.Value;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -44,54 +49,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class PipelineServiceClientTest {
-  private static MockDatasetService mockDatasetService;
-  private static MockEndpointService mockEndpointService;
-  private static MockJobService mockJobService;
-  private static MockMigrationService mockMigrationService;
-  private static MockModelService mockModelService;
+  private static MockServiceHelper mockServiceHelper;
   private static MockPipelineService mockPipelineService;
-  private static MockPredictionService mockPredictionService;
-  private static MockSpecialistPoolService mockSpecialistPoolService;
-  private static MockServiceHelper serviceHelper;
   private PipelineServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockDatasetService = new MockDatasetService();
-    mockEndpointService = new MockEndpointService();
-    mockJobService = new MockJobService();
-    mockMigrationService = new MockMigrationService();
-    mockModelService = new MockModelService();
     mockPipelineService = new MockPipelineService();
-    mockPredictionService = new MockPredictionService();
-    mockSpecialistPoolService = new MockSpecialistPoolService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockDatasetService,
-                mockEndpointService,
-                mockJobService,
-                mockMigrationService,
-                mockModelService,
-                mockPipelineService,
-                mockPredictionService,
-                mockSpecialistPoolService));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockPipelineService));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     PipelineServiceSettings settings =
         PipelineServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -106,17 +88,24 @@ public class PipelineServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createTrainingPipelineTest() {
-    TrainingPipelineName name =
-        TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-    String displayName = "displayName1615086568";
-    String trainingTaskDefinition = "trainingTaskDefinition-1916695832";
+  public void createTrainingPipelineTest() throws Exception {
     TrainingPipeline expectedResponse =
         TrainingPipeline.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setTrainingTaskDefinition(trainingTaskDefinition)
+            .setName(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setInputDataConfig(InputDataConfig.newBuilder().build())
+            .setTrainingTaskDefinition("trainingTaskDefinition-1218104270")
+            .setTrainingTaskInputs(Value.newBuilder().build())
+            .setTrainingTaskMetadata(Value.newBuilder().build())
+            .setModelToUpload(Model.newBuilder().build())
+            .setError(Status.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -129,9 +118,9 @@ public class PipelineServiceClientTest {
     List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateTrainingPipelineRequest actualRequest =
-        (CreateTrainingPipelineRequest) actualRequests.get(0);
+        ((CreateTrainingPipelineRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(trainingPipeline, actualRequest.getTrainingPipeline());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -140,34 +129,95 @@ public class PipelineServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createTrainingPipelineExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockPipelineService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       TrainingPipeline trainingPipeline = TrainingPipeline.newBuilder().build();
-
       client.createTrainingPipeline(parent, trainingPipeline);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getTrainingPipelineTest() {
-    TrainingPipelineName name2 =
-        TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-    String displayName = "displayName1615086568";
-    String trainingTaskDefinition = "trainingTaskDefinition-1916695832";
+  public void createTrainingPipelineTest2() throws Exception {
     TrainingPipeline expectedResponse =
         TrainingPipeline.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setTrainingTaskDefinition(trainingTaskDefinition)
+            .setName(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setInputDataConfig(InputDataConfig.newBuilder().build())
+            .setTrainingTaskDefinition("trainingTaskDefinition-1218104270")
+            .setTrainingTaskInputs(Value.newBuilder().build())
+            .setTrainingTaskMetadata(Value.newBuilder().build())
+            .setModelToUpload(Model.newBuilder().build())
+            .setError(Status.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockPipelineService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    TrainingPipeline trainingPipeline = TrainingPipeline.newBuilder().build();
+
+    TrainingPipeline actualResponse = client.createTrainingPipeline(parent, trainingPipeline);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateTrainingPipelineRequest actualRequest =
+        ((CreateTrainingPipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(trainingPipeline, actualRequest.getTrainingPipeline());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createTrainingPipelineExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPipelineService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      TrainingPipeline trainingPipeline = TrainingPipeline.newBuilder().build();
+      client.createTrainingPipeline(parent, trainingPipeline);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTrainingPipelineTest() throws Exception {
+    TrainingPipeline expectedResponse =
+        TrainingPipeline.newBuilder()
+            .setName(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setInputDataConfig(InputDataConfig.newBuilder().build())
+            .setTrainingTaskDefinition("trainingTaskDefinition-1218104270")
+            .setTrainingTaskInputs(Value.newBuilder().build())
+            .setTrainingTaskMetadata(Value.newBuilder().build())
+            .setModelToUpload(Model.newBuilder().build())
+            .setError(Status.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -179,9 +229,9 @@ public class PipelineServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetTrainingPipelineRequest actualRequest = (GetTrainingPipelineRequest) actualRequests.get(0);
+    GetTrainingPipelineRequest actualRequest = ((GetTrainingPipelineRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, TrainingPipelineName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -189,32 +239,79 @@ public class PipelineServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getTrainingPipelineExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockPipelineService.addException(exception);
 
     try {
       TrainingPipelineName name =
           TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-
       client.getTrainingPipeline(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listTrainingPipelinesTest() {
-    String nextPageToken = "";
-    TrainingPipeline trainingPipelinesElement = TrainingPipeline.newBuilder().build();
-    List<TrainingPipeline> trainingPipelines = Arrays.asList(trainingPipelinesElement);
+  public void getTrainingPipelineTest2() throws Exception {
+    TrainingPipeline expectedResponse =
+        TrainingPipeline.newBuilder()
+            .setName(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setInputDataConfig(InputDataConfig.newBuilder().build())
+            .setTrainingTaskDefinition("trainingTaskDefinition-1218104270")
+            .setTrainingTaskInputs(Value.newBuilder().build())
+            .setTrainingTaskMetadata(Value.newBuilder().build())
+            .setModelToUpload(Model.newBuilder().build())
+            .setError(Status.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockPipelineService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TrainingPipeline actualResponse = client.getTrainingPipeline(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetTrainingPipelineRequest actualRequest = ((GetTrainingPipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getTrainingPipelineExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPipelineService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getTrainingPipeline(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTrainingPipelinesTest() throws Exception {
+    TrainingPipeline responsesElement = TrainingPipeline.newBuilder().build();
     ListTrainingPipelinesResponse expectedResponse =
         ListTrainingPipelinesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllTrainingPipelines(trainingPipelines)
+            .setNextPageToken("")
+            .addAllTrainingPipelines(Arrays.asList(responsesElement))
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -223,15 +320,16 @@ public class PipelineServiceClientTest {
     ListTrainingPipelinesPagedResponse pagedListResponse = client.listTrainingPipelines(parent);
 
     List<TrainingPipeline> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTrainingPipelinesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTrainingPipelinesRequest actualRequest =
-        (ListTrainingPipelinesRequest) actualRequests.get(0);
+        ((ListTrainingPipelinesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -239,23 +337,65 @@ public class PipelineServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listTrainingPipelinesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockPipelineService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
       client.listTrainingPipelines(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
+  public void listTrainingPipelinesTest2() throws Exception {
+    TrainingPipeline responsesElement = TrainingPipeline.newBuilder().build();
+    ListTrainingPipelinesResponse expectedResponse =
+        ListTrainingPipelinesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTrainingPipelines(Arrays.asList(responsesElement))
+            .build();
+    mockPipelineService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListTrainingPipelinesPagedResponse pagedListResponse = client.listTrainingPipelines(parent);
+
+    List<TrainingPipeline> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTrainingPipelinesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListTrainingPipelinesRequest actualRequest =
+        ((ListTrainingPipelinesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listTrainingPipelinesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPipelineService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listTrainingPipelines(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deleteTrainingPipelineTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -269,15 +409,14 @@ public class PipelineServiceClientTest {
     TrainingPipelineName name =
         TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
 
-    Empty actualResponse = client.deleteTrainingPipelineAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    client.deleteTrainingPipelineAsync(name).get();
 
     List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteTrainingPipelineRequest actualRequest =
-        (DeleteTrainingPipelineRequest) actualRequests.get(0);
+        ((DeleteTrainingPipelineRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, TrainingPipelineName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -285,27 +424,67 @@ public class PipelineServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteTrainingPipelineExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockPipelineService.addException(exception);
 
     try {
       TrainingPipelineName name =
           TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-
       client.deleteTrainingPipelineAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void cancelTrainingPipelineTest() {
+  public void deleteTrainingPipelineTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTrainingPipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPipelineService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteTrainingPipelineAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTrainingPipelineRequest actualRequest =
+        ((DeleteTrainingPipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTrainingPipelineExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPipelineService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteTrainingPipelineAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void cancelTrainingPipelineTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -317,9 +496,9 @@ public class PipelineServiceClientTest {
     List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CancelTrainingPipelineRequest actualRequest =
-        (CancelTrainingPipelineRequest) actualRequests.get(0);
+        ((CancelTrainingPipelineRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, TrainingPipelineName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -327,19 +506,52 @@ public class PipelineServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void cancelTrainingPipelineExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockPipelineService.addException(exception);
 
     try {
       TrainingPipelineName name =
           TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-
       client.cancelTrainingPipeline(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelTrainingPipelineTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockPipelineService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.cancelTrainingPipeline(name);
+
+    List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelTrainingPipelineRequest actualRequest =
+        ((CancelTrainingPipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelTrainingPipelineExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPipelineService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelTrainingPipeline(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

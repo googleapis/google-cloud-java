@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class TrainingPipelineName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_TRAINING_PIPELINE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String trainingPipeline;
+
+  @Deprecated
+  protected TrainingPipelineName() {
+    project = null;
+    location = null;
+    trainingPipeline = null;
+  }
+
+  private TrainingPipelineName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    trainingPipeline = Preconditions.checkNotNull(builder.getTrainingPipeline());
+  }
 
   public String getProject() {
     return project;
@@ -56,12 +68,6 @@ public class TrainingPipelineName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private TrainingPipelineName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    trainingPipeline = Preconditions.checkNotNull(builder.getTrainingPipeline());
   }
 
   public static TrainingPipelineName of(String project, String location, String trainingPipeline) {
@@ -86,7 +92,7 @@ public class TrainingPipelineName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_TRAINING_PIPELINE.validatedMatch(
             formattedString, "TrainingPipelineName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("training_pipeline"));
   }
@@ -100,7 +106,7 @@ public class TrainingPipelineName implements ResourceName {
   }
 
   public static List<String> toStringList(List<TrainingPipelineName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (TrainingPipelineName value : values) {
       if (value == null) {
         list.add("");
@@ -112,17 +118,24 @@ public class TrainingPipelineName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_TRAINING_PIPELINE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("trainingPipeline", trainingPipeline);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (trainingPipeline != null) {
+            fieldMapBuilder.put("training_pipeline", trainingPipeline);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -136,16 +149,43 @@ public class TrainingPipelineName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_TRAINING_PIPELINE.instantiate(
         "project", project, "location", location, "training_pipeline", trainingPipeline);
   }
 
-  /** Builder for TrainingPipelineName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      TrainingPipelineName that = ((TrainingPipelineName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.trainingPipeline, that.trainingPipeline);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(trainingPipeline);
+    return h;
+  }
+
+  /** Builder for projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}. */
+  public static class Builder {
     private String project;
     private String location;
     private String trainingPipeline;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -174,8 +214,6 @@ public class TrainingPipelineName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(TrainingPipelineName trainingPipelineName) {
       project = trainingPipelineName.project;
       location = trainingPipelineName.location;
@@ -185,31 +223,5 @@ public class TrainingPipelineName implements ResourceName {
     public TrainingPipelineName build() {
       return new TrainingPipelineName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof TrainingPipelineName) {
-      TrainingPipelineName that = (TrainingPipelineName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.trainingPipeline.equals(that.trainingPipeline));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= trainingPipeline.hashCode();
-    return h;
   }
 }

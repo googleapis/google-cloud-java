@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListBatchPredictionJobsPagedResponse;
@@ -86,7 +87,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link JobServiceStub}.
  *
@@ -103,22 +104,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createCustomJob to 30 seconds:
  *
- * <pre>
- * <code>
- * JobServiceStubSettings.Builder jobServiceSettingsBuilder =
- *     JobServiceStubSettings.newBuilder();
+ * <pre>{@code
+ * JobServiceStubSettings.Builder jobServiceSettingsBuilder = JobServiceStubSettings.newBuilder();
  * jobServiceSettingsBuilder
  *     .createCustomJobSettings()
  *     .setRetrySettings(
- *         jobServiceSettingsBuilder.createCustomJobSettings().getRetrySettings().toBuilder()
+ *         jobServiceSettingsBuilder
+ *             .createCustomJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobServiceStubSettings jobServiceSettings = jobServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -181,262 +182,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   private final UnaryCallSettings<CancelBatchPredictionJobRequest, Empty>
       cancelBatchPredictionJobSettings;
 
-  /** Returns the object with the settings used for calls to createCustomJob. */
-  public UnaryCallSettings<CreateCustomJobRequest, CustomJob> createCustomJobSettings() {
-    return createCustomJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getCustomJob. */
-  public UnaryCallSettings<GetCustomJobRequest, CustomJob> getCustomJobSettings() {
-    return getCustomJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listCustomJobs. */
-  public PagedCallSettings<
-          ListCustomJobsRequest, ListCustomJobsResponse, ListCustomJobsPagedResponse>
-      listCustomJobsSettings() {
-    return listCustomJobsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteCustomJob. */
-  public UnaryCallSettings<DeleteCustomJobRequest, Operation> deleteCustomJobSettings() {
-    return deleteCustomJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteCustomJob. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<DeleteCustomJobRequest, Empty, DeleteOperationMetadata>
-      deleteCustomJobOperationSettings() {
-    return deleteCustomJobOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to cancelCustomJob. */
-  public UnaryCallSettings<CancelCustomJobRequest, Empty> cancelCustomJobSettings() {
-    return cancelCustomJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createDataLabelingJob. */
-  public UnaryCallSettings<CreateDataLabelingJobRequest, DataLabelingJob>
-      createDataLabelingJobSettings() {
-    return createDataLabelingJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getDataLabelingJob. */
-  public UnaryCallSettings<GetDataLabelingJobRequest, DataLabelingJob>
-      getDataLabelingJobSettings() {
-    return getDataLabelingJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listDataLabelingJobs. */
-  public PagedCallSettings<
-          ListDataLabelingJobsRequest,
-          ListDataLabelingJobsResponse,
-          ListDataLabelingJobsPagedResponse>
-      listDataLabelingJobsSettings() {
-    return listDataLabelingJobsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteDataLabelingJob. */
-  public UnaryCallSettings<DeleteDataLabelingJobRequest, Operation>
-      deleteDataLabelingJobSettings() {
-    return deleteDataLabelingJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteDataLabelingJob. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
-      deleteDataLabelingJobOperationSettings() {
-    return deleteDataLabelingJobOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to cancelDataLabelingJob. */
-  public UnaryCallSettings<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobSettings() {
-    return cancelDataLabelingJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createHyperparameterTuningJob. */
-  public UnaryCallSettings<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>
-      createHyperparameterTuningJobSettings() {
-    return createHyperparameterTuningJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getHyperparameterTuningJob. */
-  public UnaryCallSettings<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
-      getHyperparameterTuningJobSettings() {
-    return getHyperparameterTuningJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listHyperparameterTuningJobs. */
-  public PagedCallSettings<
-          ListHyperparameterTuningJobsRequest,
-          ListHyperparameterTuningJobsResponse,
-          ListHyperparameterTuningJobsPagedResponse>
-      listHyperparameterTuningJobsSettings() {
-    return listHyperparameterTuningJobsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteHyperparameterTuningJob. */
-  public UnaryCallSettings<DeleteHyperparameterTuningJobRequest, Operation>
-      deleteHyperparameterTuningJobSettings() {
-    return deleteHyperparameterTuningJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteHyperparameterTuningJob. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<DeleteHyperparameterTuningJobRequest, Empty, DeleteOperationMetadata>
-      deleteHyperparameterTuningJobOperationSettings() {
-    return deleteHyperparameterTuningJobOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to cancelHyperparameterTuningJob. */
-  public UnaryCallSettings<CancelHyperparameterTuningJobRequest, Empty>
-      cancelHyperparameterTuningJobSettings() {
-    return cancelHyperparameterTuningJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createBatchPredictionJob. */
-  public UnaryCallSettings<CreateBatchPredictionJobRequest, BatchPredictionJob>
-      createBatchPredictionJobSettings() {
-    return createBatchPredictionJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getBatchPredictionJob. */
-  public UnaryCallSettings<GetBatchPredictionJobRequest, BatchPredictionJob>
-      getBatchPredictionJobSettings() {
-    return getBatchPredictionJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listBatchPredictionJobs. */
-  public PagedCallSettings<
-          ListBatchPredictionJobsRequest,
-          ListBatchPredictionJobsResponse,
-          ListBatchPredictionJobsPagedResponse>
-      listBatchPredictionJobsSettings() {
-    return listBatchPredictionJobsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteBatchPredictionJob. */
-  public UnaryCallSettings<DeleteBatchPredictionJobRequest, Operation>
-      deleteBatchPredictionJobSettings() {
-    return deleteBatchPredictionJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteBatchPredictionJob. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<DeleteBatchPredictionJobRequest, Empty, DeleteOperationMetadata>
-      deleteBatchPredictionJobOperationSettings() {
-    return deleteBatchPredictionJobOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to cancelBatchPredictionJob. */
-  public UnaryCallSettings<CancelBatchPredictionJobRequest, Empty>
-      cancelBatchPredictionJobSettings() {
-    return cancelBatchPredictionJobSettings;
-  }
-
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  public JobServiceStub createStub() throws IOException {
-    if (getTransportChannelProvider()
-        .getTransportName()
-        .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcJobServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
-    }
-  }
-
-  /** Returns a builder for the default ExecutorProvider for this service. */
-  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
-    return InstantiatingExecutorProvider.newBuilder();
-  }
-
-  /** Returns the default service endpoint. */
-  public static String getDefaultEndpoint() {
-    return "aiplatform.googleapis.com:443";
-  }
-
-  /** Returns the default service scopes. */
-  public static List<String> getDefaultServiceScopes() {
-    return DEFAULT_SERVICE_SCOPES;
-  }
-
-  /** Returns a builder for the default credentials for this service. */
-  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
-  }
-
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder()
-        .setMaxInboundMessageSize(Integer.MAX_VALUE);
-  }
-
-  public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
-  }
-
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(
-            "gapic", GaxProperties.getLibraryVersion(JobServiceStubSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
-  }
-
-  /** Returns a new builder for this class. */
-  public static Builder newBuilder() {
-    return Builder.createDefault();
-  }
-
-  /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
-    return new Builder(clientContext);
-  }
-
-  /** Returns a builder containing all the values of this settings class. */
-  public Builder toBuilder() {
-    return new Builder(this);
-  }
-
-  protected JobServiceStubSettings(Builder settingsBuilder) throws IOException {
-    super(settingsBuilder);
-
-    createCustomJobSettings = settingsBuilder.createCustomJobSettings().build();
-    getCustomJobSettings = settingsBuilder.getCustomJobSettings().build();
-    listCustomJobsSettings = settingsBuilder.listCustomJobsSettings().build();
-    deleteCustomJobSettings = settingsBuilder.deleteCustomJobSettings().build();
-    deleteCustomJobOperationSettings = settingsBuilder.deleteCustomJobOperationSettings().build();
-    cancelCustomJobSettings = settingsBuilder.cancelCustomJobSettings().build();
-    createDataLabelingJobSettings = settingsBuilder.createDataLabelingJobSettings().build();
-    getDataLabelingJobSettings = settingsBuilder.getDataLabelingJobSettings().build();
-    listDataLabelingJobsSettings = settingsBuilder.listDataLabelingJobsSettings().build();
-    deleteDataLabelingJobSettings = settingsBuilder.deleteDataLabelingJobSettings().build();
-    deleteDataLabelingJobOperationSettings =
-        settingsBuilder.deleteDataLabelingJobOperationSettings().build();
-    cancelDataLabelingJobSettings = settingsBuilder.cancelDataLabelingJobSettings().build();
-    createHyperparameterTuningJobSettings =
-        settingsBuilder.createHyperparameterTuningJobSettings().build();
-    getHyperparameterTuningJobSettings =
-        settingsBuilder.getHyperparameterTuningJobSettings().build();
-    listHyperparameterTuningJobsSettings =
-        settingsBuilder.listHyperparameterTuningJobsSettings().build();
-    deleteHyperparameterTuningJobSettings =
-        settingsBuilder.deleteHyperparameterTuningJobSettings().build();
-    deleteHyperparameterTuningJobOperationSettings =
-        settingsBuilder.deleteHyperparameterTuningJobOperationSettings().build();
-    cancelHyperparameterTuningJobSettings =
-        settingsBuilder.cancelHyperparameterTuningJobSettings().build();
-    createBatchPredictionJobSettings = settingsBuilder.createBatchPredictionJobSettings().build();
-    getBatchPredictionJobSettings = settingsBuilder.getBatchPredictionJobSettings().build();
-    listBatchPredictionJobsSettings = settingsBuilder.listBatchPredictionJobsSettings().build();
-    deleteBatchPredictionJobSettings = settingsBuilder.deleteBatchPredictionJobSettings().build();
-    deleteBatchPredictionJobOperationSettings =
-        settingsBuilder.deleteBatchPredictionJobOperationSettings().build();
-    cancelBatchPredictionJobSettings = settingsBuilder.cancelBatchPredictionJobSettings().build();
-  }
-
   private static final PagedListDescriptor<ListCustomJobsRequest, ListCustomJobsResponse, CustomJob>
       LIST_CUSTOM_JOBS_PAGE_STR_DESC =
           new PagedListDescriptor<ListCustomJobsRequest, ListCustomJobsResponse, CustomJob>() {
@@ -468,9 +213,9 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
             @Override
             public Iterable<CustomJob> extractResources(ListCustomJobsResponse payload) {
-              return payload.getCustomJobsList() != null
-                  ? payload.getCustomJobsList()
-                  : ImmutableList.<CustomJob>of();
+              return payload.getCustomJobsList() == null
+                  ? ImmutableList.<CustomJob>of()
+                  : payload.getCustomJobsList();
             }
           };
 
@@ -509,9 +254,9 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             @Override
             public Iterable<DataLabelingJob> extractResources(
                 ListDataLabelingJobsResponse payload) {
-              return payload.getDataLabelingJobsList() != null
-                  ? payload.getDataLabelingJobsList()
-                  : ImmutableList.<DataLabelingJob>of();
+              return payload.getDataLabelingJobsList() == null
+                  ? ImmutableList.<DataLabelingJob>of()
+                  : payload.getDataLabelingJobsList();
             }
           };
 
@@ -558,9 +303,9 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             @Override
             public Iterable<HyperparameterTuningJob> extractResources(
                 ListHyperparameterTuningJobsResponse payload) {
-              return payload.getHyperparameterTuningJobsList() != null
-                  ? payload.getHyperparameterTuningJobsList()
-                  : ImmutableList.<HyperparameterTuningJob>of();
+              return payload.getHyperparameterTuningJobsList() == null
+                  ? ImmutableList.<HyperparameterTuningJob>of()
+                  : payload.getHyperparameterTuningJobsList();
             }
           };
 
@@ -603,9 +348,9 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             @Override
             public Iterable<BatchPredictionJob> extractResources(
                 ListBatchPredictionJobsResponse payload) {
-              return payload.getBatchPredictionJobsList() != null
-                  ? payload.getBatchPredictionJobsList()
-                  : ImmutableList.<BatchPredictionJob>of();
+              return payload.getBatchPredictionJobsList() == null
+                  ? ImmutableList.<BatchPredictionJob>of()
+                  : payload.getBatchPredictionJobsList();
             }
           };
 
@@ -709,10 +454,261 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             }
           };
 
+  /** Returns the object with the settings used for calls to createCustomJob. */
+  public UnaryCallSettings<CreateCustomJobRequest, CustomJob> createCustomJobSettings() {
+    return createCustomJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCustomJob. */
+  public UnaryCallSettings<GetCustomJobRequest, CustomJob> getCustomJobSettings() {
+    return getCustomJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listCustomJobs. */
+  public PagedCallSettings<
+          ListCustomJobsRequest, ListCustomJobsResponse, ListCustomJobsPagedResponse>
+      listCustomJobsSettings() {
+    return listCustomJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomJob. */
+  public UnaryCallSettings<DeleteCustomJobRequest, Operation> deleteCustomJobSettings() {
+    return deleteCustomJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomJob. */
+  public OperationCallSettings<DeleteCustomJobRequest, Empty, DeleteOperationMetadata>
+      deleteCustomJobOperationSettings() {
+    return deleteCustomJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelCustomJob. */
+  public UnaryCallSettings<CancelCustomJobRequest, Empty> cancelCustomJobSettings() {
+    return cancelCustomJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDataLabelingJob. */
+  public UnaryCallSettings<CreateDataLabelingJobRequest, DataLabelingJob>
+      createDataLabelingJobSettings() {
+    return createDataLabelingJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDataLabelingJob. */
+  public UnaryCallSettings<GetDataLabelingJobRequest, DataLabelingJob>
+      getDataLabelingJobSettings() {
+    return getDataLabelingJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDataLabelingJobs. */
+  public PagedCallSettings<
+          ListDataLabelingJobsRequest,
+          ListDataLabelingJobsResponse,
+          ListDataLabelingJobsPagedResponse>
+      listDataLabelingJobsSettings() {
+    return listDataLabelingJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataLabelingJob. */
+  public UnaryCallSettings<DeleteDataLabelingJobRequest, Operation>
+      deleteDataLabelingJobSettings() {
+    return deleteDataLabelingJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataLabelingJob. */
+  public OperationCallSettings<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
+      deleteDataLabelingJobOperationSettings() {
+    return deleteDataLabelingJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelDataLabelingJob. */
+  public UnaryCallSettings<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobSettings() {
+    return cancelDataLabelingJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createHyperparameterTuningJob. */
+  public UnaryCallSettings<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>
+      createHyperparameterTuningJobSettings() {
+    return createHyperparameterTuningJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getHyperparameterTuningJob. */
+  public UnaryCallSettings<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
+      getHyperparameterTuningJobSettings() {
+    return getHyperparameterTuningJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listHyperparameterTuningJobs. */
+  public PagedCallSettings<
+          ListHyperparameterTuningJobsRequest,
+          ListHyperparameterTuningJobsResponse,
+          ListHyperparameterTuningJobsPagedResponse>
+      listHyperparameterTuningJobsSettings() {
+    return listHyperparameterTuningJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteHyperparameterTuningJob. */
+  public UnaryCallSettings<DeleteHyperparameterTuningJobRequest, Operation>
+      deleteHyperparameterTuningJobSettings() {
+    return deleteHyperparameterTuningJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteHyperparameterTuningJob. */
+  public OperationCallSettings<DeleteHyperparameterTuningJobRequest, Empty, DeleteOperationMetadata>
+      deleteHyperparameterTuningJobOperationSettings() {
+    return deleteHyperparameterTuningJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelHyperparameterTuningJob. */
+  public UnaryCallSettings<CancelHyperparameterTuningJobRequest, Empty>
+      cancelHyperparameterTuningJobSettings() {
+    return cancelHyperparameterTuningJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBatchPredictionJob. */
+  public UnaryCallSettings<CreateBatchPredictionJobRequest, BatchPredictionJob>
+      createBatchPredictionJobSettings() {
+    return createBatchPredictionJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBatchPredictionJob. */
+  public UnaryCallSettings<GetBatchPredictionJobRequest, BatchPredictionJob>
+      getBatchPredictionJobSettings() {
+    return getBatchPredictionJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBatchPredictionJobs. */
+  public PagedCallSettings<
+          ListBatchPredictionJobsRequest,
+          ListBatchPredictionJobsResponse,
+          ListBatchPredictionJobsPagedResponse>
+      listBatchPredictionJobsSettings() {
+    return listBatchPredictionJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBatchPredictionJob. */
+  public UnaryCallSettings<DeleteBatchPredictionJobRequest, Operation>
+      deleteBatchPredictionJobSettings() {
+    return deleteBatchPredictionJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBatchPredictionJob. */
+  public OperationCallSettings<DeleteBatchPredictionJobRequest, Empty, DeleteOperationMetadata>
+      deleteBatchPredictionJobOperationSettings() {
+    return deleteBatchPredictionJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelBatchPredictionJob. */
+  public UnaryCallSettings<CancelBatchPredictionJobRequest, Empty>
+      cancelBatchPredictionJobSettings() {
+    return cancelBatchPredictionJobSettings;
+  }
+
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+  public JobServiceStub createStub() throws IOException {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcJobServiceStub.create(this);
+    }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return InstantiatingExecutorProvider.newBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "aiplatform.googleapis.com:443";
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return DEFAULT_SERVICE_SCOPES;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(JobServiceStubSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder() {
+    return Builder.createDefault();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
+  /** Returns a builder containing all the values of this settings class. */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  protected JobServiceStubSettings(Builder settingsBuilder) throws IOException {
+    super(settingsBuilder);
+
+    createCustomJobSettings = settingsBuilder.createCustomJobSettings().build();
+    getCustomJobSettings = settingsBuilder.getCustomJobSettings().build();
+    listCustomJobsSettings = settingsBuilder.listCustomJobsSettings().build();
+    deleteCustomJobSettings = settingsBuilder.deleteCustomJobSettings().build();
+    deleteCustomJobOperationSettings = settingsBuilder.deleteCustomJobOperationSettings().build();
+    cancelCustomJobSettings = settingsBuilder.cancelCustomJobSettings().build();
+    createDataLabelingJobSettings = settingsBuilder.createDataLabelingJobSettings().build();
+    getDataLabelingJobSettings = settingsBuilder.getDataLabelingJobSettings().build();
+    listDataLabelingJobsSettings = settingsBuilder.listDataLabelingJobsSettings().build();
+    deleteDataLabelingJobSettings = settingsBuilder.deleteDataLabelingJobSettings().build();
+    deleteDataLabelingJobOperationSettings =
+        settingsBuilder.deleteDataLabelingJobOperationSettings().build();
+    cancelDataLabelingJobSettings = settingsBuilder.cancelDataLabelingJobSettings().build();
+    createHyperparameterTuningJobSettings =
+        settingsBuilder.createHyperparameterTuningJobSettings().build();
+    getHyperparameterTuningJobSettings =
+        settingsBuilder.getHyperparameterTuningJobSettings().build();
+    listHyperparameterTuningJobsSettings =
+        settingsBuilder.listHyperparameterTuningJobsSettings().build();
+    deleteHyperparameterTuningJobSettings =
+        settingsBuilder.deleteHyperparameterTuningJobSettings().build();
+    deleteHyperparameterTuningJobOperationSettings =
+        settingsBuilder.deleteHyperparameterTuningJobOperationSettings().build();
+    cancelHyperparameterTuningJobSettings =
+        settingsBuilder.cancelHyperparameterTuningJobSettings().build();
+    createBatchPredictionJobSettings = settingsBuilder.createBatchPredictionJobSettings().build();
+    getBatchPredictionJobSettings = settingsBuilder.getBatchPredictionJobSettings().build();
+    listBatchPredictionJobsSettings = settingsBuilder.listBatchPredictionJobsSettings().build();
+    deleteBatchPredictionJobSettings = settingsBuilder.deleteBatchPredictionJobSettings().build();
+    deleteBatchPredictionJobOperationSettings =
+        settingsBuilder.deleteBatchPredictionJobOperationSettings().build();
+    cancelBatchPredictionJobSettings = settingsBuilder.cancelBatchPredictionJobSettings().build();
+  }
+
   /** Builder for JobServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<JobServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateCustomJobRequest, CustomJob>
         createCustomJobSettings;
     private final UnaryCallSettings.Builder<GetCustomJobRequest, CustomJob> getCustomJobSettings;
@@ -775,7 +771,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
         deleteBatchPredictionJobOperationSettings;
     private final UnaryCallSettings.Builder<CancelBatchPredictionJobRequest, Empty>
         cancelBatchPredictionJobSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -784,19 +779,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           ImmutableMap.builder();
       definitions.put(
           "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -812,116 +794,43 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               .setMaxRpcTimeout(Duration.ofMillis(5000L))
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_4_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
       definitions.put("no_retry_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_6_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_7_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createCustomJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getCustomJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listCustomJobsSettings = PagedCallSettings.newBuilder(LIST_CUSTOM_JOBS_PAGE_STR_FACT);
-
       deleteCustomJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteCustomJobOperationSettings = OperationCallSettings.newBuilder();
-
       cancelCustomJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createDataLabelingJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getDataLabelingJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDataLabelingJobsSettings =
           PagedCallSettings.newBuilder(LIST_DATA_LABELING_JOBS_PAGE_STR_FACT);
-
       deleteDataLabelingJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteDataLabelingJobOperationSettings = OperationCallSettings.newBuilder();
-
       cancelDataLabelingJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createHyperparameterTuningJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getHyperparameterTuningJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listHyperparameterTuningJobsSettings =
           PagedCallSettings.newBuilder(LIST_HYPERPARAMETER_TUNING_JOBS_PAGE_STR_FACT);
-
       deleteHyperparameterTuningJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteHyperparameterTuningJobOperationSettings = OperationCallSettings.newBuilder();
-
       cancelHyperparameterTuningJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createBatchPredictionJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getBatchPredictionJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listBatchPredictionJobsSettings =
           PagedCallSettings.newBuilder(LIST_BATCH_PREDICTION_JOBS_PAGE_STR_FACT);
-
       deleteBatchPredictionJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteBatchPredictionJobOperationSettings = OperationCallSettings.newBuilder();
-
       cancelBatchPredictionJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -946,215 +855,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               listBatchPredictionJobsSettings,
               deleteBatchPredictionJobSettings,
               cancelBatchPredictionJobSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createCustomJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .getCustomJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .listCustomJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .deleteCustomJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .cancelCustomJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .createDataLabelingJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .getDataLabelingJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .listDataLabelingJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .deleteDataLabelingJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .cancelDataLabelingJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .createHyperparameterTuningJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .getHyperparameterTuningJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .listHyperparameterTuningJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .deleteHyperparameterTuningJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .cancelHyperparameterTuningJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .createBatchPredictionJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .getBatchPredictionJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .listBatchPredictionJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .deleteBatchPredictionJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-
-      builder
-          .cancelBatchPredictionJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
-      builder
-          .deleteCustomJobOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteCustomJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteDataLabelingJobOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteDataLabelingJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteHyperparameterTuningJobOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteHyperparameterTuningJobRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteBatchPredictionJobOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteBatchPredictionJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(JobServiceStubSettings settings) {
@@ -1216,7 +917,219 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
               cancelBatchPredictionJobSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createCustomJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .getCustomJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .listCustomJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .deleteCustomJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .cancelCustomJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .createDataLabelingJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .getDataLabelingJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .listDataLabelingJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .deleteDataLabelingJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .cancelDataLabelingJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .createHyperparameterTuningJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .getHyperparameterTuningJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .listHyperparameterTuningJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .deleteHyperparameterTuningJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .cancelHyperparameterTuningJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .createBatchPredictionJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .getBatchPredictionJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .listBatchPredictionJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .deleteBatchPredictionJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .cancelBatchPredictionJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .deleteCustomJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteCustomJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDataLabelingJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDataLabelingJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteHyperparameterTuningJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteHyperparameterTuningJobRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBatchPredictionJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBatchPredictionJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

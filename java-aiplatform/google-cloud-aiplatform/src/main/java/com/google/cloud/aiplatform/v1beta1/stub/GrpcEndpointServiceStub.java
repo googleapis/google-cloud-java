@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.EndpointServiceClient.ListEndpointsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -52,16 +52,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud AI Platform API.
+ * gRPC stub implementation for the EndpointService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcEndpointServiceStub extends EndpointServiceStub {
-
   private static final MethodDescriptor<CreateEndpointRequest, Operation>
       createEndpointMethodDescriptor =
           MethodDescriptor.<CreateEndpointRequest, Operation>newBuilder()
@@ -71,6 +69,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   ProtoUtils.marshaller(CreateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetEndpointRequest, Endpoint> getEndpointMethodDescriptor =
       MethodDescriptor.<GetEndpointRequest, Endpoint>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -78,6 +77,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetEndpointRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListEndpointsRequest, ListEndpointsResponse>
       listEndpointsMethodDescriptor =
           MethodDescriptor.<ListEndpointsRequest, ListEndpointsResponse>newBuilder()
@@ -88,6 +88,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEndpointsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateEndpointRequest, Endpoint>
       updateEndpointMethodDescriptor =
           MethodDescriptor.<UpdateEndpointRequest, Endpoint>newBuilder()
@@ -97,6 +98,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   ProtoUtils.marshaller(UpdateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteEndpointRequest, Operation>
       deleteEndpointMethodDescriptor =
           MethodDescriptor.<DeleteEndpointRequest, Operation>newBuilder()
@@ -106,6 +108,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   ProtoUtils.marshaller(DeleteEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeployModelRequest, Operation> deployModelMethodDescriptor =
       MethodDescriptor.<DeployModelRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -113,6 +116,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeployModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UndeployModelRequest, Operation>
       undeployModelMethodDescriptor =
           MethodDescriptor.<UndeployModelRequest, Operation>newBuilder()
@@ -122,9 +126,6 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   ProtoUtils.marshaller(UndeployModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateEndpointRequest, Operation> createEndpointCallable;
   private final OperationCallable<CreateEndpointRequest, Endpoint, CreateEndpointOperationMetadata>
@@ -146,6 +147,8 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcEndpointServiceStub create(EndpointServiceStubSettings settings)
@@ -288,7 +291,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
             createEndpointTransportSettings,
             settings.createEndpointOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getEndpointCallable =
         callableFactory.createUnaryCallable(
             getEndpointTransportSettings, settings.getEndpointSettings(), clientContext);
@@ -309,7 +312,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
             deleteEndpointTransportSettings,
             settings.deleteEndpointOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deployModelCallable =
         callableFactory.createUnaryCallable(
             deployModelTransportSettings, settings.deployModelSettings(), clientContext);
@@ -318,7 +321,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
             deployModelTransportSettings,
             settings.deployModelOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.undeployModelCallable =
         callableFactory.createUnaryCallable(
             undeployModelTransportSettings, settings.undeployModelSettings(), clientContext);
@@ -327,28 +330,31 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
             undeployModelTransportSettings,
             settings.undeployModelOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateEndpointRequest, Endpoint, CreateEndpointOperationMetadata>
-      createEndpointOperationCallable() {
-    return createEndpointOperationCallable;
   }
 
   public UnaryCallable<CreateEndpointRequest, Operation> createEndpointCallable() {
     return createEndpointCallable;
   }
 
+  public OperationCallable<CreateEndpointRequest, Endpoint, CreateEndpointOperationMetadata>
+      createEndpointOperationCallable() {
+    return createEndpointOperationCallable;
+  }
+
   public UnaryCallable<GetEndpointRequest, Endpoint> getEndpointCallable() {
     return getEndpointCallable;
+  }
+
+  public UnaryCallable<ListEndpointsRequest, ListEndpointsResponse> listEndpointsCallable() {
+    return listEndpointsCallable;
   }
 
   public UnaryCallable<ListEndpointsRequest, ListEndpointsPagedResponse>
@@ -356,43 +362,36 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
     return listEndpointsPagedCallable;
   }
 
-  public UnaryCallable<ListEndpointsRequest, ListEndpointsResponse> listEndpointsCallable() {
-    return listEndpointsCallable;
-  }
-
   public UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable() {
     return updateEndpointCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
-      deleteEndpointOperationCallable() {
-    return deleteEndpointOperationCallable;
   }
 
   public UnaryCallable<DeleteEndpointRequest, Operation> deleteEndpointCallable() {
     return deleteEndpointCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeployModelRequest, DeployModelResponse, DeployModelOperationMetadata>
-      deployModelOperationCallable() {
-    return deployModelOperationCallable;
+  public OperationCallable<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
+      deleteEndpointOperationCallable() {
+    return deleteEndpointOperationCallable;
   }
 
   public UnaryCallable<DeployModelRequest, Operation> deployModelCallable() {
     return deployModelCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
-      undeployModelOperationCallable() {
-    return undeployModelOperationCallable;
+  public OperationCallable<DeployModelRequest, DeployModelResponse, DeployModelOperationMetadata>
+      deployModelOperationCallable() {
+    return deployModelOperationCallable;
   }
 
   public UnaryCallable<UndeployModelRequest, Operation> undeployModelCallable() {
     return undeployModelCallable;
+  }
+
+  public OperationCallable<
+          UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
+      undeployModelOperationCallable() {
+    return undeployModelOperationCallable;
   }
 
   @Override

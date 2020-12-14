@@ -28,38 +28,38 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class DataLabelingJobName implements ResourceName {
-  private static final PathTemplate PROJECT_LOCATION_DATA_LABELING_JOB =
+public class AnnotatedDatasetName implements ResourceName {
+  private static final PathTemplate PROJECT_DATASET_ANNOTATED_DATASET =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}");
+          "projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
-  private final String location;
-  private final String dataLabelingJob;
+  private final String dataset;
+  private final String annotatedDataset;
 
   @Deprecated
-  protected DataLabelingJobName() {
+  protected AnnotatedDatasetName() {
     project = null;
-    location = null;
-    dataLabelingJob = null;
+    dataset = null;
+    annotatedDataset = null;
   }
 
-  private DataLabelingJobName(Builder builder) {
+  private AnnotatedDatasetName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    dataLabelingJob = Preconditions.checkNotNull(builder.getDataLabelingJob());
+    dataset = Preconditions.checkNotNull(builder.getDataset());
+    annotatedDataset = Preconditions.checkNotNull(builder.getAnnotatedDataset());
   }
 
   public String getProject() {
     return project;
   }
 
-  public String getLocation() {
-    return location;
+  public String getDataset() {
+    return dataset;
   }
 
-  public String getDataLabelingJob() {
-    return dataLabelingJob;
+  public String getAnnotatedDataset() {
+    return annotatedDataset;
   }
 
   public static Builder newBuilder() {
@@ -70,44 +70,44 @@ public class DataLabelingJobName implements ResourceName {
     return new Builder(this);
   }
 
-  public static DataLabelingJobName of(String project, String location, String dataLabelingJob) {
+  public static AnnotatedDatasetName of(String project, String dataset, String annotatedDataset) {
     return newBuilder()
         .setProject(project)
-        .setLocation(location)
-        .setDataLabelingJob(dataLabelingJob)
+        .setDataset(dataset)
+        .setAnnotatedDataset(annotatedDataset)
         .build();
   }
 
-  public static String format(String project, String location, String dataLabelingJob) {
+  public static String format(String project, String dataset, String annotatedDataset) {
     return newBuilder()
         .setProject(project)
-        .setLocation(location)
-        .setDataLabelingJob(dataLabelingJob)
+        .setDataset(dataset)
+        .setAnnotatedDataset(annotatedDataset)
         .build()
         .toString();
   }
 
-  public static DataLabelingJobName parse(String formattedString) {
+  public static AnnotatedDatasetName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_LOCATION_DATA_LABELING_JOB.validatedMatch(
-            formattedString, "DataLabelingJobName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("data_labeling_job"));
+        PROJECT_DATASET_ANNOTATED_DATASET.validatedMatch(
+            formattedString, "AnnotatedDatasetName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("dataset"), matchMap.get("annotated_dataset"));
   }
 
-  public static List<DataLabelingJobName> parseList(List<String> formattedStrings) {
-    List<DataLabelingJobName> list = new ArrayList<>(formattedStrings.size());
+  public static List<AnnotatedDatasetName> parseList(List<String> formattedStrings) {
+    List<AnnotatedDatasetName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<DataLabelingJobName> values) {
+  public static List<String> toStringList(List<AnnotatedDatasetName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (DataLabelingJobName value : values) {
+    for (AnnotatedDatasetName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -118,7 +118,7 @@ public class DataLabelingJobName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_DATA_LABELING_JOB.matches(formattedString);
+    return PROJECT_DATASET_ANNOTATED_DATASET.matches(formattedString);
   }
 
   @Override
@@ -130,11 +130,11 @@ public class DataLabelingJobName implements ResourceName {
           if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (location != null) {
-            fieldMapBuilder.put("location", location);
+          if (dataset != null) {
+            fieldMapBuilder.put("dataset", dataset);
           }
-          if (dataLabelingJob != null) {
-            fieldMapBuilder.put("data_labeling_job", dataLabelingJob);
+          if (annotatedDataset != null) {
+            fieldMapBuilder.put("annotated_dataset", annotatedDataset);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -149,8 +149,8 @@ public class DataLabelingJobName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_DATA_LABELING_JOB.instantiate(
-        "project", project, "location", location, "data_labeling_job", dataLabelingJob);
+    return PROJECT_DATASET_ANNOTATED_DATASET.instantiate(
+        "project", project, "dataset", dataset, "annotated_dataset", annotatedDataset);
   }
 
   @Override
@@ -159,10 +159,10 @@ public class DataLabelingJobName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      DataLabelingJobName that = ((DataLabelingJobName) o);
+      AnnotatedDatasetName that = ((AnnotatedDatasetName) o);
       return Objects.equals(this.project, that.project)
-          && Objects.equals(this.location, that.location)
-          && Objects.equals(this.dataLabelingJob, that.dataLabelingJob);
+          && Objects.equals(this.dataset, that.dataset)
+          && Objects.equals(this.annotatedDataset, that.annotatedDataset);
     }
     return false;
   }
@@ -173,17 +173,17 @@ public class DataLabelingJobName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= Objects.hashCode(location);
+    h ^= Objects.hashCode(dataset);
     h *= 1000003;
-    h ^= Objects.hashCode(dataLabelingJob);
+    h ^= Objects.hashCode(annotatedDataset);
     return h;
   }
 
-  /** Builder for projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}. */
+  /** Builder for projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}. */
   public static class Builder {
     private String project;
-    private String location;
-    private String dataLabelingJob;
+    private String dataset;
+    private String annotatedDataset;
 
     protected Builder() {}
 
@@ -191,12 +191,12 @@ public class DataLabelingJobName implements ResourceName {
       return project;
     }
 
-    public String getLocation() {
-      return location;
+    public String getDataset() {
+      return dataset;
     }
 
-    public String getDataLabelingJob() {
-      return dataLabelingJob;
+    public String getAnnotatedDataset() {
+      return annotatedDataset;
     }
 
     public Builder setProject(String project) {
@@ -204,24 +204,24 @@ public class DataLabelingJobName implements ResourceName {
       return this;
     }
 
-    public Builder setLocation(String location) {
-      this.location = location;
+    public Builder setDataset(String dataset) {
+      this.dataset = dataset;
       return this;
     }
 
-    public Builder setDataLabelingJob(String dataLabelingJob) {
-      this.dataLabelingJob = dataLabelingJob;
+    public Builder setAnnotatedDataset(String annotatedDataset) {
+      this.annotatedDataset = annotatedDataset;
       return this;
     }
 
-    private Builder(DataLabelingJobName dataLabelingJobName) {
-      project = dataLabelingJobName.project;
-      location = dataLabelingJobName.location;
-      dataLabelingJob = dataLabelingJobName.dataLabelingJob;
+    private Builder(AnnotatedDatasetName annotatedDatasetName) {
+      project = annotatedDatasetName.project;
+      dataset = annotatedDatasetName.dataset;
+      annotatedDataset = annotatedDatasetName.annotatedDataset;
     }
 
-    public DataLabelingJobName build() {
-      return new DataLabelingJobName(this);
+    public AnnotatedDatasetName build() {
+      return new AnnotatedDatasetName(this);
     }
   }
 }

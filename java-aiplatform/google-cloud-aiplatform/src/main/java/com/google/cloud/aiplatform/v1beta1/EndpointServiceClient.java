@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -40,23 +41,12 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description:
+ * This class provides the ability to make remote calls to the backing service through method calls
+ * that map to API methods. Sample code to get started:
  *
- * <p>This class provides the ability to make remote calls to the backing service through method
- * calls that map to API methods. Sample code to get started:
- *
- * <pre>
- * <code>
- * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
- *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
- *   Endpoint response = endpointServiceClient.getEndpoint(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the endpointServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the EndpointServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -85,30 +75,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EndpointServiceSettings endpointServiceSettings =
  *     EndpointServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * EndpointServiceClient endpointServiceClient =
  *     EndpointServiceClient.create(endpointServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EndpointServiceSettings endpointServiceSettings =
  *     EndpointServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * EndpointServiceClient endpointServiceClient =
  *     EndpointServiceClient.create(endpointServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class EndpointServiceClient implements BackgroundResource {
   private final EndpointServiceSettings settings;
   private final EndpointServiceStub stub;
@@ -130,7 +118,7 @@ public class EndpointServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of EndpointServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use EndpointServiceSettings}.
+   * for advanced usage - prefer using create(EndpointServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final EndpointServiceClient create(EndpointServiceStub stub) {
@@ -168,33 +156,19 @@ public class EndpointServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Endpoint endpoint = Endpoint.newBuilder().build();
-   *   Endpoint response = endpointServiceClient.createEndpointAsync(parent, endpoint).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the Endpoint in. Format:
    *     `projects/{project}/locations/{location}`
    * @param endpoint Required. The Endpoint to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Endpoint, CreateEndpointOperationMetadata> createEndpointAsync(
       LocationName parent, Endpoint endpoint) {
     CreateEndpointRequest request =
@@ -205,27 +179,15 @@ public class EndpointServiceClient implements BackgroundResource {
     return createEndpointAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Endpoint endpoint = Endpoint.newBuilder().build();
-   *   Endpoint response = endpointServiceClient.createEndpointAsync(parent.toString(), endpoint).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the Endpoint in. Format:
    *     `projects/{project}/locations/{location}`
    * @param endpoint Required. The Endpoint to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Endpoint, CreateEndpointOperationMetadata> createEndpointAsync(
       String parent, Endpoint endpoint) {
     CreateEndpointRequest request =
@@ -233,96 +195,42 @@ public class EndpointServiceClient implements BackgroundResource {
     return createEndpointAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Endpoint endpoint = Endpoint.newBuilder().build();
-   *   CreateEndpointRequest request = CreateEndpointRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setEndpoint(endpoint)
-   *     .build();
-   *   Endpoint response = endpointServiceClient.createEndpointAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Endpoint, CreateEndpointOperationMetadata> createEndpointAsync(
       CreateEndpointRequest request) {
     return createEndpointOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an Endpoint.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Endpoint endpoint = Endpoint.newBuilder().build();
-   *   CreateEndpointRequest request = CreateEndpointRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setEndpoint(endpoint)
-   *     .build();
-   *   OperationFuture&lt;Endpoint, CreateEndpointOperationMetadata&gt; future = endpointServiceClient.createEndpointOperationCallable().futureCall(request);
-   *   // Do something
-   *   Endpoint response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateEndpointRequest, Endpoint, CreateEndpointOperationMetadata>
       createEndpointOperationCallable() {
     return stub.createEndpointOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an Endpoint.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Endpoint endpoint = Endpoint.newBuilder().build();
-   *   CreateEndpointRequest request = CreateEndpointRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setEndpoint(endpoint)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = endpointServiceClient.createEndpointCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateEndpointRequest, Operation> createEndpointCallable() {
     return stub.createEndpointCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   Endpoint response = endpointServiceClient.getEndpoint(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Endpoint resource. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
@@ -334,18 +242,9 @@ public class EndpointServiceClient implements BackgroundResource {
     return getEndpoint(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   Endpoint response = endpointServiceClient.getEndpoint(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Endpoint resource. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
@@ -356,21 +255,9 @@ public class EndpointServiceClient implements BackgroundResource {
     return getEndpoint(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   GetEndpointRequest request = GetEndpointRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Endpoint response = endpointServiceClient.getEndpoint(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -379,42 +266,19 @@ public class EndpointServiceClient implements BackgroundResource {
     return getEndpointCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an Endpoint.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   GetEndpointRequest request = GetEndpointRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Endpoint&gt; future = endpointServiceClient.getEndpointCallable().futureCall(request);
-   *   // Do something
-   *   Endpoint response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetEndpointRequest, Endpoint> getEndpointCallable() {
     return stub.getEndpointCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Endpoints in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Endpoint element : endpointServiceClient.listEndpoints(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location from which to list the Endpoints.
    *     Format: `projects/{project}/locations/{location}`
@@ -428,20 +292,9 @@ public class EndpointServiceClient implements BackgroundResource {
     return listEndpoints(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Endpoints in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Endpoint element : endpointServiceClient.listEndpoints(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location from which to list the Endpoints.
    *     Format: `projects/{project}/locations/{location}`
@@ -452,23 +305,9 @@ public class EndpointServiceClient implements BackgroundResource {
     return listEndpoints(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Endpoints in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListEndpointsRequest request = ListEndpointsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Endpoint element : endpointServiceClient.listEndpoints(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -477,75 +316,30 @@ public class EndpointServiceClient implements BackgroundResource {
     return listEndpointsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Endpoints in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListEndpointsRequest request = ListEndpointsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListEndpointsPagedResponse&gt; future = endpointServiceClient.listEndpointsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Endpoint element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListEndpointsRequest, ListEndpointsPagedResponse>
       listEndpointsPagedCallable() {
     return stub.listEndpointsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Endpoints in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListEndpointsRequest request = ListEndpointsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListEndpointsResponse response = endpointServiceClient.listEndpointsCallable().call(request);
-   *     for (Endpoint element : response.getEndpointsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListEndpointsRequest, ListEndpointsResponse> listEndpointsCallable() {
     return stub.listEndpointsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   Endpoint endpoint = Endpoint.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Endpoint response = endpointServiceClient.updateEndpoint(endpoint, updateMask);
-   * }
-   * </code></pre>
    *
    * @param endpoint Required. The Endpoint which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource.
@@ -557,23 +351,9 @@ public class EndpointServiceClient implements BackgroundResource {
     return updateEndpoint(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   Endpoint endpoint = Endpoint.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateEndpointRequest request = UpdateEndpointRequest.newBuilder()
-   *     .setEndpoint(endpoint)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   Endpoint response = endpointServiceClient.updateEndpoint(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -582,49 +362,24 @@ public class EndpointServiceClient implements BackgroundResource {
     return updateEndpointCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an Endpoint.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   Endpoint endpoint = Endpoint.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateEndpointRequest request = UpdateEndpointRequest.newBuilder()
-   *     .setEndpoint(endpoint)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Endpoint&gt; future = endpointServiceClient.updateEndpointCallable().futureCall(request);
-   *   // Do something
-   *   Endpoint response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable() {
     return stub.updateEndpointCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   endpointServiceClient.deleteEndpointAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Endpoint resource to be deleted. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteEndpointAsync(
       EndpointName name) {
     DeleteEndpointRequest request =
@@ -632,116 +387,55 @@ public class EndpointServiceClient implements BackgroundResource {
     return deleteEndpointAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   endpointServiceClient.deleteEndpointAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Endpoint resource to be deleted. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteEndpointAsync(String name) {
     DeleteEndpointRequest request = DeleteEndpointRequest.newBuilder().setName(name).build();
     return deleteEndpointAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an Endpoint.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   DeleteEndpointRequest request = DeleteEndpointRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   endpointServiceClient.deleteEndpointAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteEndpointAsync(
       DeleteEndpointRequest request) {
     return deleteEndpointOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an Endpoint.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   DeleteEndpointRequest request = DeleteEndpointRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, DeleteOperationMetadata&gt; future = endpointServiceClient.deleteEndpointOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
       deleteEndpointOperationCallable() {
     return stub.deleteEndpointOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an Endpoint.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   DeleteEndpointRequest request = DeleteEndpointRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = endpointServiceClient.deleteEndpointCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteEndpointRequest, Operation> deleteEndpointCallable() {
     return stub.deleteEndpointCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deploys a Model into this Endpoint, creating a DeployedModel within it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   DeployedModel deployedModel = DeployedModel.newBuilder().build();
-   *   Map&lt;String, Integer&gt; trafficSplit = new HashMap&lt;&gt;();
-   *   DeployModelResponse response = endpointServiceClient.deployModelAsync(endpoint, deployedModel, trafficSplit).get();
-   * }
-   * </code></pre>
    *
    * @param endpoint Required. The name of the Endpoint resource into which to deploy a Model.
    *     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
@@ -761,8 +455,6 @@ public class EndpointServiceClient implements BackgroundResource {
    *     [traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split] is not updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<DeployModelResponse, DeployModelOperationMetadata> deployModelAsync(
       EndpointName endpoint, DeployedModel deployedModel, Map<String, Integer> trafficSplit) {
     DeployModelRequest request =
@@ -774,20 +466,9 @@ public class EndpointServiceClient implements BackgroundResource {
     return deployModelAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deploys a Model into this Endpoint, creating a DeployedModel within it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   DeployedModel deployedModel = DeployedModel.newBuilder().build();
-   *   Map&lt;String, Integer&gt; trafficSplit = new HashMap&lt;&gt;();
-   *   DeployModelResponse response = endpointServiceClient.deployModelAsync(endpoint.toString(), deployedModel, trafficSplit).get();
-   * }
-   * </code></pre>
    *
    * @param endpoint Required. The name of the Endpoint resource into which to deploy a Model.
    *     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
@@ -807,8 +488,6 @@ public class EndpointServiceClient implements BackgroundResource {
    *     [traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split] is not updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<DeployModelResponse, DeployModelOperationMetadata> deployModelAsync(
       String endpoint, DeployedModel deployedModel, Map<String, Integer> trafficSplit) {
     DeployModelRequest request =
@@ -820,100 +499,44 @@ public class EndpointServiceClient implements BackgroundResource {
     return deployModelAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deploys a Model into this Endpoint, creating a DeployedModel within it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   DeployedModel deployedModel = DeployedModel.newBuilder().build();
-   *   DeployModelRequest request = DeployModelRequest.newBuilder()
-   *     .setEndpoint(endpoint.toString())
-   *     .setDeployedModel(deployedModel)
-   *     .build();
-   *   DeployModelResponse response = endpointServiceClient.deployModelAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<DeployModelResponse, DeployModelOperationMetadata> deployModelAsync(
       DeployModelRequest request) {
     return deployModelOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deploys a Model into this Endpoint, creating a DeployedModel within it.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   DeployedModel deployedModel = DeployedModel.newBuilder().build();
-   *   DeployModelRequest request = DeployModelRequest.newBuilder()
-   *     .setEndpoint(endpoint.toString())
-   *     .setDeployedModel(deployedModel)
-   *     .build();
-   *   OperationFuture&lt;DeployModelResponse, DeployModelOperationMetadata&gt; future = endpointServiceClient.deployModelOperationCallable().futureCall(request);
-   *   // Do something
-   *   DeployModelResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           DeployModelRequest, DeployModelResponse, DeployModelOperationMetadata>
       deployModelOperationCallable() {
     return stub.deployModelOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deploys a Model into this Endpoint, creating a DeployedModel within it.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   DeployedModel deployedModel = DeployedModel.newBuilder().build();
-   *   DeployModelRequest request = DeployModelRequest.newBuilder()
-   *     .setEndpoint(endpoint.toString())
-   *     .setDeployedModel(deployedModel)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = endpointServiceClient.deployModelCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeployModelRequest, Operation> deployModelCallable() {
     return stub.deployModelCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources
    * it's using.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   String deployedModelId = "";
-   *   Map&lt;String, Integer&gt; trafficSplit = new HashMap&lt;&gt;();
-   *   UndeployModelResponse response = endpointServiceClient.undeployModelAsync(endpoint, deployedModelId, trafficSplit).get();
-   * }
-   * </code></pre>
    *
    * @param endpoint Required. The name of the Endpoint resource from which to undeploy a Model.
    *     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
@@ -927,8 +550,6 @@ public class EndpointServiceClient implements BackgroundResource {
    *     this method executes, or if this field unassigns any traffic to it.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelAsync(
           EndpointName endpoint, String deployedModelId, Map<String, Integer> trafficSplit) {
@@ -941,21 +562,10 @@ public class EndpointServiceClient implements BackgroundResource {
     return undeployModelAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources
    * it's using.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   String deployedModelId = "";
-   *   Map&lt;String, Integer&gt; trafficSplit = new HashMap&lt;&gt;();
-   *   UndeployModelResponse response = endpointServiceClient.undeployModelAsync(endpoint.toString(), deployedModelId, trafficSplit).get();
-   * }
-   * </code></pre>
    *
    * @param endpoint Required. The name of the Endpoint resource from which to undeploy a Model.
    *     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
@@ -969,8 +579,6 @@ public class EndpointServiceClient implements BackgroundResource {
    *     this method executes, or if this field unassigns any traffic to it.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelAsync(
           String endpoint, String deployedModelId, Map<String, Integer> trafficSplit) {
@@ -983,83 +591,38 @@ public class EndpointServiceClient implements BackgroundResource {
     return undeployModelAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources
    * it's using.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   String deployedModelId = "";
-   *   UndeployModelRequest request = UndeployModelRequest.newBuilder()
-   *     .setEndpoint(endpoint.toString())
-   *     .setDeployedModelId(deployedModelId)
-   *     .build();
-   *   UndeployModelResponse response = endpointServiceClient.undeployModelAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelAsync(UndeployModelRequest request) {
     return undeployModelOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources
    * it's using.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   String deployedModelId = "";
-   *   UndeployModelRequest request = UndeployModelRequest.newBuilder()
-   *     .setEndpoint(endpoint.toString())
-   *     .setDeployedModelId(deployedModelId)
-   *     .build();
-   *   OperationFuture&lt;UndeployModelResponse, UndeployModelOperationMetadata&gt; future = endpointServiceClient.undeployModelOperationCallable().futureCall(request);
-   *   // Do something
-   *   UndeployModelResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelOperationCallable() {
     return stub.undeployModelOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources
    * it's using.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   String deployedModelId = "";
-   *   UndeployModelRequest request = UndeployModelRequest.newBuilder()
-   *     .setEndpoint(endpoint.toString())
-   *     .setDeployedModelId(deployedModelId)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = endpointServiceClient.undeployModelCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UndeployModelRequest, Operation> undeployModelCallable() {
     return stub.undeployModelCallable();

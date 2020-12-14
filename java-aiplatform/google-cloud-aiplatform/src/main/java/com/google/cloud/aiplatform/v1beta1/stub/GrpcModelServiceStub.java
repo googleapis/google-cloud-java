@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -60,16 +60,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud AI Platform API.
+ * gRPC stub implementation for the ModelService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcModelServiceStub extends ModelServiceStub {
-
   private static final MethodDescriptor<UploadModelRequest, Operation> uploadModelMethodDescriptor =
       MethodDescriptor.<UploadModelRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -77,6 +75,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UploadModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
       MethodDescriptor.<GetModelRequest, Model>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -84,6 +83,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
       listModelsMethodDescriptor =
           MethodDescriptor.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -92,6 +92,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateModelRequest, Model> updateModelMethodDescriptor =
       MethodDescriptor.<UpdateModelRequest, Model>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -99,6 +100,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteModelRequest, Operation> deleteModelMethodDescriptor =
       MethodDescriptor.<DeleteModelRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -106,6 +108,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ExportModelRequest, Operation> exportModelMethodDescriptor =
       MethodDescriptor.<ExportModelRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -113,6 +116,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ExportModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationMethodDescriptor =
           MethodDescriptor.<GetModelEvaluationRequest, ModelEvaluation>newBuilder()
@@ -122,6 +126,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(GetModelEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelEvaluation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
       listModelEvaluationsMethodDescriptor =
           MethodDescriptor.<ListModelEvaluationsRequest, ListModelEvaluationsResponse>newBuilder()
@@ -133,6 +138,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelEvaluationsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetModelEvaluationSliceRequest, ModelEvaluationSlice>
       getModelEvaluationSliceMethodDescriptor =
           MethodDescriptor.<GetModelEvaluationSliceRequest, ModelEvaluationSlice>newBuilder()
@@ -144,6 +150,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ModelEvaluationSlice.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
       listModelEvaluationSlicesMethodDescriptor =
@@ -157,9 +164,6 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelEvaluationSlicesResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<UploadModelRequest, Operation> uploadModelCallable;
   private final OperationCallable<
@@ -190,6 +194,8 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcModelServiceStub create(ModelServiceStubSettings settings)
@@ -374,7 +380,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             uploadModelTransportSettings,
             settings.uploadModelOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getModelCallable =
         callableFactory.createUnaryCallable(
             getModelTransportSettings, settings.getModelSettings(), clientContext);
@@ -395,7 +401,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             deleteModelTransportSettings,
             settings.deleteModelOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.exportModelCallable =
         callableFactory.createUnaryCallable(
             exportModelTransportSettings, settings.exportModelSettings(), clientContext);
@@ -404,7 +410,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             exportModelTransportSettings,
             settings.exportModelOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getModelEvaluationCallable =
         callableFactory.createUnaryCallable(
             getModelEvaluationTransportSettings,
@@ -436,67 +442,59 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             settings.listModelEvaluationSlicesSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UploadModelRequest, UploadModelResponse, UploadModelOperationMetadata>
-      uploadModelOperationCallable() {
-    return uploadModelOperationCallable;
   }
 
   public UnaryCallable<UploadModelRequest, Operation> uploadModelCallable() {
     return uploadModelCallable;
   }
 
-  public UnaryCallable<GetModelRequest, Model> getModelCallable() {
-    return getModelCallable;
+  public OperationCallable<UploadModelRequest, UploadModelResponse, UploadModelOperationMetadata>
+      uploadModelOperationCallable() {
+    return uploadModelOperationCallable;
   }
 
-  public UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
-    return listModelsPagedCallable;
+  public UnaryCallable<GetModelRequest, Model> getModelCallable() {
+    return getModelCallable;
   }
 
   public UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable() {
     return listModelsCallable;
   }
 
-  public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
-    return updateModelCallable;
+  public UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
+    return listModelsPagedCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteModelRequest, Empty, DeleteOperationMetadata>
-      deleteModelOperationCallable() {
-    return deleteModelOperationCallable;
+  public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
+    return updateModelCallable;
   }
 
   public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
     return deleteModelCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
-      exportModelOperationCallable() {
-    return exportModelOperationCallable;
+  public OperationCallable<DeleteModelRequest, Empty, DeleteOperationMetadata>
+      deleteModelOperationCallable() {
+    return deleteModelOperationCallable;
   }
 
   public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
     return exportModelCallable;
   }
 
-  public UnaryCallable<GetModelEvaluationRequest, ModelEvaluation> getModelEvaluationCallable() {
-    return getModelEvaluationCallable;
+  public OperationCallable<ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
+      exportModelOperationCallable() {
+    return exportModelOperationCallable;
   }
 
-  public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
-      listModelEvaluationsPagedCallable() {
-    return listModelEvaluationsPagedCallable;
+  public UnaryCallable<GetModelEvaluationRequest, ModelEvaluation> getModelEvaluationCallable() {
+    return getModelEvaluationCallable;
   }
 
   public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
@@ -504,19 +502,24 @@ public class GrpcModelServiceStub extends ModelServiceStub {
     return listModelEvaluationsCallable;
   }
 
+  public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
+      listModelEvaluationsPagedCallable() {
+    return listModelEvaluationsPagedCallable;
+  }
+
   public UnaryCallable<GetModelEvaluationSliceRequest, ModelEvaluationSlice>
       getModelEvaluationSliceCallable() {
     return getModelEvaluationSliceCallable;
   }
 
-  public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
-      listModelEvaluationSlicesPagedCallable() {
-    return listModelEvaluationSlicesPagedCallable;
-  }
-
   public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
       listModelEvaluationSlicesCallable() {
     return listModelEvaluationSlicesCallable;
+  }
+
+  public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
+      listModelEvaluationSlicesPagedCallable() {
+    return listModelEvaluationSlicesPagedCallable;
   }
 
   @Override

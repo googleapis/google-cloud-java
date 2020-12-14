@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.BetaApi;
@@ -24,9 +25,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockModelServiceImpl extends ModelServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -62,10 +64,10 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -76,10 +78,10 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Model) {
       requests.add(request);
-      responseObserver.onNext((Model) response);
+      responseObserver.onNext(((Model) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -91,10 +93,10 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListModelsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListModelsResponse) response);
+      responseObserver.onNext(((ListModelsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -105,10 +107,10 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Model) {
       requests.add(request);
-      responseObserver.onNext((Model) response);
+      responseObserver.onNext(((Model) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -119,10 +121,10 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -133,10 +135,10 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -148,10 +150,10 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ModelEvaluation) {
       requests.add(request);
-      responseObserver.onNext((ModelEvaluation) response);
+      responseObserver.onNext(((ModelEvaluation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -164,10 +166,10 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListModelEvaluationsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListModelEvaluationsResponse) response);
+      responseObserver.onNext(((ListModelEvaluationsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -180,10 +182,10 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ModelEvaluationSlice) {
       requests.add(request);
-      responseObserver.onNext((ModelEvaluationSlice) response);
+      responseObserver.onNext(((ModelEvaluationSlice) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -196,10 +198,10 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListModelEvaluationSlicesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListModelEvaluationSlicesResponse) response);
+      responseObserver.onNext(((ListModelEvaluationSlicesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.SpecialistPoolServiceClient.ListSpecialistPoolsPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link SpecialistPoolServiceClient}.
  *
@@ -53,31 +54,31 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getSpecialistPool to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SpecialistPoolServiceSettings.Builder specialistPoolServiceSettingsBuilder =
  *     SpecialistPoolServiceSettings.newBuilder();
  * specialistPoolServiceSettingsBuilder
  *     .getSpecialistPoolSettings()
  *     .setRetrySettings(
- *         specialistPoolServiceSettingsBuilder.getSpecialistPoolSettings().getRetrySettings().toBuilder()
+ *         specialistPoolServiceSettingsBuilder
+ *             .getSpecialistPoolSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * SpecialistPoolServiceSettings specialistPoolServiceSettings = specialistPoolServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * SpecialistPoolServiceSettings specialistPoolServiceSettings =
+ *     specialistPoolServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class SpecialistPoolServiceSettings extends ClientSettings<SpecialistPoolServiceSettings> {
+
   /** Returns the object with the settings used for calls to createSpecialistPool. */
   public UnaryCallSettings<CreateSpecialistPoolRequest, Operation> createSpecialistPoolSettings() {
     return ((SpecialistPoolServiceStubSettings) getStubSettings()).createSpecialistPoolSettings();
   }
 
   /** Returns the object with the settings used for calls to createSpecialistPool. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           CreateSpecialistPoolRequest, SpecialistPool, CreateSpecialistPoolOperationMetadata>
       createSpecialistPoolOperationSettings() {
@@ -103,8 +104,6 @@ public class SpecialistPoolServiceSettings extends ClientSettings<SpecialistPool
   }
 
   /** Returns the object with the settings used for calls to deleteSpecialistPool. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteSpecialistPoolRequest, Empty, DeleteOperationMetadata>
       deleteSpecialistPoolOperationSettings() {
     return ((SpecialistPoolServiceStubSettings) getStubSettings())
@@ -117,8 +116,6 @@ public class SpecialistPoolServiceSettings extends ClientSettings<SpecialistPool
   }
 
   /** Returns the object with the settings used for calls to updateSpecialistPool. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
       updateSpecialistPoolOperationSettings() {
@@ -187,16 +184,13 @@ public class SpecialistPoolServiceSettings extends ClientSettings<SpecialistPool
   /** Builder for SpecialistPoolServiceSettings. */
   public static class Builder
       extends ClientSettings.Builder<SpecialistPoolServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(SpecialistPoolServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(SpecialistPoolServiceStubSettings.newBuilder());
     }
 
     protected Builder(SpecialistPoolServiceSettings settings) {
@@ -207,11 +201,15 @@ public class SpecialistPoolServiceSettings extends ClientSettings<SpecialistPool
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(SpecialistPoolServiceStubSettings.newBuilder());
+    }
+
     public SpecialistPoolServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((SpecialistPoolServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -231,8 +229,6 @@ public class SpecialistPoolServiceSettings extends ClientSettings<SpecialistPool
     }
 
     /** Returns the builder for the settings used for calls to createSpecialistPool. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateSpecialistPoolRequest, SpecialistPool, CreateSpecialistPoolOperationMetadata>
         createSpecialistPoolOperationSettings() {
@@ -261,8 +257,6 @@ public class SpecialistPoolServiceSettings extends ClientSettings<SpecialistPool
     }
 
     /** Returns the builder for the settings used for calls to deleteSpecialistPool. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteSpecialistPoolRequest, Empty, DeleteOperationMetadata>
         deleteSpecialistPoolOperationSettings() {
@@ -276,8 +270,6 @@ public class SpecialistPoolServiceSettings extends ClientSettings<SpecialistPool
     }
 
     /** Returns the builder for the settings used for calls to updateSpecialistPool. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
         updateSpecialistPoolOperationSettings() {

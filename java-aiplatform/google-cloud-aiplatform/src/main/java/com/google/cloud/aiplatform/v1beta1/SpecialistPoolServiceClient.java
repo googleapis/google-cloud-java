@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -39,7 +40,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service for creating and managing Customer SpecialistPools. When customers
  * start Data Labeling jobs, they can reuse/create Specialist Pools to bring their own Specialists
@@ -50,16 +51,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
- *   SpecialistPoolName name = SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
- *   SpecialistPool response = specialistPoolServiceClient.getSpecialistPool(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the specialistPoolServiceClient object to clean up
+ * <p>Note: close() needs to be called on the SpecialistPoolServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -88,30 +80,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SpecialistPoolServiceSettings specialistPoolServiceSettings =
  *     SpecialistPoolServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * SpecialistPoolServiceClient specialistPoolServiceClient =
  *     SpecialistPoolServiceClient.create(specialistPoolServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SpecialistPoolServiceSettings specialistPoolServiceSettings =
  *     SpecialistPoolServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SpecialistPoolServiceClient specialistPoolServiceClient =
  *     SpecialistPoolServiceClient.create(specialistPoolServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class SpecialistPoolServiceClient implements BackgroundResource {
   private final SpecialistPoolServiceSettings settings;
   private final SpecialistPoolServiceStub stub;
@@ -133,7 +123,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of SpecialistPoolServiceClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use SpecialistPoolServiceSettings}.
+   * This is for advanced usage - prefer using create(SpecialistPoolServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SpecialistPoolServiceClient create(SpecialistPoolServiceStub stub) {
@@ -171,33 +161,19 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a SpecialistPool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SpecialistPool specialistPool = SpecialistPool.newBuilder().build();
-   *   SpecialistPool response = specialistPoolServiceClient.createSpecialistPoolAsync(parent, specialistPool).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent Project name for the new SpecialistPool. The form is
    *     `projects/{project}/locations/{location}`.
    * @param specialistPool Required. The SpecialistPool to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<SpecialistPool, CreateSpecialistPoolOperationMetadata>
       createSpecialistPoolAsync(LocationName parent, SpecialistPool specialistPool) {
     CreateSpecialistPoolRequest request =
@@ -208,27 +184,15 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return createSpecialistPoolAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a SpecialistPool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SpecialistPool specialistPool = SpecialistPool.newBuilder().build();
-   *   SpecialistPool response = specialistPoolServiceClient.createSpecialistPoolAsync(parent.toString(), specialistPool).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent Project name for the new SpecialistPool. The form is
    *     `projects/{project}/locations/{location}`.
    * @param specialistPool Required. The SpecialistPool to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<SpecialistPool, CreateSpecialistPoolOperationMetadata>
       createSpecialistPoolAsync(String parent, SpecialistPool specialistPool) {
     CreateSpecialistPoolRequest request =
@@ -239,98 +203,44 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return createSpecialistPoolAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a SpecialistPool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SpecialistPool specialistPool = SpecialistPool.newBuilder().build();
-   *   CreateSpecialistPoolRequest request = CreateSpecialistPoolRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSpecialistPool(specialistPool)
-   *     .build();
-   *   SpecialistPool response = specialistPoolServiceClient.createSpecialistPoolAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<SpecialistPool, CreateSpecialistPoolOperationMetadata>
       createSpecialistPoolAsync(CreateSpecialistPoolRequest request) {
     return createSpecialistPoolOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a SpecialistPool.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SpecialistPool specialistPool = SpecialistPool.newBuilder().build();
-   *   CreateSpecialistPoolRequest request = CreateSpecialistPoolRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSpecialistPool(specialistPool)
-   *     .build();
-   *   OperationFuture&lt;SpecialistPool, CreateSpecialistPoolOperationMetadata&gt; future = specialistPoolServiceClient.createSpecialistPoolOperationCallable().futureCall(request);
-   *   // Do something
-   *   SpecialistPool response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           CreateSpecialistPoolRequest, SpecialistPool, CreateSpecialistPoolOperationMetadata>
       createSpecialistPoolOperationCallable() {
     return stub.createSpecialistPoolOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a SpecialistPool.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SpecialistPool specialistPool = SpecialistPool.newBuilder().build();
-   *   CreateSpecialistPoolRequest request = CreateSpecialistPoolRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSpecialistPool(specialistPool)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = specialistPoolServiceClient.createSpecialistPoolCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateSpecialistPoolRequest, Operation>
       createSpecialistPoolCallable() {
     return stub.createSpecialistPoolCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a SpecialistPool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPoolName name = SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
-   *   SpecialistPool response = specialistPoolServiceClient.getSpecialistPool(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the SpecialistPool resource. The form is
    *     <p>`projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
@@ -344,18 +254,9 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return getSpecialistPool(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a SpecialistPool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPoolName name = SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
-   *   SpecialistPool response = specialistPoolServiceClient.getSpecialistPool(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the SpecialistPool resource. The form is
    *     <p>`projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
@@ -366,21 +267,9 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return getSpecialistPool(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a SpecialistPool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPoolName name = SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
-   *   GetSpecialistPoolRequest request = GetSpecialistPoolRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   SpecialistPool response = specialistPoolServiceClient.getSpecialistPool(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -389,42 +278,19 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return getSpecialistPoolCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a SpecialistPool.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPoolName name = SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
-   *   GetSpecialistPoolRequest request = GetSpecialistPoolRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;SpecialistPool&gt; future = specialistPoolServiceClient.getSpecialistPoolCallable().futureCall(request);
-   *   // Do something
-   *   SpecialistPool response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetSpecialistPoolRequest, SpecialistPool> getSpecialistPoolCallable() {
     return stub.getSpecialistPoolCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists SpecialistPools in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (SpecialistPool element : specialistPoolServiceClient.listSpecialistPools(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the SpecialistPool's parent resource. Format:
    *     `projects/{project}/locations/{location}`
@@ -438,20 +304,9 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return listSpecialistPools(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists SpecialistPools in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (SpecialistPool element : specialistPoolServiceClient.listSpecialistPools(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the SpecialistPool's parent resource. Format:
    *     `projects/{project}/locations/{location}`
@@ -463,23 +318,9 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return listSpecialistPools(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists SpecialistPools in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListSpecialistPoolsRequest request = ListSpecialistPoolsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (SpecialistPool element : specialistPoolServiceClient.listSpecialistPools(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -489,82 +330,36 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return listSpecialistPoolsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists SpecialistPools in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListSpecialistPoolsRequest request = ListSpecialistPoolsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListSpecialistPoolsPagedResponse&gt; future = specialistPoolServiceClient.listSpecialistPoolsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (SpecialistPool element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListSpecialistPoolsRequest, ListSpecialistPoolsPagedResponse>
       listSpecialistPoolsPagedCallable() {
     return stub.listSpecialistPoolsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists SpecialistPools in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListSpecialistPoolsRequest request = ListSpecialistPoolsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListSpecialistPoolsResponse response = specialistPoolServiceClient.listSpecialistPoolsCallable().call(request);
-   *     for (SpecialistPool element : response.getSpecialistPoolsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>
       listSpecialistPoolsCallable() {
     return stub.listSpecialistPoolsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a SpecialistPool as well as all Specialists in the pool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPoolName name = SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
-   *   specialistPoolServiceClient.deleteSpecialistPoolAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the SpecialistPool to delete. Format:
    *     `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteSpecialistPoolAsync(
       SpecialistPoolName name) {
     DeleteSpecialistPoolRequest request =
@@ -574,25 +369,14 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return deleteSpecialistPoolAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a SpecialistPool as well as all Specialists in the pool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPoolName name = SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
-   *   specialistPoolServiceClient.deleteSpecialistPoolAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the SpecialistPool to delete. Format:
    *     `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteSpecialistPoolAsync(
       String name) {
     DeleteSpecialistPoolRequest request =
@@ -600,99 +384,48 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return deleteSpecialistPoolAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a SpecialistPool as well as all Specialists in the pool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPoolName name = SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
-   *   DeleteSpecialistPoolRequest request = DeleteSpecialistPoolRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   specialistPoolServiceClient.deleteSpecialistPoolAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteSpecialistPoolAsync(
       DeleteSpecialistPoolRequest request) {
     return deleteSpecialistPoolOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a SpecialistPool as well as all Specialists in the pool.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPoolName name = SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
-   *   DeleteSpecialistPoolRequest request = DeleteSpecialistPoolRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, DeleteOperationMetadata&gt; future = specialistPoolServiceClient.deleteSpecialistPoolOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteSpecialistPoolRequest, Empty, DeleteOperationMetadata>
       deleteSpecialistPoolOperationCallable() {
     return stub.deleteSpecialistPoolOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a SpecialistPool as well as all Specialists in the pool.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPoolName name = SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
-   *   DeleteSpecialistPoolRequest request = DeleteSpecialistPoolRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = specialistPoolServiceClient.deleteSpecialistPoolCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteSpecialistPoolRequest, Operation>
       deleteSpecialistPoolCallable() {
     return stub.deleteSpecialistPoolCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a SpecialistPool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPool specialistPool = SpecialistPool.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   SpecialistPool response = specialistPoolServiceClient.updateSpecialistPoolAsync(specialistPool, updateMask).get();
-   * }
-   * </code></pre>
    *
    * @param specialistPool Required. The SpecialistPool which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<SpecialistPool, UpdateSpecialistPoolOperationMetadata>
       updateSpecialistPoolAsync(SpecialistPool specialistPool, FieldMask updateMask) {
     UpdateSpecialistPoolRequest request =
@@ -703,80 +436,35 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     return updateSpecialistPoolAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a SpecialistPool.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPool specialistPool = SpecialistPool.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateSpecialistPoolRequest request = UpdateSpecialistPoolRequest.newBuilder()
-   *     .setSpecialistPool(specialistPool)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   SpecialistPool response = specialistPoolServiceClient.updateSpecialistPoolAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<SpecialistPool, UpdateSpecialistPoolOperationMetadata>
       updateSpecialistPoolAsync(UpdateSpecialistPoolRequest request) {
     return updateSpecialistPoolOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a SpecialistPool.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPool specialistPool = SpecialistPool.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateSpecialistPoolRequest request = UpdateSpecialistPoolRequest.newBuilder()
-   *     .setSpecialistPool(specialistPool)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   OperationFuture&lt;SpecialistPool, UpdateSpecialistPoolOperationMetadata&gt; future = specialistPoolServiceClient.updateSpecialistPoolOperationCallable().futureCall(request);
-   *   // Do something
-   *   SpecialistPool response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
       updateSpecialistPoolOperationCallable() {
     return stub.updateSpecialistPoolOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a SpecialistPool.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SpecialistPoolServiceClient specialistPoolServiceClient = SpecialistPoolServiceClient.create()) {
-   *   SpecialistPool specialistPool = SpecialistPool.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateSpecialistPoolRequest request = UpdateSpecialistPoolRequest.newBuilder()
-   *     .setSpecialistPool(specialistPool)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = specialistPoolServiceClient.updateSpecialistPoolCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateSpecialistPoolRequest, Operation>
       updateSpecialistPoolCallable() {

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -38,24 +39,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service for creating and managing AI Platform's pipelines.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   TrainingPipeline trainingPipeline = TrainingPipeline.newBuilder().build();
- *   TrainingPipeline response = pipelineServiceClient.createTrainingPipeline(parent, trainingPipeline);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the pipelineServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the PipelineServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -84,30 +75,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PipelineServiceSettings pipelineServiceSettings =
  *     PipelineServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * PipelineServiceClient pipelineServiceClient =
  *     PipelineServiceClient.create(pipelineServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PipelineServiceSettings pipelineServiceSettings =
  *     PipelineServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PipelineServiceClient pipelineServiceClient =
  *     PipelineServiceClient.create(pipelineServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class PipelineServiceClient implements BackgroundResource {
   private final PipelineServiceSettings settings;
   private final PipelineServiceStub stub;
@@ -129,7 +118,7 @@ public class PipelineServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of PipelineServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use PipelineServiceSettings}.
+   * for advanced usage - prefer using create(PipelineServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PipelineServiceClient create(PipelineServiceStub stub) {
@@ -167,25 +156,13 @@ public class PipelineServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TrainingPipeline. A created TrainingPipeline right away will be attempted to be run.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   TrainingPipeline trainingPipeline = TrainingPipeline.newBuilder().build();
-   *   TrainingPipeline response = pipelineServiceClient.createTrainingPipeline(parent, trainingPipeline);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the TrainingPipeline in.
    *     Format: `projects/{project}/locations/{location}`
@@ -202,19 +179,9 @@ public class PipelineServiceClient implements BackgroundResource {
     return createTrainingPipeline(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TrainingPipeline. A created TrainingPipeline right away will be attempted to be run.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   TrainingPipeline trainingPipeline = TrainingPipeline.newBuilder().build();
-   *   TrainingPipeline response = pipelineServiceClient.createTrainingPipeline(parent.toString(), trainingPipeline);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the TrainingPipeline in.
    *     Format: `projects/{project}/locations/{location}`
@@ -231,23 +198,9 @@ public class PipelineServiceClient implements BackgroundResource {
     return createTrainingPipeline(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TrainingPipeline. A created TrainingPipeline right away will be attempted to be run.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   TrainingPipeline trainingPipeline = TrainingPipeline.newBuilder().build();
-   *   CreateTrainingPipelineRequest request = CreateTrainingPipelineRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTrainingPipeline(trainingPipeline)
-   *     .build();
-   *   TrainingPipeline response = pipelineServiceClient.createTrainingPipeline(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -256,43 +209,20 @@ public class PipelineServiceClient implements BackgroundResource {
     return createTrainingPipelineCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a TrainingPipeline. A created TrainingPipeline right away will be attempted to be run.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   TrainingPipeline trainingPipeline = TrainingPipeline.newBuilder().build();
-   *   CreateTrainingPipelineRequest request = CreateTrainingPipelineRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTrainingPipeline(trainingPipeline)
-   *     .build();
-   *   ApiFuture&lt;TrainingPipeline&gt; future = pipelineServiceClient.createTrainingPipelineCallable().futureCall(request);
-   *   // Do something
-   *   TrainingPipeline response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateTrainingPipelineRequest, TrainingPipeline>
       createTrainingPipelineCallable() {
     return stub.createTrainingPipelineCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a TrainingPipeline.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   TrainingPipeline response = pipelineServiceClient.getTrainingPipeline(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the TrainingPipeline resource. Format:
    *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
@@ -306,18 +236,9 @@ public class PipelineServiceClient implements BackgroundResource {
     return getTrainingPipeline(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a TrainingPipeline.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   TrainingPipeline response = pipelineServiceClient.getTrainingPipeline(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the TrainingPipeline resource. Format:
    *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
@@ -329,21 +250,9 @@ public class PipelineServiceClient implements BackgroundResource {
     return getTrainingPipeline(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a TrainingPipeline.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   GetTrainingPipelineRequest request = GetTrainingPipelineRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   TrainingPipeline response = pipelineServiceClient.getTrainingPipeline(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -352,43 +261,20 @@ public class PipelineServiceClient implements BackgroundResource {
     return getTrainingPipelineCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a TrainingPipeline.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   GetTrainingPipelineRequest request = GetTrainingPipelineRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;TrainingPipeline&gt; future = pipelineServiceClient.getTrainingPipelineCallable().futureCall(request);
-   *   // Do something
-   *   TrainingPipeline response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetTrainingPipelineRequest, TrainingPipeline>
       getTrainingPipelineCallable() {
     return stub.getTrainingPipelineCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists TrainingPipelines in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (TrainingPipeline element : pipelineServiceClient.listTrainingPipelines(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to list the TrainingPipelines from.
    *     Format: `projects/{project}/locations/{location}`
@@ -402,20 +288,9 @@ public class PipelineServiceClient implements BackgroundResource {
     return listTrainingPipelines(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists TrainingPipelines in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (TrainingPipeline element : pipelineServiceClient.listTrainingPipelines(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to list the TrainingPipelines from.
    *     Format: `projects/{project}/locations/{location}`
@@ -427,23 +302,9 @@ public class PipelineServiceClient implements BackgroundResource {
     return listTrainingPipelines(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists TrainingPipelines in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListTrainingPipelinesRequest request = ListTrainingPipelinesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (TrainingPipeline element : pipelineServiceClient.listTrainingPipelines(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -453,82 +314,36 @@ public class PipelineServiceClient implements BackgroundResource {
     return listTrainingPipelinesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists TrainingPipelines in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListTrainingPipelinesRequest request = ListTrainingPipelinesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListTrainingPipelinesPagedResponse&gt; future = pipelineServiceClient.listTrainingPipelinesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (TrainingPipeline element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListTrainingPipelinesRequest, ListTrainingPipelinesPagedResponse>
       listTrainingPipelinesPagedCallable() {
     return stub.listTrainingPipelinesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists TrainingPipelines in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListTrainingPipelinesRequest request = ListTrainingPipelinesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListTrainingPipelinesResponse response = pipelineServiceClient.listTrainingPipelinesCallable().call(request);
-   *     for (TrainingPipeline element : response.getTrainingPipelinesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse>
       listTrainingPipelinesCallable() {
     return stub.listTrainingPipelinesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a TrainingPipeline.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   pipelineServiceClient.deleteTrainingPipelineAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the TrainingPipeline resource to be deleted. Format:
    *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTrainingPipelineAsync(
       TrainingPipelineName name) {
     DeleteTrainingPipelineRequest request =
@@ -538,25 +353,14 @@ public class PipelineServiceClient implements BackgroundResource {
     return deleteTrainingPipelineAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a TrainingPipeline.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   pipelineServiceClient.deleteTrainingPipelineAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the TrainingPipeline resource to be deleted. Format:
    *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTrainingPipelineAsync(
       String name) {
     DeleteTrainingPipelineRequest request =
@@ -564,80 +368,41 @@ public class PipelineServiceClient implements BackgroundResource {
     return deleteTrainingPipelineAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a TrainingPipeline.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   DeleteTrainingPipelineRequest request = DeleteTrainingPipelineRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   pipelineServiceClient.deleteTrainingPipelineAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTrainingPipelineAsync(
       DeleteTrainingPipelineRequest request) {
     return deleteTrainingPipelineOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a TrainingPipeline.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   DeleteTrainingPipelineRequest request = DeleteTrainingPipelineRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, DeleteOperationMetadata&gt; future = pipelineServiceClient.deleteTrainingPipelineOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteTrainingPipelineRequest, Empty, DeleteOperationMetadata>
       deleteTrainingPipelineOperationCallable() {
     return stub.deleteTrainingPipelineOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a TrainingPipeline.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   DeleteTrainingPipelineRequest request = DeleteTrainingPipelineRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = pipelineServiceClient.deleteTrainingPipelineCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteTrainingPipelineRequest, Operation>
       deleteTrainingPipelineCallable() {
     return stub.deleteTrainingPipelineCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a TrainingPipeline. Starts asynchronous cancellation on the TrainingPipeline. The
    * server makes a best effort to cancel the pipeline, but success is not guaranteed. Clients can
@@ -650,15 +415,6 @@ public class PipelineServiceClient implements BackgroundResource {
    * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
    * [TrainingPipeline.state][google.cloud.aiplatform.v1beta1.TrainingPipeline.state] is set to
    * `CANCELLED`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   pipelineServiceClient.cancelTrainingPipeline(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the TrainingPipeline to cancel. Format:
    *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
@@ -672,7 +428,7 @@ public class PipelineServiceClient implements BackgroundResource {
     cancelTrainingPipeline(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a TrainingPipeline. Starts asynchronous cancellation on the TrainingPipeline. The
    * server makes a best effort to cancel the pipeline, but success is not guaranteed. Clients can
@@ -685,15 +441,6 @@ public class PipelineServiceClient implements BackgroundResource {
    * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
    * [TrainingPipeline.state][google.cloud.aiplatform.v1beta1.TrainingPipeline.state] is set to
    * `CANCELLED`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   pipelineServiceClient.cancelTrainingPipeline(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the TrainingPipeline to cancel. Format:
    *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
@@ -705,7 +452,7 @@ public class PipelineServiceClient implements BackgroundResource {
     cancelTrainingPipeline(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a TrainingPipeline. Starts asynchronous cancellation on the TrainingPipeline. The
    * server makes a best effort to cancel the pipeline, but success is not guaranteed. Clients can
@@ -718,18 +465,6 @@ public class PipelineServiceClient implements BackgroundResource {
    * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
    * [TrainingPipeline.state][google.cloud.aiplatform.v1beta1.TrainingPipeline.state] is set to
    * `CANCELLED`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   CancelTrainingPipelineRequest request = CancelTrainingPipelineRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   pipelineServiceClient.cancelTrainingPipeline(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -738,7 +473,7 @@ public class PipelineServiceClient implements BackgroundResource {
     cancelTrainingPipelineCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a TrainingPipeline. Starts asynchronous cancellation on the TrainingPipeline. The
    * server makes a best effort to cancel the pipeline, but success is not guaranteed. Clients can
@@ -753,18 +488,6 @@ public class PipelineServiceClient implements BackgroundResource {
    * `CANCELLED`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
-   *   TrainingPipelineName name = TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-   *   CancelTrainingPipelineRequest request = CancelTrainingPipelineRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = pipelineServiceClient.cancelTrainingPipelineCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CancelTrainingPipelineRequest, Empty>
       cancelTrainingPipelineCallable() {

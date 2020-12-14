@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -39,23 +40,12 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description:
+ * This class provides the ability to make remote calls to the backing service through method calls
+ * that map to API methods. Sample code to get started:
  *
- * <p>This class provides the ability to make remote calls to the backing service through method
- * calls that map to API methods. Sample code to get started:
- *
- * <pre>
- * <code>
- * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
- *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
- *   Dataset response = datasetServiceClient.getDataset(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the datasetServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the DatasetServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -83,30 +73,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DatasetServiceSettings datasetServiceSettings =
  *     DatasetServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * DatasetServiceClient datasetServiceClient =
- *     DatasetServiceClient.create(datasetServiceSettings);
- * </code>
- * </pre>
+ * DatasetServiceClient datasetServiceClient = DatasetServiceClient.create(datasetServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DatasetServiceSettings datasetServiceSettings =
  *     DatasetServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * DatasetServiceClient datasetServiceClient =
- *     DatasetServiceClient.create(datasetServiceSettings);
- * </code>
- * </pre>
+ * DatasetServiceClient datasetServiceClient = DatasetServiceClient.create(datasetServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class DatasetServiceClient implements BackgroundResource {
   private final DatasetServiceSettings settings;
   private final DatasetServiceStub stub;
@@ -128,7 +114,7 @@ public class DatasetServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of DatasetServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use DatasetServiceSettings}.
+   * for advanced usage - prefer using create(DatasetServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DatasetServiceClient create(DatasetServiceStub stub) {
@@ -166,33 +152,19 @@ public class DatasetServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Dataset dataset = Dataset.newBuilder().build();
-   *   Dataset response = datasetServiceClient.createDatasetAsync(parent, dataset).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the Dataset in. Format:
    *     `projects/{project}/locations/{location}`
    * @param dataset Required. The Dataset to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Dataset, CreateDatasetOperationMetadata> createDatasetAsync(
       LocationName parent, Dataset dataset) {
     CreateDatasetRequest request =
@@ -203,27 +175,15 @@ public class DatasetServiceClient implements BackgroundResource {
     return createDatasetAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Dataset dataset = Dataset.newBuilder().build();
-   *   Dataset response = datasetServiceClient.createDatasetAsync(parent.toString(), dataset).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the Dataset in. Format:
    *     `projects/{project}/locations/{location}`
    * @param dataset Required. The Dataset to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Dataset, CreateDatasetOperationMetadata> createDatasetAsync(
       String parent, Dataset dataset) {
     CreateDatasetRequest request =
@@ -231,96 +191,42 @@ public class DatasetServiceClient implements BackgroundResource {
     return createDatasetAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Dataset dataset = Dataset.newBuilder().build();
-   *   CreateDatasetRequest request = CreateDatasetRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setDataset(dataset)
-   *     .build();
-   *   Dataset response = datasetServiceClient.createDatasetAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Dataset, CreateDatasetOperationMetadata> createDatasetAsync(
       CreateDatasetRequest request) {
     return createDatasetOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Dataset dataset = Dataset.newBuilder().build();
-   *   CreateDatasetRequest request = CreateDatasetRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setDataset(dataset)
-   *     .build();
-   *   OperationFuture&lt;Dataset, CreateDatasetOperationMetadata&gt; future = datasetServiceClient.createDatasetOperationCallable().futureCall(request);
-   *   // Do something
-   *   Dataset response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateDatasetRequest, Dataset, CreateDatasetOperationMetadata>
       createDatasetOperationCallable() {
     return stub.createDatasetOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Dataset dataset = Dataset.newBuilder().build();
-   *   CreateDatasetRequest request = CreateDatasetRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setDataset(dataset)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = datasetServiceClient.createDatasetCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable() {
     return stub.createDatasetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   Dataset response = datasetServiceClient.getDataset(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Dataset resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -331,18 +237,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return getDataset(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   Dataset response = datasetServiceClient.getDataset(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Dataset resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -352,21 +249,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return getDataset(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   GetDatasetRequest request = GetDatasetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Dataset response = datasetServiceClient.getDataset(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -375,41 +260,19 @@ public class DatasetServiceClient implements BackgroundResource {
     return getDatasetCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   GetDatasetRequest request = GetDatasetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Dataset&gt; future = datasetServiceClient.getDatasetCallable().futureCall(request);
-   *   // Do something
-   *   Dataset response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
     return stub.getDatasetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   Dataset dataset = Dataset.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Dataset response = datasetServiceClient.updateDataset(dataset, updateMask);
-   * }
-   * </code></pre>
    *
    * @param dataset Required. The Dataset which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
@@ -425,23 +288,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return updateDataset(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   Dataset dataset = Dataset.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateDatasetRequest request = UpdateDatasetRequest.newBuilder()
-   *     .setDataset(dataset)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   Dataset response = datasetServiceClient.updateDataset(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -450,44 +299,19 @@ public class DatasetServiceClient implements BackgroundResource {
     return updateDatasetCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   Dataset dataset = Dataset.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateDatasetRequest request = UpdateDatasetRequest.newBuilder()
-   *     .setDataset(dataset)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Dataset&gt; future = datasetServiceClient.updateDatasetCallable().futureCall(request);
-   *   // Do something
-   *   Dataset response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
     return stub.updateDatasetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Datasets in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Dataset element : datasetServiceClient.listDatasets(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the Dataset's parent resource. Format:
    *     `projects/{project}/locations/{location}`
@@ -501,20 +325,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return listDatasets(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Datasets in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Dataset element : datasetServiceClient.listDatasets(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the Dataset's parent resource. Format:
    *     `projects/{project}/locations/{location}`
@@ -525,23 +338,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return listDatasets(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Datasets in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListDatasetsRequest request = ListDatasetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Dataset element : datasetServiceClient.listDatasets(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -550,81 +349,35 @@ public class DatasetServiceClient implements BackgroundResource {
     return listDatasetsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Datasets in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListDatasetsRequest request = ListDatasetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListDatasetsPagedResponse&gt; future = datasetServiceClient.listDatasetsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Dataset element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse>
       listDatasetsPagedCallable() {
     return stub.listDatasetsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Datasets in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListDatasetsRequest request = ListDatasetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListDatasetsResponse response = datasetServiceClient.listDatasetsCallable().call(request);
-   *     for (Dataset element : response.getDatasetsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable() {
     return stub.listDatasetsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   datasetServiceClient.deleteDatasetAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the Dataset to delete. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDatasetAsync(
       DatasetName name) {
     DeleteDatasetRequest request =
@@ -632,115 +385,55 @@ public class DatasetServiceClient implements BackgroundResource {
     return deleteDatasetAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   datasetServiceClient.deleteDatasetAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the Dataset to delete. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDatasetAsync(String name) {
     DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder().setName(name).build();
     return deleteDatasetAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   datasetServiceClient.deleteDatasetAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDatasetAsync(
       DeleteDatasetRequest request) {
     return deleteDatasetOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, DeleteOperationMetadata&gt; future = datasetServiceClient.deleteDatasetOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteDatasetRequest, Empty, DeleteOperationMetadata>
       deleteDatasetOperationCallable() {
     return stub.deleteDatasetOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = datasetServiceClient.deleteDatasetCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
     return stub.deleteDatasetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports data into a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   List&lt;ImportDataConfig&gt; importConfigs = new ArrayList&lt;&gt;();
-   *   ImportDataResponse response = datasetServiceClient.importDataAsync(name, importConfigs).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Dataset resource. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
@@ -748,8 +441,6 @@ public class DatasetServiceClient implements BackgroundResource {
    *     will be imported in one batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ImportDataResponse, ImportDataOperationMetadata> importDataAsync(
       DatasetName name, List<ImportDataConfig> importConfigs) {
     ImportDataRequest request =
@@ -760,19 +451,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return importDataAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports data into a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   List&lt;ImportDataConfig&gt; importConfigs = new ArrayList&lt;&gt;();
-   *   ImportDataResponse response = datasetServiceClient.importDataAsync(name.toString(), importConfigs).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Dataset resource. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
@@ -780,8 +461,6 @@ public class DatasetServiceClient implements BackgroundResource {
    *     will be imported in one batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ImportDataResponse, ImportDataOperationMetadata> importDataAsync(
       String name, List<ImportDataConfig> importConfigs) {
     ImportDataRequest request =
@@ -789,105 +468,48 @@ public class DatasetServiceClient implements BackgroundResource {
     return importDataAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports data into a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   List&lt;ImportDataConfig&gt; importConfigs = new ArrayList&lt;&gt;();
-   *   ImportDataRequest request = ImportDataRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .addAllImportConfigs(importConfigs)
-   *     .build();
-   *   ImportDataResponse response = datasetServiceClient.importDataAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ImportDataResponse, ImportDataOperationMetadata> importDataAsync(
       ImportDataRequest request) {
     return importDataOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports data into a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   List&lt;ImportDataConfig&gt; importConfigs = new ArrayList&lt;&gt;();
-   *   ImportDataRequest request = ImportDataRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .addAllImportConfigs(importConfigs)
-   *     .build();
-   *   OperationFuture&lt;ImportDataResponse, ImportDataOperationMetadata&gt; future = datasetServiceClient.importDataOperationCallable().futureCall(request);
-   *   // Do something
-   *   ImportDataResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataOperationMetadata>
       importDataOperationCallable() {
     return stub.importDataOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports data into a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   List&lt;ImportDataConfig&gt; importConfigs = new ArrayList&lt;&gt;();
-   *   ImportDataRequest request = ImportDataRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .addAllImportConfigs(importConfigs)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = datasetServiceClient.importDataCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     return stub.importDataCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports data from a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   ExportDataConfig exportConfig = ExportDataConfig.newBuilder().build();
-   *   ExportDataResponse response = datasetServiceClient.exportDataAsync(name, exportConfig).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Dataset resource. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
    * @param exportConfig Required. The desired output location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportDataResponse, ExportDataOperationMetadata> exportDataAsync(
       DatasetName name, ExportDataConfig exportConfig) {
     ExportDataRequest request =
@@ -898,27 +520,15 @@ public class DatasetServiceClient implements BackgroundResource {
     return exportDataAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports data from a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   ExportDataConfig exportConfig = ExportDataConfig.newBuilder().build();
-   *   ExportDataResponse response = datasetServiceClient.exportDataAsync(name.toString(), exportConfig).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Dataset resource. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
    * @param exportConfig Required. The desired output location.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportDataResponse, ExportDataOperationMetadata> exportDataAsync(
       String name, ExportDataConfig exportConfig) {
     ExportDataRequest request =
@@ -926,98 +536,42 @@ public class DatasetServiceClient implements BackgroundResource {
     return exportDataAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports data from a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   ExportDataConfig exportConfig = ExportDataConfig.newBuilder().build();
-   *   ExportDataRequest request = ExportDataRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setExportConfig(exportConfig)
-   *     .build();
-   *   ExportDataResponse response = datasetServiceClient.exportDataAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportDataResponse, ExportDataOperationMetadata> exportDataAsync(
       ExportDataRequest request) {
     return exportDataOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports data from a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   ExportDataConfig exportConfig = ExportDataConfig.newBuilder().build();
-   *   ExportDataRequest request = ExportDataRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setExportConfig(exportConfig)
-   *     .build();
-   *   OperationFuture&lt;ExportDataResponse, ExportDataOperationMetadata&gt; future = datasetServiceClient.exportDataOperationCallable().futureCall(request);
-   *   // Do something
-   *   ExportDataResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataOperationMetadata>
       exportDataOperationCallable() {
     return stub.exportDataOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports data from a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   ExportDataConfig exportConfig = ExportDataConfig.newBuilder().build();
-   *   ExportDataRequest request = ExportDataRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setExportConfig(exportConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = datasetServiceClient.exportDataCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
     return stub.exportDataCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DataItems in a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   for (DataItem element : datasetServiceClient.listDataItems(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Dataset to list DataItems from. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
@@ -1031,20 +585,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return listDataItems(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DataItems in a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   for (DataItem element : datasetServiceClient.listDataItems(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Dataset to list DataItems from. Format:
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
@@ -1055,23 +598,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return listDataItems(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DataItems in a Dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   ListDataItemsRequest request = ListDataItemsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (DataItem element : datasetServiceClient.listDataItems(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1080,74 +609,30 @@ public class DatasetServiceClient implements BackgroundResource {
     return listDataItemsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DataItems in a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   ListDataItemsRequest request = ListDataItemsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListDataItemsPagedResponse&gt; future = datasetServiceClient.listDataItemsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (DataItem element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
       listDataItemsPagedCallable() {
     return stub.listDataItemsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DataItems in a Dataset.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   ListDataItemsRequest request = ListDataItemsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListDataItemsResponse response = datasetServiceClient.listDataItemsCallable().call(request);
-   *     for (DataItem element : response.getDataItemsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable() {
     return stub.listDataItemsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an AnnotationSpec.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
-   *   AnnotationSpec response = datasetServiceClient.getAnnotationSpec(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the AnnotationSpec resource. Format:
    *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
@@ -1161,18 +646,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return getAnnotationSpec(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an AnnotationSpec.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
-   *   AnnotationSpec response = datasetServiceClient.getAnnotationSpec(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the AnnotationSpec resource. Format:
    *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
@@ -1183,21 +659,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return getAnnotationSpec(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an AnnotationSpec.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
-   *   GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   AnnotationSpec response = datasetServiceClient.getAnnotationSpec(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1206,42 +670,19 @@ public class DatasetServiceClient implements BackgroundResource {
     return getAnnotationSpecCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an AnnotationSpec.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
-   *   GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;AnnotationSpec&gt; future = datasetServiceClient.getAnnotationSpecCallable().futureCall(request);
-   *   // Do something
-   *   AnnotationSpec response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
     return stub.getAnnotationSpecCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Annotations belongs to a dataitem
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DataItemName parent = DataItemName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATA_ITEM]");
-   *   for (Annotation element : datasetServiceClient.listAnnotations(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the DataItem to list Annotations from. Format:
    *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
@@ -1255,20 +696,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return listAnnotations(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Annotations belongs to a dataitem
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DataItemName parent = DataItemName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATA_ITEM]");
-   *   for (Annotation element : datasetServiceClient.listAnnotations(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the DataItem to list Annotations from. Format:
    *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
@@ -1279,23 +709,9 @@ public class DatasetServiceClient implements BackgroundResource {
     return listAnnotations(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Annotations belongs to a dataitem
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DataItemName parent = DataItemName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATA_ITEM]");
-   *   ListAnnotationsRequest request = ListAnnotationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Annotation element : datasetServiceClient.listAnnotations(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1304,57 +720,22 @@ public class DatasetServiceClient implements BackgroundResource {
     return listAnnotationsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Annotations belongs to a dataitem
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DataItemName parent = DataItemName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATA_ITEM]");
-   *   ListAnnotationsRequest request = ListAnnotationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListAnnotationsPagedResponse&gt; future = datasetServiceClient.listAnnotationsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Annotation element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAnnotationsRequest, ListAnnotationsPagedResponse>
       listAnnotationsPagedCallable() {
     return stub.listAnnotationsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Annotations belongs to a dataitem
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
-   *   DataItemName parent = DataItemName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATA_ITEM]");
-   *   ListAnnotationsRequest request = ListAnnotationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListAnnotationsResponse response = datasetServiceClient.listAnnotationsCallable().call(request);
-   *     for (Annotation element : response.getAnnotationsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAnnotationsRequest, ListAnnotationsResponse>
       listAnnotationsCallable() {

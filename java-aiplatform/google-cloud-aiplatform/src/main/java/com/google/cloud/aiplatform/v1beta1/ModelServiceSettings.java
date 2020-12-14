@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
@@ -38,7 +39,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ModelServiceClient}.
  *
@@ -55,31 +56,29 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getModel to 30 seconds:
  *
- * <pre>
- * <code>
- * ModelServiceSettings.Builder modelServiceSettingsBuilder =
- *     ModelServiceSettings.newBuilder();
+ * <pre>{@code
+ * ModelServiceSettings.Builder modelServiceSettingsBuilder = ModelServiceSettings.newBuilder();
  * modelServiceSettingsBuilder
  *     .getModelSettings()
  *     .setRetrySettings(
- *         modelServiceSettingsBuilder.getModelSettings().getRetrySettings().toBuilder()
+ *         modelServiceSettingsBuilder
+ *             .getModelSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ModelServiceSettings modelServiceSettings = modelServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
+
   /** Returns the object with the settings used for calls to uploadModel. */
   public UnaryCallSettings<UploadModelRequest, Operation> uploadModelSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).uploadModelSettings();
   }
 
   /** Returns the object with the settings used for calls to uploadModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           UploadModelRequest, UploadModelResponse, UploadModelOperationMetadata>
       uploadModelOperationSettings() {
@@ -108,8 +107,6 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).deleteModelOperationSettings();
@@ -121,8 +118,6 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
   }
 
   /** Returns the object with the settings used for calls to exportModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
       exportModelOperationSettings() {
@@ -219,16 +214,13 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
 
   /** Builder for ModelServiceSettings. */
   public static class Builder extends ClientSettings.Builder<ModelServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ModelServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ModelServiceStubSettings.newBuilder());
     }
 
     protected Builder(ModelServiceSettings settings) {
@@ -239,11 +231,15 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ModelServiceStubSettings.newBuilder());
+    }
+
     public ModelServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((ModelServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -262,8 +258,6 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     }
 
     /** Returns the builder for the settings used for calls to uploadModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UploadModelRequest, UploadModelResponse, UploadModelOperationMetadata>
         uploadModelOperationSettings() {
@@ -292,8 +286,6 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteModelRequest, Empty, DeleteOperationMetadata>
         deleteModelOperationSettings() {
       return getStubSettingsBuilder().deleteModelOperationSettings();
@@ -305,8 +297,6 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
         exportModelOperationSettings() {

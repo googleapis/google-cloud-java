@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.MigrationServiceClient.SearchMigratableResourcesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -41,16 +41,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud AI Platform API.
+ * gRPC stub implementation for the MigrationService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcMigrationServiceStub extends MigrationServiceStub {
-
   private static final MethodDescriptor<
           SearchMigratableResourcesRequest, SearchMigratableResourcesResponse>
       searchMigratableResourcesMethodDescriptor =
@@ -64,6 +62,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchMigratableResourcesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<BatchMigrateResourcesRequest, Operation>
       batchMigrateResourcesMethodDescriptor =
           MethodDescriptor.<BatchMigrateResourcesRequest, Operation>newBuilder()
@@ -74,9 +73,6 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                   ProtoUtils.marshaller(BatchMigrateResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<SearchMigratableResourcesRequest, SearchMigratableResourcesResponse>
       searchMigratableResourcesCallable;
@@ -91,6 +87,8 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
           BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcMigrationServiceStub create(MigrationServiceStubSettings settings)
@@ -183,19 +181,14 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
             batchMigrateResourcesTransportSettings,
             settings.batchMigrateResourcesOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<SearchMigratableResourcesRequest, SearchMigratableResourcesPagedResponse>
-      searchMigratableResourcesPagedCallable() {
-    return searchMigratableResourcesPagedCallable;
   }
 
   public UnaryCallable<SearchMigratableResourcesRequest, SearchMigratableResourcesResponse>
@@ -203,17 +196,21 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
     return searchMigratableResourcesCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<SearchMigratableResourcesRequest, SearchMigratableResourcesPagedResponse>
+      searchMigratableResourcesPagedCallable() {
+    return searchMigratableResourcesPagedCallable;
+  }
+
+  public UnaryCallable<BatchMigrateResourcesRequest, Operation> batchMigrateResourcesCallable() {
+    return batchMigrateResourcesCallable;
+  }
+
   public OperationCallable<
           BatchMigrateResourcesRequest,
           BatchMigrateResourcesResponse,
           BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesOperationCallable() {
     return batchMigrateResourcesOperationCallable;
-  }
-
-  public UnaryCallable<BatchMigrateResourcesRequest, Operation> batchMigrateResourcesCallable() {
-    return batchMigrateResourcesCallable;
   }
 
   @Override

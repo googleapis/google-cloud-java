@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListAnnotationsPagedResponse;
@@ -33,14 +34,17 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
+import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -48,54 +52,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class DatasetServiceClientTest {
-  private static MockDatasetService mockDatasetService;
-  private static MockEndpointService mockEndpointService;
-  private static MockJobService mockJobService;
-  private static MockMigrationService mockMigrationService;
-  private static MockModelService mockModelService;
-  private static MockPipelineService mockPipelineService;
-  private static MockPredictionService mockPredictionService;
-  private static MockSpecialistPoolService mockSpecialistPoolService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private DatasetServiceClient client;
+  private static MockDatasetService mockDatasetService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockDatasetService = new MockDatasetService();
-    mockEndpointService = new MockEndpointService();
-    mockJobService = new MockJobService();
-    mockMigrationService = new MockMigrationService();
-    mockModelService = new MockModelService();
-    mockPipelineService = new MockPipelineService();
-    mockPredictionService = new MockPredictionService();
-    mockSpecialistPoolService = new MockSpecialistPoolService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockDatasetService,
-                mockEndpointService,
-                mockJobService,
-                mockMigrationService,
-                mockModelService,
-                mockPipelineService,
-                mockPredictionService,
-                mockSpecialistPoolService));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockDatasetService));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     DatasetServiceSettings settings =
         DatasetServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -110,18 +91,17 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createDatasetTest() throws Exception {
-    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-    String displayName = "displayName1615086568";
-    String metadataSchemaUri = "metadataSchemaUri-152319778";
-    String etag = "etag3123477";
     Dataset expectedResponse =
         Dataset.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setMetadataSchemaUri(metadataSchemaUri)
-            .setEtag(etag)
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -139,9 +119,9 @@ public class DatasetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateDatasetRequest actualRequest = (CreateDatasetRequest) actualRequests.get(0);
+    CreateDatasetRequest actualRequest = ((CreateDatasetRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(dataset, actualRequest.getDataset());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -150,37 +130,90 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createDatasetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDatasetService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Dataset dataset = Dataset.newBuilder().build();
-
       client.createDatasetAsync(parent, dataset).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getDatasetTest() {
-    DatasetName name2 = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-    String displayName = "displayName1615086568";
-    String metadataSchemaUri = "metadataSchemaUri-152319778";
-    String etag = "etag3123477";
+  public void createDatasetTest2() throws Exception {
     Dataset expectedResponse =
         Dataset.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setMetadataSchemaUri(metadataSchemaUri)
-            .setEtag(etag)
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatasetService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Dataset dataset = Dataset.newBuilder().build();
+
+    Dataset actualResponse = client.createDatasetAsync(parent, dataset).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDatasetRequest actualRequest = ((CreateDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Dataset dataset = Dataset.newBuilder().build();
+      client.createDatasetAsync(parent, dataset).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getDatasetTest() throws Exception {
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -191,9 +224,9 @@ public class DatasetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetDatasetRequest actualRequest = (GetDatasetRequest) actualRequests.get(0);
+    GetDatasetRequest actualRequest = ((GetDatasetRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -201,34 +234,76 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getDatasetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDatasetService.addException(exception);
 
     try {
       DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-
       client.getDataset(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateDatasetTest() {
-    DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-    String displayName = "displayName1615086568";
-    String metadataSchemaUri = "metadataSchemaUri-152319778";
-    String etag = "etag3123477";
+  public void getDatasetTest2() throws Exception {
     Dataset expectedResponse =
         Dataset.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setMetadataSchemaUri(metadataSchemaUri)
-            .setEtag(etag)
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Dataset actualResponse = client.getDataset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDatasetRequest actualRequest = ((GetDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDatasetTest() throws Exception {
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -240,7 +315,7 @@ public class DatasetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateDatasetRequest actualRequest = (UpdateDatasetRequest) actualRequests.get(0);
+    UpdateDatasetRequest actualRequest = ((UpdateDatasetRequest) actualRequests.get(0));
 
     Assert.assertEquals(dataset, actualRequest.getDataset());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
@@ -251,32 +326,27 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateDatasetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDatasetService.addException(exception);
 
     try {
       Dataset dataset = Dataset.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateDataset(dataset, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listDatasetsTest() {
-    String nextPageToken = "";
-    Dataset datasetsElement = Dataset.newBuilder().build();
-    List<Dataset> datasets = Arrays.asList(datasetsElement);
+  public void listDatasetsTest() throws Exception {
+    Dataset responsesElement = Dataset.newBuilder().build();
     ListDatasetsResponse expectedResponse =
         ListDatasetsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllDatasets(datasets)
+            .setNextPageToken("")
+            .addAllDatasets(Arrays.asList(responsesElement))
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -285,14 +355,15 @@ public class DatasetServiceClientTest {
     ListDatasetsPagedResponse pagedListResponse = client.listDatasets(parent);
 
     List<Dataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDatasetsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListDatasetsRequest actualRequest = (ListDatasetsRequest) actualRequests.get(0);
+    ListDatasetsRequest actualRequest = ((ListDatasetsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -300,23 +371,64 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listDatasetsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDatasetService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
       client.listDatasets(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
+  public void listDatasetsTest2() throws Exception {
+    Dataset responsesElement = Dataset.newBuilder().build();
+    ListDatasetsResponse expectedResponse =
+        ListDatasetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatasets(Arrays.asList(responsesElement))
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDatasetsPagedResponse pagedListResponse = client.listDatasets(parent);
+
+    List<Dataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatasetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDatasetsRequest actualRequest = ((ListDatasetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDatasetsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDatasets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deleteDatasetTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -329,14 +441,13 @@ public class DatasetServiceClientTest {
 
     DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
 
-    Empty actualResponse = client.deleteDatasetAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    client.deleteDatasetAsync(name).get();
 
     List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDatasetRequest actualRequest = (DeleteDatasetRequest) actualRequests.get(0);
+    DeleteDatasetRequest actualRequest = ((DeleteDatasetRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -344,25 +455,64 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteDatasetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDatasetService.addException(exception);
 
     try {
       DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-
       client.deleteDatasetAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
+  public void deleteDatasetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatasetService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteDatasetAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDatasetRequest actualRequest = ((DeleteDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void importDataTest() throws Exception {
     ImportDataResponse expectedResponse = ImportDataResponse.newBuilder().build();
     Operation resultOperation =
@@ -381,9 +531,9 @@ public class DatasetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ImportDataRequest actualRequest = (ImportDataRequest) actualRequests.get(0);
+    ImportDataRequest actualRequest = ((ImportDataRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertEquals(importConfigs, actualRequest.getImportConfigsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -392,28 +542,72 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void importDataExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDatasetService.addException(exception);
 
     try {
       DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
       List<ImportDataConfig> importConfigs = new ArrayList<>();
-
       client.importDataAsync(name, importConfigs).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
+  public void importDataTest2() throws Exception {
+    ImportDataResponse expectedResponse = ImportDataResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatasetService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    List<ImportDataConfig> importConfigs = new ArrayList<>();
+
+    ImportDataResponse actualResponse = client.importDataAsync(name, importConfigs).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportDataRequest actualRequest = ((ImportDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(importConfigs, actualRequest.getImportConfigsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importDataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      List<ImportDataConfig> importConfigs = new ArrayList<>();
+      client.importDataAsync(name, importConfigs).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void exportDataTest() throws Exception {
-    ExportDataResponse expectedResponse = ExportDataResponse.newBuilder().build();
+    ExportDataResponse expectedResponse =
+        ExportDataResponse.newBuilder().addAllExportedFiles(new ArrayList<String>()).build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("exportDataTest")
@@ -430,9 +624,9 @@ public class DatasetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ExportDataRequest actualRequest = (ExportDataRequest) actualRequests.get(0);
+    ExportDataRequest actualRequest = ((ExportDataRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, DatasetName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertEquals(exportConfig, actualRequest.getExportConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -441,34 +635,76 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void exportDataExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDatasetService.addException(exception);
 
     try {
       DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
       ExportDataConfig exportConfig = ExportDataConfig.newBuilder().build();
-
       client.exportDataAsync(name, exportConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listDataItemsTest() {
-    String nextPageToken = "";
-    DataItem dataItemsElement = DataItem.newBuilder().build();
-    List<DataItem> dataItems = Arrays.asList(dataItemsElement);
+  public void exportDataTest2() throws Exception {
+    ExportDataResponse expectedResponse =
+        ExportDataResponse.newBuilder().addAllExportedFiles(new ArrayList<String>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatasetService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    ExportDataConfig exportConfig = ExportDataConfig.newBuilder().build();
+
+    ExportDataResponse actualResponse = client.exportDataAsync(name, exportConfig).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportDataRequest actualRequest = ((ExportDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(exportConfig, actualRequest.getExportConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportDataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      ExportDataConfig exportConfig = ExportDataConfig.newBuilder().build();
+      client.exportDataAsync(name, exportConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listDataItemsTest() throws Exception {
+    DataItem responsesElement = DataItem.newBuilder().build();
     ListDataItemsResponse expectedResponse =
         ListDataItemsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllDataItems(dataItems)
+            .setNextPageToken("")
+            .addAllDataItems(Arrays.asList(responsesElement))
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -477,14 +713,15 @@ public class DatasetServiceClientTest {
     ListDataItemsPagedResponse pagedListResponse = client.listDataItems(parent);
 
     List<DataItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDataItemsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListDataItemsRequest actualRequest = (ListDataItemsRequest) actualRequests.get(0);
+    ListDataItemsRequest actualRequest = ((ListDataItemsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, DatasetName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -492,33 +729,74 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listDataItemsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDatasetService.addException(exception);
 
     try {
       DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-
       client.listDataItems(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getAnnotationSpecTest() {
-    AnnotationSpecName name2 =
-        AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
-    String displayName = "displayName1615086568";
-    String etag = "etag3123477";
+  public void listDataItemsTest2() throws Exception {
+    DataItem responsesElement = DataItem.newBuilder().build();
+    ListDataItemsResponse expectedResponse =
+        ListDataItemsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDataItems(Arrays.asList(responsesElement))
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDataItemsPagedResponse pagedListResponse = client.listDataItems(parent);
+
+    List<DataItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDataItemsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDataItemsRequest actualRequest = ((ListDataItemsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDataItemsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDataItems(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAnnotationSpecTest() throws Exception {
     AnnotationSpec expectedResponse =
         AnnotationSpec.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setEtag(etag)
+            .setName(
+                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -530,9 +808,9 @@ public class DatasetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetAnnotationSpecRequest actualRequest = (GetAnnotationSpecRequest) actualRequests.get(0);
+    GetAnnotationSpecRequest actualRequest = ((GetAnnotationSpecRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, AnnotationSpecName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -540,32 +818,71 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getAnnotationSpecExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDatasetService.addException(exception);
 
     try {
       AnnotationSpecName name =
           AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
-
       client.getAnnotationSpec(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listAnnotationsTest() {
-    String nextPageToken = "";
-    Annotation annotationsElement = Annotation.newBuilder().build();
-    List<Annotation> annotations = Arrays.asList(annotationsElement);
+  public void getAnnotationSpecTest2() throws Exception {
+    AnnotationSpec expectedResponse =
+        AnnotationSpec.newBuilder()
+            .setName(
+                AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AnnotationSpec actualResponse = client.getAnnotationSpec(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAnnotationSpecRequest actualRequest = ((GetAnnotationSpecRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAnnotationSpecExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAnnotationSpec(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAnnotationsTest() throws Exception {
+    Annotation responsesElement = Annotation.newBuilder().build();
     ListAnnotationsResponse expectedResponse =
         ListAnnotationsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllAnnotations(annotations)
+            .setNextPageToken("")
+            .addAllAnnotations(Arrays.asList(responsesElement))
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -574,14 +891,15 @@ public class DatasetServiceClientTest {
     ListAnnotationsPagedResponse pagedListResponse = client.listAnnotations(parent);
 
     List<Annotation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAnnotationsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListAnnotationsRequest actualRequest = (ListAnnotationsRequest) actualRequests.get(0);
+    ListAnnotationsRequest actualRequest = ((ListAnnotationsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, DataItemName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -589,18 +907,60 @@ public class DatasetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listAnnotationsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDatasetService.addException(exception);
 
     try {
       DataItemName parent = DataItemName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATA_ITEM]");
-
       client.listAnnotations(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAnnotationsTest2() throws Exception {
+    Annotation responsesElement = Annotation.newBuilder().build();
+    ListAnnotationsResponse expectedResponse =
+        ListAnnotationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAnnotations(Arrays.asList(responsesElement))
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAnnotationsPagedResponse pagedListResponse = client.listAnnotations(parent);
+
+    List<Annotation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAnnotationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAnnotationsRequest actualRequest = ((ListAnnotationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAnnotationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAnnotations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

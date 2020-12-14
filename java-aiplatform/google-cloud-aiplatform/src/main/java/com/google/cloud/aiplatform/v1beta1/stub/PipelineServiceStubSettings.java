@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.PipelineServiceClient.ListTrainingPipelinesPagedResponse;
@@ -62,7 +63,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link PipelineServiceStub}.
  *
@@ -79,22 +80,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createTrainingPipeline to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PipelineServiceStubSettings.Builder pipelineServiceSettingsBuilder =
  *     PipelineServiceStubSettings.newBuilder();
  * pipelineServiceSettingsBuilder
  *     .createTrainingPipelineSettings()
  *     .setRetrySettings(
- *         pipelineServiceSettingsBuilder.createTrainingPipelineSettings().getRetrySettings().toBuilder()
+ *         pipelineServiceSettingsBuilder
+ *             .createTrainingPipelineSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PipelineServiceStubSettings pipelineServiceSettings = pipelineServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -115,6 +117,71 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
       deleteTrainingPipelineOperationSettings;
   private final UnaryCallSettings<CancelTrainingPipelineRequest, Empty>
       cancelTrainingPipelineSettings;
+
+  private static final PagedListDescriptor<
+          ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
+      LIST_TRAINING_PIPELINES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTrainingPipelinesRequest injectToken(
+                ListTrainingPipelinesRequest payload, String token) {
+              return ListTrainingPipelinesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTrainingPipelinesRequest injectPageSize(
+                ListTrainingPipelinesRequest payload, int pageSize) {
+              return ListTrainingPipelinesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTrainingPipelinesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTrainingPipelinesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TrainingPipeline> extractResources(
+                ListTrainingPipelinesResponse payload) {
+              return payload.getTrainingPipelinesList() == null
+                  ? ImmutableList.<TrainingPipeline>of()
+                  : payload.getTrainingPipelinesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTrainingPipelinesRequest,
+          ListTrainingPipelinesResponse,
+          ListTrainingPipelinesPagedResponse>
+      LIST_TRAINING_PIPELINES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTrainingPipelinesRequest,
+              ListTrainingPipelinesResponse,
+              ListTrainingPipelinesPagedResponse>() {
+            @Override
+            public ApiFuture<ListTrainingPipelinesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse> callable,
+                ListTrainingPipelinesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTrainingPipelinesResponse> futureResponse) {
+              PageContext<
+                      ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TRAINING_PIPELINES_PAGE_STR_DESC, request, context);
+              return ListTrainingPipelinesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createTrainingPipeline. */
   public UnaryCallSettings<CreateTrainingPipelineRequest, TrainingPipeline>
@@ -144,7 +211,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
   }
 
   /** Returns the object with the settings used for calls to deleteTrainingPipeline. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteTrainingPipelineRequest, Empty, DeleteOperationMetadata>
       deleteTrainingPipelineOperationSettings() {
     return deleteTrainingPipelineOperationSettings;
@@ -161,10 +227,10 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcPipelineServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -233,75 +299,9 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     cancelTrainingPipelineSettings = settingsBuilder.cancelTrainingPipelineSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
-      LIST_TRAINING_PIPELINES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTrainingPipelinesRequest injectToken(
-                ListTrainingPipelinesRequest payload, String token) {
-              return ListTrainingPipelinesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTrainingPipelinesRequest injectPageSize(
-                ListTrainingPipelinesRequest payload, int pageSize) {
-              return ListTrainingPipelinesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTrainingPipelinesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTrainingPipelinesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<TrainingPipeline> extractResources(
-                ListTrainingPipelinesResponse payload) {
-              return payload.getTrainingPipelinesList() != null
-                  ? payload.getTrainingPipelinesList()
-                  : ImmutableList.<TrainingPipeline>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTrainingPipelinesRequest,
-          ListTrainingPipelinesResponse,
-          ListTrainingPipelinesPagedResponse>
-      LIST_TRAINING_PIPELINES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTrainingPipelinesRequest,
-              ListTrainingPipelinesResponse,
-              ListTrainingPipelinesPagedResponse>() {
-            @Override
-            public ApiFuture<ListTrainingPipelinesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse> callable,
-                ListTrainingPipelinesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTrainingPipelinesResponse> futureResponse) {
-              PageContext<
-                      ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_TRAINING_PIPELINES_PAGE_STR_DESC, request, context);
-              return ListTrainingPipelinesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for PipelineServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<PipelineServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateTrainingPipelineRequest, TrainingPipeline>
         createTrainingPipelineSettings;
     private final UnaryCallSettings.Builder<GetTrainingPipelineRequest, TrainingPipeline>
@@ -318,7 +318,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
         deleteTrainingPipelineOperationSettings;
     private final UnaryCallSettings.Builder<CancelTrainingPipelineRequest, Empty>
         cancelTrainingPipelineSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -326,20 +325,7 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -355,78 +341,23 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
               .setMaxRpcTimeout(Duration.ofMillis(5000L))
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
       definitions.put("no_retry_4_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_6_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_7_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createTrainingPipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getTrainingPipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listTrainingPipelinesSettings =
           PagedCallSettings.newBuilder(LIST_TRAINING_PIPELINES_PAGE_STR_FACT);
-
       deleteTrainingPipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteTrainingPipelineOperationSettings = OperationCallSettings.newBuilder();
-
       cancelTrainingPipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -436,70 +367,7 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
               listTrainingPipelinesSettings,
               deleteTrainingPipelineSettings,
               cancelTrainingPipelineSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
-
-      builder
-          .getTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
-
-      builder
-          .listTrainingPipelinesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
-
-      builder
-          .deleteTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
-
-      builder
-          .cancelTrainingPipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
-      builder
-          .deleteTrainingPipelineOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteTrainingPipelineRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(PipelineServiceStubSettings settings) {
@@ -522,7 +390,71 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
               cancelTrainingPipelineSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createTrainingPipelineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .getTrainingPipelineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .listTrainingPipelinesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .deleteTrainingPipelineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .cancelTrainingPipelineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .deleteTrainingPipelineOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteTrainingPipelineRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

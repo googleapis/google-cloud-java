@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
@@ -77,7 +78,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ModelServiceStub}.
  *
@@ -94,22 +95,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getModel to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ModelServiceStubSettings.Builder modelServiceSettingsBuilder =
  *     ModelServiceStubSettings.newBuilder();
  * modelServiceSettingsBuilder
  *     .getModelSettings()
  *     .setRetrySettings(
- *         modelServiceSettingsBuilder.getModelSettings().getRetrySettings().toBuilder()
+ *         modelServiceSettingsBuilder
+ *             .getModelSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ModelServiceStubSettings modelServiceSettings = modelServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -145,13 +147,205 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesSettings;
 
+  private static final PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>
+      LIST_MODELS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelsRequest injectToken(ListModelsRequest payload, String token) {
+              return ListModelsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListModelsRequest injectPageSize(ListModelsRequest payload, int pageSize) {
+              return ListModelsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Model> extractResources(ListModelsResponse payload) {
+              return payload.getModelsList() == null
+                  ? ImmutableList.<Model>of()
+                  : payload.getModelsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
+      LIST_MODEL_EVALUATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelEvaluationsRequest injectToken(
+                ListModelEvaluationsRequest payload, String token) {
+              return ListModelEvaluationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListModelEvaluationsRequest injectPageSize(
+                ListModelEvaluationsRequest payload, int pageSize) {
+              return ListModelEvaluationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelEvaluationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelEvaluationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ModelEvaluation> extractResources(
+                ListModelEvaluationsResponse payload) {
+              return payload.getModelEvaluationsList() == null
+                  ? ImmutableList.<ModelEvaluation>of()
+                  : payload.getModelEvaluationsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse, ModelEvaluationSlice>
+      LIST_MODEL_EVALUATION_SLICES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListModelEvaluationSlicesRequest,
+              ListModelEvaluationSlicesResponse,
+              ModelEvaluationSlice>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelEvaluationSlicesRequest injectToken(
+                ListModelEvaluationSlicesRequest payload, String token) {
+              return ListModelEvaluationSlicesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListModelEvaluationSlicesRequest injectPageSize(
+                ListModelEvaluationSlicesRequest payload, int pageSize) {
+              return ListModelEvaluationSlicesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelEvaluationSlicesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelEvaluationSlicesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ModelEvaluationSlice> extractResources(
+                ListModelEvaluationSlicesResponse payload) {
+              return payload.getModelEvaluationSlicesList() == null
+                  ? ImmutableList.<ModelEvaluationSlice>of()
+                  : payload.getModelEvaluationSlicesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+      LIST_MODELS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListModelsRequest, ListModelsResponse> callable,
+                ListModelsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelsResponse> futureResponse) {
+              PageContext<ListModelsRequest, ListModelsResponse, Model> pageContext =
+                  PageContext.create(callable, LIST_MODELS_PAGE_STR_DESC, request, context);
+              return ListModelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListModelEvaluationsRequest,
+          ListModelEvaluationsResponse,
+          ListModelEvaluationsPagedResponse>
+      LIST_MODEL_EVALUATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelEvaluationsRequest,
+              ListModelEvaluationsResponse,
+              ListModelEvaluationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelEvaluationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse> callable,
+                ListModelEvaluationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelEvaluationsResponse> futureResponse) {
+              PageContext<
+                      ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MODEL_EVALUATIONS_PAGE_STR_DESC, request, context);
+              return ListModelEvaluationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListModelEvaluationSlicesRequest,
+          ListModelEvaluationSlicesResponse,
+          ListModelEvaluationSlicesPagedResponse>
+      LIST_MODEL_EVALUATION_SLICES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelEvaluationSlicesRequest,
+              ListModelEvaluationSlicesResponse,
+              ListModelEvaluationSlicesPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelEvaluationSlicesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
+                    callable,
+                ListModelEvaluationSlicesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelEvaluationSlicesResponse> futureResponse) {
+              PageContext<
+                      ListModelEvaluationSlicesRequest,
+                      ListModelEvaluationSlicesResponse,
+                      ModelEvaluationSlice>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MODEL_EVALUATION_SLICES_PAGE_STR_DESC, request, context);
+              return ListModelEvaluationSlicesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to uploadModel. */
   public UnaryCallSettings<UploadModelRequest, Operation> uploadModelSettings() {
     return uploadModelSettings;
   }
 
   /** Returns the object with the settings used for calls to uploadModel. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           UploadModelRequest, UploadModelResponse, UploadModelOperationMetadata>
       uploadModelOperationSettings() {
@@ -180,7 +374,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   }
 
   /** Returns the object with the settings used for calls to deleteModel. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationSettings() {
     return deleteModelOperationSettings;
@@ -192,7 +385,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   }
 
   /** Returns the object with the settings used for calls to exportModel. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
       exportModelOperationSettings() {
@@ -235,10 +427,10 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcModelServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -313,203 +505,9 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     listModelEvaluationSlicesSettings = settingsBuilder.listModelEvaluationSlicesSettings().build();
   }
 
-  private static final PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>
-      LIST_MODELS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListModelsRequest injectToken(ListModelsRequest payload, String token) {
-              return ListModelsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListModelsRequest injectPageSize(ListModelsRequest payload, int pageSize) {
-              return ListModelsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListModelsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListModelsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Model> extractResources(ListModelsResponse payload) {
-              return payload.getModelsList() != null
-                  ? payload.getModelsList()
-                  : ImmutableList.<Model>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
-      LIST_MODEL_EVALUATIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListModelEvaluationsRequest injectToken(
-                ListModelEvaluationsRequest payload, String token) {
-              return ListModelEvaluationsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListModelEvaluationsRequest injectPageSize(
-                ListModelEvaluationsRequest payload, int pageSize) {
-              return ListModelEvaluationsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListModelEvaluationsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListModelEvaluationsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ModelEvaluation> extractResources(
-                ListModelEvaluationsResponse payload) {
-              return payload.getModelEvaluationsList() != null
-                  ? payload.getModelEvaluationsList()
-                  : ImmutableList.<ModelEvaluation>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse, ModelEvaluationSlice>
-      LIST_MODEL_EVALUATION_SLICES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListModelEvaluationSlicesRequest,
-              ListModelEvaluationSlicesResponse,
-              ModelEvaluationSlice>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListModelEvaluationSlicesRequest injectToken(
-                ListModelEvaluationSlicesRequest payload, String token) {
-              return ListModelEvaluationSlicesRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListModelEvaluationSlicesRequest injectPageSize(
-                ListModelEvaluationSlicesRequest payload, int pageSize) {
-              return ListModelEvaluationSlicesRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListModelEvaluationSlicesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListModelEvaluationSlicesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ModelEvaluationSlice> extractResources(
-                ListModelEvaluationSlicesResponse payload) {
-              return payload.getModelEvaluationSlicesList() != null
-                  ? payload.getModelEvaluationSlicesList()
-                  : ImmutableList.<ModelEvaluationSlice>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
-      LIST_MODELS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>() {
-            @Override
-            public ApiFuture<ListModelsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListModelsRequest, ListModelsResponse> callable,
-                ListModelsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListModelsResponse> futureResponse) {
-              PageContext<ListModelsRequest, ListModelsResponse, Model> pageContext =
-                  PageContext.create(callable, LIST_MODELS_PAGE_STR_DESC, request, context);
-              return ListModelsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
-          ListModelEvaluationsPagedResponse>
-      LIST_MODEL_EVALUATIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListModelEvaluationsRequest,
-              ListModelEvaluationsResponse,
-              ListModelEvaluationsPagedResponse>() {
-            @Override
-            public ApiFuture<ListModelEvaluationsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse> callable,
-                ListModelEvaluationsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListModelEvaluationsResponse> futureResponse) {
-              PageContext<
-                      ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_MODEL_EVALUATIONS_PAGE_STR_DESC, request, context);
-              return ListModelEvaluationsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListModelEvaluationSlicesRequest,
-          ListModelEvaluationSlicesResponse,
-          ListModelEvaluationSlicesPagedResponse>
-      LIST_MODEL_EVALUATION_SLICES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListModelEvaluationSlicesRequest,
-              ListModelEvaluationSlicesResponse,
-              ListModelEvaluationSlicesPagedResponse>() {
-            @Override
-            public ApiFuture<ListModelEvaluationSlicesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
-                    callable,
-                ListModelEvaluationSlicesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListModelEvaluationSlicesResponse> futureResponse) {
-              PageContext<
-                      ListModelEvaluationSlicesRequest,
-                      ListModelEvaluationSlicesResponse,
-                      ModelEvaluationSlice>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_MODEL_EVALUATION_SLICES_PAGE_STR_DESC, request, context);
-              return ListModelEvaluationSlicesPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
   /** Builder for ModelServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<ModelServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<UploadModelRequest, Operation> uploadModelSettings;
     private final OperationCallSettings.Builder<
             UploadModelRequest, UploadModelResponse, UploadModelOperationMetadata>
@@ -540,7 +538,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             ListModelEvaluationSlicesResponse,
             ListModelEvaluationSlicesPagedResponse>
         listModelEvaluationSlicesSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -548,20 +545,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -578,91 +562,29 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
       definitions.put("no_retry_3_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_4_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_6_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_7_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       uploadModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       uploadModelOperationSettings = OperationCallSettings.newBuilder();
-
       getModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listModelsSettings = PagedCallSettings.newBuilder(LIST_MODELS_PAGE_STR_FACT);
-
       updateModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteModelOperationSettings = OperationCallSettings.newBuilder();
-
       exportModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       exportModelOperationSettings = OperationCallSettings.newBuilder();
-
       getModelEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listModelEvaluationsSettings =
           PagedCallSettings.newBuilder(LIST_MODEL_EVALUATIONS_PAGE_STR_FACT);
-
       getModelEvaluationSliceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listModelEvaluationSlicesSettings =
           PagedCallSettings.newBuilder(LIST_MODEL_EVALUATION_SLICES_PAGE_STR_FACT);
 
@@ -678,140 +600,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               listModelEvaluationsSettings,
               getModelEvaluationSliceSettings,
               listModelEvaluationSlicesSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .uploadModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .getModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .listModelsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .updateModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .deleteModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .exportModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .getModelEvaluationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .listModelEvaluationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .getModelEvaluationSliceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .listModelEvaluationSlicesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-      builder
-          .uploadModelOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<UploadModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(UploadModelResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  UploadModelOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteModelOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<DeleteModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .exportModelOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<ExportModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(ExportModelResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  ExportModelOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(ModelServiceStubSettings settings) {
@@ -845,7 +634,143 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               listModelEvaluationSlicesSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .uploadModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .getModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .listModelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .updateModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .deleteModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .exportModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .getModelEvaluationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .listModelEvaluationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .getModelEvaluationSliceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .listModelEvaluationSlicesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .uploadModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<UploadModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(UploadModelResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UploadModelOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ExportModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExportModelResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ExportModelOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

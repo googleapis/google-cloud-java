@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.SpecialistPoolServiceClient.ListSpecialistPoolsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -47,16 +47,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud AI Platform API.
+ * gRPC stub implementation for the SpecialistPoolService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
-
   private static final MethodDescriptor<CreateSpecialistPoolRequest, Operation>
       createSpecialistPoolMethodDescriptor =
           MethodDescriptor.<CreateSpecialistPoolRequest, Operation>newBuilder()
@@ -67,6 +65,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   ProtoUtils.marshaller(CreateSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetSpecialistPoolRequest, SpecialistPool>
       getSpecialistPoolMethodDescriptor =
           MethodDescriptor.<GetSpecialistPoolRequest, SpecialistPool>newBuilder()
@@ -77,6 +76,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   ProtoUtils.marshaller(GetSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SpecialistPool.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>
       listSpecialistPoolsMethodDescriptor =
           MethodDescriptor.<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>newBuilder()
@@ -88,6 +88,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSpecialistPoolsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteSpecialistPoolRequest, Operation>
       deleteSpecialistPoolMethodDescriptor =
           MethodDescriptor.<DeleteSpecialistPoolRequest, Operation>newBuilder()
@@ -98,6 +99,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   ProtoUtils.marshaller(DeleteSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateSpecialistPoolRequest, Operation>
       updateSpecialistPoolMethodDescriptor =
           MethodDescriptor.<UpdateSpecialistPoolRequest, Operation>newBuilder()
@@ -108,9 +110,6 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   ProtoUtils.marshaller(UpdateSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateSpecialistPoolRequest, Operation> createSpecialistPoolCallable;
   private final OperationCallable<
@@ -129,6 +128,8 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
           UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
       updateSpecialistPoolOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcSpecialistPoolServiceStub create(
@@ -250,7 +251,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
             createSpecialistPoolTransportSettings,
             settings.createSpecialistPoolOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getSpecialistPoolCallable =
         callableFactory.createUnaryCallable(
             getSpecialistPoolTransportSettings,
@@ -276,7 +277,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
             deleteSpecialistPoolTransportSettings,
             settings.deleteSpecialistPoolOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateSpecialistPoolCallable =
         callableFactory.createUnaryCallable(
             updateSpecialistPoolTransportSettings,
@@ -287,34 +288,28 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
             updateSpecialistPoolTransportSettings,
             settings.updateSpecialistPoolOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          CreateSpecialistPoolRequest, SpecialistPool, CreateSpecialistPoolOperationMetadata>
-      createSpecialistPoolOperationCallable() {
-    return createSpecialistPoolOperationCallable;
   }
 
   public UnaryCallable<CreateSpecialistPoolRequest, Operation> createSpecialistPoolCallable() {
     return createSpecialistPoolCallable;
   }
 
-  public UnaryCallable<GetSpecialistPoolRequest, SpecialistPool> getSpecialistPoolCallable() {
-    return getSpecialistPoolCallable;
+  public OperationCallable<
+          CreateSpecialistPoolRequest, SpecialistPool, CreateSpecialistPoolOperationMetadata>
+      createSpecialistPoolOperationCallable() {
+    return createSpecialistPoolOperationCallable;
   }
 
-  public UnaryCallable<ListSpecialistPoolsRequest, ListSpecialistPoolsPagedResponse>
-      listSpecialistPoolsPagedCallable() {
-    return listSpecialistPoolsPagedCallable;
+  public UnaryCallable<GetSpecialistPoolRequest, SpecialistPool> getSpecialistPoolCallable() {
+    return getSpecialistPoolCallable;
   }
 
   public UnaryCallable<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>
@@ -322,25 +317,28 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
     return listSpecialistPoolsCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteSpecialistPoolRequest, Empty, DeleteOperationMetadata>
-      deleteSpecialistPoolOperationCallable() {
-    return deleteSpecialistPoolOperationCallable;
+  public UnaryCallable<ListSpecialistPoolsRequest, ListSpecialistPoolsPagedResponse>
+      listSpecialistPoolsPagedCallable() {
+    return listSpecialistPoolsPagedCallable;
   }
 
   public UnaryCallable<DeleteSpecialistPoolRequest, Operation> deleteSpecialistPoolCallable() {
     return deleteSpecialistPoolCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
-      updateSpecialistPoolOperationCallable() {
-    return updateSpecialistPoolOperationCallable;
+  public OperationCallable<DeleteSpecialistPoolRequest, Empty, DeleteOperationMetadata>
+      deleteSpecialistPoolOperationCallable() {
+    return deleteSpecialistPoolOperationCallable;
   }
 
   public UnaryCallable<UpdateSpecialistPoolRequest, Operation> updateSpecialistPoolCallable() {
     return updateSpecialistPoolCallable;
+  }
+
+  public OperationCallable<
+          UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
+      updateSpecialistPoolOperationCallable() {
+    return updateSpecialistPoolOperationCallable;
   }
 
   @Override

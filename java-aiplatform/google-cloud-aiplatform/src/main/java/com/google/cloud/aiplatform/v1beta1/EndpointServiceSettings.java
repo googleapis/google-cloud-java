@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.EndpointServiceClient.ListEndpointsPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link EndpointServiceClient}.
  *
@@ -53,31 +54,30 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getEndpoint to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EndpointServiceSettings.Builder endpointServiceSettingsBuilder =
  *     EndpointServiceSettings.newBuilder();
  * endpointServiceSettingsBuilder
  *     .getEndpointSettings()
  *     .setRetrySettings(
- *         endpointServiceSettingsBuilder.getEndpointSettings().getRetrySettings().toBuilder()
+ *         endpointServiceSettingsBuilder
+ *             .getEndpointSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EndpointServiceSettings endpointServiceSettings = endpointServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class EndpointServiceSettings extends ClientSettings<EndpointServiceSettings> {
+
   /** Returns the object with the settings used for calls to createEndpoint. */
   public UnaryCallSettings<CreateEndpointRequest, Operation> createEndpointSettings() {
     return ((EndpointServiceStubSettings) getStubSettings()).createEndpointSettings();
   }
 
   /** Returns the object with the settings used for calls to createEndpoint. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateEndpointRequest, Endpoint, CreateEndpointOperationMetadata>
       createEndpointOperationSettings() {
     return ((EndpointServiceStubSettings) getStubSettings()).createEndpointOperationSettings();
@@ -105,8 +105,6 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
   }
 
   /** Returns the object with the settings used for calls to deleteEndpoint. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
       deleteEndpointOperationSettings() {
     return ((EndpointServiceStubSettings) getStubSettings()).deleteEndpointOperationSettings();
@@ -118,8 +116,6 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
   }
 
   /** Returns the object with the settings used for calls to deployModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           DeployModelRequest, DeployModelResponse, DeployModelOperationMetadata>
       deployModelOperationSettings() {
@@ -132,8 +128,6 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
   }
 
   /** Returns the object with the settings used for calls to undeployModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelOperationSettings() {
@@ -200,16 +194,13 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
 
   /** Builder for EndpointServiceSettings. */
   public static class Builder extends ClientSettings.Builder<EndpointServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(EndpointServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(EndpointServiceStubSettings.newBuilder());
     }
 
     protected Builder(EndpointServiceSettings settings) {
@@ -220,11 +211,15 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(EndpointServiceStubSettings.newBuilder());
+    }
+
     public EndpointServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((EndpointServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -243,8 +238,6 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to createEndpoint. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateEndpointRequest, Endpoint, CreateEndpointOperationMetadata>
         createEndpointOperationSettings() {
@@ -274,8 +267,6 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteEndpoint. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
         deleteEndpointOperationSettings() {
       return getStubSettingsBuilder().deleteEndpointOperationSettings();
@@ -287,8 +278,6 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to deployModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeployModelRequest, DeployModelResponse, DeployModelOperationMetadata>
         deployModelOperationSettings() {
@@ -301,8 +290,6 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
     }
 
     /** Returns the builder for the settings used for calls to undeployModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
         undeployModelOperationSettings() {

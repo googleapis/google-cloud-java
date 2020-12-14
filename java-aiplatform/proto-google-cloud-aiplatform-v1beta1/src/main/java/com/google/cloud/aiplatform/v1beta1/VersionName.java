@@ -28,38 +28,37 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class ModelName implements ResourceName {
-  private static final PathTemplate PROJECT_LOCATION_MODEL =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/models/{model}");
+public class VersionName implements ResourceName {
+  private static final PathTemplate PROJECT_MODEL_VERSION =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/models/{model}/versions/{version}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
-  private final String location;
   private final String model;
+  private final String version;
 
   @Deprecated
-  protected ModelName() {
+  protected VersionName() {
     project = null;
-    location = null;
     model = null;
+    version = null;
   }
 
-  private ModelName(Builder builder) {
+  private VersionName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
     model = Preconditions.checkNotNull(builder.getModel());
+    version = Preconditions.checkNotNull(builder.getVersion());
   }
 
   public String getProject() {
     return project;
   }
 
-  public String getLocation() {
-    return location;
-  }
-
   public String getModel() {
     return model;
+  }
+
+  public String getVersion() {
+    return version;
   }
 
   public static Builder newBuilder() {
@@ -70,40 +69,35 @@ public class ModelName implements ResourceName {
     return new Builder(this);
   }
 
-  public static ModelName of(String project, String location, String model) {
-    return newBuilder().setProject(project).setLocation(location).setModel(model).build();
+  public static VersionName of(String project, String model, String version) {
+    return newBuilder().setProject(project).setModel(model).setVersion(version).build();
   }
 
-  public static String format(String project, String location, String model) {
-    return newBuilder()
-        .setProject(project)
-        .setLocation(location)
-        .setModel(model)
-        .build()
-        .toString();
+  public static String format(String project, String model, String version) {
+    return newBuilder().setProject(project).setModel(model).setVersion(version).build().toString();
   }
 
-  public static ModelName parse(String formattedString) {
+  public static VersionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_LOCATION_MODEL.validatedMatch(
-            formattedString, "ModelName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("model"));
+        PROJECT_MODEL_VERSION.validatedMatch(
+            formattedString, "VersionName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("model"), matchMap.get("version"));
   }
 
-  public static List<ModelName> parseList(List<String> formattedStrings) {
-    List<ModelName> list = new ArrayList<>(formattedStrings.size());
+  public static List<VersionName> parseList(List<String> formattedStrings) {
+    List<VersionName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<ModelName> values) {
+  public static List<String> toStringList(List<VersionName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (ModelName value : values) {
+    for (VersionName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -114,7 +108,7 @@ public class ModelName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_MODEL.matches(formattedString);
+    return PROJECT_MODEL_VERSION.matches(formattedString);
   }
 
   @Override
@@ -126,11 +120,11 @@ public class ModelName implements ResourceName {
           if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (location != null) {
-            fieldMapBuilder.put("location", location);
-          }
           if (model != null) {
             fieldMapBuilder.put("model", model);
+          }
+          if (version != null) {
+            fieldMapBuilder.put("version", version);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -145,8 +139,8 @@ public class ModelName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_MODEL.instantiate(
-        "project", project, "location", location, "model", model);
+    return PROJECT_MODEL_VERSION.instantiate(
+        "project", project, "model", model, "version", version);
   }
 
   @Override
@@ -155,10 +149,10 @@ public class ModelName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      ModelName that = ((ModelName) o);
+      VersionName that = ((VersionName) o);
       return Objects.equals(this.project, that.project)
-          && Objects.equals(this.location, that.location)
-          && Objects.equals(this.model, that.model);
+          && Objects.equals(this.model, that.model)
+          && Objects.equals(this.version, that.version);
     }
     return false;
   }
@@ -169,17 +163,17 @@ public class ModelName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= Objects.hashCode(location);
-    h *= 1000003;
     h ^= Objects.hashCode(model);
+    h *= 1000003;
+    h ^= Objects.hashCode(version);
     return h;
   }
 
-  /** Builder for projects/{project}/locations/{location}/models/{model}. */
+  /** Builder for projects/{project}/models/{model}/versions/{version}. */
   public static class Builder {
     private String project;
-    private String location;
     private String model;
+    private String version;
 
     protected Builder() {}
 
@@ -187,21 +181,16 @@ public class ModelName implements ResourceName {
       return project;
     }
 
-    public String getLocation() {
-      return location;
-    }
-
     public String getModel() {
       return model;
     }
 
-    public Builder setProject(String project) {
-      this.project = project;
-      return this;
+    public String getVersion() {
+      return version;
     }
 
-    public Builder setLocation(String location) {
-      this.location = location;
+    public Builder setProject(String project) {
+      this.project = project;
       return this;
     }
 
@@ -210,14 +199,19 @@ public class ModelName implements ResourceName {
       return this;
     }
 
-    private Builder(ModelName modelName) {
-      project = modelName.project;
-      location = modelName.location;
-      model = modelName.model;
+    public Builder setVersion(String version) {
+      this.version = version;
+      return this;
     }
 
-    public ModelName build() {
-      return new ModelName(this);
+    private Builder(VersionName versionName) {
+      project = versionName.project;
+      model = versionName.model;
+      version = versionName.version;
+    }
+
+    public VersionName build() {
+      return new VersionName(this);
     }
   }
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.SpecialistPoolServiceClient.ListSpecialistPoolsPagedResponse;
@@ -64,7 +65,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link SpecialistPoolServiceStub}.
  *
@@ -81,22 +82,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getSpecialistPool to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SpecialistPoolServiceStubSettings.Builder specialistPoolServiceSettingsBuilder =
  *     SpecialistPoolServiceStubSettings.newBuilder();
  * specialistPoolServiceSettingsBuilder
  *     .getSpecialistPoolSettings()
  *     .setRetrySettings(
- *         specialistPoolServiceSettingsBuilder.getSpecialistPoolSettings().getRetrySettings().toBuilder()
+ *         specialistPoolServiceSettingsBuilder
+ *             .getSpecialistPoolSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * SpecialistPoolServiceStubSettings specialistPoolServiceSettings = specialistPoolServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * SpecialistPoolServiceStubSettings specialistPoolServiceSettings =
+ *     specialistPoolServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class SpecialistPoolServiceStubSettings
     extends StubSettings<SpecialistPoolServiceStubSettings> {
   /** The default scopes of the service. */
@@ -123,13 +126,73 @@ public class SpecialistPoolServiceStubSettings
           UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
       updateSpecialistPoolOperationSettings;
 
+  private static final PagedListDescriptor<
+          ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>
+      LIST_SPECIALIST_POOLS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSpecialistPoolsRequest injectToken(
+                ListSpecialistPoolsRequest payload, String token) {
+              return ListSpecialistPoolsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSpecialistPoolsRequest injectPageSize(
+                ListSpecialistPoolsRequest payload, int pageSize) {
+              return ListSpecialistPoolsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSpecialistPoolsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSpecialistPoolsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SpecialistPool> extractResources(ListSpecialistPoolsResponse payload) {
+              return payload.getSpecialistPoolsList() == null
+                  ? ImmutableList.<SpecialistPool>of()
+                  : payload.getSpecialistPoolsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, ListSpecialistPoolsPagedResponse>
+      LIST_SPECIALIST_POOLS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSpecialistPoolsRequest,
+              ListSpecialistPoolsResponse,
+              ListSpecialistPoolsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSpecialistPoolsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse> callable,
+                ListSpecialistPoolsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSpecialistPoolsResponse> futureResponse) {
+              PageContext<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SPECIALIST_POOLS_PAGE_STR_DESC, request, context);
+              return ListSpecialistPoolsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to createSpecialistPool. */
   public UnaryCallSettings<CreateSpecialistPoolRequest, Operation> createSpecialistPoolSettings() {
     return createSpecialistPoolSettings;
   }
 
   /** Returns the object with the settings used for calls to createSpecialistPool. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           CreateSpecialistPoolRequest, SpecialistPool, CreateSpecialistPoolOperationMetadata>
       createSpecialistPoolOperationSettings() {
@@ -154,7 +217,6 @@ public class SpecialistPoolServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to deleteSpecialistPool. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteSpecialistPoolRequest, Empty, DeleteOperationMetadata>
       deleteSpecialistPoolOperationSettings() {
     return deleteSpecialistPoolOperationSettings;
@@ -166,7 +228,6 @@ public class SpecialistPoolServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to updateSpecialistPool. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
       updateSpecialistPoolOperationSettings() {
@@ -179,10 +240,10 @@ public class SpecialistPoolServiceStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcSpecialistPoolServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -255,72 +316,10 @@ public class SpecialistPoolServiceStubSettings
         settingsBuilder.updateSpecialistPoolOperationSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>
-      LIST_SPECIALIST_POOLS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSpecialistPoolsRequest injectToken(
-                ListSpecialistPoolsRequest payload, String token) {
-              return ListSpecialistPoolsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSpecialistPoolsRequest injectPageSize(
-                ListSpecialistPoolsRequest payload, int pageSize) {
-              return ListSpecialistPoolsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSpecialistPoolsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSpecialistPoolsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<SpecialistPool> extractResources(ListSpecialistPoolsResponse payload) {
-              return payload.getSpecialistPoolsList() != null
-                  ? payload.getSpecialistPoolsList()
-                  : ImmutableList.<SpecialistPool>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, ListSpecialistPoolsPagedResponse>
-      LIST_SPECIALIST_POOLS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSpecialistPoolsRequest,
-              ListSpecialistPoolsResponse,
-              ListSpecialistPoolsPagedResponse>() {
-            @Override
-            public ApiFuture<ListSpecialistPoolsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse> callable,
-                ListSpecialistPoolsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSpecialistPoolsResponse> futureResponse) {
-              PageContext<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_SPECIALIST_POOLS_PAGE_STR_DESC, request, context);
-              return ListSpecialistPoolsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for SpecialistPoolServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<SpecialistPoolServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateSpecialistPoolRequest, Operation>
         createSpecialistPoolSettings;
     private final OperationCallSettings.Builder<
@@ -343,7 +342,6 @@ public class SpecialistPoolServiceStubSettings
     private final OperationCallSettings.Builder<
             UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
         updateSpecialistPoolOperationSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -351,20 +349,7 @@ public class SpecialistPoolServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -380,82 +365,25 @@ public class SpecialistPoolServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(5000L))
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_4_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
       definitions.put("no_retry_6_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_7_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createSpecialistPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createSpecialistPoolOperationSettings = OperationCallSettings.newBuilder();
-
       getSpecialistPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSpecialistPoolsSettings =
           PagedCallSettings.newBuilder(LIST_SPECIALIST_POOLS_PAGE_STR_FACT);
-
       deleteSpecialistPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteSpecialistPoolOperationSettings = OperationCallSettings.newBuilder();
-
       updateSpecialistPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateSpecialistPoolOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
@@ -465,118 +393,7 @@ public class SpecialistPoolServiceStubSettings
               listSpecialistPoolsSettings,
               deleteSpecialistPoolSettings,
               updateSpecialistPoolSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createSpecialistPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
-
-      builder
-          .getSpecialistPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
-
-      builder
-          .listSpecialistPoolsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
-
-      builder
-          .deleteSpecialistPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
-
-      builder
-          .updateSpecialistPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
-      builder
-          .createSpecialistPoolOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateSpecialistPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(SpecialistPool.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  CreateSpecialistPoolOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteSpecialistPoolOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteSpecialistPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .updateSpecialistPoolOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateSpecialistPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(SpecialistPool.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  UpdateSpecialistPoolOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(SpecialistPoolServiceStubSettings settings) {
@@ -603,7 +420,121 @@ public class SpecialistPoolServiceStubSettings
               updateSpecialistPoolSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createSpecialistPoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+
+      builder
+          .getSpecialistPoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+
+      builder
+          .listSpecialistPoolsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+
+      builder
+          .deleteSpecialistPoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+
+      builder
+          .updateSpecialistPoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
+
+      builder
+          .createSpecialistPoolOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateSpecialistPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(SpecialistPool.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CreateSpecialistPoolOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteSpecialistPoolOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteSpecialistPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateSpecialistPoolOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateSpecialistPoolRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(SpecialistPool.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateSpecialistPoolOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

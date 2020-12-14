@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListBatchPredictionJobsPagedResponse;
@@ -20,7 +21,6 @@ import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListCustomJob
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListDataLabelingJobsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.JobServiceClient.ListHyperparameterTuningJobsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -69,16 +69,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud AI Platform API.
+ * gRPC stub implementation for the JobService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcJobServiceStub extends JobServiceStub {
-
   private static final MethodDescriptor<CreateCustomJobRequest, CustomJob>
       createCustomJobMethodDescriptor =
           MethodDescriptor.<CreateCustomJobRequest, CustomJob>newBuilder()
@@ -88,6 +86,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(CreateCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetCustomJobRequest, CustomJob>
       getCustomJobMethodDescriptor =
           MethodDescriptor.<GetCustomJobRequest, CustomJob>newBuilder()
@@ -96,6 +95,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListCustomJobsRequest, ListCustomJobsResponse>
       listCustomJobsMethodDescriptor =
           MethodDescriptor.<ListCustomJobsRequest, ListCustomJobsResponse>newBuilder()
@@ -106,6 +106,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteCustomJobRequest, Operation>
       deleteCustomJobMethodDescriptor =
           MethodDescriptor.<DeleteCustomJobRequest, Operation>newBuilder()
@@ -115,6 +116,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(DeleteCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CancelCustomJobRequest, Empty>
       cancelCustomJobMethodDescriptor =
           MethodDescriptor.<CancelCustomJobRequest, Empty>newBuilder()
@@ -124,6 +126,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(CancelCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateDataLabelingJobRequest, DataLabelingJob>
       createDataLabelingJobMethodDescriptor =
           MethodDescriptor.<CreateDataLabelingJobRequest, DataLabelingJob>newBuilder()
@@ -133,6 +136,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(CreateDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataLabelingJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetDataLabelingJobRequest, DataLabelingJob>
       getDataLabelingJobMethodDescriptor =
           MethodDescriptor.<GetDataLabelingJobRequest, DataLabelingJob>newBuilder()
@@ -142,6 +146,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(GetDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataLabelingJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
       listDataLabelingJobsMethodDescriptor =
           MethodDescriptor.<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>newBuilder()
@@ -152,6 +157,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataLabelingJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteDataLabelingJobRequest, Operation>
       deleteDataLabelingJobMethodDescriptor =
           MethodDescriptor.<DeleteDataLabelingJobRequest, Operation>newBuilder()
@@ -161,6 +167,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(DeleteDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CancelDataLabelingJobRequest, Empty>
       cancelDataLabelingJobMethodDescriptor =
           MethodDescriptor.<CancelDataLabelingJobRequest, Empty>newBuilder()
@@ -170,6 +177,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(CancelDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>
       createHyperparameterTuningJobMethodDescriptor =
@@ -183,6 +191,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HyperparameterTuningJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
       getHyperparameterTuningJobMethodDescriptor =
           MethodDescriptor.<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>newBuilder()
@@ -194,6 +203,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HyperparameterTuningJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse>
       listHyperparameterTuningJobsMethodDescriptor =
@@ -208,6 +218,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHyperparameterTuningJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteHyperparameterTuningJobRequest, Operation>
       deleteHyperparameterTuningJobMethodDescriptor =
           MethodDescriptor.<DeleteHyperparameterTuningJobRequest, Operation>newBuilder()
@@ -218,6 +229,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(DeleteHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CancelHyperparameterTuningJobRequest, Empty>
       cancelHyperparameterTuningJobMethodDescriptor =
           MethodDescriptor.<CancelHyperparameterTuningJobRequest, Empty>newBuilder()
@@ -228,6 +240,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(CancelHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateBatchPredictionJobRequest, BatchPredictionJob>
       createBatchPredictionJobMethodDescriptor =
           MethodDescriptor.<CreateBatchPredictionJobRequest, BatchPredictionJob>newBuilder()
@@ -238,6 +251,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(CreateBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BatchPredictionJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetBatchPredictionJobRequest, BatchPredictionJob>
       getBatchPredictionJobMethodDescriptor =
           MethodDescriptor.<GetBatchPredictionJobRequest, BatchPredictionJob>newBuilder()
@@ -247,6 +261,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(GetBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BatchPredictionJob.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse>
       listBatchPredictionJobsMethodDescriptor =
@@ -260,6 +275,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBatchPredictionJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteBatchPredictionJobRequest, Operation>
       deleteBatchPredictionJobMethodDescriptor =
           MethodDescriptor.<DeleteBatchPredictionJobRequest, Operation>newBuilder()
@@ -270,6 +286,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(DeleteBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CancelBatchPredictionJobRequest, Empty>
       cancelBatchPredictionJobMethodDescriptor =
           MethodDescriptor.<CancelBatchPredictionJobRequest, Empty>newBuilder()
@@ -280,9 +297,6 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(CancelBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateCustomJobRequest, CustomJob> createCustomJobCallable;
   private final UnaryCallable<GetCustomJobRequest, CustomJob> getCustomJobCallable;
@@ -338,6 +352,8 @@ public class GrpcJobServiceStub extends JobServiceStub {
   private final UnaryCallable<CancelBatchPredictionJobRequest, Empty>
       cancelBatchPredictionJobCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcJobServiceStub create(JobServiceStubSettings settings)
@@ -684,7 +700,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
             deleteCustomJobTransportSettings,
             settings.deleteCustomJobOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.cancelCustomJobCallable =
         callableFactory.createUnaryCallable(
             cancelCustomJobTransportSettings, settings.cancelCustomJobSettings(), clientContext);
@@ -718,7 +734,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
             deleteDataLabelingJobTransportSettings,
             settings.deleteDataLabelingJobOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.cancelDataLabelingJobCallable =
         callableFactory.createUnaryCallable(
             cancelDataLabelingJobTransportSettings,
@@ -754,7 +770,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
             deleteHyperparameterTuningJobTransportSettings,
             settings.deleteHyperparameterTuningJobOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.cancelHyperparameterTuningJobCallable =
         callableFactory.createUnaryCallable(
             cancelHyperparameterTuningJobTransportSettings,
@@ -790,17 +806,17 @@ public class GrpcJobServiceStub extends JobServiceStub {
             deleteBatchPredictionJobTransportSettings,
             settings.deleteBatchPredictionJobOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.cancelBatchPredictionJobCallable =
         callableFactory.createUnaryCallable(
             cancelBatchPredictionJobTransportSettings,
             settings.cancelBatchPredictionJobSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -813,23 +829,22 @@ public class GrpcJobServiceStub extends JobServiceStub {
     return getCustomJobCallable;
   }
 
+  public UnaryCallable<ListCustomJobsRequest, ListCustomJobsResponse> listCustomJobsCallable() {
+    return listCustomJobsCallable;
+  }
+
   public UnaryCallable<ListCustomJobsRequest, ListCustomJobsPagedResponse>
       listCustomJobsPagedCallable() {
     return listCustomJobsPagedCallable;
   }
 
-  public UnaryCallable<ListCustomJobsRequest, ListCustomJobsResponse> listCustomJobsCallable() {
-    return listCustomJobsCallable;
+  public UnaryCallable<DeleteCustomJobRequest, Operation> deleteCustomJobCallable() {
+    return deleteCustomJobCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeleteCustomJobRequest, Empty, DeleteOperationMetadata>
       deleteCustomJobOperationCallable() {
     return deleteCustomJobOperationCallable;
-  }
-
-  public UnaryCallable<DeleteCustomJobRequest, Operation> deleteCustomJobCallable() {
-    return deleteCustomJobCallable;
   }
 
   public UnaryCallable<CancelCustomJobRequest, Empty> cancelCustomJobCallable() {
@@ -845,24 +860,23 @@ public class GrpcJobServiceStub extends JobServiceStub {
     return getDataLabelingJobCallable;
   }
 
-  public UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsPagedResponse>
-      listDataLabelingJobsPagedCallable() {
-    return listDataLabelingJobsPagedCallable;
-  }
-
   public UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
       listDataLabelingJobsCallable() {
     return listDataLabelingJobsCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
-      deleteDataLabelingJobOperationCallable() {
-    return deleteDataLabelingJobOperationCallable;
+  public UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsPagedResponse>
+      listDataLabelingJobsPagedCallable() {
+    return listDataLabelingJobsPagedCallable;
   }
 
   public UnaryCallable<DeleteDataLabelingJobRequest, Operation> deleteDataLabelingJobCallable() {
     return deleteDataLabelingJobCallable;
+  }
+
+  public OperationCallable<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
+      deleteDataLabelingJobOperationCallable() {
+    return deleteDataLabelingJobOperationCallable;
   }
 
   public UnaryCallable<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobCallable() {
@@ -879,26 +893,25 @@ public class GrpcJobServiceStub extends JobServiceStub {
     return getHyperparameterTuningJobCallable;
   }
 
+  public UnaryCallable<ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse>
+      listHyperparameterTuningJobsCallable() {
+    return listHyperparameterTuningJobsCallable;
+  }
+
   public UnaryCallable<
           ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsPagedResponse>
       listHyperparameterTuningJobsPagedCallable() {
     return listHyperparameterTuningJobsPagedCallable;
   }
 
-  public UnaryCallable<ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse>
-      listHyperparameterTuningJobsCallable() {
-    return listHyperparameterTuningJobsCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteHyperparameterTuningJobRequest, Empty, DeleteOperationMetadata>
-      deleteHyperparameterTuningJobOperationCallable() {
-    return deleteHyperparameterTuningJobOperationCallable;
-  }
-
   public UnaryCallable<DeleteHyperparameterTuningJobRequest, Operation>
       deleteHyperparameterTuningJobCallable() {
     return deleteHyperparameterTuningJobCallable;
+  }
+
+  public OperationCallable<DeleteHyperparameterTuningJobRequest, Empty, DeleteOperationMetadata>
+      deleteHyperparameterTuningJobOperationCallable() {
+    return deleteHyperparameterTuningJobOperationCallable;
   }
 
   public UnaryCallable<CancelHyperparameterTuningJobRequest, Empty>
@@ -916,25 +929,24 @@ public class GrpcJobServiceStub extends JobServiceStub {
     return getBatchPredictionJobCallable;
   }
 
-  public UnaryCallable<ListBatchPredictionJobsRequest, ListBatchPredictionJobsPagedResponse>
-      listBatchPredictionJobsPagedCallable() {
-    return listBatchPredictionJobsPagedCallable;
-  }
-
   public UnaryCallable<ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse>
       listBatchPredictionJobsCallable() {
     return listBatchPredictionJobsCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteBatchPredictionJobRequest, Empty, DeleteOperationMetadata>
-      deleteBatchPredictionJobOperationCallable() {
-    return deleteBatchPredictionJobOperationCallable;
+  public UnaryCallable<ListBatchPredictionJobsRequest, ListBatchPredictionJobsPagedResponse>
+      listBatchPredictionJobsPagedCallable() {
+    return listBatchPredictionJobsPagedCallable;
   }
 
   public UnaryCallable<DeleteBatchPredictionJobRequest, Operation>
       deleteBatchPredictionJobCallable() {
     return deleteBatchPredictionJobCallable;
+  }
+
+  public OperationCallable<DeleteBatchPredictionJobRequest, Empty, DeleteOperationMetadata>
+      deleteBatchPredictionJobOperationCallable() {
+    return deleteBatchPredictionJobOperationCallable;
   }
 
   public UnaryCallable<CancelBatchPredictionJobRequest, Empty> cancelBatchPredictionJobCallable() {

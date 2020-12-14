@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListAnnotationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -60,16 +60,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud AI Platform API.
+ * gRPC stub implementation for the DatasetService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcDatasetServiceStub extends DatasetServiceStub {
-
   private static final MethodDescriptor<CreateDatasetRequest, Operation>
       createDatasetMethodDescriptor =
           MethodDescriptor.<CreateDatasetRequest, Operation>newBuilder()
@@ -79,6 +77,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
       MethodDescriptor.<GetDatasetRequest, Dataset>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -86,6 +85,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateDatasetRequest, Dataset>
       updateDatasetMethodDescriptor =
           MethodDescriptor.<UpdateDatasetRequest, Dataset>newBuilder()
@@ -95,6 +95,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(UpdateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
       listDatasetsMethodDescriptor =
           MethodDescriptor.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -104,6 +105,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteDatasetRequest, Operation>
       deleteDatasetMethodDescriptor =
           MethodDescriptor.<DeleteDatasetRequest, Operation>newBuilder()
@@ -113,6 +115,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
       MethodDescriptor.<ImportDataRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -120,6 +123,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ImportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
       MethodDescriptor.<ExportDataRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -127,6 +131,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListDataItemsRequest, ListDataItemsResponse>
       listDataItemsMethodDescriptor =
           MethodDescriptor.<ListDataItemsRequest, ListDataItemsResponse>newBuilder()
@@ -137,6 +142,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataItemsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetAnnotationSpecRequest, AnnotationSpec>
       getAnnotationSpecMethodDescriptor =
           MethodDescriptor.<GetAnnotationSpecRequest, AnnotationSpec>newBuilder()
@@ -146,6 +152,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(GetAnnotationSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotationSpec.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListAnnotationsRequest, ListAnnotationsResponse>
       listAnnotationsMethodDescriptor =
           MethodDescriptor.<ListAnnotationsRequest, ListAnnotationsResponse>newBuilder()
@@ -156,9 +163,6 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnnotationsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable;
   private final OperationCallable<CreateDatasetRequest, Dataset, CreateDatasetOperationMetadata>
@@ -188,6 +192,8 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   private final UnaryCallable<ListAnnotationsRequest, ListAnnotationsPagedResponse>
       listAnnotationsPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcDatasetServiceStub create(DatasetServiceStubSettings settings)
@@ -370,7 +376,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             createDatasetTransportSettings,
             settings.createDatasetOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getDatasetCallable =
         callableFactory.createUnaryCallable(
             getDatasetTransportSettings, settings.getDatasetSettings(), clientContext);
@@ -391,7 +397,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             deleteDatasetTransportSettings,
             settings.deleteDatasetOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.importDataCallable =
         callableFactory.createUnaryCallable(
             importDataTransportSettings, settings.importDataSettings(), clientContext);
@@ -400,7 +406,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             importDataTransportSettings,
             settings.importDataOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.exportDataCallable =
         callableFactory.createUnaryCallable(
             exportDataTransportSettings, settings.exportDataSettings(), clientContext);
@@ -409,7 +415,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             exportDataTransportSettings,
             settings.exportDataOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.listDataItemsCallable =
         callableFactory.createUnaryCallable(
             listDataItemsTransportSettings, settings.listDataItemsSettings(), clientContext);
@@ -428,22 +434,21 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
         callableFactory.createPagedCallable(
             listAnnotationsTransportSettings, settings.listAnnotationsSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable() {
+    return createDatasetCallable;
+  }
+
   public OperationCallable<CreateDatasetRequest, Dataset, CreateDatasetOperationMetadata>
       createDatasetOperationCallable() {
     return createDatasetOperationCallable;
-  }
-
-  public UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable() {
-    return createDatasetCallable;
   }
 
   public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
@@ -454,42 +459,43 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
     return updateDatasetCallable;
   }
 
-  public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
-    return listDatasetsPagedCallable;
-  }
-
   public UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable() {
     return listDatasetsCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteDatasetRequest, Empty, DeleteOperationMetadata>
-      deleteDatasetOperationCallable() {
-    return deleteDatasetOperationCallable;
+  public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
+    return listDatasetsPagedCallable;
   }
 
   public UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
     return deleteDatasetCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataOperationMetadata>
-      importDataOperationCallable() {
-    return importDataOperationCallable;
+  public OperationCallable<DeleteDatasetRequest, Empty, DeleteOperationMetadata>
+      deleteDatasetOperationCallable() {
+    return deleteDatasetOperationCallable;
   }
 
   public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     return importDataCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataOperationMetadata>
+      importDataOperationCallable() {
+    return importDataOperationCallable;
+  }
+
+  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
+    return exportDataCallable;
+  }
+
   public OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataOperationMetadata>
       exportDataOperationCallable() {
     return exportDataOperationCallable;
   }
 
-  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
-    return exportDataCallable;
+  public UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable() {
+    return listDataItemsCallable;
   }
 
   public UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
@@ -497,21 +503,17 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
     return listDataItemsPagedCallable;
   }
 
-  public UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable() {
-    return listDataItemsCallable;
-  }
-
   public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
     return getAnnotationSpecCallable;
+  }
+
+  public UnaryCallable<ListAnnotationsRequest, ListAnnotationsResponse> listAnnotationsCallable() {
+    return listAnnotationsCallable;
   }
 
   public UnaryCallable<ListAnnotationsRequest, ListAnnotationsPagedResponse>
       listAnnotationsPagedCallable() {
     return listAnnotationsPagedCallable;
-  }
-
-  public UnaryCallable<ListAnnotationsRequest, ListAnnotationsResponse> listAnnotationsCallable() {
-    return listAnnotationsCallable;
   }
 
   @Override

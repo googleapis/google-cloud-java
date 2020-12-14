@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
@@ -33,13 +34,17 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
+import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -47,54 +52,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class ModelServiceClientTest {
-  private static MockDatasetService mockDatasetService;
-  private static MockEndpointService mockEndpointService;
-  private static MockJobService mockJobService;
-  private static MockMigrationService mockMigrationService;
-  private static MockModelService mockModelService;
-  private static MockPipelineService mockPipelineService;
-  private static MockPredictionService mockPredictionService;
-  private static MockSpecialistPoolService mockSpecialistPoolService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private ModelServiceClient client;
+  private static MockModelService mockModelService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockDatasetService = new MockDatasetService();
-    mockEndpointService = new MockEndpointService();
-    mockJobService = new MockJobService();
-    mockMigrationService = new MockMigrationService();
     mockModelService = new MockModelService();
-    mockPipelineService = new MockPipelineService();
-    mockPredictionService = new MockPredictionService();
-    mockSpecialistPoolService = new MockSpecialistPoolService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockDatasetService,
-                mockEndpointService,
-                mockJobService,
-                mockMigrationService,
-                mockModelService,
-                mockPipelineService,
-                mockPredictionService,
-                mockSpecialistPoolService));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockModelService));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     ModelServiceSettings settings =
         ModelServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -109,11 +91,11 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void uploadModelTest() throws Exception {
-    ModelName model2 = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
     UploadModelResponse expectedResponse =
-        UploadModelResponse.newBuilder().setModel(model2.toString()).build();
+        UploadModelResponse.newBuilder()
+            .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("uploadModelTest")
@@ -130,9 +112,9 @@ public class ModelServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockModelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UploadModelRequest actualRequest = (UploadModelRequest) actualRequests.get(0);
+    UploadModelRequest actualRequest = ((UploadModelRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(model, actualRequest.getModel());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -141,44 +123,96 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void uploadModelExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockModelService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Model model = Model.newBuilder().build();
-
       client.uploadModelAsync(parent, model).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getModelTest() {
-    ModelName name2 = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    String metadataSchemaUri = "metadataSchemaUri-152319778";
-    TrainingPipelineName trainingPipeline =
-        TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-    String artifactUri = "artifactUri-671891073";
-    String etag = "etag3123477";
+  public void uploadModelTest2() throws Exception {
+    UploadModelResponse expectedResponse =
+        UploadModelResponse.newBuilder()
+            .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("uploadModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Model model = Model.newBuilder().build();
+
+    UploadModelResponse actualResponse = client.uploadModelAsync(parent, model).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UploadModelRequest actualRequest = ((UploadModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(model, actualRequest.getModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void uploadModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Model model = Model.newBuilder().build();
+      client.uploadModelAsync(parent, model).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getModelTest() throws Exception {
     Model expectedResponse =
         Model.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .setMetadataSchemaUri(metadataSchemaUri)
-            .setTrainingPipeline(trainingPipeline.toString())
-            .setArtifactUri(artifactUri)
-            .setEtag(etag)
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setPredictSchemata(PredictSchemata.newBuilder().build())
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().build())
+            .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
+            .setTrainingPipeline(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setContainerSpec(ModelContainerSpec.newBuilder().build())
+            .setArtifactUri("artifactUri-1130062278")
+            .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
+            .addAllSupportedInputStorageFormats(new ArrayList<String>())
+            .addAllSupportedOutputStorageFormats(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDeployedModels(new ArrayList<DeployedModelRef>())
+            .setExplanationSpec(ExplanationSpec.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -189,9 +223,9 @@ public class ModelServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockModelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetModelRequest actualRequest = (GetModelRequest) actualRequests.get(0);
+    GetModelRequest actualRequest = ((GetModelRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, ModelName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -199,31 +233,84 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getModelExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockModelService.addException(exception);
 
     try {
       ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-
       client.getModel(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listModelsTest() {
-    String nextPageToken = "";
-    Model modelsElement = Model.newBuilder().build();
-    List<Model> models = Arrays.asList(modelsElement);
+  public void getModelTest2() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setPredictSchemata(PredictSchemata.newBuilder().build())
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().build())
+            .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
+            .setTrainingPipeline(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setContainerSpec(ModelContainerSpec.newBuilder().build())
+            .setArtifactUri("artifactUri-1130062278")
+            .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
+            .addAllSupportedInputStorageFormats(new ArrayList<String>())
+            .addAllSupportedOutputStorageFormats(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDeployedModels(new ArrayList<DeployedModelRef>())
+            .setExplanationSpec(ExplanationSpec.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Model actualResponse = client.getModel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetModelRequest actualRequest = ((GetModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getModel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelsTest() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
     ListModelsResponse expectedResponse =
         ListModelsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllModels(models)
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -232,14 +319,15 @@ public class ModelServiceClientTest {
     ListModelsPagedResponse pagedListResponse = client.listModels(parent);
 
     List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockModelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListModelsRequest actualRequest = (ListModelsRequest) actualRequests.get(0);
+    ListModelsRequest actualRequest = ((ListModelsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -247,41 +335,88 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listModelsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockModelService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
       client.listModels(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateModelTest() {
-    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    String metadataSchemaUri = "metadataSchemaUri-152319778";
-    TrainingPipelineName trainingPipeline =
-        TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]");
-    String artifactUri = "artifactUri-671891073";
-    String etag = "etag3123477";
+  public void listModelsTest2() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelsResponse expectedResponse =
+        ListModelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListModelsPagedResponse pagedListResponse = client.listModels(parent);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelsRequest actualRequest = ((ListModelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listModels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateModelTest() throws Exception {
     Model expectedResponse =
         Model.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .setMetadataSchemaUri(metadataSchemaUri)
-            .setTrainingPipeline(trainingPipeline.toString())
-            .setArtifactUri(artifactUri)
-            .setEtag(etag)
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setPredictSchemata(PredictSchemata.newBuilder().build())
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().build())
+            .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
+            .setTrainingPipeline(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setContainerSpec(ModelContainerSpec.newBuilder().build())
+            .setArtifactUri("artifactUri-1130062278")
+            .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
+            .addAllSupportedInputStorageFormats(new ArrayList<String>())
+            .addAllSupportedOutputStorageFormats(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDeployedModels(new ArrayList<DeployedModelRef>())
+            .setExplanationSpec(ExplanationSpec.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -293,7 +428,7 @@ public class ModelServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockModelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateModelRequest actualRequest = (UpdateModelRequest) actualRequests.get(0);
+    UpdateModelRequest actualRequest = ((UpdateModelRequest) actualRequests.get(0));
 
     Assert.assertEquals(model, actualRequest.getModel());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
@@ -304,24 +439,21 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateModelExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockModelService.addException(exception);
 
     try {
       Model model = Model.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateModel(model, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteModelTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -334,14 +466,13 @@ public class ModelServiceClientTest {
 
     ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
 
-    Empty actualResponse = client.deleteModelAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    client.deleteModelAsync(name).get();
 
     List<AbstractMessage> actualRequests = mockModelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteModelRequest actualRequest = (DeleteModelRequest) actualRequests.get(0);
+    DeleteModelRequest actualRequest = ((DeleteModelRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, ModelName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -349,25 +480,64 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteModelExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockModelService.addException(exception);
 
     try {
       ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-
       client.deleteModelAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
+  public void deleteModelTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteModelAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelRequest actualRequest = ((DeleteModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteModelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void exportModelTest() throws Exception {
     ExportModelResponse expectedResponse = ExportModelResponse.newBuilder().build();
     Operation resultOperation =
@@ -387,9 +557,9 @@ public class ModelServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockModelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ExportModelRequest actualRequest = (ExportModelRequest) actualRequests.get(0);
+    ExportModelRequest actualRequest = ((ExportModelRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, ModelName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -398,35 +568,83 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void exportModelExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockModelService.addException(exception);
 
     try {
       ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
       ExportModelRequest.OutputConfig outputConfig =
           ExportModelRequest.OutputConfig.newBuilder().build();
-
       client.exportModelAsync(name, outputConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getModelEvaluationTest() {
-    ModelEvaluationName name2 =
-        ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-    String metricsSchemaUri = "metricsSchemaUri981925578";
+  public void exportModelTest2() throws Exception {
+    ExportModelResponse expectedResponse = ExportModelResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    ExportModelRequest.OutputConfig outputConfig =
+        ExportModelRequest.OutputConfig.newBuilder().build();
+
+    ExportModelResponse actualResponse = client.exportModelAsync(name, outputConfig).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportModelRequest actualRequest = ((ExportModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      ExportModelRequest.OutputConfig outputConfig =
+          ExportModelRequest.OutputConfig.newBuilder().build();
+      client.exportModelAsync(name, outputConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getModelEvaluationTest() throws Exception {
     ModelEvaluation expectedResponse =
         ModelEvaluation.newBuilder()
-            .setName(name2.toString())
-            .setMetricsSchemaUri(metricsSchemaUri)
+            .setName(
+                ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
+                    .toString())
+            .setMetricsSchemaUri("metricsSchemaUri-182209912")
+            .setMetrics(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllSliceDimensions(new ArrayList<String>())
+            .setModelExplanation(ModelExplanation.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -438,9 +656,9 @@ public class ModelServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockModelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetModelEvaluationRequest actualRequest = (GetModelEvaluationRequest) actualRequests.get(0);
+    GetModelEvaluationRequest actualRequest = ((GetModelEvaluationRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, ModelEvaluationName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -448,32 +666,72 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getModelEvaluationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockModelService.addException(exception);
 
     try {
       ModelEvaluationName name =
           ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-
       client.getModelEvaluation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listModelEvaluationsTest() {
-    String nextPageToken = "";
-    ModelEvaluation modelEvaluationsElement = ModelEvaluation.newBuilder().build();
-    List<ModelEvaluation> modelEvaluations = Arrays.asList(modelEvaluationsElement);
+  public void getModelEvaluationTest2() throws Exception {
+    ModelEvaluation expectedResponse =
+        ModelEvaluation.newBuilder()
+            .setName(
+                ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
+                    .toString())
+            .setMetricsSchemaUri("metricsSchemaUri-182209912")
+            .setMetrics(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllSliceDimensions(new ArrayList<String>())
+            .setModelExplanation(ModelExplanation.newBuilder().build())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ModelEvaluation actualResponse = client.getModelEvaluation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetModelEvaluationRequest actualRequest = ((GetModelEvaluationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getModelEvaluationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getModelEvaluation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelEvaluationsTest() throws Exception {
+    ModelEvaluation responsesElement = ModelEvaluation.newBuilder().build();
     ListModelEvaluationsResponse expectedResponse =
         ListModelEvaluationsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllModelEvaluations(modelEvaluations)
+            .setNextPageToken("")
+            .addAllModelEvaluations(Arrays.asList(responsesElement))
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -482,14 +740,16 @@ public class ModelServiceClientTest {
     ListModelEvaluationsPagedResponse pagedListResponse = client.listModelEvaluations(parent);
 
     List<ModelEvaluation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getModelEvaluationsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockModelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListModelEvaluationsRequest actualRequest = (ListModelEvaluationsRequest) actualRequests.get(0);
+    ListModelEvaluationsRequest actualRequest =
+        ((ListModelEvaluationsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ModelName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -497,32 +757,75 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listModelEvaluationsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockModelService.addException(exception);
 
     try {
       ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-
       client.listModelEvaluations(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getModelEvaluationSliceTest() {
-    ModelEvaluationSliceName name2 =
-        ModelEvaluationSliceName.of(
-            "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]");
-    String metricsSchemaUri = "metricsSchemaUri981925578";
+  public void listModelEvaluationsTest2() throws Exception {
+    ModelEvaluation responsesElement = ModelEvaluation.newBuilder().build();
+    ListModelEvaluationsResponse expectedResponse =
+        ListModelEvaluationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModelEvaluations(Arrays.asList(responsesElement))
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListModelEvaluationsPagedResponse pagedListResponse = client.listModelEvaluations(parent);
+
+    List<ModelEvaluation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelEvaluationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelEvaluationsRequest actualRequest =
+        ((ListModelEvaluationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelEvaluationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listModelEvaluations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getModelEvaluationSliceTest() throws Exception {
     ModelEvaluationSlice expectedResponse =
         ModelEvaluationSlice.newBuilder()
-            .setName(name2.toString())
-            .setMetricsSchemaUri(metricsSchemaUri)
+            .setName(
+                ModelEvaluationSliceName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]")
+                    .toString())
+            .setMetricsSchemaUri("metricsSchemaUri-182209912")
+            .setMetrics(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -536,9 +839,9 @@ public class ModelServiceClientTest {
     List<AbstractMessage> actualRequests = mockModelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetModelEvaluationSliceRequest actualRequest =
-        (GetModelEvaluationSliceRequest) actualRequests.get(0);
+        ((GetModelEvaluationSliceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, ModelEvaluationSliceName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -546,33 +849,73 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getModelEvaluationSliceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockModelService.addException(exception);
 
     try {
       ModelEvaluationSliceName name =
           ModelEvaluationSliceName.of(
               "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]");
-
       client.getModelEvaluationSlice(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listModelEvaluationSlicesTest() {
-    String nextPageToken = "";
-    ModelEvaluationSlice modelEvaluationSlicesElement = ModelEvaluationSlice.newBuilder().build();
-    List<ModelEvaluationSlice> modelEvaluationSlices = Arrays.asList(modelEvaluationSlicesElement);
+  public void getModelEvaluationSliceTest2() throws Exception {
+    ModelEvaluationSlice expectedResponse =
+        ModelEvaluationSlice.newBuilder()
+            .setName(
+                ModelEvaluationSliceName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]")
+                    .toString())
+            .setMetricsSchemaUri("metricsSchemaUri-182209912")
+            .setMetrics(Value.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ModelEvaluationSlice actualResponse = client.getModelEvaluationSlice(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetModelEvaluationSliceRequest actualRequest =
+        ((GetModelEvaluationSliceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getModelEvaluationSliceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getModelEvaluationSlice(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelEvaluationSlicesTest() throws Exception {
+    ModelEvaluationSlice responsesElement = ModelEvaluationSlice.newBuilder().build();
     ListModelEvaluationSlicesResponse expectedResponse =
         ListModelEvaluationSlicesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllModelEvaluationSlices(modelEvaluationSlices)
+            .setNextPageToken("")
+            .addAllModelEvaluationSlices(Arrays.asList(responsesElement))
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -583,15 +926,16 @@ public class ModelServiceClientTest {
         client.listModelEvaluationSlices(parent);
 
     List<ModelEvaluationSlice> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getModelEvaluationSlicesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockModelService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListModelEvaluationSlicesRequest actualRequest =
-        (ListModelEvaluationSlicesRequest) actualRequests.get(0);
+        ((ListModelEvaluationSlicesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ModelEvaluationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -599,19 +943,63 @@ public class ModelServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listModelEvaluationSlicesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockModelService.addException(exception);
 
     try {
       ModelEvaluationName parent =
           ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-
       client.listModelEvaluationSlices(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelEvaluationSlicesTest2() throws Exception {
+    ModelEvaluationSlice responsesElement = ModelEvaluationSlice.newBuilder().build();
+    ListModelEvaluationSlicesResponse expectedResponse =
+        ListModelEvaluationSlicesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModelEvaluationSlices(Arrays.asList(responsesElement))
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListModelEvaluationSlicesPagedResponse pagedListResponse =
+        client.listModelEvaluationSlices(parent);
+
+    List<ModelEvaluationSlice> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelEvaluationSlicesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelEvaluationSlicesRequest actualRequest =
+        ((ListModelEvaluationSlicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelEvaluationSlicesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listModelEvaluationSlices(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

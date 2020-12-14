@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.PipelineServiceClient.ListTrainingPipelinesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -45,16 +45,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud AI Platform API.
+ * gRPC stub implementation for the PipelineService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcPipelineServiceStub extends PipelineServiceStub {
-
   private static final MethodDescriptor<CreateTrainingPipelineRequest, TrainingPipeline>
       createTrainingPipelineMethodDescriptor =
           MethodDescriptor.<CreateTrainingPipelineRequest, TrainingPipeline>newBuilder()
@@ -65,6 +63,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   ProtoUtils.marshaller(CreateTrainingPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TrainingPipeline.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetTrainingPipelineRequest, TrainingPipeline>
       getTrainingPipelineMethodDescriptor =
           MethodDescriptor.<GetTrainingPipelineRequest, TrainingPipeline>newBuilder()
@@ -75,6 +74,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   ProtoUtils.marshaller(GetTrainingPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TrainingPipeline.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse>
       listTrainingPipelinesMethodDescriptor =
           MethodDescriptor.<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse>newBuilder()
@@ -86,6 +86,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTrainingPipelinesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteTrainingPipelineRequest, Operation>
       deleteTrainingPipelineMethodDescriptor =
           MethodDescriptor.<DeleteTrainingPipelineRequest, Operation>newBuilder()
@@ -96,6 +97,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   ProtoUtils.marshaller(DeleteTrainingPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CancelTrainingPipelineRequest, Empty>
       cancelTrainingPipelineMethodDescriptor =
           MethodDescriptor.<CancelTrainingPipelineRequest, Empty>newBuilder()
@@ -106,9 +108,6 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   ProtoUtils.marshaller(CancelTrainingPipelineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateTrainingPipelineRequest, TrainingPipeline>
       createTrainingPipelineCallable;
@@ -124,6 +123,8 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
       deleteTrainingPipelineOperationCallable;
   private final UnaryCallable<CancelTrainingPipelineRequest, Empty> cancelTrainingPipelineCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcPipelineServiceStub create(PipelineServiceStubSettings settings)
@@ -267,17 +268,17 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
             deleteTrainingPipelineTransportSettings,
             settings.deleteTrainingPipelineOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.cancelTrainingPipelineCallable =
         callableFactory.createUnaryCallable(
             cancelTrainingPipelineTransportSettings,
             settings.cancelTrainingPipelineSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -291,24 +292,23 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
     return getTrainingPipelineCallable;
   }
 
-  public UnaryCallable<ListTrainingPipelinesRequest, ListTrainingPipelinesPagedResponse>
-      listTrainingPipelinesPagedCallable() {
-    return listTrainingPipelinesPagedCallable;
-  }
-
   public UnaryCallable<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse>
       listTrainingPipelinesCallable() {
     return listTrainingPipelinesCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteTrainingPipelineRequest, Empty, DeleteOperationMetadata>
-      deleteTrainingPipelineOperationCallable() {
-    return deleteTrainingPipelineOperationCallable;
+  public UnaryCallable<ListTrainingPipelinesRequest, ListTrainingPipelinesPagedResponse>
+      listTrainingPipelinesPagedCallable() {
+    return listTrainingPipelinesPagedCallable;
   }
 
   public UnaryCallable<DeleteTrainingPipelineRequest, Operation> deleteTrainingPipelineCallable() {
     return deleteTrainingPipelineCallable;
+  }
+
+  public OperationCallable<DeleteTrainingPipelineRequest, Empty, DeleteOperationMetadata>
+      deleteTrainingPipelineOperationCallable() {
+    return deleteTrainingPipelineOperationCallable;
   }
 
   public UnaryCallable<CancelTrainingPipelineRequest, Empty> cancelTrainingPipelineCallable() {

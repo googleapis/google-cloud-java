@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.MigrationServiceClient.SearchMigratableResourcesPagedResponse;
@@ -29,7 +30,6 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,6 +37,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -44,54 +45,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class MigrationServiceClientTest {
-  private static MockDatasetService mockDatasetService;
-  private static MockEndpointService mockEndpointService;
-  private static MockJobService mockJobService;
   private static MockMigrationService mockMigrationService;
-  private static MockModelService mockModelService;
-  private static MockPipelineService mockPipelineService;
-  private static MockPredictionService mockPredictionService;
-  private static MockSpecialistPoolService mockSpecialistPoolService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private MigrationServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockDatasetService = new MockDatasetService();
-    mockEndpointService = new MockEndpointService();
-    mockJobService = new MockJobService();
     mockMigrationService = new MockMigrationService();
-    mockModelService = new MockModelService();
-    mockPipelineService = new MockPipelineService();
-    mockPredictionService = new MockPredictionService();
-    mockSpecialistPoolService = new MockSpecialistPoolService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockDatasetService,
-                mockEndpointService,
-                mockJobService,
-                mockMigrationService,
-                mockModelService,
-                mockPipelineService,
-                mockPredictionService,
-                mockSpecialistPoolService));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockMigrationService));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     MigrationServiceSettings settings =
         MigrationServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -106,15 +84,12 @@ public class MigrationServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void searchMigratableResourcesTest() {
-    String nextPageToken = "";
-    MigratableResource migratableResourcesElement = MigratableResource.newBuilder().build();
-    List<MigratableResource> migratableResources = Arrays.asList(migratableResourcesElement);
+  public void searchMigratableResourcesTest() throws Exception {
+    MigratableResource responsesElement = MigratableResource.newBuilder().build();
     SearchMigratableResourcesResponse expectedResponse =
         SearchMigratableResourcesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllMigratableResources(migratableResources)
+            .setNextPageToken("")
+            .addAllMigratableResources(Arrays.asList(responsesElement))
             .build();
     mockMigrationService.addResponse(expectedResponse);
 
@@ -124,15 +99,16 @@ public class MigrationServiceClientTest {
         client.searchMigratableResources(parent);
 
     List<MigratableResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMigratableResourcesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockMigrationService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SearchMigratableResourcesRequest actualRequest =
-        (SearchMigratableResourcesRequest) actualRequests.get(0);
+        ((SearchMigratableResourcesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -140,26 +116,71 @@ public class MigrationServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void searchMigratableResourcesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockMigrationService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
       client.searchMigratableResources(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
+  public void searchMigratableResourcesTest2() throws Exception {
+    MigratableResource responsesElement = MigratableResource.newBuilder().build();
+    SearchMigratableResourcesResponse expectedResponse =
+        SearchMigratableResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMigratableResources(Arrays.asList(responsesElement))
+            .build();
+    mockMigrationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    SearchMigratableResourcesPagedResponse pagedListResponse =
+        client.searchMigratableResources(parent);
+
+    List<MigratableResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMigratableResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchMigratableResourcesRequest actualRequest =
+        ((SearchMigratableResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchMigratableResourcesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMigrationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.searchMigratableResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void batchMigrateResourcesTest() throws Exception {
     BatchMigrateResourcesResponse expectedResponse =
-        BatchMigrateResourcesResponse.newBuilder().build();
+        BatchMigrateResourcesResponse.newBuilder()
+            .addAllMigrateResourceResponses(new ArrayList<MigrateResourceResponse>())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("batchMigrateResourcesTest")
@@ -178,9 +199,9 @@ public class MigrationServiceClientTest {
     List<AbstractMessage> actualRequests = mockMigrationService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchMigrateResourcesRequest actualRequest =
-        (BatchMigrateResourcesRequest) actualRequests.get(0);
+        ((BatchMigrateResourcesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(migrateResourceRequests, actualRequest.getMigrateResourceRequestsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -189,20 +210,69 @@ public class MigrationServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void batchMigrateResourcesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockMigrationService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       List<MigrateResourceRequest> migrateResourceRequests = new ArrayList<>();
-
       client.batchMigrateResourcesAsync(parent, migrateResourceRequests).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchMigrateResourcesTest2() throws Exception {
+    BatchMigrateResourcesResponse expectedResponse =
+        BatchMigrateResourcesResponse.newBuilder()
+            .addAllMigrateResourceResponses(new ArrayList<MigrateResourceResponse>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchMigrateResourcesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockMigrationService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    List<MigrateResourceRequest> migrateResourceRequests = new ArrayList<>();
+
+    BatchMigrateResourcesResponse actualResponse =
+        client.batchMigrateResourcesAsync(parent, migrateResourceRequests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchMigrateResourcesRequest actualRequest =
+        ((BatchMigrateResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(migrateResourceRequests, actualRequest.getMigrateResourceRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchMigrateResourcesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMigrationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<MigrateResourceRequest> migrateResourceRequests = new ArrayList<>();
+      client.batchMigrateResourcesAsync(parent, migrateResourceRequests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }

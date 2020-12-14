@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -39,23 +40,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service for managing AI Platform's machine learning Models.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
- *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
- *   Model response = modelServiceClient.getModel(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the modelServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the ModelServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -83,30 +75,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ModelServiceSettings modelServiceSettings =
  *     ModelServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ModelServiceClient modelServiceClient =
- *     ModelServiceClient.create(modelServiceSettings);
- * </code>
- * </pre>
+ * ModelServiceClient modelServiceClient = ModelServiceClient.create(modelServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ModelServiceSettings modelServiceSettings =
  *     ModelServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * ModelServiceClient modelServiceClient =
- *     ModelServiceClient.create(modelServiceSettings);
- * </code>
- * </pre>
+ * ModelServiceClient modelServiceClient = ModelServiceClient.create(modelServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class ModelServiceClient implements BackgroundResource {
   private final ModelServiceSettings settings;
   private final ModelServiceStub stub;
@@ -127,7 +115,7 @@ public class ModelServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ModelServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use ModelServiceSettings}.
+   * for advanced usage - prefer using create(ModelServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ModelServiceClient create(ModelServiceStub stub) {
@@ -165,33 +153,19 @@ public class ModelServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Uploads a Model artifact into AI Platform.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Model model = Model.newBuilder().build();
-   *   UploadModelResponse response = modelServiceClient.uploadModelAsync(parent, model).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location into which to upload the Model.
    *     Format: `projects/{project}/locations/{location}`
    * @param model Required. The Model to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<UploadModelResponse, UploadModelOperationMetadata> uploadModelAsync(
       LocationName parent, Model model) {
     UploadModelRequest request =
@@ -202,27 +176,15 @@ public class ModelServiceClient implements BackgroundResource {
     return uploadModelAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Uploads a Model artifact into AI Platform.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Model model = Model.newBuilder().build();
-   *   UploadModelResponse response = modelServiceClient.uploadModelAsync(parent.toString(), model).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location into which to upload the Model.
    *     Format: `projects/{project}/locations/{location}`
    * @param model Required. The Model to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<UploadModelResponse, UploadModelOperationMetadata> uploadModelAsync(
       String parent, Model model) {
     UploadModelRequest request =
@@ -230,97 +192,43 @@ public class ModelServiceClient implements BackgroundResource {
     return uploadModelAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Uploads a Model artifact into AI Platform.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Model model = Model.newBuilder().build();
-   *   UploadModelRequest request = UploadModelRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setModel(model)
-   *     .build();
-   *   UploadModelResponse response = modelServiceClient.uploadModelAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<UploadModelResponse, UploadModelOperationMetadata> uploadModelAsync(
       UploadModelRequest request) {
     return uploadModelOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Uploads a Model artifact into AI Platform.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Model model = Model.newBuilder().build();
-   *   UploadModelRequest request = UploadModelRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setModel(model)
-   *     .build();
-   *   OperationFuture&lt;UploadModelResponse, UploadModelOperationMetadata&gt; future = modelServiceClient.uploadModelOperationCallable().futureCall(request);
-   *   // Do something
-   *   UploadModelResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           UploadModelRequest, UploadModelResponse, UploadModelOperationMetadata>
       uploadModelOperationCallable() {
     return stub.uploadModelOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Uploads a Model artifact into AI Platform.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Model model = Model.newBuilder().build();
-   *   UploadModelRequest request = UploadModelRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setModel(model)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = modelServiceClient.uploadModelCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UploadModelRequest, Operation> uploadModelCallable() {
     return stub.uploadModelCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Model.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   Model response = modelServiceClient.getModel(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Model resource. Format:
    *     `projects/{project}/locations/{location}/models/{model}`
@@ -332,18 +240,9 @@ public class ModelServiceClient implements BackgroundResource {
     return getModel(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Model.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   Model response = modelServiceClient.getModel(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Model resource. Format:
    *     `projects/{project}/locations/{location}/models/{model}`
@@ -354,21 +253,9 @@ public class ModelServiceClient implements BackgroundResource {
     return getModel(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Model.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   GetModelRequest request = GetModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Model response = modelServiceClient.getModel(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -377,42 +264,19 @@ public class ModelServiceClient implements BackgroundResource {
     return getModelCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a Model.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   GetModelRequest request = GetModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Model&gt; future = modelServiceClient.getModelCallable().futureCall(request);
-   *   // Do something
-   *   Model response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetModelRequest, Model> getModelCallable() {
     return stub.getModelCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Models in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Model element : modelServiceClient.listModels(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to list the Models from. Format:
    *     `projects/{project}/locations/{location}`
@@ -424,20 +288,9 @@ public class ModelServiceClient implements BackgroundResource {
     return listModels(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Models in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Model element : modelServiceClient.listModels(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to list the Models from. Format:
    *     `projects/{project}/locations/{location}`
@@ -448,23 +301,9 @@ public class ModelServiceClient implements BackgroundResource {
     return listModels(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Models in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListModelsRequest request = ListModelsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Model element : modelServiceClient.listModels(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -473,74 +312,29 @@ public class ModelServiceClient implements BackgroundResource {
     return listModelsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Models in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListModelsRequest request = ListModelsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListModelsPagedResponse&gt; future = modelServiceClient.listModelsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Model element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
     return stub.listModelsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Models in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListModelsRequest request = ListModelsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListModelsResponse response = modelServiceClient.listModelsCallable().call(request);
-   *     for (Model element : response.getModelsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable() {
     return stub.listModelsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a Model.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   Model model = Model.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Model response = modelServiceClient.updateModel(model, updateMask);
-   * }
-   * </code></pre>
    *
    * @param model Required. The Model which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
@@ -555,23 +349,9 @@ public class ModelServiceClient implements BackgroundResource {
     return updateModel(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a Model.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   Model model = Model.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateModelRequest request = UpdateModelRequest.newBuilder()
-   *     .setModel(model)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   Model response = modelServiceClient.updateModel(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -580,179 +360,92 @@ public class ModelServiceClient implements BackgroundResource {
     return updateModelCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a Model.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   Model model = Model.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateModelRequest request = UpdateModelRequest.newBuilder()
-   *     .setModel(model)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Model&gt; future = modelServiceClient.updateModelCallable().futureCall(request);
-   *   // Do something
-   *   Model response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
     return stub.updateModelCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Model. Note: Model can only be deleted if there are no DeployedModels created from
    * it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   modelServiceClient.deleteModelAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Model resource to be deleted. Format:
    *     `projects/{project}/locations/{location}/models/{model}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelAsync(ModelName name) {
     DeleteModelRequest request =
         DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteModelAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Model. Note: Model can only be deleted if there are no DeployedModels created from
    * it.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   modelServiceClient.deleteModelAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Model resource to be deleted. Format:
    *     `projects/{project}/locations/{location}/models/{model}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelAsync(String name) {
     DeleteModelRequest request = DeleteModelRequest.newBuilder().setName(name).build();
     return deleteModelAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Model. Note: Model can only be deleted if there are no DeployedModels created from
    * it.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   modelServiceClient.deleteModelAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelAsync(
       DeleteModelRequest request) {
     return deleteModelOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Model. Note: Model can only be deleted if there are no DeployedModels created from
    * it.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, DeleteOperationMetadata&gt; future = modelServiceClient.deleteModelOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationCallable() {
     return stub.deleteModelOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a Model. Note: Model can only be deleted if there are no DeployedModels created from
    * it.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = modelServiceClient.deleteModelCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
     return stub.deleteModelCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports a trained, exportable, Model to a location specified by the user. A Model is considered
    * to be exportable if it has at least one [supported export
    * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExportModelRequest.OutputConfig outputConfig = ExportModelRequest.OutputConfig.newBuilder().build();
-   *   ExportModelResponse response = modelServiceClient.exportModelAsync(name, outputConfig).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the Model to export. Format:
    *     `projects/{project}/locations/{location}/models/{model}`
    * @param outputConfig Required. The desired output location and configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportModelResponse, ExportModelOperationMetadata> exportModelAsync(
       ModelName name, ExportModelRequest.OutputConfig outputConfig) {
     ExportModelRequest request =
@@ -763,29 +456,17 @@ public class ModelServiceClient implements BackgroundResource {
     return exportModelAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports a trained, exportable, Model to a location specified by the user. A Model is considered
    * to be exportable if it has at least one [supported export
    * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExportModelRequest.OutputConfig outputConfig = ExportModelRequest.OutputConfig.newBuilder().build();
-   *   ExportModelResponse response = modelServiceClient.exportModelAsync(name.toString(), outputConfig).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the Model to export. Format:
    *     `projects/{project}/locations/{location}/models/{model}`
    * @param outputConfig Required. The desired output location and configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportModelResponse, ExportModelOperationMetadata> exportModelAsync(
       String name, ExportModelRequest.OutputConfig outputConfig) {
     ExportModelRequest request =
@@ -793,103 +474,49 @@ public class ModelServiceClient implements BackgroundResource {
     return exportModelAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports a trained, exportable, Model to a location specified by the user. A Model is considered
    * to be exportable if it has at least one [supported export
    * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExportModelRequest.OutputConfig outputConfig = ExportModelRequest.OutputConfig.newBuilder().build();
-   *   ExportModelRequest request = ExportModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ExportModelResponse response = modelServiceClient.exportModelAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportModelResponse, ExportModelOperationMetadata> exportModelAsync(
       ExportModelRequest request) {
     return exportModelOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports a trained, exportable, Model to a location specified by the user. A Model is considered
    * to be exportable if it has at least one [supported export
    * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExportModelRequest.OutputConfig outputConfig = ExportModelRequest.OutputConfig.newBuilder().build();
-   *   ExportModelRequest request = ExportModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   OperationFuture&lt;ExportModelResponse, ExportModelOperationMetadata&gt; future = modelServiceClient.exportModelOperationCallable().futureCall(request);
-   *   // Do something
-   *   ExportModelResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
       exportModelOperationCallable() {
     return stub.exportModelOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports a trained, exportable, Model to a location specified by the user. A Model is considered
    * to be exportable if it has at least one [supported export
    * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExportModelRequest.OutputConfig outputConfig = ExportModelRequest.OutputConfig.newBuilder().build();
-   *   ExportModelRequest request = ExportModelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = modelServiceClient.exportModelCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
     return stub.exportModelCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ModelEvaluation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationName name = ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-   *   ModelEvaluation response = modelServiceClient.getModelEvaluation(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the ModelEvaluation resource. Format:
    *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
@@ -903,18 +530,9 @@ public class ModelServiceClient implements BackgroundResource {
     return getModelEvaluation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ModelEvaluation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationName name = ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-   *   ModelEvaluation response = modelServiceClient.getModelEvaluation(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the ModelEvaluation resource. Format:
    *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
@@ -926,21 +544,9 @@ public class ModelServiceClient implements BackgroundResource {
     return getModelEvaluation(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ModelEvaluation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationName name = ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-   *   GetModelEvaluationRequest request = GetModelEvaluationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ModelEvaluation response = modelServiceClient.getModelEvaluation(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -949,43 +555,20 @@ public class ModelServiceClient implements BackgroundResource {
     return getModelEvaluationCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ModelEvaluation.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationName name = ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-   *   GetModelEvaluationRequest request = GetModelEvaluationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ModelEvaluation&gt; future = modelServiceClient.getModelEvaluationCallable().futureCall(request);
-   *   // Do something
-   *   ModelEvaluation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationCallable() {
     return stub.getModelEvaluationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ModelEvaluations in a Model.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   for (ModelEvaluation element : modelServiceClient.listModelEvaluations(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Model to list the ModelEvaluations from.
    *     Format: `projects/{project}/locations/{location}/models/{model}`
@@ -999,20 +582,9 @@ public class ModelServiceClient implements BackgroundResource {
     return listModelEvaluations(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ModelEvaluations in a Model.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   for (ModelEvaluation element : modelServiceClient.listModelEvaluations(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Model to list the ModelEvaluations from.
    *     Format: `projects/{project}/locations/{location}/models/{model}`
@@ -1024,23 +596,9 @@ public class ModelServiceClient implements BackgroundResource {
     return listModelEvaluations(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ModelEvaluations in a Model.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ListModelEvaluationsRequest request = ListModelEvaluationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (ModelEvaluation element : modelServiceClient.listModelEvaluations(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1050,75 +608,31 @@ public class ModelServiceClient implements BackgroundResource {
     return listModelEvaluationsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ModelEvaluations in a Model.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ListModelEvaluationsRequest request = ListModelEvaluationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListModelEvaluationsPagedResponse&gt; future = modelServiceClient.listModelEvaluationsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ModelEvaluation element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
       listModelEvaluationsPagedCallable() {
     return stub.listModelEvaluationsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ModelEvaluations in a Model.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelName parent = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ListModelEvaluationsRequest request = ListModelEvaluationsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListModelEvaluationsResponse response = modelServiceClient.listModelEvaluationsCallable().call(request);
-   *     for (ModelEvaluation element : response.getModelEvaluationsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
       listModelEvaluationsCallable() {
     return stub.listModelEvaluationsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ModelEvaluationSlice.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationSliceName name = ModelEvaluationSliceName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]");
-   *   ModelEvaluationSlice response = modelServiceClient.getModelEvaluationSlice(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the ModelEvaluationSlice resource. Format:
    *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
@@ -1132,18 +646,9 @@ public class ModelServiceClient implements BackgroundResource {
     return getModelEvaluationSlice(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ModelEvaluationSlice.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationSliceName name = ModelEvaluationSliceName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]");
-   *   ModelEvaluationSlice response = modelServiceClient.getModelEvaluationSlice(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the ModelEvaluationSlice resource. Format:
    *     <p>`projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
@@ -1155,21 +660,9 @@ public class ModelServiceClient implements BackgroundResource {
     return getModelEvaluationSlice(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ModelEvaluationSlice.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationSliceName name = ModelEvaluationSliceName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]");
-   *   GetModelEvaluationSliceRequest request = GetModelEvaluationSliceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ModelEvaluationSlice response = modelServiceClient.getModelEvaluationSlice(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1179,43 +672,20 @@ public class ModelServiceClient implements BackgroundResource {
     return getModelEvaluationSliceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a ModelEvaluationSlice.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationSliceName name = ModelEvaluationSliceName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]");
-   *   GetModelEvaluationSliceRequest request = GetModelEvaluationSliceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ModelEvaluationSlice&gt; future = modelServiceClient.getModelEvaluationSliceCallable().futureCall(request);
-   *   // Do something
-   *   ModelEvaluationSlice response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetModelEvaluationSliceRequest, ModelEvaluationSlice>
       getModelEvaluationSliceCallable() {
     return stub.getModelEvaluationSliceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ModelEvaluationSlices in a ModelEvaluation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationName parent = ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-   *   for (ModelEvaluationSlice element : modelServiceClient.listModelEvaluationSlices(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the ModelEvaluation to list the
    *     ModelEvaluationSlices from. Format:
@@ -1231,20 +701,9 @@ public class ModelServiceClient implements BackgroundResource {
     return listModelEvaluationSlices(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ModelEvaluationSlices in a ModelEvaluation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationName parent = ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-   *   for (ModelEvaluationSlice element : modelServiceClient.listModelEvaluationSlices(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the ModelEvaluation to list the
    *     ModelEvaluationSlices from. Format:
@@ -1257,23 +716,9 @@ public class ModelServiceClient implements BackgroundResource {
     return listModelEvaluationSlices(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ModelEvaluationSlices in a ModelEvaluation.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationName parent = ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-   *   ListModelEvaluationSlicesRequest request = ListModelEvaluationSlicesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (ModelEvaluationSlice element : modelServiceClient.listModelEvaluationSlices(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1283,25 +728,11 @@ public class ModelServiceClient implements BackgroundResource {
     return listModelEvaluationSlicesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ModelEvaluationSlices in a ModelEvaluation.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationName parent = ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-   *   ListModelEvaluationSlicesRequest request = ListModelEvaluationSlicesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListModelEvaluationSlicesPagedResponse&gt; future = modelServiceClient.listModelEvaluationSlicesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ModelEvaluationSlice element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<
           ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
@@ -1309,32 +740,11 @@ public class ModelServiceClient implements BackgroundResource {
     return stub.listModelEvaluationSlicesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ModelEvaluationSlices in a ModelEvaluation.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
-   *   ModelEvaluationName parent = ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
-   *   ListModelEvaluationSlicesRequest request = ListModelEvaluationSlicesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListModelEvaluationSlicesResponse response = modelServiceClient.listModelEvaluationSlicesCallable().call(request);
-   *     for (ModelEvaluationSlice element : response.getModelEvaluationSlicesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
       listModelEvaluationSlicesCallable() {

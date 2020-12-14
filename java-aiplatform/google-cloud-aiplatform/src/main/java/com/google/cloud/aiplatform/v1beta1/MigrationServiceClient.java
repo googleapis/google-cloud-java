@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -37,7 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service that migrates resources from automl.googleapis.com,
  * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
@@ -45,18 +46,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   for (MigratableResource element : migrationServiceClient.searchMigratableResources(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the migrationServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the MigrationServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -85,30 +75,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * MigrationServiceSettings migrationServiceSettings =
  *     MigrationServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * MigrationServiceClient migrationServiceClient =
  *     MigrationServiceClient.create(migrationServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * MigrationServiceSettings migrationServiceSettings =
  *     MigrationServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * MigrationServiceClient migrationServiceClient =
  *     MigrationServiceClient.create(migrationServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class MigrationServiceClient implements BackgroundResource {
   private final MigrationServiceSettings settings;
   private final MigrationServiceStub stub;
@@ -130,7 +118,7 @@ public class MigrationServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of MigrationServiceClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use MigrationServiceSettings}.
+   * is for advanced usage - prefer using create(MigrationServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final MigrationServiceClient create(MigrationServiceStub stub) {
@@ -168,27 +156,14 @@ public class MigrationServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all of the resources in automl.googleapis.com, datalabeling.googleapis.com and
    * ml.googleapis.com that can be migrated to AI Platform's given location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (MigratableResource element : migrationServiceClient.searchMigratableResources(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The location that the migratable resources should be searched from.
    *     It's the AI Platform location that the resources can be migrated to, not the resources'
@@ -204,21 +179,10 @@ public class MigrationServiceClient implements BackgroundResource {
     return searchMigratableResources(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all of the resources in automl.googleapis.com, datalabeling.googleapis.com and
    * ml.googleapis.com that can be migrated to AI Platform's given location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (MigratableResource element : migrationServiceClient.searchMigratableResources(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The location that the migratable resources should be searched from.
    *     It's the AI Platform location that the resources can be migrated to, not the resources'
@@ -231,24 +195,10 @@ public class MigrationServiceClient implements BackgroundResource {
     return searchMigratableResources(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all of the resources in automl.googleapis.com, datalabeling.googleapis.com and
    * ml.googleapis.com that can be migrated to AI Platform's given location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SearchMigratableResourcesRequest request = SearchMigratableResourcesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (MigratableResource element : migrationServiceClient.searchMigratableResources(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -258,26 +208,12 @@ public class MigrationServiceClient implements BackgroundResource {
     return searchMigratableResourcesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all of the resources in automl.googleapis.com, datalabeling.googleapis.com and
    * ml.googleapis.com that can be migrated to AI Platform's given location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SearchMigratableResourcesRequest request = SearchMigratableResourcesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;SearchMigratableResourcesPagedResponse&gt; future = migrationServiceClient.searchMigratableResourcesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (MigratableResource element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<
           SearchMigratableResourcesRequest, SearchMigratableResourcesPagedResponse>
@@ -285,53 +221,22 @@ public class MigrationServiceClient implements BackgroundResource {
     return stub.searchMigratableResourcesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all of the resources in automl.googleapis.com, datalabeling.googleapis.com and
    * ml.googleapis.com that can be migrated to AI Platform's given location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SearchMigratableResourcesRequest request = SearchMigratableResourcesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     SearchMigratableResourcesResponse response = migrationServiceClient.searchMigratableResourcesCallable().call(request);
-   *     for (MigratableResource element : response.getMigratableResourcesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchMigratableResourcesRequest, SearchMigratableResourcesResponse>
       searchMigratableResourcesCallable() {
     return stub.searchMigratableResourcesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Batch migrates resources from ml.googleapis.com, automl.googleapis.com, and
    * datalabeling.googleapis.com to AI Platform (Unified).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   List&lt;MigrateResourceRequest&gt; migrateResourceRequests = new ArrayList&lt;&gt;();
-   *   BatchMigrateResourcesResponse response = migrationServiceClient.batchMigrateResourcesAsync(parent, migrateResourceRequests).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The location of the migrated resource will live in. Format:
    *     `projects/{project}/locations/{location}`
@@ -340,8 +245,6 @@ public class MigrationServiceClient implements BackgroundResource {
    *     migrated in one batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<
           BatchMigrateResourcesResponse, BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesAsync(
@@ -354,20 +257,10 @@ public class MigrationServiceClient implements BackgroundResource {
     return batchMigrateResourcesAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Batch migrates resources from ml.googleapis.com, automl.googleapis.com, and
    * datalabeling.googleapis.com to AI Platform (Unified).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   List&lt;MigrateResourceRequest&gt; migrateResourceRequests = new ArrayList&lt;&gt;();
-   *   BatchMigrateResourcesResponse response = migrationServiceClient.batchMigrateResourcesAsync(parent.toString(), migrateResourceRequests).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The location of the migrated resource will live in. Format:
    *     `projects/{project}/locations/{location}`
@@ -376,8 +269,6 @@ public class MigrationServiceClient implements BackgroundResource {
    *     migrated in one batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<
           BatchMigrateResourcesResponse, BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesAsync(
@@ -390,58 +281,27 @@ public class MigrationServiceClient implements BackgroundResource {
     return batchMigrateResourcesAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Batch migrates resources from ml.googleapis.com, automl.googleapis.com, and
    * datalabeling.googleapis.com to AI Platform (Unified).
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   List&lt;MigrateResourceRequest&gt; migrateResourceRequests = new ArrayList&lt;&gt;();
-   *   BatchMigrateResourcesRequest request = BatchMigrateResourcesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllMigrateResourceRequests(migrateResourceRequests)
-   *     .build();
-   *   BatchMigrateResourcesResponse response = migrationServiceClient.batchMigrateResourcesAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<
           BatchMigrateResourcesResponse, BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesAsync(BatchMigrateResourcesRequest request) {
     return batchMigrateResourcesOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Batch migrates resources from ml.googleapis.com, automl.googleapis.com, and
    * datalabeling.googleapis.com to AI Platform (Unified).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   List&lt;MigrateResourceRequest&gt; migrateResourceRequests = new ArrayList&lt;&gt;();
-   *   BatchMigrateResourcesRequest request = BatchMigrateResourcesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllMigrateResourceRequests(migrateResourceRequests)
-   *     .build();
-   *   OperationFuture&lt;BatchMigrateResourcesResponse, BatchMigrateResourcesOperationMetadata&gt; future = migrationServiceClient.batchMigrateResourcesOperationCallable().futureCall(request);
-   *   // Do something
-   *   BatchMigrateResourcesResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           BatchMigrateResourcesRequest,
           BatchMigrateResourcesResponse,
@@ -450,26 +310,12 @@ public class MigrationServiceClient implements BackgroundResource {
     return stub.batchMigrateResourcesOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Batch migrates resources from ml.googleapis.com, automl.googleapis.com, and
    * datalabeling.googleapis.com to AI Platform (Unified).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   List&lt;MigrateResourceRequest&gt; migrateResourceRequests = new ArrayList&lt;&gt;();
-   *   BatchMigrateResourcesRequest request = BatchMigrateResourcesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllMigrateResourceRequests(migrateResourceRequests)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = migrationServiceClient.batchMigrateResourcesCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchMigrateResourcesRequest, Operation>
       batchMigrateResourcesCallable() {

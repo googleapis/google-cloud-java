@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListAnnotationsPagedResponse;
@@ -38,7 +39,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DatasetServiceClient}.
  *
@@ -55,31 +56,30 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getDataset to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DatasetServiceSettings.Builder datasetServiceSettingsBuilder =
  *     DatasetServiceSettings.newBuilder();
  * datasetServiceSettingsBuilder
  *     .getDatasetSettings()
  *     .setRetrySettings(
- *         datasetServiceSettingsBuilder.getDatasetSettings().getRetrySettings().toBuilder()
+ *         datasetServiceSettingsBuilder
+ *             .getDatasetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DatasetServiceSettings datasetServiceSettings = datasetServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class DatasetServiceSettings extends ClientSettings<DatasetServiceSettings> {
+
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings() {
     return ((DatasetServiceStubSettings) getStubSettings()).createDatasetSettings();
   }
 
   /** Returns the object with the settings used for calls to createDataset. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateDatasetRequest, Dataset, CreateDatasetOperationMetadata>
       createDatasetOperationSettings() {
     return ((DatasetServiceStubSettings) getStubSettings()).createDatasetOperationSettings();
@@ -107,8 +107,6 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
   }
 
   /** Returns the object with the settings used for calls to deleteDataset. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteDatasetRequest, Empty, DeleteOperationMetadata>
       deleteDatasetOperationSettings() {
     return ((DatasetServiceStubSettings) getStubSettings()).deleteDatasetOperationSettings();
@@ -120,8 +118,6 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
   }
 
   /** Returns the object with the settings used for calls to importData. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ImportDataRequest, ImportDataResponse, ImportDataOperationMetadata>
       importDataOperationSettings() {
     return ((DatasetServiceStubSettings) getStubSettings()).importDataOperationSettings();
@@ -133,8 +129,6 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
   }
 
   /** Returns the object with the settings used for calls to exportData. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ExportDataRequest, ExportDataResponse, ExportDataOperationMetadata>
       exportDataOperationSettings() {
     return ((DatasetServiceStubSettings) getStubSettings()).exportDataOperationSettings();
@@ -218,16 +212,13 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
 
   /** Builder for DatasetServiceSettings. */
   public static class Builder extends ClientSettings.Builder<DatasetServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(DatasetServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(DatasetServiceStubSettings.newBuilder());
     }
 
     protected Builder(DatasetServiceSettings settings) {
@@ -238,11 +229,15 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(DatasetServiceStubSettings.newBuilder());
+    }
+
     public DatasetServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((DatasetServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -261,8 +256,6 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
     }
 
     /** Returns the builder for the settings used for calls to createDataset. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDatasetRequest, Dataset, CreateDatasetOperationMetadata>
         createDatasetOperationSettings() {
@@ -292,8 +285,6 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteDataset. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDatasetRequest, Empty, DeleteOperationMetadata>
         deleteDatasetOperationSettings() {
       return getStubSettingsBuilder().deleteDatasetOperationSettings();
@@ -305,8 +296,6 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
     }
 
     /** Returns the builder for the settings used for calls to importData. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportDataRequest, ImportDataResponse, ImportDataOperationMetadata>
         importDataOperationSettings() {
@@ -319,8 +308,6 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
     }
 
     /** Returns the builder for the settings used for calls to exportData. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportDataRequest, ExportDataResponse, ExportDataOperationMetadata>
         exportDataOperationSettings() {

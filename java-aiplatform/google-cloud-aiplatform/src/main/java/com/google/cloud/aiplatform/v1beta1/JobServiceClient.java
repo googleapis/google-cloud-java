@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -38,24 +39,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service for creating and managing AI Platform's jobs.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   CustomJob customJob = CustomJob.newBuilder().build();
- *   CustomJob response = jobServiceClient.createCustomJob(parent, customJob);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the jobServiceClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the JobServiceClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -83,30 +74,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * JobServiceSettings jobServiceSettings =
  *     JobServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * JobServiceClient jobServiceClient =
- *     JobServiceClient.create(jobServiceSettings);
- * </code>
- * </pre>
+ * JobServiceClient jobServiceClient = JobServiceClient.create(jobServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * JobServiceSettings jobServiceSettings =
  *     JobServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * JobServiceClient jobServiceClient =
- *     JobServiceClient.create(jobServiceSettings);
- * </code>
- * </pre>
+ * JobServiceClient jobServiceClient = JobServiceClient.create(jobServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class JobServiceClient implements BackgroundResource {
   private final JobServiceSettings settings;
   private final JobServiceStub stub;
@@ -127,7 +114,7 @@ public class JobServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of JobServiceClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use JobServiceSettings}.
+   * advanced usage - prefer using create(JobServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final JobServiceClient create(JobServiceStub stub) {
@@ -164,25 +151,13 @@ public class JobServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a CustomJob. A created CustomJob right away will be attempted to be run.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   CustomJob customJob = CustomJob.newBuilder().build();
-   *   CustomJob response = jobServiceClient.createCustomJob(parent, customJob);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the CustomJob in. Format:
    *     `projects/{project}/locations/{location}`
@@ -198,19 +173,9 @@ public class JobServiceClient implements BackgroundResource {
     return createCustomJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a CustomJob. A created CustomJob right away will be attempted to be run.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   CustomJob customJob = CustomJob.newBuilder().build();
-   *   CustomJob response = jobServiceClient.createCustomJob(parent.toString(), customJob);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the CustomJob in. Format:
    *     `projects/{project}/locations/{location}`
@@ -223,23 +188,9 @@ public class JobServiceClient implements BackgroundResource {
     return createCustomJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a CustomJob. A created CustomJob right away will be attempted to be run.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   CustomJob customJob = CustomJob.newBuilder().build();
-   *   CreateCustomJobRequest request = CreateCustomJobRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setCustomJob(customJob)
-   *     .build();
-   *   CustomJob response = jobServiceClient.createCustomJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -248,42 +199,19 @@ public class JobServiceClient implements BackgroundResource {
     return createCustomJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a CustomJob. A created CustomJob right away will be attempted to be run.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   CustomJob customJob = CustomJob.newBuilder().build();
-   *   CreateCustomJobRequest request = CreateCustomJobRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setCustomJob(customJob)
-   *     .build();
-   *   ApiFuture&lt;CustomJob&gt; future = jobServiceClient.createCustomJobCallable().futureCall(request);
-   *   // Do something
-   *   CustomJob response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateCustomJobRequest, CustomJob> createCustomJobCallable() {
     return stub.createCustomJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a CustomJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   CustomJob response = jobServiceClient.getCustomJob(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the CustomJob resource. Format:
    *     `projects/{project}/locations/{location}/customJobs/{custom_job}`
@@ -295,18 +223,9 @@ public class JobServiceClient implements BackgroundResource {
     return getCustomJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a CustomJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   CustomJob response = jobServiceClient.getCustomJob(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the CustomJob resource. Format:
    *     `projects/{project}/locations/{location}/customJobs/{custom_job}`
@@ -317,21 +236,9 @@ public class JobServiceClient implements BackgroundResource {
     return getCustomJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a CustomJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   GetCustomJobRequest request = GetCustomJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   CustomJob response = jobServiceClient.getCustomJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -340,42 +247,19 @@ public class JobServiceClient implements BackgroundResource {
     return getCustomJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a CustomJob.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   GetCustomJobRequest request = GetCustomJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;CustomJob&gt; future = jobServiceClient.getCustomJobCallable().futureCall(request);
-   *   // Do something
-   *   CustomJob response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetCustomJobRequest, CustomJob> getCustomJobCallable() {
     return stub.getCustomJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists CustomJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (CustomJob element : jobServiceClient.listCustomJobs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to list the CustomJobs from. Format:
    *     `projects/{project}/locations/{location}`
@@ -389,20 +273,9 @@ public class JobServiceClient implements BackgroundResource {
     return listCustomJobs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists CustomJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (CustomJob element : jobServiceClient.listCustomJobs(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to list the CustomJobs from. Format:
    *     `projects/{project}/locations/{location}`
@@ -413,23 +286,9 @@ public class JobServiceClient implements BackgroundResource {
     return listCustomJobs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists CustomJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListCustomJobsRequest request = ListCustomJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (CustomJob element : jobServiceClient.listCustomJobs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -438,82 +297,36 @@ public class JobServiceClient implements BackgroundResource {
     return listCustomJobsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists CustomJobs in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListCustomJobsRequest request = ListCustomJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListCustomJobsPagedResponse&gt; future = jobServiceClient.listCustomJobsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (CustomJob element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListCustomJobsRequest, ListCustomJobsPagedResponse>
       listCustomJobsPagedCallable() {
     return stub.listCustomJobsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists CustomJobs in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListCustomJobsRequest request = ListCustomJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListCustomJobsResponse response = jobServiceClient.listCustomJobsCallable().call(request);
-   *     for (CustomJob element : response.getCustomJobsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListCustomJobsRequest, ListCustomJobsResponse>
       listCustomJobsCallable() {
     return stub.listCustomJobsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a CustomJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   jobServiceClient.deleteCustomJobAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the CustomJob resource to be deleted. Format:
    *     `projects/{project}/locations/{location}/customJobs/{custom_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteCustomJobAsync(
       CustomJobName name) {
     DeleteCustomJobRequest request =
@@ -521,103 +334,53 @@ public class JobServiceClient implements BackgroundResource {
     return deleteCustomJobAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a CustomJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   jobServiceClient.deleteCustomJobAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the CustomJob resource to be deleted. Format:
    *     `projects/{project}/locations/{location}/customJobs/{custom_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteCustomJobAsync(String name) {
     DeleteCustomJobRequest request = DeleteCustomJobRequest.newBuilder().setName(name).build();
     return deleteCustomJobAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a CustomJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   DeleteCustomJobRequest request = DeleteCustomJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   jobServiceClient.deleteCustomJobAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteCustomJobAsync(
       DeleteCustomJobRequest request) {
     return deleteCustomJobOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a CustomJob.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   DeleteCustomJobRequest request = DeleteCustomJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, DeleteOperationMetadata&gt; future = jobServiceClient.deleteCustomJobOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteCustomJobRequest, Empty, DeleteOperationMetadata>
       deleteCustomJobOperationCallable() {
     return stub.deleteCustomJobOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a CustomJob.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   DeleteCustomJobRequest request = DeleteCustomJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = jobServiceClient.deleteCustomJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteCustomJobRequest, Operation> deleteCustomJobCallable() {
     return stub.deleteCustomJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a CustomJob. Starts asynchronous cancellation on the CustomJob. The server makes a best
    * effort to cancel the job, but success is not guaranteed. Clients can use
@@ -627,15 +390,6 @@ public class JobServiceClient implements BackgroundResource {
    * job with a [CustomJob.error][google.cloud.aiplatform.v1beta1.CustomJob.error] value with a
    * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
    * [CustomJob.state][google.cloud.aiplatform.v1beta1.CustomJob.state] is set to `CANCELLED`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   jobServiceClient.cancelCustomJob(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the CustomJob to cancel. Format:
    *     `projects/{project}/locations/{location}/customJobs/{custom_job}`
@@ -647,7 +401,7 @@ public class JobServiceClient implements BackgroundResource {
     cancelCustomJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a CustomJob. Starts asynchronous cancellation on the CustomJob. The server makes a best
    * effort to cancel the job, but success is not guaranteed. Clients can use
@@ -657,15 +411,6 @@ public class JobServiceClient implements BackgroundResource {
    * job with a [CustomJob.error][google.cloud.aiplatform.v1beta1.CustomJob.error] value with a
    * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
    * [CustomJob.state][google.cloud.aiplatform.v1beta1.CustomJob.state] is set to `CANCELLED`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   jobServiceClient.cancelCustomJob(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the CustomJob to cancel. Format:
    *     `projects/{project}/locations/{location}/customJobs/{custom_job}`
@@ -676,7 +421,7 @@ public class JobServiceClient implements BackgroundResource {
     cancelCustomJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a CustomJob. Starts asynchronous cancellation on the CustomJob. The server makes a best
    * effort to cancel the job, but success is not guaranteed. Clients can use
@@ -686,18 +431,6 @@ public class JobServiceClient implements BackgroundResource {
    * job with a [CustomJob.error][google.cloud.aiplatform.v1beta1.CustomJob.error] value with a
    * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`, and
    * [CustomJob.state][google.cloud.aiplatform.v1beta1.CustomJob.state] is set to `CANCELLED`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   CancelCustomJobRequest request = CancelCustomJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   jobServiceClient.cancelCustomJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -706,7 +439,7 @@ public class JobServiceClient implements BackgroundResource {
     cancelCustomJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a CustomJob. Starts asynchronous cancellation on the CustomJob. The server makes a best
    * effort to cancel the job, but success is not guaranteed. Clients can use
@@ -718,36 +451,14 @@ public class JobServiceClient implements BackgroundResource {
    * [CustomJob.state][google.cloud.aiplatform.v1beta1.CustomJob.state] is set to `CANCELLED`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   CustomJobName name = CustomJobName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_JOB]");
-   *   CancelCustomJobRequest request = CancelCustomJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = jobServiceClient.cancelCustomJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CancelCustomJobRequest, Empty> cancelCustomJobCallable() {
     return stub.cancelCustomJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DataLabelingJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   DataLabelingJob dataLabelingJob = DataLabelingJob.newBuilder().build();
-   *   DataLabelingJob response = jobServiceClient.createDataLabelingJob(parent, dataLabelingJob);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent of the DataLabelingJob. Format:
    *     `projects/{project}/locations/{location}`
@@ -764,19 +475,9 @@ public class JobServiceClient implements BackgroundResource {
     return createDataLabelingJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DataLabelingJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   DataLabelingJob dataLabelingJob = DataLabelingJob.newBuilder().build();
-   *   DataLabelingJob response = jobServiceClient.createDataLabelingJob(parent.toString(), dataLabelingJob);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent of the DataLabelingJob. Format:
    *     `projects/{project}/locations/{location}`
@@ -793,23 +494,9 @@ public class JobServiceClient implements BackgroundResource {
     return createDataLabelingJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DataLabelingJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   DataLabelingJob dataLabelingJob = DataLabelingJob.newBuilder().build();
-   *   CreateDataLabelingJobRequest request = CreateDataLabelingJobRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setDataLabelingJob(dataLabelingJob)
-   *     .build();
-   *   DataLabelingJob response = jobServiceClient.createDataLabelingJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -818,43 +505,20 @@ public class JobServiceClient implements BackgroundResource {
     return createDataLabelingJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DataLabelingJob.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   DataLabelingJob dataLabelingJob = DataLabelingJob.newBuilder().build();
-   *   CreateDataLabelingJobRequest request = CreateDataLabelingJobRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setDataLabelingJob(dataLabelingJob)
-   *     .build();
-   *   ApiFuture&lt;DataLabelingJob&gt; future = jobServiceClient.createDataLabelingJobCallable().futureCall(request);
-   *   // Do something
-   *   DataLabelingJob response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateDataLabelingJobRequest, DataLabelingJob>
       createDataLabelingJobCallable() {
     return stub.createDataLabelingJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a DataLabelingJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   DataLabelingJob response = jobServiceClient.getDataLabelingJob(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the DataLabelingJob. Format:
    *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
@@ -868,18 +532,9 @@ public class JobServiceClient implements BackgroundResource {
     return getDataLabelingJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a DataLabelingJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   DataLabelingJob response = jobServiceClient.getDataLabelingJob(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the DataLabelingJob. Format:
    *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
@@ -891,21 +546,9 @@ public class JobServiceClient implements BackgroundResource {
     return getDataLabelingJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a DataLabelingJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   GetDataLabelingJobRequest request = GetDataLabelingJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   DataLabelingJob response = jobServiceClient.getDataLabelingJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -914,43 +557,20 @@ public class JobServiceClient implements BackgroundResource {
     return getDataLabelingJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a DataLabelingJob.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   GetDataLabelingJobRequest request = GetDataLabelingJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;DataLabelingJob&gt; future = jobServiceClient.getDataLabelingJobCallable().futureCall(request);
-   *   // Do something
-   *   DataLabelingJob response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetDataLabelingJobRequest, DataLabelingJob>
       getDataLabelingJobCallable() {
     return stub.getDataLabelingJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DataLabelingJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (DataLabelingJob element : jobServiceClient.listDataLabelingJobs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent of the DataLabelingJob. Format:
    *     `projects/{project}/locations/{location}`
@@ -964,20 +584,9 @@ public class JobServiceClient implements BackgroundResource {
     return listDataLabelingJobs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DataLabelingJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (DataLabelingJob element : jobServiceClient.listDataLabelingJobs(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent of the DataLabelingJob. Format:
    *     `projects/{project}/locations/{location}`
@@ -989,23 +598,9 @@ public class JobServiceClient implements BackgroundResource {
     return listDataLabelingJobs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DataLabelingJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListDataLabelingJobsRequest request = ListDataLabelingJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (DataLabelingJob element : jobServiceClient.listDataLabelingJobs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1015,82 +610,36 @@ public class JobServiceClient implements BackgroundResource {
     return listDataLabelingJobsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DataLabelingJobs in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListDataLabelingJobsRequest request = ListDataLabelingJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListDataLabelingJobsPagedResponse&gt; future = jobServiceClient.listDataLabelingJobsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (DataLabelingJob element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsPagedResponse>
       listDataLabelingJobsPagedCallable() {
     return stub.listDataLabelingJobsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DataLabelingJobs in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListDataLabelingJobsRequest request = ListDataLabelingJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListDataLabelingJobsResponse response = jobServiceClient.listDataLabelingJobsCallable().call(request);
-   *     for (DataLabelingJob element : response.getDataLabelingJobsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
       listDataLabelingJobsCallable() {
     return stub.listDataLabelingJobsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a DataLabelingJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   jobServiceClient.deleteDataLabelingJobAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the DataLabelingJob to be deleted. Format:
    *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDataLabelingJobAsync(
       DataLabelingJobName name) {
     DeleteDataLabelingJobRequest request =
@@ -1100,25 +649,14 @@ public class JobServiceClient implements BackgroundResource {
     return deleteDataLabelingJobAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a DataLabelingJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   jobServiceClient.deleteDataLabelingJobAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the DataLabelingJob to be deleted. Format:
    *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDataLabelingJobAsync(
       String name) {
     DeleteDataLabelingJobRequest request =
@@ -1126,91 +664,43 @@ public class JobServiceClient implements BackgroundResource {
     return deleteDataLabelingJobAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a DataLabelingJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   DeleteDataLabelingJobRequest request = DeleteDataLabelingJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   jobServiceClient.deleteDataLabelingJobAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDataLabelingJobAsync(
       DeleteDataLabelingJobRequest request) {
     return deleteDataLabelingJobOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a DataLabelingJob.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   DeleteDataLabelingJobRequest request = DeleteDataLabelingJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, DeleteOperationMetadata&gt; future = jobServiceClient.deleteDataLabelingJobOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
       deleteDataLabelingJobOperationCallable() {
     return stub.deleteDataLabelingJobOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a DataLabelingJob.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   DeleteDataLabelingJobRequest request = DeleteDataLabelingJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = jobServiceClient.deleteDataLabelingJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteDataLabelingJobRequest, Operation>
       deleteDataLabelingJobCallable() {
     return stub.deleteDataLabelingJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   jobServiceClient.cancelDataLabelingJob(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the DataLabelingJob. Format:
    *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
@@ -1224,18 +714,9 @@ public class JobServiceClient implements BackgroundResource {
     cancelDataLabelingJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   jobServiceClient.cancelDataLabelingJob(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the DataLabelingJob. Format:
    *     <p>`projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
@@ -1247,21 +728,9 @@ public class JobServiceClient implements BackgroundResource {
     cancelDataLabelingJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   CancelDataLabelingJobRequest request = CancelDataLabelingJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   jobServiceClient.cancelDataLabelingJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1270,41 +739,19 @@ public class JobServiceClient implements BackgroundResource {
     cancelDataLabelingJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   DataLabelingJobName name = DataLabelingJobName.of("[PROJECT]", "[LOCATION]", "[DATA_LABELING_JOB]");
-   *   CancelDataLabelingJobRequest request = CancelDataLabelingJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = jobServiceClient.cancelDataLabelingJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobCallable() {
     return stub.cancelDataLabelingJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a HyperparameterTuningJob
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   HyperparameterTuningJob hyperparameterTuningJob = HyperparameterTuningJob.newBuilder().build();
-   *   HyperparameterTuningJob response = jobServiceClient.createHyperparameterTuningJob(parent, hyperparameterTuningJob);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the HyperparameterTuningJob
    *     in. Format: `projects/{project}/locations/{location}`
@@ -1321,19 +768,9 @@ public class JobServiceClient implements BackgroundResource {
     return createHyperparameterTuningJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a HyperparameterTuningJob
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   HyperparameterTuningJob hyperparameterTuningJob = HyperparameterTuningJob.newBuilder().build();
-   *   HyperparameterTuningJob response = jobServiceClient.createHyperparameterTuningJob(parent.toString(), hyperparameterTuningJob);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the HyperparameterTuningJob
    *     in. Format: `projects/{project}/locations/{location}`
@@ -1350,23 +787,9 @@ public class JobServiceClient implements BackgroundResource {
     return createHyperparameterTuningJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a HyperparameterTuningJob
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   HyperparameterTuningJob hyperparameterTuningJob = HyperparameterTuningJob.newBuilder().build();
-   *   CreateHyperparameterTuningJobRequest request = CreateHyperparameterTuningJobRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setHyperparameterTuningJob(hyperparameterTuningJob)
-   *     .build();
-   *   HyperparameterTuningJob response = jobServiceClient.createHyperparameterTuningJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1376,43 +799,20 @@ public class JobServiceClient implements BackgroundResource {
     return createHyperparameterTuningJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a HyperparameterTuningJob
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   HyperparameterTuningJob hyperparameterTuningJob = HyperparameterTuningJob.newBuilder().build();
-   *   CreateHyperparameterTuningJobRequest request = CreateHyperparameterTuningJobRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setHyperparameterTuningJob(hyperparameterTuningJob)
-   *     .build();
-   *   ApiFuture&lt;HyperparameterTuningJob&gt; future = jobServiceClient.createHyperparameterTuningJobCallable().futureCall(request);
-   *   // Do something
-   *   HyperparameterTuningJob response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>
       createHyperparameterTuningJobCallable() {
     return stub.createHyperparameterTuningJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a HyperparameterTuningJob
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   HyperparameterTuningJob response = jobServiceClient.getHyperparameterTuningJob(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob resource. Format:
    *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
@@ -1427,18 +827,9 @@ public class JobServiceClient implements BackgroundResource {
     return getHyperparameterTuningJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a HyperparameterTuningJob
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   HyperparameterTuningJob response = jobServiceClient.getHyperparameterTuningJob(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob resource. Format:
    *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
@@ -1450,21 +841,9 @@ public class JobServiceClient implements BackgroundResource {
     return getHyperparameterTuningJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a HyperparameterTuningJob
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   GetHyperparameterTuningJobRequest request = GetHyperparameterTuningJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   HyperparameterTuningJob response = jobServiceClient.getHyperparameterTuningJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1474,43 +853,20 @@ public class JobServiceClient implements BackgroundResource {
     return getHyperparameterTuningJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a HyperparameterTuningJob
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   GetHyperparameterTuningJobRequest request = GetHyperparameterTuningJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;HyperparameterTuningJob&gt; future = jobServiceClient.getHyperparameterTuningJobCallable().futureCall(request);
-   *   // Do something
-   *   HyperparameterTuningJob response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
       getHyperparameterTuningJobCallable() {
     return stub.getHyperparameterTuningJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists HyperparameterTuningJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (HyperparameterTuningJob element : jobServiceClient.listHyperparameterTuningJobs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to list the HyperparameterTuningJobs
    *     from. Format: `projects/{project}/locations/{location}`
@@ -1525,20 +881,9 @@ public class JobServiceClient implements BackgroundResource {
     return listHyperparameterTuningJobs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists HyperparameterTuningJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (HyperparameterTuningJob element : jobServiceClient.listHyperparameterTuningJobs(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to list the HyperparameterTuningJobs
    *     from. Format: `projects/{project}/locations/{location}`
@@ -1551,23 +896,9 @@ public class JobServiceClient implements BackgroundResource {
     return listHyperparameterTuningJobs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists HyperparameterTuningJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListHyperparameterTuningJobsRequest request = ListHyperparameterTuningJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (HyperparameterTuningJob element : jobServiceClient.listHyperparameterTuningJobs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1577,25 +908,11 @@ public class JobServiceClient implements BackgroundResource {
     return listHyperparameterTuningJobsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists HyperparameterTuningJobs in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListHyperparameterTuningJobsRequest request = ListHyperparameterTuningJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListHyperparameterTuningJobsPagedResponse&gt; future = jobServiceClient.listHyperparameterTuningJobsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (HyperparameterTuningJob element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<
           ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsPagedResponse>
@@ -1603,32 +920,11 @@ public class JobServiceClient implements BackgroundResource {
     return stub.listHyperparameterTuningJobsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists HyperparameterTuningJobs in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListHyperparameterTuningJobsRequest request = ListHyperparameterTuningJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListHyperparameterTuningJobsResponse response = jobServiceClient.listHyperparameterTuningJobsCallable().call(request);
-   *     for (HyperparameterTuningJob element : response.getHyperparameterTuningJobsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<
           ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse>
@@ -1636,25 +932,14 @@ public class JobServiceClient implements BackgroundResource {
     return stub.listHyperparameterTuningJobsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a HyperparameterTuningJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   jobServiceClient.deleteHyperparameterTuningJobAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob resource to be deleted. Format:
    *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteHyperparameterTuningJobAsync(
       HyperparameterTuningJobName name) {
     DeleteHyperparameterTuningJobRequest request =
@@ -1664,25 +949,14 @@ public class JobServiceClient implements BackgroundResource {
     return deleteHyperparameterTuningJobAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a HyperparameterTuningJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   jobServiceClient.deleteHyperparameterTuningJobAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob resource to be deleted. Format:
    *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteHyperparameterTuningJobAsync(
       String name) {
     DeleteHyperparameterTuningJobRequest request =
@@ -1690,81 +964,42 @@ public class JobServiceClient implements BackgroundResource {
     return deleteHyperparameterTuningJobAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a HyperparameterTuningJob.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   DeleteHyperparameterTuningJobRequest request = DeleteHyperparameterTuningJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   jobServiceClient.deleteHyperparameterTuningJobAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteHyperparameterTuningJobAsync(
       DeleteHyperparameterTuningJobRequest request) {
     return deleteHyperparameterTuningJobOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a HyperparameterTuningJob.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   DeleteHyperparameterTuningJobRequest request = DeleteHyperparameterTuningJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, DeleteOperationMetadata&gt; future = jobServiceClient.deleteHyperparameterTuningJobOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           DeleteHyperparameterTuningJobRequest, Empty, DeleteOperationMetadata>
       deleteHyperparameterTuningJobOperationCallable() {
     return stub.deleteHyperparameterTuningJobOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a HyperparameterTuningJob.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   DeleteHyperparameterTuningJobRequest request = DeleteHyperparameterTuningJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = jobServiceClient.deleteHyperparameterTuningJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteHyperparameterTuningJobRequest, Operation>
       deleteHyperparameterTuningJobCallable() {
     return stub.deleteHyperparameterTuningJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a HyperparameterTuningJob. Starts asynchronous cancellation on the
    * HyperparameterTuningJob. The server makes a best effort to cancel the job, but success is not
@@ -1778,15 +1013,6 @@ public class JobServiceClient implements BackgroundResource {
    * `Code.CANCELLED`, and
    * [HyperparameterTuningJob.state][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.state]
    * is set to `CANCELLED`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   jobServiceClient.cancelHyperparameterTuningJob(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob to cancel. Format:
    *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
@@ -1800,7 +1026,7 @@ public class JobServiceClient implements BackgroundResource {
     cancelHyperparameterTuningJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a HyperparameterTuningJob. Starts asynchronous cancellation on the
    * HyperparameterTuningJob. The server makes a best effort to cancel the job, but success is not
@@ -1814,15 +1040,6 @@ public class JobServiceClient implements BackgroundResource {
    * `Code.CANCELLED`, and
    * [HyperparameterTuningJob.state][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.state]
    * is set to `CANCELLED`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   jobServiceClient.cancelHyperparameterTuningJob(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the HyperparameterTuningJob to cancel. Format:
    *     <p>`projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}`
@@ -1834,7 +1051,7 @@ public class JobServiceClient implements BackgroundResource {
     cancelHyperparameterTuningJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a HyperparameterTuningJob. Starts asynchronous cancellation on the
    * HyperparameterTuningJob. The server makes a best effort to cancel the job, but success is not
@@ -1848,18 +1065,6 @@ public class JobServiceClient implements BackgroundResource {
    * `Code.CANCELLED`, and
    * [HyperparameterTuningJob.state][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.state]
    * is set to `CANCELLED`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   CancelHyperparameterTuningJobRequest request = CancelHyperparameterTuningJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   jobServiceClient.cancelHyperparameterTuningJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1868,7 +1073,7 @@ public class JobServiceClient implements BackgroundResource {
     cancelHyperparameterTuningJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a HyperparameterTuningJob. Starts asynchronous cancellation on the
    * HyperparameterTuningJob. The server makes a best effort to cancel the job, but success is not
@@ -1884,38 +1089,16 @@ public class JobServiceClient implements BackgroundResource {
    * is set to `CANCELLED`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   HyperparameterTuningJobName name = HyperparameterTuningJobName.of("[PROJECT]", "[LOCATION]", "[HYPERPARAMETER_TUNING_JOB]");
-   *   CancelHyperparameterTuningJobRequest request = CancelHyperparameterTuningJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = jobServiceClient.cancelHyperparameterTuningJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CancelHyperparameterTuningJobRequest, Empty>
       cancelHyperparameterTuningJobCallable() {
     return stub.cancelHyperparameterTuningJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BatchPredictionJob. A BatchPredictionJob once created will right away be attempted to
    * start.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   BatchPredictionJob batchPredictionJob = BatchPredictionJob.newBuilder().build();
-   *   BatchPredictionJob response = jobServiceClient.createBatchPredictionJob(parent, batchPredictionJob);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the BatchPredictionJob in.
    *     Format: `projects/{project}/locations/{location}`
@@ -1932,20 +1115,10 @@ public class JobServiceClient implements BackgroundResource {
     return createBatchPredictionJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BatchPredictionJob. A BatchPredictionJob once created will right away be attempted to
    * start.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   BatchPredictionJob batchPredictionJob = BatchPredictionJob.newBuilder().build();
-   *   BatchPredictionJob response = jobServiceClient.createBatchPredictionJob(parent.toString(), batchPredictionJob);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to create the BatchPredictionJob in.
    *     Format: `projects/{project}/locations/{location}`
@@ -1962,24 +1135,10 @@ public class JobServiceClient implements BackgroundResource {
     return createBatchPredictionJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BatchPredictionJob. A BatchPredictionJob once created will right away be attempted to
    * start.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   BatchPredictionJob batchPredictionJob = BatchPredictionJob.newBuilder().build();
-   *   CreateBatchPredictionJobRequest request = CreateBatchPredictionJobRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setBatchPredictionJob(batchPredictionJob)
-   *     .build();
-   *   BatchPredictionJob response = jobServiceClient.createBatchPredictionJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1989,44 +1148,21 @@ public class JobServiceClient implements BackgroundResource {
     return createBatchPredictionJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BatchPredictionJob. A BatchPredictionJob once created will right away be attempted to
    * start.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   BatchPredictionJob batchPredictionJob = BatchPredictionJob.newBuilder().build();
-   *   CreateBatchPredictionJobRequest request = CreateBatchPredictionJobRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setBatchPredictionJob(batchPredictionJob)
-   *     .build();
-   *   ApiFuture&lt;BatchPredictionJob&gt; future = jobServiceClient.createBatchPredictionJobCallable().futureCall(request);
-   *   // Do something
-   *   BatchPredictionJob response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateBatchPredictionJobRequest, BatchPredictionJob>
       createBatchPredictionJobCallable() {
     return stub.createBatchPredictionJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a BatchPredictionJob
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   BatchPredictionJob response = jobServiceClient.getBatchPredictionJob(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the BatchPredictionJob resource. Format:
    *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
@@ -2040,18 +1176,9 @@ public class JobServiceClient implements BackgroundResource {
     return getBatchPredictionJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a BatchPredictionJob
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   BatchPredictionJob response = jobServiceClient.getBatchPredictionJob(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the BatchPredictionJob resource. Format:
    *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
@@ -2063,21 +1190,9 @@ public class JobServiceClient implements BackgroundResource {
     return getBatchPredictionJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a BatchPredictionJob
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   GetBatchPredictionJobRequest request = GetBatchPredictionJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   BatchPredictionJob response = jobServiceClient.getBatchPredictionJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2086,43 +1201,20 @@ public class JobServiceClient implements BackgroundResource {
     return getBatchPredictionJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a BatchPredictionJob
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   GetBatchPredictionJobRequest request = GetBatchPredictionJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;BatchPredictionJob&gt; future = jobServiceClient.getBatchPredictionJobCallable().futureCall(request);
-   *   // Do something
-   *   BatchPredictionJob response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetBatchPredictionJobRequest, BatchPredictionJob>
       getBatchPredictionJobCallable() {
     return stub.getBatchPredictionJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists BatchPredictionJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (BatchPredictionJob element : jobServiceClient.listBatchPredictionJobs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to list the BatchPredictionJobs from.
    *     Format: `projects/{project}/locations/{location}`
@@ -2136,20 +1228,9 @@ public class JobServiceClient implements BackgroundResource {
     return listBatchPredictionJobs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists BatchPredictionJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (BatchPredictionJob element : jobServiceClient.listBatchPredictionJobs(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the Location to list the BatchPredictionJobs from.
    *     Format: `projects/{project}/locations/{location}`
@@ -2161,23 +1242,9 @@ public class JobServiceClient implements BackgroundResource {
     return listBatchPredictionJobs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists BatchPredictionJobs in a Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListBatchPredictionJobsRequest request = ListBatchPredictionJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (BatchPredictionJob element : jobServiceClient.listBatchPredictionJobs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2187,82 +1254,36 @@ public class JobServiceClient implements BackgroundResource {
     return listBatchPredictionJobsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists BatchPredictionJobs in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListBatchPredictionJobsRequest request = ListBatchPredictionJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListBatchPredictionJobsPagedResponse&gt; future = jobServiceClient.listBatchPredictionJobsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (BatchPredictionJob element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListBatchPredictionJobsRequest, ListBatchPredictionJobsPagedResponse>
       listBatchPredictionJobsPagedCallable() {
     return stub.listBatchPredictionJobsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists BatchPredictionJobs in a Location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListBatchPredictionJobsRequest request = ListBatchPredictionJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListBatchPredictionJobsResponse response = jobServiceClient.listBatchPredictionJobsCallable().call(request);
-   *     for (BatchPredictionJob element : response.getBatchPredictionJobsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse>
       listBatchPredictionJobsCallable() {
     return stub.listBatchPredictionJobsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a BatchPredictionJob. Can only be called on jobs that already finished.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   jobServiceClient.deleteBatchPredictionJobAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the BatchPredictionJob resource to be deleted. Format:
    *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteBatchPredictionJobAsync(
       BatchPredictionJobName name) {
     DeleteBatchPredictionJobRequest request =
@@ -2272,25 +1293,14 @@ public class JobServiceClient implements BackgroundResource {
     return deleteBatchPredictionJobAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a BatchPredictionJob. Can only be called on jobs that already finished.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   jobServiceClient.deleteBatchPredictionJobAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the BatchPredictionJob resource to be deleted. Format:
    *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteBatchPredictionJobAsync(
       String name) {
     DeleteBatchPredictionJobRequest request =
@@ -2298,80 +1308,41 @@ public class JobServiceClient implements BackgroundResource {
     return deleteBatchPredictionJobAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a BatchPredictionJob. Can only be called on jobs that already finished.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   DeleteBatchPredictionJobRequest request = DeleteBatchPredictionJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   jobServiceClient.deleteBatchPredictionJobAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteBatchPredictionJobAsync(
       DeleteBatchPredictionJobRequest request) {
     return deleteBatchPredictionJobOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a BatchPredictionJob. Can only be called on jobs that already finished.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   DeleteBatchPredictionJobRequest request = DeleteBatchPredictionJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, DeleteOperationMetadata&gt; future = jobServiceClient.deleteBatchPredictionJobOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteBatchPredictionJobRequest, Empty, DeleteOperationMetadata>
       deleteBatchPredictionJobOperationCallable() {
     return stub.deleteBatchPredictionJobOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a BatchPredictionJob. Can only be called on jobs that already finished.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   DeleteBatchPredictionJobRequest request = DeleteBatchPredictionJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = jobServiceClient.deleteBatchPredictionJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteBatchPredictionJobRequest, Operation>
       deleteBatchPredictionJobCallable() {
     return stub.deleteBatchPredictionJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a BatchPredictionJob.
    *
@@ -2383,15 +1354,6 @@ public class JobServiceClient implements BackgroundResource {
    * deleted;instead its
    * [BatchPredictionJob.state][google.cloud.aiplatform.v1beta1.BatchPredictionJob.state] is set to
    * `CANCELLED`. Any files already outputted by the job are not deleted.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   jobServiceClient.cancelBatchPredictionJob(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the BatchPredictionJob to cancel. Format:
    *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
@@ -2405,7 +1367,7 @@ public class JobServiceClient implements BackgroundResource {
     cancelBatchPredictionJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a BatchPredictionJob.
    *
@@ -2417,15 +1379,6 @@ public class JobServiceClient implements BackgroundResource {
    * deleted;instead its
    * [BatchPredictionJob.state][google.cloud.aiplatform.v1beta1.BatchPredictionJob.state] is set to
    * `CANCELLED`. Any files already outputted by the job are not deleted.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   jobServiceClient.cancelBatchPredictionJob(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the BatchPredictionJob to cancel. Format:
    *     <p>`projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}`
@@ -2437,7 +1390,7 @@ public class JobServiceClient implements BackgroundResource {
     cancelBatchPredictionJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a BatchPredictionJob.
    *
@@ -2449,18 +1402,6 @@ public class JobServiceClient implements BackgroundResource {
    * deleted;instead its
    * [BatchPredictionJob.state][google.cloud.aiplatform.v1beta1.BatchPredictionJob.state] is set to
    * `CANCELLED`. Any files already outputted by the job are not deleted.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   CancelBatchPredictionJobRequest request = CancelBatchPredictionJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   jobServiceClient.cancelBatchPredictionJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2469,7 +1410,7 @@ public class JobServiceClient implements BackgroundResource {
     cancelBatchPredictionJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels a BatchPredictionJob.
    *
@@ -2483,18 +1424,6 @@ public class JobServiceClient implements BackgroundResource {
    * `CANCELLED`. Any files already outputted by the job are not deleted.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
-   *   BatchPredictionJobName name = BatchPredictionJobName.of("[PROJECT]", "[LOCATION]", "[BATCH_PREDICTION_JOB]");
-   *   CancelBatchPredictionJobRequest request = CancelBatchPredictionJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = jobServiceClient.cancelBatchPredictionJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CancelBatchPredictionJobRequest, Empty>
       cancelBatchPredictionJobCallable() {
