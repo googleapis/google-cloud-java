@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.securitycenter.settings.v1beta1.stub;
 
 import static com.google.cloud.securitycenter.settings.v1beta1.SecurityCenterSettingsServiceClient.ListComponentsPagedResponse;
@@ -71,7 +72,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link SecurityCenterSettingsServiceStub}.
  *
@@ -89,22 +90,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getServiceAccount to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SecurityCenterSettingsServiceStubSettings.Builder securityCenterSettingsServiceSettingsBuilder =
  *     SecurityCenterSettingsServiceStubSettings.newBuilder();
  * securityCenterSettingsServiceSettingsBuilder
  *     .getServiceAccountSettings()
  *     .setRetrySettings(
- *         securityCenterSettingsServiceSettingsBuilder.getServiceAccountSettings().getRetrySettings().toBuilder()
+ *         securityCenterSettingsServiceSettingsBuilder
+ *             .getServiceAccountSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * SecurityCenterSettingsServiceStubSettings securityCenterSettingsServiceSettings = securityCenterSettingsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * SecurityCenterSettingsServiceStubSettings securityCenterSettingsServiceSettings =
+ *     securityCenterSettingsServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class SecurityCenterSettingsServiceStubSettings
     extends StubSettings<SecurityCenterSettingsServiceStubSettings> {
   /** The default scopes of the service. */
@@ -137,6 +140,113 @@ public class SecurityCenterSettingsServiceStubSettings
   private final PagedCallSettings<
           ListComponentsRequest, ListComponentsResponse, ListComponentsPagedResponse>
       listComponentsSettings;
+
+  private static final PagedListDescriptor<ListDetectorsRequest, ListDetectorsResponse, Detector>
+      LIST_DETECTORS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDetectorsRequest, ListDetectorsResponse, Detector>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDetectorsRequest injectToken(ListDetectorsRequest payload, String token) {
+              return ListDetectorsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDetectorsRequest injectPageSize(ListDetectorsRequest payload, int pageSize) {
+              return ListDetectorsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDetectorsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDetectorsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Detector> extractResources(ListDetectorsResponse payload) {
+              return payload.getDetectorsList() == null
+                  ? ImmutableList.<Detector>of()
+                  : payload.getDetectorsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListComponentsRequest, ListComponentsResponse, String>
+      LIST_COMPONENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListComponentsRequest, ListComponentsResponse, String>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListComponentsRequest injectToken(ListComponentsRequest payload, String token) {
+              return ListComponentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListComponentsRequest injectPageSize(
+                ListComponentsRequest payload, int pageSize) {
+              return ListComponentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListComponentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListComponentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<String> extractResources(ListComponentsResponse payload) {
+              return payload.getComponentsList() == null
+                  ? ImmutableList.<String>of()
+                  : payload.getComponentsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDetectorsRequest, ListDetectorsResponse, ListDetectorsPagedResponse>
+      LIST_DETECTORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDetectorsRequest, ListDetectorsResponse, ListDetectorsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDetectorsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDetectorsRequest, ListDetectorsResponse> callable,
+                ListDetectorsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDetectorsResponse> futureResponse) {
+              PageContext<ListDetectorsRequest, ListDetectorsResponse, Detector> pageContext =
+                  PageContext.create(callable, LIST_DETECTORS_PAGE_STR_DESC, request, context);
+              return ListDetectorsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListComponentsRequest, ListComponentsResponse, ListComponentsPagedResponse>
+      LIST_COMPONENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListComponentsRequest, ListComponentsResponse, ListComponentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListComponentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListComponentsRequest, ListComponentsResponse> callable,
+                ListComponentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListComponentsResponse> futureResponse) {
+              PageContext<ListComponentsRequest, ListComponentsResponse, String> pageContext =
+                  PageContext.create(callable, LIST_COMPONENTS_PAGE_STR_DESC, request, context);
+              return ListComponentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to getServiceAccount. */
   public UnaryCallSettings<GetServiceAccountRequest, ServiceAccount> getServiceAccountSettings() {
@@ -219,10 +329,10 @@ public class SecurityCenterSettingsServiceStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcSecurityCenterSettingsServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -301,118 +411,10 @@ public class SecurityCenterSettingsServiceStubSettings
     listComponentsSettings = settingsBuilder.listComponentsSettings().build();
   }
 
-  private static final PagedListDescriptor<ListDetectorsRequest, ListDetectorsResponse, Detector>
-      LIST_DETECTORS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListDetectorsRequest, ListDetectorsResponse, Detector>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDetectorsRequest injectToken(ListDetectorsRequest payload, String token) {
-              return ListDetectorsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDetectorsRequest injectPageSize(ListDetectorsRequest payload, int pageSize) {
-              return ListDetectorsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDetectorsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDetectorsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Detector> extractResources(ListDetectorsResponse payload) {
-              return payload.getDetectorsList() != null
-                  ? payload.getDetectorsList()
-                  : ImmutableList.<Detector>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListComponentsRequest, ListComponentsResponse, String>
-      LIST_COMPONENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListComponentsRequest, ListComponentsResponse, String>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListComponentsRequest injectToken(ListComponentsRequest payload, String token) {
-              return ListComponentsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListComponentsRequest injectPageSize(
-                ListComponentsRequest payload, int pageSize) {
-              return ListComponentsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListComponentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListComponentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<String> extractResources(ListComponentsResponse payload) {
-              return payload.getComponentsList() != null
-                  ? payload.getComponentsList()
-                  : ImmutableList.<String>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListDetectorsRequest, ListDetectorsResponse, ListDetectorsPagedResponse>
-      LIST_DETECTORS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListDetectorsRequest, ListDetectorsResponse, ListDetectorsPagedResponse>() {
-            @Override
-            public ApiFuture<ListDetectorsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDetectorsRequest, ListDetectorsResponse> callable,
-                ListDetectorsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListDetectorsResponse> futureResponse) {
-              PageContext<ListDetectorsRequest, ListDetectorsResponse, Detector> pageContext =
-                  PageContext.create(callable, LIST_DETECTORS_PAGE_STR_DESC, request, context);
-              return ListDetectorsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListComponentsRequest, ListComponentsResponse, ListComponentsPagedResponse>
-      LIST_COMPONENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListComponentsRequest, ListComponentsResponse, ListComponentsPagedResponse>() {
-            @Override
-            public ApiFuture<ListComponentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListComponentsRequest, ListComponentsResponse> callable,
-                ListComponentsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListComponentsResponse> futureResponse) {
-              PageContext<ListComponentsRequest, ListComponentsResponse, String> pageContext =
-                  PageContext.create(callable, LIST_COMPONENTS_PAGE_STR_DESC, request, context);
-              return ListComponentsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for SecurityCenterSettingsServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<SecurityCenterSettingsServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<GetServiceAccountRequest, ServiceAccount>
         getServiceAccountSettings;
     private final UnaryCallSettings.Builder<GetSettingsRequest, Settings> getSettingsSettings;
@@ -440,7 +442,6 @@ public class SecurityCenterSettingsServiceStubSettings
     private final PagedCallSettings.Builder<
             ListComponentsRequest, ListComponentsResponse, ListComponentsPagedResponse>
         listComponentsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -448,11 +449,10 @@ public class SecurityCenterSettingsServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -471,43 +471,29 @@ public class SecurityCenterSettingsServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       getServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       resetSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchGetSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       calculateEffectiveSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchCalculateEffectiveSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getComponentSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateComponentSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       resetComponentSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       calculateEffectiveComponentSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDetectorsSettings = PagedCallSettings.newBuilder(LIST_DETECTORS_PAGE_STR_FACT);
-
       listComponentsSettings = PagedCallSettings.newBuilder(LIST_COMPONENTS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
@@ -525,87 +511,7 @@ public class SecurityCenterSettingsServiceStubSettings
               calculateEffectiveComponentSettingsSettings,
               listDetectorsSettings,
               listComponentsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .getServiceAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .resetSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .batchGetSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .calculateEffectiveSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .batchCalculateEffectiveSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getComponentSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateComponentSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .resetComponentSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .calculateEffectiveComponentSettingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listDetectorsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listComponentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(SecurityCenterSettingsServiceStubSettings settings) {
@@ -644,7 +550,87 @@ public class SecurityCenterSettingsServiceStubSettings
               listComponentsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .getServiceAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .resetSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchGetSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .calculateEffectiveSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchCalculateEffectiveSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getComponentSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateComponentSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .resetComponentSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .calculateEffectiveComponentSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDetectorsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listComponentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

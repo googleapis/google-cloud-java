@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.securitycenter.settings.v1beta1;
 
 import static com.google.cloud.securitycenter.settings.v1beta1.SecurityCenterSettingsServiceClient.ListComponentsPagedResponse;
@@ -35,7 +36,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link SecurityCenterSettingsServiceClient}.
  *
@@ -53,24 +54,26 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getServiceAccount to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SecurityCenterSettingsServiceSettings.Builder securityCenterSettingsServiceSettingsBuilder =
  *     SecurityCenterSettingsServiceSettings.newBuilder();
  * securityCenterSettingsServiceSettingsBuilder
  *     .getServiceAccountSettings()
  *     .setRetrySettings(
- *         securityCenterSettingsServiceSettingsBuilder.getServiceAccountSettings().getRetrySettings().toBuilder()
+ *         securityCenterSettingsServiceSettingsBuilder
+ *             .getServiceAccountSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * SecurityCenterSettingsServiceSettings securityCenterSettingsServiceSettings = securityCenterSettingsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * SecurityCenterSettingsServiceSettings securityCenterSettingsServiceSettings =
+ *     securityCenterSettingsServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class SecurityCenterSettingsServiceSettings
     extends ClientSettings<SecurityCenterSettingsServiceSettings> {
+
   /** Returns the object with the settings used for calls to getServiceAccount. */
   public UnaryCallSettings<GetServiceAccountRequest, ServiceAccount> getServiceAccountSettings() {
     return ((SecurityCenterSettingsServiceStubSettings) getStubSettings())
@@ -215,16 +218,13 @@ public class SecurityCenterSettingsServiceSettings
   /** Builder for SecurityCenterSettingsServiceSettings. */
   public static class Builder
       extends ClientSettings.Builder<SecurityCenterSettingsServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(SecurityCenterSettingsServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(SecurityCenterSettingsServiceStubSettings.newBuilder());
     }
 
     protected Builder(SecurityCenterSettingsServiceSettings settings) {
@@ -235,11 +235,15 @@ public class SecurityCenterSettingsServiceSettings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(SecurityCenterSettingsServiceStubSettings.newBuilder());
+    }
+
     public SecurityCenterSettingsServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((SecurityCenterSettingsServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
