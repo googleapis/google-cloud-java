@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.tasks.v2.stub;
 
 import static com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse;
@@ -72,7 +73,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link CloudTasksStub}.
  *
@@ -89,22 +90,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getQueue to 30 seconds:
  *
- * <pre>
- * <code>
- * CloudTasksStubSettings.Builder cloudTasksSettingsBuilder =
- *     CloudTasksStubSettings.newBuilder();
+ * <pre>{@code
+ * CloudTasksStubSettings.Builder cloudTasksSettingsBuilder = CloudTasksStubSettings.newBuilder();
  * cloudTasksSettingsBuilder
  *     .getQueueSettings()
  *     .setRetrySettings(
- *         cloudTasksSettingsBuilder.getQueueSettings().getRetrySettings().toBuilder()
+ *         cloudTasksSettingsBuilder
+ *             .getQueueSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudTasksStubSettings cloudTasksSettings = cloudTasksSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -129,6 +130,112 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
   private final UnaryCallSettings<CreateTaskRequest, Task> createTaskSettings;
   private final UnaryCallSettings<DeleteTaskRequest, Empty> deleteTaskSettings;
   private final UnaryCallSettings<RunTaskRequest, Task> runTaskSettings;
+
+  private static final PagedListDescriptor<ListQueuesRequest, ListQueuesResponse, Queue>
+      LIST_QUEUES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListQueuesRequest, ListQueuesResponse, Queue>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListQueuesRequest injectToken(ListQueuesRequest payload, String token) {
+              return ListQueuesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListQueuesRequest injectPageSize(ListQueuesRequest payload, int pageSize) {
+              return ListQueuesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListQueuesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListQueuesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Queue> extractResources(ListQueuesResponse payload) {
+              return payload.getQueuesList() == null
+                  ? ImmutableList.<Queue>of()
+                  : payload.getQueuesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListTasksRequest, ListTasksResponse, Task>
+      LIST_TASKS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListTasksRequest, ListTasksResponse, Task>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTasksRequest injectToken(ListTasksRequest payload, String token) {
+              return ListTasksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTasksRequest injectPageSize(ListTasksRequest payload, int pageSize) {
+              return ListTasksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTasksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTasksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Task> extractResources(ListTasksResponse payload) {
+              return payload.getTasksList() == null
+                  ? ImmutableList.<Task>of()
+                  : payload.getTasksList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
+      LIST_QUEUES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>() {
+            @Override
+            public ApiFuture<ListQueuesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListQueuesRequest, ListQueuesResponse> callable,
+                ListQueuesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListQueuesResponse> futureResponse) {
+              PageContext<ListQueuesRequest, ListQueuesResponse, Queue> pageContext =
+                  PageContext.create(callable, LIST_QUEUES_PAGE_STR_DESC, request, context);
+              return ListQueuesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
+      LIST_TASKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>() {
+            @Override
+            public ApiFuture<ListTasksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTasksRequest, ListTasksResponse> callable,
+                ListTasksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTasksResponse> futureResponse) {
+              PageContext<ListTasksRequest, ListTasksResponse, Task> pageContext =
+                  PageContext.create(callable, LIST_TASKS_PAGE_STR_DESC, request, context);
+              return ListTasksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listQueues. */
   public PagedCallSettings<ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
@@ -219,10 +326,10 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcCloudTasksStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -300,116 +407,9 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     runTaskSettings = settingsBuilder.runTaskSettings().build();
   }
 
-  private static final PagedListDescriptor<ListQueuesRequest, ListQueuesResponse, Queue>
-      LIST_QUEUES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListQueuesRequest, ListQueuesResponse, Queue>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListQueuesRequest injectToken(ListQueuesRequest payload, String token) {
-              return ListQueuesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListQueuesRequest injectPageSize(ListQueuesRequest payload, int pageSize) {
-              return ListQueuesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListQueuesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListQueuesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Queue> extractResources(ListQueuesResponse payload) {
-              return payload.getQueuesList() != null
-                  ? payload.getQueuesList()
-                  : ImmutableList.<Queue>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListTasksRequest, ListTasksResponse, Task>
-      LIST_TASKS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListTasksRequest, ListTasksResponse, Task>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTasksRequest injectToken(ListTasksRequest payload, String token) {
-              return ListTasksRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTasksRequest injectPageSize(ListTasksRequest payload, int pageSize) {
-              return ListTasksRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTasksRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTasksResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Task> extractResources(ListTasksResponse payload) {
-              return payload.getTasksList() != null
-                  ? payload.getTasksList()
-                  : ImmutableList.<Task>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
-      LIST_QUEUES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>() {
-            @Override
-            public ApiFuture<ListQueuesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListQueuesRequest, ListQueuesResponse> callable,
-                ListQueuesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListQueuesResponse> futureResponse) {
-              PageContext<ListQueuesRequest, ListQueuesResponse, Queue> pageContext =
-                  PageContext.create(callable, LIST_QUEUES_PAGE_STR_DESC, request, context);
-              return ListQueuesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
-      LIST_TASKS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>() {
-            @Override
-            public ApiFuture<ListTasksPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTasksRequest, ListTasksResponse> callable,
-                ListTasksRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTasksResponse> futureResponse) {
-              PageContext<ListTasksRequest, ListTasksResponse, Task> pageContext =
-                  PageContext.create(callable, LIST_TASKS_PAGE_STR_DESC, request, context);
-              return ListTasksPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for CloudTasksStubSettings. */
   public static class Builder extends StubSettings.Builder<CloudTasksStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListQueuesRequest, ListQueuesResponse, ListQueuesPagedResponse>
         listQueuesSettings;
@@ -431,7 +431,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     private final UnaryCallSettings.Builder<CreateTaskRequest, Task> createTaskSettings;
     private final UnaryCallSettings.Builder<DeleteTaskRequest, Empty> deleteTaskSettings;
     private final UnaryCallSettings.Builder<RunTaskRequest, Task> runTaskSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -439,11 +438,10 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -464,9 +462,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
               .setMaxRpcTimeout(Duration.ofMillis(10000L))
               .setTotalTimeout(Duration.ofMillis(10000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(10000L))
@@ -479,42 +475,27 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listQueuesSettings = PagedCallSettings.newBuilder(LIST_QUEUES_PAGE_STR_FACT);
-
       getQueueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createQueueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateQueueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteQueueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       purgeQueueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       pauseQueueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       resumeQueueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listTasksSettings = PagedCallSettings.newBuilder(LIST_TASKS_PAGE_STR_FACT);
-
       getTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       runTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -535,102 +516,7 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
               createTaskSettings,
               deleteTaskSettings,
               runTaskSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listQueuesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getQueueSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createQueueSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateQueueSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteQueueSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .purgeQueueSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .pauseQueueSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .resumeQueueSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listTasksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getTaskSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createTaskSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteTaskSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .runTaskSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(CloudTasksStubSettings settings) {
@@ -673,7 +559,102 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
               runTaskSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listQueuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getQueueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createQueueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateQueueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteQueueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .purgeQueueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .pauseQueueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .resumeQueueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listTasksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getTaskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createTaskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteTaskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .runTaskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

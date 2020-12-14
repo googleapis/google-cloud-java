@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class QueueName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_QUEUE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/queues/{queue}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String queue;
+
+  @Deprecated
+  protected QueueName() {
+    project = null;
+    location = null;
+    queue = null;
+  }
+
+  private QueueName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    queue = Preconditions.checkNotNull(builder.getQueue());
+  }
 
   public String getProject() {
     return project;
@@ -58,12 +70,6 @@ public class QueueName implements ResourceName {
     return new Builder(this);
   }
 
-  private QueueName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    queue = Preconditions.checkNotNull(builder.getQueue());
-  }
-
   public static QueueName of(String project, String location, String queue) {
     return newBuilder().setProject(project).setLocation(location).setQueue(queue).build();
   }
@@ -82,7 +88,7 @@ public class QueueName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_QUEUE.validatedMatch(
             formattedString, "QueueName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("queue"));
   }
@@ -96,7 +102,7 @@ public class QueueName implements ResourceName {
   }
 
   public static List<String> toStringList(List<QueueName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (QueueName value : values) {
       if (value == null) {
         list.add("");
@@ -108,17 +114,24 @@ public class QueueName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_QUEUE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("queue", queue);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (queue != null) {
+            fieldMapBuilder.put("queue", queue);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -132,15 +145,43 @@ public class QueueName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "queue", queue);
+    return PROJECT_LOCATION_QUEUE.instantiate(
+        "project", project, "location", location, "queue", queue);
   }
 
-  /** Builder for QueueName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      QueueName that = ((QueueName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.queue, that.queue);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(queue);
+    return h;
+  }
+
+  /** Builder for projects/{project}/locations/{location}/queues/{queue}. */
+  public static class Builder {
     private String project;
     private String location;
     private String queue;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -169,8 +210,6 @@ public class QueueName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(QueueName queueName) {
       project = queueName.project;
       location = queueName.location;
@@ -180,31 +219,5 @@ public class QueueName implements ResourceName {
     public QueueName build() {
       return new QueueName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof QueueName) {
-      QueueName that = (QueueName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.queue.equals(that.queue));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= queue.hashCode();
-    return h;
   }
 }

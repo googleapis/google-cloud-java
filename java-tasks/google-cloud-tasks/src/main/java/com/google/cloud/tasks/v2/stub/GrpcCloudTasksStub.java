@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.tasks.v2.stub;
 
 import static com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse;
 import static com.google.cloud.tasks.v2.CloudTasksClient.ListTasksPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -49,6 +49,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -57,16 +58,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Tasks API.
+ * gRPC stub implementation for the CloudTasks service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcCloudTasksStub extends CloudTasksStub {
-
   private static final MethodDescriptor<ListQueuesRequest, ListQueuesResponse>
       listQueuesMethodDescriptor =
           MethodDescriptor.<ListQueuesRequest, ListQueuesResponse>newBuilder()
@@ -75,6 +74,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListQueuesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListQueuesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetQueueRequest, Queue> getQueueMethodDescriptor =
       MethodDescriptor.<GetQueueRequest, Queue>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -82,6 +82,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateQueueRequest, Queue> createQueueMethodDescriptor =
       MethodDescriptor.<CreateQueueRequest, Queue>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -89,6 +90,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateQueueRequest, Queue> updateQueueMethodDescriptor =
       MethodDescriptor.<UpdateQueueRequest, Queue>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -96,6 +98,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteQueueRequest, Empty> deleteQueueMethodDescriptor =
       MethodDescriptor.<DeleteQueueRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -103,6 +106,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<PurgeQueueRequest, Queue> purgeQueueMethodDescriptor =
       MethodDescriptor.<PurgeQueueRequest, Queue>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -110,6 +114,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(PurgeQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<PauseQueueRequest, Queue> pauseQueueMethodDescriptor =
       MethodDescriptor.<PauseQueueRequest, Queue>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -117,6 +122,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(PauseQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ResumeQueueRequest, Queue> resumeQueueMethodDescriptor =
       MethodDescriptor.<ResumeQueueRequest, Queue>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -124,6 +130,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ResumeQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -131,6 +138,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -138,6 +146,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -148,6 +157,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListTasksRequest, ListTasksResponse>
       listTasksMethodDescriptor =
           MethodDescriptor.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -156,6 +166,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTasksResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetTaskRequest, Task> getTaskMethodDescriptor =
       MethodDescriptor.<GetTaskRequest, Task>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -163,6 +174,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateTaskRequest, Task> createTaskMethodDescriptor =
       MethodDescriptor.<CreateTaskRequest, Task>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -170,6 +182,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteTaskRequest, Empty> deleteTaskMethodDescriptor =
       MethodDescriptor.<DeleteTaskRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -177,6 +190,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<RunTaskRequest, Task> runTaskMethodDescriptor =
       MethodDescriptor.<RunTaskRequest, Task>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -184,8 +198,6 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setRequestMarshaller(ProtoUtils.marshaller(RunTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
           .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable;
   private final UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable;
@@ -207,6 +219,8 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   private final UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable;
   private final UnaryCallable<RunTaskRequest, Task> runTaskCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcCloudTasksStub create(CloudTasksStubSettings settings)
@@ -245,6 +259,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListQueuesRequest, ListQueuesResponse> listQueuesTransportSettings =
         GrpcCallSettings.<ListQueuesRequest, ListQueuesResponse>newBuilder()
@@ -513,15 +528,20 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
         callableFactory.createUnaryCallable(
             runTaskTransportSettings, settings.runTaskSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable() {
-    return listQueuesPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable() {
     return listQueuesCallable;
+  }
+
+  public UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable() {
+    return listQueuesPagedCallable;
   }
 
   public UnaryCallable<GetQueueRequest, Queue> getQueueCallable() {
@@ -565,12 +585,12 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
     return testIamPermissionsCallable;
   }
 
-  public UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable() {
-    return listTasksPagedCallable;
-  }
-
   public UnaryCallable<ListTasksRequest, ListTasksResponse> listTasksCallable() {
     return listTasksCallable;
+  }
+
+  public UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable() {
+    return listTasksPagedCallable;
   }
 
   public UnaryCallable<GetTaskRequest, Task> getTaskCallable() {
