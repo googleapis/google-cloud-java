@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.dashboard.v1.stub;
 
 import static com.google.cloud.monitoring.dashboard.v1.DashboardsServiceClient.ListDashboardsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.monitoring.dashboard.v1.CreateDashboardRequest;
 import com.google.monitoring.dashboard.v1.Dashboard;
 import com.google.monitoring.dashboard.v1.DeleteDashboardRequest;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Monitoring API.
+ * gRPC stub implementation for the DashboardsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
-
   private static final MethodDescriptor<CreateDashboardRequest, Dashboard>
       createDashboardMethodDescriptor =
           MethodDescriptor.<CreateDashboardRequest, Dashboard>newBuilder()
@@ -60,6 +59,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
                   ProtoUtils.marshaller(CreateDashboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dashboard.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListDashboardsRequest, ListDashboardsResponse>
       listDashboardsMethodDescriptor =
           MethodDescriptor.<ListDashboardsRequest, ListDashboardsResponse>newBuilder()
@@ -70,6 +70,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDashboardsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetDashboardRequest, Dashboard>
       getDashboardMethodDescriptor =
           MethodDescriptor.<GetDashboardRequest, Dashboard>newBuilder()
@@ -78,6 +79,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetDashboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dashboard.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteDashboardRequest, Empty>
       deleteDashboardMethodDescriptor =
           MethodDescriptor.<DeleteDashboardRequest, Empty>newBuilder()
@@ -87,6 +89,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
                   ProtoUtils.marshaller(DeleteDashboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateDashboardRequest, Dashboard>
       updateDashboardMethodDescriptor =
           MethodDescriptor.<UpdateDashboardRequest, Dashboard>newBuilder()
@@ -97,8 +100,6 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Dashboard.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<CreateDashboardRequest, Dashboard> createDashboardCallable;
   private final UnaryCallable<ListDashboardsRequest, ListDashboardsResponse> listDashboardsCallable;
   private final UnaryCallable<ListDashboardsRequest, ListDashboardsPagedResponse>
@@ -107,6 +108,8 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
   private final UnaryCallable<DeleteDashboardRequest, Empty> deleteDashboardCallable;
   private final UnaryCallable<UpdateDashboardRequest, Dashboard> updateDashboardCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcDashboardsServiceStub create(DashboardsServiceStubSettings settings)
@@ -147,6 +150,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateDashboardRequest, Dashboard> createDashboardTransportSettings =
         GrpcCallSettings.<CreateDashboardRequest, Dashboard>newBuilder()
@@ -234,20 +238,25 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
         callableFactory.createUnaryCallable(
             updateDashboardTransportSettings, settings.updateDashboardSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateDashboardRequest, Dashboard> createDashboardCallable() {
     return createDashboardCallable;
   }
 
+  public UnaryCallable<ListDashboardsRequest, ListDashboardsResponse> listDashboardsCallable() {
+    return listDashboardsCallable;
+  }
+
   public UnaryCallable<ListDashboardsRequest, ListDashboardsPagedResponse>
       listDashboardsPagedCallable() {
     return listDashboardsPagedCallable;
-  }
-
-  public UnaryCallable<ListDashboardsRequest, ListDashboardsResponse> listDashboardsCallable() {
-    return listDashboardsCallable;
   }
 
   public UnaryCallable<GetDashboardRequest, Dashboard> getDashboardCallable() {

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.dashboard.v1.stub;
 
 import static com.google.cloud.monitoring.dashboard.v1.DashboardsServiceClient.ListDashboardsPagedResponse;
@@ -56,7 +57,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DashboardsServiceStub}.
  *
@@ -73,22 +74,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createDashboard to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DashboardsServiceStubSettings.Builder dashboardsServiceSettingsBuilder =
  *     DashboardsServiceStubSettings.newBuilder();
  * dashboardsServiceSettingsBuilder
  *     .createDashboardSettings()
  *     .setRetrySettings(
- *         dashboardsServiceSettingsBuilder.createDashboardSettings().getRetrySettings().toBuilder()
+ *         dashboardsServiceSettingsBuilder
+ *             .createDashboardSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * DashboardsServiceStubSettings dashboardsServiceSettings = dashboardsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * DashboardsServiceStubSettings dashboardsServiceSettings =
+ *     dashboardsServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class DashboardsServiceStubSettings extends StubSettings<DashboardsServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -106,6 +109,60 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
   private final UnaryCallSettings<GetDashboardRequest, Dashboard> getDashboardSettings;
   private final UnaryCallSettings<DeleteDashboardRequest, Empty> deleteDashboardSettings;
   private final UnaryCallSettings<UpdateDashboardRequest, Dashboard> updateDashboardSettings;
+
+  private static final PagedListDescriptor<ListDashboardsRequest, ListDashboardsResponse, Dashboard>
+      LIST_DASHBOARDS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDashboardsRequest, ListDashboardsResponse, Dashboard>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDashboardsRequest injectToken(ListDashboardsRequest payload, String token) {
+              return ListDashboardsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDashboardsRequest injectPageSize(
+                ListDashboardsRequest payload, int pageSize) {
+              return ListDashboardsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDashboardsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDashboardsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Dashboard> extractResources(ListDashboardsResponse payload) {
+              return payload.getDashboardsList() == null
+                  ? ImmutableList.<Dashboard>of()
+                  : payload.getDashboardsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDashboardsRequest, ListDashboardsResponse, ListDashboardsPagedResponse>
+      LIST_DASHBOARDS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDashboardsRequest, ListDashboardsResponse, ListDashboardsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDashboardsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDashboardsRequest, ListDashboardsResponse> callable,
+                ListDashboardsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDashboardsResponse> futureResponse) {
+              PageContext<ListDashboardsRequest, ListDashboardsResponse, Dashboard> pageContext =
+                  PageContext.create(callable, LIST_DASHBOARDS_PAGE_STR_DESC, request, context);
+              return ListDashboardsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createDashboard. */
   public UnaryCallSettings<CreateDashboardRequest, Dashboard> createDashboardSettings() {
@@ -140,10 +197,10 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcDashboardsServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -210,64 +267,9 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
     updateDashboardSettings = settingsBuilder.updateDashboardSettings().build();
   }
 
-  private static final PagedListDescriptor<ListDashboardsRequest, ListDashboardsResponse, Dashboard>
-      LIST_DASHBOARDS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListDashboardsRequest, ListDashboardsResponse, Dashboard>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDashboardsRequest injectToken(ListDashboardsRequest payload, String token) {
-              return ListDashboardsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDashboardsRequest injectPageSize(
-                ListDashboardsRequest payload, int pageSize) {
-              return ListDashboardsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDashboardsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDashboardsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Dashboard> extractResources(ListDashboardsResponse payload) {
-              return payload.getDashboardsList() != null
-                  ? payload.getDashboardsList()
-                  : ImmutableList.<Dashboard>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListDashboardsRequest, ListDashboardsResponse, ListDashboardsPagedResponse>
-      LIST_DASHBOARDS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListDashboardsRequest, ListDashboardsResponse, ListDashboardsPagedResponse>() {
-            @Override
-            public ApiFuture<ListDashboardsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDashboardsRequest, ListDashboardsResponse> callable,
-                ListDashboardsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListDashboardsResponse> futureResponse) {
-              PageContext<ListDashboardsRequest, ListDashboardsResponse, Dashboard> pageContext =
-                  PageContext.create(callable, LIST_DASHBOARDS_PAGE_STR_DESC, request, context);
-              return ListDashboardsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for DashboardsServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<DashboardsServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateDashboardRequest, Dashboard>
         createDashboardSettings;
     private final PagedCallSettings.Builder<
@@ -277,7 +279,6 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
     private final UnaryCallSettings.Builder<DeleteDashboardRequest, Empty> deleteDashboardSettings;
     private final UnaryCallSettings.Builder<UpdateDashboardRequest, Dashboard>
         updateDashboardSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -285,13 +286,12 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -302,6 +302,14 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(10000L))
@@ -310,35 +318,21 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createDashboardSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDashboardsSettings = PagedCallSettings.newBuilder(LIST_DASHBOARDS_PAGE_STR_FACT);
-
       getDashboardSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteDashboardSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateDashboardSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -348,47 +342,7 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
               getDashboardSettings,
               deleteDashboardSettings,
               updateDashboardSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createDashboardSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listDashboardsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getDashboardSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteDashboardSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateDashboardSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(DashboardsServiceStubSettings settings) {
@@ -409,7 +363,47 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
               updateDashboardSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createDashboardSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listDashboardsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDashboardSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDashboardSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateDashboardSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

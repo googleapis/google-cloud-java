@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.dashboard.v1;
 
 import static com.google.cloud.monitoring.dashboard.v1.DashboardsServiceClient.ListDashboardsPagedResponse;
@@ -36,12 +37,12 @@ import com.google.monitoring.dashboard.v1.ProjectName;
 import com.google.monitoring.dashboard.v1.UpdateDashboardRequest;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -49,31 +50,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class DashboardsServiceClientTest {
-  private static MockDashboardsService mockDashboardsService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private DashboardsServiceClient client;
+  private static MockDashboardsService mockDashboardsService;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockDashboardsService = new MockDashboardsService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockDashboardsService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     DashboardsServiceSettings settings =
         DashboardsServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -88,33 +89,30 @@ public class DashboardsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createDashboardTest() {
-    DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
-    String displayName = "displayName1615086568";
-    String etag = "etag3123477";
+  public void createDashboardTest() throws Exception {
     Dashboard expectedResponse =
         Dashboard.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setEtag(etag)
+            .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setEtag("etag3123477")
             .build();
     mockDashboardsService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
-    Dashboard dashboard = Dashboard.newBuilder().build();
     CreateDashboardRequest request =
-        CreateDashboardRequest.newBuilder().setParent(parent).setDashboard(dashboard).build();
+        CreateDashboardRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setDashboard(Dashboard.newBuilder().build())
+            .build();
 
     Dashboard actualResponse = client.createDashboard(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDashboardsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateDashboardRequest actualRequest = (CreateDashboardRequest) actualRequests.get(0);
+    CreateDashboardRequest actualRequest = ((CreateDashboardRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(dashboard, actualRequest.getDashboard());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getDashboard(), actualRequest.getDashboard());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -122,52 +120,54 @@ public class DashboardsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createDashboardExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDashboardsService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
-      Dashboard dashboard = Dashboard.newBuilder().build();
       CreateDashboardRequest request =
-          CreateDashboardRequest.newBuilder().setParent(parent).setDashboard(dashboard).build();
-
+          CreateDashboardRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setDashboard(Dashboard.newBuilder().build())
+              .build();
       client.createDashboard(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listDashboardsTest() {
-    String nextPageToken = "";
-    Dashboard dashboardsElement = Dashboard.newBuilder().build();
-    List<Dashboard> dashboards = Arrays.asList(dashboardsElement);
+  public void listDashboardsTest() throws Exception {
+    Dashboard responsesElement = Dashboard.newBuilder().build();
     ListDashboardsResponse expectedResponse =
         ListDashboardsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllDashboards(dashboards)
+            .setNextPageToken("")
+            .addAllDashboards(Arrays.asList(responsesElement))
             .build();
     mockDashboardsService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
     ListDashboardsRequest request =
-        ListDashboardsRequest.newBuilder().setParent(parent.toString()).build();
+        ListDashboardsRequest.newBuilder()
+            .setParent(ProjectName.of("[PROJECT]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
 
     ListDashboardsPagedResponse pagedListResponse = client.listDashboards(request);
 
     List<Dashboard> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDashboardsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockDashboardsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListDashboardsRequest actualRequest = (ListDashboardsRequest) actualRequests.get(0);
+    ListDashboardsRequest actualRequest = ((ListDashboardsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -175,48 +175,47 @@ public class DashboardsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listDashboardsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDashboardsService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
       ListDashboardsRequest request =
-          ListDashboardsRequest.newBuilder().setParent(parent.toString()).build();
-
+          ListDashboardsRequest.newBuilder()
+              .setParent(ProjectName.of("[PROJECT]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
       client.listDashboards(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getDashboardTest() {
-    DashboardName name2 = DashboardName.of("[PROJECT]", "[DASHBOARD]");
-    String displayName = "displayName1615086568";
-    String etag = "etag3123477";
+  public void getDashboardTest() throws Exception {
     Dashboard expectedResponse =
         Dashboard.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setEtag(etag)
+            .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setEtag("etag3123477")
             .build();
     mockDashboardsService.addResponse(expectedResponse);
 
-    DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
-    GetDashboardRequest request = GetDashboardRequest.newBuilder().setName(name.toString()).build();
+    GetDashboardRequest request =
+        GetDashboardRequest.newBuilder()
+            .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+            .build();
 
     Dashboard actualResponse = client.getDashboard(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDashboardsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetDashboardRequest actualRequest = (GetDashboardRequest) actualRequests.get(0);
+    GetDashboardRequest actualRequest = ((GetDashboardRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, DashboardName.parse(actualRequest.getName()));
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -224,40 +223,39 @@ public class DashboardsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getDashboardExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDashboardsService.addException(exception);
 
     try {
-      DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
       GetDashboardRequest request =
-          GetDashboardRequest.newBuilder().setName(name.toString()).build();
-
+          GetDashboardRequest.newBuilder()
+              .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+              .build();
       client.getDashboard(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteDashboardTest() {
+  public void deleteDashboardTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDashboardsService.addResponse(expectedResponse);
 
-    DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
     DeleteDashboardRequest request =
-        DeleteDashboardRequest.newBuilder().setName(name.toString()).build();
+        DeleteDashboardRequest.newBuilder()
+            .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+            .build();
 
     client.deleteDashboard(request);
 
     List<AbstractMessage> actualRequests = mockDashboardsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDashboardRequest actualRequest = (DeleteDashboardRequest) actualRequests.get(0);
+    DeleteDashboardRequest actualRequest = ((DeleteDashboardRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, DashboardName.parse(actualRequest.getName()));
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -265,49 +263,43 @@ public class DashboardsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteDashboardExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDashboardsService.addException(exception);
 
     try {
-      DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
       DeleteDashboardRequest request =
-          DeleteDashboardRequest.newBuilder().setName(name.toString()).build();
-
+          DeleteDashboardRequest.newBuilder()
+              .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+              .build();
       client.deleteDashboard(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateDashboardTest() {
-    DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
-    String displayName = "displayName1615086568";
-    String etag = "etag3123477";
+  public void updateDashboardTest() throws Exception {
     Dashboard expectedResponse =
         Dashboard.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setEtag(etag)
+            .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setEtag("etag3123477")
             .build();
     mockDashboardsService.addResponse(expectedResponse);
 
-    Dashboard dashboard = Dashboard.newBuilder().build();
     UpdateDashboardRequest request =
-        UpdateDashboardRequest.newBuilder().setDashboard(dashboard).build();
+        UpdateDashboardRequest.newBuilder().setDashboard(Dashboard.newBuilder().build()).build();
 
     Dashboard actualResponse = client.updateDashboard(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDashboardsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateDashboardRequest actualRequest = (UpdateDashboardRequest) actualRequests.get(0);
+    UpdateDashboardRequest actualRequest = ((UpdateDashboardRequest) actualRequests.get(0));
 
-    Assert.assertEquals(dashboard, actualRequest.getDashboard());
+    Assert.assertEquals(request.getDashboard(), actualRequest.getDashboard());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -315,20 +307,17 @@ public class DashboardsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateDashboardExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockDashboardsService.addException(exception);
 
     try {
-      Dashboard dashboard = Dashboard.newBuilder().build();
       UpdateDashboardRequest request =
-          UpdateDashboardRequest.newBuilder().setDashboard(dashboard).build();
-
+          UpdateDashboardRequest.newBuilder().setDashboard(Dashboard.newBuilder().build()).build();
       client.updateDashboard(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }
