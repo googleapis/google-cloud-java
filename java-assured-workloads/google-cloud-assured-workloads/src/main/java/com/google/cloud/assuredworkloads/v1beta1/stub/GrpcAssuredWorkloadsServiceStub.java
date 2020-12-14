@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.assuredworkloads.v1beta1.stub;
 
 import static com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceClient.ListWorkloadsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -45,16 +45,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Assured Workloads API.
+ * gRPC stub implementation for the AssuredWorkloadsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub {
-
   private static final MethodDescriptor<CreateWorkloadRequest, Operation>
       createWorkloadMethodDescriptor =
           MethodDescriptor.<CreateWorkloadRequest, Operation>newBuilder()
@@ -65,6 +63,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   ProtoUtils.marshaller(CreateWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateWorkloadRequest, Workload>
       updateWorkloadMethodDescriptor =
           MethodDescriptor.<UpdateWorkloadRequest, Workload>newBuilder()
@@ -75,6 +74,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   ProtoUtils.marshaller(UpdateWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Workload.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteWorkloadRequest, Empty>
       deleteWorkloadMethodDescriptor =
           MethodDescriptor.<DeleteWorkloadRequest, Empty>newBuilder()
@@ -85,6 +85,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   ProtoUtils.marshaller(DeleteWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetWorkloadRequest, Workload> getWorkloadMethodDescriptor =
       MethodDescriptor.<GetWorkloadRequest, Workload>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -93,6 +94,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
           .setRequestMarshaller(ProtoUtils.marshaller(GetWorkloadRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Workload.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListWorkloadsRequest, ListWorkloadsResponse>
       listWorkloadsMethodDescriptor =
           MethodDescriptor.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
@@ -105,9 +107,6 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   ProtoUtils.marshaller(ListWorkloadsResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
-
   private final UnaryCallable<CreateWorkloadRequest, Operation> createWorkloadCallable;
   private final OperationCallable<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationCallable;
@@ -118,6 +117,8 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAssuredWorkloadsServiceStub create(
@@ -235,7 +236,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
             createWorkloadTransportSettings,
             settings.createWorkloadOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateWorkloadCallable =
         callableFactory.createUnaryCallable(
             updateWorkloadTransportSettings, settings.updateWorkloadSettings(), clientContext);
@@ -252,22 +253,21 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
         callableFactory.createPagedCallable(
             listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<CreateWorkloadRequest, Operation> createWorkloadCallable() {
+    return createWorkloadCallable;
+  }
+
   public OperationCallable<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationCallable() {
     return createWorkloadOperationCallable;
-  }
-
-  public UnaryCallable<CreateWorkloadRequest, Operation> createWorkloadCallable() {
-    return createWorkloadCallable;
   }
 
   public UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
@@ -282,13 +282,13 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
     return getWorkloadCallable;
   }
 
+  public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
+    return listWorkloadsCallable;
+  }
+
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable() {
     return listWorkloadsPagedCallable;
-  }
-
-  public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
-    return listWorkloadsCallable;
   }
 
   @Override

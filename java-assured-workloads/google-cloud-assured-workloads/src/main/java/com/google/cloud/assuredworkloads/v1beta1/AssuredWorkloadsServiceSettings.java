@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.assuredworkloads.v1beta1;
 
 import static com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceClient.ListWorkloadsPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AssuredWorkloadsServiceClient}.
  *
@@ -54,32 +55,32 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of updateWorkload to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssuredWorkloadsServiceSettings.Builder assuredWorkloadsServiceSettingsBuilder =
  *     AssuredWorkloadsServiceSettings.newBuilder();
  * assuredWorkloadsServiceSettingsBuilder
  *     .updateWorkloadSettings()
  *     .setRetrySettings(
- *         assuredWorkloadsServiceSettingsBuilder.updateWorkloadSettings().getRetrySettings().toBuilder()
+ *         assuredWorkloadsServiceSettingsBuilder
+ *             .updateWorkloadSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * AssuredWorkloadsServiceSettings assuredWorkloadsServiceSettings = assuredWorkloadsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * AssuredWorkloadsServiceSettings assuredWorkloadsServiceSettings =
+ *     assuredWorkloadsServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class AssuredWorkloadsServiceSettings
     extends ClientSettings<AssuredWorkloadsServiceSettings> {
+
   /** Returns the object with the settings used for calls to createWorkload. */
   public UnaryCallSettings<CreateWorkloadRequest, Operation> createWorkloadSettings() {
     return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).createWorkloadSettings();
   }
 
   /** Returns the object with the settings used for calls to createWorkload. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationSettings() {
     return ((AssuredWorkloadsServiceStubSettings) getStubSettings())
@@ -168,16 +169,13 @@ public class AssuredWorkloadsServiceSettings
   /** Builder for AssuredWorkloadsServiceSettings. */
   public static class Builder
       extends ClientSettings.Builder<AssuredWorkloadsServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(AssuredWorkloadsServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(AssuredWorkloadsServiceStubSettings.newBuilder());
     }
 
     protected Builder(AssuredWorkloadsServiceSettings settings) {
@@ -188,11 +186,15 @@ public class AssuredWorkloadsServiceSettings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(AssuredWorkloadsServiceStubSettings.newBuilder());
+    }
+
     public AssuredWorkloadsServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((AssuredWorkloadsServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -211,8 +213,6 @@ public class AssuredWorkloadsServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to createWorkload. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
         createWorkloadOperationSettings() {

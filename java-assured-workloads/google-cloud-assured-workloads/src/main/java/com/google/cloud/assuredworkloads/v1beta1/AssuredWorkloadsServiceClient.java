@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.assuredworkloads.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -39,24 +40,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service to manage AssuredWorkloads.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
- *   Workload workload = Workload.newBuilder().build();
- *   FieldMask updateMask = FieldMask.newBuilder().build();
- *   Workload response = assuredWorkloadsServiceClient.updateWorkload(workload, updateMask);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the assuredWorkloadsServiceClient object to clean up
+ * <p>Note: close() needs to be called on the AssuredWorkloadsServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -85,30 +76,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssuredWorkloadsServiceSettings assuredWorkloadsServiceSettings =
  *     AssuredWorkloadsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
  *     AssuredWorkloadsServiceClient.create(assuredWorkloadsServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssuredWorkloadsServiceSettings assuredWorkloadsServiceSettings =
  *     AssuredWorkloadsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
  *     AssuredWorkloadsServiceClient.create(assuredWorkloadsServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class AssuredWorkloadsServiceClient implements BackgroundResource {
   private final AssuredWorkloadsServiceSettings settings;
   private final AssuredWorkloadsServiceStub stub;
@@ -130,7 +119,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of AssuredWorkloadsServiceClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use AssuredWorkloadsServiceSettings}.
+   * This is for advanced usage - prefer using create(AssuredWorkloadsServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AssuredWorkloadsServiceClient create(AssuredWorkloadsServiceStub stub) {
@@ -169,33 +158,19 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates Assured Workload.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-   *   Workload workload = Workload.newBuilder().build();
-   *   Workload response = assuredWorkloadsServiceClient.createWorkloadAsync(parent, workload).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the new Workload's parent. Must be of the form
    *     `organizations/{org_id}/locations/{location_id}`.
    * @param workload Required. Assured Workload to create
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Workload, CreateWorkloadOperationMetadata> createWorkloadAsync(
       LocationName parent, Workload workload) {
     CreateWorkloadRequest request =
@@ -206,27 +181,15 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return createWorkloadAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates Assured Workload.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-   *   Workload workload = Workload.newBuilder().build();
-   *   Workload response = assuredWorkloadsServiceClient.createWorkloadAsync(parent.toString(), workload).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The resource name of the new Workload's parent. Must be of the form
    *     `organizations/{org_id}/locations/{location_id}`.
    * @param workload Required. Assured Workload to create
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Workload, CreateWorkloadOperationMetadata> createWorkloadAsync(
       String parent, Workload workload) {
     CreateWorkloadRequest request =
@@ -234,101 +197,46 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return createWorkloadAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates Assured Workload.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-   *   Workload workload = Workload.newBuilder().build();
-   *   CreateWorkloadRequest request = CreateWorkloadRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setWorkload(workload)
-   *     .build();
-   *   Workload response = assuredWorkloadsServiceClient.createWorkloadAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Workload, CreateWorkloadOperationMetadata> createWorkloadAsync(
       CreateWorkloadRequest request) {
     return createWorkloadOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates Assured Workload.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-   *   Workload workload = Workload.newBuilder().build();
-   *   CreateWorkloadRequest request = CreateWorkloadRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setWorkload(workload)
-   *     .build();
-   *   OperationFuture&lt;Workload, CreateWorkloadOperationMetadata&gt; future = assuredWorkloadsServiceClient.createWorkloadOperationCallable().futureCall(request);
-   *   // Do something
-   *   Workload response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationCallable() {
     return stub.createWorkloadOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates Assured Workload.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-   *   Workload workload = Workload.newBuilder().build();
-   *   CreateWorkloadRequest request = CreateWorkloadRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setWorkload(workload)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = assuredWorkloadsServiceClient.createWorkloadCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateWorkloadRequest, Operation> createWorkloadCallable() {
     return stub.createWorkloadCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing workload. Currently allows updating of workload display_name and labels.
    * For force updates don't set etag field in the Workload. Only one update operation per workload
    * can be in progress.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   Workload workload = Workload.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Workload response = assuredWorkloadsServiceClient.updateWorkload(workload, updateMask);
-   * }
-   * </code></pre>
-   *
-   * @param workload Required. The workload to update. The workload’s `name` field is used to
+   * @param workload Required. The workload to update. The workload?s `name` field is used to
    *     identify the workload to be updated. Format:
    *     organizations/{org_id}/locations/{location_id}/workloads/{workload_id}
    * @param updateMask Required. The list of fields to be updated.
@@ -340,25 +248,11 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return updateWorkload(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing workload. Currently allows updating of workload display_name and labels.
    * For force updates don't set etag field in the Workload. Only one update operation per workload
    * can be in progress.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   Workload workload = Workload.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateWorkloadRequest request = UpdateWorkloadRequest.newBuilder()
-   *     .setWorkload(workload)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   Workload response = assuredWorkloadsServiceClient.updateWorkload(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -367,45 +261,22 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return updateWorkloadCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing workload. Currently allows updating of workload display_name and labels.
    * For force updates don't set etag field in the Workload. Only one update operation per workload
    * can be in progress.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   Workload workload = Workload.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateWorkloadRequest request = UpdateWorkloadRequest.newBuilder()
-   *     .setWorkload(workload)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Workload&gt; future = assuredWorkloadsServiceClient.updateWorkloadCallable().futureCall(request);
-   *   // Do something
-   *   Workload response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
     return stub.updateWorkloadCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the workload. Make sure that workload's direct children are already in a deleted state,
    * otherwise the request will fail with a FAILED_PRECONDITION error.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-   *   assuredWorkloadsServiceClient.deleteWorkload(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The `name` field is used to identify the workload. Format:
    *     organizations/{org_id}/locations/{location_id}/workloads/{workload_id}
@@ -417,19 +288,10 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     deleteWorkload(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the workload. Make sure that workload's direct children are already in a deleted state,
    * otherwise the request will fail with a FAILED_PRECONDITION error.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-   *   assuredWorkloadsServiceClient.deleteWorkload(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The `name` field is used to identify the workload. Format:
    *     organizations/{org_id}/locations/{location_id}/workloads/{workload_id}
@@ -440,22 +302,10 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     deleteWorkload(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the workload. Make sure that workload's direct children are already in a deleted state,
    * otherwise the request will fail with a FAILED_PRECONDITION error.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-   *   DeleteWorkloadRequest request = DeleteWorkloadRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   assuredWorkloadsServiceClient.deleteWorkload(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -464,41 +314,20 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     deleteWorkloadCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the workload. Make sure that workload's direct children are already in a deleted state,
    * otherwise the request will fail with a FAILED_PRECONDITION error.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-   *   DeleteWorkloadRequest request = DeleteWorkloadRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = assuredWorkloadsServiceClient.deleteWorkloadCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable() {
     return stub.deleteWorkloadCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets Assured Workload associated with a CRM Node
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-   *   Workload response = assuredWorkloadsServiceClient.getWorkload(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the Workload to fetch. This is the workloads's
    *     relative path in the API, formatted as
@@ -512,18 +341,9 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return getWorkload(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets Assured Workload associated with a CRM Node
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-   *   Workload response = assuredWorkloadsServiceClient.getWorkload(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the Workload to fetch. This is the workloads's
    *     relative path in the API, formatted as
@@ -536,21 +356,9 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return getWorkload(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets Assured Workload associated with a CRM Node
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-   *   GetWorkloadRequest request = GetWorkloadRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Workload response = assuredWorkloadsServiceClient.getWorkload(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -559,42 +367,19 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return getWorkloadCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets Assured Workload associated with a CRM Node
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-   *   GetWorkloadRequest request = GetWorkloadRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Workload&gt; future = assuredWorkloadsServiceClient.getWorkloadCallable().futureCall(request);
-   *   // Do something
-   *   Workload response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable() {
     return stub.getWorkloadCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Assured Workloads under a CRM Node.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-   *   for (Workload element : assuredWorkloadsServiceClient.listWorkloads(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Parent Resource to list workloads from. Must be of the form
    *     `organizations/{org_id}/locations/{location}`.
@@ -608,20 +393,9 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return listWorkloads(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Assured Workloads under a CRM Node.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-   *   for (Workload element : assuredWorkloadsServiceClient.listWorkloads(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Parent Resource to list workloads from. Must be of the form
    *     `organizations/{org_id}/locations/{location}`.
@@ -632,23 +406,9 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return listWorkloads(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Assured Workloads under a CRM Node.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-   *   ListWorkloadsRequest request = ListWorkloadsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Workload element : assuredWorkloadsServiceClient.listWorkloads(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -657,57 +417,22 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return listWorkloadsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Assured Workloads under a CRM Node.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-   *   ListWorkloadsRequest request = ListWorkloadsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListWorkloadsPagedResponse&gt; future = assuredWorkloadsServiceClient.listWorkloadsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Workload element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable() {
     return stub.listWorkloadsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Assured Workloads under a CRM Node.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-   *   ListWorkloadsRequest request = ListWorkloadsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListWorkloadsResponse response = assuredWorkloadsServiceClient.listWorkloadsCallable().call(request);
-   *     for (Workload element : response.getWorkloadsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
     return stub.listWorkloadsCallable();

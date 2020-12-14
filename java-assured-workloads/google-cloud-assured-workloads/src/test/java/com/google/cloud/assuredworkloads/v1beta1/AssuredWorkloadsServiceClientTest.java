@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.assuredworkloads.v1beta1;
 
 import static com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceClient.ListWorkloadsPagedResponse;
@@ -31,13 +32,16 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -45,32 +49,32 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class AssuredWorkloadsServiceClientTest {
   private static MockAssuredWorkloadsService mockAssuredWorkloadsService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private AssuredWorkloadsServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockAssuredWorkloadsService = new MockAssuredWorkloadsService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(mockAssuredWorkloadsService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     AssuredWorkloadsServiceSettings settings =
         AssuredWorkloadsServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -85,20 +89,17 @@ public class AssuredWorkloadsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createWorkloadTest() throws Exception {
-    WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-    String displayName = "displayName1615086568";
-    String billingAccount = "billingAccount-545871767";
-    String etag = "etag3123477";
-    String provisionedResourcesParent = "provisionedResourcesParent-158134097";
     Workload expectedResponse =
         Workload.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setBillingAccount(billingAccount)
-            .setEtag(etag)
-            .setProvisionedResourcesParent(provisionedResourcesParent)
+            .setName(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllResources(new ArrayList<Workload.ResourceInfo>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setBillingAccount("billingAccount708726578")
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -116,9 +117,9 @@ public class AssuredWorkloadsServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateWorkloadRequest actualRequest = (CreateWorkloadRequest) actualRequests.get(0);
+    CreateWorkloadRequest actualRequest = ((CreateWorkloadRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(workload, actualRequest.getWorkload());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -127,39 +128,90 @@ public class AssuredWorkloadsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createWorkloadExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssuredWorkloadsService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
       Workload workload = Workload.newBuilder().build();
-
       client.createWorkloadAsync(parent, workload).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateWorkloadTest() {
-    WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-    String displayName = "displayName1615086568";
-    String billingAccount = "billingAccount-545871767";
-    String etag = "etag3123477";
-    String provisionedResourcesParent = "provisionedResourcesParent-158134097";
+  public void createWorkloadTest2() throws Exception {
     Workload expectedResponse =
         Workload.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setBillingAccount(billingAccount)
-            .setEtag(etag)
-            .setProvisionedResourcesParent(provisionedResourcesParent)
+            .setName(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllResources(new ArrayList<Workload.ResourceInfo>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setBillingAccount("billingAccount708726578")
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWorkloadTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAssuredWorkloadsService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Workload workload = Workload.newBuilder().build();
+
+    Workload actualResponse = client.createWorkloadAsync(parent, workload).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWorkloadRequest actualRequest = ((CreateWorkloadRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(workload, actualRequest.getWorkload());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createWorkloadExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Workload workload = Workload.newBuilder().build();
+      client.createWorkloadAsync(parent, workload).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateWorkloadTest() throws Exception {
+    Workload expectedResponse =
+        Workload.newBuilder()
+            .setName(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllResources(new ArrayList<Workload.ResourceInfo>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setBillingAccount("billingAccount708726578")
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -171,7 +223,7 @@ public class AssuredWorkloadsServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateWorkloadRequest actualRequest = (UpdateWorkloadRequest) actualRequests.get(0);
+    UpdateWorkloadRequest actualRequest = ((UpdateWorkloadRequest) actualRequests.get(0));
 
     Assert.assertEquals(workload, actualRequest.getWorkload());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
@@ -182,25 +234,22 @@ public class AssuredWorkloadsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateWorkloadExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssuredWorkloadsService.addException(exception);
 
     try {
       Workload workload = Workload.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateWorkload(workload, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteWorkloadTest() {
+  public void deleteWorkloadTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -210,9 +259,9 @@ public class AssuredWorkloadsServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteWorkloadRequest actualRequest = (DeleteWorkloadRequest) actualRequests.get(0);
+    DeleteWorkloadRequest actualRequest = ((DeleteWorkloadRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, WorkloadName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -220,36 +269,65 @@ public class AssuredWorkloadsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteWorkloadExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssuredWorkloadsService.addException(exception);
 
     try {
       WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-
       client.deleteWorkload(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getWorkloadTest() {
-    WorkloadName name2 = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-    String displayName = "displayName1615086568";
-    String billingAccount = "billingAccount-545871767";
-    String etag = "etag3123477";
-    String provisionedResourcesParent = "provisionedResourcesParent-158134097";
+  public void deleteWorkloadTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteWorkload(name);
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteWorkloadRequest actualRequest = ((DeleteWorkloadRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteWorkloadExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteWorkload(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWorkloadTest() throws Exception {
     Workload expectedResponse =
         Workload.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setBillingAccount(billingAccount)
-            .setEtag(etag)
-            .setProvisionedResourcesParent(provisionedResourcesParent)
+            .setName(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllResources(new ArrayList<Workload.ResourceInfo>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setBillingAccount("billingAccount708726578")
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -260,9 +338,9 @@ public class AssuredWorkloadsServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetWorkloadRequest actualRequest = (GetWorkloadRequest) actualRequests.get(0);
+    GetWorkloadRequest actualRequest = ((GetWorkloadRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, WorkloadName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -270,31 +348,71 @@ public class AssuredWorkloadsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getWorkloadExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssuredWorkloadsService.addException(exception);
 
     try {
       WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
-
       client.getWorkload(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listWorkloadsTest() {
-    String nextPageToken = "";
-    Workload workloadsElement = Workload.newBuilder().build();
-    List<Workload> workloads = Arrays.asList(workloadsElement);
+  public void getWorkloadTest2() throws Exception {
+    Workload expectedResponse =
+        Workload.newBuilder()
+            .setName(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllResources(new ArrayList<Workload.ResourceInfo>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setBillingAccount("billingAccount708726578")
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
+            .build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Workload actualResponse = client.getWorkload(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWorkloadRequest actualRequest = ((GetWorkloadRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getWorkloadExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getWorkload(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWorkloadsTest() throws Exception {
+    Workload responsesElement = Workload.newBuilder().build();
     ListWorkloadsResponse expectedResponse =
         ListWorkloadsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllWorkloads(workloads)
+            .setNextPageToken("")
+            .addAllWorkloads(Arrays.asList(responsesElement))
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -303,14 +421,15 @@ public class AssuredWorkloadsServiceClientTest {
     ListWorkloadsPagedResponse pagedListResponse = client.listWorkloads(parent);
 
     List<Workload> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getWorkloadsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListWorkloadsRequest actualRequest = (ListWorkloadsRequest) actualRequests.get(0);
+    ListWorkloadsRequest actualRequest = ((ListWorkloadsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -318,18 +437,60 @@ public class AssuredWorkloadsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listWorkloadsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssuredWorkloadsService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
-
       client.listWorkloads(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWorkloadsTest2() throws Exception {
+    Workload responsesElement = Workload.newBuilder().build();
+    ListWorkloadsResponse expectedResponse =
+        ListWorkloadsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWorkloads(Arrays.asList(responsesElement))
+            .build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListWorkloadsPagedResponse pagedListResponse = client.listWorkloads(parent);
+
+    List<Workload> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWorkloadsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWorkloadsRequest actualRequest = ((ListWorkloadsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWorkloadsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listWorkloads(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }
