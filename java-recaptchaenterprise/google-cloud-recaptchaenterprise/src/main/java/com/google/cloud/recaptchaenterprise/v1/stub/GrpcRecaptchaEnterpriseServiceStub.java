@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
@@ -45,16 +46,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for reCAPTCHA Enterprise API.
+ * gRPC stub implementation for the RecaptchaEnterpriseService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServiceStub {
-
   private static final MethodDescriptor<CreateAssessmentRequest, Assessment>
       createAssessmentMethodDescriptor =
           MethodDescriptor.<CreateAssessmentRequest, Assessment>newBuilder()
@@ -65,6 +64,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   ProtoUtils.marshaller(CreateAssessmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Assessment.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
       annotateAssessmentMethodDescriptor =
           MethodDescriptor.<AnnotateAssessmentRequest, AnnotateAssessmentResponse>newBuilder()
@@ -76,6 +76,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnnotateAssessmentResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateKeyRequest, Key> createKeyMethodDescriptor =
       MethodDescriptor.<CreateKeyRequest, Key>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -84,6 +85,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
           .setRequestMarshaller(ProtoUtils.marshaller(CreateKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListKeysRequest, ListKeysResponse>
       listKeysMethodDescriptor =
           MethodDescriptor.<ListKeysRequest, ListKeysResponse>newBuilder()
@@ -93,6 +95,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .setRequestMarshaller(ProtoUtils.marshaller(ListKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListKeysResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetKeyRequest, Key> getKeyMethodDescriptor =
       MethodDescriptor.<GetKeyRequest, Key>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -101,6 +104,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
           .setRequestMarshaller(ProtoUtils.marshaller(GetKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateKeyRequest, Key> updateKeyMethodDescriptor =
       MethodDescriptor.<UpdateKeyRequest, Key>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -109,6 +113,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteKeyRequest, Empty> deleteKeyMethodDescriptor =
       MethodDescriptor.<DeleteKeyRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -117,8 +122,6 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateAssessmentRequest, Assessment> createAssessmentCallable;
   private final UnaryCallable<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
@@ -130,6 +133,8 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   private final UnaryCallable<UpdateKeyRequest, Key> updateKeyCallable;
   private final UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcRecaptchaEnterpriseServiceStub create(
@@ -173,6 +178,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateAssessmentRequest, Assessment> createAssessmentTransportSettings =
         GrpcCallSettings.<CreateAssessmentRequest, Assessment>newBuilder()
@@ -294,7 +300,12 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
         callableFactory.createUnaryCallable(
             deleteKeyTransportSettings, settings.deleteKeySettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateAssessmentRequest, Assessment> createAssessmentCallable() {
@@ -310,12 +321,12 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
     return createKeyCallable;
   }
 
-  public UnaryCallable<ListKeysRequest, ListKeysPagedResponse> listKeysPagedCallable() {
-    return listKeysPagedCallable;
-  }
-
   public UnaryCallable<ListKeysRequest, ListKeysResponse> listKeysCallable() {
     return listKeysCallable;
+  }
+
+  public UnaryCallable<ListKeysRequest, ListKeysPagedResponse> listKeysPagedCallable() {
+    return listKeysPagedCallable;
   }
 
   public UnaryCallable<GetKeyRequest, Key> getKeyCallable() {

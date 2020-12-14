@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recaptchaenterprise.v1beta1.stub;
 
 import static com.google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client.ListKeysPagedResponse;
@@ -60,7 +61,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link RecaptchaEnterpriseServiceV1Beta1Stub}.
  *
@@ -78,22 +79,25 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createAssessment to 30 seconds:
  *
- * <pre>
- * <code>
- * RecaptchaEnterpriseServiceV1Beta1StubSettings.Builder recaptchaEnterpriseServiceV1Beta1SettingsBuilder =
- *     RecaptchaEnterpriseServiceV1Beta1StubSettings.newBuilder();
+ * <pre>{@code
+ * RecaptchaEnterpriseServiceV1Beta1StubSettings.Builder
+ *     recaptchaEnterpriseServiceV1Beta1SettingsBuilder =
+ *         RecaptchaEnterpriseServiceV1Beta1StubSettings.newBuilder();
  * recaptchaEnterpriseServiceV1Beta1SettingsBuilder
  *     .createAssessmentSettings()
  *     .setRetrySettings(
- *         recaptchaEnterpriseServiceV1Beta1SettingsBuilder.createAssessmentSettings().getRetrySettings().toBuilder()
+ *         recaptchaEnterpriseServiceV1Beta1SettingsBuilder
+ *             .createAssessmentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * RecaptchaEnterpriseServiceV1Beta1StubSettings recaptchaEnterpriseServiceV1Beta1Settings = recaptchaEnterpriseServiceV1Beta1SettingsBuilder.build();
- * </code>
- * </pre>
+ * RecaptchaEnterpriseServiceV1Beta1StubSettings recaptchaEnterpriseServiceV1Beta1Settings =
+ *     recaptchaEnterpriseServiceV1Beta1SettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class RecaptchaEnterpriseServiceV1Beta1StubSettings
     extends StubSettings<RecaptchaEnterpriseServiceV1Beta1StubSettings> {
   /** The default scopes of the service. */
@@ -109,6 +113,58 @@ public class RecaptchaEnterpriseServiceV1Beta1StubSettings
   private final UnaryCallSettings<GetKeyRequest, Key> getKeySettings;
   private final UnaryCallSettings<UpdateKeyRequest, Key> updateKeySettings;
   private final UnaryCallSettings<DeleteKeyRequest, Empty> deleteKeySettings;
+
+  private static final PagedListDescriptor<ListKeysRequest, ListKeysResponse, Key>
+      LIST_KEYS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListKeysRequest, ListKeysResponse, Key>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListKeysRequest injectToken(ListKeysRequest payload, String token) {
+              return ListKeysRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListKeysRequest injectPageSize(ListKeysRequest payload, int pageSize) {
+              return ListKeysRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListKeysRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListKeysResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Key> extractResources(ListKeysResponse payload) {
+              return payload.getKeysList() == null
+                  ? ImmutableList.<Key>of()
+                  : payload.getKeysList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>
+      LIST_KEYS_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>() {
+            @Override
+            public ApiFuture<ListKeysPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListKeysRequest, ListKeysResponse> callable,
+                ListKeysRequest request,
+                ApiCallContext context,
+                ApiFuture<ListKeysResponse> futureResponse) {
+              PageContext<ListKeysRequest, ListKeysResponse, Key> pageContext =
+                  PageContext.create(callable, LIST_KEYS_PAGE_STR_DESC, request, context);
+              return ListKeysPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createAssessment. */
   public UnaryCallSettings<CreateAssessmentRequest, Assessment> createAssessmentSettings() {
@@ -153,10 +209,10 @@ public class RecaptchaEnterpriseServiceV1Beta1StubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcRecaptchaEnterpriseServiceV1Beta1Stub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -227,63 +283,10 @@ public class RecaptchaEnterpriseServiceV1Beta1StubSettings
     deleteKeySettings = settingsBuilder.deleteKeySettings().build();
   }
 
-  private static final PagedListDescriptor<ListKeysRequest, ListKeysResponse, Key>
-      LIST_KEYS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListKeysRequest, ListKeysResponse, Key>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListKeysRequest injectToken(ListKeysRequest payload, String token) {
-              return ListKeysRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListKeysRequest injectPageSize(ListKeysRequest payload, int pageSize) {
-              return ListKeysRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListKeysRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListKeysResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Key> extractResources(ListKeysResponse payload) {
-              return payload.getKeysList() != null
-                  ? payload.getKeysList()
-                  : ImmutableList.<Key>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>
-      LIST_KEYS_PAGE_STR_FACT =
-          new PagedListResponseFactory<ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>() {
-            @Override
-            public ApiFuture<ListKeysPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListKeysRequest, ListKeysResponse> callable,
-                ListKeysRequest request,
-                ApiCallContext context,
-                ApiFuture<ListKeysResponse> futureResponse) {
-              PageContext<ListKeysRequest, ListKeysResponse, Key> pageContext =
-                  PageContext.create(callable, LIST_KEYS_PAGE_STR_DESC, request, context);
-              return ListKeysPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for RecaptchaEnterpriseServiceV1Beta1StubSettings. */
   public static class Builder
       extends StubSettings.Builder<RecaptchaEnterpriseServiceV1Beta1StubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateAssessmentRequest, Assessment>
         createAssessmentSettings;
     private final UnaryCallSettings.Builder<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
@@ -295,16 +298,14 @@ public class RecaptchaEnterpriseServiceV1Beta1StubSettings
     private final UnaryCallSettings.Builder<GetKeyRequest, Key> getKeySettings;
     private final UnaryCallSettings.Builder<UpdateKeyRequest, Key> updateKeySettings;
     private final UnaryCallSettings.Builder<DeleteKeyRequest, Empty> deleteKeySettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -313,8 +314,6 @@ public class RecaptchaEnterpriseServiceV1Beta1StubSettings
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(600000L))
@@ -322,29 +321,23 @@ public class RecaptchaEnterpriseServiceV1Beta1StubSettings
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("no_retry_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createAssessmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       annotateAssessmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listKeysSettings = PagedCallSettings.newBuilder(LIST_KEYS_PAGE_STR_FACT);
-
       getKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -356,57 +349,7 @@ public class RecaptchaEnterpriseServiceV1Beta1StubSettings
               getKeySettings,
               updateKeySettings,
               deleteKeySettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createAssessmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .annotateAssessmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listKeysSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(RecaptchaEnterpriseServiceV1Beta1StubSettings settings) {
@@ -431,7 +374,57 @@ public class RecaptchaEnterpriseServiceV1Beta1StubSettings
               deleteKeySettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createAssessmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .annotateAssessmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

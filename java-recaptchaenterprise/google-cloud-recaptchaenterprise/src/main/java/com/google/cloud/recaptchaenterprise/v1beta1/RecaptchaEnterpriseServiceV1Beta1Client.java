@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.recaptchaenterprise.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -47,24 +48,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service to determine the likelihood an event is legitimate.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Assessment assessment = Assessment.newBuilder().build();
- *   Assessment response = recaptchaEnterpriseServiceV1Beta1Client.createAssessment(parent, assessment);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the recaptchaEnterpriseServiceV1Beta1Client object to
+ * <p>Note: close() needs to be called on the RecaptchaEnterpriseServiceV1Beta1Client object to
  * clean up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
  *
@@ -93,30 +84,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RecaptchaEnterpriseServiceV1Beta1Settings recaptchaEnterpriseServiceV1Beta1Settings =
  *     RecaptchaEnterpriseServiceV1Beta1Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
  *     RecaptchaEnterpriseServiceV1Beta1Client.create(recaptchaEnterpriseServiceV1Beta1Settings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RecaptchaEnterpriseServiceV1Beta1Settings recaptchaEnterpriseServiceV1Beta1Settings =
  *     RecaptchaEnterpriseServiceV1Beta1Settings.newBuilder().setEndpoint(myEndpoint).build();
  * RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
  *     RecaptchaEnterpriseServiceV1Beta1Client.create(recaptchaEnterpriseServiceV1Beta1Settings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResource {
   private final RecaptchaEnterpriseServiceV1Beta1Settings settings;
   private final RecaptchaEnterpriseServiceV1Beta1Stub stub;
@@ -138,8 +127,8 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
 
   /**
    * Constructs an instance of RecaptchaEnterpriseServiceV1Beta1Client, using the given stub for
-   * making calls. This is for advanced usage - prefer to use
-   * RecaptchaEnterpriseServiceV1Beta1Settings}.
+   * making calls. This is for advanced usage - prefer using
+   * create(RecaptchaEnterpriseServiceV1Beta1Settings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RecaptchaEnterpriseServiceV1Beta1Client create(
@@ -174,19 +163,9 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an Assessment of the likelihood an event is legitimate.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Assessment assessment = Assessment.newBuilder().build();
-   *   Assessment response = recaptchaEnterpriseServiceV1Beta1Client.createAssessment(parent, assessment);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the project in which the assessment will be created, in the
    *     format "projects/{project_number}".
@@ -202,19 +181,9 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return createAssessment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an Assessment of the likelihood an event is legitimate.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Assessment assessment = Assessment.newBuilder().build();
-   *   Assessment response = recaptchaEnterpriseServiceV1Beta1Client.createAssessment(parent.toString(), assessment);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the project in which the assessment will be created, in the
    *     format "projects/{project_number}".
@@ -227,23 +196,9 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return createAssessment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an Assessment of the likelihood an event is legitimate.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Assessment assessment = Assessment.newBuilder().build();
-   *   CreateAssessmentRequest request = CreateAssessmentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setAssessment(assessment)
-   *     .build();
-   *   Assessment response = recaptchaEnterpriseServiceV1Beta1Client.createAssessment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -252,44 +207,20 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return createAssessmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an Assessment of the likelihood an event is legitimate.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Assessment assessment = Assessment.newBuilder().build();
-   *   CreateAssessmentRequest request = CreateAssessmentRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setAssessment(assessment)
-   *     .build();
-   *   ApiFuture&lt;Assessment&gt; future = recaptchaEnterpriseServiceV1Beta1Client.createAssessmentCallable().futureCall(request);
-   *   // Do something
-   *   Assessment response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateAssessmentRequest, Assessment> createAssessmentCallable() {
     return stub.createAssessmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Annotates a previously created Assessment to provide additional information on whether the
    * event turned out to be authentic or fradulent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   AssessmentName name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]");
-   *   AnnotateAssessmentRequest.Annotation annotation = AnnotateAssessmentRequest.Annotation.ANNOTATION_UNSPECIFIED;
-   *   AnnotateAssessmentResponse response = recaptchaEnterpriseServiceV1Beta1Client.annotateAssessment(name, annotation);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     "projects/{project_number}/assessments/{assessment_id}".
@@ -306,20 +237,10 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return annotateAssessment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Annotates a previously created Assessment to provide additional information on whether the
    * event turned out to be authentic or fradulent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   AssessmentName name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]");
-   *   AnnotateAssessmentRequest.Annotation annotation = AnnotateAssessmentRequest.Annotation.ANNOTATION_UNSPECIFIED;
-   *   AnnotateAssessmentResponse response = recaptchaEnterpriseServiceV1Beta1Client.annotateAssessment(name.toString(), annotation);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     "projects/{project_number}/assessments/{assessment_id}".
@@ -333,24 +254,10 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return annotateAssessment(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Annotates a previously created Assessment to provide additional information on whether the
    * event turned out to be authentic or fradulent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   AssessmentName name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]");
-   *   AnnotateAssessmentRequest.Annotation annotation = AnnotateAssessmentRequest.Annotation.ANNOTATION_UNSPECIFIED;
-   *   AnnotateAssessmentRequest request = AnnotateAssessmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setAnnotation(annotation)
-   *     .build();
-   *   AnnotateAssessmentResponse response = recaptchaEnterpriseServiceV1Beta1Client.annotateAssessment(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -359,49 +266,21 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return annotateAssessmentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Annotates a previously created Assessment to provide additional information on whether the
    * event turned out to be authentic or fradulent.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   AssessmentName name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]");
-   *   AnnotateAssessmentRequest.Annotation annotation = AnnotateAssessmentRequest.Annotation.ANNOTATION_UNSPECIFIED;
-   *   AnnotateAssessmentRequest request = AnnotateAssessmentRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setAnnotation(annotation)
-   *     .build();
-   *   ApiFuture&lt;AnnotateAssessmentResponse&gt; future = recaptchaEnterpriseServiceV1Beta1Client.annotateAssessmentCallable().futureCall(request);
-   *   // Do something
-   *   AnnotateAssessmentResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
       annotateAssessmentCallable() {
     return stub.annotateAssessmentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new reCAPTCHA Enterprise key.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Key key = Key.newBuilder().build();
-   *   CreateKeyRequest request = CreateKeyRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setKey(key)
-   *     .build();
-   *   Key response = recaptchaEnterpriseServiceV1Beta1Client.createKey(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -410,47 +289,19 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return createKeyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new reCAPTCHA Enterprise key.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Key key = Key.newBuilder().build();
-   *   CreateKeyRequest request = CreateKeyRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setKey(key)
-   *     .build();
-   *   ApiFuture&lt;Key&gt; future = recaptchaEnterpriseServiceV1Beta1Client.createKeyCallable().futureCall(request);
-   *   // Do something
-   *   Key response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateKeyRequest, Key> createKeyCallable() {
     return stub.createKeyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all keys that belong to a project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListKeysRequest request = ListKeysRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Key element : recaptchaEnterpriseServiceV1Beta1Client.listKeys(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -459,76 +310,29 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return listKeysPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all keys that belong to a project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListKeysRequest request = ListKeysRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListKeysPagedResponse&gt; future = recaptchaEnterpriseServiceV1Beta1Client.listKeysPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Key element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListKeysRequest, ListKeysPagedResponse> listKeysPagedCallable() {
     return stub.listKeysPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all keys that belong to a project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListKeysRequest request = ListKeysRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListKeysResponse response = recaptchaEnterpriseServiceV1Beta1Client.listKeysCallable().call(request);
-   *     for (Key element : response.getKeysList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListKeysRequest, ListKeysResponse> listKeysCallable() {
     return stub.listKeysCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified key.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   KeyName name = KeyName.of("[PROJECT]", "[KEY]");
-   *   GetKeyRequest request = GetKeyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Key response = recaptchaEnterpriseServiceV1Beta1Client.getKey(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -537,43 +341,19 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return getKeyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified key.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   KeyName name = KeyName.of("[PROJECT]", "[KEY]");
-   *   GetKeyRequest request = GetKeyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Key&gt; future = recaptchaEnterpriseServiceV1Beta1Client.getKeyCallable().futureCall(request);
-   *   // Do something
-   *   Key response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetKeyRequest, Key> getKeyCallable() {
     return stub.getKeyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified key.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   Key key = Key.newBuilder().build();
-   *   UpdateKeyRequest request = UpdateKeyRequest.newBuilder()
-   *     .setKey(key)
-   *     .build();
-   *   Key response = recaptchaEnterpriseServiceV1Beta1Client.updateKey(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -582,43 +362,19 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return updateKeyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified key.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   Key key = Key.newBuilder().build();
-   *   UpdateKeyRequest request = UpdateKeyRequest.newBuilder()
-   *     .setKey(key)
-   *     .build();
-   *   ApiFuture&lt;Key&gt; future = recaptchaEnterpriseServiceV1Beta1Client.updateKeyCallable().futureCall(request);
-   *   // Do something
-   *   Key response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateKeyRequest, Key> updateKeyCallable() {
     return stub.updateKeyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified key.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   KeyName name = KeyName.of("[PROJECT]", "[KEY]");
-   *   DeleteKeyRequest request = DeleteKeyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   recaptchaEnterpriseServiceV1Beta1Client.deleteKey(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -627,23 +383,11 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     deleteKeyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified key.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.create()) {
-   *   KeyName name = KeyName.of("[PROJECT]", "[KEY]");
-   *   DeleteKeyRequest request = DeleteKeyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = recaptchaEnterpriseServiceV1Beta1Client.deleteKeyCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable() {
     return stub.deleteKeyCallable();
