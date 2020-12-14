@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1beta;
 
 import static com.google.cloud.gaming.v1beta.RealmsServiceClient.ListRealmsPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link RealmsServiceClient}.
  *
@@ -53,23 +54,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getRealm to 30 seconds:
  *
- * <pre>
- * <code>
- * RealmsServiceSettings.Builder realmsServiceSettingsBuilder =
- *     RealmsServiceSettings.newBuilder();
+ * <pre>{@code
+ * RealmsServiceSettings.Builder realmsServiceSettingsBuilder = RealmsServiceSettings.newBuilder();
  * realmsServiceSettingsBuilder
  *     .getRealmSettings()
  *     .setRetrySettings(
- *         realmsServiceSettingsBuilder.getRealmSettings().getRetrySettings().toBuilder()
+ *         realmsServiceSettingsBuilder
+ *             .getRealmSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RealmsServiceSettings realmsServiceSettings = realmsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings> {
+
   /** Returns the object with the settings used for calls to listRealms. */
   public PagedCallSettings<ListRealmsRequest, ListRealmsResponse, ListRealmsPagedResponse>
       listRealmsSettings() {
@@ -87,8 +88,6 @@ public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings>
   }
 
   /** Returns the object with the settings used for calls to createRealm. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateRealmRequest, Realm, OperationMetadata>
       createRealmOperationSettings() {
     return ((RealmsServiceStubSettings) getStubSettings()).createRealmOperationSettings();
@@ -100,8 +99,6 @@ public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings>
   }
 
   /** Returns the object with the settings used for calls to deleteRealm. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteRealmRequest, Empty, OperationMetadata>
       deleteRealmOperationSettings() {
     return ((RealmsServiceStubSettings) getStubSettings()).deleteRealmOperationSettings();
@@ -113,8 +110,6 @@ public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings>
   }
 
   /** Returns the object with the settings used for calls to updateRealm. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateRealmRequest, Realm, OperationMetadata>
       updateRealmOperationSettings() {
     return ((RealmsServiceStubSettings) getStubSettings()).updateRealmOperationSettings();
@@ -186,16 +181,13 @@ public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings>
 
   /** Builder for RealmsServiceSettings. */
   public static class Builder extends ClientSettings.Builder<RealmsServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(RealmsServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(RealmsServiceStubSettings.newBuilder());
     }
 
     protected Builder(RealmsServiceSettings settings) {
@@ -206,11 +198,15 @@ public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings>
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(RealmsServiceStubSettings.newBuilder());
+    }
+
     public RealmsServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((RealmsServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -240,8 +236,6 @@ public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings>
     }
 
     /** Returns the builder for the settings used for calls to createRealm. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRealmRequest, Realm, OperationMetadata>
         createRealmOperationSettings() {
       return getStubSettingsBuilder().createRealmOperationSettings();
@@ -253,8 +247,6 @@ public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteRealm. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRealmRequest, Empty, OperationMetadata>
         deleteRealmOperationSettings() {
       return getStubSettingsBuilder().deleteRealmOperationSettings();
@@ -266,8 +258,6 @@ public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateRealm. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateRealmRequest, Realm, OperationMetadata>
         updateRealmOperationSettings() {
       return getStubSettingsBuilder().updateRealmOperationSettings();

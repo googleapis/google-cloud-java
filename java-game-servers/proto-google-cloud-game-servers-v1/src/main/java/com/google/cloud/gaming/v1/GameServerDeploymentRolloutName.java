@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class GameServerDeploymentRolloutName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_DEPLOYMENT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String deployment;
+
+  @Deprecated
+  protected GameServerDeploymentRolloutName() {
+    project = null;
+    location = null;
+    deployment = null;
+  }
+
+  private GameServerDeploymentRolloutName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    deployment = Preconditions.checkNotNull(builder.getDeployment());
+  }
 
   public String getProject() {
     return project;
@@ -58,12 +70,6 @@ public class GameServerDeploymentRolloutName implements ResourceName {
     return new Builder(this);
   }
 
-  private GameServerDeploymentRolloutName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    deployment = Preconditions.checkNotNull(builder.getDeployment());
-  }
-
   public static GameServerDeploymentRolloutName of(
       String project, String location, String deployment) {
     return newBuilder().setProject(project).setLocation(location).setDeployment(deployment).build();
@@ -83,7 +89,7 @@ public class GameServerDeploymentRolloutName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_DEPLOYMENT.validatedMatch(
             formattedString,
             "GameServerDeploymentRolloutName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("deployment"));
@@ -98,7 +104,7 @@ public class GameServerDeploymentRolloutName implements ResourceName {
   }
 
   public static List<String> toStringList(List<GameServerDeploymentRolloutName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (GameServerDeploymentRolloutName value : values) {
       if (value == null) {
         list.add("");
@@ -110,17 +116,24 @@ public class GameServerDeploymentRolloutName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_DEPLOYMENT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("deployment", deployment);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (deployment != null) {
+            fieldMapBuilder.put("deployment", deployment);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -134,16 +147,45 @@ public class GameServerDeploymentRolloutName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_DEPLOYMENT.instantiate(
         "project", project, "location", location, "deployment", deployment);
   }
 
-  /** Builder for GameServerDeploymentRolloutName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      GameServerDeploymentRolloutName that = ((GameServerDeploymentRolloutName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.deployment, that.deployment);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(deployment);
+    return h;
+  }
+
+  /**
+   * Builder for projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String deployment;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -172,8 +214,6 @@ public class GameServerDeploymentRolloutName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(GameServerDeploymentRolloutName gameServerDeploymentRolloutName) {
       project = gameServerDeploymentRolloutName.project;
       location = gameServerDeploymentRolloutName.location;
@@ -183,31 +223,5 @@ public class GameServerDeploymentRolloutName implements ResourceName {
     public GameServerDeploymentRolloutName build() {
       return new GameServerDeploymentRolloutName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof GameServerDeploymentRolloutName) {
-      GameServerDeploymentRolloutName that = (GameServerDeploymentRolloutName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.deployment.equals(that.deployment));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= deployment.hashCode();
-    return h;
   }
 }

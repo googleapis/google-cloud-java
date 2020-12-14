@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1beta;
 
 import static com.google.cloud.gaming.v1beta.GameServerDeploymentsServiceClient.ListGameServerDeploymentsPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link GameServerDeploymentsServiceClient}.
  *
@@ -53,24 +54,26 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getGameServerDeployment to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GameServerDeploymentsServiceSettings.Builder gameServerDeploymentsServiceSettingsBuilder =
  *     GameServerDeploymentsServiceSettings.newBuilder();
  * gameServerDeploymentsServiceSettingsBuilder
  *     .getGameServerDeploymentSettings()
  *     .setRetrySettings(
- *         gameServerDeploymentsServiceSettingsBuilder.getGameServerDeploymentSettings().getRetrySettings().toBuilder()
+ *         gameServerDeploymentsServiceSettingsBuilder
+ *             .getGameServerDeploymentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * GameServerDeploymentsServiceSettings gameServerDeploymentsServiceSettings = gameServerDeploymentsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * GameServerDeploymentsServiceSettings gameServerDeploymentsServiceSettings =
+ *     gameServerDeploymentsServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class GameServerDeploymentsServiceSettings
     extends ClientSettings<GameServerDeploymentsServiceSettings> {
+
   /** Returns the object with the settings used for calls to listGameServerDeployments. */
   public PagedCallSettings<
           ListGameServerDeploymentsRequest,
@@ -96,8 +99,6 @@ public class GameServerDeploymentsServiceSettings
   }
 
   /** Returns the object with the settings used for calls to createGameServerDeployment. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           CreateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
       createGameServerDeploymentOperationSettings() {
@@ -113,8 +114,6 @@ public class GameServerDeploymentsServiceSettings
   }
 
   /** Returns the object with the settings used for calls to deleteGameServerDeployment. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteGameServerDeploymentRequest, Empty, OperationMetadata>
       deleteGameServerDeploymentOperationSettings() {
     return ((GameServerDeploymentsServiceStubSettings) getStubSettings())
@@ -129,8 +128,6 @@ public class GameServerDeploymentsServiceSettings
   }
 
   /** Returns the object with the settings used for calls to updateGameServerDeployment. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           UpdateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
       updateGameServerDeploymentOperationSettings() {
@@ -153,8 +150,6 @@ public class GameServerDeploymentsServiceSettings
   }
 
   /** Returns the object with the settings used for calls to updateGameServerDeploymentRollout. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           UpdateGameServerDeploymentRolloutRequest, GameServerDeployment, OperationMetadata>
       updateGameServerDeploymentRolloutOperationSettings() {
@@ -238,16 +233,13 @@ public class GameServerDeploymentsServiceSettings
   /** Builder for GameServerDeploymentsServiceSettings. */
   public static class Builder
       extends ClientSettings.Builder<GameServerDeploymentsServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(GameServerDeploymentsServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(GameServerDeploymentsServiceStubSettings.newBuilder());
     }
 
     protected Builder(GameServerDeploymentsServiceSettings settings) {
@@ -258,11 +250,15 @@ public class GameServerDeploymentsServiceSettings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(GameServerDeploymentsServiceStubSettings.newBuilder());
+    }
+
     public GameServerDeploymentsServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((GameServerDeploymentsServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -297,8 +293,6 @@ public class GameServerDeploymentsServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to createGameServerDeployment. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
         createGameServerDeploymentOperationSettings() {
@@ -312,8 +306,6 @@ public class GameServerDeploymentsServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteGameServerDeployment. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteGameServerDeploymentRequest, Empty, OperationMetadata>
         deleteGameServerDeploymentOperationSettings() {
@@ -327,8 +319,6 @@ public class GameServerDeploymentsServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to updateGameServerDeployment. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
         updateGameServerDeploymentOperationSettings() {
@@ -349,8 +339,6 @@ public class GameServerDeploymentsServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to updateGameServerDeploymentRollout. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateGameServerDeploymentRolloutRequest, GameServerDeployment, OperationMetadata>
         updateGameServerDeploymentRolloutOperationSettings() {

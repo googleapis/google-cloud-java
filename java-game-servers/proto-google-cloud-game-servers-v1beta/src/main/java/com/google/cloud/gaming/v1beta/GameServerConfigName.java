@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class GameServerConfigName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_DEPLOYMENT_CONFIG =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String deployment;
   private final String config;
+
+  @Deprecated
+  protected GameServerConfigName() {
+    project = null;
+    location = null;
+    deployment = null;
+    config = null;
+  }
+
+  private GameServerConfigName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    deployment = Preconditions.checkNotNull(builder.getDeployment());
+    config = Preconditions.checkNotNull(builder.getConfig());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class GameServerConfigName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private GameServerConfigName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    deployment = Preconditions.checkNotNull(builder.getDeployment());
-    config = Preconditions.checkNotNull(builder.getConfig());
   }
 
   public static GameServerConfigName of(
@@ -95,7 +102,7 @@ public class GameServerConfigName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_DEPLOYMENT_CONFIG.validatedMatch(
             formattedString, "GameServerConfigName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -113,7 +120,7 @@ public class GameServerConfigName implements ResourceName {
   }
 
   public static List<String> toStringList(List<GameServerConfigName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (GameServerConfigName value : values) {
       if (value == null) {
         list.add("");
@@ -125,18 +132,27 @@ public class GameServerConfigName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_DEPLOYMENT_CONFIG.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("deployment", deployment);
-          fieldMapBuilder.put("config", config);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (deployment != null) {
+            fieldMapBuilder.put("deployment", deployment);
+          }
+          if (config != null) {
+            fieldMapBuilder.put("config", config);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -150,17 +166,50 @@ public class GameServerConfigName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_DEPLOYMENT_CONFIG.instantiate(
         "project", project, "location", location, "deployment", deployment, "config", config);
   }
 
-  /** Builder for GameServerConfigName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      GameServerConfigName that = ((GameServerConfigName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.deployment, that.deployment)
+          && Objects.equals(this.config, that.config);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(deployment);
+    h *= 1000003;
+    h ^= Objects.hashCode(config);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String deployment;
     private String config;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -198,8 +247,6 @@ public class GameServerConfigName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(GameServerConfigName gameServerConfigName) {
       project = gameServerConfigName.project;
       location = gameServerConfigName.location;
@@ -210,34 +257,5 @@ public class GameServerConfigName implements ResourceName {
     public GameServerConfigName build() {
       return new GameServerConfigName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof GameServerConfigName) {
-      GameServerConfigName that = (GameServerConfigName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.deployment.equals(that.deployment))
-          && (this.config.equals(that.config));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= deployment.hashCode();
-    h *= 1000003;
-    h ^= config.hashCode();
-    return h;
   }
 }

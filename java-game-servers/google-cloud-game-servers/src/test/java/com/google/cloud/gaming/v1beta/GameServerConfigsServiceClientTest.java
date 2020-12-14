@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1beta;
 
 import static com.google.cloud.gaming.v1beta.GameServerConfigsServiceClient.ListGameServerConfigsPagedResponse;
@@ -30,13 +31,16 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -44,42 +48,32 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class GameServerConfigsServiceClientTest {
-  private static MockGameServerClustersService mockGameServerClustersService;
+  private static MockServiceHelper mockServiceHelper;
   private static MockGameServerConfigsService mockGameServerConfigsService;
-  private static MockGameServerDeploymentsService mockGameServerDeploymentsService;
-  private static MockRealmsService mockRealmsService;
-  private static MockServiceHelper serviceHelper;
   private GameServerConfigsServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockGameServerClustersService = new MockGameServerClustersService();
     mockGameServerConfigsService = new MockGameServerConfigsService();
-    mockGameServerDeploymentsService = new MockGameServerDeploymentsService();
-    mockRealmsService = new MockRealmsService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockGameServerClustersService,
-                mockGameServerConfigsService,
-                mockGameServerDeploymentsService,
-                mockRealmsService));
-    serviceHelper.start();
+            Arrays.<MockGrpcService>asList(mockGameServerConfigsService));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     GameServerConfigsServiceSettings settings =
         GameServerConfigsServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -94,15 +88,12 @@ public class GameServerConfigsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listGameServerConfigsTest() {
-    String nextPageToken = "";
-    GameServerConfig gameServerConfigsElement = GameServerConfig.newBuilder().build();
-    List<GameServerConfig> gameServerConfigs = Arrays.asList(gameServerConfigsElement);
+  public void listGameServerConfigsTest() throws Exception {
+    GameServerConfig responsesElement = GameServerConfig.newBuilder().build();
     ListGameServerConfigsResponse expectedResponse =
         ListGameServerConfigsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllGameServerConfigs(gameServerConfigs)
+            .setNextPageToken("")
+            .addAllGameServerConfigs(Arrays.asList(responsesElement))
             .build();
     mockGameServerConfigsService.addResponse(expectedResponse);
 
@@ -112,15 +103,16 @@ public class GameServerConfigsServiceClientTest {
     ListGameServerConfigsPagedResponse pagedListResponse = client.listGameServerConfigs(parent);
 
     List<GameServerConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getGameServerConfigsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockGameServerConfigsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListGameServerConfigsRequest actualRequest =
-        (ListGameServerConfigsRequest) actualRequests.get(0);
+        ((ListGameServerConfigsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, GameServerDeploymentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -128,30 +120,79 @@ public class GameServerConfigsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listGameServerConfigsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGameServerConfigsService.addException(exception);
 
     try {
       GameServerDeploymentName parent =
           GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-
       client.listGameServerConfigs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getGameServerConfigTest() {
-    GameServerConfigName name2 =
-        GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-    String description = "description-1724546052";
+  public void listGameServerConfigsTest2() throws Exception {
+    GameServerConfig responsesElement = GameServerConfig.newBuilder().build();
+    ListGameServerConfigsResponse expectedResponse =
+        ListGameServerConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGameServerConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockGameServerConfigsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGameServerConfigsPagedResponse pagedListResponse = client.listGameServerConfigs(parent);
+
+    List<GameServerConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGameServerConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockGameServerConfigsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGameServerConfigsRequest actualRequest =
+        ((ListGameServerConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGameServerConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGameServerConfigsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGameServerConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGameServerConfigTest() throws Exception {
     GameServerConfig expectedResponse =
-        GameServerConfig.newBuilder().setName(name2.toString()).setDescription(description).build();
+        GameServerConfig.newBuilder()
+            .setName(
+                GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllFleetConfigs(new ArrayList<FleetConfig>())
+            .addAllScalingConfigs(new ArrayList<ScalingConfig>())
+            .setDescription("description-1724546052")
+            .build();
     mockGameServerConfigsService.addResponse(expectedResponse);
 
     GameServerConfigName name =
@@ -162,9 +203,9 @@ public class GameServerConfigsServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockGameServerConfigsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetGameServerConfigRequest actualRequest = (GetGameServerConfigRequest) actualRequests.get(0);
+    GetGameServerConfigRequest actualRequest = ((GetGameServerConfigRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, GameServerConfigName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -172,30 +213,80 @@ public class GameServerConfigsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getGameServerConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGameServerConfigsService.addException(exception);
 
     try {
       GameServerConfigName name =
           GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-
       client.getGameServerConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createGameServerConfigTest() throws Exception {
-    GameServerConfigName name =
-        GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-    String description = "description-1724546052";
+  public void getGameServerConfigTest2() throws Exception {
     GameServerConfig expectedResponse =
-        GameServerConfig.newBuilder().setName(name.toString()).setDescription(description).build();
+        GameServerConfig.newBuilder()
+            .setName(
+                GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllFleetConfigs(new ArrayList<FleetConfig>())
+            .addAllScalingConfigs(new ArrayList<ScalingConfig>())
+            .setDescription("description-1724546052")
+            .build();
+    mockGameServerConfigsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GameServerConfig actualResponse = client.getGameServerConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGameServerConfigsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGameServerConfigRequest actualRequest = ((GetGameServerConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGameServerConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGameServerConfigsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGameServerConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGameServerConfigTest() throws Exception {
+    GameServerConfig expectedResponse =
+        GameServerConfig.newBuilder()
+            .setName(
+                GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllFleetConfigs(new ArrayList<FleetConfig>())
+            .addAllScalingConfigs(new ArrayList<ScalingConfig>())
+            .setDescription("description-1724546052")
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("createGameServerConfigTest")
@@ -215,9 +306,9 @@ public class GameServerConfigsServiceClientTest {
     List<AbstractMessage> actualRequests = mockGameServerConfigsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateGameServerConfigRequest actualRequest =
-        (CreateGameServerConfigRequest) actualRequests.get(0);
+        ((CreateGameServerConfigRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, GameServerDeploymentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(gameServerConfig, actualRequest.getGameServerConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -226,27 +317,83 @@ public class GameServerConfigsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createGameServerConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGameServerConfigsService.addException(exception);
 
     try {
       GameServerDeploymentName parent =
           GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
       GameServerConfig gameServerConfig = GameServerConfig.newBuilder().build();
-
       client.createGameServerConfigAsync(parent, gameServerConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
+  public void createGameServerConfigTest2() throws Exception {
+    GameServerConfig expectedResponse =
+        GameServerConfig.newBuilder()
+            .setName(
+                GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllFleetConfigs(new ArrayList<FleetConfig>())
+            .addAllScalingConfigs(new ArrayList<ScalingConfig>())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGameServerConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockGameServerConfigsService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    GameServerConfig gameServerConfig = GameServerConfig.newBuilder().build();
+
+    GameServerConfig actualResponse =
+        client.createGameServerConfigAsync(parent, gameServerConfig).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGameServerConfigsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGameServerConfigRequest actualRequest =
+        ((CreateGameServerConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(gameServerConfig, actualRequest.getGameServerConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGameServerConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGameServerConfigsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      GameServerConfig gameServerConfig = GameServerConfig.newBuilder().build();
+      client.createGameServerConfigAsync(parent, gameServerConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteGameServerConfigTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -260,15 +407,14 @@ public class GameServerConfigsServiceClientTest {
     GameServerConfigName name =
         GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
 
-    Empty actualResponse = client.deleteGameServerConfigAsync(name).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    client.deleteGameServerConfigAsync(name).get();
 
     List<AbstractMessage> actualRequests = mockGameServerConfigsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteGameServerConfigRequest actualRequest =
-        (DeleteGameServerConfigRequest) actualRequests.get(0);
+        ((DeleteGameServerConfigRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, GameServerConfigName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -276,20 +422,61 @@ public class GameServerConfigsServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteGameServerConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGameServerConfigsService.addException(exception);
 
     try {
       GameServerConfigName name =
           GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-
       client.deleteGameServerConfigAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGameServerConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGameServerConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockGameServerConfigsService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteGameServerConfigAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockGameServerConfigsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGameServerConfigRequest actualRequest =
+        ((DeleteGameServerConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGameServerConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGameServerConfigsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteGameServerConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }

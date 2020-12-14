@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1beta.stub;
 
 import static com.google.cloud.gaming.v1beta.RealmsServiceClient.ListRealmsPagedResponse;
@@ -64,7 +65,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link RealmsServiceStub}.
  *
@@ -81,22 +82,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getRealm to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RealmsServiceStubSettings.Builder realmsServiceSettingsBuilder =
  *     RealmsServiceStubSettings.newBuilder();
  * realmsServiceSettingsBuilder
  *     .getRealmSettings()
  *     .setRetrySettings(
- *         realmsServiceSettingsBuilder.getRealmSettings().getRetrySettings().toBuilder()
+ *         realmsServiceSettingsBuilder
+ *             .getRealmSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RealmsServiceStubSettings realmsServiceSettings = realmsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -117,6 +119,59 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
   private final UnaryCallSettings<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
       previewRealmUpdateSettings;
 
+  private static final PagedListDescriptor<ListRealmsRequest, ListRealmsResponse, Realm>
+      LIST_REALMS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListRealmsRequest, ListRealmsResponse, Realm>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRealmsRequest injectToken(ListRealmsRequest payload, String token) {
+              return ListRealmsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRealmsRequest injectPageSize(ListRealmsRequest payload, int pageSize) {
+              return ListRealmsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRealmsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRealmsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Realm> extractResources(ListRealmsResponse payload) {
+              return payload.getRealmsList() == null
+                  ? ImmutableList.<Realm>of()
+                  : payload.getRealmsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRealmsRequest, ListRealmsResponse, ListRealmsPagedResponse>
+      LIST_REALMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRealmsRequest, ListRealmsResponse, ListRealmsPagedResponse>() {
+            @Override
+            public ApiFuture<ListRealmsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRealmsRequest, ListRealmsResponse> callable,
+                ListRealmsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRealmsResponse> futureResponse) {
+              PageContext<ListRealmsRequest, ListRealmsResponse, Realm> pageContext =
+                  PageContext.create(callable, LIST_REALMS_PAGE_STR_DESC, request, context);
+              return ListRealmsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listRealms. */
   public PagedCallSettings<ListRealmsRequest, ListRealmsResponse, ListRealmsPagedResponse>
       listRealmsSettings() {
@@ -134,7 +189,6 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
   }
 
   /** Returns the object with the settings used for calls to createRealm. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateRealmRequest, Realm, OperationMetadata>
       createRealmOperationSettings() {
     return createRealmOperationSettings;
@@ -146,7 +200,6 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
   }
 
   /** Returns the object with the settings used for calls to deleteRealm. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteRealmRequest, Empty, OperationMetadata>
       deleteRealmOperationSettings() {
     return deleteRealmOperationSettings;
@@ -158,7 +211,6 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
   }
 
   /** Returns the object with the settings used for calls to updateRealm. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateRealmRequest, Realm, OperationMetadata>
       updateRealmOperationSettings() {
     return updateRealmOperationSettings;
@@ -176,10 +228,10 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcRealmsServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -250,63 +302,9 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
     previewRealmUpdateSettings = settingsBuilder.previewRealmUpdateSettings().build();
   }
 
-  private static final PagedListDescriptor<ListRealmsRequest, ListRealmsResponse, Realm>
-      LIST_REALMS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListRealmsRequest, ListRealmsResponse, Realm>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListRealmsRequest injectToken(ListRealmsRequest payload, String token) {
-              return ListRealmsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListRealmsRequest injectPageSize(ListRealmsRequest payload, int pageSize) {
-              return ListRealmsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListRealmsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListRealmsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Realm> extractResources(ListRealmsResponse payload) {
-              return payload.getRealmsList() != null
-                  ? payload.getRealmsList()
-                  : ImmutableList.<Realm>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListRealmsRequest, ListRealmsResponse, ListRealmsPagedResponse>
-      LIST_REALMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListRealmsRequest, ListRealmsResponse, ListRealmsPagedResponse>() {
-            @Override
-            public ApiFuture<ListRealmsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListRealmsRequest, ListRealmsResponse> callable,
-                ListRealmsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListRealmsResponse> futureResponse) {
-              PageContext<ListRealmsRequest, ListRealmsResponse, Realm> pageContext =
-                  PageContext.create(callable, LIST_REALMS_PAGE_STR_DESC, request, context);
-              return ListRealmsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for RealmsServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<RealmsServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListRealmsRequest, ListRealmsResponse, ListRealmsPagedResponse>
         listRealmsSettings;
@@ -322,7 +320,6 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
         updateRealmOperationSettings;
     private final UnaryCallSettings.Builder<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
         previewRealmUpdateSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -330,11 +327,8 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -355,9 +349,7 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -366,40 +358,24 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(120000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(120000L))
-              .setTotalTimeout(Duration.ofMillis(120000L))
-              .build();
-      definitions.put("no_retry_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listRealmsSettings = PagedCallSettings.newBuilder(LIST_REALMS_PAGE_STR_FACT);
-
       getRealmSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createRealmSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createRealmOperationSettings = OperationCallSettings.newBuilder();
-
       deleteRealmSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteRealmOperationSettings = OperationCallSettings.newBuilder();
-
       updateRealmSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateRealmOperationSettings = OperationCallSettings.newBuilder();
-
       previewRealmUpdateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -410,118 +386,7 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
               deleteRealmSettings,
               updateRealmSettings,
               previewRealmUpdateSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listRealmsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getRealmSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createRealmSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteRealmSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateRealmSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .previewRealmUpdateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-      builder
-          .createRealmOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<CreateRealmRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Realm.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteRealmOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<DeleteRealmRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .updateRealmOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<UpdateRealmRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Realm.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(RealmsServiceStubSettings settings) {
@@ -547,7 +412,121 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
               previewRealmUpdateSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listRealmsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getRealmSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createRealmSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteRealmSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateRealmSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .previewRealmUpdateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createRealmOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CreateRealmRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Realm.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteRealmOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteRealmRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateRealmOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<UpdateRealmRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Realm.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

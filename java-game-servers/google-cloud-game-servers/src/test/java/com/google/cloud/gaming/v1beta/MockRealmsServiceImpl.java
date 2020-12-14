@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1beta;
 
 import com.google.api.core.BetaApi;
@@ -24,9 +25,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockRealmsServiceImpl extends RealmsServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -63,10 +65,10 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListRealmsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListRealmsResponse) response);
+      responseObserver.onNext(((ListRealmsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -77,10 +79,10 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Realm) {
       requests.add(request);
-      responseObserver.onNext((Realm) response);
+      responseObserver.onNext(((Realm) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -91,10 +93,10 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -105,10 +107,10 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -119,10 +121,10 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -135,10 +137,10 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
     Object response = responses.remove();
     if (response instanceof PreviewRealmUpdateResponse) {
       requests.add(request);
-      responseObserver.onNext((PreviewRealmUpdateResponse) response);
+      responseObserver.onNext(((PreviewRealmUpdateResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

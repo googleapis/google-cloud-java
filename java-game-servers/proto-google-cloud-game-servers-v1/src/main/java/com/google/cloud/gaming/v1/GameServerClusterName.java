@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class GameServerClusterName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_REALM_CLUSTER =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String realm;
   private final String cluster;
+
+  @Deprecated
+  protected GameServerClusterName() {
+    project = null;
+    location = null;
+    realm = null;
+    cluster = null;
+  }
+
+  private GameServerClusterName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    realm = Preconditions.checkNotNull(builder.getRealm());
+    cluster = Preconditions.checkNotNull(builder.getCluster());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class GameServerClusterName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private GameServerClusterName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    realm = Preconditions.checkNotNull(builder.getRealm());
-    cluster = Preconditions.checkNotNull(builder.getCluster());
   }
 
   public static GameServerClusterName of(
@@ -95,7 +102,7 @@ public class GameServerClusterName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_REALM_CLUSTER.validatedMatch(
             formattedString, "GameServerClusterName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -113,7 +120,7 @@ public class GameServerClusterName implements ResourceName {
   }
 
   public static List<String> toStringList(List<GameServerClusterName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (GameServerClusterName value : values) {
       if (value == null) {
         list.add("");
@@ -125,18 +132,27 @@ public class GameServerClusterName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_REALM_CLUSTER.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("realm", realm);
-          fieldMapBuilder.put("cluster", cluster);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (realm != null) {
+            fieldMapBuilder.put("realm", realm);
+          }
+          if (cluster != null) {
+            fieldMapBuilder.put("cluster", cluster);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -150,17 +166,50 @@ public class GameServerClusterName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_REALM_CLUSTER.instantiate(
         "project", project, "location", location, "realm", realm, "cluster", cluster);
   }
 
-  /** Builder for GameServerClusterName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      GameServerClusterName that = ((GameServerClusterName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.realm, that.realm)
+          && Objects.equals(this.cluster, that.cluster);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(realm);
+    h *= 1000003;
+    h ^= Objects.hashCode(cluster);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String realm;
     private String cluster;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -198,8 +247,6 @@ public class GameServerClusterName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(GameServerClusterName gameServerClusterName) {
       project = gameServerClusterName.project;
       location = gameServerClusterName.location;
@@ -210,34 +257,5 @@ public class GameServerClusterName implements ResourceName {
     public GameServerClusterName build() {
       return new GameServerClusterName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof GameServerClusterName) {
-      GameServerClusterName that = (GameServerClusterName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.realm.equals(that.realm))
-          && (this.cluster.equals(that.cluster));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= realm.hashCode();
-    h *= 1000003;
-    h ^= cluster.hashCode();
-    return h;
   }
 }

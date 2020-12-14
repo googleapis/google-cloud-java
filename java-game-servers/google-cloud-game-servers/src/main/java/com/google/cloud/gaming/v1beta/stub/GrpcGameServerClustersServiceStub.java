@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1beta.stub;
 
 import static com.google.cloud.gaming.v1beta.GameServerClustersServiceClient.ListGameServerClustersPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -51,16 +51,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Game Services API.
+ * gRPC stub implementation for the GameServerClustersService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcGameServerClustersServiceStub extends GameServerClustersServiceStub {
-
   private static final MethodDescriptor<
           ListGameServerClustersRequest, ListGameServerClustersResponse>
       listGameServerClustersMethodDescriptor =
@@ -74,6 +72,7 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGameServerClustersResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetGameServerClusterRequest, GameServerCluster>
       getGameServerClusterMethodDescriptor =
           MethodDescriptor.<GetGameServerClusterRequest, GameServerCluster>newBuilder()
@@ -84,6 +83,7 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                   ProtoUtils.marshaller(GetGameServerClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GameServerCluster.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateGameServerClusterRequest, Operation>
       createGameServerClusterMethodDescriptor =
           MethodDescriptor.<CreateGameServerClusterRequest, Operation>newBuilder()
@@ -94,6 +94,7 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                   ProtoUtils.marshaller(CreateGameServerClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
       previewCreateGameServerClusterMethodDescriptor =
@@ -109,6 +110,7 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                   ProtoUtils.marshaller(
                       PreviewCreateGameServerClusterResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteGameServerClusterRequest, Operation>
       deleteGameServerClusterMethodDescriptor =
           MethodDescriptor.<DeleteGameServerClusterRequest, Operation>newBuilder()
@@ -119,6 +121,7 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                   ProtoUtils.marshaller(DeleteGameServerClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
       previewDeleteGameServerClusterMethodDescriptor =
@@ -134,6 +137,7 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                   ProtoUtils.marshaller(
                       PreviewDeleteGameServerClusterResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateGameServerClusterRequest, Operation>
       updateGameServerClusterMethodDescriptor =
           MethodDescriptor.<UpdateGameServerClusterRequest, Operation>newBuilder()
@@ -144,6 +148,7 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                   ProtoUtils.marshaller(UpdateGameServerClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
       previewUpdateGameServerClusterMethodDescriptor =
@@ -159,9 +164,6 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
                   ProtoUtils.marshaller(
                       PreviewUpdateGameServerClusterResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListGameServerClustersRequest, ListGameServerClustersResponse>
       listGameServerClustersCallable;
@@ -193,6 +195,8 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
           PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
       previewUpdateGameServerClusterCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcGameServerClustersServiceStub create(
@@ -388,7 +392,7 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
             createGameServerClusterTransportSettings,
             settings.createGameServerClusterOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.previewCreateGameServerClusterCallable =
         callableFactory.createUnaryCallable(
             previewCreateGameServerClusterTransportSettings,
@@ -404,7 +408,7 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
             deleteGameServerClusterTransportSettings,
             settings.deleteGameServerClusterOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.previewDeleteGameServerClusterCallable =
         callableFactory.createUnaryCallable(
             previewDeleteGameServerClusterTransportSettings,
@@ -420,24 +424,19 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
             updateGameServerClusterTransportSettings,
             settings.updateGameServerClusterOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.previewUpdateGameServerClusterCallable =
         callableFactory.createUnaryCallable(
             previewUpdateGameServerClusterTransportSettings,
             settings.previewUpdateGameServerClusterSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<ListGameServerClustersRequest, ListGameServerClustersPagedResponse>
-      listGameServerClustersPagedCallable() {
-    return listGameServerClustersPagedCallable;
   }
 
   public UnaryCallable<ListGameServerClustersRequest, ListGameServerClustersResponse>
@@ -445,20 +444,24 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
     return listGameServerClustersCallable;
   }
 
+  public UnaryCallable<ListGameServerClustersRequest, ListGameServerClustersPagedResponse>
+      listGameServerClustersPagedCallable() {
+    return listGameServerClustersPagedCallable;
+  }
+
   public UnaryCallable<GetGameServerClusterRequest, GameServerCluster>
       getGameServerClusterCallable() {
     return getGameServerClusterCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateGameServerClusterRequest, GameServerCluster, OperationMetadata>
-      createGameServerClusterOperationCallable() {
-    return createGameServerClusterOperationCallable;
-  }
-
   public UnaryCallable<CreateGameServerClusterRequest, Operation>
       createGameServerClusterCallable() {
     return createGameServerClusterCallable;
+  }
+
+  public OperationCallable<CreateGameServerClusterRequest, GameServerCluster, OperationMetadata>
+      createGameServerClusterOperationCallable() {
+    return createGameServerClusterOperationCallable;
   }
 
   public UnaryCallable<
@@ -467,15 +470,14 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
     return previewCreateGameServerClusterCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteGameServerClusterRequest, Empty, OperationMetadata>
-      deleteGameServerClusterOperationCallable() {
-    return deleteGameServerClusterOperationCallable;
-  }
-
   public UnaryCallable<DeleteGameServerClusterRequest, Operation>
       deleteGameServerClusterCallable() {
     return deleteGameServerClusterCallable;
+  }
+
+  public OperationCallable<DeleteGameServerClusterRequest, Empty, OperationMetadata>
+      deleteGameServerClusterOperationCallable() {
+    return deleteGameServerClusterOperationCallable;
   }
 
   public UnaryCallable<
@@ -484,15 +486,14 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
     return previewDeleteGameServerClusterCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateGameServerClusterRequest, GameServerCluster, OperationMetadata>
-      updateGameServerClusterOperationCallable() {
-    return updateGameServerClusterOperationCallable;
-  }
-
   public UnaryCallable<UpdateGameServerClusterRequest, Operation>
       updateGameServerClusterCallable() {
     return updateGameServerClusterCallable;
+  }
+
+  public OperationCallable<UpdateGameServerClusterRequest, GameServerCluster, OperationMetadata>
+      updateGameServerClusterOperationCallable() {
+    return updateGameServerClusterOperationCallable;
   }
 
   public UnaryCallable<

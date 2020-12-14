@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1;
 
 import com.google.api.core.BetaApi;
@@ -24,9 +25,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -64,10 +66,10 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
     Object response = responses.remove();
     if (response instanceof ListGameServerDeploymentsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListGameServerDeploymentsResponse) response);
+      responseObserver.onNext(((ListGameServerDeploymentsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -80,10 +82,10 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
     Object response = responses.remove();
     if (response instanceof GameServerDeployment) {
       requests.add(request);
-      responseObserver.onNext((GameServerDeployment) response);
+      responseObserver.onNext(((GameServerDeployment) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -95,10 +97,10 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -110,10 +112,10 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -125,10 +127,10 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -141,10 +143,10 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
     Object response = responses.remove();
     if (response instanceof GameServerDeploymentRollout) {
       requests.add(request);
-      responseObserver.onNext((GameServerDeploymentRollout) response);
+      responseObserver.onNext(((GameServerDeploymentRollout) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -157,10 +159,10 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -173,10 +175,10 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
     Object response = responses.remove();
     if (response instanceof PreviewGameServerDeploymentRolloutResponse) {
       requests.add(request);
-      responseObserver.onNext((PreviewGameServerDeploymentRolloutResponse) response);
+      responseObserver.onNext(((PreviewGameServerDeploymentRolloutResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -189,10 +191,10 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
     Object response = responses.remove();
     if (response instanceof FetchDeploymentStateResponse) {
       requests.add(request);
-      responseObserver.onNext((FetchDeploymentStateResponse) response);
+      responseObserver.onNext(((FetchDeploymentStateResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

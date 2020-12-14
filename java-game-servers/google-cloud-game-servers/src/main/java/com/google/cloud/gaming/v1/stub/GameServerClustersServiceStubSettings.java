@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1.stub;
 
 import static com.google.cloud.gaming.v1.GameServerClustersServiceClient.ListGameServerClustersPagedResponse;
@@ -68,7 +69,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link GameServerClustersServiceStub}.
  *
@@ -85,22 +86,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getGameServerCluster to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GameServerClustersServiceStubSettings.Builder gameServerClustersServiceSettingsBuilder =
  *     GameServerClustersServiceStubSettings.newBuilder();
  * gameServerClustersServiceSettingsBuilder
  *     .getGameServerClusterSettings()
  *     .setRetrySettings(
- *         gameServerClustersServiceSettingsBuilder.getGameServerClusterSettings().getRetrySettings().toBuilder()
+ *         gameServerClustersServiceSettingsBuilder
+ *             .getGameServerClusterSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * GameServerClustersServiceStubSettings gameServerClustersServiceSettings = gameServerClustersServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * GameServerClustersServiceStubSettings gameServerClustersServiceSettings =
+ *     gameServerClustersServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class GameServerClustersServiceStubSettings
     extends StubSettings<GameServerClustersServiceStubSettings> {
   /** The default scopes of the service. */
@@ -138,6 +141,76 @@ public class GameServerClustersServiceStubSettings
           PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
       previewUpdateGameServerClusterSettings;
 
+  private static final PagedListDescriptor<
+          ListGameServerClustersRequest, ListGameServerClustersResponse, GameServerCluster>
+      LIST_GAME_SERVER_CLUSTERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListGameServerClustersRequest, ListGameServerClustersResponse, GameServerCluster>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGameServerClustersRequest injectToken(
+                ListGameServerClustersRequest payload, String token) {
+              return ListGameServerClustersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListGameServerClustersRequest injectPageSize(
+                ListGameServerClustersRequest payload, int pageSize) {
+              return ListGameServerClustersRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGameServerClustersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGameServerClustersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<GameServerCluster> extractResources(
+                ListGameServerClustersResponse payload) {
+              return payload.getGameServerClustersList() == null
+                  ? ImmutableList.<GameServerCluster>of()
+                  : payload.getGameServerClustersList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGameServerClustersRequest,
+          ListGameServerClustersResponse,
+          ListGameServerClustersPagedResponse>
+      LIST_GAME_SERVER_CLUSTERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGameServerClustersRequest,
+              ListGameServerClustersResponse,
+              ListGameServerClustersPagedResponse>() {
+            @Override
+            public ApiFuture<ListGameServerClustersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListGameServerClustersRequest, ListGameServerClustersResponse>
+                    callable,
+                ListGameServerClustersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGameServerClustersResponse> futureResponse) {
+              PageContext<
+                      ListGameServerClustersRequest,
+                      ListGameServerClustersResponse,
+                      GameServerCluster>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GAME_SERVER_CLUSTERS_PAGE_STR_DESC, request, context);
+              return ListGameServerClustersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listGameServerClusters. */
   public PagedCallSettings<
           ListGameServerClustersRequest,
@@ -160,7 +233,6 @@ public class GameServerClustersServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to createGameServerCluster. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateGameServerClusterRequest, GameServerCluster, OperationMetadata>
       createGameServerClusterOperationSettings() {
     return createGameServerClusterOperationSettings;
@@ -180,7 +252,6 @@ public class GameServerClustersServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to deleteGameServerCluster. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteGameServerClusterRequest, Empty, OperationMetadata>
       deleteGameServerClusterOperationSettings() {
     return deleteGameServerClusterOperationSettings;
@@ -200,7 +271,6 @@ public class GameServerClustersServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to updateGameServerCluster. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateGameServerClusterRequest, GameServerCluster, OperationMetadata>
       updateGameServerClusterOperationSettings() {
     return updateGameServerClusterOperationSettings;
@@ -219,10 +289,10 @@ public class GameServerClustersServiceStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcGameServerClustersServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -301,81 +371,10 @@ public class GameServerClustersServiceStubSettings
         settingsBuilder.previewUpdateGameServerClusterSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListGameServerClustersRequest, ListGameServerClustersResponse, GameServerCluster>
-      LIST_GAME_SERVER_CLUSTERS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListGameServerClustersRequest, ListGameServerClustersResponse, GameServerCluster>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListGameServerClustersRequest injectToken(
-                ListGameServerClustersRequest payload, String token) {
-              return ListGameServerClustersRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListGameServerClustersRequest injectPageSize(
-                ListGameServerClustersRequest payload, int pageSize) {
-              return ListGameServerClustersRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListGameServerClustersRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListGameServerClustersResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<GameServerCluster> extractResources(
-                ListGameServerClustersResponse payload) {
-              return payload.getGameServerClustersList() != null
-                  ? payload.getGameServerClustersList()
-                  : ImmutableList.<GameServerCluster>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListGameServerClustersRequest,
-          ListGameServerClustersResponse,
-          ListGameServerClustersPagedResponse>
-      LIST_GAME_SERVER_CLUSTERS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListGameServerClustersRequest,
-              ListGameServerClustersResponse,
-              ListGameServerClustersPagedResponse>() {
-            @Override
-            public ApiFuture<ListGameServerClustersPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListGameServerClustersRequest, ListGameServerClustersResponse>
-                    callable,
-                ListGameServerClustersRequest request,
-                ApiCallContext context,
-                ApiFuture<ListGameServerClustersResponse> futureResponse) {
-              PageContext<
-                      ListGameServerClustersRequest,
-                      ListGameServerClustersResponse,
-                      GameServerCluster>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_GAME_SERVER_CLUSTERS_PAGE_STR_DESC, request, context);
-              return ListGameServerClustersPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for GameServerClustersServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<GameServerClustersServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListGameServerClustersRequest,
             ListGameServerClustersResponse,
@@ -407,7 +406,6 @@ public class GameServerClustersServiceStubSettings
     private final UnaryCallSettings.Builder<
             PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
         previewUpdateGameServerClusterSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -415,16 +413,12 @@ public class GameServerClustersServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -443,20 +437,15 @@ public class GameServerClustersServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
               .setInitialRpcTimeout(Duration.ofMillis(120000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(120000L))
               .setTotalTimeout(Duration.ofMillis(120000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("no_retry_3_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -464,20 +453,12 @@ public class GameServerClustersServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(120000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(120000L))
-              .setTotalTimeout(Duration.ofMillis(120000L))
-              .build();
       definitions.put("no_retry_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
@@ -485,25 +466,15 @@ public class GameServerClustersServiceStubSettings
 
       listGameServerClustersSettings =
           PagedCallSettings.newBuilder(LIST_GAME_SERVER_CLUSTERS_PAGE_STR_FACT);
-
       getGameServerClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createGameServerClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createGameServerClusterOperationSettings = OperationCallSettings.newBuilder();
-
       previewCreateGameServerClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteGameServerClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteGameServerClusterOperationSettings = OperationCallSettings.newBuilder();
-
       previewDeleteGameServerClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateGameServerClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateGameServerClusterOperationSettings = OperationCallSettings.newBuilder();
-
       previewUpdateGameServerClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -516,131 +487,7 @@ public class GameServerClustersServiceStubSettings
               previewDeleteGameServerClusterSettings,
               updateGameServerClusterSettings,
               previewUpdateGameServerClusterSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listGameServerClustersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getGameServerClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createGameServerClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
-
-      builder
-          .previewCreateGameServerClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteGameServerClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .previewDeleteGameServerClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateGameServerClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .previewUpdateGameServerClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-      builder
-          .createGameServerClusterOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateGameServerClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(GameServerCluster.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteGameServerClusterOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteGameServerClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .updateGameServerClusterOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateGameServerClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(GameServerCluster.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(GameServerClustersServiceStubSettings settings) {
@@ -676,7 +523,134 @@ public class GameServerClustersServiceStubSettings
               previewUpdateGameServerClusterSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listGameServerClustersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getGameServerClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createGameServerClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .previewCreateGameServerClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteGameServerClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .previewDeleteGameServerClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateGameServerClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .previewUpdateGameServerClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createGameServerClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateGameServerClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GameServerCluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteGameServerClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteGameServerClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateGameServerClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGameServerClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GameServerCluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

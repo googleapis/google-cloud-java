@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1.stub;
 
 import static com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient.ListGameServerDeploymentsPagedResponse;
@@ -69,7 +70,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link GameServerDeploymentsServiceStub}.
  *
@@ -86,22 +87,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getGameServerDeployment to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GameServerDeploymentsServiceStubSettings.Builder gameServerDeploymentsServiceSettingsBuilder =
  *     GameServerDeploymentsServiceStubSettings.newBuilder();
  * gameServerDeploymentsServiceSettingsBuilder
  *     .getGameServerDeploymentSettings()
  *     .setRetrySettings(
- *         gameServerDeploymentsServiceSettingsBuilder.getGameServerDeploymentSettings().getRetrySettings().toBuilder()
+ *         gameServerDeploymentsServiceSettingsBuilder
+ *             .getGameServerDeploymentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * GameServerDeploymentsServiceStubSettings gameServerDeploymentsServiceSettings = gameServerDeploymentsServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * GameServerDeploymentsServiceStubSettings gameServerDeploymentsServiceSettings =
+ *     gameServerDeploymentsServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class GameServerDeploymentsServiceStubSettings
     extends StubSettings<GameServerDeploymentsServiceStubSettings> {
   /** The default scopes of the service. */
@@ -143,6 +146,81 @@ public class GameServerDeploymentsServiceStubSettings
   private final UnaryCallSettings<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
       fetchDeploymentStateSettings;
 
+  private static final PagedListDescriptor<
+          ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse, GameServerDeployment>
+      LIST_GAME_SERVER_DEPLOYMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListGameServerDeploymentsRequest,
+              ListGameServerDeploymentsResponse,
+              GameServerDeployment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGameServerDeploymentsRequest injectToken(
+                ListGameServerDeploymentsRequest payload, String token) {
+              return ListGameServerDeploymentsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListGameServerDeploymentsRequest injectPageSize(
+                ListGameServerDeploymentsRequest payload, int pageSize) {
+              return ListGameServerDeploymentsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGameServerDeploymentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGameServerDeploymentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<GameServerDeployment> extractResources(
+                ListGameServerDeploymentsResponse payload) {
+              return payload.getGameServerDeploymentsList() == null
+                  ? ImmutableList.<GameServerDeployment>of()
+                  : payload.getGameServerDeploymentsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGameServerDeploymentsRequest,
+          ListGameServerDeploymentsResponse,
+          ListGameServerDeploymentsPagedResponse>
+      LIST_GAME_SERVER_DEPLOYMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGameServerDeploymentsRequest,
+              ListGameServerDeploymentsResponse,
+              ListGameServerDeploymentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListGameServerDeploymentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse>
+                    callable,
+                ListGameServerDeploymentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGameServerDeploymentsResponse> futureResponse) {
+              PageContext<
+                      ListGameServerDeploymentsRequest,
+                      ListGameServerDeploymentsResponse,
+                      GameServerDeployment>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GAME_SERVER_DEPLOYMENTS_PAGE_STR_DESC, request, context);
+              return ListGameServerDeploymentsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listGameServerDeployments. */
   public PagedCallSettings<
           ListGameServerDeploymentsRequest,
@@ -165,7 +243,6 @@ public class GameServerDeploymentsServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to createGameServerDeployment. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           CreateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
       createGameServerDeploymentOperationSettings() {
@@ -179,7 +256,6 @@ public class GameServerDeploymentsServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to deleteGameServerDeployment. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteGameServerDeploymentRequest, Empty, OperationMetadata>
       deleteGameServerDeploymentOperationSettings() {
     return deleteGameServerDeploymentOperationSettings;
@@ -192,7 +268,6 @@ public class GameServerDeploymentsServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to updateGameServerDeployment. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           UpdateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
       updateGameServerDeploymentOperationSettings() {
@@ -212,7 +287,6 @@ public class GameServerDeploymentsServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to updateGameServerDeploymentRollout. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           UpdateGameServerDeploymentRolloutRequest, GameServerDeployment, OperationMetadata>
       updateGameServerDeploymentRolloutOperationSettings() {
@@ -238,10 +312,10 @@ public class GameServerDeploymentsServiceStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcGameServerDeploymentsServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -327,86 +401,10 @@ public class GameServerDeploymentsServiceStubSettings
     fetchDeploymentStateSettings = settingsBuilder.fetchDeploymentStateSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse, GameServerDeployment>
-      LIST_GAME_SERVER_DEPLOYMENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListGameServerDeploymentsRequest,
-              ListGameServerDeploymentsResponse,
-              GameServerDeployment>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListGameServerDeploymentsRequest injectToken(
-                ListGameServerDeploymentsRequest payload, String token) {
-              return ListGameServerDeploymentsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListGameServerDeploymentsRequest injectPageSize(
-                ListGameServerDeploymentsRequest payload, int pageSize) {
-              return ListGameServerDeploymentsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListGameServerDeploymentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListGameServerDeploymentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<GameServerDeployment> extractResources(
-                ListGameServerDeploymentsResponse payload) {
-              return payload.getGameServerDeploymentsList() != null
-                  ? payload.getGameServerDeploymentsList()
-                  : ImmutableList.<GameServerDeployment>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListGameServerDeploymentsRequest,
-          ListGameServerDeploymentsResponse,
-          ListGameServerDeploymentsPagedResponse>
-      LIST_GAME_SERVER_DEPLOYMENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListGameServerDeploymentsRequest,
-              ListGameServerDeploymentsResponse,
-              ListGameServerDeploymentsPagedResponse>() {
-            @Override
-            public ApiFuture<ListGameServerDeploymentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse>
-                    callable,
-                ListGameServerDeploymentsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListGameServerDeploymentsResponse> futureResponse) {
-              PageContext<
-                      ListGameServerDeploymentsRequest,
-                      ListGameServerDeploymentsResponse,
-                      GameServerDeployment>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_GAME_SERVER_DEPLOYMENTS_PAGE_STR_DESC, request, context);
-              return ListGameServerDeploymentsPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
   /** Builder for GameServerDeploymentsServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<GameServerDeploymentsServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListGameServerDeploymentsRequest,
             ListGameServerDeploymentsResponse,
@@ -443,7 +441,6 @@ public class GameServerDeploymentsServiceStubSettings
     private final UnaryCallSettings.Builder<
             FetchDeploymentStateRequest, FetchDeploymentStateResponse>
         fetchDeploymentStateSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -451,16 +448,13 @@ public class GameServerDeploymentsServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_2_codes",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -479,7 +473,15 @@ public class GameServerDeploymentsServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(1000L))
@@ -490,30 +492,12 @@ public class GameServerDeploymentsServiceStubSettings
               .setMaxRpcTimeout(Duration.ofMillis(120000L))
               .setTotalTimeout(Duration.ofMillis(120000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(120000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(120000L))
-              .setTotalTimeout(Duration.ofMillis(120000L))
-              .build();
-      definitions.put("no_retry_2_params", settings);
+      definitions.put("retry_policy_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
@@ -521,29 +505,17 @@ public class GameServerDeploymentsServiceStubSettings
 
       listGameServerDeploymentsSettings =
           PagedCallSettings.newBuilder(LIST_GAME_SERVER_DEPLOYMENTS_PAGE_STR_FACT);
-
       getGameServerDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createGameServerDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createGameServerDeploymentOperationSettings = OperationCallSettings.newBuilder();
-
       deleteGameServerDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteGameServerDeploymentOperationSettings = OperationCallSettings.newBuilder();
-
       updateGameServerDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateGameServerDeploymentOperationSettings = OperationCallSettings.newBuilder();
-
       getGameServerDeploymentRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateGameServerDeploymentRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateGameServerDeploymentRolloutOperationSettings = OperationCallSettings.newBuilder();
-
       previewGameServerDeploymentRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       fetchDeploymentStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -557,163 +529,7 @@ public class GameServerDeploymentsServiceStubSettings
               updateGameServerDeploymentRolloutSettings,
               previewGameServerDeploymentRolloutSettings,
               fetchDeploymentStateSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listGameServerDeploymentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getGameServerDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createGameServerDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteGameServerDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateGameServerDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getGameServerDeploymentRolloutSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateGameServerDeploymentRolloutSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .previewGameServerDeploymentRolloutSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .fetchDeploymentStateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-      builder
-          .createGameServerDeploymentOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateGameServerDeploymentRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(GameServerDeployment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteGameServerDeploymentOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteGameServerDeploymentRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .updateGameServerDeploymentOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateGameServerDeploymentRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(GameServerDeployment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .updateGameServerDeploymentRolloutOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateGameServerDeploymentRolloutRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(GameServerDeployment.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(GameServerDeploymentsServiceStubSettings settings) {
@@ -753,7 +569,167 @@ public class GameServerDeploymentsServiceStubSettings
               fetchDeploymentStateSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listGameServerDeploymentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getGameServerDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createGameServerDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .deleteGameServerDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .updateGameServerDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .getGameServerDeploymentRolloutSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateGameServerDeploymentRolloutSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .previewGameServerDeploymentRolloutSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .fetchDeploymentStateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createGameServerDeploymentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateGameServerDeploymentRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GameServerDeployment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteGameServerDeploymentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteGameServerDeploymentRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateGameServerDeploymentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGameServerDeploymentRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GameServerDeployment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateGameServerDeploymentRolloutOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGameServerDeploymentRolloutRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GameServerDeployment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1beta;
 
 import static com.google.cloud.gaming.v1beta.GameServerClustersServiceClient.ListGameServerClustersPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link GameServerClustersServiceClient}.
  *
@@ -53,24 +54,26 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getGameServerCluster to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GameServerClustersServiceSettings.Builder gameServerClustersServiceSettingsBuilder =
  *     GameServerClustersServiceSettings.newBuilder();
  * gameServerClustersServiceSettingsBuilder
  *     .getGameServerClusterSettings()
  *     .setRetrySettings(
- *         gameServerClustersServiceSettingsBuilder.getGameServerClusterSettings().getRetrySettings().toBuilder()
+ *         gameServerClustersServiceSettingsBuilder
+ *             .getGameServerClusterSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * GameServerClustersServiceSettings gameServerClustersServiceSettings = gameServerClustersServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * GameServerClustersServiceSettings gameServerClustersServiceSettings =
+ *     gameServerClustersServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class GameServerClustersServiceSettings
     extends ClientSettings<GameServerClustersServiceSettings> {
+
   /** Returns the object with the settings used for calls to listGameServerClusters. */
   public PagedCallSettings<
           ListGameServerClustersRequest,
@@ -96,8 +99,6 @@ public class GameServerClustersServiceSettings
   }
 
   /** Returns the object with the settings used for calls to createGameServerCluster. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateGameServerClusterRequest, GameServerCluster, OperationMetadata>
       createGameServerClusterOperationSettings() {
     return ((GameServerClustersServiceStubSettings) getStubSettings())
@@ -120,8 +121,6 @@ public class GameServerClustersServiceSettings
   }
 
   /** Returns the object with the settings used for calls to deleteGameServerCluster. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteGameServerClusterRequest, Empty, OperationMetadata>
       deleteGameServerClusterOperationSettings() {
     return ((GameServerClustersServiceStubSettings) getStubSettings())
@@ -144,8 +143,6 @@ public class GameServerClustersServiceSettings
   }
 
   /** Returns the object with the settings used for calls to updateGameServerCluster. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateGameServerClusterRequest, GameServerCluster, OperationMetadata>
       updateGameServerClusterOperationSettings() {
     return ((GameServerClustersServiceStubSettings) getStubSettings())
@@ -221,16 +218,13 @@ public class GameServerClustersServiceSettings
   /** Builder for GameServerClustersServiceSettings. */
   public static class Builder
       extends ClientSettings.Builder<GameServerClustersServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(GameServerClustersServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(GameServerClustersServiceStubSettings.newBuilder());
     }
 
     protected Builder(GameServerClustersServiceSettings settings) {
@@ -241,11 +235,15 @@ public class GameServerClustersServiceSettings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(GameServerClustersServiceStubSettings.newBuilder());
+    }
+
     public GameServerClustersServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((GameServerClustersServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -280,8 +278,6 @@ public class GameServerClustersServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to createGameServerCluster. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateGameServerClusterRequest, GameServerCluster, OperationMetadata>
         createGameServerClusterOperationSettings() {
@@ -302,8 +298,6 @@ public class GameServerClustersServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteGameServerCluster. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteGameServerClusterRequest, Empty, OperationMetadata>
         deleteGameServerClusterOperationSettings() {
       return getStubSettingsBuilder().deleteGameServerClusterOperationSettings();
@@ -323,8 +317,6 @@ public class GameServerClustersServiceSettings
     }
 
     /** Returns the builder for the settings used for calls to updateGameServerCluster. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateGameServerClusterRequest, GameServerCluster, OperationMetadata>
         updateGameServerClusterOperationSettings() {

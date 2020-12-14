@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1beta.stub;
 
 import static com.google.cloud.gaming.v1beta.GameServerConfigsServiceClient.ListGameServerConfigsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -44,16 +44,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Game Services API.
+ * gRPC stub implementation for the GameServerConfigsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceStub {
-
   private static final MethodDescriptor<ListGameServerConfigsRequest, ListGameServerConfigsResponse>
       listGameServerConfigsMethodDescriptor =
           MethodDescriptor.<ListGameServerConfigsRequest, ListGameServerConfigsResponse>newBuilder()
@@ -65,6 +63,7 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGameServerConfigsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetGameServerConfigRequest, GameServerConfig>
       getGameServerConfigMethodDescriptor =
           MethodDescriptor.<GetGameServerConfigRequest, GameServerConfig>newBuilder()
@@ -75,6 +74,7 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
                   ProtoUtils.marshaller(GetGameServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GameServerConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateGameServerConfigRequest, Operation>
       createGameServerConfigMethodDescriptor =
           MethodDescriptor.<CreateGameServerConfigRequest, Operation>newBuilder()
@@ -85,6 +85,7 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
                   ProtoUtils.marshaller(CreateGameServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteGameServerConfigRequest, Operation>
       deleteGameServerConfigMethodDescriptor =
           MethodDescriptor.<DeleteGameServerConfigRequest, Operation>newBuilder()
@@ -95,9 +96,6 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
                   ProtoUtils.marshaller(DeleteGameServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListGameServerConfigsRequest, ListGameServerConfigsResponse>
       listGameServerConfigsCallable;
@@ -115,6 +113,8 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
   private final OperationCallable<DeleteGameServerConfigRequest, Empty, OperationMetadata>
       deleteGameServerConfigOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcGameServerConfigsServiceStub create(
@@ -241,7 +241,7 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
             createGameServerConfigTransportSettings,
             settings.createGameServerConfigOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteGameServerConfigCallable =
         callableFactory.createUnaryCallable(
             deleteGameServerConfigTransportSettings,
@@ -252,19 +252,14 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
             deleteGameServerConfigTransportSettings,
             settings.deleteGameServerConfigOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<ListGameServerConfigsRequest, ListGameServerConfigsPagedResponse>
-      listGameServerConfigsPagedCallable() {
-    return listGameServerConfigsPagedCallable;
   }
 
   public UnaryCallable<ListGameServerConfigsRequest, ListGameServerConfigsResponse>
@@ -272,28 +267,31 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
     return listGameServerConfigsCallable;
   }
 
-  public UnaryCallable<GetGameServerConfigRequest, GameServerConfig> getGameServerConfigCallable() {
-    return getGameServerConfigCallable;
+  public UnaryCallable<ListGameServerConfigsRequest, ListGameServerConfigsPagedResponse>
+      listGameServerConfigsPagedCallable() {
+    return listGameServerConfigsPagedCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateGameServerConfigRequest, GameServerConfig, OperationMetadata>
-      createGameServerConfigOperationCallable() {
-    return createGameServerConfigOperationCallable;
+  public UnaryCallable<GetGameServerConfigRequest, GameServerConfig> getGameServerConfigCallable() {
+    return getGameServerConfigCallable;
   }
 
   public UnaryCallable<CreateGameServerConfigRequest, Operation> createGameServerConfigCallable() {
     return createGameServerConfigCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteGameServerConfigRequest, Empty, OperationMetadata>
-      deleteGameServerConfigOperationCallable() {
-    return deleteGameServerConfigOperationCallable;
+  public OperationCallable<CreateGameServerConfigRequest, GameServerConfig, OperationMetadata>
+      createGameServerConfigOperationCallable() {
+    return createGameServerConfigOperationCallable;
   }
 
   public UnaryCallable<DeleteGameServerConfigRequest, Operation> deleteGameServerConfigCallable() {
     return deleteGameServerConfigCallable;
+  }
+
+  public OperationCallable<DeleteGameServerConfigRequest, Empty, OperationMetadata>
+      deleteGameServerConfigOperationCallable() {
+    return deleteGameServerConfigOperationCallable;
   }
 
   @Override

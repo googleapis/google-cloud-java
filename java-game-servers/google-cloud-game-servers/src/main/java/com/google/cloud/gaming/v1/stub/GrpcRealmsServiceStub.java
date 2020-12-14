@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1.stub;
 
 import static com.google.cloud.gaming.v1.RealmsServiceClient.ListRealmsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -47,16 +47,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Game Services API.
+ * gRPC stub implementation for the RealmsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcRealmsServiceStub extends RealmsServiceStub {
-
   private static final MethodDescriptor<ListRealmsRequest, ListRealmsResponse>
       listRealmsMethodDescriptor =
           MethodDescriptor.<ListRealmsRequest, ListRealmsResponse>newBuilder()
@@ -65,6 +63,7 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRealmsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListRealmsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetRealmRequest, Realm> getRealmMethodDescriptor =
       MethodDescriptor.<GetRealmRequest, Realm>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -72,6 +71,7 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetRealmRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Realm.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateRealmRequest, Operation> createRealmMethodDescriptor =
       MethodDescriptor.<CreateRealmRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -79,6 +79,7 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateRealmRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteRealmRequest, Operation> deleteRealmMethodDescriptor =
       MethodDescriptor.<DeleteRealmRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -86,6 +87,7 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRealmRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateRealmRequest, Operation> updateRealmMethodDescriptor =
       MethodDescriptor.<UpdateRealmRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -93,6 +95,7 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateRealmRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
       previewRealmUpdateMethodDescriptor =
           MethodDescriptor.<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>newBuilder()
@@ -103,9 +106,6 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PreviewRealmUpdateResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListRealmsRequest, ListRealmsResponse> listRealmsCallable;
   private final UnaryCallable<ListRealmsRequest, ListRealmsPagedResponse> listRealmsPagedCallable;
@@ -122,6 +122,8 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
   private final UnaryCallable<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
       previewRealmUpdateCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcRealmsServiceStub create(RealmsServiceStubSettings settings)
@@ -259,7 +261,7 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
             createRealmTransportSettings,
             settings.createRealmOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteRealmCallable =
         callableFactory.createUnaryCallable(
             deleteRealmTransportSettings, settings.deleteRealmSettings(), clientContext);
@@ -268,7 +270,7 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
             deleteRealmTransportSettings,
             settings.deleteRealmOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateRealmCallable =
         callableFactory.createUnaryCallable(
             updateRealmTransportSettings, settings.updateRealmSettings(), clientContext);
@@ -277,61 +279,58 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
             updateRealmTransportSettings,
             settings.updateRealmOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.previewRealmUpdateCallable =
         callableFactory.createUnaryCallable(
             previewRealmUpdateTransportSettings,
             settings.previewRealmUpdateSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<ListRealmsRequest, ListRealmsPagedResponse> listRealmsPagedCallable() {
-    return listRealmsPagedCallable;
   }
 
   public UnaryCallable<ListRealmsRequest, ListRealmsResponse> listRealmsCallable() {
     return listRealmsCallable;
   }
 
-  public UnaryCallable<GetRealmRequest, Realm> getRealmCallable() {
-    return getRealmCallable;
+  public UnaryCallable<ListRealmsRequest, ListRealmsPagedResponse> listRealmsPagedCallable() {
+    return listRealmsPagedCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateRealmRequest, Realm, OperationMetadata>
-      createRealmOperationCallable() {
-    return createRealmOperationCallable;
+  public UnaryCallable<GetRealmRequest, Realm> getRealmCallable() {
+    return getRealmCallable;
   }
 
   public UnaryCallable<CreateRealmRequest, Operation> createRealmCallable() {
     return createRealmCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteRealmRequest, Empty, OperationMetadata>
-      deleteRealmOperationCallable() {
-    return deleteRealmOperationCallable;
+  public OperationCallable<CreateRealmRequest, Realm, OperationMetadata>
+      createRealmOperationCallable() {
+    return createRealmOperationCallable;
   }
 
   public UnaryCallable<DeleteRealmRequest, Operation> deleteRealmCallable() {
     return deleteRealmCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateRealmRequest, Realm, OperationMetadata>
-      updateRealmOperationCallable() {
-    return updateRealmOperationCallable;
+  public OperationCallable<DeleteRealmRequest, Empty, OperationMetadata>
+      deleteRealmOperationCallable() {
+    return deleteRealmOperationCallable;
   }
 
   public UnaryCallable<UpdateRealmRequest, Operation> updateRealmCallable() {
     return updateRealmCallable;
+  }
+
+  public OperationCallable<UpdateRealmRequest, Realm, OperationMetadata>
+      updateRealmOperationCallable() {
+    return updateRealmOperationCallable;
   }
 
   public UnaryCallable<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>

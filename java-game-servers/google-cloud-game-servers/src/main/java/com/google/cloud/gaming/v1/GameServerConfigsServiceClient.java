@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1;
 
 import com.google.api.core.ApiFunction;
@@ -38,23 +39,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The game server config configures the game servers in an Agones fleet.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
- *   GameServerConfigName name = GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
- *   GameServerConfig response = gameServerConfigsServiceClient.getGameServerConfig(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the gameServerConfigsServiceClient object to clean up
+ * <p>Note: close() needs to be called on the GameServerConfigsServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -83,30 +75,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GameServerConfigsServiceSettings gameServerConfigsServiceSettings =
  *     GameServerConfigsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * GameServerConfigsServiceClient gameServerConfigsServiceClient =
  *     GameServerConfigsServiceClient.create(gameServerConfigsServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GameServerConfigsServiceSettings gameServerConfigsServiceSettings =
  *     GameServerConfigsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GameServerConfigsServiceClient gameServerConfigsServiceClient =
  *     GameServerConfigsServiceClient.create(gameServerConfigsServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class GameServerConfigsServiceClient implements BackgroundResource {
   private final GameServerConfigsServiceSettings settings;
   private final GameServerConfigsServiceStub stub;
@@ -129,7 +119,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of GameServerConfigsServiceClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use GameServerConfigsServiceSettings}.
+   * calls. This is for advanced usage - prefer using create(GameServerConfigsServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GameServerConfigsServiceClient create(GameServerConfigsServiceStub stub) {
@@ -168,26 +158,13 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists game server configs in a given project, location, and game server deployment.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerDeploymentName parent = GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-   *   for (GameServerConfig element : gameServerConfigsServiceClient.listGameServerConfigs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
@@ -202,20 +179,9 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     return listGameServerConfigs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists game server configs in a given project, location, and game server deployment.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerDeploymentName parent = GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-   *   for (GameServerConfig element : gameServerConfigsServiceClient.listGameServerConfigs(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
@@ -227,23 +193,9 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     return listGameServerConfigs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists game server configs in a given project, location, and game server deployment.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerDeploymentName parent = GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-   *   ListGameServerConfigsRequest request = ListGameServerConfigsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (GameServerConfig element : gameServerConfigsServiceClient.listGameServerConfigs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -253,75 +205,31 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     return listGameServerConfigsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists game server configs in a given project, location, and game server deployment.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerDeploymentName parent = GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-   *   ListGameServerConfigsRequest request = ListGameServerConfigsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListGameServerConfigsPagedResponse&gt; future = gameServerConfigsServiceClient.listGameServerConfigsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (GameServerConfig element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListGameServerConfigsRequest, ListGameServerConfigsPagedResponse>
       listGameServerConfigsPagedCallable() {
     return stub.listGameServerConfigsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists game server configs in a given project, location, and game server deployment.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerDeploymentName parent = GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-   *   ListGameServerConfigsRequest request = ListGameServerConfigsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListGameServerConfigsResponse response = gameServerConfigsServiceClient.listGameServerConfigsCallable().call(request);
-   *     for (GameServerConfig element : response.getGameServerConfigsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListGameServerConfigsRequest, ListGameServerConfigsResponse>
       listGameServerConfigsCallable() {
     return stub.listGameServerConfigsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single game server config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerConfigName name = GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-   *   GameServerConfig response = gameServerConfigsServiceClient.getGameServerConfig(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the game server config to retrieve. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
@@ -335,18 +243,9 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     return getGameServerConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single game server config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerConfigName name = GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-   *   GameServerConfig response = gameServerConfigsServiceClient.getGameServerConfig(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the game server config to retrieve. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
@@ -358,21 +257,9 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     return getGameServerConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single game server config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerConfigName name = GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-   *   GetGameServerConfigRequest request = GetGameServerConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   GameServerConfig response = gameServerConfigsServiceClient.getGameServerConfig(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -381,52 +268,28 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     return getGameServerConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single game server config.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerConfigName name = GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-   *   GetGameServerConfigRequest request = GetGameServerConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;GameServerConfig&gt; future = gameServerConfigsServiceClient.getGameServerConfigCallable().futureCall(request);
-   *   // Do something
-   *   GameServerConfig response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetGameServerConfigRequest, GameServerConfig>
       getGameServerConfigCallable() {
     return stub.getGameServerConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new game server config in a given project, location, and game server deployment. Game
    * server configs are immutable, and are not applied until referenced in the game server
    * deployment rollout resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerDeploymentName parent = GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-   *   GameServerConfig gameServerConfig = GameServerConfig.newBuilder().build();
-   *   GameServerConfig response = gameServerConfigsServiceClient.createGameServerConfigAsync(parent, gameServerConfig).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
    * @param gameServerConfig Required. The game server config resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<GameServerConfig, OperationMetadata> createGameServerConfigAsync(
       GameServerDeploymentName parent, GameServerConfig gameServerConfig) {
     CreateGameServerConfigRequest request =
@@ -437,29 +300,17 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     return createGameServerConfigAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new game server config in a given project, location, and game server deployment. Game
    * server configs are immutable, and are not applied until referenced in the game server
    * deployment rollout resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerDeploymentName parent = GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-   *   GameServerConfig gameServerConfig = GameServerConfig.newBuilder().build();
-   *   GameServerConfig response = gameServerConfigsServiceClient.createGameServerConfigAsync(parent.toString(), gameServerConfig).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
    * @param gameServerConfig Required. The game server config resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<GameServerConfig, OperationMetadata> createGameServerConfigAsync(
       String parent, GameServerConfig gameServerConfig) {
     CreateGameServerConfigRequest request =
@@ -470,117 +321,55 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     return createGameServerConfigAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new game server config in a given project, location, and game server deployment. Game
    * server configs are immutable, and are not applied until referenced in the game server
    * deployment rollout resource.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerDeploymentName parent = GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-   *   String configId = "";
-   *   GameServerConfig gameServerConfig = GameServerConfig.newBuilder().build();
-   *   CreateGameServerConfigRequest request = CreateGameServerConfigRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setConfigId(configId)
-   *     .setGameServerConfig(gameServerConfig)
-   *     .build();
-   *   GameServerConfig response = gameServerConfigsServiceClient.createGameServerConfigAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<GameServerConfig, OperationMetadata> createGameServerConfigAsync(
       CreateGameServerConfigRequest request) {
     return createGameServerConfigOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new game server config in a given project, location, and game server deployment. Game
    * server configs are immutable, and are not applied until referenced in the game server
    * deployment rollout resource.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerDeploymentName parent = GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-   *   String configId = "";
-   *   GameServerConfig gameServerConfig = GameServerConfig.newBuilder().build();
-   *   CreateGameServerConfigRequest request = CreateGameServerConfigRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setConfigId(configId)
-   *     .setGameServerConfig(gameServerConfig)
-   *     .build();
-   *   OperationFuture&lt;GameServerConfig, OperationMetadata&gt; future = gameServerConfigsServiceClient.createGameServerConfigOperationCallable().futureCall(request);
-   *   // Do something
-   *   GameServerConfig response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateGameServerConfigRequest, GameServerConfig, OperationMetadata>
       createGameServerConfigOperationCallable() {
     return stub.createGameServerConfigOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new game server config in a given project, location, and game server deployment. Game
    * server configs are immutable, and are not applied until referenced in the game server
    * deployment rollout resource.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerDeploymentName parent = GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
-   *   String configId = "";
-   *   GameServerConfig gameServerConfig = GameServerConfig.newBuilder().build();
-   *   CreateGameServerConfigRequest request = CreateGameServerConfigRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setConfigId(configId)
-   *     .setGameServerConfig(gameServerConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = gameServerConfigsServiceClient.createGameServerConfigCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateGameServerConfigRequest, Operation>
       createGameServerConfigCallable() {
     return stub.createGameServerConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single game server config. The deletion will fail if the game server config is
    * referenced in a game server deployment rollout.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerConfigName name = GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-   *   gameServerConfigsServiceClient.deleteGameServerConfigAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the game server config to delete. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteGameServerConfigAsync(
       GameServerConfigName name) {
     DeleteGameServerConfigRequest request =
@@ -590,102 +379,52 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     return deleteGameServerConfigAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single game server config. The deletion will fail if the game server config is
    * referenced in a game server deployment rollout.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerConfigName name = GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-   *   gameServerConfigsServiceClient.deleteGameServerConfigAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the game server config to delete. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteGameServerConfigAsync(String name) {
     DeleteGameServerConfigRequest request =
         DeleteGameServerConfigRequest.newBuilder().setName(name).build();
     return deleteGameServerConfigAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single game server config. The deletion will fail if the game server config is
    * referenced in a game server deployment rollout.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerConfigName name = GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-   *   DeleteGameServerConfigRequest request = DeleteGameServerConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   gameServerConfigsServiceClient.deleteGameServerConfigAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteGameServerConfigAsync(
       DeleteGameServerConfigRequest request) {
     return deleteGameServerConfigOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single game server config. The deletion will fail if the game server config is
    * referenced in a game server deployment rollout.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerConfigName name = GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-   *   DeleteGameServerConfigRequest request = DeleteGameServerConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = gameServerConfigsServiceClient.deleteGameServerConfigOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteGameServerConfigRequest, Empty, OperationMetadata>
       deleteGameServerConfigOperationCallable() {
     return stub.deleteGameServerConfigOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single game server config. The deletion will fail if the game server config is
    * referenced in a game server deployment rollout.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.create()) {
-   *   GameServerConfigName name = GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
-   *   DeleteGameServerConfigRequest request = DeleteGameServerConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = gameServerConfigsServiceClient.deleteGameServerConfigCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteGameServerConfigRequest, Operation>
       deleteGameServerConfigCallable() {
