@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.webrisk.v1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -24,20 +25,23 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Timestamp;
 import com.google.webrisk.v1beta1.ComputeThreatListDiffRequest;
 import com.google.webrisk.v1beta1.ComputeThreatListDiffResponse;
 import com.google.webrisk.v1beta1.SearchHashesRequest;
 import com.google.webrisk.v1beta1.SearchHashesResponse;
 import com.google.webrisk.v1beta1.SearchUrisRequest;
 import com.google.webrisk.v1beta1.SearchUrisResponse;
+import com.google.webrisk.v1beta1.ThreatEntryAdditions;
+import com.google.webrisk.v1beta1.ThreatEntryRemovals;
 import com.google.webrisk.v1beta1.ThreatType;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -45,32 +49,32 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class WebRiskServiceV1Beta1ClientTest {
-  private static MockWebRiskServiceV1Beta1 mockWebRiskServiceV1Beta1;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private WebRiskServiceV1Beta1Client client;
+  private static MockWebRiskServiceV1Beta1 mockWebRiskServiceV1Beta1;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockWebRiskServiceV1Beta1 = new MockWebRiskServiceV1Beta1();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(mockWebRiskServiceV1Beta1));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     WebRiskServiceV1Beta1Settings settings =
         WebRiskServiceV1Beta1Settings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -85,15 +89,18 @@ public class WebRiskServiceV1Beta1ClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void computeThreatListDiffTest() {
-    ByteString newVersionToken = ByteString.copyFromUtf8("115");
+  public void computeThreatListDiffTest() throws Exception {
     ComputeThreatListDiffResponse expectedResponse =
-        ComputeThreatListDiffResponse.newBuilder().setNewVersionToken(newVersionToken).build();
+        ComputeThreatListDiffResponse.newBuilder()
+            .setAdditions(ThreatEntryAdditions.newBuilder().build())
+            .setRemovals(ThreatEntryRemovals.newBuilder().build())
+            .setNewVersionToken(ByteString.EMPTY)
+            .setRecommendedNextDiff(Timestamp.newBuilder().build())
+            .build();
     mockWebRiskServiceV1Beta1.addResponse(expectedResponse);
 
-    ThreatType threatType = ThreatType.THREAT_TYPE_UNSPECIFIED;
-    ByteString versionToken = ByteString.copyFromUtf8("-46");
+    ThreatType threatType = ThreatType.forNumber(0);
+    ByteString versionToken = ByteString.EMPTY;
     ComputeThreatListDiffRequest.Constraints constraints =
         ComputeThreatListDiffRequest.Constraints.newBuilder().build();
 
@@ -104,7 +111,7 @@ public class WebRiskServiceV1Beta1ClientTest {
     List<AbstractMessage> actualRequests = mockWebRiskServiceV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ComputeThreatListDiffRequest actualRequest =
-        (ComputeThreatListDiffRequest) actualRequests.get(0);
+        ((ComputeThreatListDiffRequest) actualRequests.get(0));
 
     Assert.assertEquals(threatType, actualRequest.getThreatType());
     Assert.assertEquals(versionToken, actualRequest.getVersionToken());
@@ -116,27 +123,24 @@ public class WebRiskServiceV1Beta1ClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void computeThreatListDiffExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockWebRiskServiceV1Beta1.addException(exception);
 
     try {
-      ThreatType threatType = ThreatType.THREAT_TYPE_UNSPECIFIED;
-      ByteString versionToken = ByteString.copyFromUtf8("-46");
+      ThreatType threatType = ThreatType.forNumber(0);
+      ByteString versionToken = ByteString.EMPTY;
       ComputeThreatListDiffRequest.Constraints constraints =
           ComputeThreatListDiffRequest.Constraints.newBuilder().build();
-
       client.computeThreatListDiff(threatType, versionToken, constraints);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void searchUrisTest() {
+  public void searchUrisTest() throws Exception {
     SearchUrisResponse expectedResponse = SearchUrisResponse.newBuilder().build();
     mockWebRiskServiceV1Beta1.addResponse(expectedResponse);
 
@@ -148,7 +152,7 @@ public class WebRiskServiceV1Beta1ClientTest {
 
     List<AbstractMessage> actualRequests = mockWebRiskServiceV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SearchUrisRequest actualRequest = (SearchUrisRequest) actualRequests.get(0);
+    SearchUrisRequest actualRequest = ((SearchUrisRequest) actualRequests.get(0));
 
     Assert.assertEquals(uri, actualRequest.getUri());
     Assert.assertEquals(threatTypes, actualRequest.getThreatTypesList());
@@ -159,29 +163,30 @@ public class WebRiskServiceV1Beta1ClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void searchUrisExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockWebRiskServiceV1Beta1.addException(exception);
 
     try {
       String uri = "uri116076";
       List<ThreatType> threatTypes = new ArrayList<>();
-
       client.searchUris(uri, threatTypes);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void searchHashesTest() {
-    SearchHashesResponse expectedResponse = SearchHashesResponse.newBuilder().build();
+  public void searchHashesTest() throws Exception {
+    SearchHashesResponse expectedResponse =
+        SearchHashesResponse.newBuilder()
+            .addAllThreats(new ArrayList<SearchHashesResponse.ThreatHash>())
+            .setNegativeExpireTime(Timestamp.newBuilder().build())
+            .build();
     mockWebRiskServiceV1Beta1.addResponse(expectedResponse);
 
-    ByteString hashPrefix = ByteString.copyFromUtf8("-29");
+    ByteString hashPrefix = ByteString.EMPTY;
     List<ThreatType> threatTypes = new ArrayList<>();
 
     SearchHashesResponse actualResponse = client.searchHashes(hashPrefix, threatTypes);
@@ -189,7 +194,7 @@ public class WebRiskServiceV1Beta1ClientTest {
 
     List<AbstractMessage> actualRequests = mockWebRiskServiceV1Beta1.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SearchHashesRequest actualRequest = (SearchHashesRequest) actualRequests.get(0);
+    SearchHashesRequest actualRequest = ((SearchHashesRequest) actualRequests.get(0));
 
     Assert.assertEquals(hashPrefix, actualRequest.getHashPrefix());
     Assert.assertEquals(threatTypes, actualRequest.getThreatTypesList());
@@ -200,19 +205,17 @@ public class WebRiskServiceV1Beta1ClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void searchHashesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockWebRiskServiceV1Beta1.addException(exception);
 
     try {
-      ByteString hashPrefix = ByteString.copyFromUtf8("-29");
+      ByteString hashPrefix = ByteString.EMPTY;
       List<ThreatType> threatTypes = new ArrayList<>();
-
       client.searchHashes(hashPrefix, threatTypes);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }

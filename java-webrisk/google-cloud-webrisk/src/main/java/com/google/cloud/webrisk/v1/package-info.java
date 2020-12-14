@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,29 +15,16 @@
  */
 
 /**
- * A client to Web Risk API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>==================== WebRiskServiceClient ====================
+ * <p>======================= WebRiskServiceClient =======================
  *
  * <p>Service Description: Web Risk API defines an interface to detect malicious URLs on your
  * website and in client applications.
  *
  * <p>Sample for WebRiskServiceClient:
- *
- * <pre>
- * <code>
- * try (WebRiskServiceClient webRiskServiceClient = WebRiskServiceClient.create()) {
- *   ThreatType threatType = ThreatType.THREAT_TYPE_UNSPECIFIED;
- *   ByteString versionToken = ByteString.copyFromUtf8("");
- *   ComputeThreatListDiffRequest.Constraints constraints = ComputeThreatListDiffRequest.Constraints.newBuilder().build();
- *   ComputeThreatListDiffResponse response = webRiskServiceClient.computeThreatListDiff(threatType, versionToken, constraints);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.webrisk.v1;
 
 import javax.annotation.Generated;

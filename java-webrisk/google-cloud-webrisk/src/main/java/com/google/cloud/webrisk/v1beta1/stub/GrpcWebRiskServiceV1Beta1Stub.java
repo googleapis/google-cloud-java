@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,15 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.webrisk.v1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.webrisk.v1beta1.ComputeThreatListDiffRequest;
 import com.google.webrisk.v1beta1.ComputeThreatListDiffResponse;
 import com.google.webrisk.v1beta1.SearchHashesRequest;
@@ -34,16 +35,14 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Web Risk API.
+ * gRPC stub implementation for the WebRiskServiceV1Beta1 service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
-
   private static final MethodDescriptor<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
       computeThreatListDiffMethodDescriptor =
           MethodDescriptor.<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>newBuilder()
@@ -55,6 +54,7 @@ public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ComputeThreatListDiffResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SearchUrisRequest, SearchUrisResponse>
       searchUrisMethodDescriptor =
           MethodDescriptor.<SearchUrisRequest, SearchUrisResponse>newBuilder()
@@ -63,6 +63,7 @@ public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchUrisRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchUrisResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SearchHashesRequest, SearchHashesResponse>
       searchHashesMethodDescriptor =
           MethodDescriptor.<SearchHashesRequest, SearchHashesResponse>newBuilder()
@@ -73,13 +74,13 @@ public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
                   ProtoUtils.marshaller(SearchHashesResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
       computeThreatListDiffCallable;
   private final UnaryCallable<SearchUrisRequest, SearchUrisResponse> searchUrisCallable;
   private final UnaryCallable<SearchHashesRequest, SearchHashesResponse> searchHashesCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcWebRiskServiceV1Beta1Stub create(
@@ -120,6 +121,7 @@ public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
         computeThreatListDiffTransportSettings =
@@ -148,7 +150,12 @@ public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
         callableFactory.createUnaryCallable(
             searchHashesTransportSettings, settings.searchHashesSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>

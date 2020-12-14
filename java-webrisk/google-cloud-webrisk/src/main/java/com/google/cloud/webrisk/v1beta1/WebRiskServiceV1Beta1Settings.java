@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.webrisk.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link WebRiskServiceV1Beta1Client}.
  *
@@ -53,23 +54,25 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of computeThreatListDiff to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * WebRiskServiceV1Beta1Settings.Builder webRiskServiceV1Beta1SettingsBuilder =
  *     WebRiskServiceV1Beta1Settings.newBuilder();
  * webRiskServiceV1Beta1SettingsBuilder
  *     .computeThreatListDiffSettings()
  *     .setRetrySettings(
- *         webRiskServiceV1Beta1SettingsBuilder.computeThreatListDiffSettings().getRetrySettings().toBuilder()
+ *         webRiskServiceV1Beta1SettingsBuilder
+ *             .computeThreatListDiffSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * WebRiskServiceV1Beta1Settings webRiskServiceV1Beta1Settings = webRiskServiceV1Beta1SettingsBuilder.build();
- * </code>
- * </pre>
+ * WebRiskServiceV1Beta1Settings webRiskServiceV1Beta1Settings =
+ *     webRiskServiceV1Beta1SettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class WebRiskServiceV1Beta1Settings extends ClientSettings<WebRiskServiceV1Beta1Settings> {
+
   /** Returns the object with the settings used for calls to computeThreatListDiff. */
   public UnaryCallSettings<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
       computeThreatListDiffSettings() {
@@ -147,16 +150,13 @@ public class WebRiskServiceV1Beta1Settings extends ClientSettings<WebRiskService
   /** Builder for WebRiskServiceV1Beta1Settings. */
   public static class Builder
       extends ClientSettings.Builder<WebRiskServiceV1Beta1Settings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(WebRiskServiceV1Beta1StubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(WebRiskServiceV1Beta1StubSettings.newBuilder());
     }
 
     protected Builder(WebRiskServiceV1Beta1Settings settings) {
@@ -167,11 +167,15 @@ public class WebRiskServiceV1Beta1Settings extends ClientSettings<WebRiskService
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(WebRiskServiceV1Beta1StubSettings.newBuilder());
+    }
+
     public WebRiskServiceV1Beta1StubSettings.Builder getStubSettingsBuilder() {
       return ((WebRiskServiceV1Beta1StubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
