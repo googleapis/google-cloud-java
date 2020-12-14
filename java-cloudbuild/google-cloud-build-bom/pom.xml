@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-build-bom</artifactId>
-  <version>2.1.8</version><!-- {x-version-update:google-cloud-build:current} -->
+  <version>2.1.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -63,17 +63,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-build-v1</artifactId>
-        <version>2.1.8</version><!-- {x-version-update:grpc-google-cloud-build-v1:current} -->
+        <version>2.1.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-build-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-build-v1</artifactId>
-        <version>2.1.8</version><!-- {x-version-update:proto-google-cloud-build-v1:current} -->
+        <version>2.1.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-build-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-build</artifactId>
-        <version>2.1.8</version><!-- {x-version-update:google-cloud-build:current} -->
+        <version>2.1.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
