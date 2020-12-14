@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-language-v1</artifactId>
-  <version>1.83.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-language-v1:current} -->
+  <version>1.83.8</version><!-- {x-version-update:grpc-google-cloud-language-v1:current} -->
   <name>grpc-google-cloud-language-v1</name>
   <description>GRPC library for grpc-google-cloud-language-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-language-parent</artifactId>
-    <version>1.101.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
+    <version>1.101.8</version><!-- {x-version-update:google-cloud-language:current} -->
   </parent>
   <dependencies>
     <dependency>
