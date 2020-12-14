@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.126.2](https://www.github.com/googleapis/java-bigquery/compare/v1.126.1...v1.126.2) (2020-12-14)
+
+
+### Documentation
+
+* **samples:** add missing region tag ([#1014](https://www.github.com/googleapis/java-bigquery/issues/1014)) ([1999950](https://www.github.com/googleapis/java-bigquery/commit/1999950da0e784b72c4dbe749ceb56d750cea1b3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.1 ([#1020](https://www.github.com/googleapis/java-bigquery/issues/1020)) ([aa52928](https://www.github.com/googleapis/java-bigquery/commit/aa5292844fc64642b32a4a823338acf8e61549b0))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.6 ([#1017](https://www.github.com/googleapis/java-bigquery/issues/1017)) ([b62e8f2](https://www.github.com/googleapis/java-bigquery/commit/b62e8f208ae4741e7ba6df41c6c90a8192f84aee))
+
 ### [1.126.1](https://www.github.com/googleapis/java-bigquery/compare/v1.126.0...v1.126.1) (2020-12-09)
 
 
