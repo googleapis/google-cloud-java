@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.110.2](https://www.github.com/googleapis/java-pubsub/compare/v1.110.1...v1.110.2) (2020-12-14)
+
+
+### Bug Fixes
+
+* `setParallelPullCount` documentation ([#459](https://www.github.com/googleapis/java-pubsub/issues/459)) ([b399f60](https://www.github.com/googleapis/java-pubsub/commit/b399f60cf324ab21c15697bd697902aa1fde3e80))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.1 ([#462](https://www.github.com/googleapis/java-pubsub/issues/462)) ([1326484](https://www.github.com/googleapis/java-pubsub/commit/13264848f5124d7ad388c1cd1423447aab2aa512))
+
 ### [1.110.1](https://www.github.com/googleapis/java-pubsub/compare/v1.110.0...v1.110.1) (2020-12-02)
 
 
