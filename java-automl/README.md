@@ -47,7 +47,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-automl</artifactId>
-  <version>1.3.1</version>
+  <version>1.3.2</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
@@ -64,11 +64,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-automl:1.3.1'
+compile 'com.google.cloud:google-cloud-automl:1.3.2'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "1.3.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "1.3.2"
 ```
 
 ## Authentication
@@ -221,6 +221,8 @@ Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
 Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
+
+Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/automl/docs/
 [javadocs]: https://googleapis.dev/java/google-cloud-automl/latest/
