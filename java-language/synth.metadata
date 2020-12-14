@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-language.git",
-        "sha": "294aa3b9c5d76eca56f8df1b0e04a9b98ecf5734"
+        "sha": "8791a59ebcdc42c7802a3f3bdddfcbda1153b1bc"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b58004f465864e30ad015df9ee6b351da189d691",
-        "internalRef": "335986756"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b58004f465864e30ad015df9ee6b351da189d691",
-        "internalRef": "335986756"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
@@ -136,7 +136,6 @@
     "google-cloud-language/src/test/java/com/google/cloud/language/v1/MockLanguageService.java",
     "google-cloud-language/src/test/java/com/google/cloud/language/v1/MockLanguageServiceImpl.java",
     "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/LanguageServiceClientTest.java",
-    "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/LanguageServiceSmokeTest.java",
     "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/MockLanguageService.java",
     "google-cloud-language/src/test/java/com/google/cloud/language/v1beta2/MockLanguageServiceImpl.java",
     "grpc-google-cloud-language-v1/src/main/java/com/google/cloud/language/v1/LanguageServiceGrpc.java",

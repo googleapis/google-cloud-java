@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.language.v1;
 
 import com.google.api.core.BetaApi;
@@ -23,9 +24,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -62,10 +64,10 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
     Object response = responses.remove();
     if (response instanceof AnalyzeSentimentResponse) {
       requests.add(request);
-      responseObserver.onNext((AnalyzeSentimentResponse) response);
+      responseObserver.onNext(((AnalyzeSentimentResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -77,10 +79,10 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
     Object response = responses.remove();
     if (response instanceof AnalyzeEntitiesResponse) {
       requests.add(request);
-      responseObserver.onNext((AnalyzeEntitiesResponse) response);
+      responseObserver.onNext(((AnalyzeEntitiesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -93,10 +95,10 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
     Object response = responses.remove();
     if (response instanceof AnalyzeEntitySentimentResponse) {
       requests.add(request);
-      responseObserver.onNext((AnalyzeEntitySentimentResponse) response);
+      responseObserver.onNext(((AnalyzeEntitySentimentResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -108,10 +110,10 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
     Object response = responses.remove();
     if (response instanceof AnalyzeSyntaxResponse) {
       requests.add(request);
-      responseObserver.onNext((AnalyzeSyntaxResponse) response);
+      responseObserver.onNext(((AnalyzeSyntaxResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -123,10 +125,10 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ClassifyTextResponse) {
       requests.add(request);
-      responseObserver.onNext((ClassifyTextResponse) response);
+      responseObserver.onNext(((ClassifyTextResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -138,10 +140,10 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
     Object response = responses.remove();
     if (response instanceof AnnotateTextResponse) {
       requests.add(request);
-      responseObserver.onNext((AnnotateTextResponse) response);
+      responseObserver.onNext(((AnnotateTextResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

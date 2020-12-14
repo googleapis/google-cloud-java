@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.language.v1beta2.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -34,22 +34,21 @@ import com.google.cloud.language.v1beta2.AnnotateTextRequest;
 import com.google.cloud.language.v1beta2.AnnotateTextResponse;
 import com.google.cloud.language.v1beta2.ClassifyTextRequest;
 import com.google.cloud.language.v1beta2.ClassifyTextResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Natural Language API.
+ * gRPC stub implementation for the LanguageService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcLanguageServiceStub extends LanguageServiceStub {
-
   private static final MethodDescriptor<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentMethodDescriptor =
           MethodDescriptor.<AnalyzeSentimentRequest, AnalyzeSentimentResponse>newBuilder()
@@ -60,6 +59,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeSentimentResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesMethodDescriptor =
           MethodDescriptor.<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>newBuilder()
@@ -70,6 +70,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeEntitiesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
       analyzeEntitySentimentMethodDescriptor =
@@ -83,6 +84,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeEntitySentimentResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
       analyzeSyntaxMethodDescriptor =
           MethodDescriptor.<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>newBuilder()
@@ -93,6 +95,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeSyntaxResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ClassifyTextRequest, ClassifyTextResponse>
       classifyTextMethodDescriptor =
           MethodDescriptor.<ClassifyTextRequest, ClassifyTextResponse>newBuilder()
@@ -102,6 +105,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ClassifyTextResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<AnnotateTextRequest, AnnotateTextResponse>
       annotateTextMethodDescriptor =
           MethodDescriptor.<AnnotateTextRequest, AnnotateTextResponse>newBuilder()
@@ -111,8 +115,6 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnnotateTextResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentCallable;
@@ -124,6 +126,8 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
   private final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable;
   private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcLanguageServiceStub create(LanguageServiceStubSettings settings)
@@ -164,6 +168,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
         analyzeSentimentTransportSettings =
@@ -215,7 +220,12 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
         callableFactory.createUnaryCallable(
             annotateTextTransportSettings, settings.annotateTextSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>

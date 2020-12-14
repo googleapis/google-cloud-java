@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.language.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,7 +31,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link LanguageServiceClient}.
  *
@@ -47,23 +48,24 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of analyzeSentiment to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * LanguageServiceSettings.Builder languageServiceSettingsBuilder =
  *     LanguageServiceSettings.newBuilder();
  * languageServiceSettingsBuilder
  *     .analyzeSentimentSettings()
  *     .setRetrySettings(
- *         languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettings().toBuilder()
+ *         languageServiceSettingsBuilder
+ *             .analyzeSentimentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LanguageServiceSettings languageServiceSettings = languageServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class LanguageServiceSettings extends ClientSettings<LanguageServiceSettings> {
+
   /** Returns the object with the settings used for calls to analyzeSentiment. */
   public UnaryCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentSettings() {
@@ -157,16 +159,13 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
 
   /** Builder for LanguageServiceSettings. */
   public static class Builder extends ClientSettings.Builder<LanguageServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(LanguageServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(LanguageServiceStubSettings.newBuilder());
     }
 
     protected Builder(LanguageServiceSettings settings) {
@@ -177,11 +176,15 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(LanguageServiceStubSettings.newBuilder());
+    }
+
     public LanguageServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((LanguageServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
