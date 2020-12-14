@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-container.git",
-        "sha": "b906839c42ea24a4de28faa07e4586835133e7e9"
+        "sha": "6543b26f8c4a81cd6ab83ba3289df9c56b383e09"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "75d1324fff65abad6435e6d501e050439b5a616b",
-        "internalRef": "342116206"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
@@ -109,7 +109,6 @@
     "google-cloud-container/src/main/java/com/google/cloud/container/v1/stub/GrpcClusterManagerCallableFactory.java",
     "google-cloud-container/src/main/java/com/google/cloud/container/v1/stub/GrpcClusterManagerStub.java",
     "google-cloud-container/src/test/java/com/google/cloud/container/v1/ClusterManagerClientTest.java",
-    "google-cloud-container/src/test/java/com/google/cloud/container/v1/ClusterManagerSmokeTest.java",
     "google-cloud-container/src/test/java/com/google/cloud/container/v1/MockClusterManager.java",
     "google-cloud-container/src/test/java/com/google/cloud/container/v1/MockClusterManagerImpl.java",
     "grpc-google-cloud-container-v1/src/main/java/com/google/container/v1/ClusterManagerGrpc.java",

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.container.v1.stub;
 
 import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubnetworksPagedResponse;
@@ -91,7 +92,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ClusterManagerStub}.
  *
@@ -108,22 +109,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of listClusters to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ClusterManagerStubSettings.Builder clusterManagerSettingsBuilder =
  *     ClusterManagerStubSettings.newBuilder();
  * clusterManagerSettingsBuilder
  *     .listClustersSettings()
  *     .setRetrySettings(
- *         clusterManagerSettingsBuilder.listClustersSettings().getRetrySettings().toBuilder()
+ *         clusterManagerSettingsBuilder
+ *             .listClustersSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ClusterManagerStubSettings clusterManagerSettings = clusterManagerSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -173,6 +175,71 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
           ListUsableSubnetworksResponse,
           ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksSettings;
+
+  private static final PagedListDescriptor<
+          ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
+      LIST_USABLE_SUBNETWORKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsableSubnetworksRequest injectToken(
+                ListUsableSubnetworksRequest payload, String token) {
+              return ListUsableSubnetworksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUsableSubnetworksRequest injectPageSize(
+                ListUsableSubnetworksRequest payload, int pageSize) {
+              return ListUsableSubnetworksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsableSubnetworksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUsableSubnetworksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UsableSubnetwork> extractResources(
+                ListUsableSubnetworksResponse payload) {
+              return payload.getSubnetworksList() == null
+                  ? ImmutableList.<UsableSubnetwork>of()
+                  : payload.getSubnetworksList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUsableSubnetworksRequest,
+          ListUsableSubnetworksResponse,
+          ListUsableSubnetworksPagedResponse>
+      LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsableSubnetworksRequest,
+              ListUsableSubnetworksResponse,
+              ListUsableSubnetworksPagedResponse>() {
+            @Override
+            public ApiFuture<ListUsableSubnetworksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse> callable,
+                ListUsableSubnetworksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUsableSubnetworksResponse> futureResponse) {
+              PageContext<
+                      ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_USABLE_SUBNETWORKS_PAGE_STR_DESC, request, context);
+              return ListUsableSubnetworksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listClusters. */
   public UnaryCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings() {
@@ -245,12 +312,12 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     return listOperationsSettings;
   }
 
-  /** Returns the object with the settings used for calls to getOperation. */
+  /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetOperationRequest, Operation> getOperationSettings() {
     return getOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to cancelOperation. */
+  /** Returns the object with the settings used for calls to cancel. */
   public UnaryCallSettings<CancelOperationRequest, Empty> cancelOperationSettings() {
     return cancelOperationSettings;
   }
@@ -347,10 +414,10 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcClusterManagerStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -444,75 +511,9 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     listUsableSubnetworksSettings = settingsBuilder.listUsableSubnetworksSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
-      LIST_USABLE_SUBNETWORKS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListUsableSubnetworksRequest injectToken(
-                ListUsableSubnetworksRequest payload, String token) {
-              return ListUsableSubnetworksRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListUsableSubnetworksRequest injectPageSize(
-                ListUsableSubnetworksRequest payload, int pageSize) {
-              return ListUsableSubnetworksRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListUsableSubnetworksRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListUsableSubnetworksResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<UsableSubnetwork> extractResources(
-                ListUsableSubnetworksResponse payload) {
-              return payload.getSubnetworksList() != null
-                  ? payload.getSubnetworksList()
-                  : ImmutableList.<UsableSubnetwork>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListUsableSubnetworksRequest,
-          ListUsableSubnetworksResponse,
-          ListUsableSubnetworksPagedResponse>
-      LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListUsableSubnetworksRequest,
-              ListUsableSubnetworksResponse,
-              ListUsableSubnetworksPagedResponse>() {
-            @Override
-            public ApiFuture<ListUsableSubnetworksPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse> callable,
-                ListUsableSubnetworksRequest request,
-                ApiCallContext context,
-                ApiFuture<ListUsableSubnetworksResponse> futureResponse) {
-              PageContext<
-                      ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_USABLE_SUBNETWORKS_PAGE_STR_DESC, request, context);
-              return ListUsableSubnetworksPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for ClusterManagerStubSettings. */
   public static class Builder extends StubSettings.Builder<ClusterManagerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<ListClustersRequest, ListClustersResponse>
         listClustersSettings;
     private final UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings;
@@ -568,7 +569,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
             ListUsableSubnetworksResponse,
             ListUsableSubnetworksPagedResponse>
         listUsableSubnetworksSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -576,13 +576,13 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -601,9 +601,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
               .setTotalTimeout(Duration.ofMillis(20000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(45000L))
@@ -612,78 +610,49 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               .setTotalTimeout(Duration.ofMillis(45000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listClustersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setNodePoolAutoscalingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setLoggingServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setMonitoringServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setAddonsConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setLocationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateMasterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setMasterAuthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listOperationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       cancelOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getServerConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getJSONWebKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listNodePoolsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       rollbackNodePoolUpgradeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setNodePoolManagementSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setLegacyAbacSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       startIPRotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       completeIPRotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setNodePoolSizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setNetworkPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setMaintenancePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listUsableSubnetworksSettings =
           PagedCallSettings.newBuilder(LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT);
 
@@ -721,182 +690,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               setNetworkPolicySettings,
               setMaintenancePolicySettings,
               listUsableSubnetworksSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listClustersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateNodePoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setNodePoolAutoscalingSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setLoggingServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setMonitoringServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setAddonsConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setLocationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateMasterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setMasterAuthSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listOperationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getOperationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .cancelOperationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getServerConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getJSONWebKeysSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .listNodePoolsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getNodePoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createNodePoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteNodePoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .rollbackNodePoolUpgradeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setNodePoolManagementSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setLabelsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setLegacyAbacSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .startIPRotationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .completeIPRotationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setNodePoolSizeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setNetworkPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .setMaintenancePolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listUsableSubnetworksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      return builder;
     }
 
     protected Builder(ClusterManagerStubSettings settings) {
@@ -971,7 +765,182 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               listUsableSubnetworksSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listClustersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateNodePoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setNodePoolAutoscalingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setLoggingServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setMonitoringServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setAddonsConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateMasterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setMasterAuthSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listOperationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .cancelOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getServerConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getJSONWebKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listNodePoolsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getNodePoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createNodePoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteNodePoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .rollbackNodePoolUpgradeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setNodePoolManagementSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setLabelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setLegacyAbacSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .startIPRotationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .completeIPRotationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setNodePoolSizeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setNetworkPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setMaintenancePolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listUsableSubnetworksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -1062,12 +1031,12 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       return listOperationsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getOperation. */
+    /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetOperationRequest, Operation> getOperationSettings() {
       return getOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to cancelOperation. */
+    /** Returns the builder for the settings used for calls to cancel. */
     public UnaryCallSettings.Builder<CancelOperationRequest, Empty> cancelOperationSettings() {
       return cancelOperationSettings;
     }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.container.v1;
 
 import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubnetworksPagedResponse;
@@ -75,7 +76,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ClusterManagerClient}.
  *
@@ -92,23 +93,24 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of listClusters to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ClusterManagerSettings.Builder clusterManagerSettingsBuilder =
  *     ClusterManagerSettings.newBuilder();
  * clusterManagerSettingsBuilder
  *     .listClustersSettings()
  *     .setRetrySettings(
- *         clusterManagerSettingsBuilder.listClustersSettings().getRetrySettings().toBuilder()
+ *         clusterManagerSettingsBuilder
+ *             .listClustersSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ClusterManagerSettings clusterManagerSettings = clusterManagerSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ClusterManagerSettings extends ClientSettings<ClusterManagerSettings> {
+
   /** Returns the object with the settings used for calls to listClusters. */
   public UnaryCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).listClustersSettings();
@@ -180,12 +182,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     return ((ClusterManagerStubSettings) getStubSettings()).listOperationsSettings();
   }
 
-  /** Returns the object with the settings used for calls to getOperation. */
+  /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetOperationRequest, Operation> getOperationSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).getOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to cancelOperation. */
+  /** Returns the object with the settings used for calls to cancel. */
   public UnaryCallSettings<CancelOperationRequest, Empty> cancelOperationSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).cancelOperationSettings();
   }
@@ -336,16 +338,13 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
 
   /** Builder for ClusterManagerSettings. */
   public static class Builder extends ClientSettings.Builder<ClusterManagerSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ClusterManagerStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ClusterManagerStubSettings.newBuilder());
     }
 
     protected Builder(ClusterManagerSettings settings) {
@@ -356,11 +355,15 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ClusterManagerStubSettings.newBuilder());
+    }
+
     public ClusterManagerStubSettings.Builder getStubSettingsBuilder() {
       return ((ClusterManagerStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -448,12 +451,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       return getStubSettingsBuilder().listOperationsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getOperation. */
+    /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetOperationRequest, Operation> getOperationSettings() {
       return getStubSettingsBuilder().getOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to cancelOperation. */
+    /** Returns the builder for the settings used for calls to cancel. */
     public UnaryCallSettings.Builder<CancelOperationRequest, Empty> cancelOperationSettings() {
       return getStubSettingsBuilder().cancelOperationSettings();
     }

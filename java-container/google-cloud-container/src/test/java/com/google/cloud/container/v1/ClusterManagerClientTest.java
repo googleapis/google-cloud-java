@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.container.v1;
 
 import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubnetworksPagedResponse;
@@ -26,12 +27,16 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.container.v1.AddonsConfig;
+import com.google.container.v1.AuthenticatorGroupsConfig;
+import com.google.container.v1.BinaryAuthorization;
 import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.Cluster;
+import com.google.container.v1.ClusterAutoscaling;
 import com.google.container.v1.ClusterUpdate;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
+import com.google.container.v1.DatabaseEncryption;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
 import com.google.container.v1.GetClusterRequest;
@@ -40,6 +45,9 @@ import com.google.container.v1.GetJSONWebKeysResponse;
 import com.google.container.v1.GetNodePoolRequest;
 import com.google.container.v1.GetOperationRequest;
 import com.google.container.v1.GetServerConfigRequest;
+import com.google.container.v1.IPAllocationPolicy;
+import com.google.container.v1.Jwk;
+import com.google.container.v1.LegacyAbac;
 import com.google.container.v1.ListClustersRequest;
 import com.google.container.v1.ListClustersResponse;
 import com.google.container.v1.ListNodePoolsRequest;
@@ -50,11 +58,19 @@ import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.MaintenancePolicy;
 import com.google.container.v1.MasterAuth;
+import com.google.container.v1.MasterAuthorizedNetworksConfig;
+import com.google.container.v1.MaxPodsConstraint;
+import com.google.container.v1.NetworkConfig;
 import com.google.container.v1.NetworkPolicy;
+import com.google.container.v1.NodeConfig;
 import com.google.container.v1.NodeManagement;
 import com.google.container.v1.NodePool;
 import com.google.container.v1.NodePoolAutoscaling;
 import com.google.container.v1.Operation;
+import com.google.container.v1.OperationProgress;
+import com.google.container.v1.PrivateClusterConfig;
+import com.google.container.v1.ReleaseChannel;
+import com.google.container.v1.ResourceUsageExportConfig;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.ServerConfig;
 import com.google.container.v1.SetAddonsConfigRequest;
@@ -69,22 +85,26 @@ import com.google.container.v1.SetNetworkPolicyRequest;
 import com.google.container.v1.SetNodePoolAutoscalingRequest;
 import com.google.container.v1.SetNodePoolManagementRequest;
 import com.google.container.v1.SetNodePoolSizeRequest;
+import com.google.container.v1.ShieldedNodes;
 import com.google.container.v1.StartIPRotationRequest;
+import com.google.container.v1.StatusCondition;
 import com.google.container.v1.UpdateClusterRequest;
 import com.google.container.v1.UpdateMasterRequest;
 import com.google.container.v1.UpdateNodePoolRequest;
 import com.google.container.v1.UsableSubnetwork;
+import com.google.container.v1.VerticalPodAutoscaling;
+import com.google.container.v1.WorkloadIdentityConfig;
+import com.google.container.v1.WorkloadMetadataConfig;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -92,31 +112,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class ClusterManagerClientTest {
-  private static MockClusterManager mockClusterManager;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private ClusterManagerClient client;
+  private static MockClusterManager mockClusterManager;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockClusterManager = new MockClusterManager();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockClusterManager));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     ClusterManagerSettings settings =
         ClusterManagerSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -131,23 +151,24 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listClustersTest() {
-    ListClustersResponse expectedResponse = ListClustersResponse.newBuilder().build();
+  public void listClustersTest() throws Exception {
+    ListClustersResponse expectedResponse =
+        ListClustersResponse.newBuilder()
+            .addAllClusters(new ArrayList<Cluster>())
+            .addAllMissingZones(new ArrayList<String>())
+            .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
+    String parent = "parent-995424086";
 
-    ListClustersResponse actualResponse = client.listClusters(projectId, zone);
+    ListClustersResponse actualResponse = client.listClusters(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListClustersRequest actualRequest = (ListClustersRequest) actualRequests.get(0);
+    ListClustersRequest actualRequest = ((ListClustersRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -155,29 +176,29 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listClustersExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-
-      client.listClusters(projectId, zone);
+      String parent = "parent-995424086";
+      client.listClusters(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listClustersTest2() {
-    ListClustersResponse expectedResponse = ListClustersResponse.newBuilder().build();
+  public void listClustersTest2() throws Exception {
+    ListClustersResponse expectedResponse =
+        ListClustersResponse.newBuilder()
+            .addAllClusters(new ArrayList<Cluster>())
+            .addAllMissingZones(new ArrayList<String>())
+            .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
 
     ListClustersResponse actualResponse = client.listClusters(projectId, zone);
@@ -185,7 +206,7 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListClustersRequest actualRequest = (ListClustersRequest) actualRequests.get(0);
+    ListClustersRequest actualRequest = ((ListClustersRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -196,94 +217,87 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listClustersExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-
       client.listClusters(projectId, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getClusterTest() {
-    String name = "name3373707";
-    String description = "description-1724546052";
-    int initialNodeCount = 1682564205;
-    String loggingService = "loggingService-1700501035";
-    String monitoringService = "monitoringService1469270462";
-    String network = "network1843485230";
-    String clusterIpv4Cidr = "clusterIpv4Cidr-141875831";
-    String subnetwork = "subnetwork-1302785042";
-    boolean enableKubernetesAlpha = false;
-    String labelFingerprint = "labelFingerprint714995737";
-    String selfLink = "selfLink-1691268851";
-    String zone2 = "zone2-696322977";
-    String endpoint = "endpoint1741102485";
-    String initialClusterVersion = "initialClusterVersion-276373352";
-    String currentMasterVersion = "currentMasterVersion-920953983";
-    String currentNodeVersion = "currentNodeVersion-407476063";
-    String createTime = "createTime-493574096";
-    String statusMessage = "statusMessage-239442758";
-    int nodeIpv4CidrSize = 1181176815;
-    String servicesIpv4Cidr = "servicesIpv4Cidr1966438125";
-    int currentNodeCount = 178977560;
-    String expireTime = "expireTime-96179731";
-    String location = "location1901043637";
-    boolean enableTpu = false;
-    String tpuIpv4CidrBlock = "tpuIpv4CidrBlock1137906646";
+  public void getClusterTest() throws Exception {
     Cluster expectedResponse =
         Cluster.newBuilder()
-            .setName(name)
-            .setDescription(description)
-            .setInitialNodeCount(initialNodeCount)
-            .setLoggingService(loggingService)
-            .setMonitoringService(monitoringService)
-            .setNetwork(network)
-            .setClusterIpv4Cidr(clusterIpv4Cidr)
-            .setSubnetwork(subnetwork)
-            .setEnableKubernetesAlpha(enableKubernetesAlpha)
-            .setLabelFingerprint(labelFingerprint)
-            .setSelfLink(selfLink)
-            .setZone(zone2)
-            .setEndpoint(endpoint)
-            .setInitialClusterVersion(initialClusterVersion)
-            .setCurrentMasterVersion(currentMasterVersion)
-            .setCurrentNodeVersion(currentNodeVersion)
-            .setCreateTime(createTime)
-            .setStatusMessage(statusMessage)
-            .setNodeIpv4CidrSize(nodeIpv4CidrSize)
-            .setServicesIpv4Cidr(servicesIpv4Cidr)
-            .setCurrentNodeCount(currentNodeCount)
-            .setExpireTime(expireTime)
-            .setLocation(location)
-            .setEnableTpu(enableTpu)
-            .setTpuIpv4CidrBlock(tpuIpv4CidrBlock)
+            .setName("name3373707")
+            .setDescription("description-1724546052")
+            .setInitialNodeCount(1682564205)
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setMasterAuth(MasterAuth.newBuilder().build())
+            .setLoggingService("loggingService1098570326")
+            .setMonitoringService("monitoringService-1431578291")
+            .setNetwork("network1843485230")
+            .setClusterIpv4Cidr("clusterIpv4Cidr-277423341")
+            .setAddonsConfig(AddonsConfig.newBuilder().build())
+            .setSubnetwork("subnetwork-1302785042")
+            .addAllNodePools(new ArrayList<NodePool>())
+            .addAllLocations(new ArrayList<String>())
+            .setEnableKubernetesAlpha(true)
+            .putAllResourceLabels(new HashMap<String, String>())
+            .setLabelFingerprint("labelFingerprint379449680")
+            .setLegacyAbac(LegacyAbac.newBuilder().build())
+            .setNetworkPolicy(NetworkPolicy.newBuilder().build())
+            .setIpAllocationPolicy(IPAllocationPolicy.newBuilder().build())
+            .setMasterAuthorizedNetworksConfig(MasterAuthorizedNetworksConfig.newBuilder().build())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setAutoscaling(ClusterAutoscaling.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setDefaultMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .setResourceUsageExportConfig(ResourceUsageExportConfig.newBuilder().build())
+            .setAuthenticatorGroupsConfig(AuthenticatorGroupsConfig.newBuilder().build())
+            .setPrivateClusterConfig(PrivateClusterConfig.newBuilder().build())
+            .setDatabaseEncryption(DatabaseEncryption.newBuilder().build())
+            .setVerticalPodAutoscaling(VerticalPodAutoscaling.newBuilder().build())
+            .setShieldedNodes(ShieldedNodes.newBuilder().build())
+            .setReleaseChannel(ReleaseChannel.newBuilder().build())
+            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
+            .setSelfLink("selfLink1191800166")
+            .setZone("zone3744684")
+            .setEndpoint("endpoint1741102485")
+            .setInitialClusterVersion("initialClusterVersion-1547734558")
+            .setCurrentMasterVersion("currentMasterVersion1871927069")
+            .setCurrentNodeVersion("currentNodeVersion373921085")
+            .setCreateTime("createTime1369213417")
+            .setStatusMessage("statusMessage-958704715")
+            .setNodeIpv4CidrSize(1181176815)
+            .setServicesIpv4Cidr("servicesIpv4Cidr-1785842313")
+            .addAllInstanceGroupUrls(new ArrayList<String>())
+            .setCurrentNodeCount(178977560)
+            .setExpireTime("expireTime-834724724")
+            .setLocation("location1901043637")
+            .setEnableTpu(true)
+            .setTpuIpv4CidrBlock("tpuIpv4CidrBlock997172251")
+            .addAllConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String name = "name3373707";
 
-    Cluster actualResponse = client.getCluster(projectId, zone, clusterId);
+    Cluster actualResponse = client.getCluster(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetClusterRequest actualRequest = (GetClusterRequest) actualRequests.get(0);
+    GetClusterRequest actualRequest = ((GetClusterRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -291,91 +305,86 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getClusterExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-
-      client.getCluster(projectId, zone, clusterId);
+      String name = "name3373707";
+      client.getCluster(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getClusterTest2() {
-    String name = "name3373707";
-    String description = "description-1724546052";
-    int initialNodeCount = 1682564205;
-    String loggingService = "loggingService-1700501035";
-    String monitoringService = "monitoringService1469270462";
-    String network = "network1843485230";
-    String clusterIpv4Cidr = "clusterIpv4Cidr-141875831";
-    String subnetwork = "subnetwork-1302785042";
-    boolean enableKubernetesAlpha = false;
-    String labelFingerprint = "labelFingerprint714995737";
-    String selfLink = "selfLink-1691268851";
-    String zone2 = "zone2-696322977";
-    String endpoint = "endpoint1741102485";
-    String initialClusterVersion = "initialClusterVersion-276373352";
-    String currentMasterVersion = "currentMasterVersion-920953983";
-    String currentNodeVersion = "currentNodeVersion-407476063";
-    String createTime = "createTime-493574096";
-    String statusMessage = "statusMessage-239442758";
-    int nodeIpv4CidrSize = 1181176815;
-    String servicesIpv4Cidr = "servicesIpv4Cidr1966438125";
-    int currentNodeCount = 178977560;
-    String expireTime = "expireTime-96179731";
-    String location = "location1901043637";
-    boolean enableTpu = false;
-    String tpuIpv4CidrBlock = "tpuIpv4CidrBlock1137906646";
+  public void getClusterTest2() throws Exception {
     Cluster expectedResponse =
         Cluster.newBuilder()
-            .setName(name)
-            .setDescription(description)
-            .setInitialNodeCount(initialNodeCount)
-            .setLoggingService(loggingService)
-            .setMonitoringService(monitoringService)
-            .setNetwork(network)
-            .setClusterIpv4Cidr(clusterIpv4Cidr)
-            .setSubnetwork(subnetwork)
-            .setEnableKubernetesAlpha(enableKubernetesAlpha)
-            .setLabelFingerprint(labelFingerprint)
-            .setSelfLink(selfLink)
-            .setZone(zone2)
-            .setEndpoint(endpoint)
-            .setInitialClusterVersion(initialClusterVersion)
-            .setCurrentMasterVersion(currentMasterVersion)
-            .setCurrentNodeVersion(currentNodeVersion)
-            .setCreateTime(createTime)
-            .setStatusMessage(statusMessage)
-            .setNodeIpv4CidrSize(nodeIpv4CidrSize)
-            .setServicesIpv4Cidr(servicesIpv4Cidr)
-            .setCurrentNodeCount(currentNodeCount)
-            .setExpireTime(expireTime)
-            .setLocation(location)
-            .setEnableTpu(enableTpu)
-            .setTpuIpv4CidrBlock(tpuIpv4CidrBlock)
+            .setName("name3373707")
+            .setDescription("description-1724546052")
+            .setInitialNodeCount(1682564205)
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setMasterAuth(MasterAuth.newBuilder().build())
+            .setLoggingService("loggingService1098570326")
+            .setMonitoringService("monitoringService-1431578291")
+            .setNetwork("network1843485230")
+            .setClusterIpv4Cidr("clusterIpv4Cidr-277423341")
+            .setAddonsConfig(AddonsConfig.newBuilder().build())
+            .setSubnetwork("subnetwork-1302785042")
+            .addAllNodePools(new ArrayList<NodePool>())
+            .addAllLocations(new ArrayList<String>())
+            .setEnableKubernetesAlpha(true)
+            .putAllResourceLabels(new HashMap<String, String>())
+            .setLabelFingerprint("labelFingerprint379449680")
+            .setLegacyAbac(LegacyAbac.newBuilder().build())
+            .setNetworkPolicy(NetworkPolicy.newBuilder().build())
+            .setIpAllocationPolicy(IPAllocationPolicy.newBuilder().build())
+            .setMasterAuthorizedNetworksConfig(MasterAuthorizedNetworksConfig.newBuilder().build())
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setAutoscaling(ClusterAutoscaling.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setDefaultMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .setResourceUsageExportConfig(ResourceUsageExportConfig.newBuilder().build())
+            .setAuthenticatorGroupsConfig(AuthenticatorGroupsConfig.newBuilder().build())
+            .setPrivateClusterConfig(PrivateClusterConfig.newBuilder().build())
+            .setDatabaseEncryption(DatabaseEncryption.newBuilder().build())
+            .setVerticalPodAutoscaling(VerticalPodAutoscaling.newBuilder().build())
+            .setShieldedNodes(ShieldedNodes.newBuilder().build())
+            .setReleaseChannel(ReleaseChannel.newBuilder().build())
+            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
+            .setSelfLink("selfLink1191800166")
+            .setZone("zone3744684")
+            .setEndpoint("endpoint1741102485")
+            .setInitialClusterVersion("initialClusterVersion-1547734558")
+            .setCurrentMasterVersion("currentMasterVersion1871927069")
+            .setCurrentNodeVersion("currentNodeVersion373921085")
+            .setCreateTime("createTime1369213417")
+            .setStatusMessage("statusMessage-958704715")
+            .setNodeIpv4CidrSize(1181176815)
+            .setServicesIpv4Cidr("servicesIpv4Cidr-1785842313")
+            .addAllInstanceGroupUrls(new ArrayList<String>())
+            .setCurrentNodeCount(178977560)
+            .setExpireTime("expireTime-834724724")
+            .setLocation("location1901043637")
+            .setEnableTpu(true)
+            .setTpuIpv4CidrBlock("tpuIpv4CidrBlock997172251")
+            .addAllConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
 
     Cluster actualResponse = client.getCluster(projectId, zone, clusterId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetClusterRequest actualRequest = (GetClusterRequest) actualRequests.get(0);
+    GetClusterRequest actualRequest = ((GetClusterRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -387,62 +396,51 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getClusterExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-
+      String clusterId = "clusterId561939637";
       client.getCluster(projectId, zone, clusterId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createClusterTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void createClusterTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
+    String parent = "parent-995424086";
     Cluster cluster = Cluster.newBuilder().build();
 
-    Operation actualResponse = client.createCluster(projectId, zone, cluster);
+    Operation actualResponse = client.createCluster(parent, cluster);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateClusterRequest actualRequest = (CreateClusterRequest) actualRequests.get(0);
+    CreateClusterRequest actualRequest = ((CreateClusterRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertEquals(cluster, actualRequest.getCluster());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -451,50 +449,40 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createClusterExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
+      String parent = "parent-995424086";
       Cluster cluster = Cluster.newBuilder().build();
-
-      client.createCluster(projectId, zone, cluster);
+      client.createCluster(parent, cluster);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createClusterTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void createClusterTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
     Cluster cluster = Cluster.newBuilder().build();
 
@@ -503,7 +491,7 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateClusterRequest actualRequest = (CreateClusterRequest) actualRequests.get(0);
+    CreateClusterRequest actualRequest = ((CreateClusterRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -515,64 +503,51 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createClusterExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
       Cluster cluster = Cluster.newBuilder().build();
-
       client.createCluster(projectId, zone, cluster);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateClusterTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void updateClusterTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String name = "name3373707";
     ClusterUpdate update = ClusterUpdate.newBuilder().build();
 
-    Operation actualResponse = client.updateCluster(projectId, zone, clusterId, update);
+    Operation actualResponse = client.updateCluster(name, update);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateClusterRequest actualRequest = (UpdateClusterRequest) actualRequests.get(0);
+    UpdateClusterRequest actualRequest = ((UpdateClusterRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(update, actualRequest.getUpdate());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -581,53 +556,42 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateClusterExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String name = "name3373707";
       ClusterUpdate update = ClusterUpdate.newBuilder().build();
-
-      client.updateCluster(projectId, zone, clusterId, update);
+      client.updateCluster(name, update);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateClusterTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void updateClusterTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
     ClusterUpdate update = ClusterUpdate.newBuilder().build();
 
     Operation actualResponse = client.updateCluster(projectId, zone, clusterId, update);
@@ -635,7 +599,7 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateClusterRequest actualRequest = (UpdateClusterRequest) actualRequests.get(0);
+    UpdateClusterRequest actualRequest = ((UpdateClusterRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -648,56 +612,52 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateClusterExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String clusterId = "clusterId561939637";
       ClusterUpdate update = ClusterUpdate.newBuilder().build();
-
       client.updateCluster(projectId, zone, clusterId, update);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateNodePoolTest() {
-    String name = "name3373707";
-    String zone = "zone3744684";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void updateNodePoolTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String nodeVersion = "nodeVersion1790136219";
-    String imageType = "imageType-1442758754";
     UpdateNodePoolRequest request =
         UpdateNodePoolRequest.newBuilder()
-            .setNodeVersion(nodeVersion)
-            .setImageType(imageType)
+            .setProjectId("projectId-894832108")
+            .setZone("zone3744684")
+            .setClusterId("clusterId561939637")
+            .setNodePoolId("nodePoolId1121557241")
+            .setNodeVersion("nodeVersion1155309686")
+            .setImageType("imageType-878147787")
+            .setName("name3373707")
+            .addAllLocations(new ArrayList<String>())
+            .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -705,10 +665,19 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateNodePoolRequest actualRequest = (UpdateNodePoolRequest) actualRequests.get(0);
+    UpdateNodePoolRequest actualRequest = ((UpdateNodePoolRequest) actualRequests.get(0));
 
-    Assert.assertEquals(nodeVersion, actualRequest.getNodeVersion());
-    Assert.assertEquals(imageType, actualRequest.getImageType());
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getZone(), actualRequest.getZone());
+    Assert.assertEquals(request.getClusterId(), actualRequest.getClusterId());
+    Assert.assertEquals(request.getNodePoolId(), actualRequest.getNodePoolId());
+    Assert.assertEquals(request.getNodeVersion(), actualRequest.getNodeVersion());
+    Assert.assertEquals(request.getImageType(), actualRequest.getImageType());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getLocationsList(), actualRequest.getLocationsList());
+    Assert.assertEquals(
+        request.getWorkloadMetadataConfig(), actualRequest.getWorkloadMetadataConfig());
+    Assert.assertEquals(request.getUpgradeSettings(), actualRequest.getUpgradeSettings());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -716,56 +685,58 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateNodePoolExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String nodeVersion = "nodeVersion1790136219";
-      String imageType = "imageType-1442758754";
       UpdateNodePoolRequest request =
           UpdateNodePoolRequest.newBuilder()
-              .setNodeVersion(nodeVersion)
-              .setImageType(imageType)
+              .setProjectId("projectId-894832108")
+              .setZone("zone3744684")
+              .setClusterId("clusterId561939637")
+              .setNodePoolId("nodePoolId1121557241")
+              .setNodeVersion("nodeVersion1155309686")
+              .setImageType("imageType-878147787")
+              .setName("name3373707")
+              .addAllLocations(new ArrayList<String>())
+              .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
               .build();
-
       client.updateNodePool(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setNodePoolAutoscalingTest() {
-    String name = "name3373707";
-    String zone = "zone3744684";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setNodePoolAutoscalingTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    NodePoolAutoscaling autoscaling = NodePoolAutoscaling.newBuilder().build();
     SetNodePoolAutoscalingRequest request =
-        SetNodePoolAutoscalingRequest.newBuilder().setAutoscaling(autoscaling).build();
+        SetNodePoolAutoscalingRequest.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setZone("zone3744684")
+            .setClusterId("clusterId561939637")
+            .setNodePoolId("nodePoolId1121557241")
+            .setAutoscaling(NodePoolAutoscaling.newBuilder().build())
+            .setName("name3373707")
+            .build();
 
     Operation actualResponse = client.setNodePoolAutoscaling(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -773,9 +744,14 @@ public class ClusterManagerClientTest {
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetNodePoolAutoscalingRequest actualRequest =
-        (SetNodePoolAutoscalingRequest) actualRequests.get(0);
+        ((SetNodePoolAutoscalingRequest) actualRequests.get(0));
 
-    Assert.assertEquals(autoscaling, actualRequest.getAutoscaling());
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getZone(), actualRequest.getZone());
+    Assert.assertEquals(request.getClusterId(), actualRequest.getClusterId());
+    Assert.assertEquals(request.getNodePoolId(), actualRequest.getNodePoolId());
+    Assert.assertEquals(request.getAutoscaling(), actualRequest.getAutoscaling());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -783,64 +759,57 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setNodePoolAutoscalingExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      NodePoolAutoscaling autoscaling = NodePoolAutoscaling.newBuilder().build();
       SetNodePoolAutoscalingRequest request =
-          SetNodePoolAutoscalingRequest.newBuilder().setAutoscaling(autoscaling).build();
-
+          SetNodePoolAutoscalingRequest.newBuilder()
+              .setProjectId("projectId-894832108")
+              .setZone("zone3744684")
+              .setClusterId("clusterId561939637")
+              .setNodePoolId("nodePoolId1121557241")
+              .setAutoscaling(NodePoolAutoscaling.newBuilder().build())
+              .setName("name3373707")
+              .build();
       client.setNodePoolAutoscaling(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setLoggingServiceTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setLoggingServiceTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String loggingService = "loggingService-1700501035";
+    String name = "name3373707";
+    String loggingService = "loggingService1098570326";
 
-    Operation actualResponse = client.setLoggingService(projectId, zone, clusterId, loggingService);
+    Operation actualResponse = client.setLoggingService(name, loggingService);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetLoggingServiceRequest actualRequest = (SetLoggingServiceRequest) actualRequests.get(0);
+    SetLoggingServiceRequest actualRequest = ((SetLoggingServiceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(loggingService, actualRequest.getLoggingService());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -849,61 +818,50 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setLoggingServiceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String loggingService = "loggingService-1700501035";
-
-      client.setLoggingService(projectId, zone, clusterId, loggingService);
+      String name = "name3373707";
+      String loggingService = "loggingService1098570326";
+      client.setLoggingService(name, loggingService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setLoggingServiceTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setLoggingServiceTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String loggingService = "loggingService-1700501035";
+    String clusterId = "clusterId561939637";
+    String loggingService = "loggingService1098570326";
 
     Operation actualResponse = client.setLoggingService(projectId, zone, clusterId, loggingService);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetLoggingServiceRequest actualRequest = (SetLoggingServiceRequest) actualRequests.get(0);
+    SetLoggingServiceRequest actualRequest = ((SetLoggingServiceRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -916,66 +874,53 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setLoggingServiceExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String loggingService = "loggingService-1700501035";
-
+      String clusterId = "clusterId561939637";
+      String loggingService = "loggingService1098570326";
       client.setLoggingService(projectId, zone, clusterId, loggingService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setMonitoringServiceTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setMonitoringServiceTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String monitoringService = "monitoringService1469270462";
+    String name = "name3373707";
+    String monitoringService = "monitoringService-1431578291";
 
-    Operation actualResponse =
-        client.setMonitoringService(projectId, zone, clusterId, monitoringService);
+    Operation actualResponse = client.setMonitoringService(name, monitoringService);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetMonitoringServiceRequest actualRequest = (SetMonitoringServiceRequest) actualRequests.get(0);
+    SetMonitoringServiceRequest actualRequest =
+        ((SetMonitoringServiceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(monitoringService, actualRequest.getMonitoringService());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -984,54 +929,43 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setMonitoringServiceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String monitoringService = "monitoringService1469270462";
-
-      client.setMonitoringService(projectId, zone, clusterId, monitoringService);
+      String name = "name3373707";
+      String monitoringService = "monitoringService-1431578291";
+      client.setMonitoringService(name, monitoringService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setMonitoringServiceTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setMonitoringServiceTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String monitoringService = "monitoringService1469270462";
+    String clusterId = "clusterId561939637";
+    String monitoringService = "monitoringService-1431578291";
 
     Operation actualResponse =
         client.setMonitoringService(projectId, zone, clusterId, monitoringService);
@@ -1039,7 +973,8 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetMonitoringServiceRequest actualRequest = (SetMonitoringServiceRequest) actualRequests.get(0);
+    SetMonitoringServiceRequest actualRequest =
+        ((SetMonitoringServiceRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -1052,65 +987,52 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setMonitoringServiceExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String monitoringService = "monitoringService1469270462";
-
+      String clusterId = "clusterId561939637";
+      String monitoringService = "monitoringService-1431578291";
       client.setMonitoringService(projectId, zone, clusterId, monitoringService);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setAddonsConfigTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setAddonsConfigTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String name = "name3373707";
     AddonsConfig addonsConfig = AddonsConfig.newBuilder().build();
 
-    Operation actualResponse = client.setAddonsConfig(projectId, zone, clusterId, addonsConfig);
+    Operation actualResponse = client.setAddonsConfig(name, addonsConfig);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetAddonsConfigRequest actualRequest = (SetAddonsConfigRequest) actualRequests.get(0);
+    SetAddonsConfigRequest actualRequest = ((SetAddonsConfigRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(addonsConfig, actualRequest.getAddonsConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1119,53 +1041,42 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setAddonsConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String name = "name3373707";
       AddonsConfig addonsConfig = AddonsConfig.newBuilder().build();
-
-      client.setAddonsConfig(projectId, zone, clusterId, addonsConfig);
+      client.setAddonsConfig(name, addonsConfig);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setAddonsConfigTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setAddonsConfigTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
     AddonsConfig addonsConfig = AddonsConfig.newBuilder().build();
 
     Operation actualResponse = client.setAddonsConfig(projectId, zone, clusterId, addonsConfig);
@@ -1173,7 +1084,7 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetAddonsConfigRequest actualRequest = (SetAddonsConfigRequest) actualRequests.get(0);
+    SetAddonsConfigRequest actualRequest = ((SetAddonsConfigRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -1186,65 +1097,52 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setAddonsConfigExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String clusterId = "clusterId561939637";
       AddonsConfig addonsConfig = AddonsConfig.newBuilder().build();
-
       client.setAddonsConfig(projectId, zone, clusterId, addonsConfig);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setLocationsTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setLocationsTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String name = "name3373707";
     List<String> locations = new ArrayList<>();
 
-    Operation actualResponse = client.setLocations(projectId, zone, clusterId, locations);
+    Operation actualResponse = client.setLocations(name, locations);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetLocationsRequest actualRequest = (SetLocationsRequest) actualRequests.get(0);
+    SetLocationsRequest actualRequest = ((SetLocationsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(locations, actualRequest.getLocationsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1253,53 +1151,42 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setLocationsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String name = "name3373707";
       List<String> locations = new ArrayList<>();
-
-      client.setLocations(projectId, zone, clusterId, locations);
+      client.setLocations(name, locations);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setLocationsTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setLocationsTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
     List<String> locations = new ArrayList<>();
 
     Operation actualResponse = client.setLocations(projectId, zone, clusterId, locations);
@@ -1307,7 +1194,7 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetLocationsRequest actualRequest = (SetLocationsRequest) actualRequests.get(0);
+    SetLocationsRequest actualRequest = ((SetLocationsRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -1320,65 +1207,52 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setLocationsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String clusterId = "clusterId561939637";
       List<String> locations = new ArrayList<>();
-
       client.setLocations(projectId, zone, clusterId, locations);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateMasterTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void updateMasterTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String masterVersion = "masterVersion-2139460613";
+    String name = "name3373707";
+    String masterVersion = "masterVersion1167095830";
 
-    Operation actualResponse = client.updateMaster(projectId, zone, clusterId, masterVersion);
+    Operation actualResponse = client.updateMaster(name, masterVersion);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateMasterRequest actualRequest = (UpdateMasterRequest) actualRequests.get(0);
+    UpdateMasterRequest actualRequest = ((UpdateMasterRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(masterVersion, actualRequest.getMasterVersion());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1387,61 +1261,50 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateMasterExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String masterVersion = "masterVersion-2139460613";
-
-      client.updateMaster(projectId, zone, clusterId, masterVersion);
+      String name = "name3373707";
+      String masterVersion = "masterVersion1167095830";
+      client.updateMaster(name, masterVersion);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateMasterTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void updateMasterTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String masterVersion = "masterVersion-2139460613";
+    String clusterId = "clusterId561939637";
+    String masterVersion = "masterVersion1167095830";
 
     Operation actualResponse = client.updateMaster(projectId, zone, clusterId, masterVersion);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateMasterRequest actualRequest = (UpdateMasterRequest) actualRequests.get(0);
+    UpdateMasterRequest actualRequest = ((UpdateMasterRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -1454,64 +1317,63 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateMasterExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String masterVersion = "masterVersion-2139460613";
-
+      String clusterId = "clusterId561939637";
+      String masterVersion = "masterVersion1167095830";
       client.updateMaster(projectId, zone, clusterId, masterVersion);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setMasterAuthTest() {
-    String name = "name3373707";
-    String zone = "zone3744684";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setMasterAuthTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    SetMasterAuthRequest.Action action = SetMasterAuthRequest.Action.UNKNOWN;
-    MasterAuth update = MasterAuth.newBuilder().build();
     SetMasterAuthRequest request =
-        SetMasterAuthRequest.newBuilder().setAction(action).setUpdate(update).build();
+        SetMasterAuthRequest.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setZone("zone3744684")
+            .setClusterId("clusterId561939637")
+            .setUpdate(MasterAuth.newBuilder().build())
+            .setName("name3373707")
+            .build();
 
     Operation actualResponse = client.setMasterAuth(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetMasterAuthRequest actualRequest = (SetMasterAuthRequest) actualRequests.get(0);
+    SetMasterAuthRequest actualRequest = ((SetMasterAuthRequest) actualRequests.get(0));
 
-    Assert.assertEquals(action, actualRequest.getAction());
-    Assert.assertEquals(update, actualRequest.getUpdate());
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getZone(), actualRequest.getZone());
+    Assert.assertEquals(request.getClusterId(), actualRequest.getClusterId());
+    Assert.assertEquals(request.getAction(), actualRequest.getAction());
+    Assert.assertEquals(request.getUpdate(), actualRequest.getUpdate());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1519,64 +1381,55 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setMasterAuthExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      SetMasterAuthRequest.Action action = SetMasterAuthRequest.Action.UNKNOWN;
-      MasterAuth update = MasterAuth.newBuilder().build();
       SetMasterAuthRequest request =
-          SetMasterAuthRequest.newBuilder().setAction(action).setUpdate(update).build();
-
+          SetMasterAuthRequest.newBuilder()
+              .setProjectId("projectId-894832108")
+              .setZone("zone3744684")
+              .setClusterId("clusterId561939637")
+              .setUpdate(MasterAuth.newBuilder().build())
+              .setName("name3373707")
+              .build();
       client.setMasterAuth(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteClusterTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void deleteClusterTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String name = "name3373707";
 
-    Operation actualResponse = client.deleteCluster(projectId, zone, clusterId);
+    Operation actualResponse = client.deleteCluster(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteClusterRequest actualRequest = (DeleteClusterRequest) actualRequests.get(0);
+    DeleteClusterRequest actualRequest = ((DeleteClusterRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1584,59 +1437,48 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteClusterExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-
-      client.deleteCluster(projectId, zone, clusterId);
+      String name = "name3373707";
+      client.deleteCluster(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteClusterTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void deleteClusterTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
 
     Operation actualResponse = client.deleteCluster(projectId, zone, clusterId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteClusterRequest actualRequest = (DeleteClusterRequest) actualRequests.get(0);
+    DeleteClusterRequest actualRequest = ((DeleteClusterRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -1648,30 +1490,31 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteClusterExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-
+      String clusterId = "clusterId561939637";
       client.deleteCluster(projectId, zone, clusterId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listOperationsTest() {
-    ListOperationsResponse expectedResponse = ListOperationsResponse.newBuilder().build();
+  public void listOperationsTest() throws Exception {
+    ListOperationsResponse expectedResponse =
+        ListOperationsResponse.newBuilder()
+            .addAllOperations(new ArrayList<Operation>())
+            .addAllMissingZones(new ArrayList<String>())
+            .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
 
     ListOperationsResponse actualResponse = client.listOperations(projectId, zone);
@@ -1679,7 +1522,7 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListOperationsRequest actualRequest = (ListOperationsRequest) actualRequests.get(0);
+    ListOperationsRequest actualRequest = ((ListOperationsRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -1690,62 +1533,49 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listOperationsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-
       client.listOperations(projectId, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getOperationTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void getOperationTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String operationId = "operationId-274116877";
+    String name = "name3373707";
 
-    Operation actualResponse = client.getOperation(projectId, zone, operationId);
+    Operation actualResponse = client.getOperation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetOperationRequest actualRequest = (GetOperationRequest) actualRequests.get(0);
+    GetOperationRequest actualRequest = ((GetOperationRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(operationId, actualRequest.getOperationId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1753,59 +1583,48 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getOperationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String operationId = "operationId-274116877";
-
-      client.getOperation(projectId, zone, operationId);
+      String name = "name3373707";
+      client.getOperation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getOperationTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void getOperationTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String operationId = "operationId-274116877";
+    String operationId = "operationId129704162";
 
     Operation actualResponse = client.getOperation(projectId, zone, operationId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetOperationRequest actualRequest = (GetOperationRequest) actualRequests.get(0);
+    GetOperationRequest actualRequest = ((GetOperationRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -1817,42 +1636,35 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getOperationExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String operationId = "operationId-274116877";
-
+      String operationId = "operationId129704162";
       client.getOperation(projectId, zone, operationId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void cancelOperationTest() {
+  public void cancelOperationTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String operationId = "operationId-274116877";
+    String name = "name3373707";
 
-    client.cancelOperation(projectId, zone, operationId);
+    client.cancelOperation(name);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CancelOperationRequest actualRequest = (CancelOperationRequest) actualRequests.get(0);
+    CancelOperationRequest actualRequest = ((CancelOperationRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(operationId, actualRequest.getOperationId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1860,38 +1672,33 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void cancelOperationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String operationId = "operationId-274116877";
-
-      client.cancelOperation(projectId, zone, operationId);
+      String name = "name3373707";
+      client.cancelOperation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void cancelOperationTest2() {
+  public void cancelOperationTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String operationId = "operationId-274116877";
+    String operationId = "operationId129704162";
 
     client.cancelOperation(projectId, zone, operationId);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CancelOperationRequest actualRequest = (CancelOperationRequest) actualRequests.get(0);
+    CancelOperationRequest actualRequest = ((CancelOperationRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -1903,47 +1710,44 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void cancelOperationExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String operationId = "operationId-274116877";
-
+      String operationId = "operationId129704162";
       client.cancelOperation(projectId, zone, operationId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getServerConfigTest() {
-    String defaultClusterVersion = "defaultClusterVersion111003029";
-    String defaultImageType = "defaultImageType-918225828";
+  public void getServerConfigTest() throws Exception {
     ServerConfig expectedResponse =
         ServerConfig.newBuilder()
-            .setDefaultClusterVersion(defaultClusterVersion)
-            .setDefaultImageType(defaultImageType)
+            .setDefaultClusterVersion("defaultClusterVersion-2007666145")
+            .addAllValidNodeVersions(new ArrayList<String>())
+            .setDefaultImageType("defaultImageType933054964")
+            .addAllValidImageTypes(new ArrayList<String>())
+            .addAllValidMasterVersions(new ArrayList<String>())
+            .addAllChannels(new ArrayList<ServerConfig.ReleaseChannelConfig>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
+    String name = "name3373707";
 
-    ServerConfig actualResponse = client.getServerConfig(projectId, zone);
+    ServerConfig actualResponse = client.getServerConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetServerConfigRequest actualRequest = (GetServerConfigRequest) actualRequests.get(0);
+    GetServerConfigRequest actualRequest = ((GetServerConfigRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1951,35 +1755,33 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getServerConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-
-      client.getServerConfig(projectId, zone);
+      String name = "name3373707";
+      client.getServerConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getServerConfigTest2() {
-    String defaultClusterVersion = "defaultClusterVersion111003029";
-    String defaultImageType = "defaultImageType-918225828";
+  public void getServerConfigTest2() throws Exception {
     ServerConfig expectedResponse =
         ServerConfig.newBuilder()
-            .setDefaultClusterVersion(defaultClusterVersion)
-            .setDefaultImageType(defaultImageType)
+            .setDefaultClusterVersion("defaultClusterVersion-2007666145")
+            .addAllValidNodeVersions(new ArrayList<String>())
+            .setDefaultImageType("defaultImageType933054964")
+            .addAllValidImageTypes(new ArrayList<String>())
+            .addAllValidMasterVersions(new ArrayList<String>())
+            .addAllChannels(new ArrayList<ServerConfig.ReleaseChannelConfig>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
 
     ServerConfig actualResponse = client.getServerConfig(projectId, zone);
@@ -1987,7 +1789,7 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetServerConfigRequest actualRequest = (GetServerConfigRequest) actualRequests.get(0);
+    GetServerConfigRequest actualRequest = ((GetServerConfigRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -1998,37 +1800,37 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getServerConfigExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-
       client.getServerConfig(projectId, zone);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getJSONWebKeysTest() {
-    GetJSONWebKeysResponse expectedResponse = GetJSONWebKeysResponse.newBuilder().build();
+  public void getJSONWebKeysTest() throws Exception {
+    GetJSONWebKeysResponse expectedResponse =
+        GetJSONWebKeysResponse.newBuilder().addAllKeys(new ArrayList<Jwk>()).build();
     mockClusterManager.addResponse(expectedResponse);
 
-    GetJSONWebKeysRequest request = GetJSONWebKeysRequest.newBuilder().build();
+    GetJSONWebKeysRequest request =
+        GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
 
     GetJSONWebKeysResponse actualResponse = client.getJSONWebKeys(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetJSONWebKeysRequest actualRequest = (GetJSONWebKeysRequest) actualRequests.get(0);
+    GetJSONWebKeysRequest actualRequest = ((GetJSONWebKeysRequest) actualRequests.get(0));
 
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2036,41 +1838,36 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getJSONWebKeysExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      GetJSONWebKeysRequest request = GetJSONWebKeysRequest.newBuilder().build();
-
+      GetJSONWebKeysRequest request =
+          GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
       client.getJSONWebKeys(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listNodePoolsTest() {
-    ListNodePoolsResponse expectedResponse = ListNodePoolsResponse.newBuilder().build();
+  public void listNodePoolsTest() throws Exception {
+    ListNodePoolsResponse expectedResponse =
+        ListNodePoolsResponse.newBuilder().addAllNodePools(new ArrayList<NodePool>()).build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String parent = "parent-995424086";
 
-    ListNodePoolsResponse actualResponse = client.listNodePools(projectId, zone, clusterId);
+    ListNodePoolsResponse actualResponse = client.listNodePools(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListNodePoolsRequest actualRequest = (ListNodePoolsRequest) actualRequests.get(0);
+    ListNodePoolsRequest actualRequest = ((ListNodePoolsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2078,39 +1875,35 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listNodePoolsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-
-      client.listNodePools(projectId, zone, clusterId);
+      String parent = "parent-995424086";
+      client.listNodePools(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listNodePoolsTest2() {
-    ListNodePoolsResponse expectedResponse = ListNodePoolsResponse.newBuilder().build();
+  public void listNodePoolsTest2() throws Exception {
+    ListNodePoolsResponse expectedResponse =
+        ListNodePoolsResponse.newBuilder().addAllNodePools(new ArrayList<NodePool>()).build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
 
     ListNodePoolsResponse actualResponse = client.listNodePools(projectId, zone, clusterId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListNodePoolsRequest actualRequest = (ListNodePoolsRequest) actualRequests.get(0);
+    ListNodePoolsRequest actualRequest = ((ListNodePoolsRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -2122,59 +1915,51 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listNodePoolsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-
+      String clusterId = "clusterId561939637";
       client.listNodePools(projectId, zone, clusterId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getNodePoolTest() {
-    String name = "name3373707";
-    int initialNodeCount = 1682564205;
-    String selfLink = "selfLink-1691268851";
-    String version = "version351608024";
-    String statusMessage = "statusMessage-239442758";
-    int podIpv4CidrSize = 1098768716;
+  public void getNodePoolTest() throws Exception {
     NodePool expectedResponse =
         NodePool.newBuilder()
-            .setName(name)
-            .setInitialNodeCount(initialNodeCount)
-            .setSelfLink(selfLink)
-            .setVersion(version)
-            .setStatusMessage(statusMessage)
-            .setPodIpv4CidrSize(podIpv4CidrSize)
+            .setName("name3373707")
+            .setConfig(NodeConfig.newBuilder().build())
+            .setInitialNodeCount(1682564205)
+            .addAllLocations(new ArrayList<String>())
+            .setSelfLink("selfLink1191800166")
+            .setVersion("version351608024")
+            .addAllInstanceGroupUrls(new ArrayList<String>())
+            .setStatusMessage("statusMessage-958704715")
+            .setAutoscaling(NodePoolAutoscaling.newBuilder().build())
+            .setManagement(NodeManagement.newBuilder().build())
+            .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllConditions(new ArrayList<StatusCondition>())
+            .setPodIpv4CidrSize(1098768716)
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String nodePoolId = "nodePoolId1043384033";
+    String name = "name3373707";
 
-    NodePool actualResponse = client.getNodePool(projectId, zone, clusterId, nodePoolId);
+    NodePool actualResponse = client.getNodePool(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetNodePoolRequest actualRequest = (GetNodePoolRequest) actualRequests.get(0);
+    GetNodePoolRequest actualRequest = ((GetNodePoolRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
-    Assert.assertEquals(nodePoolId, actualRequest.getNodePoolId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2182,55 +1967,50 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getNodePoolExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String nodePoolId = "nodePoolId1043384033";
-
-      client.getNodePool(projectId, zone, clusterId, nodePoolId);
+      String name = "name3373707";
+      client.getNodePool(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getNodePoolTest2() {
-    String name = "name3373707";
-    int initialNodeCount = 1682564205;
-    String selfLink = "selfLink-1691268851";
-    String version = "version351608024";
-    String statusMessage = "statusMessage-239442758";
-    int podIpv4CidrSize = 1098768716;
+  public void getNodePoolTest2() throws Exception {
     NodePool expectedResponse =
         NodePool.newBuilder()
-            .setName(name)
-            .setInitialNodeCount(initialNodeCount)
-            .setSelfLink(selfLink)
-            .setVersion(version)
-            .setStatusMessage(statusMessage)
-            .setPodIpv4CidrSize(podIpv4CidrSize)
+            .setName("name3373707")
+            .setConfig(NodeConfig.newBuilder().build())
+            .setInitialNodeCount(1682564205)
+            .addAllLocations(new ArrayList<String>())
+            .setSelfLink("selfLink1191800166")
+            .setVersion("version351608024")
+            .addAllInstanceGroupUrls(new ArrayList<String>())
+            .setStatusMessage("statusMessage-958704715")
+            .setAutoscaling(NodePoolAutoscaling.newBuilder().build())
+            .setManagement(NodeManagement.newBuilder().build())
+            .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllConditions(new ArrayList<StatusCondition>())
+            .setPodIpv4CidrSize(1098768716)
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String nodePoolId = "nodePoolId1043384033";
+    String clusterId = "clusterId561939637";
+    String nodePoolId = "nodePoolId1121557241";
 
     NodePool actualResponse = client.getNodePool(projectId, zone, clusterId, nodePoolId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetNodePoolRequest actualRequest = (GetNodePoolRequest) actualRequests.get(0);
+    GetNodePoolRequest actualRequest = ((GetNodePoolRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -2243,65 +2023,52 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getNodePoolExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String nodePoolId = "nodePoolId1043384033";
-
+      String clusterId = "clusterId561939637";
+      String nodePoolId = "nodePoolId1121557241";
       client.getNodePool(projectId, zone, clusterId, nodePoolId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createNodePoolTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void createNodePoolTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String parent = "parent-995424086";
     NodePool nodePool = NodePool.newBuilder().build();
 
-    Operation actualResponse = client.createNodePool(projectId, zone, clusterId, nodePool);
+    Operation actualResponse = client.createNodePool(parent, nodePool);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateNodePoolRequest actualRequest = (CreateNodePoolRequest) actualRequests.get(0);
+    CreateNodePoolRequest actualRequest = ((CreateNodePoolRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertEquals(nodePool, actualRequest.getNodePool());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -2310,53 +2077,42 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createNodePoolExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String parent = "parent-995424086";
       NodePool nodePool = NodePool.newBuilder().build();
-
-      client.createNodePool(projectId, zone, clusterId, nodePool);
+      client.createNodePool(parent, nodePool);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createNodePoolTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void createNodePoolTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
     NodePool nodePool = NodePool.newBuilder().build();
 
     Operation actualResponse = client.createNodePool(projectId, zone, clusterId, nodePool);
@@ -2364,7 +2120,7 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateNodePoolRequest actualRequest = (CreateNodePoolRequest) actualRequests.get(0);
+    CreateNodePoolRequest actualRequest = ((CreateNodePoolRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -2377,66 +2133,51 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createNodePoolExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String clusterId = "clusterId561939637";
       NodePool nodePool = NodePool.newBuilder().build();
-
       client.createNodePool(projectId, zone, clusterId, nodePool);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteNodePoolTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void deleteNodePoolTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String nodePoolId = "nodePoolId1043384033";
+    String name = "name3373707";
 
-    Operation actualResponse = client.deleteNodePool(projectId, zone, clusterId, nodePoolId);
+    Operation actualResponse = client.deleteNodePool(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteNodePoolRequest actualRequest = (DeleteNodePoolRequest) actualRequests.get(0);
+    DeleteNodePoolRequest actualRequest = ((DeleteNodePoolRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
-    Assert.assertEquals(nodePoolId, actualRequest.getNodePoolId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2444,61 +2185,49 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteNodePoolExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String nodePoolId = "nodePoolId1043384033";
-
-      client.deleteNodePool(projectId, zone, clusterId, nodePoolId);
+      String name = "name3373707";
+      client.deleteNodePool(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteNodePoolTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void deleteNodePoolTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String nodePoolId = "nodePoolId1043384033";
+    String clusterId = "clusterId561939637";
+    String nodePoolId = "nodePoolId1121557241";
 
     Operation actualResponse = client.deleteNodePool(projectId, zone, clusterId, nodePoolId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteNodePoolRequest actualRequest = (DeleteNodePoolRequest) actualRequests.get(0);
+    DeleteNodePoolRequest actualRequest = ((DeleteNodePoolRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -2511,68 +2240,52 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteNodePoolExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String nodePoolId = "nodePoolId1043384033";
-
+      String clusterId = "clusterId561939637";
+      String nodePoolId = "nodePoolId1121557241";
       client.deleteNodePool(projectId, zone, clusterId, nodePoolId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void rollbackNodePoolUpgradeTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void rollbackNodePoolUpgradeTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String nodePoolId = "nodePoolId1043384033";
+    String name = "name3373707";
 
-    Operation actualResponse =
-        client.rollbackNodePoolUpgrade(projectId, zone, clusterId, nodePoolId);
+    Operation actualResponse = client.rollbackNodePoolUpgrade(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RollbackNodePoolUpgradeRequest actualRequest =
-        (RollbackNodePoolUpgradeRequest) actualRequests.get(0);
+        ((RollbackNodePoolUpgradeRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
-    Assert.assertEquals(nodePoolId, actualRequest.getNodePoolId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2580,54 +2293,42 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void rollbackNodePoolUpgradeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String nodePoolId = "nodePoolId1043384033";
-
-      client.rollbackNodePoolUpgrade(projectId, zone, clusterId, nodePoolId);
+      String name = "name3373707";
+      client.rollbackNodePoolUpgrade(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void rollbackNodePoolUpgradeTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void rollbackNodePoolUpgradeTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    String nodePoolId = "nodePoolId1043384033";
+    String clusterId = "clusterId561939637";
+    String nodePoolId = "nodePoolId1121557241";
 
     Operation actualResponse =
         client.rollbackNodePoolUpgrade(projectId, zone, clusterId, nodePoolId);
@@ -2636,7 +2337,7 @@ public class ClusterManagerClientTest {
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RollbackNodePoolUpgradeRequest actualRequest =
-        (RollbackNodePoolUpgradeRequest) actualRequests.get(0);
+        ((RollbackNodePoolUpgradeRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -2649,53 +2350,50 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void rollbackNodePoolUpgradeExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      String nodePoolId = "nodePoolId1043384033";
-
+      String clusterId = "clusterId561939637";
+      String nodePoolId = "nodePoolId1121557241";
       client.rollbackNodePoolUpgrade(projectId, zone, clusterId, nodePoolId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setNodePoolManagementTest() {
-    String name = "name3373707";
-    String zone = "zone3744684";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setNodePoolManagementTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    NodeManagement management = NodeManagement.newBuilder().build();
     SetNodePoolManagementRequest request =
-        SetNodePoolManagementRequest.newBuilder().setManagement(management).build();
+        SetNodePoolManagementRequest.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setZone("zone3744684")
+            .setClusterId("clusterId561939637")
+            .setNodePoolId("nodePoolId1121557241")
+            .setManagement(NodeManagement.newBuilder().build())
+            .setName("name3373707")
+            .build();
 
     Operation actualResponse = client.setNodePoolManagement(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2703,9 +2401,14 @@ public class ClusterManagerClientTest {
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetNodePoolManagementRequest actualRequest =
-        (SetNodePoolManagementRequest) actualRequests.get(0);
+        ((SetNodePoolManagementRequest) actualRequests.get(0));
 
-    Assert.assertEquals(management, actualRequest.getManagement());
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getZone(), actualRequest.getZone());
+    Assert.assertEquals(request.getClusterId(), actualRequest.getClusterId());
+    Assert.assertEquals(request.getNodePoolId(), actualRequest.getNodePoolId());
+    Assert.assertEquals(request.getManagement(), actualRequest.getManagement());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2713,55 +2416,54 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setNodePoolManagementExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      NodeManagement management = NodeManagement.newBuilder().build();
       SetNodePoolManagementRequest request =
-          SetNodePoolManagementRequest.newBuilder().setManagement(management).build();
-
+          SetNodePoolManagementRequest.newBuilder()
+              .setProjectId("projectId-894832108")
+              .setZone("zone3744684")
+              .setClusterId("clusterId561939637")
+              .setNodePoolId("nodePoolId1121557241")
+              .setManagement(NodeManagement.newBuilder().build())
+              .setName("name3373707")
+              .build();
       client.setNodePoolManagement(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setLabelsTest() {
-    String name = "name3373707";
-    String zone = "zone3744684";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setLabelsTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    Map<String, String> resourceLabels = new HashMap<>();
-    String labelFingerprint = "labelFingerprint714995737";
     SetLabelsRequest request =
         SetLabelsRequest.newBuilder()
-            .putAllResourceLabels(resourceLabels)
-            .setLabelFingerprint(labelFingerprint)
+            .setProjectId("projectId-894832108")
+            .setZone("zone3744684")
+            .setClusterId("clusterId561939637")
+            .putAllResourceLabels(new HashMap<String, String>())
+            .setLabelFingerprint("labelFingerprint379449680")
+            .setName("name3373707")
             .build();
 
     Operation actualResponse = client.setLabels(request);
@@ -2769,10 +2471,14 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetLabelsRequest actualRequest = (SetLabelsRequest) actualRequests.get(0);
+    SetLabelsRequest actualRequest = ((SetLabelsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(resourceLabels, actualRequest.getResourceLabelsMap());
-    Assert.assertEquals(labelFingerprint, actualRequest.getLabelFingerprint());
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getZone(), actualRequest.getZone());
+    Assert.assertEquals(request.getClusterId(), actualRequest.getClusterId());
+    Assert.assertEquals(request.getResourceLabelsMap(), actualRequest.getResourceLabelsMap());
+    Assert.assertEquals(request.getLabelFingerprint(), actualRequest.getLabelFingerprint());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2780,68 +2486,57 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setLabelsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      Map<String, String> resourceLabels = new HashMap<>();
-      String labelFingerprint = "labelFingerprint714995737";
       SetLabelsRequest request =
           SetLabelsRequest.newBuilder()
-              .putAllResourceLabels(resourceLabels)
-              .setLabelFingerprint(labelFingerprint)
+              .setProjectId("projectId-894832108")
+              .setZone("zone3744684")
+              .setClusterId("clusterId561939637")
+              .putAllResourceLabels(new HashMap<String, String>())
+              .setLabelFingerprint("labelFingerprint379449680")
+              .setName("name3373707")
               .build();
-
       client.setLabels(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setLegacyAbacTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setLegacyAbacTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    boolean enabled = false;
+    String name = "name3373707";
+    boolean enabled = true;
 
-    Operation actualResponse = client.setLegacyAbac(projectId, zone, clusterId, enabled);
+    Operation actualResponse = client.setLegacyAbac(name, enabled);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetLegacyAbacRequest actualRequest = (SetLegacyAbacRequest) actualRequests.get(0);
+    SetLegacyAbacRequest actualRequest = ((SetLegacyAbacRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(enabled, actualRequest.getEnabled());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -2850,61 +2545,50 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setLegacyAbacExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      boolean enabled = false;
-
-      client.setLegacyAbac(projectId, zone, clusterId, enabled);
+      String name = "name3373707";
+      boolean enabled = true;
+      client.setLegacyAbac(name, enabled);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setLegacyAbacTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setLegacyAbacTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
-    boolean enabled = false;
+    String clusterId = "clusterId561939637";
+    boolean enabled = true;
 
     Operation actualResponse = client.setLegacyAbac(projectId, zone, clusterId, enabled);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetLegacyAbacRequest actualRequest = (SetLegacyAbacRequest) actualRequests.get(0);
+    SetLegacyAbacRequest actualRequest = ((SetLegacyAbacRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -2917,64 +2601,51 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setLegacyAbacExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-      boolean enabled = false;
-
+      String clusterId = "clusterId561939637";
+      boolean enabled = true;
       client.setLegacyAbac(projectId, zone, clusterId, enabled);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void startIPRotationTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void startIPRotationTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String name = "name3373707";
 
-    Operation actualResponse = client.startIPRotation(projectId, zone, clusterId);
+    Operation actualResponse = client.startIPRotation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    StartIPRotationRequest actualRequest = (StartIPRotationRequest) actualRequests.get(0);
+    StartIPRotationRequest actualRequest = ((StartIPRotationRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2982,59 +2653,48 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void startIPRotationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-
-      client.startIPRotation(projectId, zone, clusterId);
+      String name = "name3373707";
+      client.startIPRotation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void startIPRotationTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void startIPRotationTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
 
     Operation actualResponse = client.startIPRotation(projectId, zone, clusterId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    StartIPRotationRequest actualRequest = (StartIPRotationRequest) actualRequests.get(0);
+    StartIPRotationRequest actualRequest = ((StartIPRotationRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -3046,63 +2706,50 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void startIPRotationExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-
+      String clusterId = "clusterId561939637";
       client.startIPRotation(projectId, zone, clusterId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void completeIPRotationTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void completeIPRotationTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String name = "name3373707";
 
-    Operation actualResponse = client.completeIPRotation(projectId, zone, clusterId);
+    Operation actualResponse = client.completeIPRotation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CompleteIPRotationRequest actualRequest = (CompleteIPRotationRequest) actualRequests.get(0);
+    CompleteIPRotationRequest actualRequest = ((CompleteIPRotationRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -3110,59 +2757,48 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void completeIPRotationExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-
-      client.completeIPRotation(projectId, zone, clusterId);
+      String name = "name3373707";
+      client.completeIPRotation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void completeIPRotationTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void completeIPRotationTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
 
     Operation actualResponse = client.completeIPRotation(projectId, zone, clusterId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CompleteIPRotationRequest actualRequest = (CompleteIPRotationRequest) actualRequests.get(0);
+    CompleteIPRotationRequest actualRequest = ((CompleteIPRotationRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -3174,61 +2810,63 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void completeIPRotationExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
-
+      String clusterId = "clusterId561939637";
       client.completeIPRotation(projectId, zone, clusterId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setNodePoolSizeTest() {
-    String name = "name3373707";
-    String zone = "zone3744684";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setNodePoolSizeTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    int nodeCount = 1539922066;
     SetNodePoolSizeRequest request =
-        SetNodePoolSizeRequest.newBuilder().setNodeCount(nodeCount).build();
+        SetNodePoolSizeRequest.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setZone("zone3744684")
+            .setClusterId("clusterId561939637")
+            .setNodePoolId("nodePoolId1121557241")
+            .setNodeCount(1539922066)
+            .setName("name3373707")
+            .build();
 
     Operation actualResponse = client.setNodePoolSize(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetNodePoolSizeRequest actualRequest = (SetNodePoolSizeRequest) actualRequests.get(0);
+    SetNodePoolSizeRequest actualRequest = ((SetNodePoolSizeRequest) actualRequests.get(0));
 
-    Assert.assertEquals(nodeCount, actualRequest.getNodeCount());
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getZone(), actualRequest.getZone());
+    Assert.assertEquals(request.getClusterId(), actualRequest.getClusterId());
+    Assert.assertEquals(request.getNodePoolId(), actualRequest.getNodePoolId());
+    Assert.assertEquals(request.getNodeCount(), actualRequest.getNodeCount());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -3236,64 +2874,57 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setNodePoolSizeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      int nodeCount = 1539922066;
       SetNodePoolSizeRequest request =
-          SetNodePoolSizeRequest.newBuilder().setNodeCount(nodeCount).build();
-
+          SetNodePoolSizeRequest.newBuilder()
+              .setProjectId("projectId-894832108")
+              .setZone("zone3744684")
+              .setClusterId("clusterId561939637")
+              .setNodePoolId("nodePoolId1121557241")
+              .setNodeCount(1539922066)
+              .setName("name3373707")
+              .build();
       client.setNodePoolSize(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setNetworkPolicyTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setNetworkPolicyTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String name = "name3373707";
     NetworkPolicy networkPolicy = NetworkPolicy.newBuilder().build();
 
-    Operation actualResponse = client.setNetworkPolicy(projectId, zone, clusterId, networkPolicy);
+    Operation actualResponse = client.setNetworkPolicy(name, networkPolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetNetworkPolicyRequest actualRequest = (SetNetworkPolicyRequest) actualRequests.get(0);
+    SetNetworkPolicyRequest actualRequest = ((SetNetworkPolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(networkPolicy, actualRequest.getNetworkPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -3302,53 +2933,42 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setNetworkPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String name = "name3373707";
       NetworkPolicy networkPolicy = NetworkPolicy.newBuilder().build();
-
-      client.setNetworkPolicy(projectId, zone, clusterId, networkPolicy);
+      client.setNetworkPolicy(name, networkPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setNetworkPolicyTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setNetworkPolicyTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
     NetworkPolicy networkPolicy = NetworkPolicy.newBuilder().build();
 
     Operation actualResponse = client.setNetworkPolicy(projectId, zone, clusterId, networkPolicy);
@@ -3356,7 +2976,7 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetNetworkPolicyRequest actualRequest = (SetNetworkPolicyRequest) actualRequests.get(0);
+    SetNetworkPolicyRequest actualRequest = ((SetNetworkPolicyRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -3369,66 +2989,53 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setNetworkPolicyExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String clusterId = "clusterId561939637";
       NetworkPolicy networkPolicy = NetworkPolicy.newBuilder().build();
-
       client.setNetworkPolicy(projectId, zone, clusterId, networkPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setMaintenancePolicyTest() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setMaintenancePolicyTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
-    String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String name = "name3373707";
     MaintenancePolicy maintenancePolicy = MaintenancePolicy.newBuilder().build();
 
-    Operation actualResponse =
-        client.setMaintenancePolicy(projectId, zone, clusterId, maintenancePolicy);
+    Operation actualResponse = client.setMaintenancePolicy(name, maintenancePolicy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetMaintenancePolicyRequest actualRequest = (SetMaintenancePolicyRequest) actualRequests.get(0);
+    SetMaintenancePolicyRequest actualRequest =
+        ((SetMaintenancePolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(zone, actualRequest.getZone());
-    Assert.assertEquals(clusterId, actualRequest.getClusterId());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(maintenancePolicy, actualRequest.getMaintenancePolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -3437,53 +3044,42 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setMaintenancePolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
-      String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String name = "name3373707";
       MaintenancePolicy maintenancePolicy = MaintenancePolicy.newBuilder().build();
-
-      client.setMaintenancePolicy(projectId, zone, clusterId, maintenancePolicy);
+      client.setMaintenancePolicy(name, maintenancePolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void setMaintenancePolicyTest2() {
-    String name = "name3373707";
-    String zone2 = "zone2-696322977";
-    String detail = "detail-1335224239";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String targetLink = "targetLink-2084812312";
-    String location = "location1901043637";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
+  public void setMaintenancePolicyTest2() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
-            .setName(name)
-            .setZone(zone2)
-            .setDetail(detail)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setTargetLink(targetLink)
-            .setLocation(location)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
+            .setName("name3373707")
+            .setZone("zone3744684")
+            .setDetail("detail-1335224239")
+            .setStatusMessage("statusMessage-958704715")
+            .setSelfLink("selfLink1191800166")
+            .setTargetLink("targetLink486368555")
+            .setLocation("location1901043637")
+            .setStartTime("startTime-2129294769")
+            .setEndTime("endTime-1607243192")
+            .setProgress(OperationProgress.newBuilder().build())
+            .addAllClusterConditions(new ArrayList<StatusCondition>())
+            .addAllNodepoolConditions(new ArrayList<StatusCondition>())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    String projectId = "projectId-1969970175";
+    String projectId = "projectId-894832108";
     String zone = "zone3744684";
-    String clusterId = "clusterId240280960";
+    String clusterId = "clusterId561939637";
     MaintenancePolicy maintenancePolicy = MaintenancePolicy.newBuilder().build();
 
     Operation actualResponse =
@@ -3492,7 +3088,8 @@ public class ClusterManagerClientTest {
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SetMaintenancePolicyRequest actualRequest = (SetMaintenancePolicyRequest) actualRequests.get(0);
+    SetMaintenancePolicyRequest actualRequest =
+        ((SetMaintenancePolicyRequest) actualRequests.get(0));
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
     Assert.assertEquals(zone, actualRequest.getZone());
@@ -3505,50 +3102,56 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void setMaintenancePolicyExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      String projectId = "projectId-1969970175";
+      String projectId = "projectId-894832108";
       String zone = "zone3744684";
-      String clusterId = "clusterId240280960";
+      String clusterId = "clusterId561939637";
       MaintenancePolicy maintenancePolicy = MaintenancePolicy.newBuilder().build();
-
       client.setMaintenancePolicy(projectId, zone, clusterId, maintenancePolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listUsableSubnetworksTest() {
-    String nextPageToken = "";
-    UsableSubnetwork subnetworksElement = UsableSubnetwork.newBuilder().build();
-    List<UsableSubnetwork> subnetworks = Arrays.asList(subnetworksElement);
+  public void listUsableSubnetworksTest() throws Exception {
+    UsableSubnetwork responsesElement = UsableSubnetwork.newBuilder().build();
     ListUsableSubnetworksResponse expectedResponse =
         ListUsableSubnetworksResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllSubnetworks(subnetworks)
+            .setNextPageToken("")
+            .addAllSubnetworks(Arrays.asList(responsesElement))
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
-    ListUsableSubnetworksRequest request = ListUsableSubnetworksRequest.newBuilder().build();
+    ListUsableSubnetworksRequest request =
+        ListUsableSubnetworksRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
 
     ListUsableSubnetworksPagedResponse pagedListResponse = client.listUsableSubnetworks(request);
 
     List<UsableSubnetwork> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSubnetworksList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListUsableSubnetworksRequest actualRequest =
-        (ListUsableSubnetworksRequest) actualRequests.get(0);
+        ((ListUsableSubnetworksRequest) actualRequests.get(0));
 
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -3556,18 +3159,22 @@ public class ClusterManagerClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listUsableSubnetworksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockClusterManager.addException(exception);
 
     try {
-      ListUsableSubnetworksRequest request = ListUsableSubnetworksRequest.newBuilder().build();
-
+      ListUsableSubnetworksRequest request =
+          ListUsableSubnetworksRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
       client.listUsableSubnetworks(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 }
