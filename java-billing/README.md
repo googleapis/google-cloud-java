@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-billing</artifactId>
-  <version>1.1.8</version>
+  <version>1.1.9</version>
 </dependency>
 
 ```
