@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.mediatranslation.v1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -24,22 +24,21 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest;
 import com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Media Translation API.
+ * gRPC stub implementation for the SpeechTranslationService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcSpeechTranslationServiceStub extends SpeechTranslationServiceStub {
-
   private static final MethodDescriptor<
           StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse>
       streamingTranslateSpeechMethodDescriptor =
@@ -54,12 +53,12 @@ public class GrpcSpeechTranslationServiceStub extends SpeechTranslationServiceSt
                   ProtoUtils.marshaller(StreamingTranslateSpeechResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final BidiStreamingCallable<
           StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse>
       streamingTranslateSpeechCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcSpeechTranslationServiceStub create(
@@ -101,6 +100,7 @@ public class GrpcSpeechTranslationServiceStub extends SpeechTranslationServiceSt
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse>
         streamingTranslateSpeechTransportSettings =
@@ -115,7 +115,12 @@ public class GrpcSpeechTranslationServiceStub extends SpeechTranslationServiceSt
             settings.streamingTranslateSpeechSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public BidiStreamingCallable<StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse>

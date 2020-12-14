@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-mediatranslation.git",
-        "sha": "b55b8aee09c639fabe0ef0810160e334c998b63e"
+        "sha": "5863131b5ad2e5981a854b8835f6f368ccf814ec"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "bc25a1022a3ebb1d745b8e4b69854d1922328f1a",
-        "internalRef": "315920114"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
