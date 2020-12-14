@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-scheduler</artifactId>
-  <version>1.23.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+  <version>1.23.5</version><!-- {x-version-update:google-cloud-scheduler:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Scheduler</name>
   <url>https://github.com/googleapis/java-scheduler</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-scheduler-parent</artifactId>
-    <version>1.23.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+    <version>1.23.5</version><!-- {x-version-update:google-cloud-scheduler:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-scheduler</site.installationModule>
