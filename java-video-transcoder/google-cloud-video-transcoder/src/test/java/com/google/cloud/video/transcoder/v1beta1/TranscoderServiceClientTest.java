@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.video.transcoder.v1beta1;
 
 import static com.google.cloud.video.transcoder.v1beta1.TranscoderServiceClient.ListJobTemplatesPagedResponse;
@@ -28,12 +29,14 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -41,31 +44,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class TranscoderServiceClientTest {
+  private static MockServiceHelper mockServiceHelper;
   private static MockTranscoderService mockTranscoderService;
-  private static MockServiceHelper serviceHelper;
   private TranscoderServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockTranscoderService = new MockTranscoderService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockTranscoderService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     TranscoderServiceSettings settings =
         TranscoderServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -80,22 +83,19 @@ public class TranscoderServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createJobTest() {
-    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-    String inputUri = "inputUri1707300727";
-    String outputUri = "outputUri-1273518802";
-    String templateId = "templateId1769642752";
-    int priority = 1165461084;
-    String failureReason = "failureReason1743941273";
+  public void createJobTest() throws Exception {
     Job expectedResponse =
         Job.newBuilder()
-            .setName(name.toString())
-            .setInputUri(inputUri)
-            .setOutputUri(outputUri)
-            .setTemplateId(templateId)
-            .setPriority(priority)
-            .setFailureReason(failureReason)
+            .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setInputUri("inputUri470706498")
+            .setOutputUri("outputUri-2119300949")
+            .setPriority(-1165461084)
+            .setProgress(Progress.newBuilder().build())
+            .setFailureReason("failureReason-1990598546")
+            .addAllFailureDetails(new ArrayList<FailureDetail>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -107,9 +107,9 @@ public class TranscoderServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateJobRequest actualRequest = (CreateJobRequest) actualRequests.get(0);
+    CreateJobRequest actualRequest = ((CreateJobRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(job, actualRequest.getJob());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -118,45 +118,49 @@ public class TranscoderServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createJobExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTranscoderService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Job job = Job.newBuilder().build();
-
       client.createJob(parent, job);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listJobsTest() {
-    String nextPageToken = "";
-    Job jobsElement = Job.newBuilder().build();
-    List<Job> jobs = Arrays.asList(jobsElement);
-    ListJobsResponse expectedResponse =
-        ListJobsResponse.newBuilder().setNextPageToken(nextPageToken).addAllJobs(jobs).build();
+  public void createJobTest2() throws Exception {
+    Job expectedResponse =
+        Job.newBuilder()
+            .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setInputUri("inputUri470706498")
+            .setOutputUri("outputUri-2119300949")
+            .setPriority(-1165461084)
+            .setProgress(Progress.newBuilder().build())
+            .setFailureReason("failureReason-1990598546")
+            .addAllFailureDetails(new ArrayList<FailureDetail>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .build();
     mockTranscoderService.addResponse(expectedResponse);
 
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String parent = "parent-995424086";
+    Job job = Job.newBuilder().build();
 
-    ListJobsPagedResponse pagedListResponse = client.listJobs(parent);
-
-    List<Job> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getJobsList().get(0), resources.get(0));
+    Job actualResponse = client.createJob(parent, job);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListJobsRequest actualRequest = (ListJobsRequest) actualRequests.get(0);
+    CreateJobRequest actualRequest = ((CreateJobRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(job, actualRequest.getJob());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -164,38 +168,122 @@ public class TranscoderServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listJobsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+  public void createJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTranscoderService.addException(exception);
 
     try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
-      client.listJobs(parent);
+      String parent = "parent-995424086";
+      Job job = Job.newBuilder().build();
+      client.createJob(parent, job);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getJobTest() {
-    JobName name2 = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-    String inputUri = "inputUri1707300727";
-    String outputUri = "outputUri-1273518802";
-    String templateId = "templateId1769642752";
-    int priority = 1165461084;
-    String failureReason = "failureReason1743941273";
+  public void listJobsTest() throws Exception {
+    Job responsesElement = Job.newBuilder().build();
+    ListJobsResponse expectedResponse =
+        ListJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllJobs(Arrays.asList(responsesElement))
+            .build();
+    mockTranscoderService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListJobsPagedResponse pagedListResponse = client.listJobs(parent);
+
+    List<Job> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListJobsRequest actualRequest = ((ListJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranscoderService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listJobsTest2() throws Exception {
+    Job responsesElement = Job.newBuilder().build();
+    ListJobsResponse expectedResponse =
+        ListJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllJobs(Arrays.asList(responsesElement))
+            .build();
+    mockTranscoderService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListJobsPagedResponse pagedListResponse = client.listJobs(parent);
+
+    List<Job> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListJobsRequest actualRequest = ((ListJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listJobsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranscoderService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getJobTest() throws Exception {
     Job expectedResponse =
         Job.newBuilder()
-            .setName(name2.toString())
-            .setInputUri(inputUri)
-            .setOutputUri(outputUri)
-            .setTemplateId(templateId)
-            .setPriority(priority)
-            .setFailureReason(failureReason)
+            .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setInputUri("inputUri470706498")
+            .setOutputUri("outputUri-2119300949")
+            .setPriority(-1165461084)
+            .setProgress(Progress.newBuilder().build())
+            .setFailureReason("failureReason-1990598546")
+            .addAllFailureDetails(new ArrayList<FailureDetail>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -206,9 +294,9 @@ public class TranscoderServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetJobRequest actualRequest = (GetJobRequest) actualRequests.get(0);
+    GetJobRequest actualRequest = ((GetJobRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -216,24 +304,68 @@ public class TranscoderServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getJobExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTranscoderService.addException(exception);
 
     try {
       JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-
       client.getJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteJobTest() {
+  public void getJobTest2() throws Exception {
+    Job expectedResponse =
+        Job.newBuilder()
+            .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setInputUri("inputUri470706498")
+            .setOutputUri("outputUri-2119300949")
+            .setPriority(-1165461084)
+            .setProgress(Progress.newBuilder().build())
+            .setFailureReason("failureReason-1990598546")
+            .addAllFailureDetails(new ArrayList<FailureDetail>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranscoderService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Job actualResponse = client.getJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetJobRequest actualRequest = ((GetJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranscoderService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteJobTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -243,9 +375,9 @@ public class TranscoderServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
+    DeleteJobRequest actualRequest = ((DeleteJobRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -253,40 +385,74 @@ public class TranscoderServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteJobExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTranscoderService.addException(exception);
 
     try {
       JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-
       client.deleteJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createJobTemplateTest() {
-    JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-    JobTemplate expectedResponse = JobTemplate.newBuilder().setName(name.toString()).build();
+  public void deleteJobTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTranscoderService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteJob(name);
+
+    List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteJobRequest actualRequest = ((DeleteJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranscoderService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createJobTemplateTest() throws Exception {
+    JobTemplate expectedResponse =
+        JobTemplate.newBuilder()
+            .setName(JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString())
+            .setConfig(JobConfig.newBuilder().build())
+            .build();
     mockTranscoderService.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     JobTemplate jobTemplate = JobTemplate.newBuilder().build();
-    String jobTemplateId = "jobTemplateId-1231822466";
+    String jobTemplateId = "jobTemplateId-597733678";
 
     JobTemplate actualResponse = client.createJobTemplate(parent, jobTemplate, jobTemplateId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateJobTemplateRequest actualRequest = (CreateJobTemplateRequest) actualRequests.get(0);
+    CreateJobTemplateRequest actualRequest = ((CreateJobTemplateRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(jobTemplate, actualRequest.getJobTemplate());
     Assert.assertEquals(jobTemplateId, actualRequest.getJobTemplateId());
     Assert.assertTrue(
@@ -296,33 +462,73 @@ public class TranscoderServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createJobTemplateExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTranscoderService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       JobTemplate jobTemplate = JobTemplate.newBuilder().build();
-      String jobTemplateId = "jobTemplateId-1231822466";
-
+      String jobTemplateId = "jobTemplateId-597733678";
       client.createJobTemplate(parent, jobTemplate, jobTemplateId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listJobTemplatesTest() {
-    String nextPageToken = "";
-    JobTemplate jobTemplatesElement = JobTemplate.newBuilder().build();
-    List<JobTemplate> jobTemplates = Arrays.asList(jobTemplatesElement);
+  public void createJobTemplateTest2() throws Exception {
+    JobTemplate expectedResponse =
+        JobTemplate.newBuilder()
+            .setName(JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString())
+            .setConfig(JobConfig.newBuilder().build())
+            .build();
+    mockTranscoderService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    JobTemplate jobTemplate = JobTemplate.newBuilder().build();
+    String jobTemplateId = "jobTemplateId-597733678";
+
+    JobTemplate actualResponse = client.createJobTemplate(parent, jobTemplate, jobTemplateId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateJobTemplateRequest actualRequest = ((CreateJobTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(jobTemplate, actualRequest.getJobTemplate());
+    Assert.assertEquals(jobTemplateId, actualRequest.getJobTemplateId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createJobTemplateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranscoderService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      JobTemplate jobTemplate = JobTemplate.newBuilder().build();
+      String jobTemplateId = "jobTemplateId-597733678";
+      client.createJobTemplate(parent, jobTemplate, jobTemplateId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listJobTemplatesTest() throws Exception {
+    JobTemplate responsesElement = JobTemplate.newBuilder().build();
     ListJobTemplatesResponse expectedResponse =
         ListJobTemplatesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllJobTemplates(jobTemplates)
+            .setNextPageToken("")
+            .addAllJobTemplates(Arrays.asList(responsesElement))
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -331,14 +537,15 @@ public class TranscoderServiceClientTest {
     ListJobTemplatesPagedResponse pagedListResponse = client.listJobTemplates(parent);
 
     List<JobTemplate> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getJobTemplatesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListJobTemplatesRequest actualRequest = (ListJobTemplatesRequest) actualRequests.get(0);
+    ListJobTemplatesRequest actualRequest = ((ListJobTemplatesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -346,26 +553,70 @@ public class TranscoderServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listJobTemplatesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTranscoderService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
       client.listJobTemplates(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getJobTemplateTest() {
-    JobTemplateName name2 = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-    JobTemplate expectedResponse = JobTemplate.newBuilder().setName(name2.toString()).build();
+  public void listJobTemplatesTest2() throws Exception {
+    JobTemplate responsesElement = JobTemplate.newBuilder().build();
+    ListJobTemplatesResponse expectedResponse =
+        ListJobTemplatesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllJobTemplates(Arrays.asList(responsesElement))
+            .build();
+    mockTranscoderService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListJobTemplatesPagedResponse pagedListResponse = client.listJobTemplates(parent);
+
+    List<JobTemplate> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getJobTemplatesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListJobTemplatesRequest actualRequest = ((ListJobTemplatesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listJobTemplatesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranscoderService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listJobTemplates(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getJobTemplateTest() throws Exception {
+    JobTemplate expectedResponse =
+        JobTemplate.newBuilder()
+            .setName(JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString())
+            .setConfig(JobConfig.newBuilder().build())
+            .build();
     mockTranscoderService.addResponse(expectedResponse);
 
     JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
@@ -375,9 +626,9 @@ public class TranscoderServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetJobTemplateRequest actualRequest = (GetJobTemplateRequest) actualRequests.get(0);
+    GetJobTemplateRequest actualRequest = ((GetJobTemplateRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, JobTemplateName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -385,24 +636,60 @@ public class TranscoderServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getJobTemplateExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTranscoderService.addException(exception);
 
     try {
       JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-
       client.getJobTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteJobTemplateTest() {
+  public void getJobTemplateTest2() throws Exception {
+    JobTemplate expectedResponse =
+        JobTemplate.newBuilder()
+            .setName(JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString())
+            .setConfig(JobConfig.newBuilder().build())
+            .build();
+    mockTranscoderService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    JobTemplate actualResponse = client.getJobTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetJobTemplateRequest actualRequest = ((GetJobTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getJobTemplateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranscoderService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getJobTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteJobTemplateTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -412,9 +699,9 @@ public class TranscoderServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteJobTemplateRequest actualRequest = (DeleteJobTemplateRequest) actualRequests.get(0);
+    DeleteJobTemplateRequest actualRequest = ((DeleteJobTemplateRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, JobTemplateName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -422,18 +709,50 @@ public class TranscoderServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteJobTemplateExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTranscoderService.addException(exception);
 
     try {
       JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-
       client.deleteJobTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteJobTemplateTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTranscoderService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteJobTemplate(name);
+
+    List<AbstractMessage> actualRequests = mockTranscoderService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteJobTemplateRequest actualRequest = ((DeleteJobTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteJobTemplateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranscoderService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteJobTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

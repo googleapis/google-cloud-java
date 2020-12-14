@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.video.transcoder.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -34,7 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Using the Transcoder API, you can queue asynchronous jobs for transcoding
  * media into various output formats. Output formats may include different streaming standards such
@@ -45,17 +46,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   Job job = Job.newBuilder().build();
- *   Job response = transcoderServiceClient.createJob(parent, job);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the transcoderServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the TranscoderServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -84,30 +75,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TranscoderServiceSettings transcoderServiceSettings =
  *     TranscoderServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * TranscoderServiceClient transcoderServiceClient =
  *     TranscoderServiceClient.create(transcoderServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TranscoderServiceSettings transcoderServiceSettings =
  *     TranscoderServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TranscoderServiceClient transcoderServiceClient =
  *     TranscoderServiceClient.create(transcoderServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class TranscoderServiceClient implements BackgroundResource {
   private final TranscoderServiceSettings settings;
   private final TranscoderServiceStub stub;
@@ -128,7 +117,7 @@ public class TranscoderServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of TranscoderServiceClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use TranscoderServiceSettings}.
+   * is for advanced usage - prefer using create(TranscoderServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TranscoderServiceClient create(TranscoderServiceStub stub) {
@@ -160,19 +149,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Job job = Job.newBuilder().build();
-   *   Job response = transcoderServiceClient.createJob(parent, job);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent location to create and process this job. Format:
    *     `projects/{project}/locations/{location}`
@@ -188,19 +167,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return createJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Job job = Job.newBuilder().build();
-   *   Job response = transcoderServiceClient.createJob(parent.toString(), job);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent location to create and process this job. Format:
    *     `projects/{project}/locations/{location}`
@@ -212,23 +181,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return createJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Job job = Job.newBuilder().build();
-   *   CreateJobRequest request = CreateJobRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setJob(job)
-   *     .build();
-   *   Job response = transcoderServiceClient.createJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -237,44 +192,19 @@ public class TranscoderServiceClient implements BackgroundResource {
     return createJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job in the specified region.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Job job = Job.newBuilder().build();
-   *   CreateJobRequest request = CreateJobRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setJob(job)
-   *     .build();
-   *   ApiFuture&lt;Job&gt; future = transcoderServiceClient.createJobCallable().futureCall(request);
-   *   // Do something
-   *   Job response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateJobRequest, Job> createJobCallable() {
     return stub.createJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists jobs in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Job element : transcoderServiceClient.listJobs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -285,20 +215,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return listJobs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists jobs in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Job element : transcoderServiceClient.listJobs(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -308,23 +227,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return listJobs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists jobs in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListJobsRequest request = ListJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Job element : transcoderServiceClient.listJobs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -333,73 +238,29 @@ public class TranscoderServiceClient implements BackgroundResource {
     return listJobsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists jobs in the specified region.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListJobsRequest request = ListJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListJobsPagedResponse&gt; future = transcoderServiceClient.listJobsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Job element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
     return stub.listJobsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists jobs in the specified region.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListJobsRequest request = ListJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListJobsResponse response = transcoderServiceClient.listJobsCallable().call(request);
-   *     for (Job element : response.getJobsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return stub.listJobsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the job data.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   Job response = transcoderServiceClient.getJob(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the job to retrieve. Format:
    *     `projects/{project}/locations/{location}/jobs/{job}`
@@ -411,18 +272,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return getJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the job data.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   Job response = transcoderServiceClient.getJob(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the job to retrieve. Format:
    *     `projects/{project}/locations/{location}/jobs/{job}`
@@ -433,21 +285,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return getJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the job data.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   GetJobRequest request = GetJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Job response = transcoderServiceClient.getJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -456,40 +296,19 @@ public class TranscoderServiceClient implements BackgroundResource {
     return getJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the job data.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   GetJobRequest request = GetJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Job&gt; future = transcoderServiceClient.getJobCallable().futureCall(request);
-   *   // Do something
-   *   Job response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetJobRequest, Job> getJobCallable() {
     return stub.getJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   transcoderServiceClient.deleteJob(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the job to delete. Format:
    *     `projects/{project}/locations/{location}/jobs/{job}`
@@ -501,18 +320,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     deleteJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   transcoderServiceClient.deleteJob(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the job to delete. Format:
    *     `projects/{project}/locations/{location}/jobs/{job}`
@@ -523,21 +333,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     deleteJob(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   transcoderServiceClient.deleteJob(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -546,42 +344,19 @@ public class TranscoderServiceClient implements BackgroundResource {
     deleteJobCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a job.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = transcoderServiceClient.deleteJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     return stub.deleteJobCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job template in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   JobTemplate jobTemplate = JobTemplate.newBuilder().build();
-   *   String jobTemplateId = "";
-   *   JobTemplate response = transcoderServiceClient.createJobTemplate(parent, jobTemplate, jobTemplateId);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent location to create this job template. Format:
    *     `projects/{project}/locations/{location}`
@@ -603,20 +378,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return createJobTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job template in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   JobTemplate jobTemplate = JobTemplate.newBuilder().build();
-   *   String jobTemplateId = "";
-   *   JobTemplate response = transcoderServiceClient.createJobTemplate(parent.toString(), jobTemplate, jobTemplateId);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent location to create this job template. Format:
    *     `projects/{project}/locations/{location}`
@@ -638,25 +402,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return createJobTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job template in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   JobTemplate jobTemplate = JobTemplate.newBuilder().build();
-   *   String jobTemplateId = "";
-   *   CreateJobTemplateRequest request = CreateJobTemplateRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setJobTemplate(jobTemplate)
-   *     .setJobTemplateId(jobTemplateId)
-   *     .build();
-   *   JobTemplate response = transcoderServiceClient.createJobTemplate(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -665,46 +413,19 @@ public class TranscoderServiceClient implements BackgroundResource {
     return createJobTemplateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job template in the specified region.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   JobTemplate jobTemplate = JobTemplate.newBuilder().build();
-   *   String jobTemplateId = "";
-   *   CreateJobTemplateRequest request = CreateJobTemplateRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setJobTemplate(jobTemplate)
-   *     .setJobTemplateId(jobTemplateId)
-   *     .build();
-   *   ApiFuture&lt;JobTemplate&gt; future = transcoderServiceClient.createJobTemplateCallable().futureCall(request);
-   *   // Do something
-   *   JobTemplate response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateJobTemplateRequest, JobTemplate> createJobTemplateCallable() {
     return stub.createJobTemplateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists job templates in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (JobTemplate element : transcoderServiceClient.listJobTemplates(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent location from which to retrieve the collection of job
    *     templates. Format: `projects/{project}/locations/{location}`
@@ -718,20 +439,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return listJobTemplates(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists job templates in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (JobTemplate element : transcoderServiceClient.listJobTemplates(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent location from which to retrieve the collection of job
    *     templates. Format: `projects/{project}/locations/{location}`
@@ -743,23 +453,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return listJobTemplates(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists job templates in the specified region.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListJobTemplatesRequest request = ListJobTemplatesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (JobTemplate element : transcoderServiceClient.listJobTemplates(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -768,75 +464,31 @@ public class TranscoderServiceClient implements BackgroundResource {
     return listJobTemplatesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists job templates in the specified region.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListJobTemplatesRequest request = ListJobTemplatesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListJobTemplatesPagedResponse&gt; future = transcoderServiceClient.listJobTemplatesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (JobTemplate element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListJobTemplatesRequest, ListJobTemplatesPagedResponse>
       listJobTemplatesPagedCallable() {
     return stub.listJobTemplatesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists job templates in the specified region.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListJobTemplatesRequest request = ListJobTemplatesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListJobTemplatesResponse response = transcoderServiceClient.listJobTemplatesCallable().call(request);
-   *     for (JobTemplate element : response.getJobTemplatesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListJobTemplatesRequest, ListJobTemplatesResponse>
       listJobTemplatesCallable() {
     return stub.listJobTemplatesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the job template data.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-   *   JobTemplate response = transcoderServiceClient.getJobTemplate(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the job template to retrieve. Format:
    *     `projects/{project}/locations/{location}/jobTemplates/{job_template}`
@@ -848,18 +500,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return getJobTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the job template data.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-   *   JobTemplate response = transcoderServiceClient.getJobTemplate(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the job template to retrieve. Format:
    *     `projects/{project}/locations/{location}/jobTemplates/{job_template}`
@@ -870,21 +513,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     return getJobTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the job template data.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-   *   GetJobTemplateRequest request = GetJobTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   JobTemplate response = transcoderServiceClient.getJobTemplate(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -893,40 +524,19 @@ public class TranscoderServiceClient implements BackgroundResource {
     return getJobTemplateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the job template data.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-   *   GetJobTemplateRequest request = GetJobTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;JobTemplate&gt; future = transcoderServiceClient.getJobTemplateCallable().futureCall(request);
-   *   // Do something
-   *   JobTemplate response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetJobTemplateRequest, JobTemplate> getJobTemplateCallable() {
     return stub.getJobTemplateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a job template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-   *   transcoderServiceClient.deleteJobTemplate(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the job template to delete.
    *     `projects/{project}/locations/{location}/jobTemplates/{job_template}`
@@ -940,18 +550,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     deleteJobTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a job template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-   *   transcoderServiceClient.deleteJobTemplate(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the job template to delete.
    *     `projects/{project}/locations/{location}/jobTemplates/{job_template}`
@@ -962,21 +563,9 @@ public class TranscoderServiceClient implements BackgroundResource {
     deleteJobTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a job template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-   *   DeleteJobTemplateRequest request = DeleteJobTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   transcoderServiceClient.deleteJobTemplate(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -985,23 +574,11 @@ public class TranscoderServiceClient implements BackgroundResource {
     deleteJobTemplateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a job template.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
-   *   JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
-   *   DeleteJobTemplateRequest request = DeleteJobTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = transcoderServiceClient.deleteJobTemplateCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteJobTemplateRequest, Empty> deleteJobTemplateCallable() {
     return stub.deleteJobTemplateCallable();

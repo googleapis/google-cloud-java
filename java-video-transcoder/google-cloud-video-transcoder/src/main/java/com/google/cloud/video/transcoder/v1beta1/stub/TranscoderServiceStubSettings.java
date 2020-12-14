@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.video.transcoder.v1beta1.stub;
 
 import static com.google.cloud.video.transcoder.v1beta1.TranscoderServiceClient.ListJobTemplatesPagedResponse;
@@ -62,7 +63,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link TranscoderServiceStub}.
  *
@@ -79,22 +80,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createJob to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * TranscoderServiceStubSettings.Builder transcoderServiceSettingsBuilder =
  *     TranscoderServiceStubSettings.newBuilder();
  * transcoderServiceSettingsBuilder
  *     .createJobSettings()
  *     .setRetrySettings(
- *         transcoderServiceSettingsBuilder.createJobSettings().getRetrySettings().toBuilder()
+ *         transcoderServiceSettingsBuilder
+ *             .createJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * TranscoderServiceStubSettings transcoderServiceSettings = transcoderServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * TranscoderServiceStubSettings transcoderServiceSettings =
+ *     transcoderServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class TranscoderServiceStubSettings extends StubSettings<TranscoderServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -111,6 +114,117 @@ public class TranscoderServiceStubSettings extends StubSettings<TranscoderServic
       listJobTemplatesSettings;
   private final UnaryCallSettings<GetJobTemplateRequest, JobTemplate> getJobTemplateSettings;
   private final UnaryCallSettings<DeleteJobTemplateRequest, Empty> deleteJobTemplateSettings;
+
+  private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
+      LIST_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListJobsRequest injectToken(ListJobsRequest payload, String token) {
+              return ListJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListJobsRequest injectPageSize(ListJobsRequest payload, int pageSize) {
+              return ListJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Job> extractResources(ListJobsResponse payload) {
+              return payload.getJobsList() == null
+                  ? ImmutableList.<Job>of()
+                  : payload.getJobsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate>
+      LIST_JOB_TEMPLATES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListJobTemplatesRequest injectToken(
+                ListJobTemplatesRequest payload, String token) {
+              return ListJobTemplatesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListJobTemplatesRequest injectPageSize(
+                ListJobTemplatesRequest payload, int pageSize) {
+              return ListJobTemplatesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListJobTemplatesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListJobTemplatesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<JobTemplate> extractResources(ListJobTemplatesResponse payload) {
+              return payload.getJobTemplatesList() == null
+                  ? ImmutableList.<JobTemplate>of()
+                  : payload.getJobTemplatesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
+      LIST_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListJobsRequest, ListJobsResponse> callable,
+                ListJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListJobsResponse> futureResponse) {
+              PageContext<ListJobsRequest, ListJobsResponse, Job> pageContext =
+                  PageContext.create(callable, LIST_JOBS_PAGE_STR_DESC, request, context);
+              return ListJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListJobTemplatesRequest, ListJobTemplatesResponse, ListJobTemplatesPagedResponse>
+      LIST_JOB_TEMPLATES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListJobTemplatesRequest, ListJobTemplatesResponse, ListJobTemplatesPagedResponse>() {
+            @Override
+            public ApiFuture<ListJobTemplatesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListJobTemplatesRequest, ListJobTemplatesResponse> callable,
+                ListJobTemplatesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListJobTemplatesResponse> futureResponse) {
+              PageContext<ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_JOB_TEMPLATES_PAGE_STR_DESC, request, context);
+              return ListJobTemplatesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createJob. */
   public UnaryCallSettings<CreateJobRequest, Job> createJobSettings() {
@@ -161,10 +275,10 @@ public class TranscoderServiceStubSettings extends StubSettings<TranscoderServic
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcTranscoderServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -234,121 +348,9 @@ public class TranscoderServiceStubSettings extends StubSettings<TranscoderServic
     deleteJobTemplateSettings = settingsBuilder.deleteJobTemplateSettings().build();
   }
 
-  private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
-      LIST_JOBS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListJobsRequest injectToken(ListJobsRequest payload, String token) {
-              return ListJobsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListJobsRequest injectPageSize(ListJobsRequest payload, int pageSize) {
-              return ListJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListJobsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListJobsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Job> extractResources(ListJobsResponse payload) {
-              return payload.getJobsList() != null
-                  ? payload.getJobsList()
-                  : ImmutableList.<Job>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate>
-      LIST_JOB_TEMPLATES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListJobTemplatesRequest injectToken(
-                ListJobTemplatesRequest payload, String token) {
-              return ListJobTemplatesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListJobTemplatesRequest injectPageSize(
-                ListJobTemplatesRequest payload, int pageSize) {
-              return ListJobTemplatesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListJobTemplatesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListJobTemplatesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<JobTemplate> extractResources(ListJobTemplatesResponse payload) {
-              return payload.getJobTemplatesList() != null
-                  ? payload.getJobTemplatesList()
-                  : ImmutableList.<JobTemplate>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
-      LIST_JOBS_PAGE_STR_FACT =
-          new PagedListResponseFactory<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>() {
-            @Override
-            public ApiFuture<ListJobsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListJobsRequest, ListJobsResponse> callable,
-                ListJobsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListJobsResponse> futureResponse) {
-              PageContext<ListJobsRequest, ListJobsResponse, Job> pageContext =
-                  PageContext.create(callable, LIST_JOBS_PAGE_STR_DESC, request, context);
-              return ListJobsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListJobTemplatesRequest, ListJobTemplatesResponse, ListJobTemplatesPagedResponse>
-      LIST_JOB_TEMPLATES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListJobTemplatesRequest, ListJobTemplatesResponse, ListJobTemplatesPagedResponse>() {
-            @Override
-            public ApiFuture<ListJobTemplatesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListJobTemplatesRequest, ListJobTemplatesResponse> callable,
-                ListJobTemplatesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListJobTemplatesResponse> futureResponse) {
-              PageContext<ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_JOB_TEMPLATES_PAGE_STR_DESC, request, context);
-              return ListJobTemplatesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for TranscoderServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<TranscoderServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateJobRequest, Job> createJobSettings;
     private final PagedCallSettings.Builder<
             ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
@@ -364,14 +366,12 @@ public class TranscoderServiceStubSettings extends StubSettings<TranscoderServic
         getJobTemplateSettings;
     private final UnaryCallSettings.Builder<DeleteJobTemplateRequest, Empty>
         deleteJobTemplateSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -382,8 +382,6 @@ public class TranscoderServiceStubSettings extends StubSettings<TranscoderServic
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -396,26 +394,19 @@ public class TranscoderServiceStubSettings extends StubSettings<TranscoderServic
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listJobsSettings = PagedCallSettings.newBuilder(LIST_JOBS_PAGE_STR_FACT);
-
       getJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createJobTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listJobTemplatesSettings = PagedCallSettings.newBuilder(LIST_JOB_TEMPLATES_PAGE_STR_FACT);
-
       getJobTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteJobTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -428,21 +419,45 @@ public class TranscoderServiceStubSettings extends StubSettings<TranscoderServic
               listJobTemplatesSettings,
               getJobTemplateSettings,
               deleteJobTemplateSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(TranscoderServiceStubSettings settings) {
+      super(settings);
+
+      createJobSettings = settings.createJobSettings.toBuilder();
+      listJobsSettings = settings.listJobsSettings.toBuilder();
+      getJobSettings = settings.getJobSettings.toBuilder();
+      deleteJobSettings = settings.deleteJobSettings.toBuilder();
+      createJobTemplateSettings = settings.createJobTemplateSettings.toBuilder();
+      listJobTemplatesSettings = settings.listJobTemplatesSettings.toBuilder();
+      getJobTemplateSettings = settings.getJobTemplateSettings.toBuilder();
+      deleteJobTemplateSettings = settings.deleteJobTemplateSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createJobSettings,
+              listJobsSettings,
+              getJobSettings,
+              deleteJobSettings,
+              createJobTemplateSettings,
+              listJobTemplatesSettings,
+              getJobTemplateSettings,
+              deleteJobTemplateSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .createJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -486,31 +501,7 @@ public class TranscoderServiceStubSettings extends StubSettings<TranscoderServic
       return builder;
     }
 
-    protected Builder(TranscoderServiceStubSettings settings) {
-      super(settings);
-
-      createJobSettings = settings.createJobSettings.toBuilder();
-      listJobsSettings = settings.listJobsSettings.toBuilder();
-      getJobSettings = settings.getJobSettings.toBuilder();
-      deleteJobSettings = settings.deleteJobSettings.toBuilder();
-      createJobTemplateSettings = settings.createJobTemplateSettings.toBuilder();
-      listJobTemplatesSettings = settings.listJobTemplatesSettings.toBuilder();
-      getJobTemplateSettings = settings.getJobTemplateSettings.toBuilder();
-      deleteJobTemplateSettings = settings.deleteJobTemplateSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createJobSettings,
-              listJobsSettings,
-              getJobSettings,
-              deleteJobSettings,
-              createJobTemplateSettings,
-              listJobTemplatesSettings,
-              getJobTemplateSettings,
-              deleteJobTemplateSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.video.transcoder.v1beta1.stub;
 
 import static com.google.cloud.video.transcoder.v1beta1.TranscoderServiceClient.ListJobTemplatesPagedResponse;
 import static com.google.cloud.video.transcoder.v1beta1.TranscoderServiceClient.ListJobsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -39,6 +39,7 @@ import com.google.cloud.video.transcoder.v1beta1.ListJobTemplatesResponse;
 import com.google.cloud.video.transcoder.v1beta1.ListJobsRequest;
 import com.google.cloud.video.transcoder.v1beta1.ListJobsResponse;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -47,16 +48,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Transcoder API.
+ * gRPC stub implementation for the TranscoderService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
-
   private static final MethodDescriptor<CreateJobRequest, Job> createJobMethodDescriptor =
       MethodDescriptor.<CreateJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -64,6 +63,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
       listJobsMethodDescriptor =
           MethodDescriptor.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -72,6 +72,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
       MethodDescriptor.<GetJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -79,6 +80,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
       MethodDescriptor.<DeleteJobRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -86,6 +88,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateJobTemplateRequest, JobTemplate>
       createJobTemplateMethodDescriptor =
           MethodDescriptor.<CreateJobTemplateRequest, JobTemplate>newBuilder()
@@ -96,6 +99,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   ProtoUtils.marshaller(CreateJobTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListJobTemplatesRequest, ListJobTemplatesResponse>
       listJobTemplatesMethodDescriptor =
           MethodDescriptor.<ListJobTemplatesRequest, ListJobTemplatesResponse>newBuilder()
@@ -107,6 +111,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListJobTemplatesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetJobTemplateRequest, JobTemplate>
       getJobTemplateMethodDescriptor =
           MethodDescriptor.<GetJobTemplateRequest, JobTemplate>newBuilder()
@@ -117,6 +122,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   ProtoUtils.marshaller(GetJobTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteJobTemplateRequest, Empty>
       deleteJobTemplateMethodDescriptor =
           MethodDescriptor.<DeleteJobTemplateRequest, Empty>newBuilder()
@@ -127,8 +133,6 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   ProtoUtils.marshaller(DeleteJobTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
@@ -143,6 +147,8 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
   private final UnaryCallable<GetJobTemplateRequest, JobTemplate> getJobTemplateCallable;
   private final UnaryCallable<DeleteJobTemplateRequest, Empty> deleteJobTemplateCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcTranscoderServiceStub create(TranscoderServiceStubSettings settings)
@@ -183,6 +189,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateJobRequest, Job> createJobTransportSettings =
         GrpcCallSettings.<CreateJobRequest, Job>newBuilder()
@@ -325,19 +332,24 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
             settings.deleteJobTemplateSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateJobRequest, Job> createJobCallable() {
     return createJobCallable;
   }
 
-  public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
-    return listJobsPagedCallable;
-  }
-
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return listJobsCallable;
+  }
+
+  public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
+    return listJobsPagedCallable;
   }
 
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {
@@ -352,14 +364,14 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
     return createJobTemplateCallable;
   }
 
-  public UnaryCallable<ListJobTemplatesRequest, ListJobTemplatesPagedResponse>
-      listJobTemplatesPagedCallable() {
-    return listJobTemplatesPagedCallable;
-  }
-
   public UnaryCallable<ListJobTemplatesRequest, ListJobTemplatesResponse>
       listJobTemplatesCallable() {
     return listJobTemplatesCallable;
+  }
+
+  public UnaryCallable<ListJobTemplatesRequest, ListJobTemplatesPagedResponse>
+      listJobTemplatesPagedCallable() {
+    return listJobTemplatesPagedCallable;
   }
 
   public UnaryCallable<GetJobTemplateRequest, JobTemplate> getJobTemplateCallable() {
