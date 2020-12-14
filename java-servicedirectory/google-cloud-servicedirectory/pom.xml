@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-servicedirectory</artifactId>
-  <version>1.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+  <version>1.0.1</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Service Directory</name>
   <url>https://github.com/googleapis/java-servicedirectory</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-servicedirectory-parent</artifactId>
-    <version>1.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+    <version>1.0.1</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-servicedirectory</site.installationModule>
