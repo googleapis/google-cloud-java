@@ -27,6 +27,71 @@ public interface FaceDetectionAnnotationOrBuilder
    *
    *
    * <pre>
+   * The face tracks with attributes.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1.Track> getTracksList();
+  /**
+   *
+   *
+   * <pre>
+   * The face tracks with attributes.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+   */
+  com.google.cloud.videointelligence.v1.Track getTracks(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The face tracks with attributes.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+   */
+  int getTracksCount();
+  /**
+   *
+   *
+   * <pre>
+   * The face tracks with attributes.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1.TrackOrBuilder>
+      getTracksOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The face tracks with attributes.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+   */
+  com.google.cloud.videointelligence.v1.TrackOrBuilder getTracksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The thumbnail of a person's face.
+   * </pre>
+   *
+   * <code>bytes thumbnail = 4;</code>
+   *
+   * @return The thumbnail.
+   */
+  com.google.protobuf.ByteString getThumbnail();
+
+  /**
+   *
+   *
+   * <pre>
    * Feature version.
    * </pre>
    *

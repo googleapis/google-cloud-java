@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.videointelligence.v1p1beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -26,13 +27,14 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -40,32 +42,32 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class VideoIntelligenceServiceClientTest {
   private static MockVideoIntelligenceService mockVideoIntelligenceService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private VideoIntelligenceServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockVideoIntelligenceService = new MockVideoIntelligenceService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(mockVideoIntelligenceService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     VideoIntelligenceServiceSettings settings =
         VideoIntelligenceServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -80,9 +82,11 @@ public class VideoIntelligenceServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void annotateVideoTest() throws Exception {
-    AnnotateVideoResponse expectedResponse = AnnotateVideoResponse.newBuilder().build();
+    AnnotateVideoResponse expectedResponse =
+        AnnotateVideoResponse.newBuilder()
+            .addAllAnnotationResults(new ArrayList<VideoAnnotationResults>())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("annotateVideoTest")
@@ -91,16 +95,15 @@ public class VideoIntelligenceServiceClientTest {
             .build();
     mockVideoIntelligenceService.addResponse(resultOperation);
 
-    String inputUri = "gs://cloud-samples-data/video/cat.mp4";
-    Feature featuresElement = Feature.LABEL_DETECTION;
-    List<Feature> features = Arrays.asList(featuresElement);
+    String inputUri = "inputUri470706498";
+    List<Feature> features = new ArrayList<>();
 
     AnnotateVideoResponse actualResponse = client.annotateVideoAsync(inputUri, features).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockVideoIntelligenceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    AnnotateVideoRequest actualRequest = (AnnotateVideoRequest) actualRequests.get(0);
+    AnnotateVideoRequest actualRequest = ((AnnotateVideoRequest) actualRequests.get(0));
 
     Assert.assertEquals(inputUri, actualRequest.getInputUri());
     Assert.assertEquals(features, actualRequest.getFeaturesList());
@@ -111,21 +114,18 @@ public class VideoIntelligenceServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void annotateVideoExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockVideoIntelligenceService.addException(exception);
 
     try {
-      String inputUri = "gs://cloud-samples-data/video/cat.mp4";
-      Feature featuresElement = Feature.LABEL_DETECTION;
-      List<Feature> features = Arrays.asList(featuresElement);
-
+      String inputUri = "inputUri470706498";
+      List<Feature> features = new ArrayList<>();
       client.annotateVideoAsync(inputUri, features).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }

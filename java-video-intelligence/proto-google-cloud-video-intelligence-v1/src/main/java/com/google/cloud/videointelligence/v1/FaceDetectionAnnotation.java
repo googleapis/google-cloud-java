@@ -38,6 +38,8 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
   }
 
   private FaceDetectionAnnotation() {
+    tracks_ = java.util.Collections.emptyList();
+    thumbnail_ = com.google.protobuf.ByteString.EMPTY;
     version_ = "";
   }
 
@@ -60,6 +62,7 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -70,6 +73,22 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
           case 0:
             done = true;
             break;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tracks_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.Track>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tracks_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.Track.parser(), extensionRegistry));
+              break;
+            }
+          case 34:
+            {
+              thumbnail_ = input.readBytes();
+              break;
+            }
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -91,6 +110,9 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        tracks_ = java.util.Collections.unmodifiableList(tracks_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -109,6 +131,93 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
         .ensureFieldAccessorsInitialized(
             com.google.cloud.videointelligence.v1.FaceDetectionAnnotation.class,
             com.google.cloud.videointelligence.v1.FaceDetectionAnnotation.Builder.class);
+  }
+
+  public static final int TRACKS_FIELD_NUMBER = 3;
+  private java.util.List<com.google.cloud.videointelligence.v1.Track> tracks_;
+  /**
+   *
+   *
+   * <pre>
+   * The face tracks with attributes.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.videointelligence.v1.Track> getTracksList() {
+    return tracks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The face tracks with attributes.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.videointelligence.v1.TrackOrBuilder>
+      getTracksOrBuilderList() {
+    return tracks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The face tracks with attributes.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+   */
+  @java.lang.Override
+  public int getTracksCount() {
+    return tracks_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The face tracks with attributes.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.videointelligence.v1.Track getTracks(int index) {
+    return tracks_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The face tracks with attributes.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.videointelligence.v1.TrackOrBuilder getTracksOrBuilder(int index) {
+    return tracks_.get(index);
+  }
+
+  public static final int THUMBNAIL_FIELD_NUMBER = 4;
+  private com.google.protobuf.ByteString thumbnail_;
+  /**
+   *
+   *
+   * <pre>
+   * The thumbnail of a person's face.
+   * </pre>
+   *
+   * <code>bytes thumbnail = 4;</code>
+   *
+   * @return The thumbnail.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getThumbnail() {
+    return thumbnail_;
   }
 
   public static final int VERSION_FIELD_NUMBER = 5;
@@ -174,6 +283,12 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < tracks_.size(); i++) {
+      output.writeMessage(3, tracks_.get(i));
+    }
+    if (!thumbnail_.isEmpty()) {
+      output.writeBytes(4, thumbnail_);
+    }
     if (!getVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
     }
@@ -186,6 +301,12 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
+    for (int i = 0; i < tracks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, tracks_.get(i));
+    }
+    if (!thumbnail_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(4, thumbnail_);
+    }
     if (!getVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
     }
@@ -205,6 +326,8 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     com.google.cloud.videointelligence.v1.FaceDetectionAnnotation other =
         (com.google.cloud.videointelligence.v1.FaceDetectionAnnotation) obj;
 
+    if (!getTracksList().equals(other.getTracksList())) return false;
+    if (!getThumbnail().equals(other.getThumbnail())) return false;
     if (!getVersion().equals(other.getVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -217,6 +340,12 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getTracksCount() > 0) {
+      hash = (37 * hash) + TRACKS_FIELD_NUMBER;
+      hash = (53 * hash) + getTracksList().hashCode();
+    }
+    hash = (37 * hash) + THUMBNAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getThumbnail().hashCode();
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -359,12 +488,22 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getTracksFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (tracksBuilder_ == null) {
+        tracks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        tracksBuilder_.clear();
+      }
+      thumbnail_ = com.google.protobuf.ByteString.EMPTY;
+
       version_ = "";
 
       return this;
@@ -395,6 +534,17 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     public com.google.cloud.videointelligence.v1.FaceDetectionAnnotation buildPartial() {
       com.google.cloud.videointelligence.v1.FaceDetectionAnnotation result =
           new com.google.cloud.videointelligence.v1.FaceDetectionAnnotation(this);
+      int from_bitField0_ = bitField0_;
+      if (tracksBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          tracks_ = java.util.Collections.unmodifiableList(tracks_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tracks_ = tracks_;
+      } else {
+        result.tracks_ = tracksBuilder_.build();
+      }
+      result.thumbnail_ = thumbnail_;
       result.version_ = version_;
       onBuilt();
       return result;
@@ -447,6 +597,36 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       if (other
           == com.google.cloud.videointelligence.v1.FaceDetectionAnnotation.getDefaultInstance())
         return this;
+      if (tracksBuilder_ == null) {
+        if (!other.tracks_.isEmpty()) {
+          if (tracks_.isEmpty()) {
+            tracks_ = other.tracks_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTracksIsMutable();
+            tracks_.addAll(other.tracks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tracks_.isEmpty()) {
+          if (tracksBuilder_.isEmpty()) {
+            tracksBuilder_.dispose();
+            tracksBuilder_ = null;
+            tracks_ = other.tracks_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            tracksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTracksFieldBuilder()
+                    : null;
+          } else {
+            tracksBuilder_.addAllMessages(other.tracks_);
+          }
+        }
+      }
+      if (other.getThumbnail() != com.google.protobuf.ByteString.EMPTY) {
+        setThumbnail(other.getThumbnail());
+      }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
         onChanged();
@@ -479,6 +659,412 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int bitField0_;
+
+    private java.util.List<com.google.cloud.videointelligence.v1.Track> tracks_ =
+        java.util.Collections.emptyList();
+
+    private void ensureTracksIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        tracks_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.Track>(tracks_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.Track,
+            com.google.cloud.videointelligence.v1.Track.Builder,
+            com.google.cloud.videointelligence.v1.TrackOrBuilder>
+        tracksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.Track> getTracksList() {
+      if (tracksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tracks_);
+      } else {
+        return tracksBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public int getTracksCount() {
+      if (tracksBuilder_ == null) {
+        return tracks_.size();
+      } else {
+        return tracksBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1.Track getTracks(int index) {
+      if (tracksBuilder_ == null) {
+        return tracks_.get(index);
+      } else {
+        return tracksBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public Builder setTracks(int index, com.google.cloud.videointelligence.v1.Track value) {
+      if (tracksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTracksIsMutable();
+        tracks_.set(index, value);
+        onChanged();
+      } else {
+        tracksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public Builder setTracks(
+        int index, com.google.cloud.videointelligence.v1.Track.Builder builderForValue) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tracksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public Builder addTracks(com.google.cloud.videointelligence.v1.Track value) {
+      if (tracksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTracksIsMutable();
+        tracks_.add(value);
+        onChanged();
+      } else {
+        tracksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public Builder addTracks(int index, com.google.cloud.videointelligence.v1.Track value) {
+      if (tracksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTracksIsMutable();
+        tracks_.add(index, value);
+        onChanged();
+      } else {
+        tracksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public Builder addTracks(com.google.cloud.videointelligence.v1.Track.Builder builderForValue) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        tracksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public Builder addTracks(
+        int index, com.google.cloud.videointelligence.v1.Track.Builder builderForValue) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        tracksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public Builder addAllTracks(
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1.Track> values) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tracks_);
+        onChanged();
+      } else {
+        tracksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public Builder clearTracks() {
+      if (tracksBuilder_ == null) {
+        tracks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        tracksBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public Builder removeTracks(int index) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.remove(index);
+        onChanged();
+      } else {
+        tracksBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1.Track.Builder getTracksBuilder(int index) {
+      return getTracksFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1.TrackOrBuilder getTracksOrBuilder(int index) {
+      if (tracksBuilder_ == null) {
+        return tracks_.get(index);
+      } else {
+        return tracksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public java.util.List<? extends com.google.cloud.videointelligence.v1.TrackOrBuilder>
+        getTracksOrBuilderList() {
+      if (tracksBuilder_ != null) {
+        return tracksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tracks_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1.Track.Builder addTracksBuilder() {
+      return getTracksFieldBuilder()
+          .addBuilder(com.google.cloud.videointelligence.v1.Track.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1.Track.Builder addTracksBuilder(int index) {
+      return getTracksFieldBuilder()
+          .addBuilder(index, com.google.cloud.videointelligence.v1.Track.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The face tracks with attributes.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 3;</code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.Track.Builder>
+        getTracksBuilderList() {
+      return getTracksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.Track,
+            com.google.cloud.videointelligence.v1.Track.Builder,
+            com.google.cloud.videointelligence.v1.TrackOrBuilder>
+        getTracksFieldBuilder() {
+      if (tracksBuilder_ == null) {
+        tracksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.Track,
+                com.google.cloud.videointelligence.v1.Track.Builder,
+                com.google.cloud.videointelligence.v1.TrackOrBuilder>(
+                tracks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        tracks_ = null;
+      }
+      return tracksBuilder_;
+    }
+
+    private com.google.protobuf.ByteString thumbnail_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     *
+     *
+     * <pre>
+     * The thumbnail of a person's face.
+     * </pre>
+     *
+     * <code>bytes thumbnail = 4;</code>
+     *
+     * @return The thumbnail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getThumbnail() {
+      return thumbnail_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The thumbnail of a person's face.
+     * </pre>
+     *
+     * <code>bytes thumbnail = 4;</code>
+     *
+     * @param value The thumbnail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThumbnail(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      thumbnail_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The thumbnail of a person's face.
+     * </pre>
+     *
+     * <code>bytes thumbnail = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThumbnail() {
+
+      thumbnail_ = getDefaultInstance().getThumbnail();
+      onChanged();
       return this;
     }
 

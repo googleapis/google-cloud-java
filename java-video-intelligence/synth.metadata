@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-video-intelligence.git",
-        "sha": "18291c61c85d6ef9aa9b740118e88ea7b385d4cc"
+        "sha": "42579189545d398050a5a4b2879ab16c49908a95"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e7375a91e7942c562c61495a908f4f6d50b4ea3f",
-        "internalRef": "334093713"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
@@ -181,25 +181,21 @@
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/MockVideoIntelligenceService.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/MockVideoIntelligenceServiceImpl.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceClientTest.java",
-    "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceSmokeTest.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/MockVideoIntelligenceService.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/MockVideoIntelligenceServiceImpl.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceClientTest.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/MockVideoIntelligenceService.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/MockVideoIntelligenceServiceImpl.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceClientTest.java",
-    "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceSmokeTest.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/MockVideoIntelligenceService.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/MockVideoIntelligenceServiceImpl.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceClientTest.java",
-    "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceSmokeTest.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockStreamingVideoIntelligenceService.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockStreamingVideoIntelligenceServiceImpl.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockVideoIntelligenceService.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockVideoIntelligenceServiceImpl.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoIntelligenceServiceClientTest.java",
     "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceClientTest.java",
-    "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceSmokeTest.java",
     "grpc-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceGrpc.java",
     "grpc-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceGrpc.java",
     "grpc-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceGrpc.java",

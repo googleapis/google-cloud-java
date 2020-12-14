@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.videointelligence.v1p1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -34,16 +34,14 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Video Intelligence API.
+ * gRPC stub implementation for the VideoIntelligenceService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceStub {
-
   private static final MethodDescriptor<AnnotateVideoRequest, Operation>
       annotateVideoMethodDescriptor =
           MethodDescriptor.<AnnotateVideoRequest, Operation>newBuilder()
@@ -55,14 +53,13 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
-
   private final UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable;
   private final OperationCallable<
           AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcVideoIntelligenceServiceStub create(
@@ -119,24 +116,23 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
             annotateVideoTransportSettings,
             settings.annotateVideoOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable() {
+    return annotateVideoCallable;
+  }
+
   public OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable() {
     return annotateVideoOperationCallable;
-  }
-
-  public UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable() {
-    return annotateVideoCallable;
   }
 
   @Override

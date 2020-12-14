@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.videointelligence.v1p3beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -24,13 +25,14 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
-import io.grpc.Status;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -38,35 +40,32 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class StreamingVideoIntelligenceServiceClientTest {
-  private static MockVideoIntelligenceService mockVideoIntelligenceService;
+  private static MockServiceHelper mockServiceHelper;
   private static MockStreamingVideoIntelligenceService mockStreamingVideoIntelligenceService;
-  private static MockServiceHelper serviceHelper;
   private StreamingVideoIntelligenceServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockVideoIntelligenceService = new MockVideoIntelligenceService();
     mockStreamingVideoIntelligenceService = new MockStreamingVideoIntelligenceService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockVideoIntelligenceService, mockStreamingVideoIntelligenceService));
-    serviceHelper.start();
+            Arrays.<MockGrpcService>asList(mockStreamingVideoIntelligenceService));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     StreamingVideoIntelligenceServiceSettings settings =
         StreamingVideoIntelligenceServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -81,12 +80,12 @@ public class StreamingVideoIntelligenceServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void streamingAnnotateVideoTest() throws Exception {
-    String annotationResultsUri = "annotationResultsUri-238075757";
     StreamingAnnotateVideoResponse expectedResponse =
         StreamingAnnotateVideoResponse.newBuilder()
-            .setAnnotationResultsUri(annotationResultsUri)
+            .setError(Status.newBuilder().build())
+            .setAnnotationResults(StreamingVideoAnnotationResults.newBuilder().build())
+            .setAnnotationResultsUri("annotationResultsUri-1486037467")
             .build();
     mockStreamingVideoIntelligenceService.addResponse(expectedResponse);
     StreamingAnnotateVideoRequest request = StreamingAnnotateVideoRequest.newBuilder().build();
@@ -108,9 +107,8 @@ public class StreamingVideoIntelligenceServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void streamingAnnotateVideoExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockStreamingVideoIntelligenceService.addException(exception);
     StreamingAnnotateVideoRequest request = StreamingAnnotateVideoRequest.newBuilder().build();
 
@@ -129,7 +127,7 @@ public class StreamingVideoIntelligenceServiceClientTest {
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }

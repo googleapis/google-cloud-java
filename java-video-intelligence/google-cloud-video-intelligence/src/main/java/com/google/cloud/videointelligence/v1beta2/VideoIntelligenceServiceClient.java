@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.videointelligence.v1beta2;
 
 import com.google.api.core.BetaApi;
@@ -29,25 +30,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service that implements Google Cloud Video Intelligence API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
- *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
- *   Feature featuresElement = Feature.LABEL_DETECTION;
- *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
- *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features).get();
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the videoIntelligenceServiceClient object to clean up
+ * <p>Note: close() needs to be called on the VideoIntelligenceServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -76,30 +66,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
  *     VideoIntelligenceServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * VideoIntelligenceServiceClient videoIntelligenceServiceClient =
  *     VideoIntelligenceServiceClient.create(videoIntelligenceServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
  *     VideoIntelligenceServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * VideoIntelligenceServiceClient videoIntelligenceServiceClient =
  *     VideoIntelligenceServiceClient.create(videoIntelligenceServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class VideoIntelligenceServiceClient implements BackgroundResource {
   private final VideoIntelligenceServiceSettings settings;
   private final VideoIntelligenceServiceStub stub;
@@ -122,7 +110,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of VideoIntelligenceServiceClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use VideoIntelligenceServiceSettings}.
+   * calls. This is for advanced usage - prefer using create(VideoIntelligenceServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final VideoIntelligenceServiceClient create(VideoIntelligenceServiceStub stub) {
@@ -161,29 +149,16 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Performs asynchronous video annotation. Progress and results can be retrieved through the
    * `google.longrunning.Operations` interface. `Operation.metadata` contains
    * `AnnotateVideoProgress` (progress). `Operation.response` contains `AnnotateVideoResponse`
    * (results).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
-   *   Feature featuresElement = Feature.LABEL_DETECTION;
-   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
-   *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features).get();
-   * }
-   * </code></pre>
    *
    * @param inputUri Input video location. Currently, only [Google Cloud
    *     Storage](https://cloud.google.com/storage/) URIs are supported, which must be specified in
@@ -197,8 +172,6 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * @param features Required. Requested video annotation features.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> annotateVideoAsync(
       String inputUri, List<Feature> features) {
     AnnotateVideoRequest request =
@@ -206,39 +179,22 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
     return annotateVideoAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Performs asynchronous video annotation. Progress and results can be retrieved through the
    * `google.longrunning.Operations` interface. `Operation.metadata` contains
    * `AnnotateVideoProgress` (progress). `Operation.response` contains `AnnotateVideoResponse`
    * (results).
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   Feature featuresElement = Feature.LABEL_DETECTION;
-   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
-   *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
-   *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-   *     .addAllFeatures(features)
-   *     .setInputUri(inputUri)
-   *     .build();
-   *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> annotateVideoAsync(
       AnnotateVideoRequest request) {
     return annotateVideoOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Performs asynchronous video annotation. Progress and results can be retrieved through the
    * `google.longrunning.Operations` interface. `Operation.metadata` contains
@@ -246,29 +202,13 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * (results).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   Feature featuresElement = Feature.LABEL_DETECTION;
-   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
-   *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
-   *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-   *     .addAllFeatures(features)
-   *     .setInputUri(inputUri)
-   *     .build();
-   *   OperationFuture&lt;AnnotateVideoResponse, AnnotateVideoProgress&gt; future = videoIntelligenceServiceClient.annotateVideoOperationCallable().futureCall(request);
-   *   // Do something
-   *   AnnotateVideoResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable() {
     return stub.annotateVideoOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Performs asynchronous video annotation. Progress and results can be retrieved through the
    * `google.longrunning.Operations` interface. `Operation.metadata` contains
@@ -276,21 +216,6 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * (results).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   Feature featuresElement = Feature.LABEL_DETECTION;
-   *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
-   *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
-   *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-   *     .addAllFeatures(features)
-   *     .setInputUri(inputUri)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = videoIntelligenceServiceClient.annotateVideoCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable() {
     return stub.annotateVideoCallable();
