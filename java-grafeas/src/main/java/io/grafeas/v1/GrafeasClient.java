@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package io.grafeas.v1;
 
 import com.google.api.core.ApiFunction;
@@ -36,7 +37,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: [Grafeas](https://grafeas.io) API.
  *
@@ -54,16 +55,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
- *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
- *   Occurrence response = grafeasClient.getOccurrence(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the grafeasClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the GrafeasClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -91,30 +83,25 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GrafeasSettings grafeasSettings =
  *     GrafeasSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * GrafeasClient grafeasClient =
- *     GrafeasClient.create(grafeasSettings);
- * </code>
- * </pre>
+ * GrafeasClient grafeasClient = GrafeasClient.create(grafeasSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
- * GrafeasSettings grafeasSettings =
- *     GrafeasSettings.newBuilder().setEndpoint(myEndpoint).build();
- * GrafeasClient grafeasClient =
- *     GrafeasClient.create(grafeasSettings);
- * </code>
- * </pre>
+ * <pre>{@code
+ * GrafeasSettings grafeasSettings = GrafeasSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * GrafeasClient grafeasClient = GrafeasClient.create(grafeasSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class GrafeasClient implements BackgroundResource {
   private final GrafeasSettings settings;
   private final GrafeasStub stub;
@@ -134,7 +121,7 @@ public class GrafeasClient implements BackgroundResource {
 
   /**
    * Constructs an instance of GrafeasClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use GrafeasSettings}.
+   * advanced usage - prefer using create(GrafeasSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GrafeasClient create(GrafeasStub stub) {
@@ -165,18 +152,9 @@ public class GrafeasClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence response = grafeasClient.getOccurrence(name);
-   * }
-   * </code></pre>
    *
    * @param name The name of the occurrence in the form of
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -188,18 +166,9 @@ public class GrafeasClient implements BackgroundResource {
     return getOccurrence(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence response = grafeasClient.getOccurrence(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name The name of the occurrence in the form of
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -210,21 +179,9 @@ public class GrafeasClient implements BackgroundResource {
     return getOccurrence(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   GetOccurrenceRequest request = GetOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Occurrence response = grafeasClient.getOccurrence(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -233,43 +190,19 @@ public class GrafeasClient implements BackgroundResource {
     return getOccurrenceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified occurrence.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   GetOccurrenceRequest request = GetOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Occurrence&gt; future = grafeasClient.getOccurrenceCallable().futureCall(request);
-   *   // Do something
-   *   Occurrence response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable() {
     return stub.getOccurrenceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   for (Occurrence element : grafeasClient.listOccurrences(parent, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project to list occurrences for in the form of
    *     `projects/[PROJECT_ID]`.
@@ -285,21 +218,9 @@ public class GrafeasClient implements BackgroundResource {
     return listOccurrences(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   for (Occurrence element : grafeasClient.listOccurrences(parent.toString(), filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project to list occurrences for in the form of
    *     `projects/[PROJECT_ID]`.
@@ -312,23 +233,9 @@ public class GrafeasClient implements BackgroundResource {
     return listOccurrences(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListOccurrencesRequest request = ListOccurrencesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Occurrence element : grafeasClient.listOccurrences(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -337,76 +244,32 @@ public class GrafeasClient implements BackgroundResource {
     return listOccurrencesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences for the specified project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListOccurrencesRequest request = ListOccurrencesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListOccurrencesPagedResponse&gt; future = grafeasClient.listOccurrencesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Occurrence element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListOccurrencesRequest, ListOccurrencesPagedResponse>
       listOccurrencesPagedCallable() {
     return stub.listOccurrencesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences for the specified project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListOccurrencesRequest request = ListOccurrencesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListOccurrencesResponse response = grafeasClient.listOccurrencesCallable().call(request);
-   *     for (Occurrence element : response.getOccurrencesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse>
       listOccurrencesCallable() {
     return stub.listOccurrencesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
    * occurrence is no longer applicable for the given resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   grafeasClient.deleteOccurrence(name);
-   * }
-   * </code></pre>
    *
    * @param name The name of the occurrence in the form of
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -418,19 +281,10 @@ public class GrafeasClient implements BackgroundResource {
     deleteOccurrence(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
    * occurrence is no longer applicable for the given resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   grafeasClient.deleteOccurrence(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name The name of the occurrence in the form of
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -441,22 +295,10 @@ public class GrafeasClient implements BackgroundResource {
     deleteOccurrence(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
    * occurrence is no longer applicable for the given resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   grafeasClient.deleteOccurrence(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -465,42 +307,20 @@ public class GrafeasClient implements BackgroundResource {
     deleteOccurrenceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
    * occurrence is no longer applicable for the given resource.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = grafeasClient.deleteOccurrenceCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
     return stub.deleteOccurrenceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   Occurrence response = grafeasClient.createOccurrence(parent, occurrence);
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
    *     occurrence is to be created.
@@ -516,19 +336,9 @@ public class GrafeasClient implements BackgroundResource {
     return createOccurrence(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   Occurrence response = grafeasClient.createOccurrence(parent.toString(), occurrence);
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
    *     occurrence is to be created.
@@ -541,23 +351,9 @@ public class GrafeasClient implements BackgroundResource {
     return createOccurrence(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   CreateOccurrenceRequest request = CreateOccurrenceRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setOccurrence(occurrence)
-   *     .build();
-   *   Occurrence response = grafeasClient.createOccurrence(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -566,43 +362,19 @@ public class GrafeasClient implements BackgroundResource {
     return createOccurrenceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new occurrence.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   CreateOccurrenceRequest request = CreateOccurrenceRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setOccurrence(occurrence)
-   *     .build();
-   *   ApiFuture&lt;Occurrence&gt; future = grafeasClient.createOccurrenceCallable().futureCall(request);
-   *   // Do something
-   *   Occurrence response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable() {
     return stub.createOccurrenceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new occurrences in batch.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Occurrence&gt; occurrences = new ArrayList&lt;&gt;();
-   *   BatchCreateOccurrencesResponse response = grafeasClient.batchCreateOccurrences(parent, occurrences);
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
    *     occurrences are to be created.
@@ -619,19 +391,9 @@ public class GrafeasClient implements BackgroundResource {
     return batchCreateOccurrences(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new occurrences in batch.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Occurrence&gt; occurrences = new ArrayList&lt;&gt;();
-   *   BatchCreateOccurrencesResponse response = grafeasClient.batchCreateOccurrences(parent.toString(), occurrences);
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
    *     occurrences are to be created.
@@ -648,23 +410,9 @@ public class GrafeasClient implements BackgroundResource {
     return batchCreateOccurrences(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new occurrences in batch.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Occurrence&gt; occurrences = new ArrayList&lt;&gt;();
-   *   BatchCreateOccurrencesRequest request = BatchCreateOccurrencesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllOccurrences(occurrences)
-   *     .build();
-   *   BatchCreateOccurrencesResponse response = grafeasClient.batchCreateOccurrences(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -674,45 +422,20 @@ public class GrafeasClient implements BackgroundResource {
     return batchCreateOccurrencesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new occurrences in batch.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Occurrence&gt; occurrences = new ArrayList&lt;&gt;();
-   *   BatchCreateOccurrencesRequest request = BatchCreateOccurrencesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllOccurrences(occurrences)
-   *     .build();
-   *   ApiFuture&lt;BatchCreateOccurrencesResponse&gt; future = grafeasClient.batchCreateOccurrencesCallable().futureCall(request);
-   *   // Do something
-   *   BatchCreateOccurrencesResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
       batchCreateOccurrencesCallable() {
     return stub.batchCreateOccurrencesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Occurrence response = grafeasClient.updateOccurrence(name, occurrence, updateMask);
-   * }
-   * </code></pre>
    *
    * @param name The name of the occurrence in the form of
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -731,20 +454,9 @@ public class GrafeasClient implements BackgroundResource {
     return updateOccurrence(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Occurrence response = grafeasClient.updateOccurrence(name.toString(), occurrence, updateMask);
-   * }
-   * </code></pre>
    *
    * @param name The name of the occurrence in the form of
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -763,23 +475,9 @@ public class GrafeasClient implements BackgroundResource {
     return updateOccurrence(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   UpdateOccurrenceRequest request = UpdateOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setOccurrence(occurrence)
-   *     .build();
-   *   Occurrence response = grafeasClient.updateOccurrence(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -788,43 +486,20 @@ public class GrafeasClient implements BackgroundResource {
     return updateOccurrenceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified occurrence.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   UpdateOccurrenceRequest request = UpdateOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setOccurrence(occurrence)
-   *     .build();
-   *   ApiFuture&lt;Occurrence&gt; future = grafeasClient.updateOccurrenceCallable().futureCall(request);
-   *   // Do something
-   *   Occurrence response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateOccurrenceRequest, Occurrence> updateOccurrenceCallable() {
     return stub.updateOccurrenceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the note attached to the specified occurrence. Consumer projects can use this method to
    * get a note that belongs to a provider project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Note response = grafeasClient.getOccurrenceNote(name);
-   * }
-   * </code></pre>
    *
    * @param name The name of the occurrence in the form of
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -838,19 +513,10 @@ public class GrafeasClient implements BackgroundResource {
     return getOccurrenceNote(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the note attached to the specified occurrence. Consumer projects can use this method to
    * get a note that belongs to a provider project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Note response = grafeasClient.getOccurrenceNote(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name The name of the occurrence in the form of
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -861,22 +527,10 @@ public class GrafeasClient implements BackgroundResource {
     return getOccurrenceNote(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the note attached to the specified occurrence. Consumer projects can use this method to
    * get a note that belongs to a provider project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   GetOccurrenceNoteRequest request = GetOccurrenceNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Note response = grafeasClient.getOccurrenceNote(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -885,41 +539,20 @@ public class GrafeasClient implements BackgroundResource {
     return getOccurrenceNoteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the note attached to the specified occurrence. Consumer projects can use this method to
    * get a note that belongs to a provider project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   GetOccurrenceNoteRequest request = GetOccurrenceNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Note&gt; future = grafeasClient.getOccurrenceNoteCallable().futureCall(request);
-   *   // Do something
-   *   Note response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetOccurrenceNoteRequest, Note> getOccurrenceNoteCallable() {
     return stub.getOccurrenceNoteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note response = grafeasClient.getNote(name);
-   * }
-   * </code></pre>
    *
    * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -930,18 +563,9 @@ public class GrafeasClient implements BackgroundResource {
     return getNote(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note response = grafeasClient.getNote(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -951,21 +575,9 @@ public class GrafeasClient implements BackgroundResource {
     return getNote(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   GetNoteRequest request = GetNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Note response = grafeasClient.getNote(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -974,43 +586,19 @@ public class GrafeasClient implements BackgroundResource {
     return getNoteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified note.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   GetNoteRequest request = GetNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Note&gt; future = grafeasClient.getNoteCallable().futureCall(request);
-   *   // Do something
-   *   Note response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetNoteRequest, Note> getNoteCallable() {
     return stub.getNoteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notes for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   for (Note element : grafeasClient.listNotes(parent, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project to list notes for in the form of `projects/[PROJECT_ID]`.
    * @param filter The filter expression.
@@ -1025,21 +613,9 @@ public class GrafeasClient implements BackgroundResource {
     return listNotes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notes for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   for (Note element : grafeasClient.listNotes(parent.toString(), filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project to list notes for in the form of `projects/[PROJECT_ID]`.
    * @param filter The filter expression.
@@ -1051,23 +627,9 @@ public class GrafeasClient implements BackgroundResource {
     return listNotes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notes for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListNotesRequest request = ListNotesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Note element : grafeasClient.listNotes(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1076,73 +638,29 @@ public class GrafeasClient implements BackgroundResource {
     return listNotesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notes for the specified project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListNotesRequest request = ListNotesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListNotesPagedResponse&gt; future = grafeasClient.listNotesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Note element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListNotesRequest, ListNotesPagedResponse> listNotesPagedCallable() {
     return stub.listNotesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notes for the specified project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListNotesRequest request = ListNotesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListNotesResponse response = grafeasClient.listNotesCallable().call(request);
-   *     for (Note element : response.getNotesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListNotesRequest, ListNotesResponse> listNotesCallable() {
     return stub.listNotesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   grafeasClient.deleteNote(name);
-   * }
-   * </code></pre>
    *
    * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1153,18 +671,9 @@ public class GrafeasClient implements BackgroundResource {
     deleteNote(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   grafeasClient.deleteNote(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1174,21 +683,9 @@ public class GrafeasClient implements BackgroundResource {
     deleteNote(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   grafeasClient.deleteNote(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1197,42 +694,19 @@ public class GrafeasClient implements BackgroundResource {
     deleteNoteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified note.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = grafeasClient.deleteNoteCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
     return stub.deleteNoteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String noteId = "";
-   *   Note note = Note.newBuilder().build();
-   *   Note response = grafeasClient.createNote(parent, noteId, note);
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
    *     note is to be created.
@@ -1250,20 +724,9 @@ public class GrafeasClient implements BackgroundResource {
     return createNote(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String noteId = "";
-   *   Note note = Note.newBuilder().build();
-   *   Note response = grafeasClient.createNote(parent.toString(), noteId, note);
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
    *     note is to be created.
@@ -1277,25 +740,9 @@ public class GrafeasClient implements BackgroundResource {
     return createNote(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String noteId = "";
-   *   Note note = Note.newBuilder().build();
-   *   CreateNoteRequest request = CreateNoteRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setNoteId(noteId)
-   *     .setNote(note)
-   *     .build();
-   *   Note response = grafeasClient.createNote(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1304,45 +751,19 @@ public class GrafeasClient implements BackgroundResource {
     return createNoteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new note.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String noteId = "";
-   *   Note note = Note.newBuilder().build();
-   *   CreateNoteRequest request = CreateNoteRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setNoteId(noteId)
-   *     .setNote(note)
-   *     .build();
-   *   ApiFuture&lt;Note&gt; future = grafeasClient.createNoteCallable().futureCall(request);
-   *   // Do something
-   *   Note response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateNoteRequest, Note> createNoteCallable() {
     return stub.createNoteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new notes in batch.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Map&lt;String, Note&gt; notes = new HashMap&lt;&gt;();
-   *   BatchCreateNotesResponse response = grafeasClient.batchCreateNotes(parent, notes);
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
    *     notes are to be created.
@@ -1359,19 +780,9 @@ public class GrafeasClient implements BackgroundResource {
     return batchCreateNotes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new notes in batch.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Map&lt;String, Note&gt; notes = new HashMap&lt;&gt;();
-   *   BatchCreateNotesResponse response = grafeasClient.batchCreateNotes(parent.toString(), notes);
-   * }
-   * </code></pre>
    *
    * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
    *     notes are to be created.
@@ -1384,23 +795,9 @@ public class GrafeasClient implements BackgroundResource {
     return batchCreateNotes(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new notes in batch.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Map&lt;String, Note&gt; notes = new HashMap&lt;&gt;();
-   *   BatchCreateNotesRequest request = BatchCreateNotesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .putAllNotes(notes)
-   *     .build();
-   *   BatchCreateNotesResponse response = grafeasClient.batchCreateNotes(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1409,45 +806,20 @@ public class GrafeasClient implements BackgroundResource {
     return batchCreateNotesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new notes in batch.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Map&lt;String, Note&gt; notes = new HashMap&lt;&gt;();
-   *   BatchCreateNotesRequest request = BatchCreateNotesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .putAllNotes(notes)
-   *     .build();
-   *   ApiFuture&lt;BatchCreateNotesResponse&gt; future = grafeasClient.batchCreateNotesCallable().futureCall(request);
-   *   // Do something
-   *   BatchCreateNotesResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchCreateNotesRequest, BatchCreateNotesResponse>
       batchCreateNotesCallable() {
     return stub.batchCreateNotesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note note = Note.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Note response = grafeasClient.updateNote(name, note, updateMask);
-   * }
-   * </code></pre>
    *
    * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * @param note The updated note.
@@ -1464,20 +836,9 @@ public class GrafeasClient implements BackgroundResource {
     return updateNote(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note note = Note.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Note response = grafeasClient.updateNote(name.toString(), note, updateMask);
-   * }
-   * </code></pre>
    *
    * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * @param note The updated note.
@@ -1494,23 +855,9 @@ public class GrafeasClient implements BackgroundResource {
     return updateNote(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note note = Note.newBuilder().build();
-   *   UpdateNoteRequest request = UpdateNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setNote(note)
-   *     .build();
-   *   Note response = grafeasClient.updateNote(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1519,46 +866,20 @@ public class GrafeasClient implements BackgroundResource {
     return updateNoteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified note.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note note = Note.newBuilder().build();
-   *   UpdateNoteRequest request = UpdateNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setNote(note)
-   *     .build();
-   *   ApiFuture&lt;Note&gt; future = grafeasClient.updateNoteCallable().futureCall(request);
-   *   // Do something
-   *   Note response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateNoteRequest, Note> updateNoteCallable() {
     return stub.updateNoteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences referencing the specified note. Provider projects can use this method to get
    * all occurrences across consumer projects referencing the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   String filter = "";
-   *   for (Occurrence element : grafeasClient.listNoteOccurrences(name, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param name The name of the note to list occurrences for in the form of
    *     `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
@@ -1574,22 +895,10 @@ public class GrafeasClient implements BackgroundResource {
     return listNoteOccurrences(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences referencing the specified note. Provider projects can use this method to get
    * all occurrences across consumer projects referencing the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   String filter = "";
-   *   for (Occurrence element : grafeasClient.listNoteOccurrences(name.toString(), filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param name The name of the note to list occurrences for in the form of
    *     `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
@@ -1602,24 +911,10 @@ public class GrafeasClient implements BackgroundResource {
     return listNoteOccurrences(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences referencing the specified note. Provider projects can use this method to get
    * all occurrences across consumer projects referencing the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   ListNoteOccurrencesRequest request = ListNoteOccurrencesRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   for (Occurrence element : grafeasClient.listNoteOccurrences(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1629,59 +924,24 @@ public class GrafeasClient implements BackgroundResource {
     return listNoteOccurrencesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences referencing the specified note. Provider projects can use this method to get
    * all occurrences across consumer projects referencing the specified note.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   ListNoteOccurrencesRequest request = ListNoteOccurrencesRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ListNoteOccurrencesPagedResponse&gt; future = grafeasClient.listNoteOccurrencesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Occurrence element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesPagedResponse>
       listNoteOccurrencesPagedCallable() {
     return stub.listNoteOccurrencesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences referencing the specified note. Provider projects can use this method to get
    * all occurrences across consumer projects referencing the specified note.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   ListNoteOccurrencesRequest request = ListNoteOccurrencesRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   while (true) {
-   *     ListNoteOccurrencesResponse response = grafeasClient.listNoteOccurrencesCallable().call(request);
-   *     for (Occurrence element : response.getOccurrencesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
       listNoteOccurrencesCallable() {

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,11 +15,9 @@
  */
 
 /**
- * A client to Container Analysis API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>============= GrafeasClient =============
+ * <p>======================= GrafeasClient =======================
  *
  * <p>Service Description: [Grafeas](https://grafeas.io) API.
  *
@@ -35,17 +33,8 @@
  * to that note.
  *
  * <p>Sample for GrafeasClient:
- *
- * <pre>
- * <code>
- * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
- *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
- *   Occurrence response = grafeasClient.getOccurrence(name);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package io.grafeas.v1;
 
 import javax.annotation.Generated;

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package io.grafeas.v1;
 
 import static io.grafeas.v1.GrafeasClient.ListNoteOccurrencesPagedResponse;
@@ -30,7 +31,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -46,31 +48,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class GrafeasClientTest {
-  private static MockGrafeas mockGrafeas;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private GrafeasClient client;
+  private static MockGrafeas mockGrafeas;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockGrafeas = new MockGrafeas();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockGrafeas));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     GrafeasSettings settings =
         GrafeasSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -85,18 +87,15 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getOccurrenceTest() {
-    OccurrenceName name2 = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-    String resourceUri = "resourceUri-384040517";
-    String noteName = "noteName1780787896";
-    String remediation = "remediation779381797";
+  public void getOccurrenceTest() throws Exception {
     Occurrence expectedResponse =
         Occurrence.newBuilder()
-            .setName(name2.toString())
-            .setResourceUri(resourceUri)
-            .setNoteName(noteName)
-            .setRemediation(remediation)
+            .setName(OccurrenceName.of("[PROJECT]", "[OCCURRENCE]").toString())
+            .setResourceUri("resourceUri1234527870")
+            .setNoteName("noteName1580946845")
+            .setRemediation("remediation779381797")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -107,9 +106,9 @@ public class GrafeasClientTest {
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetOccurrenceRequest actualRequest = (GetOccurrenceRequest) actualRequests.get(0);
+    GetOccurrenceRequest actualRequest = ((GetOccurrenceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, OccurrenceName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -117,31 +116,69 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getOccurrenceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-
       client.getOccurrence(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listOccurrencesTest() {
-    String nextPageToken = "";
-    Occurrence occurrencesElement = Occurrence.newBuilder().build();
-    List<Occurrence> occurrences = Arrays.asList(occurrencesElement);
+  public void getOccurrenceTest2() throws Exception {
+    Occurrence expectedResponse =
+        Occurrence.newBuilder()
+            .setName(OccurrenceName.of("[PROJECT]", "[OCCURRENCE]").toString())
+            .setResourceUri("resourceUri1234527870")
+            .setNoteName("noteName1580946845")
+            .setRemediation("remediation779381797")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Occurrence actualResponse = client.getOccurrence(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetOccurrenceRequest actualRequest = ((GetOccurrenceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getOccurrenceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getOccurrence(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listOccurrencesTest() throws Exception {
+    Occurrence responsesElement = Occurrence.newBuilder().build();
     ListOccurrencesResponse expectedResponse =
         ListOccurrencesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllOccurrences(occurrences)
+            .setNextPageToken("")
+            .addAllOccurrences(Arrays.asList(responsesElement))
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -151,14 +188,15 @@ public class GrafeasClientTest {
     ListOccurrencesPagedResponse pagedListResponse = client.listOccurrences(parent, filter);
 
     List<Occurrence> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getOccurrencesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListOccurrencesRequest actualRequest = (ListOccurrencesRequest) actualRequests.get(0);
+    ListOccurrencesRequest actualRequest = ((ListOccurrencesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -167,25 +205,69 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listOccurrencesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       ProjectName parent = ProjectName.of("[PROJECT]");
       String filter = "filter-1274492040";
-
       client.listOccurrences(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteOccurrenceTest() {
+  public void listOccurrencesTest2() throws Exception {
+    Occurrence responsesElement = Occurrence.newBuilder().build();
+    ListOccurrencesResponse expectedResponse =
+        ListOccurrencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOccurrences(Arrays.asList(responsesElement))
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String filter = "filter-1274492040";
+
+    ListOccurrencesPagedResponse pagedListResponse = client.listOccurrences(parent, filter);
+
+    List<Occurrence> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOccurrencesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListOccurrencesRequest actualRequest = ((ListOccurrencesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listOccurrencesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String filter = "filter-1274492040";
+      client.listOccurrences(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteOccurrenceTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -195,9 +277,9 @@ public class GrafeasClientTest {
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteOccurrenceRequest actualRequest = (DeleteOccurrenceRequest) actualRequests.get(0);
+    DeleteOccurrenceRequest actualRequest = ((DeleteOccurrenceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, OccurrenceName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -205,34 +287,63 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteOccurrenceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-
       client.deleteOccurrence(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createOccurrenceTest() {
-    OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-    String resourceUri = "resourceUri-384040517";
-    String noteName = "noteName1780787896";
-    String remediation = "remediation779381797";
+  public void deleteOccurrenceTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteOccurrence(name);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteOccurrenceRequest actualRequest = ((DeleteOccurrenceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteOccurrenceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteOccurrence(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createOccurrenceTest() throws Exception {
     Occurrence expectedResponse =
         Occurrence.newBuilder()
-            .setName(name.toString())
-            .setResourceUri(resourceUri)
-            .setNoteName(noteName)
-            .setRemediation(remediation)
+            .setName(OccurrenceName.of("[PROJECT]", "[OCCURRENCE]").toString())
+            .setResourceUri("resourceUri1234527870")
+            .setNoteName("noteName1580946845")
+            .setRemediation("remediation779381797")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -244,9 +355,9 @@ public class GrafeasClientTest {
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateOccurrenceRequest actualRequest = (CreateOccurrenceRequest) actualRequests.get(0);
+    CreateOccurrenceRequest actualRequest = ((CreateOccurrenceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(occurrence, actualRequest.getOccurrence());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -255,27 +366,72 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createOccurrenceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       ProjectName parent = ProjectName.of("[PROJECT]");
       Occurrence occurrence = Occurrence.newBuilder().build();
-
       client.createOccurrence(parent, occurrence);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void batchCreateOccurrencesTest() {
+  public void createOccurrenceTest2() throws Exception {
+    Occurrence expectedResponse =
+        Occurrence.newBuilder()
+            .setName(OccurrenceName.of("[PROJECT]", "[OCCURRENCE]").toString())
+            .setResourceUri("resourceUri1234527870")
+            .setNoteName("noteName1580946845")
+            .setRemediation("remediation779381797")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Occurrence occurrence = Occurrence.newBuilder().build();
+
+    Occurrence actualResponse = client.createOccurrence(parent, occurrence);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateOccurrenceRequest actualRequest = ((CreateOccurrenceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(occurrence, actualRequest.getOccurrence());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createOccurrenceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Occurrence occurrence = Occurrence.newBuilder().build();
+      client.createOccurrence(parent, occurrence);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateOccurrencesTest() throws Exception {
     BatchCreateOccurrencesResponse expectedResponse =
-        BatchCreateOccurrencesResponse.newBuilder().build();
+        BatchCreateOccurrencesResponse.newBuilder()
+            .addAllOccurrences(new ArrayList<Occurrence>())
+            .build();
     mockGrafeas.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
@@ -288,9 +444,9 @@ public class GrafeasClientTest {
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchCreateOccurrencesRequest actualRequest =
-        (BatchCreateOccurrencesRequest) actualRequests.get(0);
+        ((BatchCreateOccurrencesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(occurrences, actualRequest.getOccurrencesList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -299,35 +455,73 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void batchCreateOccurrencesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       ProjectName parent = ProjectName.of("[PROJECT]");
       List<Occurrence> occurrences = new ArrayList<>();
-
       client.batchCreateOccurrences(parent, occurrences);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateOccurrenceTest() {
-    OccurrenceName name2 = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-    String resourceUri = "resourceUri-384040517";
-    String noteName = "noteName1780787896";
-    String remediation = "remediation779381797";
+  public void batchCreateOccurrencesTest2() throws Exception {
+    BatchCreateOccurrencesResponse expectedResponse =
+        BatchCreateOccurrencesResponse.newBuilder()
+            .addAllOccurrences(new ArrayList<Occurrence>())
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<Occurrence> occurrences = new ArrayList<>();
+
+    BatchCreateOccurrencesResponse actualResponse =
+        client.batchCreateOccurrences(parent, occurrences);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateOccurrencesRequest actualRequest =
+        ((BatchCreateOccurrencesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(occurrences, actualRequest.getOccurrencesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateOccurrencesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<Occurrence> occurrences = new ArrayList<>();
+      client.batchCreateOccurrences(parent, occurrences);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateOccurrenceTest() throws Exception {
     Occurrence expectedResponse =
         Occurrence.newBuilder()
-            .setName(name2.toString())
-            .setResourceUri(resourceUri)
-            .setNoteName(noteName)
-            .setRemediation(remediation)
+            .setName(OccurrenceName.of("[PROJECT]", "[OCCURRENCE]").toString())
+            .setResourceUri("resourceUri1234527870")
+            .setNoteName("noteName1580946845")
+            .setRemediation("remediation779381797")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -340,9 +534,9 @@ public class GrafeasClientTest {
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateOccurrenceRequest actualRequest = (UpdateOccurrenceRequest) actualRequests.get(0);
+    UpdateOccurrenceRequest actualRequest = ((UpdateOccurrenceRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, OccurrenceName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertEquals(occurrence, actualRequest.getOccurrence());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
@@ -352,34 +546,82 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateOccurrenceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
       Occurrence occurrence = Occurrence.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateOccurrence(name, occurrence, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getOccurrenceNoteTest() {
-    NoteName name2 = NoteName.of("[PROJECT]", "[NOTE]");
-    String shortDescription = "shortDescription-235369287";
-    String longDescription = "longDescription-1747792199";
+  public void updateOccurrenceTest2() throws Exception {
+    Occurrence expectedResponse =
+        Occurrence.newBuilder()
+            .setName(OccurrenceName.of("[PROJECT]", "[OCCURRENCE]").toString())
+            .setResourceUri("resourceUri1234527870")
+            .setNoteName("noteName1580946845")
+            .setRemediation("remediation779381797")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    Occurrence occurrence = Occurrence.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Occurrence actualResponse = client.updateOccurrence(name, occurrence, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateOccurrenceRequest actualRequest = ((UpdateOccurrenceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(occurrence, actualRequest.getOccurrence());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateOccurrenceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String name = "name3373707";
+      Occurrence occurrence = Occurrence.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateOccurrence(name, occurrence, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOccurrenceNoteTest() throws Exception {
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name2.toString())
-            .setShortDescription(shortDescription)
-            .setLongDescription(longDescription)
+            .setName(NoteName.of("[PROJECT]", "[NOTE]").toString())
+            .setShortDescription("shortDescription1951089120")
+            .setLongDescription("longDescription1763753952")
+            .addAllRelatedUrl(new ArrayList<RelatedUrl>())
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRelatedNoteNames(new ArrayList<String>())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -390,9 +632,9 @@ public class GrafeasClientTest {
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetOccurrenceNoteRequest actualRequest = (GetOccurrenceNoteRequest) actualRequests.get(0);
+    GetOccurrenceNoteRequest actualRequest = ((GetOccurrenceNoteRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, OccurrenceName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -400,32 +642,76 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getOccurrenceNoteExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-
       client.getOccurrenceNote(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getNoteTest() {
-    NoteName name2 = NoteName.of("[PROJECT]", "[NOTE]");
-    String shortDescription = "shortDescription-235369287";
-    String longDescription = "longDescription-1747792199";
+  public void getOccurrenceNoteTest2() throws Exception {
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name2.toString())
-            .setShortDescription(shortDescription)
-            .setLongDescription(longDescription)
+            .setName(NoteName.of("[PROJECT]", "[NOTE]").toString())
+            .setShortDescription("shortDescription1951089120")
+            .setLongDescription("longDescription1763753952")
+            .addAllRelatedUrl(new ArrayList<RelatedUrl>())
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRelatedNoteNames(new ArrayList<String>())
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Note actualResponse = client.getOccurrenceNote(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetOccurrenceNoteRequest actualRequest = ((GetOccurrenceNoteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getOccurrenceNoteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getOccurrenceNote(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNoteTest() throws Exception {
+    Note expectedResponse =
+        Note.newBuilder()
+            .setName(NoteName.of("[PROJECT]", "[NOTE]").toString())
+            .setShortDescription("shortDescription1951089120")
+            .setLongDescription("longDescription1763753952")
+            .addAllRelatedUrl(new ArrayList<RelatedUrl>())
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRelatedNoteNames(new ArrayList<String>())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -436,9 +722,9 @@ public class GrafeasClientTest {
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetNoteRequest actualRequest = (GetNoteRequest) actualRequests.get(0);
+    GetNoteRequest actualRequest = ((GetNoteRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, NoteName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -446,29 +732,72 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getNoteExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-
       client.getNote(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listNotesTest() {
-    String nextPageToken = "";
-    Note notesElement = Note.newBuilder().build();
-    List<Note> notes = Arrays.asList(notesElement);
+  public void getNoteTest2() throws Exception {
+    Note expectedResponse =
+        Note.newBuilder()
+            .setName(NoteName.of("[PROJECT]", "[NOTE]").toString())
+            .setShortDescription("shortDescription1951089120")
+            .setLongDescription("longDescription1763753952")
+            .addAllRelatedUrl(new ArrayList<RelatedUrl>())
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRelatedNoteNames(new ArrayList<String>())
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Note actualResponse = client.getNote(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNoteRequest actualRequest = ((GetNoteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNoteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getNote(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNotesTest() throws Exception {
+    Note responsesElement = Note.newBuilder().build();
     ListNotesResponse expectedResponse =
-        ListNotesResponse.newBuilder().setNextPageToken(nextPageToken).addAllNotes(notes).build();
+        ListNotesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNotes(Arrays.asList(responsesElement))
+            .build();
     mockGrafeas.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
@@ -477,14 +806,15 @@ public class GrafeasClientTest {
     ListNotesPagedResponse pagedListResponse = client.listNotes(parent, filter);
 
     List<Note> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getNotesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListNotesRequest actualRequest = (ListNotesRequest) actualRequests.get(0);
+    ListNotesRequest actualRequest = ((ListNotesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -493,25 +823,69 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listNotesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       ProjectName parent = ProjectName.of("[PROJECT]");
       String filter = "filter-1274492040";
-
       client.listNotes(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteNoteTest() {
+  public void listNotesTest2() throws Exception {
+    Note responsesElement = Note.newBuilder().build();
+    ListNotesResponse expectedResponse =
+        ListNotesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNotes(Arrays.asList(responsesElement))
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String filter = "filter-1274492040";
+
+    ListNotesPagedResponse pagedListResponse = client.listNotes(parent, filter);
+
+    List<Note> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNotesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNotesRequest actualRequest = ((ListNotesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNotesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String filter = "filter-1274492040";
+      client.listNotes(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteNoteTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -521,9 +895,9 @@ public class GrafeasClientTest {
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteNoteRequest actualRequest = (DeleteNoteRequest) actualRequests.get(0);
+    DeleteNoteRequest actualRequest = ((DeleteNoteRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, NoteName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -531,37 +905,70 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteNoteExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-
       client.deleteNote(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createNoteTest() {
-    NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-    String shortDescription = "shortDescription-235369287";
-    String longDescription = "longDescription-1747792199";
+  public void deleteNoteTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteNote(name);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteNoteRequest actualRequest = ((DeleteNoteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteNoteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteNote(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createNoteTest() throws Exception {
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name.toString())
-            .setShortDescription(shortDescription)
-            .setLongDescription(longDescription)
+            .setName(NoteName.of("[PROJECT]", "[NOTE]").toString())
+            .setShortDescription("shortDescription1951089120")
+            .setLongDescription("longDescription1763753952")
+            .addAllRelatedUrl(new ArrayList<RelatedUrl>())
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRelatedNoteNames(new ArrayList<String>())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
-    String noteId = "noteId2129224840";
+    String noteId = "noteId-1039694675";
     Note note = Note.newBuilder().build();
 
     Note actualResponse = client.createNote(parent, noteId, note);
@@ -569,9 +976,9 @@ public class GrafeasClientTest {
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateNoteRequest actualRequest = (CreateNoteRequest) actualRequests.get(0);
+    CreateNoteRequest actualRequest = ((CreateNoteRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(noteId, actualRequest.getNoteId());
     Assert.assertEquals(note, actualRequest.getNote());
     Assert.assertTrue(
@@ -581,27 +988,76 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createNoteExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       ProjectName parent = ProjectName.of("[PROJECT]");
-      String noteId = "noteId2129224840";
+      String noteId = "noteId-1039694675";
       Note note = Note.newBuilder().build();
-
       client.createNote(parent, noteId, note);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void batchCreateNotesTest() {
-    BatchCreateNotesResponse expectedResponse = BatchCreateNotesResponse.newBuilder().build();
+  public void createNoteTest2() throws Exception {
+    Note expectedResponse =
+        Note.newBuilder()
+            .setName(NoteName.of("[PROJECT]", "[NOTE]").toString())
+            .setShortDescription("shortDescription1951089120")
+            .setLongDescription("longDescription1763753952")
+            .addAllRelatedUrl(new ArrayList<RelatedUrl>())
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRelatedNoteNames(new ArrayList<String>())
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String noteId = "noteId-1039694675";
+    Note note = Note.newBuilder().build();
+
+    Note actualResponse = client.createNote(parent, noteId, note);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateNoteRequest actualRequest = ((CreateNoteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(noteId, actualRequest.getNoteId());
+    Assert.assertEquals(note, actualRequest.getNote());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createNoteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String noteId = "noteId-1039694675";
+      Note note = Note.newBuilder().build();
+      client.createNote(parent, noteId, note);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateNotesTest() throws Exception {
+    BatchCreateNotesResponse expectedResponse =
+        BatchCreateNotesResponse.newBuilder().addAllNotes(new ArrayList<Note>()).build();
     mockGrafeas.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
@@ -612,9 +1068,9 @@ public class GrafeasClientTest {
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    BatchCreateNotesRequest actualRequest = (BatchCreateNotesRequest) actualRequests.get(0);
+    BatchCreateNotesRequest actualRequest = ((BatchCreateNotesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(notes, actualRequest.getNotesMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -623,33 +1079,71 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void batchCreateNotesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       ProjectName parent = ProjectName.of("[PROJECT]");
       Map<String, Note> notes = new HashMap<>();
-
       client.batchCreateNotes(parent, notes);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateNoteTest() {
-    NoteName name2 = NoteName.of("[PROJECT]", "[NOTE]");
-    String shortDescription = "shortDescription-235369287";
-    String longDescription = "longDescription-1747792199";
+  public void batchCreateNotesTest2() throws Exception {
+    BatchCreateNotesResponse expectedResponse =
+        BatchCreateNotesResponse.newBuilder().addAllNotes(new ArrayList<Note>()).build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Map<String, Note> notes = new HashMap<>();
+
+    BatchCreateNotesResponse actualResponse = client.batchCreateNotes(parent, notes);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateNotesRequest actualRequest = ((BatchCreateNotesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(notes, actualRequest.getNotesMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateNotesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Map<String, Note> notes = new HashMap<>();
+      client.batchCreateNotes(parent, notes);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateNoteTest() throws Exception {
     Note expectedResponse =
         Note.newBuilder()
-            .setName(name2.toString())
-            .setShortDescription(shortDescription)
-            .setLongDescription(longDescription)
+            .setName(NoteName.of("[PROJECT]", "[NOTE]").toString())
+            .setShortDescription("shortDescription1951089120")
+            .setLongDescription("longDescription1763753952")
+            .addAllRelatedUrl(new ArrayList<RelatedUrl>())
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRelatedNoteNames(new ArrayList<String>())
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -662,9 +1156,9 @@ public class GrafeasClientTest {
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateNoteRequest actualRequest = (UpdateNoteRequest) actualRequests.get(0);
+    UpdateNoteRequest actualRequest = ((UpdateNoteRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, NoteName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertEquals(note, actualRequest.getNote());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
@@ -674,33 +1168,79 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateNoteExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
       Note note = Note.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateNote(name, note, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listNoteOccurrencesTest() {
-    String nextPageToken = "";
-    Occurrence occurrencesElement = Occurrence.newBuilder().build();
-    List<Occurrence> occurrences = Arrays.asList(occurrencesElement);
+  public void updateNoteTest2() throws Exception {
+    Note expectedResponse =
+        Note.newBuilder()
+            .setName(NoteName.of("[PROJECT]", "[NOTE]").toString())
+            .setShortDescription("shortDescription1951089120")
+            .setLongDescription("longDescription1763753952")
+            .addAllRelatedUrl(new ArrayList<RelatedUrl>())
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRelatedNoteNames(new ArrayList<String>())
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    Note note = Note.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Note actualResponse = client.updateNote(name, note, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateNoteRequest actualRequest = ((UpdateNoteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(note, actualRequest.getNote());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateNoteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String name = "name3373707";
+      Note note = Note.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateNote(name, note, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNoteOccurrencesTest() throws Exception {
+    Occurrence responsesElement = Occurrence.newBuilder().build();
     ListNoteOccurrencesResponse expectedResponse =
         ListNoteOccurrencesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllOccurrences(occurrences)
+            .setNextPageToken("")
+            .addAllOccurrences(Arrays.asList(responsesElement))
             .build();
     mockGrafeas.addResponse(expectedResponse);
 
@@ -710,14 +1250,15 @@ public class GrafeasClientTest {
     ListNoteOccurrencesPagedResponse pagedListResponse = client.listNoteOccurrences(name, filter);
 
     List<Occurrence> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getOccurrencesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListNoteOccurrencesRequest actualRequest = (ListNoteOccurrencesRequest) actualRequests.get(0);
+    ListNoteOccurrencesRequest actualRequest = ((ListNoteOccurrencesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, NoteName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -726,19 +1267,64 @@ public class GrafeasClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listNoteOccurrencesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockGrafeas.addException(exception);
 
     try {
       NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
       String filter = "filter-1274492040";
-
       client.listNoteOccurrences(name, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNoteOccurrencesTest2() throws Exception {
+    Occurrence responsesElement = Occurrence.newBuilder().build();
+    ListNoteOccurrencesResponse expectedResponse =
+        ListNoteOccurrencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOccurrences(Arrays.asList(responsesElement))
+            .build();
+    mockGrafeas.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String filter = "filter-1274492040";
+
+    ListNoteOccurrencesPagedResponse pagedListResponse = client.listNoteOccurrences(name, filter);
+
+    List<Occurrence> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOccurrencesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockGrafeas.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNoteOccurrencesRequest actualRequest = ((ListNoteOccurrencesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNoteOccurrencesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGrafeas.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String filter = "filter-1274492040";
+      client.listNoteOccurrences(name, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package io.grafeas.v1.stub;
 
 import static io.grafeas.v1.GrafeasClient.ListNoteOccurrencesPagedResponse;
 import static io.grafeas.v1.GrafeasClient.ListNotesPagedResponse;
 import static io.grafeas.v1.GrafeasClient.ListOccurrencesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grafeas.v1.BatchCreateNotesRequest;
 import io.grafeas.v1.BatchCreateNotesResponse;
@@ -57,16 +58,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Container Analysis API.
+ * gRPC stub implementation for the Grafeas service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcGrafeasStub extends GrafeasStub {
-
   private static final MethodDescriptor<GetOccurrenceRequest, Occurrence>
       getOccurrenceMethodDescriptor =
           MethodDescriptor.<GetOccurrenceRequest, Occurrence>newBuilder()
@@ -76,6 +75,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(GetOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListOccurrencesRequest, ListOccurrencesResponse>
       listOccurrencesMethodDescriptor =
           MethodDescriptor.<ListOccurrencesRequest, ListOccurrencesResponse>newBuilder()
@@ -86,6 +86,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOccurrencesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteOccurrenceRequest, Empty>
       deleteOccurrenceMethodDescriptor =
           MethodDescriptor.<DeleteOccurrenceRequest, Empty>newBuilder()
@@ -95,6 +96,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(DeleteOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateOccurrenceRequest, Occurrence>
       createOccurrenceMethodDescriptor =
           MethodDescriptor.<CreateOccurrenceRequest, Occurrence>newBuilder()
@@ -104,6 +106,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(CreateOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
       batchCreateOccurrencesMethodDescriptor =
@@ -116,6 +119,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateOccurrencesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateOccurrenceRequest, Occurrence>
       updateOccurrenceMethodDescriptor =
           MethodDescriptor.<UpdateOccurrenceRequest, Occurrence>newBuilder()
@@ -125,6 +129,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(UpdateOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetOccurrenceNoteRequest, Note>
       getOccurrenceNoteMethodDescriptor =
           MethodDescriptor.<GetOccurrenceNoteRequest, Note>newBuilder()
@@ -134,6 +139,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(GetOccurrenceNoteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetNoteRequest, Note> getNoteMethodDescriptor =
       MethodDescriptor.<GetNoteRequest, Note>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -141,6 +147,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListNotesRequest, ListNotesResponse>
       listNotesMethodDescriptor =
           MethodDescriptor.<ListNotesRequest, ListNotesResponse>newBuilder()
@@ -149,6 +156,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListNotesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListNotesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteNoteRequest, Empty> deleteNoteMethodDescriptor =
       MethodDescriptor.<DeleteNoteRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -156,6 +164,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateNoteRequest, Note> createNoteMethodDescriptor =
       MethodDescriptor.<CreateNoteRequest, Note>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -163,6 +172,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<BatchCreateNotesRequest, BatchCreateNotesResponse>
       batchCreateNotesMethodDescriptor =
           MethodDescriptor.<BatchCreateNotesRequest, BatchCreateNotesResponse>newBuilder()
@@ -173,6 +183,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateNotesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateNoteRequest, Note> updateNoteMethodDescriptor =
       MethodDescriptor.<UpdateNoteRequest, Note>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -180,6 +191,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
       listNoteOccurrencesMethodDescriptor =
           MethodDescriptor.<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>newBuilder()
@@ -190,8 +202,6 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNoteOccurrencesResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable;
   private final UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse>
@@ -217,6 +227,8 @@ public class GrpcGrafeasStub extends GrafeasStub {
   private final UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesPagedResponse>
       listNoteOccurrencesPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcGrafeasStub create(GrafeasStubSettings settings) throws IOException {
@@ -252,6 +264,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<GetOccurrenceRequest, Occurrence> getOccurrenceTransportSettings =
         GrpcCallSettings.<GetOccurrenceRequest, Occurrence>newBuilder()
@@ -501,20 +514,25 @@ public class GrpcGrafeasStub extends GrafeasStub {
             settings.listNoteOccurrencesSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable() {
     return getOccurrenceCallable;
   }
 
+  public UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse> listOccurrencesCallable() {
+    return listOccurrencesCallable;
+  }
+
   public UnaryCallable<ListOccurrencesRequest, ListOccurrencesPagedResponse>
       listOccurrencesPagedCallable() {
     return listOccurrencesPagedCallable;
-  }
-
-  public UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse> listOccurrencesCallable() {
-    return listOccurrencesCallable;
   }
 
   public UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
@@ -542,12 +560,12 @@ public class GrpcGrafeasStub extends GrafeasStub {
     return getNoteCallable;
   }
 
-  public UnaryCallable<ListNotesRequest, ListNotesPagedResponse> listNotesPagedCallable() {
-    return listNotesPagedCallable;
-  }
-
   public UnaryCallable<ListNotesRequest, ListNotesResponse> listNotesCallable() {
     return listNotesCallable;
+  }
+
+  public UnaryCallable<ListNotesRequest, ListNotesPagedResponse> listNotesPagedCallable() {
+    return listNotesPagedCallable;
   }
 
   public UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
@@ -567,14 +585,14 @@ public class GrpcGrafeasStub extends GrafeasStub {
     return updateNoteCallable;
   }
 
-  public UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesPagedResponse>
-      listNoteOccurrencesPagedCallable() {
-    return listNoteOccurrencesPagedCallable;
-  }
-
   public UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
       listNoteOccurrencesCallable() {
     return listNoteOccurrencesCallable;
+  }
+
+  public UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesPagedResponse>
+      listNoteOccurrencesPagedCallable() {
+    return listNoteOccurrencesPagedCallable;
   }
 
   @Override
