@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.translate.v3.stub;
 
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -54,16 +54,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Translation API.
+ * gRPC stub implementation for the TranslationService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcTranslationServiceStub extends TranslationServiceStub {
-
   private static final MethodDescriptor<TranslateTextRequest, TranslateTextResponse>
       translateTextMethodDescriptor =
           MethodDescriptor.<TranslateTextRequest, TranslateTextResponse>newBuilder()
@@ -74,6 +72,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TranslateTextResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DetectLanguageRequest, DetectLanguageResponse>
       detectLanguageMethodDescriptor =
           MethodDescriptor.<DetectLanguageRequest, DetectLanguageResponse>newBuilder()
@@ -84,6 +83,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DetectLanguageResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetSupportedLanguagesRequest, SupportedLanguages>
       getSupportedLanguagesMethodDescriptor =
           MethodDescriptor.<GetSupportedLanguagesRequest, SupportedLanguages>newBuilder()
@@ -94,6 +94,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(GetSupportedLanguagesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SupportedLanguages.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<BatchTranslateTextRequest, Operation>
       batchTranslateTextMethodDescriptor =
           MethodDescriptor.<BatchTranslateTextRequest, Operation>newBuilder()
@@ -104,6 +105,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(BatchTranslateTextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateGlossaryRequest, Operation>
       createGlossaryMethodDescriptor =
           MethodDescriptor.<CreateGlossaryRequest, Operation>newBuilder()
@@ -113,6 +115,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(CreateGlossaryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListGlossariesRequest, ListGlossariesResponse>
       listGlossariesMethodDescriptor =
           MethodDescriptor.<ListGlossariesRequest, ListGlossariesResponse>newBuilder()
@@ -123,6 +126,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGlossariesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetGlossaryRequest, Glossary> getGlossaryMethodDescriptor =
       MethodDescriptor.<GetGlossaryRequest, Glossary>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -130,6 +134,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetGlossaryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Glossary.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteGlossaryRequest, Operation>
       deleteGlossaryMethodDescriptor =
           MethodDescriptor.<DeleteGlossaryRequest, Operation>newBuilder()
@@ -139,9 +144,6 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(DeleteGlossaryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable;
   private final UnaryCallable<DetectLanguageRequest, DetectLanguageResponse> detectLanguageCallable;
@@ -163,6 +165,8 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcTranslationServiceStub create(TranslationServiceStubSettings settings)
@@ -334,7 +338,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             batchTranslateTextTransportSettings,
             settings.batchTranslateTextOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.createGlossaryCallable =
         callableFactory.createUnaryCallable(
             createGlossaryTransportSettings, settings.createGlossarySettings(), clientContext);
@@ -343,7 +347,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             createGlossaryTransportSettings,
             settings.createGlossaryOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.listGlossariesCallable =
         callableFactory.createUnaryCallable(
             listGlossariesTransportSettings, settings.listGlossariesSettings(), clientContext);
@@ -361,12 +365,12 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             deleteGlossaryTransportSettings,
             settings.deleteGlossaryOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -384,25 +388,27 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
     return getSupportedLanguagesCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<BatchTranslateTextRequest, Operation> batchTranslateTextCallable() {
+    return batchTranslateTextCallable;
+  }
+
   public OperationCallable<
           BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
       batchTranslateTextOperationCallable() {
     return batchTranslateTextOperationCallable;
   }
 
-  public UnaryCallable<BatchTranslateTextRequest, Operation> batchTranslateTextCallable() {
-    return batchTranslateTextCallable;
+  public UnaryCallable<CreateGlossaryRequest, Operation> createGlossaryCallable() {
+    return createGlossaryCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateGlossaryRequest, Glossary, CreateGlossaryMetadata>
       createGlossaryOperationCallable() {
     return createGlossaryOperationCallable;
   }
 
-  public UnaryCallable<CreateGlossaryRequest, Operation> createGlossaryCallable() {
-    return createGlossaryCallable;
+  public UnaryCallable<ListGlossariesRequest, ListGlossariesResponse> listGlossariesCallable() {
+    return listGlossariesCallable;
   }
 
   public UnaryCallable<ListGlossariesRequest, ListGlossariesPagedResponse>
@@ -410,22 +416,17 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
     return listGlossariesPagedCallable;
   }
 
-  public UnaryCallable<ListGlossariesRequest, ListGlossariesResponse> listGlossariesCallable() {
-    return listGlossariesCallable;
-  }
-
   public UnaryCallable<GetGlossaryRequest, Glossary> getGlossaryCallable() {
     return getGlossaryCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
+    return deleteGlossaryCallable;
+  }
+
   public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable() {
     return deleteGlossaryOperationCallable;
-  }
-
-  public UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
-    return deleteGlossaryCallable;
   }
 
   @Override
