@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-document-ai</artifactId>
-  <version>0.3.7-SNAPSHOT</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
+  <version>0.3.7</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Document AI</name>
   <url>https://github.com/googleapis/java-document-ai</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-document-ai-parent</artifactId>
-    <version>0.3.7-SNAPSHOT</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
+    <version>0.3.7</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-document-ai</site.installationModule>
