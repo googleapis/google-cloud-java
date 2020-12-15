@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-game-servers.git",
-        "sha": "3173546075609e6664039ba3cf9586b18a1b1302"
+        "sha": "94fcfd7c3326bd11b9e5191af2ec1f28cdd808f9"
       }
     },
     {
