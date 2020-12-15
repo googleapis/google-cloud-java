@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.7.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.7.1...v1.7.2) (2020-12-15)
+
+
+### Bug Fixes
+
+* Disable Breaking change related code site ([#731](https://www.github.com/googleapis/java-bigquerystorage/issues/731)) ([d180293](https://www.github.com/googleapis/java-bigquerystorage/commit/d180293b47484c6257ae065f7ea2a5a6be8a5383))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#735](https://www.github.com/googleapis/java-bigquerystorage/issues/735)) ([131d7a7](https://www.github.com/googleapis/java-bigquerystorage/commit/131d7a7626adebf9a0c97ffb2b0183a55086b5f7))
+
 ### [1.7.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.7.0...v1.7.1) (2020-12-14)
 
 
