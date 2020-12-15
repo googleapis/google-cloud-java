@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.4.5</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+  <version>2.4.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
   <name>Google Cloud Dialog Flow API Parent</name>
   <url>https://github.com/googleapis/java-dialogflow</url>
   <description>
@@ -70,27 +70,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2</artifactId>
-        <version>2.4.5</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2:current} -->
+        <version>2.4.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>0.91.5</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2beta1:current} -->
+        <version>0.91.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>0.91.5</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2beta1:current} -->
+        <version>0.91.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2</artifactId>
-        <version>2.4.5</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2:current} -->
+        <version>2.4.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow</artifactId>
-        <version>2.4.5</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+        <version>2.4.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
