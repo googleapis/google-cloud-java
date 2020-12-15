@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-secretmanager-v1:1.2.7:1.2.7
-proto-google-cloud-secretmanager-v1beta1:1.2.7:1.2.7
-grpc-google-cloud-secretmanager-v1:1.2.7:1.2.7
-grpc-google-cloud-secretmanager-v1beta1:1.2.7:1.2.7
-google-cloud-secretmanager:1.2.7:1.2.7
+proto-google-cloud-secretmanager-v1:1.2.7:1.2.8-SNAPSHOT
+proto-google-cloud-secretmanager-v1beta1:1.2.7:1.2.8-SNAPSHOT
+grpc-google-cloud-secretmanager-v1:1.2.7:1.2.8-SNAPSHOT
+grpc-google-cloud-secretmanager-v1beta1:1.2.7:1.2.8-SNAPSHOT
+google-cloud-secretmanager:1.2.7:1.2.8-SNAPSHOT
