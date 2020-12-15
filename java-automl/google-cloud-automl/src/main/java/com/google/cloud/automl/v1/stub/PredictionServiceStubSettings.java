@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.automl.v1.stub;
 
 import com.google.api.core.ApiFunction;
@@ -49,7 +50,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link PredictionServiceStub}.
  *
@@ -66,22 +67,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of predict to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionServiceStubSettings.Builder predictionServiceSettingsBuilder =
  *     PredictionServiceStubSettings.newBuilder();
  * predictionServiceSettingsBuilder
  *     .predictSettings()
  *     .setRetrySettings(
- *         predictionServiceSettingsBuilder.predictSettings().getRetrySettings().toBuilder()
+ *         predictionServiceSettingsBuilder
+ *             .predictSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * PredictionServiceStubSettings predictionServiceSettings = predictionServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * PredictionServiceStubSettings predictionServiceSettings =
+ *     predictionServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class PredictionServiceStubSettings extends StubSettings<PredictionServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -103,7 +106,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   }
 
   /** Returns the object with the settings used for calls to batchPredict. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<BatchPredictRequest, BatchPredictResult, OperationMetadata>
       batchPredictOperationSettings() {
     return batchPredictOperationSettings;
@@ -115,10 +117,10 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcPredictionServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -186,13 +188,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   /** Builder for PredictionServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<PredictionServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings;
     private final UnaryCallSettings.Builder<BatchPredictRequest, Operation> batchPredictSettings;
     private final OperationCallSettings.Builder<
             BatchPredictRequest, BatchPredictResult, OperationMetadata>
         batchPredictOperationSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -201,7 +201,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           ImmutableMap.builder();
       definitions.put(
           "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -210,8 +209,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -224,35 +221,44 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       predictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchPredictOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(predictSettings, batchPredictSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(PredictionServiceStubSettings settings) {
+      super(settings);
+
+      predictSettings = settings.predictSettings.toBuilder();
+      batchPredictSettings = settings.batchPredictSettings.toBuilder();
+      batchPredictOperationSettings = settings.batchPredictOperationSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(predictSettings, batchPredictSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .predictSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
@@ -262,6 +268,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           .batchPredictSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
       builder
           .batchPredictOperationSettings()
           .setInitialCallSettings(
@@ -277,30 +284,19 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
     }
 
-    protected Builder(PredictionServiceStubSettings settings) {
-      super(settings);
-
-      predictSettings = settings.predictSettings.toBuilder();
-      batchPredictSettings = settings.batchPredictSettings.toBuilder();
-      batchPredictOperationSettings = settings.batchPredictOperationSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(predictSettings, batchPredictSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

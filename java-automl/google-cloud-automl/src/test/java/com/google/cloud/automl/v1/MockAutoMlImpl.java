@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.automl.v1;
 
 import com.google.api.core.BetaApi;
@@ -24,9 +25,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockAutoMlImpl extends AutoMlImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -63,10 +65,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -77,10 +79,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Dataset) {
       requests.add(request);
-      responseObserver.onNext((Dataset) response);
+      responseObserver.onNext(((Dataset) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -92,10 +94,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof ListDatasetsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListDatasetsResponse) response);
+      responseObserver.onNext(((ListDatasetsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -107,10 +109,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Dataset) {
       requests.add(request);
-      responseObserver.onNext((Dataset) response);
+      responseObserver.onNext(((Dataset) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -122,10 +124,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -136,10 +138,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -150,10 +152,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -165,10 +167,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof AnnotationSpec) {
       requests.add(request);
-      responseObserver.onNext((AnnotationSpec) response);
+      responseObserver.onNext(((AnnotationSpec) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -179,10 +181,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -193,10 +195,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Model) {
       requests.add(request);
-      responseObserver.onNext((Model) response);
+      responseObserver.onNext(((Model) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -208,10 +210,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof ListModelsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListModelsResponse) response);
+      responseObserver.onNext(((ListModelsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -222,10 +224,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -236,10 +238,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Model) {
       requests.add(request);
-      responseObserver.onNext((Model) response);
+      responseObserver.onNext(((Model) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -250,10 +252,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -265,10 +267,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -279,10 +281,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -294,10 +296,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof ModelEvaluation) {
       requests.add(request);
-      responseObserver.onNext((ModelEvaluation) response);
+      responseObserver.onNext(((ModelEvaluation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -310,10 +312,10 @@ public class MockAutoMlImpl extends AutoMlImplBase {
     Object response = responses.remove();
     if (response instanceof ListModelEvaluationsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListModelEvaluationsResponse) response);
+      responseObserver.onNext(((ListModelEvaluationsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

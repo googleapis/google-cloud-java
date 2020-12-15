@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.automl.v1.stub;
 
 import static com.google.cloud.automl.v1.AutoMlClient.ListDatasetsPagedResponse;
 import static com.google.cloud.automl.v1.AutoMlClient.ListModelEvaluationsPagedResponse;
 import static com.google.cloud.automl.v1.AutoMlClient.ListModelsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -54,22 +54,19 @@ import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Base stub class for Cloud AutoML API.
+ * Base stub class for the AutoMl service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class AutoMlStub implements BackgroundResource {
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
       createDatasetOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createDatasetOperationCallable()");
@@ -95,7 +92,6 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateDatasetCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
       deleteDatasetOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteDatasetOperationCallable()");
@@ -105,7 +101,6 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteDatasetCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<ImportDataRequest, Empty, OperationMetadata>
       importDataOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: importDataOperationCallable()");
@@ -115,7 +110,6 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: importDataCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<ExportDataRequest, Empty, OperationMetadata>
       exportDataOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: exportDataOperationCallable()");
@@ -129,7 +123,6 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getAnnotationSpecCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateModelRequest, Model, OperationMetadata>
       createModelOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createModelOperationCallable()");
@@ -151,7 +144,6 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listModelsCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
       deleteModelOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteModelOperationCallable()");
@@ -165,7 +157,6 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateModelCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeployModelRequest, Empty, OperationMetadata>
       deployModelOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deployModelOperationCallable()");
@@ -175,7 +166,6 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deployModelCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UndeployModelRequest, Empty, OperationMetadata>
       undeployModelOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: undeployModelOperationCallable()");
@@ -185,7 +175,6 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: undeployModelCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<ExportModelRequest, Empty, OperationMetadata>
       exportModelOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: exportModelOperationCallable()");

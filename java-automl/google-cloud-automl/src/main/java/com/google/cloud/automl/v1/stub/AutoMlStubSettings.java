@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.automl.v1.stub;
 
 import static com.google.cloud.automl.v1.AutoMlClient.ListDatasetsPagedResponse;
@@ -82,7 +83,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AutoMlStub}.
  *
@@ -99,22 +100,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getDataset to 30 seconds:
  *
- * <pre>
- * <code>
- * AutoMlStubSettings.Builder autoMlSettingsBuilder =
- *     AutoMlStubSettings.newBuilder();
+ * <pre>{@code
+ * AutoMlStubSettings.Builder autoMlSettingsBuilder = AutoMlStubSettings.newBuilder();
  * autoMlSettingsBuilder
  *     .getDatasetSettings()
  *     .setRetrySettings(
- *         autoMlSettingsBuilder.getDatasetSettings().getRetrySettings().toBuilder()
+ *         autoMlSettingsBuilder
+ *             .getDatasetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AutoMlStubSettings autoMlSettings = autoMlSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -166,13 +167,183 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings;
 
+  private static final PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>
+      LIST_DATASETS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDatasetsRequest injectToken(ListDatasetsRequest payload, String token) {
+              return ListDatasetsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDatasetsRequest injectPageSize(ListDatasetsRequest payload, int pageSize) {
+              return ListDatasetsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDatasetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDatasetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Dataset> extractResources(ListDatasetsResponse payload) {
+              return payload.getDatasetsList() == null
+                  ? ImmutableList.<Dataset>of()
+                  : payload.getDatasetsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>
+      LIST_MODELS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelsRequest injectToken(ListModelsRequest payload, String token) {
+              return ListModelsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListModelsRequest injectPageSize(ListModelsRequest payload, int pageSize) {
+              return ListModelsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Model> extractResources(ListModelsResponse payload) {
+              return payload.getModelList() == null
+                  ? ImmutableList.<Model>of()
+                  : payload.getModelList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
+      LIST_MODEL_EVALUATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelEvaluationsRequest injectToken(
+                ListModelEvaluationsRequest payload, String token) {
+              return ListModelEvaluationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListModelEvaluationsRequest injectPageSize(
+                ListModelEvaluationsRequest payload, int pageSize) {
+              return ListModelEvaluationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelEvaluationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelEvaluationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ModelEvaluation> extractResources(
+                ListModelEvaluationsResponse payload) {
+              return payload.getModelEvaluationList() == null
+                  ? ImmutableList.<ModelEvaluation>of()
+                  : payload.getModelEvaluationList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
+      LIST_DATASETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDatasetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> callable,
+                ListDatasetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDatasetsResponse> futureResponse) {
+              PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> pageContext =
+                  PageContext.create(callable, LIST_DATASETS_PAGE_STR_DESC, request, context);
+              return ListDatasetsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+      LIST_MODELS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListModelsRequest, ListModelsResponse> callable,
+                ListModelsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelsResponse> futureResponse) {
+              PageContext<ListModelsRequest, ListModelsResponse, Model> pageContext =
+                  PageContext.create(callable, LIST_MODELS_PAGE_STR_DESC, request, context);
+              return ListModelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListModelEvaluationsRequest,
+          ListModelEvaluationsResponse,
+          ListModelEvaluationsPagedResponse>
+      LIST_MODEL_EVALUATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelEvaluationsRequest,
+              ListModelEvaluationsResponse,
+              ListModelEvaluationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelEvaluationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse> callable,
+                ListModelEvaluationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelEvaluationsResponse> futureResponse) {
+              PageContext<
+                      ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MODEL_EVALUATIONS_PAGE_STR_DESC, request, context);
+              return ListModelEvaluationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings() {
     return createDatasetSettings;
   }
 
   /** Returns the object with the settings used for calls to createDataset. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateDatasetRequest, Dataset, OperationMetadata>
       createDatasetOperationSettings() {
     return createDatasetOperationSettings;
@@ -200,7 +371,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteDataset. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteDatasetRequest, Empty, OperationMetadata>
       deleteDatasetOperationSettings() {
     return deleteDatasetOperationSettings;
@@ -212,7 +382,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to importData. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<ImportDataRequest, Empty, OperationMetadata>
       importDataOperationSettings() {
     return importDataOperationSettings;
@@ -224,7 +393,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to exportData. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<ExportDataRequest, Empty, OperationMetadata>
       exportDataOperationSettings() {
     return exportDataOperationSettings;
@@ -241,7 +409,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to createModel. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateModelRequest, Model, OperationMetadata>
       createModelOperationSettings() {
     return createModelOperationSettings;
@@ -264,7 +431,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteModel. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteModelRequest, Empty, OperationMetadata>
       deleteModelOperationSettings() {
     return deleteModelOperationSettings;
@@ -281,7 +447,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to deployModel. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<DeployModelRequest, Empty, OperationMetadata>
       deployModelOperationSettings() {
     return deployModelOperationSettings;
@@ -293,7 +458,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to undeployModel. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<UndeployModelRequest, Empty, OperationMetadata>
       undeployModelOperationSettings() {
     return undeployModelOperationSettings;
@@ -305,7 +469,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to exportModel. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<ExportModelRequest, Empty, OperationMetadata>
       exportModelOperationSettings() {
     return exportModelOperationSettings;
@@ -332,10 +495,10 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcAutoMlStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -423,181 +586,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     listModelEvaluationsSettings = settingsBuilder.listModelEvaluationsSettings().build();
   }
 
-  private static final PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>
-      LIST_DATASETS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDatasetsRequest injectToken(ListDatasetsRequest payload, String token) {
-              return ListDatasetsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDatasetsRequest injectPageSize(ListDatasetsRequest payload, int pageSize) {
-              return ListDatasetsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDatasetsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDatasetsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Dataset> extractResources(ListDatasetsResponse payload) {
-              return payload.getDatasetsList() != null
-                  ? payload.getDatasetsList()
-                  : ImmutableList.<Dataset>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>
-      LIST_MODELS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListModelsRequest injectToken(ListModelsRequest payload, String token) {
-              return ListModelsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListModelsRequest injectPageSize(ListModelsRequest payload, int pageSize) {
-              return ListModelsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListModelsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListModelsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Model> extractResources(ListModelsResponse payload) {
-              return payload.getModelList() != null
-                  ? payload.getModelList()
-                  : ImmutableList.<Model>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
-      LIST_MODEL_EVALUATIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListModelEvaluationsRequest injectToken(
-                ListModelEvaluationsRequest payload, String token) {
-              return ListModelEvaluationsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListModelEvaluationsRequest injectPageSize(
-                ListModelEvaluationsRequest payload, int pageSize) {
-              return ListModelEvaluationsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListModelEvaluationsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListModelEvaluationsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ModelEvaluation> extractResources(
-                ListModelEvaluationsResponse payload) {
-              return payload.getModelEvaluationList() != null
-                  ? payload.getModelEvaluationList()
-                  : ImmutableList.<ModelEvaluation>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
-      LIST_DATASETS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>() {
-            @Override
-            public ApiFuture<ListDatasetsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> callable,
-                ListDatasetsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListDatasetsResponse> futureResponse) {
-              PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> pageContext =
-                  PageContext.create(callable, LIST_DATASETS_PAGE_STR_DESC, request, context);
-              return ListDatasetsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
-      LIST_MODELS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>() {
-            @Override
-            public ApiFuture<ListModelsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListModelsRequest, ListModelsResponse> callable,
-                ListModelsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListModelsResponse> futureResponse) {
-              PageContext<ListModelsRequest, ListModelsResponse, Model> pageContext =
-                  PageContext.create(callable, LIST_MODELS_PAGE_STR_DESC, request, context);
-              return ListModelsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
-          ListModelEvaluationsPagedResponse>
-      LIST_MODEL_EVALUATIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListModelEvaluationsRequest,
-              ListModelEvaluationsResponse,
-              ListModelEvaluationsPagedResponse>() {
-            @Override
-            public ApiFuture<ListModelEvaluationsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse> callable,
-                ListModelEvaluationsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListModelEvaluationsResponse> futureResponse) {
-              PageContext<
-                      ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_MODEL_EVALUATIONS_PAGE_STR_DESC, request, context);
-              return ListModelEvaluationsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for AutoMlStubSettings. */
   public static class Builder extends StubSettings.Builder<AutoMlStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateDatasetRequest, Operation> createDatasetSettings;
     private final OperationCallSettings.Builder<CreateDatasetRequest, Dataset, OperationMetadata>
         createDatasetOperationSettings;
@@ -644,7 +635,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
             ListModelEvaluationsResponse,
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -652,13 +642,12 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -667,6 +656,14 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(5000L))
+              .setTotalTimeout(Duration.ofMillis(5000L))
+              .build();
+      definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -678,78 +675,42 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
               .setTotalTimeout(Duration.ofMillis(5000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createDatasetOperationSettings = OperationCallSettings.newBuilder();
-
       getDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDatasetsSettings = PagedCallSettings.newBuilder(LIST_DATASETS_PAGE_STR_FACT);
-
       updateDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteDatasetOperationSettings = OperationCallSettings.newBuilder();
-
       importDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       importDataOperationSettings = OperationCallSettings.newBuilder();
-
       exportDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       exportDataOperationSettings = OperationCallSettings.newBuilder();
-
       getAnnotationSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createModelOperationSettings = OperationCallSettings.newBuilder();
-
       getModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listModelsSettings = PagedCallSettings.newBuilder(LIST_MODELS_PAGE_STR_FACT);
-
       deleteModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteModelOperationSettings = OperationCallSettings.newBuilder();
-
       updateModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deployModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deployModelOperationSettings = OperationCallSettings.newBuilder();
-
       undeployModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       undeployModelOperationSettings = OperationCallSettings.newBuilder();
-
       exportModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       exportModelOperationSettings = OperationCallSettings.newBuilder();
-
       getModelEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listModelEvaluationsSettings =
           PagedCallSettings.newBuilder(LIST_MODEL_EVALUATIONS_PAGE_STR_FACT);
 
@@ -773,313 +734,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
               exportModelSettings,
               getModelEvaluationSettings,
               listModelEvaluationsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listDatasetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteDatasetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .importDataSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .exportDataSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getAnnotationSpecSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listModelsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deployModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .undeployModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .exportModelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getModelEvaluationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listModelEvaluationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-      builder
-          .createDatasetOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Dataset.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteDatasetOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .importDataOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .exportDataOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .createModelOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<CreateModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Model.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deleteModelOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<DeleteModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .deployModelOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<DeployModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .undeployModelOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UndeployModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .exportModelOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<ExportModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(AutoMlStubSettings settings) {
@@ -1135,7 +790,322 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
               listModelEvaluationsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listDatasetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .importDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .exportDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getAnnotationSpecSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listModelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deployModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .undeployModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .exportModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getModelEvaluationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listModelEvaluationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createDatasetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Dataset.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDatasetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CreateModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Model.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deployModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeployModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .undeployModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UndeployModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ExportModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

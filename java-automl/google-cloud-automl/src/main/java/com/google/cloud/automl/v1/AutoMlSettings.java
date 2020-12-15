@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.automl.v1;
 
 import static com.google.cloud.automl.v1.AutoMlClient.ListDatasetsPagedResponse;
@@ -38,7 +39,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AutoMlClient}.
  *
@@ -55,31 +56,29 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getDataset to 30 seconds:
  *
- * <pre>
- * <code>
- * AutoMlSettings.Builder autoMlSettingsBuilder =
- *     AutoMlSettings.newBuilder();
+ * <pre>{@code
+ * AutoMlSettings.Builder autoMlSettingsBuilder = AutoMlSettings.newBuilder();
  * autoMlSettingsBuilder
  *     .getDatasetSettings()
  *     .setRetrySettings(
- *         autoMlSettingsBuilder.getDatasetSettings().getRetrySettings().toBuilder()
+ *         autoMlSettingsBuilder
+ *             .getDatasetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AutoMlSettings autoMlSettings = autoMlSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
+
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings() {
     return ((AutoMlStubSettings) getStubSettings()).createDatasetSettings();
   }
 
   /** Returns the object with the settings used for calls to createDataset. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateDatasetRequest, Dataset, OperationMetadata>
       createDatasetOperationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).createDatasetOperationSettings();
@@ -107,8 +106,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteDataset. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteDatasetRequest, Empty, OperationMetadata>
       deleteDatasetOperationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).deleteDatasetOperationSettings();
@@ -120,8 +117,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   }
 
   /** Returns the object with the settings used for calls to importData. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ImportDataRequest, Empty, OperationMetadata>
       importDataOperationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).importDataOperationSettings();
@@ -133,8 +128,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   }
 
   /** Returns the object with the settings used for calls to exportData. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ExportDataRequest, Empty, OperationMetadata>
       exportDataOperationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).exportDataOperationSettings();
@@ -151,8 +144,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   }
 
   /** Returns the object with the settings used for calls to createModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateModelRequest, Model, OperationMetadata>
       createModelOperationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).createModelOperationSettings();
@@ -175,8 +166,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteModelRequest, Empty, OperationMetadata>
       deleteModelOperationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).deleteModelOperationSettings();
@@ -193,8 +182,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   }
 
   /** Returns the object with the settings used for calls to deployModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeployModelRequest, Empty, OperationMetadata>
       deployModelOperationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).deployModelOperationSettings();
@@ -206,8 +193,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   }
 
   /** Returns the object with the settings used for calls to undeployModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UndeployModelRequest, Empty, OperationMetadata>
       undeployModelOperationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).undeployModelOperationSettings();
@@ -219,8 +204,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   }
 
   /** Returns the object with the settings used for calls to exportModel. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ExportModelRequest, Empty, OperationMetadata>
       exportModelOperationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).exportModelOperationSettings();
@@ -300,16 +283,13 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
 
   /** Builder for AutoMlSettings. */
   public static class Builder extends ClientSettings.Builder<AutoMlSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(AutoMlStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(AutoMlStubSettings.newBuilder());
     }
 
     protected Builder(AutoMlSettings settings) {
@@ -320,11 +300,15 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(AutoMlStubSettings.newBuilder());
+    }
+
     public AutoMlStubSettings.Builder getStubSettingsBuilder() {
       return ((AutoMlStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -343,8 +327,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createDataset. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateDatasetRequest, Dataset, OperationMetadata>
         createDatasetOperationSettings() {
       return getStubSettingsBuilder().createDatasetOperationSettings();
@@ -373,8 +355,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteDataset. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDatasetRequest, Empty, OperationMetadata>
         deleteDatasetOperationSettings() {
       return getStubSettingsBuilder().deleteDatasetOperationSettings();
@@ -386,8 +366,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     }
 
     /** Returns the builder for the settings used for calls to importData. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ImportDataRequest, Empty, OperationMetadata>
         importDataOperationSettings() {
       return getStubSettingsBuilder().importDataOperationSettings();
@@ -399,8 +377,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportData. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ExportDataRequest, Empty, OperationMetadata>
         exportDataOperationSettings() {
       return getStubSettingsBuilder().exportDataOperationSettings();
@@ -418,8 +394,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateModelRequest, Model, OperationMetadata>
         createModelOperationSettings() {
       return getStubSettingsBuilder().createModelOperationSettings();
@@ -442,8 +416,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteModelRequest, Empty, OperationMetadata>
         deleteModelOperationSettings() {
       return getStubSettingsBuilder().deleteModelOperationSettings();
@@ -460,8 +432,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deployModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeployModelRequest, Empty, OperationMetadata>
         deployModelOperationSettings() {
       return getStubSettingsBuilder().deployModelOperationSettings();
@@ -473,8 +443,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     }
 
     /** Returns the builder for the settings used for calls to undeployModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UndeployModelRequest, Empty, OperationMetadata>
         undeployModelOperationSettings() {
       return getStubSettingsBuilder().undeployModelOperationSettings();
@@ -486,8 +454,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportModel. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ExportModelRequest, Empty, OperationMetadata>
         exportModelOperationSettings() {
       return getStubSettingsBuilder().exportModelOperationSettings();

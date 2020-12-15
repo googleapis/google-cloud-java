@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.automl.v1.stub;
 
 import static com.google.cloud.automl.v1.AutoMlClient.ListDatasetsPagedResponse;
 import static com.google.cloud.automl.v1.AutoMlClient.ListModelEvaluationsPagedResponse;
 import static com.google.cloud.automl.v1.AutoMlClient.ListModelsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -65,16 +65,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud AutoML API.
+ * gRPC stub implementation for the AutoMl service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAutoMlStub extends AutoMlStub {
-
   private static final MethodDescriptor<CreateDatasetRequest, Operation>
       createDatasetMethodDescriptor =
           MethodDescriptor.<CreateDatasetRequest, Operation>newBuilder()
@@ -84,6 +82,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
       MethodDescriptor.<GetDatasetRequest, Dataset>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -91,6 +90,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
       listDatasetsMethodDescriptor =
           MethodDescriptor.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -100,6 +100,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateDatasetRequest, Dataset>
       updateDatasetMethodDescriptor =
           MethodDescriptor.<UpdateDatasetRequest, Dataset>newBuilder()
@@ -109,6 +110,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(UpdateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteDatasetRequest, Operation>
       deleteDatasetMethodDescriptor =
           MethodDescriptor.<DeleteDatasetRequest, Operation>newBuilder()
@@ -118,6 +120,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
       MethodDescriptor.<ImportDataRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -125,6 +128,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ImportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
       MethodDescriptor.<ExportDataRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -132,6 +136,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetAnnotationSpecRequest, AnnotationSpec>
       getAnnotationSpecMethodDescriptor =
           MethodDescriptor.<GetAnnotationSpecRequest, AnnotationSpec>newBuilder()
@@ -141,6 +146,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(GetAnnotationSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotationSpec.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateModelRequest, Operation> createModelMethodDescriptor =
       MethodDescriptor.<CreateModelRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -148,6 +154,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
       MethodDescriptor.<GetModelRequest, Model>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -155,6 +162,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
       listModelsMethodDescriptor =
           MethodDescriptor.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -163,6 +171,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteModelRequest, Operation> deleteModelMethodDescriptor =
       MethodDescriptor.<DeleteModelRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -170,6 +179,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateModelRequest, Model> updateModelMethodDescriptor =
       MethodDescriptor.<UpdateModelRequest, Model>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -177,6 +187,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeployModelRequest, Operation> deployModelMethodDescriptor =
       MethodDescriptor.<DeployModelRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -184,6 +195,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeployModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UndeployModelRequest, Operation>
       undeployModelMethodDescriptor =
           MethodDescriptor.<UndeployModelRequest, Operation>newBuilder()
@@ -193,6 +205,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(UndeployModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ExportModelRequest, Operation> exportModelMethodDescriptor =
       MethodDescriptor.<ExportModelRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -200,6 +213,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ExportModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationMethodDescriptor =
           MethodDescriptor.<GetModelEvaluationRequest, ModelEvaluation>newBuilder()
@@ -209,6 +223,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(GetModelEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelEvaluation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
       listModelEvaluationsMethodDescriptor =
           MethodDescriptor.<ListModelEvaluationsRequest, ListModelEvaluationsResponse>newBuilder()
@@ -219,9 +234,6 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelEvaluationsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable;
   private final OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
@@ -267,6 +279,8 @@ public class GrpcAutoMlStub extends AutoMlStub {
   private final UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
       listModelEvaluationsPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAutoMlStub create(AutoMlStubSettings settings) throws IOException {
@@ -549,7 +563,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
             createDatasetTransportSettings,
             settings.createDatasetOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getDatasetCallable =
         callableFactory.createUnaryCallable(
             getDatasetTransportSettings, settings.getDatasetSettings(), clientContext);
@@ -570,7 +584,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
             deleteDatasetTransportSettings,
             settings.deleteDatasetOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.importDataCallable =
         callableFactory.createUnaryCallable(
             importDataTransportSettings, settings.importDataSettings(), clientContext);
@@ -579,7 +593,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
             importDataTransportSettings,
             settings.importDataOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.exportDataCallable =
         callableFactory.createUnaryCallable(
             exportDataTransportSettings, settings.exportDataSettings(), clientContext);
@@ -588,7 +602,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
             exportDataTransportSettings,
             settings.exportDataOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getAnnotationSpecCallable =
         callableFactory.createUnaryCallable(
             getAnnotationSpecTransportSettings,
@@ -602,7 +616,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
             createModelTransportSettings,
             settings.createModelOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getModelCallable =
         callableFactory.createUnaryCallable(
             getModelTransportSettings, settings.getModelSettings(), clientContext);
@@ -620,7 +634,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
             deleteModelTransportSettings,
             settings.deleteModelOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateModelCallable =
         callableFactory.createUnaryCallable(
             updateModelTransportSettings, settings.updateModelSettings(), clientContext);
@@ -632,7 +646,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
             deployModelTransportSettings,
             settings.deployModelOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.undeployModelCallable =
         callableFactory.createUnaryCallable(
             undeployModelTransportSettings, settings.undeployModelSettings(), clientContext);
@@ -641,7 +655,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
             undeployModelTransportSettings,
             settings.undeployModelOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.exportModelCallable =
         callableFactory.createUnaryCallable(
             exportModelTransportSettings, settings.exportModelSettings(), clientContext);
@@ -650,7 +664,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
             exportModelTransportSettings,
             settings.exportModelOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getModelEvaluationCallable =
         callableFactory.createUnaryCallable(
             getModelEvaluationTransportSettings,
@@ -667,152 +681,143 @@ public class GrpcAutoMlStub extends AutoMlStub {
             settings.listModelEvaluationsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
-      createDatasetOperationCallable() {
-    return createDatasetOperationCallable;
   }
 
   public UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable() {
     return createDatasetCallable;
   }
 
-  public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
-    return getDatasetCallable;
+  public OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
+      createDatasetOperationCallable() {
+    return createDatasetOperationCallable;
   }
 
-  public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
-    return listDatasetsPagedCallable;
+  public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
+    return getDatasetCallable;
   }
 
   public UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable() {
     return listDatasetsCallable;
   }
 
-  public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
-    return updateDatasetCallable;
+  public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
+    return listDatasetsPagedCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
-      deleteDatasetOperationCallable() {
-    return deleteDatasetOperationCallable;
+  public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
+    return updateDatasetCallable;
   }
 
   public UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
     return deleteDatasetCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ImportDataRequest, Empty, OperationMetadata>
-      importDataOperationCallable() {
-    return importDataOperationCallable;
+  public OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
+      deleteDatasetOperationCallable() {
+    return deleteDatasetOperationCallable;
   }
 
   public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     return importDataCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ExportDataRequest, Empty, OperationMetadata>
-      exportDataOperationCallable() {
-    return exportDataOperationCallable;
+  public OperationCallable<ImportDataRequest, Empty, OperationMetadata>
+      importDataOperationCallable() {
+    return importDataOperationCallable;
   }
 
   public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
     return exportDataCallable;
   }
 
-  public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
-    return getAnnotationSpecCallable;
+  public OperationCallable<ExportDataRequest, Empty, OperationMetadata>
+      exportDataOperationCallable() {
+    return exportDataOperationCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateModelRequest, Model, OperationMetadata>
-      createModelOperationCallable() {
-    return createModelOperationCallable;
+  public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
+    return getAnnotationSpecCallable;
   }
 
   public UnaryCallable<CreateModelRequest, Operation> createModelCallable() {
     return createModelCallable;
   }
 
-  public UnaryCallable<GetModelRequest, Model> getModelCallable() {
-    return getModelCallable;
+  public OperationCallable<CreateModelRequest, Model, OperationMetadata>
+      createModelOperationCallable() {
+    return createModelOperationCallable;
   }
 
-  public UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
-    return listModelsPagedCallable;
+  public UnaryCallable<GetModelRequest, Model> getModelCallable() {
+    return getModelCallable;
   }
 
   public UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable() {
     return listModelsCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
-      deleteModelOperationCallable() {
-    return deleteModelOperationCallable;
+  public UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
+    return listModelsPagedCallable;
   }
 
   public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
     return deleteModelCallable;
   }
 
-  public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
-    return updateModelCallable;
+  public OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
+      deleteModelOperationCallable() {
+    return deleteModelOperationCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeployModelRequest, Empty, OperationMetadata>
-      deployModelOperationCallable() {
-    return deployModelOperationCallable;
+  public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
+    return updateModelCallable;
   }
 
   public UnaryCallable<DeployModelRequest, Operation> deployModelCallable() {
     return deployModelCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UndeployModelRequest, Empty, OperationMetadata>
-      undeployModelOperationCallable() {
-    return undeployModelOperationCallable;
+  public OperationCallable<DeployModelRequest, Empty, OperationMetadata>
+      deployModelOperationCallable() {
+    return deployModelOperationCallable;
   }
 
   public UnaryCallable<UndeployModelRequest, Operation> undeployModelCallable() {
     return undeployModelCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ExportModelRequest, Empty, OperationMetadata>
-      exportModelOperationCallable() {
-    return exportModelOperationCallable;
+  public OperationCallable<UndeployModelRequest, Empty, OperationMetadata>
+      undeployModelOperationCallable() {
+    return undeployModelOperationCallable;
   }
 
   public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
     return exportModelCallable;
   }
 
-  public UnaryCallable<GetModelEvaluationRequest, ModelEvaluation> getModelEvaluationCallable() {
-    return getModelEvaluationCallable;
+  public OperationCallable<ExportModelRequest, Empty, OperationMetadata>
+      exportModelOperationCallable() {
+    return exportModelOperationCallable;
   }
 
-  public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
-      listModelEvaluationsPagedCallable() {
-    return listModelEvaluationsPagedCallable;
+  public UnaryCallable<GetModelEvaluationRequest, ModelEvaluation> getModelEvaluationCallable() {
+    return getModelEvaluationCallable;
   }
 
   public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
       listModelEvaluationsCallable() {
     return listModelEvaluationsCallable;
+  }
+
+  public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
+      listModelEvaluationsPagedCallable() {
+    return listModelEvaluationsPagedCallable;
   }
 
   @Override

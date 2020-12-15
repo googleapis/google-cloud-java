@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class ModelEvaluationName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_MODEL_MODEL_EVALUATION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/models/{model}/modelEvaluations/{model_evaluation}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String model;
   private final String modelEvaluation;
+
+  @Deprecated
+  protected ModelEvaluationName() {
+    project = null;
+    location = null;
+    model = null;
+    modelEvaluation = null;
+  }
+
+  private ModelEvaluationName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    model = Preconditions.checkNotNull(builder.getModel());
+    modelEvaluation = Preconditions.checkNotNull(builder.getModelEvaluation());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class ModelEvaluationName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private ModelEvaluationName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    model = Preconditions.checkNotNull(builder.getModel());
-    modelEvaluation = Preconditions.checkNotNull(builder.getModelEvaluation());
   }
 
   public static ModelEvaluationName of(
@@ -96,7 +103,7 @@ public class ModelEvaluationName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_MODEL_MODEL_EVALUATION.validatedMatch(
             formattedString, "ModelEvaluationName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -114,7 +121,7 @@ public class ModelEvaluationName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ModelEvaluationName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ModelEvaluationName value : values) {
       if (value == null) {
         list.add("");
@@ -126,18 +133,27 @@ public class ModelEvaluationName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_MODEL_MODEL_EVALUATION.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("model", model);
-          fieldMapBuilder.put("modelEvaluation", modelEvaluation);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (model != null) {
+            fieldMapBuilder.put("model", model);
+          }
+          if (modelEvaluation != null) {
+            fieldMapBuilder.put("model_evaluation", modelEvaluation);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -151,7 +167,7 @@ public class ModelEvaluationName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_MODEL_MODEL_EVALUATION.instantiate(
         "project",
         project,
         "location",
@@ -162,13 +178,46 @@ public class ModelEvaluationName implements ResourceName {
         modelEvaluation);
   }
 
-  /** Builder for ModelEvaluationName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ModelEvaluationName that = ((ModelEvaluationName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.model, that.model)
+          && Objects.equals(this.modelEvaluation, that.modelEvaluation);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(model);
+    h *= 1000003;
+    h ^= Objects.hashCode(modelEvaluation);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/models/{model}/modelEvaluations/{model_evaluation}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String model;
     private String modelEvaluation;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -206,8 +255,6 @@ public class ModelEvaluationName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(ModelEvaluationName modelEvaluationName) {
       project = modelEvaluationName.project;
       location = modelEvaluationName.location;
@@ -218,34 +265,5 @@ public class ModelEvaluationName implements ResourceName {
     public ModelEvaluationName build() {
       return new ModelEvaluationName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof ModelEvaluationName) {
-      ModelEvaluationName that = (ModelEvaluationName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.model.equals(that.model))
-          && (this.modelEvaluation.equals(that.modelEvaluation));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= model.hashCode();
-    h *= 1000003;
-    h ^= modelEvaluation.hashCode();
-    return h;
   }
 }

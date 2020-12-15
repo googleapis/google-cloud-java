@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.automl.v1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -39,16 +39,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud AutoML API.
+ * gRPC stub implementation for the PredictionService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcPredictionServiceStub extends PredictionServiceStub {
-
   private static final MethodDescriptor<PredictRequest, PredictResponse> predictMethodDescriptor =
       MethodDescriptor.<PredictRequest, PredictResponse>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -56,6 +54,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(PredictRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(PredictResponse.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<BatchPredictRequest, Operation>
       batchPredictMethodDescriptor =
           MethodDescriptor.<BatchPredictRequest, Operation>newBuilder()
@@ -65,14 +64,13 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
-
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;
   private final UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable;
   private final OperationCallable<BatchPredictRequest, BatchPredictResult, OperationMetadata>
       batchPredictOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcPredictionServiceStub create(PredictionServiceStubSettings settings)
@@ -153,12 +151,12 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
             batchPredictTransportSettings,
             settings.batchPredictOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -167,14 +165,13 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     return predictCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable() {
+    return batchPredictCallable;
+  }
+
   public OperationCallable<BatchPredictRequest, BatchPredictResult, OperationMetadata>
       batchPredictOperationCallable() {
     return batchPredictOperationCallable;
-  }
-
-  public UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable() {
-    return batchPredictCallable;
   }
 
   @Override

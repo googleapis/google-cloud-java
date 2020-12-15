@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.automl.v1beta1;
 
 import com.google.api.core.BetaApi;
@@ -29,7 +30,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: AutoML Prediction API.
  *
@@ -39,18 +40,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
- *   ExamplePayload payload = ExamplePayload.newBuilder().build();
- *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
- *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the predictionServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the PredictionServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -79,30 +69,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionServiceSettings predictionServiceSettings =
  *     PredictionServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * PredictionServiceClient predictionServiceClient =
  *     PredictionServiceClient.create(predictionServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionServiceSettings predictionServiceSettings =
  *     PredictionServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PredictionServiceClient predictionServiceClient =
  *     PredictionServiceClient.create(predictionServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class PredictionServiceClient implements BackgroundResource {
   private final PredictionServiceSettings settings;
   private final PredictionServiceStub stub;
@@ -124,7 +112,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of PredictionServiceClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use PredictionServiceSettings}.
+   * is for advanced usage - prefer using create(PredictionServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PredictionServiceClient create(PredictionServiceStub stub) {
@@ -162,43 +150,39 @@ public class PredictionServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction. The prediction result will be directly returned in the response.
-   * Available for following ML problems, and their expected request payloads: &#42; Image
-   * Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Image
-   * Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Text
-   * Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded. &#42; Text
-   * Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded. &#42; Translation
-   * - TextSnippet, content up to 25,000 characters, UTF-8 encoded. &#42; Tables - Row, with column
-   * values matching the columns of the model, up to 5MB. Not available for FORECASTING
+   * Available for following ML problems, and their expected request payloads:
    *
-   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]. &#42;
-   * Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   * <ul>
+   *   <li>Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li>Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li>Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
+   *   <li>Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
+   *   <li>Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
+   *   <li>Tables - Row, with column values matching the columns of the model, up to 5MB. Not
+   *       available for FORECASTING
+   * </ul>
    *
-   * <p>Sample code:
+   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExamplePayload payload = ExamplePayload.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   * </ul>
    *
    * @param name Required. Name of the model requested to serve the prediction.
    * @param payload Required. Payload to perform a prediction on. The payload must match the problem
    *     type that the model was trained to solve.
    * @param params Additional domain-specific parameters, any string must be up to 25000 characters
    *     long.
-   *     <p>&#42; For Image Classification:
+   *     <ul>
+   *       <li>For Image Classification:
+   *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for an image, it will only produce results that have at least this confidence score. The
    *     default is 0.5.
@@ -206,9 +190,13 @@ public class PredictionServiceClient implements BackgroundResource {
    *     on the image, it will only produce bounding boxes which have at least this confidence
    *     score. Value in 0 to 1 range, default is 0.5. `max_bounding_box_count` - (int64) No more
    *     than this number of bounding boxes will be returned in the response. Default is 100, the
-   *     requested value may be limited by server. &#42; For Tables:
-   *     feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance should
-   *     be populated in the returned TablesAnnotation. The default is false.
+   *     requested value may be limited by server.
+   *     <ul>
+   *       <li>For Tables: feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature
+   *           importance should be populated in the returned TablesAnnotation. The default is
+   *           false.
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(
@@ -222,37 +210,35 @@ public class PredictionServiceClient implements BackgroundResource {
     return predict(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction. The prediction result will be directly returned in the response.
-   * Available for following ML problems, and their expected request payloads: &#42; Image
-   * Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Image
-   * Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Text
-   * Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded. &#42; Text
-   * Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded. &#42; Translation
-   * - TextSnippet, content up to 25,000 characters, UTF-8 encoded. &#42; Tables - Row, with column
-   * values matching the columns of the model, up to 5MB. Not available for FORECASTING
+   * Available for following ML problems, and their expected request payloads:
    *
-   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]. &#42;
-   * Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   * <ul>
+   *   <li>Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li>Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li>Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
+   *   <li>Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
+   *   <li>Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
+   *   <li>Tables - Row, with column values matching the columns of the model, up to 5MB. Not
+   *       available for FORECASTING
+   * </ul>
    *
-   * <p>Sample code:
+   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExamplePayload payload = ExamplePayload.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   PredictResponse response = predictionServiceClient.predict(name.toString(), payload, params);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   * </ul>
    *
    * @param name Required. Name of the model requested to serve the prediction.
    * @param payload Required. Payload to perform a prediction on. The payload must match the problem
    *     type that the model was trained to solve.
    * @param params Additional domain-specific parameters, any string must be up to 25000 characters
    *     long.
-   *     <p>&#42; For Image Classification:
+   *     <ul>
+   *       <li>For Image Classification:
+   *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for an image, it will only produce results that have at least this confidence score. The
    *     default is 0.5.
@@ -260,9 +246,13 @@ public class PredictionServiceClient implements BackgroundResource {
    *     on the image, it will only produce bounding boxes which have at least this confidence
    *     score. Value in 0 to 1 range, default is 0.5. `max_bounding_box_count` - (int64) No more
    *     than this number of bounding boxes will be returned in the response. Default is 100, the
-   *     requested value may be limited by server. &#42; For Tables:
-   *     feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance should
-   *     be populated in the returned TablesAnnotation. The default is false.
+   *     requested value may be limited by server.
+   *     <ul>
+   *       <li>For Tables: feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature
+   *           importance should be populated in the returned TablesAnnotation. The default is
+   *           false.
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(
@@ -272,33 +262,26 @@ public class PredictionServiceClient implements BackgroundResource {
     return predict(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction. The prediction result will be directly returned in the response.
-   * Available for following ML problems, and their expected request payloads: &#42; Image
-   * Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Image
-   * Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Text
-   * Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded. &#42; Text
-   * Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded. &#42; Translation
-   * - TextSnippet, content up to 25,000 characters, UTF-8 encoded. &#42; Tables - Row, with column
-   * values matching the columns of the model, up to 5MB. Not available for FORECASTING
+   * Available for following ML problems, and their expected request payloads:
    *
-   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]. &#42;
-   * Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   * <ul>
+   *   <li>Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li>Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li>Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
+   *   <li>Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
+   *   <li>Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
+   *   <li>Tables - Row, with column values matching the columns of the model, up to 5MB. Not
+   *       available for FORECASTING
+   * </ul>
    *
-   * <p>Sample code:
+   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExamplePayload payload = ExamplePayload.newBuilder().build();
-   *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setPayload(payload)
-   *     .build();
-   *   PredictResponse response = predictionServiceClient.predict(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -307,41 +290,34 @@ public class PredictionServiceClient implements BackgroundResource {
     return predictCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction. The prediction result will be directly returned in the response.
-   * Available for following ML problems, and their expected request payloads: &#42; Image
-   * Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Image
-   * Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB. &#42; Text
-   * Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded. &#42; Text
-   * Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded. &#42; Translation
-   * - TextSnippet, content up to 25,000 characters, UTF-8 encoded. &#42; Tables - Row, with column
-   * values matching the columns of the model, up to 5MB. Not available for FORECASTING
+   * Available for following ML problems, and their expected request payloads:
    *
-   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]. &#42;
-   * Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   * <ul>
+   *   <li>Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li>Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li>Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
+   *   <li>Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
+   *   <li>Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
+   *   <li>Tables - Row, with column values matching the columns of the model, up to 5MB. Not
+   *       available for FORECASTING
+   * </ul>
+   *
+   * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
+   *
+   * <ul>
+   *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExamplePayload payload = ExamplePayload.newBuilder().build();
-   *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setPayload(payload)
-   *     .build();
-   *   ApiFuture&lt;PredictResponse&gt; future = predictionServiceClient.predictCallable().futureCall(request);
-   *   // Do something
-   *   PredictResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return stub.predictCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform a batch prediction. Unlike the online
    * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch prediction result won't
@@ -350,20 +326,14 @@ public class PredictionServiceClient implements BackgroundResource {
    * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
    * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
-   * &#42; Image Classification &#42; Image Object Detection &#42; Video Classification &#42; Video
-   * Object Tracking &#42; Text Extraction &#42; Tables
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
-   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(name, inputConfig, outputConfig, params).get();
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Image Classification
+   *   <li>Image Object Detection
+   *   <li>Video Classification
+   *   <li>Video Object Tracking &#42; Text Extraction
+   *   <li>Tables
+   * </ul>
    *
    * @param name Required. Name of the model requested to serve the batch prediction.
    * @param inputConfig Required. The input configuration for batch prediction.
@@ -371,21 +341,29 @@ public class PredictionServiceClient implements BackgroundResource {
    *     written.
    * @param params Required. Additional domain-specific parameters for the predictions, any string
    *     must be up to 25000 characters long.
-   *     <p>&#42; For Text Classification:
+   *     <ul>
+   *       <li>For Text Classification:
+   *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for a text snippet, it will only produce results that have at least this confidence score.
    *     The default is 0.5.
-   *     <p>&#42; For Image Classification:
+   *     <ul>
+   *       <li>For Image Classification:
+   *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for an image, it will only produce results that have at least this confidence score. The
    *     default is 0.5.
-   *     <p>&#42; For Image Object Detection:
+   *     <ul>
+   *       <li>For Image Object Detection:
+   *     </ul>
    *     <p>`score_threshold` - (float) When Model detects objects on the image, it will only
    *     produce bounding boxes which have at least this confidence score. Value in 0 to 1 range,
    *     default is 0.5. `max_bounding_box_count` - (int64) No more than this number of bounding
    *     boxes will be produced per image. Default is 100, the requested value may be limited by
    *     server.
-   *     <p>&#42; For Video Classification :
+   *     <ul>
+   *       <li>For Video Classification :
+   *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for a video, it will only produce results that have at least this confidence score. The
    *     default is 0.5. `segment_classification` - (boolean) Set to true to request segment-level
@@ -404,10 +382,14 @@ public class PredictionServiceClient implements BackgroundResource {
    *     request configuration. WARNING: Model evaluation is not done for this classification type,
    *     the quality of it depends on training data, but there are no metrics provided to describe
    *     that quality. The default is "false".
-   *     <p>&#42; For Tables:
+   *     <ul>
+   *       <li>For Tables:
+   *     </ul>
    *     <p>feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
    *     should be populated in the returned TablesAnnotations. The default is false.
-   *     <p>&#42; For Video Object Tracking:
+   *     <ul>
+   *       <li>For Video Object Tracking:
+   *     </ul>
    *     <p>`score_threshold` - (float) When Model detects objects on video frames, it will only
    *     produce bounding boxes which have at least this confidence score. Value in 0 to 1 range,
    *     default is 0.5. `max_bounding_box_count` - (int64) No more than this number of bounding
@@ -417,8 +399,6 @@ public class PredictionServiceClient implements BackgroundResource {
    *     Default is 0.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchPredictResult, OperationMetadata> batchPredictAsync(
       ModelName name,
       BatchPredictInputConfig inputConfig,
@@ -434,7 +414,7 @@ public class PredictionServiceClient implements BackgroundResource {
     return batchPredictAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform a batch prediction. Unlike the online
    * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch prediction result won't
@@ -443,20 +423,14 @@ public class PredictionServiceClient implements BackgroundResource {
    * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
    * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
-   * &#42; Image Classification &#42; Image Object Detection &#42; Video Classification &#42; Video
-   * Object Tracking &#42; Text Extraction &#42; Tables
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
-   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(name.toString(), inputConfig, outputConfig, params).get();
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Image Classification
+   *   <li>Image Object Detection
+   *   <li>Video Classification
+   *   <li>Video Object Tracking &#42; Text Extraction
+   *   <li>Tables
+   * </ul>
    *
    * @param name Required. Name of the model requested to serve the batch prediction.
    * @param inputConfig Required. The input configuration for batch prediction.
@@ -464,21 +438,29 @@ public class PredictionServiceClient implements BackgroundResource {
    *     written.
    * @param params Required. Additional domain-specific parameters for the predictions, any string
    *     must be up to 25000 characters long.
-   *     <p>&#42; For Text Classification:
+   *     <ul>
+   *       <li>For Text Classification:
+   *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for a text snippet, it will only produce results that have at least this confidence score.
    *     The default is 0.5.
-   *     <p>&#42; For Image Classification:
+   *     <ul>
+   *       <li>For Image Classification:
+   *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for an image, it will only produce results that have at least this confidence score. The
    *     default is 0.5.
-   *     <p>&#42; For Image Object Detection:
+   *     <ul>
+   *       <li>For Image Object Detection:
+   *     </ul>
    *     <p>`score_threshold` - (float) When Model detects objects on the image, it will only
    *     produce bounding boxes which have at least this confidence score. Value in 0 to 1 range,
    *     default is 0.5. `max_bounding_box_count` - (int64) No more than this number of bounding
    *     boxes will be produced per image. Default is 100, the requested value may be limited by
    *     server.
-   *     <p>&#42; For Video Classification :
+   *     <ul>
+   *       <li>For Video Classification :
+   *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for a video, it will only produce results that have at least this confidence score. The
    *     default is 0.5. `segment_classification` - (boolean) Set to true to request segment-level
@@ -497,10 +479,14 @@ public class PredictionServiceClient implements BackgroundResource {
    *     request configuration. WARNING: Model evaluation is not done for this classification type,
    *     the quality of it depends on training data, but there are no metrics provided to describe
    *     that quality. The default is "false".
-   *     <p>&#42; For Tables:
+   *     <ul>
+   *       <li>For Tables:
+   *     </ul>
    *     <p>feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
    *     should be populated in the returned TablesAnnotations. The default is false.
-   *     <p>&#42; For Video Object Tracking:
+   *     <ul>
+   *       <li>For Video Object Tracking:
+   *     </ul>
    *     <p>`score_threshold` - (float) When Model detects objects on video frames, it will only
    *     produce bounding boxes which have at least this confidence score. Value in 0 to 1 range,
    *     default is 0.5. `max_bounding_box_count` - (int64) No more than this number of bounding
@@ -510,8 +496,6 @@ public class PredictionServiceClient implements BackgroundResource {
    *     Default is 0.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchPredictResult, OperationMetadata> batchPredictAsync(
       String name,
       BatchPredictInputConfig inputConfig,
@@ -527,7 +511,7 @@ public class PredictionServiceClient implements BackgroundResource {
     return batchPredictAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform a batch prediction. Unlike the online
    * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch prediction result won't
@@ -536,38 +520,24 @@ public class PredictionServiceClient implements BackgroundResource {
    * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
    * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
-   * &#42; Image Classification &#42; Image Object Detection &#42; Video Classification &#42; Video
-   * Object Tracking &#42; Text Extraction &#42; Tables
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
-   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setInputConfig(inputConfig)
-   *     .setOutputConfig(outputConfig)
-   *     .putAllParams(params)
-   *     .build();
-   *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(request).get();
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Image Classification
+   *   <li>Image Object Detection
+   *   <li>Video Classification
+   *   <li>Video Object Tracking &#42; Text Extraction
+   *   <li>Tables
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchPredictResult, OperationMetadata> batchPredictAsync(
       BatchPredictRequest request) {
     return batchPredictOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform a batch prediction. Unlike the online
    * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch prediction result won't
@@ -576,36 +546,23 @@ public class PredictionServiceClient implements BackgroundResource {
    * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
    * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
-   * &#42; Image Classification &#42; Image Object Detection &#42; Video Classification &#42; Video
-   * Object Tracking &#42; Text Extraction &#42; Tables
+   *
+   * <ul>
+   *   <li>Image Classification
+   *   <li>Image Object Detection
+   *   <li>Video Classification
+   *   <li>Video Object Tracking &#42; Text Extraction
+   *   <li>Tables
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
-   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setInputConfig(inputConfig)
-   *     .setOutputConfig(outputConfig)
-   *     .putAllParams(params)
-   *     .build();
-   *   OperationFuture&lt;BatchPredictResult, OperationMetadata&gt; future = predictionServiceClient.batchPredictOperationCallable().futureCall(request);
-   *   // Do something
-   *   BatchPredictResult response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchPredictRequest, BatchPredictResult, OperationMetadata>
       batchPredictOperationCallable() {
     return stub.batchPredictOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform a batch prediction. Unlike the online
    * [Predict][google.cloud.automl.v1beta1.PredictionService.Predict], batch prediction result won't
@@ -614,28 +571,16 @@ public class PredictionServiceClient implements BackgroundResource {
    * [GetOperation][google.longrunning.Operations.GetOperation] method. Once the operation is done,
    * [BatchPredictResult][google.cloud.automl.v1beta1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
-   * &#42; Image Classification &#42; Image Object Detection &#42; Video Classification &#42; Video
-   * Object Tracking &#42; Text Extraction &#42; Tables
+   *
+   * <ul>
+   *   <li>Image Classification
+   *   <li>Image Object Detection
+   *   <li>Video Classification
+   *   <li>Video Object Tracking &#42; Text Extraction
+   *   <li>Tables
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
-   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setInputConfig(inputConfig)
-   *     .setOutputConfig(outputConfig)
-   *     .putAllParams(params)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = predictionServiceClient.batchPredictCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable() {
     return stub.batchPredictCallable();

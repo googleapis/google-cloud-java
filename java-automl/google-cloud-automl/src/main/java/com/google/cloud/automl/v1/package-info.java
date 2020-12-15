@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,9 +15,7 @@
  */
 
 /**
- * A client to Cloud AutoML API.
- *
- * <p>The interfaces provided are listed below, along with usage samples.
+ * The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= PredictionServiceClient =======================
  *
@@ -28,18 +26,7 @@
  *
  * <p>Sample for PredictionServiceClient:
  *
- * <pre>
- * <code>
- * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
- *   ExamplePayload payload = ExamplePayload.newBuilder().build();
- *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
- *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
- * }
- * </code>
- * </pre>
- *
- * ============ AutoMlClient ============
+ * <p>======================= AutoMlClient =======================
  *
  * <p>Service Description: AutoML Server API.
  *
@@ -56,17 +43,8 @@
  * either of those cases is accepted.
  *
  * <p>Sample for AutoMlClient:
- *
- * <pre>
- * <code>
- * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
- *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
- *   Dataset response = autoMlClient.getDataset(name);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.automl.v1;
 
 import javax.annotation.Generated;

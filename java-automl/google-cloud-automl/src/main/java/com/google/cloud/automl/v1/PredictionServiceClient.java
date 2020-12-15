@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.automl.v1;
 
 import com.google.api.core.BetaApi;
@@ -29,7 +30,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: AutoML Prediction API.
  *
@@ -39,18 +40,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
- *   ExamplePayload payload = ExamplePayload.newBuilder().build();
- *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
- *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the predictionServiceClient object to clean up resources
+ * <p>Note: close() needs to be called on the PredictionServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -79,30 +69,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionServiceSettings predictionServiceSettings =
  *     PredictionServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * PredictionServiceClient predictionServiceClient =
  *     PredictionServiceClient.create(predictionServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PredictionServiceSettings predictionServiceSettings =
  *     PredictionServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PredictionServiceClient predictionServiceClient =
  *     PredictionServiceClient.create(predictionServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class PredictionServiceClient implements BackgroundResource {
   private final PredictionServiceSettings settings;
   private final PredictionServiceStub stub;
@@ -124,7 +112,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of PredictionServiceClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use PredictionServiceSettings}.
+   * is for advanced usage - prefer using create(PredictionServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PredictionServiceClient create(PredictionServiceStub stub) {
@@ -162,59 +150,60 @@ public class PredictionServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction. The prediction result is directly returned in the response.
    * Available for following ML scenarios, and their expected request payloads:
    *
    * <p>AutoML Vision Classification
    *
-   * <p>&#42; An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * <ul>
+   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * </ul>
    *
    * <p>AutoML Vision Object Detection
    *
-   * <p>&#42; An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * <ul>
+   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Classification
    *
-   * <p>&#42; A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
-   * .TIFF format with size upto 2MB.
+   * <ul>
+   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
+   *       format with size upto 2MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Entity Extraction
    *
-   * <p>&#42; A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF
-   * or .TIFF format with size upto 20MB.
+   * <ul>
+   *   <li>A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 20MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Sentiment Analysis
    *
-   * <p>&#42; A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
-   * .TIFF format with size upto 2MB.
+   * <ul>
+   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
+   *       format with size upto 2MB.
+   * </ul>
    *
    * <p>AutoML Translation
    *
-   * <p>&#42; A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   * <ul>
+   *   <li>A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   * </ul>
    *
    * <p>AutoML Tables
    *
-   * <p>&#42; A row with column values matching the columns of the model, up to 5MB. Not available
-   * for FORECASTING `prediction_type`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExamplePayload payload = ExamplePayload.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>A row with column values matching the columns of the model, up to 5MB. Not available for
+   *       FORECASTING `prediction_type`.
+   * </ul>
    *
    * @param name Required. Name of the model requested to serve the prediction.
    * @param payload Required. Payload to perform a prediction on. The payload must match the problem
@@ -249,53 +238,56 @@ public class PredictionServiceClient implements BackgroundResource {
     return predict(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction. The prediction result is directly returned in the response.
    * Available for following ML scenarios, and their expected request payloads:
    *
    * <p>AutoML Vision Classification
    *
-   * <p>&#42; An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * <ul>
+   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * </ul>
    *
    * <p>AutoML Vision Object Detection
    *
-   * <p>&#42; An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * <ul>
+   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Classification
    *
-   * <p>&#42; A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
-   * .TIFF format with size upto 2MB.
+   * <ul>
+   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
+   *       format with size upto 2MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Entity Extraction
    *
-   * <p>&#42; A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF
-   * or .TIFF format with size upto 20MB.
+   * <ul>
+   *   <li>A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 20MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Sentiment Analysis
    *
-   * <p>&#42; A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
-   * .TIFF format with size upto 2MB.
+   * <ul>
+   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
+   *       format with size upto 2MB.
+   * </ul>
    *
    * <p>AutoML Translation
    *
-   * <p>&#42; A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   * <ul>
+   *   <li>A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   * </ul>
    *
    * <p>AutoML Tables
    *
-   * <p>&#42; A row with column values matching the columns of the model, up to 5MB. Not available
-   * for FORECASTING `prediction_type`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExamplePayload payload = ExamplePayload.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   PredictResponse response = predictionServiceClient.predict(name.toString(), payload, params);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>A row with column values matching the columns of the model, up to 5MB. Not available for
+   *       FORECASTING `prediction_type`.
+   * </ul>
    *
    * @param name Required. Name of the model requested to serve the prediction.
    * @param payload Required. Payload to perform a prediction on. The payload must match the problem
@@ -326,56 +318,56 @@ public class PredictionServiceClient implements BackgroundResource {
     return predict(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction. The prediction result is directly returned in the response.
    * Available for following ML scenarios, and their expected request payloads:
    *
    * <p>AutoML Vision Classification
    *
-   * <p>&#42; An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * <ul>
+   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * </ul>
    *
    * <p>AutoML Vision Object Detection
    *
-   * <p>&#42; An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * <ul>
+   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Classification
    *
-   * <p>&#42; A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
-   * .TIFF format with size upto 2MB.
+   * <ul>
+   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
+   *       format with size upto 2MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Entity Extraction
    *
-   * <p>&#42; A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF
-   * or .TIFF format with size upto 20MB.
+   * <ul>
+   *   <li>A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 20MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Sentiment Analysis
    *
-   * <p>&#42; A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
-   * .TIFF format with size upto 2MB.
+   * <ul>
+   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
+   *       format with size upto 2MB.
+   * </ul>
    *
    * <p>AutoML Translation
    *
-   * <p>&#42; A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   * <ul>
+   *   <li>A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   * </ul>
    *
    * <p>AutoML Tables
    *
-   * <p>&#42; A row with column values matching the columns of the model, up to 5MB. Not available
-   * for FORECASTING `prediction_type`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExamplePayload payload = ExamplePayload.newBuilder().build();
-   *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setPayload(payload)
-   *     .build();
-   *   PredictResponse response = predictionServiceClient.predict(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>A row with column values matching the columns of the model, up to 5MB. Not available for
+   *       FORECASTING `prediction_type`.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -384,64 +376,64 @@ public class PredictionServiceClient implements BackgroundResource {
     return predictCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform an online prediction. The prediction result is directly returned in the response.
    * Available for following ML scenarios, and their expected request payloads:
    *
    * <p>AutoML Vision Classification
    *
-   * <p>&#42; An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * <ul>
+   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * </ul>
    *
    * <p>AutoML Vision Object Detection
    *
-   * <p>&#42; An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * <ul>
+   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Classification
    *
-   * <p>&#42; A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
-   * .TIFF format with size upto 2MB.
+   * <ul>
+   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
+   *       format with size upto 2MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Entity Extraction
    *
-   * <p>&#42; A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF
-   * or .TIFF format with size upto 20MB.
+   * <ul>
+   *   <li>A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 20MB.
+   * </ul>
    *
    * <p>AutoML Natural Language Sentiment Analysis
    *
-   * <p>&#42; A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
-   * .TIFF format with size upto 2MB.
+   * <ul>
+   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
+   *       format with size upto 2MB.
+   * </ul>
    *
    * <p>AutoML Translation
    *
-   * <p>&#42; A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   * <ul>
+   *   <li>A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   * </ul>
    *
    * <p>AutoML Tables
    *
-   * <p>&#42; A row with column values matching the columns of the model, up to 5MB. Not available
-   * for FORECASTING `prediction_type`.
+   * <ul>
+   *   <li>A row with column values matching the columns of the model, up to 5MB. Not available for
+   *       FORECASTING `prediction_type`.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   ExamplePayload payload = ExamplePayload.newBuilder().build();
-   *   PredictRequest request = PredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setPayload(payload)
-   *     .build();
-   *   ApiFuture&lt;PredictResponse&gt; future = predictionServiceClient.predictCallable().futureCall(request);
-   *   // Do something
-   *   PredictResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return stub.predictCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform a batch prediction. Unlike the online
    * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch prediction result won't be
@@ -451,22 +443,15 @@ public class PredictionServiceClient implements BackgroundResource {
    * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML scenarios:
    *
-   * <p>&#42; AutoML Vision Classification &#42; AutoML Vision Object Detection &#42; AutoML Video
-   * Intelligence Classification &#42; AutoML Video Intelligence Object Tracking &#42; AutoML
-   * Natural Language Classification &#42; AutoML Natural Language Entity Extraction &#42; AutoML
-   * Natural Language Sentiment Analysis &#42; AutoML Tables
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
-   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(name, inputConfig, outputConfig, params).get();
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>AutoML Vision Classification
+   *   <li>AutoML Vision Object Detection
+   *   <li>AutoML Video Intelligence Classification
+   *   <li>AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
+   *   <li>AutoML Natural Language Entity Extraction
+   *   <li>AutoML Natural Language Sentiment Analysis
+   *   <li>AutoML Tables
+   * </ul>
    *
    * @param name Required. Name of the model requested to serve the batch prediction.
    * @param inputConfig Required. The input configuration for batch prediction.
@@ -521,8 +506,6 @@ public class PredictionServiceClient implements BackgroundResource {
    *     is 0.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchPredictResult, OperationMetadata> batchPredictAsync(
       ModelName name,
       BatchPredictInputConfig inputConfig,
@@ -538,7 +521,7 @@ public class PredictionServiceClient implements BackgroundResource {
     return batchPredictAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform a batch prediction. Unlike the online
    * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch prediction result won't be
@@ -548,22 +531,15 @@ public class PredictionServiceClient implements BackgroundResource {
    * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML scenarios:
    *
-   * <p>&#42; AutoML Vision Classification &#42; AutoML Vision Object Detection &#42; AutoML Video
-   * Intelligence Classification &#42; AutoML Video Intelligence Object Tracking &#42; AutoML
-   * Natural Language Classification &#42; AutoML Natural Language Entity Extraction &#42; AutoML
-   * Natural Language Sentiment Analysis &#42; AutoML Tables
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
-   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
-   *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
-   *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(name.toString(), inputConfig, outputConfig, params).get();
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>AutoML Vision Classification
+   *   <li>AutoML Vision Object Detection
+   *   <li>AutoML Video Intelligence Classification
+   *   <li>AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
+   *   <li>AutoML Natural Language Entity Extraction
+   *   <li>AutoML Natural Language Sentiment Analysis
+   *   <li>AutoML Tables
+   * </ul>
    *
    * @param name Required. Name of the model requested to serve the batch prediction.
    * @param inputConfig Required. The input configuration for batch prediction.
@@ -618,8 +594,6 @@ public class PredictionServiceClient implements BackgroundResource {
    *     is 0.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchPredictResult, OperationMetadata> batchPredictAsync(
       String name,
       BatchPredictInputConfig inputConfig,
@@ -635,7 +609,7 @@ public class PredictionServiceClient implements BackgroundResource {
     return batchPredictAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform a batch prediction. Unlike the online
    * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch prediction result won't be
@@ -645,38 +619,25 @@ public class PredictionServiceClient implements BackgroundResource {
    * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML scenarios:
    *
-   * <p>&#42; AutoML Vision Classification &#42; AutoML Vision Object Detection &#42; AutoML Video
-   * Intelligence Classification &#42; AutoML Video Intelligence Object Tracking &#42; AutoML
-   * Natural Language Classification &#42; AutoML Natural Language Entity Extraction &#42; AutoML
-   * Natural Language Sentiment Analysis &#42; AutoML Tables
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
-   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
-   *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setInputConfig(inputConfig)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(request).get();
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>AutoML Vision Classification
+   *   <li>AutoML Vision Object Detection
+   *   <li>AutoML Video Intelligence Classification
+   *   <li>AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
+   *   <li>AutoML Natural Language Entity Extraction
+   *   <li>AutoML Natural Language Sentiment Analysis
+   *   <li>AutoML Tables
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<BatchPredictResult, OperationMetadata> batchPredictAsync(
       BatchPredictRequest request) {
     return batchPredictOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform a batch prediction. Unlike the online
    * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch prediction result won't be
@@ -686,36 +647,24 @@ public class PredictionServiceClient implements BackgroundResource {
    * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML scenarios:
    *
-   * <p>&#42; AutoML Vision Classification &#42; AutoML Vision Object Detection &#42; AutoML Video
-   * Intelligence Classification &#42; AutoML Video Intelligence Object Tracking &#42; AutoML
-   * Natural Language Classification &#42; AutoML Natural Language Entity Extraction &#42; AutoML
-   * Natural Language Sentiment Analysis &#42; AutoML Tables
+   * <ul>
+   *   <li>AutoML Vision Classification
+   *   <li>AutoML Vision Object Detection
+   *   <li>AutoML Video Intelligence Classification
+   *   <li>AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
+   *   <li>AutoML Natural Language Entity Extraction
+   *   <li>AutoML Natural Language Sentiment Analysis
+   *   <li>AutoML Tables
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
-   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
-   *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setInputConfig(inputConfig)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   OperationFuture&lt;BatchPredictResult, OperationMetadata&gt; future = predictionServiceClient.batchPredictOperationCallable().futureCall(request);
-   *   // Do something
-   *   BatchPredictResult response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<BatchPredictRequest, BatchPredictResult, OperationMetadata>
       batchPredictOperationCallable() {
     return stub.batchPredictOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Perform a batch prediction. Unlike the online
    * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch prediction result won't be
@@ -725,28 +674,17 @@ public class PredictionServiceClient implements BackgroundResource {
    * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned in the
    * [response][google.longrunning.Operation.response] field. Available for following ML scenarios:
    *
-   * <p>&#42; AutoML Vision Classification &#42; AutoML Vision Object Detection &#42; AutoML Video
-   * Intelligence Classification &#42; AutoML Video Intelligence Object Tracking &#42; AutoML
-   * Natural Language Classification &#42; AutoML Natural Language Entity Extraction &#42; AutoML
-   * Natural Language Sentiment Analysis &#42; AutoML Tables
+   * <ul>
+   *   <li>AutoML Vision Classification
+   *   <li>AutoML Vision Object Detection
+   *   <li>AutoML Video Intelligence Classification
+   *   <li>AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
+   *   <li>AutoML Natural Language Entity Extraction
+   *   <li>AutoML Natural Language Sentiment Analysis
+   *   <li>AutoML Tables
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
-   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
-   *   BatchPredictRequest request = BatchPredictRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setInputConfig(inputConfig)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = predictionServiceClient.batchPredictCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable() {
     return stub.batchPredictCallable();
