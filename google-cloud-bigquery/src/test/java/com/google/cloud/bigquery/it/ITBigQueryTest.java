@@ -102,6 +102,7 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
+import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -148,6 +149,8 @@ public class ITBigQueryTest {
   private static final String ROUTINE_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String RANDOM_ID = UUID.randomUUID().toString().substring(0, 8);
+  private static final String CLOUD_SAMPLES_DATA =
+      Optional.fromNullable(System.getenv("CLOUD_SAMPLES_DATA_BUCKET")).or("cloud-samples-data");
   private static final Map<String, String> LABELS =
       ImmutableMap.of(
           "example-label1", "example-value1",
@@ -1707,9 +1710,10 @@ public class ITBigQueryTest {
   @Test
   public void testQueryExternalHivePartitioningOptionAutoLayout() throws InterruptedException {
     String tableName = "test_queryexternalhivepartition_autolayout_table";
-    String sourceUri = "gs://cloud-samples-data/bigquery/hive-partitioning-samples/autolayout/*";
+    String sourceUri =
+        "gs://" + CLOUD_SAMPLES_DATA + "/bigquery/hive-partitioning-samples/autolayout/*";
     String sourceUriPrefix =
-        "gs://cloud-samples-data/bigquery/hive-partitioning-samples/autolayout/";
+        "gs://" + CLOUD_SAMPLES_DATA + "/bigquery/hive-partitioning-samples/autolayout/";
     HivePartitioningOptions hivePartitioningOptions =
         HivePartitioningOptions.newBuilder()
             .setMode("AUTO")
@@ -1737,9 +1741,12 @@ public class ITBigQueryTest {
   @Test
   public void testQueryExternalHivePartitioningOptionCustomLayout() throws InterruptedException {
     String tableName = "test_queryexternalhivepartition_customlayout_table";
-    String sourceUri = "gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/*";
+    String sourceUri =
+        "gs://" + CLOUD_SAMPLES_DATA + "/bigquery/hive-partitioning-samples/customlayout/*";
     String sourceUriPrefix =
-        "gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/{pkey:STRING}/";
+        "gs://"
+            + CLOUD_SAMPLES_DATA
+            + "/bigquery/hive-partitioning-samples/customlayout/{pkey:STRING}/";
     HivePartitioningOptions hivePartitioningOptions =
         HivePartitioningOptions.newBuilder()
             .setMode("CUSTOM")
