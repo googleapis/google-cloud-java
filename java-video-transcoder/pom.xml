@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-transcoder-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
+  <version>0.1.7</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
   <name>Google Video Transcoder Parent</name>
   <url>https://github.com/googleapis/java-</url>
   <description>
@@ -70,17 +70,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-transcoder</artifactId>
-        <version>0.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
+        <version>0.1.7</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-transcoder-v1beta1</artifactId>
-        <version>0.1.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-transcoder-v1beta1:current} -->
+        <version>0.1.7</version><!-- {x-version-update:proto-google-cloud-video-transcoder-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-transcoder-v1beta1</artifactId>
-        <version>0.1.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-transcoder-v1beta1:current} -->
+        <version>0.1.7</version><!-- {x-version-update:grpc-google-cloud-video-transcoder-v1beta1:current} -->
       </dependency>
 
       <dependency>
