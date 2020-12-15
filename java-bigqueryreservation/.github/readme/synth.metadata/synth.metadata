@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigqueryreservation.git",
-        "sha": "01f025bca8238e45d3c749d82aeb8fbc600ecf51"
+        "sha": "1bd1e7ea03c10c5f2c831572a2b9ee87315df6f0"
       }
     },
     {
