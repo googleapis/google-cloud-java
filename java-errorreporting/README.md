@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>16.1.0</version>
+      <version>16.2.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -67,11 +67,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-errorreporting:0.120.9-beta'
+compile 'com.google.cloud:google-cloud-errorreporting:0.120.11-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.120.9-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.120.11-beta"
 ```
 
 ## Authentication
