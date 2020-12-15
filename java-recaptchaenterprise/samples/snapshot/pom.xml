@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recaptchaenterprise</artifactId>
-      <version>1.0.9-SNAPSHOT</version>
+      <version>1.0.9</version>
     </dependency>
     <!-- {x-version-update-end} -->
 
