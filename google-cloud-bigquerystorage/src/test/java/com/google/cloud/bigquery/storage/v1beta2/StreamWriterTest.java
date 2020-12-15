@@ -908,10 +908,8 @@ public class StreamWriterTest {
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
     ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
-
     assertFalse(appendFuture3.isDone());
     writer.flushAll(100000);
-
     assertTrue(appendFuture3.isDone());
 
     writer.close();
