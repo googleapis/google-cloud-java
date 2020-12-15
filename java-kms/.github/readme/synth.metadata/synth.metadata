@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-kms.git",
-        "sha": "2aa5197089bd7dafd5760f3aaf1df083a43dc15f"
+        "sha": "62c42f526fcd9fb6d697850545c65ab44e24d451"
       }
     },
     {
