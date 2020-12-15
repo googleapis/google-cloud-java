@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-assured-workloads-bom</artifactId>
-  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-assured-workloads:current} -->
+  <version>0.2.1</version><!-- {x-version-update:google-cloud-assured-workloads:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -68,17 +68,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-assured-workloads</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-assured-workloads:current} -->
+        <version>0.2.1</version><!-- {x-version-update:google-cloud-assured-workloads:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-assured-workloads-v1beta1</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-assured-workloads-v1beta1:current} -->
+        <version>0.2.1</version><!-- {x-version-update:proto-google-cloud-assured-workloads-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-assured-workloads-v1beta1</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-assured-workloads-v1beta1:current} -->
+        <version>0.2.1</version><!-- {x-version-update:grpc-google-cloud-assured-workloads-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
