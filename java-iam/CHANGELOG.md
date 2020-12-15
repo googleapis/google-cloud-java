@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.6](https://www.github.com/googleapis/java-iam/compare/v1.0.5...v1.0.6) (2020-12-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#80](https://www.github.com/googleapis/java-iam/issues/80)) ([a43419f](https://www.github.com/googleapis/java-iam/commit/a43419f88458f6ea904acea8814164f0d9755b5b))
+
 ### [1.0.5](https://www.github.com/googleapis/java-iam/compare/v1.0.4...v1.0.5) (2020-12-14)
 
 
