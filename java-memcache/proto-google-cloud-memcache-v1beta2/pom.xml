@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-memcache-v1beta2</artifactId>
-  <version>0.2.10-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-memcache-v1beta2:current} -->
+  <version>0.2.10</version><!-- {x-version-update:proto-google-cloud-memcache-v1beta2:current} -->
   <name>proto-google-cloud-memcache-v1beta2beta1</name>
   <description>PROTO library for proto-google-cloud-memcache-v1beta2</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-memcache-parent</artifactId>
-    <version>0.2.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-memcache:current} -->
+    <version>0.2.10</version><!-- {x-version-update:google-cloud-memcache:current} -->
   </parent>
   <dependencies>
     <dependency>
