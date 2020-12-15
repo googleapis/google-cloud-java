@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-game-servers-bom</artifactId>
-  <version>1.0.4</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+  <version>1.0.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,27 +64,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-game-servers-v1</artifactId>
-        <version>1.0.4</version><!-- {x-version-update:proto-google-cloud-game-servers-v1:current} -->
+        <version>1.0.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-game-servers-v1beta</artifactId>
-        <version>0.22.4</version><!-- {x-version-update:proto-google-cloud-game-servers-v1beta:current} -->
+        <version>0.22.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-game-servers</artifactId>
-        <version>1.0.4</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+        <version>1.0.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-game-servers-v1</artifactId>
-        <version>1.0.4</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1:current} -->
+        <version>1.0.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-game-servers-v1beta</artifactId>
-        <version>0.22.4</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1beta:current} -->
+        <version>0.22.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
