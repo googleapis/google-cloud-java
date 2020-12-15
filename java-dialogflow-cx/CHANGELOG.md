@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.4.1...v0.5.0) (2020-12-15)
+
+
+### Features
+
+* allowed custom to specify webhook headers through query parameters ([#109](https://www.github.com/googleapis/java-dialogflow-cx/issues/109)) ([329b306](https://www.github.com/googleapis/java-dialogflow-cx/commit/329b306505d291dc9f7b3e9832adf20d0abc30a8))
+
+
+### Bug Fixes
+
+* change location in IT to be 'global' ([#103](https://www.github.com/googleapis/java-dialogflow-cx/issues/103)) ([4053872](https://www.github.com/googleapis/java-dialogflow-cx/commit/405387236262b9d04b074304f78f1cc1da4b662b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.1 ([e0830ab](https://www.github.com/googleapis/java-dialogflow-cx/commit/e0830ab54843fce058aa9bdcf0e228e7c5b827fb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#114](https://www.github.com/googleapis/java-dialogflow-cx/issues/114)) ([772e3e6](https://www.github.com/googleapis/java-dialogflow-cx/commit/772e3e616d169e7ca496d80a49b46d272169ada8))
+
 ### [0.4.1](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.4.0...v0.4.1) (2020-12-02)
 
 
