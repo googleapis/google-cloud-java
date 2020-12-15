@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-secretmanager-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.2.8</version><!-- {x-version-update:google-cloud-secretmanager:current} -->
+  <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-secretmanager:current} -->
   <name>Google Cloud secretmanager Parent</name>
   <url>https://github.com/googleapis/java-secretmanager</url>
   <description>
@@ -70,27 +70,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-secretmanager-v1</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:proto-google-cloud-secretmanager-v1:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-secretmanager-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-secretmanager-v1beta1</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:proto-google-cloud-secretmanager-v1beta1:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-secretmanager-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-secretmanager-v1</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:grpc-google-cloud-secretmanager-v1:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-secretmanager-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-secretmanager-v1beta1</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:grpc-google-cloud-secretmanager-v1beta1:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-secretmanager-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-secretmanager</artifactId>
-        <version>1.2.8</version><!-- {x-version-update:google-cloud-secretmanager:current} -->
+        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-secretmanager:current} -->
       </dependency>
 
       <dependency>
