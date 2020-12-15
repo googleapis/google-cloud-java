@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-functions:1.0.4:1.0.5-SNAPSHOT
-proto-google-cloud-functions-v1:1.0.4:1.0.5-SNAPSHOT
-grpc-google-cloud-functions-v1:1.0.4:1.0.5-SNAPSHOT
+google-cloud-functions:1.0.5:1.0.5
+proto-google-cloud-functions-v1:1.0.5:1.0.5
+grpc-google-cloud-functions-v1:1.0.5:1.0.5
