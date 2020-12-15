@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-language-v1:1.83.8:1.83.8
-proto-google-cloud-language-v1beta2:0.84.8:0.84.8
-grpc-google-cloud-language-v1:1.83.8:1.83.8
-grpc-google-cloud-language-v1beta2:0.84.8:0.84.8
-google-cloud-language:1.101.8:1.101.8
+proto-google-cloud-language-v1:1.83.8:1.83.9-SNAPSHOT
+proto-google-cloud-language-v1beta2:0.84.8:0.84.9-SNAPSHOT
+grpc-google-cloud-language-v1:1.83.8:1.83.9-SNAPSHOT
+grpc-google-cloud-language-v1beta2:0.84.8:0.84.9-SNAPSHOT
+google-cloud-language:1.101.8:1.101.9-SNAPSHOT
