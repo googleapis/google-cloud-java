@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-texttospeech</artifactId>
-      <version>1.2.7-SNAPSHOT</version>
+      <version>1.2.7</version>
     </dependency>
     <!-- {x-version-update-end} -->
     <dependency>
