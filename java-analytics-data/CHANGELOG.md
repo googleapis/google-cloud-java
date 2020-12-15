@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.5.3](https://www.github.com/googleapis/java-analytics-data/compare/v0.5.2...v0.5.3) (2020-12-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#112](https://www.github.com/googleapis/java-analytics-data/issues/112)) ([224e55b](https://www.github.com/googleapis/java-analytics-data/commit/224e55bd24bbe0a946e0859a9b16a3923851a13e))
+
 ### [0.5.2](https://www.github.com/googleapis/java-analytics-data/compare/v0.5.1...v0.5.2) (2020-12-14)
 
 
