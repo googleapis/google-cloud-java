@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.5](https://www.github.com/googleapis/java-game-servers/compare/v1.0.4...v1.0.5) (2020-12-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#306](https://www.github.com/googleapis/java-game-servers/issues/306)) ([0fc38a3](https://www.github.com/googleapis/java-game-servers/commit/0fc38a33d7cf300f40719f61675d0f4d24dbeacb))
+
 ### [1.0.4](https://www.github.com/googleapis/java-game-servers/compare/v1.0.3...v1.0.4) (2020-12-14)
 
 
