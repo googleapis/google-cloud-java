@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-accessapproval</artifactId>
-  <version>1.0.8</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
+  <version>1.0.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Access Approval</name>
   <url>https://github.com/googleapis/java-accessapproval</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-accessapproval-parent</artifactId>
-    <version>1.0.8</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
+    <version>1.0.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-accessapproval</site.installationModule>
