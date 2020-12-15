@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.workflows.executions.v1beta;
 
 import static com.google.cloud.workflows.executions.v1beta.ExecutionsClient.ListExecutionsPagedResponse;
@@ -33,7 +34,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ExecutionsClient}.
  *
@@ -51,23 +52,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createExecution to 30 seconds:
  *
- * <pre>
- * <code>
- * ExecutionsSettings.Builder executionsSettingsBuilder =
- *     ExecutionsSettings.newBuilder();
+ * <pre>{@code
+ * ExecutionsSettings.Builder executionsSettingsBuilder = ExecutionsSettings.newBuilder();
  * executionsSettingsBuilder
  *     .createExecutionSettings()
  *     .setRetrySettings(
- *         executionsSettingsBuilder.createExecutionSettings().getRetrySettings().toBuilder()
+ *         executionsSettingsBuilder
+ *             .createExecutionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ExecutionsSettings executionsSettings = executionsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ExecutionsSettings extends ClientSettings<ExecutionsSettings> {
+
   /** Returns the object with the settings used for calls to listExecutions. */
   public PagedCallSettings<
           ListExecutionsRequest, ListExecutionsResponse, ListExecutionsPagedResponse>
@@ -149,16 +150,13 @@ public class ExecutionsSettings extends ClientSettings<ExecutionsSettings> {
 
   /** Builder for ExecutionsSettings. */
   public static class Builder extends ClientSettings.Builder<ExecutionsSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ExecutionsStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ExecutionsStubSettings.newBuilder());
     }
 
     protected Builder(ExecutionsSettings settings) {
@@ -169,11 +167,15 @@ public class ExecutionsSettings extends ClientSettings<ExecutionsSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ExecutionsStubSettings.newBuilder());
+    }
+
     public ExecutionsStubSettings.Builder getStubSettingsBuilder() {
       return ((ExecutionsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

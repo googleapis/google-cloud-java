@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.workflows.executions.v1beta.stub;
 
 import static com.google.cloud.workflows.executions.v1beta.ExecutionsClient.ListExecutionsPagedResponse;
@@ -52,9 +53,8 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ExecutionsStub}.
  *
@@ -72,22 +72,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createExecution to 30 seconds:
  *
- * <pre>
- * <code>
- * ExecutionsStubSettings.Builder executionsSettingsBuilder =
- *     ExecutionsStubSettings.newBuilder();
+ * <pre>{@code
+ * ExecutionsStubSettings.Builder executionsSettingsBuilder = ExecutionsStubSettings.newBuilder();
  * executionsSettingsBuilder
  *     .createExecutionSettings()
  *     .setRetrySettings(
- *         executionsSettingsBuilder.createExecutionSettings().getRetrySettings().toBuilder()
+ *         executionsSettingsBuilder
+ *             .createExecutionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ExecutionsStubSettings executionsSettings = executionsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -99,6 +99,60 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
   private final UnaryCallSettings<CreateExecutionRequest, Execution> createExecutionSettings;
   private final UnaryCallSettings<GetExecutionRequest, Execution> getExecutionSettings;
   private final UnaryCallSettings<CancelExecutionRequest, Execution> cancelExecutionSettings;
+
+  private static final PagedListDescriptor<ListExecutionsRequest, ListExecutionsResponse, Execution>
+      LIST_EXECUTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListExecutionsRequest, ListExecutionsResponse, Execution>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListExecutionsRequest injectToken(ListExecutionsRequest payload, String token) {
+              return ListExecutionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListExecutionsRequest injectPageSize(
+                ListExecutionsRequest payload, int pageSize) {
+              return ListExecutionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListExecutionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListExecutionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Execution> extractResources(ListExecutionsResponse payload) {
+              return payload.getExecutionsList() == null
+                  ? ImmutableList.<Execution>of()
+                  : payload.getExecutionsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListExecutionsRequest, ListExecutionsResponse, ListExecutionsPagedResponse>
+      LIST_EXECUTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListExecutionsRequest, ListExecutionsResponse, ListExecutionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListExecutionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListExecutionsRequest, ListExecutionsResponse> callable,
+                ListExecutionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListExecutionsResponse> futureResponse) {
+              PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> pageContext =
+                  PageContext.create(callable, LIST_EXECUTIONS_PAGE_STR_DESC, request, context);
+              return ListExecutionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listExecutions. */
   public PagedCallSettings<
@@ -128,10 +182,10 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcExecutionsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -197,64 +251,9 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
     cancelExecutionSettings = settingsBuilder.cancelExecutionSettings().build();
   }
 
-  private static final PagedListDescriptor<ListExecutionsRequest, ListExecutionsResponse, Execution>
-      LIST_EXECUTIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListExecutionsRequest, ListExecutionsResponse, Execution>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListExecutionsRequest injectToken(ListExecutionsRequest payload, String token) {
-              return ListExecutionsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListExecutionsRequest injectPageSize(
-                ListExecutionsRequest payload, int pageSize) {
-              return ListExecutionsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListExecutionsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListExecutionsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Execution> extractResources(ListExecutionsResponse payload) {
-              return payload.getExecutionsList() != null
-                  ? payload.getExecutionsList()
-                  : ImmutableList.<Execution>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListExecutionsRequest, ListExecutionsResponse, ListExecutionsPagedResponse>
-      LIST_EXECUTIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListExecutionsRequest, ListExecutionsResponse, ListExecutionsPagedResponse>() {
-            @Override
-            public ApiFuture<ListExecutionsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListExecutionsRequest, ListExecutionsResponse> callable,
-                ListExecutionsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListExecutionsResponse> futureResponse) {
-              PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> pageContext =
-                  PageContext.create(callable, LIST_EXECUTIONS_PAGE_STR_DESC, request, context);
-              return ListExecutionsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for ExecutionsStubSettings. */
   public static class Builder extends StubSettings.Builder<ExecutionsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListExecutionsRequest, ListExecutionsResponse, ListExecutionsPagedResponse>
         listExecutionsSettings;
@@ -263,19 +262,13 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
     private final UnaryCallSettings.Builder<GetExecutionRequest, Execution> getExecutionSettings;
     private final UnaryCallSettings.Builder<CancelExecutionRequest, Execution>
         cancelExecutionSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -284,33 +277,21 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("default", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listExecutionsSettings = PagedCallSettings.newBuilder(LIST_EXECUTIONS_PAGE_STR_FACT);
-
       createExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       cancelExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -319,42 +300,7 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
               createExecutionSettings,
               getExecutionSettings,
               cancelExecutionSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listExecutionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createExecutionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getExecutionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .cancelExecutionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(ExecutionsStubSettings settings) {
@@ -373,7 +319,42 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
               cancelExecutionSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listExecutionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createExecutionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getExecutionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .cancelExecutionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

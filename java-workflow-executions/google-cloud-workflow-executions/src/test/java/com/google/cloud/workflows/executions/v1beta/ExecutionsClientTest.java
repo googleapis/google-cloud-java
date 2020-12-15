@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.workflows.executions.v1beta;
 
 import static com.google.cloud.workflows.executions.v1beta.ExecutionsClient.ListExecutionsPagedResponse;
@@ -26,12 +27,13 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -39,31 +41,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class ExecutionsClientTest {
+  private static MockServiceHelper mockServiceHelper;
   private static MockExecutions mockExecutions;
-  private static MockServiceHelper serviceHelper;
   private ExecutionsClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockExecutions = new MockExecutions();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockExecutions));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     ExecutionsSettings settings =
         ExecutionsSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -78,15 +80,12 @@ public class ExecutionsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listExecutionsTest() {
-    String nextPageToken = "";
-    Execution executionsElement = Execution.newBuilder().build();
-    List<Execution> executions = Arrays.asList(executionsElement);
+  public void listExecutionsTest() throws Exception {
+    Execution responsesElement = Execution.newBuilder().build();
     ListExecutionsResponse expectedResponse =
         ListExecutionsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllExecutions(executions)
+            .setNextPageToken("")
+            .addAllExecutions(Arrays.asList(responsesElement))
             .build();
     mockExecutions.addResponse(expectedResponse);
 
@@ -95,14 +94,15 @@ public class ExecutionsClientTest {
     ListExecutionsPagedResponse pagedListResponse = client.listExecutions(parent);
 
     List<Execution> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getExecutionsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockExecutions.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListExecutionsRequest actualRequest = (ListExecutionsRequest) actualRequests.get(0);
+    ListExecutionsRequest actualRequest = ((ListExecutionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, WorkflowName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -110,34 +110,74 @@ public class ExecutionsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listExecutionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockExecutions.addException(exception);
 
     try {
       WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
-
       client.listExecutions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createExecutionTest() {
-    ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-    String argument = "argument-1589682499";
-    String result = "result-934426595";
-    String workflowRevisionId = "workflowRevisionId-1453295745";
+  public void listExecutionsTest2() throws Exception {
+    Execution responsesElement = Execution.newBuilder().build();
+    ListExecutionsResponse expectedResponse =
+        ListExecutionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExecutions(Arrays.asList(responsesElement))
+            .build();
+    mockExecutions.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListExecutionsPagedResponse pagedListResponse = client.listExecutions(parent);
+
+    List<Execution> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExecutionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockExecutions.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListExecutionsRequest actualRequest = ((ListExecutionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listExecutionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockExecutions.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listExecutions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createExecutionTest() throws Exception {
     Execution expectedResponse =
         Execution.newBuilder()
-            .setName(name.toString())
-            .setArgument(argument)
-            .setResult(result)
-            .setWorkflowRevisionId(workflowRevisionId)
+            .setName(
+                ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]").toString())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setArgument("argument-1589682499")
+            .setResult("result-934426595")
+            .setWorkflowRevisionId("workflowRevisionId-1575712907")
             .build();
     mockExecutions.addResponse(expectedResponse);
 
@@ -149,9 +189,9 @@ public class ExecutionsClientTest {
 
     List<AbstractMessage> actualRequests = mockExecutions.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateExecutionRequest actualRequest = (CreateExecutionRequest) actualRequests.get(0);
+    CreateExecutionRequest actualRequest = ((CreateExecutionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, WorkflowName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(execution, actualRequest.getExecution());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -160,35 +200,78 @@ public class ExecutionsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createExecutionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockExecutions.addException(exception);
 
     try {
       WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
       Execution execution = Execution.newBuilder().build();
-
       client.createExecution(parent, execution);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getExecutionTest() {
-    ExecutionName name2 = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-    String argument = "argument-1589682499";
-    String result = "result-934426595";
-    String workflowRevisionId = "workflowRevisionId-1453295745";
+  public void createExecutionTest2() throws Exception {
     Execution expectedResponse =
         Execution.newBuilder()
-            .setName(name2.toString())
-            .setArgument(argument)
-            .setResult(result)
-            .setWorkflowRevisionId(workflowRevisionId)
+            .setName(
+                ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]").toString())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setArgument("argument-1589682499")
+            .setResult("result-934426595")
+            .setWorkflowRevisionId("workflowRevisionId-1575712907")
+            .build();
+    mockExecutions.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Execution execution = Execution.newBuilder().build();
+
+    Execution actualResponse = client.createExecution(parent, execution);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockExecutions.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateExecutionRequest actualRequest = ((CreateExecutionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(execution, actualRequest.getExecution());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createExecutionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockExecutions.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Execution execution = Execution.newBuilder().build();
+      client.createExecution(parent, execution);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExecutionTest() throws Exception {
+    Execution expectedResponse =
+        Execution.newBuilder()
+            .setName(
+                ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]").toString())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setArgument("argument-1589682499")
+            .setResult("result-934426595")
+            .setWorkflowRevisionId("workflowRevisionId-1575712907")
             .build();
     mockExecutions.addResponse(expectedResponse);
 
@@ -199,9 +282,9 @@ public class ExecutionsClientTest {
 
     List<AbstractMessage> actualRequests = mockExecutions.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetExecutionRequest actualRequest = (GetExecutionRequest) actualRequests.get(0);
+    GetExecutionRequest actualRequest = ((GetExecutionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, ExecutionName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -209,34 +292,74 @@ public class ExecutionsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getExecutionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockExecutions.addException(exception);
 
     try {
       ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-
       client.getExecution(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void cancelExecutionTest() {
-    ExecutionName name2 = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-    String argument = "argument-1589682499";
-    String result = "result-934426595";
-    String workflowRevisionId = "workflowRevisionId-1453295745";
+  public void getExecutionTest2() throws Exception {
     Execution expectedResponse =
         Execution.newBuilder()
-            .setName(name2.toString())
-            .setArgument(argument)
-            .setResult(result)
-            .setWorkflowRevisionId(workflowRevisionId)
+            .setName(
+                ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]").toString())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setArgument("argument-1589682499")
+            .setResult("result-934426595")
+            .setWorkflowRevisionId("workflowRevisionId-1575712907")
+            .build();
+    mockExecutions.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Execution actualResponse = client.getExecution(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockExecutions.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetExecutionRequest actualRequest = ((GetExecutionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getExecutionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockExecutions.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getExecution(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelExecutionTest() throws Exception {
+    Execution expectedResponse =
+        Execution.newBuilder()
+            .setName(
+                ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]").toString())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setArgument("argument-1589682499")
+            .setResult("result-934426595")
+            .setWorkflowRevisionId("workflowRevisionId-1575712907")
             .build();
     mockExecutions.addResponse(expectedResponse);
 
@@ -247,9 +370,9 @@ public class ExecutionsClientTest {
 
     List<AbstractMessage> actualRequests = mockExecutions.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CancelExecutionRequest actualRequest = (CancelExecutionRequest) actualRequests.get(0);
+    CancelExecutionRequest actualRequest = ((CancelExecutionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, ExecutionName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -257,18 +380,60 @@ public class ExecutionsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void cancelExecutionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockExecutions.addException(exception);
 
     try {
       ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-
       client.cancelExecution(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelExecutionTest2() throws Exception {
+    Execution expectedResponse =
+        Execution.newBuilder()
+            .setName(
+                ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]").toString())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setArgument("argument-1589682499")
+            .setResult("result-934426595")
+            .setWorkflowRevisionId("workflowRevisionId-1575712907")
+            .build();
+    mockExecutions.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Execution actualResponse = client.cancelExecution(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockExecutions.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelExecutionRequest actualRequest = ((CancelExecutionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelExecutionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockExecutions.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelExecution(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

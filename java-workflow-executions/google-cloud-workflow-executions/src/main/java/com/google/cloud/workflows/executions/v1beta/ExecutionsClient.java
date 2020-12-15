@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.workflows.executions.v1beta;
 
 import com.google.api.core.ApiFunction;
@@ -33,7 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Executions is used to start and manage running instances of
  * [Workflows][google.cloud.workflows.v1beta.Workflow] called executions.
@@ -41,17 +42,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
- *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
- *   Execution execution = Execution.newBuilder().build();
- *   Execution response = executionsClient.createExecution(parent, execution);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the executionsClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the ExecutionsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -79,30 +70,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ExecutionsSettings executionsSettings =
  *     ExecutionsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ExecutionsClient executionsClient =
- *     ExecutionsClient.create(executionsSettings);
- * </code>
- * </pre>
+ * ExecutionsClient executionsClient = ExecutionsClient.create(executionsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ExecutionsSettings executionsSettings =
  *     ExecutionsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * ExecutionsClient executionsClient =
- *     ExecutionsClient.create(executionsSettings);
- * </code>
- * </pre>
+ * ExecutionsClient executionsClient = ExecutionsClient.create(executionsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class ExecutionsClient implements BackgroundResource {
   private final ExecutionsSettings settings;
   private final ExecutionsStub stub;
@@ -122,7 +109,7 @@ public class ExecutionsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ExecutionsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use ExecutionsSettings}.
+   * advanced usage - prefer using create(ExecutionsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ExecutionsClient create(ExecutionsStub stub) {
@@ -153,22 +140,11 @@ public class ExecutionsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of executions which belong to the workflow with the given name. The method
    * returns executions of all workflow revisions. Returned executions are ordered by their start
    * time (newest first).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
-   *   for (Execution element : executionsClient.listExecutions(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the workflow for which the executions should be listed. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}
@@ -182,22 +158,11 @@ public class ExecutionsClient implements BackgroundResource {
     return listExecutions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of executions which belong to the workflow with the given name. The method
    * returns executions of all workflow revisions. Returned executions are ordered by their start
    * time (newest first).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
-   *   for (Execution element : executionsClient.listExecutions(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the workflow for which the executions should be listed. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}
@@ -208,25 +173,11 @@ public class ExecutionsClient implements BackgroundResource {
     return listExecutions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of executions which belong to the workflow with the given name. The method
    * returns executions of all workflow revisions. Returned executions are ordered by their start
    * time (newest first).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
-   *   ListExecutionsRequest request = ListExecutionsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Execution element : executionsClient.listExecutions(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -235,80 +186,35 @@ public class ExecutionsClient implements BackgroundResource {
     return listExecutionsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of executions which belong to the workflow with the given name. The method
    * returns executions of all workflow revisions. Returned executions are ordered by their start
    * time (newest first).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
-   *   ListExecutionsRequest request = ListExecutionsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListExecutionsPagedResponse&gt; future = executionsClient.listExecutionsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Execution element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListExecutionsRequest, ListExecutionsPagedResponse>
       listExecutionsPagedCallable() {
     return stub.listExecutionsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of executions which belong to the workflow with the given name. The method
    * returns executions of all workflow revisions. Returned executions are ordered by their start
    * time (newest first).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
-   *   ListExecutionsRequest request = ListExecutionsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListExecutionsResponse response = executionsClient.listExecutionsCallable().call(request);
-   *     for (Execution element : response.getExecutionsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListExecutionsRequest, ListExecutionsResponse>
       listExecutionsCallable() {
     return stub.listExecutionsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new execution using the latest revision of the given workflow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
-   *   Execution execution = Execution.newBuilder().build();
-   *   Execution response = executionsClient.createExecution(parent, execution);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the workflow for which an execution should be created. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow} The latest revision of the
@@ -325,19 +231,9 @@ public class ExecutionsClient implements BackgroundResource {
     return createExecution(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new execution using the latest revision of the given workflow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
-   *   Execution execution = Execution.newBuilder().build();
-   *   Execution response = executionsClient.createExecution(parent.toString(), execution);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the workflow for which an execution should be created. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow} The latest revision of the
@@ -351,23 +247,9 @@ public class ExecutionsClient implements BackgroundResource {
     return createExecution(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new execution using the latest revision of the given workflow.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
-   *   Execution execution = Execution.newBuilder().build();
-   *   CreateExecutionRequest request = CreateExecutionRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setExecution(execution)
-   *     .build();
-   *   Execution response = executionsClient.createExecution(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -376,42 +258,19 @@ public class ExecutionsClient implements BackgroundResource {
     return createExecutionCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new execution using the latest revision of the given workflow.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
-   *   Execution execution = Execution.newBuilder().build();
-   *   CreateExecutionRequest request = CreateExecutionRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setExecution(execution)
-   *     .build();
-   *   ApiFuture&lt;Execution&gt; future = executionsClient.createExecutionCallable().futureCall(request);
-   *   // Do something
-   *   Execution response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateExecutionRequest, Execution> createExecutionCallable() {
     return stub.createExecutionCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns an execution of the given name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-   *   Execution response = executionsClient.getExecution(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the execution to be retrieved. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
@@ -423,18 +282,9 @@ public class ExecutionsClient implements BackgroundResource {
     return getExecution(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns an execution of the given name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-   *   Execution response = executionsClient.getExecution(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the execution to be retrieved. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
@@ -445,21 +295,9 @@ public class ExecutionsClient implements BackgroundResource {
     return getExecution(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns an execution of the given name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-   *   GetExecutionRequest request = GetExecutionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Execution response = executionsClient.getExecution(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -468,40 +306,19 @@ public class ExecutionsClient implements BackgroundResource {
     return getExecutionCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns an execution of the given name.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-   *   GetExecutionRequest request = GetExecutionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Execution&gt; future = executionsClient.getExecutionCallable().futureCall(request);
-   *   // Do something
-   *   Execution response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetExecutionRequest, Execution> getExecutionCallable() {
     return stub.getExecutionCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels an execution of the given name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-   *   Execution response = executionsClient.cancelExecution(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the execution to be cancelled. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
@@ -513,18 +330,9 @@ public class ExecutionsClient implements BackgroundResource {
     return cancelExecution(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels an execution of the given name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-   *   Execution response = executionsClient.cancelExecution(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the execution to be cancelled. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
@@ -535,21 +343,9 @@ public class ExecutionsClient implements BackgroundResource {
     return cancelExecution(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels an execution of the given name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-   *   CancelExecutionRequest request = CancelExecutionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Execution response = executionsClient.cancelExecution(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -558,23 +354,11 @@ public class ExecutionsClient implements BackgroundResource {
     return cancelExecutionCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels an execution of the given name.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
-   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
-   *   CancelExecutionRequest request = CancelExecutionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Execution&gt; future = executionsClient.cancelExecutionCallable().futureCall(request);
-   *   // Do something
-   *   Execution response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CancelExecutionRequest, Execution> cancelExecutionCallable() {
     return stub.cancelExecutionCallable();

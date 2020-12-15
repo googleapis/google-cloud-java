@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class ExecutionName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_WORKFLOW_EXECUTION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String workflow;
   private final String execution;
+
+  @Deprecated
+  protected ExecutionName() {
+    project = null;
+    location = null;
+    workflow = null;
+    execution = null;
+  }
+
+  private ExecutionName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    workflow = Preconditions.checkNotNull(builder.getWorkflow());
+    execution = Preconditions.checkNotNull(builder.getExecution());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class ExecutionName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private ExecutionName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    workflow = Preconditions.checkNotNull(builder.getWorkflow());
-    execution = Preconditions.checkNotNull(builder.getExecution());
   }
 
   public static ExecutionName of(
@@ -95,7 +102,7 @@ public class ExecutionName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_WORKFLOW_EXECUTION.validatedMatch(
             formattedString, "ExecutionName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -113,7 +120,7 @@ public class ExecutionName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ExecutionName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ExecutionName value : values) {
       if (value == null) {
         list.add("");
@@ -125,18 +132,27 @@ public class ExecutionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_WORKFLOW_EXECUTION.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("workflow", workflow);
-          fieldMapBuilder.put("execution", execution);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (workflow != null) {
+            fieldMapBuilder.put("workflow", workflow);
+          }
+          if (execution != null) {
+            fieldMapBuilder.put("execution", execution);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -150,17 +166,50 @@ public class ExecutionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_WORKFLOW_EXECUTION.instantiate(
         "project", project, "location", location, "workflow", workflow, "execution", execution);
   }
 
-  /** Builder for ExecutionName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ExecutionName that = ((ExecutionName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.workflow, that.workflow)
+          && Objects.equals(this.execution, that.execution);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(workflow);
+    h *= 1000003;
+    h ^= Objects.hashCode(execution);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String workflow;
     private String execution;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -198,8 +247,6 @@ public class ExecutionName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(ExecutionName executionName) {
       project = executionName.project;
       location = executionName.location;
@@ -210,34 +257,5 @@ public class ExecutionName implements ResourceName {
     public ExecutionName build() {
       return new ExecutionName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof ExecutionName) {
-      ExecutionName that = (ExecutionName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.workflow.equals(that.workflow))
-          && (this.execution.equals(that.execution));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= workflow.hashCode();
-    h *= 1000003;
-    h ^= execution.hashCode();
-    return h;
   }
 }

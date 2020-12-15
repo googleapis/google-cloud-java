@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.workflows.executions.v1beta.stub;
 
 import static com.google.cloud.workflows.executions.v1beta.ExecutionsClient.ListExecutionsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -32,6 +32,7 @@ import com.google.cloud.workflows.executions.v1beta.GetExecutionRequest;
 import com.google.cloud.workflows.executions.v1beta.ListExecutionsRequest;
 import com.google.cloud.workflows.executions.v1beta.ListExecutionsResponse;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -39,16 +40,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Workflow Executions API.
+ * gRPC stub implementation for the Executions service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcExecutionsStub extends ExecutionsStub {
-
   private static final MethodDescriptor<ListExecutionsRequest, ListExecutionsResponse>
       listExecutionsMethodDescriptor =
           MethodDescriptor.<ListExecutionsRequest, ListExecutionsResponse>newBuilder()
@@ -60,6 +59,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExecutionsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateExecutionRequest, Execution>
       createExecutionMethodDescriptor =
           MethodDescriptor.<CreateExecutionRequest, Execution>newBuilder()
@@ -70,6 +70,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   ProtoUtils.marshaller(CreateExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetExecutionRequest, Execution>
       getExecutionMethodDescriptor =
           MethodDescriptor.<GetExecutionRequest, Execution>newBuilder()
@@ -78,6 +79,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CancelExecutionRequest, Execution>
       cancelExecutionMethodDescriptor =
           MethodDescriptor.<CancelExecutionRequest, Execution>newBuilder()
@@ -89,8 +91,6 @@ public class GrpcExecutionsStub extends ExecutionsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<ListExecutionsRequest, ListExecutionsResponse> listExecutionsCallable;
   private final UnaryCallable<ListExecutionsRequest, ListExecutionsPagedResponse>
       listExecutionsPagedCallable;
@@ -98,6 +98,8 @@ public class GrpcExecutionsStub extends ExecutionsStub {
   private final UnaryCallable<GetExecutionRequest, Execution> getExecutionCallable;
   private final UnaryCallable<CancelExecutionRequest, Execution> cancelExecutionCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcExecutionsStub create(ExecutionsStubSettings settings)
@@ -136,6 +138,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListExecutionsRequest, ListExecutionsResponse>
         listExecutionsTransportSettings =
@@ -207,16 +210,21 @@ public class GrpcExecutionsStub extends ExecutionsStub {
         callableFactory.createUnaryCallable(
             cancelExecutionTransportSettings, settings.cancelExecutionSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  public UnaryCallable<ListExecutionsRequest, ListExecutionsResponse> listExecutionsCallable() {
+    return listExecutionsCallable;
   }
 
   public UnaryCallable<ListExecutionsRequest, ListExecutionsPagedResponse>
       listExecutionsPagedCallable() {
     return listExecutionsPagedCallable;
-  }
-
-  public UnaryCallable<ListExecutionsRequest, ListExecutionsResponse> listExecutionsCallable() {
-    return listExecutionsCallable;
   }
 
   public UnaryCallable<CreateExecutionRequest, Execution> createExecutionCallable() {

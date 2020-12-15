@@ -58,10 +58,6 @@
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.threeten</groupId>
-      <artifactId>threetenbp</artifactId>
-    </dependency>
 
     <!-- Test dependencies -->
     <dependency>

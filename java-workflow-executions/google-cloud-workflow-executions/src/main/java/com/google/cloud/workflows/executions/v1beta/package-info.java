@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,28 +15,16 @@
  */
 
 /**
- * A client to Workflow Executions API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>================ ExecutionsClient ================
+ * <p>======================= ExecutionsClient =======================
  *
  * <p>Service Description: Executions is used to start and manage running instances of
  * [Workflows][google.cloud.workflows.v1beta.Workflow] called executions.
  *
  * <p>Sample for ExecutionsClient:
- *
- * <pre>
- * <code>
- * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
- *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
- *   Execution execution = Execution.newBuilder().build();
- *   Execution response = executionsClient.createExecution(parent, execution);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.workflows.executions.v1beta;
 
 import javax.annotation.Generated;
