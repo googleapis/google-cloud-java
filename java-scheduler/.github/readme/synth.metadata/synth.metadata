@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-scheduler.git",
-        "sha": "5555fbc8ca4bae926057a587772c630167df0844"
+        "sha": "723e66aba70cf686e3eb5bf0bf2bdf21b1613b2b"
       }
     },
     {
