@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-webrisk-v1</artifactId>
-  <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-webrisk-v1:current} -->
+  <version>1.1.7</version><!-- {x-version-update:proto-google-cloud-webrisk-v1:current} -->
   <name>proto-google-cloud-webrisk-v1</name>
   <description>PROTO library for proto-google-cloud-webrisk-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-webrisk-parent</artifactId>
-    <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-webrisk:current} -->
+    <version>1.1.7</version><!-- {x-version-update:google-cloud-webrisk:current} -->
   </parent>
   <dependencies>
     <dependency>
