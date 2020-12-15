@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-container-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
+  <version>1.2.3</version><!-- {x-version-update:google-cloud-container:current} -->
   <name>Google Cloud Container Parent</name>
   <url>https://github.com/googleapis/java-container</url>
   <description>
@@ -70,17 +70,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-container-v1</artifactId>
-        <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-container-v1:current} -->
+        <version>1.2.3</version><!-- {x-version-update:proto-google-cloud-container-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-container-v1</artifactId>
-        <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-container-v1:current} -->
+        <version>1.2.3</version><!-- {x-version-update:grpc-google-cloud-container-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-container</artifactId>
-        <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
+        <version>1.2.3</version><!-- {x-version-update:google-cloud-container:current} -->
       </dependency>
 
       <dependency>

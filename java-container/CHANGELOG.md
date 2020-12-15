@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.3](https://www.github.com/googleapis/java-container/compare/v1.2.2...v1.2.3) (2020-12-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#327](https://www.github.com/googleapis/java-container/issues/327)) ([3bdd669](https://www.github.com/googleapis/java-container/commit/3bdd66923be3d6c82bdf91ad525a8bfe62b3d37d))
+
 ### [1.2.2](https://www.github.com/googleapis/java-container/compare/v1.2.1...v1.2.2) (2020-12-14)
 
 
