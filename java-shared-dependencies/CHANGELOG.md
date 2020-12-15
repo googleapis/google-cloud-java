@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.17.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.16.1...v0.17.0) (2020-12-15)
+
+
+### Dependencies
+
+* update dependency com.google.guava:guava-bom to v30.1-android ([#236](https://www.github.com/googleapis/java-shared-dependencies/issues/236)) ([78ebf7f](https://www.github.com/googleapis/java-shared-dependencies/commit/78ebf7fcec3ec0308ccd5103b719f02dde7ec6d8))
+* update dependency io.grpc:grpc-bom to v1.34.1 ([#238](https://www.github.com/googleapis/java-shared-dependencies/issues/238)) ([ee7e020](https://www.github.com/googleapis/java-shared-dependencies/commit/ee7e020a4631f2b288d1c6f5d681423d156e3c2d))
+* update iam.version to v1.0.5 ([#237](https://www.github.com/googleapis/java-shared-dependencies/issues/237)) ([bbe6be6](https://www.github.com/googleapis/java-shared-dependencies/commit/bbe6be650a93cf365f2439ae9c8bebf2ade83ddd))
+
 ### [0.16.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.16.0...v0.16.1) (2020-12-14)
 
 
