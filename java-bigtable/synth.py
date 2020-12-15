@@ -34,7 +34,6 @@ def main():
 
   java.common_templates(excludes=[
     '.gitignore',
-    'README.md',
     '.kokoro/presubmit/integration.cfg',
     '.kokoro/nightly/integration.cfg',
     '.kokoro/presubmit/samples.cfg',
