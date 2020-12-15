@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>google-cloud-bigtable-emulator</artifactId>
-  <version>0.128.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+  <version>0.128.2</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
   <name>Google Cloud Java - Bigtable Emulator</name>
   <url>https://github.com/googleapis/java-bigtable</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigtable-parent</artifactId>
-    <version>1.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>1.19.2</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
   <scm>
     <connection>scm:git:git@github.com:googleapis/java-bigtable.git</connection>
@@ -80,14 +80,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-deps-bom</artifactId>
-        <version>1.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>1.19.2</version><!-- {x-version-update:google-cloud-bigtable:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-bom</artifactId>
-        <version>1.19.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>1.19.2</version><!-- {x-version-update:google-cloud-bigtable:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
