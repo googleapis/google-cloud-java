@@ -7,7 +7,7 @@
   <groupId>com.google.cloud</groupId>
 
   <properties>
-    <grpcVersion>1.34.0</grpcVersion>
+    <grpcVersion>1.34.1</grpcVersion>
     <protobufVersion>3.9.2</protobufVersion>
   </properties>
   
