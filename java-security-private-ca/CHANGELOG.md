@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.5](https://www.github.com/googleapis/java-security-private-ca/compare/v0.2.4...v0.2.5) (2020-12-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#92](https://www.github.com/googleapis/java-security-private-ca/issues/92)) ([ae3b9f4](https://www.github.com/googleapis/java-security-private-ca/commit/ae3b9f49b881bf674c926294e0594229f6ee4d3f))
+
 ### [0.2.4](https://www.github.com/googleapis/java-security-private-ca/compare/v0.2.3...v0.2.4) (2020-12-14)
 
 

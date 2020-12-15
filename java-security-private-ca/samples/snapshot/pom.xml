@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-security-private-ca</artifactId>
-      <version>0.2.5-SNAPSHOT</version>
+      <version>0.2.5</version>
     </dependency>
     <!-- {x-version-update-end} -->
 
