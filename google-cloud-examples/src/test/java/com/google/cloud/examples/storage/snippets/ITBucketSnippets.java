@@ -308,11 +308,16 @@ public class ITBucketSnippets {
   }
 
   @Test
-  public void testSetPublicAccessPreventionEnforced() {
-    SetPublicAccessPreventionEnforced.setPublicAccessPreventionEnforced(PROJECT_ID, BUCKET);
-    assertEquals(
-        storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
-        BucketInfo.PublicAccessPrevention.ENFORCED);
+  public void testGetPublicAccessPrevention() {
+    storage
+        .get(BUCKET)
+        .toBuilder()
+        .setIamConfiguration(
+            BucketInfo.IamConfiguration.newBuilder()
+                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.ENFORCED)
+                .build())
+        .build()
+        .update();
     PrintStream standardOut = System.out;
     final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
     System.setOut(new PrintStream(snippetOutputCapture));
@@ -320,21 +325,49 @@ public class ITBucketSnippets {
     String snippetOutput = snippetOutputCapture.toString();
     System.setOut(standardOut);
     assertTrue(snippetOutput.contains("enforced"));
+    storage
+        .get(BUCKET)
+        .toBuilder()
+        .setIamConfiguration(
+            BucketInfo.IamConfiguration.newBuilder()
+                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                .build())
+        .build()
+        .update();
+  }
+
+  @Test
+  public void testSetPublicAccessPreventionEnforced() {
+    SetPublicAccessPreventionEnforced.setPublicAccessPreventionEnforced(PROJECT_ID, BUCKET);
+    assertEquals(
+        storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
+        BucketInfo.PublicAccessPrevention.ENFORCED);
+    storage
+        .get(BUCKET)
+        .toBuilder()
+        .setIamConfiguration(
+            BucketInfo.IamConfiguration.newBuilder()
+                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                .build())
+        .build()
+        .update();
   }
 
   @Test
   public void testSetPublicAccessPreventionUnspecified() {
+    storage
+        .get(BUCKET)
+        .toBuilder()
+        .setIamConfiguration(
+            BucketInfo.IamConfiguration.newBuilder()
+                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.ENFORCED)
+                .build())
+        .build()
+        .update();
     SetPublicAccessPreventionUnspecified.setPublicAccessPreventionUnspecified(PROJECT_ID, BUCKET);
     assertEquals(
         storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
         BucketInfo.PublicAccessPrevention.UNSPECIFIED);
-    PrintStream standardOut = System.out;
-    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(snippetOutputCapture));
-    GetPublicAccessPrevention.getPublicAccessPrevention(PROJECT_ID, BUCKET);
-    String snippetOutput = snippetOutputCapture.toString();
-    System.setOut(standardOut);
-    assertTrue(snippetOutput.contains("unspecified"));
   }
 
   @Test

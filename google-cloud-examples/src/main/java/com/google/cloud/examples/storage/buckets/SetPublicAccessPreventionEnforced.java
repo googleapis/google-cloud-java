@@ -30,9 +30,7 @@ public class SetPublicAccessPreventionEnforced {
     // String bucketName = "your-unique-bucket-name";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    Bucket bucket =
-        storage.get(
-            bucketName, Storage.BucketGetOption.fields(Storage.BucketField.IAMCONFIGURATION));
+    Bucket bucket = storage.get(bucketName);
 
     // Enforces public access prevention for the bucket
     bucket

@@ -30,9 +30,7 @@ public class GetPublicAccessPrevention {
     // String bucketName = "your-unique-bucket-name";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    Bucket bucket =
-        storage.get(
-            bucketName, Storage.BucketGetOption.fields(Storage.BucketField.IAMCONFIGURATION));
+    Bucket bucket = storage.get(bucketName);
 
     // Gets Bucket Metadata and prints publicAccessPrevention value (either 'unspecified' or
     // 'enforced').
