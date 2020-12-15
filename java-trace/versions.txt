@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-trace:1.2.10:1.2.10
-grpc-google-cloud-trace-v1:1.2.10:1.2.10
-grpc-google-cloud-trace-v2:1.2.10:1.2.10
-proto-google-cloud-trace-v1:1.2.10:1.2.10
-proto-google-cloud-trace-v2:1.2.10:1.2.10
+google-cloud-trace:1.2.10:1.2.11-SNAPSHOT
+grpc-google-cloud-trace-v1:1.2.10:1.2.11-SNAPSHOT
+grpc-google-cloud-trace-v2:1.2.10:1.2.11-SNAPSHOT
+proto-google-cloud-trace-v1:1.2.10:1.2.11-SNAPSHOT
+proto-google-cloud-trace-v2:1.2.10:1.2.11-SNAPSHOT

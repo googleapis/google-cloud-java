@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-trace-v2</artifactId>
-  <version>1.2.10</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
+  <version>1.2.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
   <name>proto-google-cloud-trace-v2</name>
   <description>PROTO library for proto-google-cloud-trace-v2</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-trace-parent</artifactId>
-    <version>1.2.10</version><!-- {x-version-update:google-cloud-trace:current} -->
+    <version>1.2.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
   </parent>
   <dependencies>
     <dependency>
