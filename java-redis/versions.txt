@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-redis-v1:1.1.8:1.1.8
-proto-google-cloud-redis-v1beta1:0.86.8:0.86.8
-grpc-google-cloud-redis-v1beta1:0.86.8:0.86.8
-grpc-google-cloud-redis-v1:1.1.8:1.1.8
-google-cloud-redis:1.1.8:1.1.8
+proto-google-cloud-redis-v1:1.1.8:1.1.9-SNAPSHOT
+proto-google-cloud-redis-v1beta1:0.86.8:0.86.9-SNAPSHOT
+grpc-google-cloud-redis-v1beta1:0.86.8:0.86.9-SNAPSHOT
+grpc-google-cloud-redis-v1:1.1.8:1.1.9-SNAPSHOT
+google-cloud-redis:1.1.8:1.1.9-SNAPSHOT
