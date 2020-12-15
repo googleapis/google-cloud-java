@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-kms</artifactId>
-      <version>1.40.4</version>
+      <version>1.40.5-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
 
