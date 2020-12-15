@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datacatalog.git",
-        "sha": "7cea69bfee756135cc9741dee95b2b0efa2a3514"
+        "sha": "dfe61ee39f5b95145ddba8c3a36cbcd24a92c8fe"
       }
     },
     {
