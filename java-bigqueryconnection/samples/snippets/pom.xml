@@ -40,7 +40,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigqueryconnection</artifactId>
       <!-- TODO: REMOVE VERSION SPECIFIED BELOW WHEN THE CLIENT GOES GA-->
-      <version>1.0.5</version>
+      <version>1.0.6</version>
     </dependency>
 
     <dependency>
