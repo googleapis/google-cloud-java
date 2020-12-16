@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-notification.git",
-        "sha": "7bd251e9509b4caace0da459c4b99801cb9d480a"
+        "sha": "9cdd5712db41a8783a10779951bc633ec2fe14ef"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5d11bd2888c38ce1fb6fa6bf25494a4219a73928"
+        "sha": "3f67ceece7e797a5736a25488aae35405649b90b"
       }
     }
   ],
@@ -84,7 +84,6 @@
     "codecov.yaml",
     "java.header",
     "license-checks.xml",
-    "renovate.json",
     "samples/install-without-bom/pom.xml",
     "samples/pom.xml",
     "samples/snapshot/pom.xml",
