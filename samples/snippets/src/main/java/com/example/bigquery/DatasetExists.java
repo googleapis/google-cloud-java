@@ -39,13 +39,13 @@ public class DatasetExists {
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
       Dataset dataset = bigquery.getDataset(DatasetId.of(datasetName));
-      if (dataset.exists()) {
-        System.out.println("Dataset already exist");
+      if (dataset != null) {
+        System.out.println("Dataset already exists.");
       } else {
-        System.out.println("Dataset not found");
+        System.out.println("Dataset not found.");
       }
     } catch (BigQueryException e) {
-      System.out.println("Dataset not found. \n" + e.toString());
+      System.out.println("Something went wrong. \n" + e.toString());
     }
   }
 }
