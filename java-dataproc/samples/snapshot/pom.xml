@@ -34,7 +34,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>1.113.4</version>
+      <version>1.113.6</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
