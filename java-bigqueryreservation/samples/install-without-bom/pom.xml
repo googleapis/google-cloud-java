@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigqueryreservation</artifactId>
-      <version>1.0.5</version>
+      <version>1.0.6</version>
     </dependency>
     <!-- [END bigqueryreservations_install_without_bom] -->
 
