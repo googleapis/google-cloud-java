@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-orgpolicy-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.9</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v1:current} -->
+  <version>1.0.10-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v1:current} -->
   <name>Google Cloud Org Policy Parent</name>
   <url>https://github.com/googleapis/java-orgpolicy</url>
   <description>
