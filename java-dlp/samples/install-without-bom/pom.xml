@@ -36,7 +36,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
-      <version>1.108.7</version>
+      <version>1.110.1</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
