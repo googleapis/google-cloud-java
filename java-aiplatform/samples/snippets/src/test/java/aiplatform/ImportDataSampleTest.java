@@ -72,14 +72,13 @@ public class ImportDataSampleTest {
   }
 
   @Test
-  public void testImportDataSample()
-      throws TimeoutException {
+  public void testImportDataSample() throws TimeoutException {
     // As import data into dataset can take a long time, instead try to import data into a
     // nonexistent dataset and confirm that the model was not found, but other
     // elements of the request were valid.
     try {
       ImportDataTextClassificationSingleLabelSample.importDataTextClassificationSingleLabelSample(
-              PROJECT, DATASET_ID, GCS_SOURCE_URI);
+          PROJECT, DATASET_ID, GCS_SOURCE_URI);
       // Assert
       String got = bout.toString();
       assertThat(got).contains("The Dataset does not exist.");

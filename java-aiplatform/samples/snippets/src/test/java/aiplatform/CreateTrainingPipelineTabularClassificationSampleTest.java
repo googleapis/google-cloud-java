@@ -39,21 +39,21 @@ public class CreateTrainingPipelineTabularClassificationSampleTest {
   private static final String TARGET_COLUMN = "TripType";
   private static final String TRANSFORMATION =
       "[{\"numeric\":{\"columnName\":\"Age\",\"invalidValuesAllowed\":false}},"
-              + "{\"categorical\":{\"columnName\":\"Job\"}},"
-              + "{\"categorical\":{\"columnName\":\"MaritalStatus\"}},"
-              + "{\"categorical\":{\"columnName\":\"Default\"}},"
-              + "{\"numeric\":{\"columnName\":\"Balance\",\"invalidValuesAllowed\":false}},"
-              + "{\"categorical\":{\"columnName\":\"Housing\"}},"
-              + "{\"categorical\":{\"columnName\":\"Loan\"}},"
-              + "{\"categorical\":{\"columnName\":\"Contact\"}},"
-              + "{\"numeric\":{\"columnName\":\"Day\",\"invalidValuesAllowed\":false}},"
-              + "{\"categorical\":{\"columnName\":\"Month\"}},"
-              + "{\"numeric\":{\"columnName\":\"Duration\",\"invalidValuesAllowed\":false}},"
-              + "{\"numeric\":{\"columnName\":\"Campaign\",\"invalidValuesAllowed\":false}},"
-              + "{\"numeric\":{\"columnName\":\"PDays\",\"invalidValuesAllowed\":false}},"
-              + "{\"numeric\":{\"columnName\":\"Previous\",\"invalidValuesAllowed\":false}},"
-              + "{\"categorical\":{\"columnName\":\"POutcome\"}},"
-              + "{\"categorical\":{\"columnName\":\"Deposit\"}}]";
+          + "{\"categorical\":{\"columnName\":\"Job\"}},"
+          + "{\"categorical\":{\"columnName\":\"MaritalStatus\"}},"
+          + "{\"categorical\":{\"columnName\":\"Default\"}},"
+          + "{\"numeric\":{\"columnName\":\"Balance\",\"invalidValuesAllowed\":false}},"
+          + "{\"categorical\":{\"columnName\":\"Housing\"}},"
+          + "{\"categorical\":{\"columnName\":\"Loan\"}},"
+          + "{\"categorical\":{\"columnName\":\"Contact\"}},"
+          + "{\"numeric\":{\"columnName\":\"Day\",\"invalidValuesAllowed\":false}},"
+          + "{\"categorical\":{\"columnName\":\"Month\"}},"
+          + "{\"numeric\":{\"columnName\":\"Duration\",\"invalidValuesAllowed\":false}},"
+          + "{\"numeric\":{\"columnName\":\"Campaign\",\"invalidValuesAllowed\":false}},"
+          + "{\"numeric\":{\"columnName\":\"PDays\",\"invalidValuesAllowed\":false}},"
+          + "{\"numeric\":{\"columnName\":\"Previous\",\"invalidValuesAllowed\":false}},"
+          + "{\"categorical\":{\"columnName\":\"POutcome\"}},"
+          + "{\"categorical\":{\"columnName\":\"Deposit\"}}]";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

@@ -60,7 +60,7 @@ public class ImportDataVideoClassificationSample {
       String location = "us-central1";
       String importSchemaUri =
           "gs://google-cloud-aiplatform/schema/dataset/ioformat/"
-                  + "video_classification_io_format_1.0.0.yaml";
+              + "video_classification_io_format_1.0.0.yaml";
 
       GcsSource.Builder gcsSource = GcsSource.newBuilder();
       gcsSource.addUris(gcsSourceUri);
@@ -81,8 +81,7 @@ public class ImportDataVideoClassificationSample {
       ImportDataResponse importDataResponse = importDataResponseFuture.get(1800, TimeUnit.SECONDS);
 
       System.out.format(
-          "Import Data Video Classification Response: %s\n",
-              importDataResponse.toString());
+          "Import Data Video Classification Response: %s\n", importDataResponse.toString());
     }
   }
 }

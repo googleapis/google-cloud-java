@@ -81,8 +81,8 @@ public class CreateDatasetTabularGcsSampleTest {
             "temp_create_dataset_table_gcs_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    CreateDatasetTabularGcsSample.createDatasetTableGcs(PROJECT,
-            datasetDisplayName, GCS_SOURCE_URI);
+    CreateDatasetTabularGcsSample.createDatasetTableGcs(
+        PROJECT, datasetDisplayName, GCS_SOURCE_URI);
 
     // Assert
     String got = bout.toString();

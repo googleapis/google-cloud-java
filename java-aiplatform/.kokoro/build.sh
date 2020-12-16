@@ -77,6 +77,11 @@ samples)
             source "${KOKORO_GFILE_DIR}/secret_manager/ucaip_samples_secrets"
         fi
 
+        if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-aiplatform-samples-secrets" ]
+        then
+            source "${KOKORO_GFILE_DIR}/secret_manager/java-aiplatform-samples-secrets"
+        fi
+
         pushd samples
         mvn -B \
           -Penable-samples \

@@ -62,7 +62,7 @@ public class ImportDataTextClassificationSingleLabelSample {
       String location = "us-central1";
       String importSchemaUri =
           "gs://google-cloud-aiplatform/schema/dataset/ioformat/"
-                  + "text_classification_single_label_io_format_1.0.0.yaml";
+              + "text_classification_single_label_io_format_1.0.0.yaml";
 
       GcsSource.Builder gcsSource = GcsSource.newBuilder();
       gcsSource.addUris(gcsSourceUri);
@@ -82,8 +82,8 @@ public class ImportDataTextClassificationSingleLabelSample {
 
       System.out.println("Waiting for operation to finish...");
       ImportDataResponse importDataResponse = importDataResponseFuture.get(300, TimeUnit.SECONDS);
-      System.out.format("Import Data Text Classification Response: %s\n",
-              importDataResponse.toString());
+      System.out.format(
+          "Import Data Text Classification Response: %s\n", importDataResponse.toString());
     }
   }
 }

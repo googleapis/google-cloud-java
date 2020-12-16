@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,19 +29,24 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
-public class CancelTrainingPipelineSampleTest {
-
+public class CreateDataLabelingJobSpecialistPoolSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String DATASET_ID = System.getenv("TRAINING_PIPELINE_DATASET_ID");
-  private static final String TRAINING_TASK_DEFINITION =
-      "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
-          + "automl_image_classification_1.0.0.yaml";
-  private static String TRAINING_PIPELINE_ID = null;
+  private static final String DATASET_ID =
+      System.getenv("DATA_LABELING_ACTIVE_LEARNING_DATASET_ID");
+  private static final String SPECIALIST_POOL_ID =
+      System.getenv("DATA_LABELING_SPECIALIST_POOL_ID");
+  private static final String INSTRUCTION_URI =
+      "gs://ucaip-sample-resources/images/datalabeling_instructions.pdf";
+  private static final String INPUTS_SCHEMA_URI =
+      "gs://google-cloud-aiplatform/schema/datalabelingjob/inputs/image_classification_1.0.0.yaml";
+  private static final String ANNOTATION_SPEC = "roses";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
+  private String dataLabelingJobId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -53,7 +58,8 @@ public class CancelTrainingPipelineSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("TRAINING_PIPELINE_DATASET_ID");
+    requireEnvVar("DATA_LABELING_ACTIVE_LEARNING_DATASET_ID");
+    requireEnvVar("DATA_LABELING_SPECIALIST_POOL_ID");
   }
 
   @Before
@@ -67,57 +73,46 @@ public class CancelTrainingPipelineSampleTest {
   @After
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
-    // Delete the Training Pipeline
-    DeleteTrainingPipelineSample.deleteTrainingPipelineSample(PROJECT, TRAINING_PIPELINE_ID);
+    // Cancel data labeling job
+    CancelDataLabelingJobSample.cancelDataLabelingJob(PROJECT, dataLabelingJobId);
+
+    // Assert
+    String cancelResponse = bout.toString();
+    assertThat(cancelResponse).contains("Cancelled Data labeling job");
+    TimeUnit.MINUTES.sleep(1);
+
+    // Delete the created dataset
+    DeleteDataLabelingJobSample.deleteDataLabelingJob(PROJECT, dataLabelingJobId);
 
     // Assert
     String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Deleted Training Pipeline.");
+    assertThat(deleteResponse).contains("Deleted Data Labeling Job.");
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
-  public void cancelTrainingPipeline() throws IOException, InterruptedException {
+  @Ignore("Avoid creating actual data labeling job for humans")
+  public void testCreateDataLabelingJobSpecialistPoolSample() throws IOException {
     // Act
-    String trainingPipelineDisplayName =
+    String dataLabelingDisplayName =
         String.format(
-            "temp_create_training_pipeline_test_%s",
+            "temp_data_labeling_job_specialist_pool_display_name_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    String modelDisplayName =
-        String.format(
-            "temp_create_training_pipeline_model_test_%s",
-            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
-
-    CreateTrainingPipelineSample.createTrainingPipelineSample(
+    CreateDataLabelingJobSpecialistPoolSample.createDataLabelingJobSpecialistPoolSample(
         PROJECT,
-        trainingPipelineDisplayName,
+        dataLabelingDisplayName,
         DATASET_ID,
-        TRAINING_TASK_DEFINITION,
-        modelDisplayName);
+        SPECIALIST_POOL_ID,
+        INSTRUCTION_URI,
+        INPUTS_SCHEMA_URI,
+        ANNOTATION_SPEC);
 
     // Assert
-    String createTrainingPipelineResponse = bout.toString();
-    assertThat(createTrainingPipelineResponse).contains(DATASET_ID);
-    assertThat(createTrainingPipelineResponse).contains("Create Training Pipeline Response");
-    TRAINING_PIPELINE_ID =
-        createTrainingPipelineResponse
-            .split("Name: ")[1]
-            .split("trainingPipelines/")[1]
-            .split("\n")[0];
-
-    // Cancel the Training Pipeline
-    CancelTrainingPipelineSample.cancelTrainingPipelineSample(PROJECT, TRAINING_PIPELINE_ID);
-
-    // Assert
-    String cancelResponse = bout.toString();
-    assertThat(cancelResponse).contains("Cancelled the Training Pipeline");
-    TimeUnit.MINUTES.sleep(1);
-
-    // Get TrainingPipeline
-    GetTrainingPipelineSample.getTrainingPipeline(PROJECT, TRAINING_PIPELINE_ID);
-    String trainingPipelineResponse = bout.toString();
-    assertThat(trainingPipelineResponse).contains("Message: CANCELLED");
+    String got = bout.toString();
+    assertThat(got).contains(dataLabelingDisplayName);
+    assertThat(got).contains("Create Data Labeling Job Image Response");
+    dataLabelingJobId = got.split("Name: ")[1].split("dataLabelingJobs/")[1].split("\n")[0];
   }
 }

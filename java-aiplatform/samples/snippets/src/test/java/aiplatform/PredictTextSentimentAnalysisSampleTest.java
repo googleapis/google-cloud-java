@@ -87,4 +87,3 @@ public class PredictTextSentimentAnalysisSampleTest {
     assertThat(got).contains("Predict Text Sentiment Analysis Response");
   }
 }
-

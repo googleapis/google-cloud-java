@@ -19,25 +19,28 @@ package aiplatform;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class DeployModelSampleTest {
-
-  private static final String PROJECT_ID = "ucaip-sample-tests";
-  private static final String MODEL_ID = "00000000000000000";
+public class CreateBatchPredictionJobSampleTest {
+  private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
+  private static final String MODEL_ID = System.getenv("BATCH_PREDICTION_MODEL_ID");
+  private static final String GCS_SOURCE_URI =
+      "gs://ucaip-samples-test-output/inputs/icn_batch_prediction_input.jsonl";
+  private static final String GCS_OUTPUT_URI = "gs://ucaip-samples-test-output/";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
+  private String batchPredictionJobId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -48,6 +51,8 @@ public class DeployModelSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("UCAIP_PROJECT_ID");
+    requireEnvVar("BATCH_PREDICTION_MODEL_ID");
   }
 
   @Before
@@ -59,28 +64,46 @@ public class DeployModelSampleTest {
   }
 
   @After
-  public void tearDown() {
+  public void tearDown()
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    CancelBatchPredictionJobSample.cancelBatchPredictionJobSample(PROJECT, batchPredictionJobId);
+
+    // Assert
+    String cancelResponse = bout.toString();
+    assertThat(cancelResponse).contains("Cancelled the Batch Prediction Job");
+    TimeUnit.MINUTES.sleep(2);
+
+    // Delete the Batch Prediction Job
+    DeleteBatchPredictionJobSample.deleteBatchPredictionJobSample(PROJECT, batchPredictionJobId);
+
+    // Assert
+    String deleteResponse = bout.toString();
+    assertThat(deleteResponse).contains("Deleted Batch");
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
-  public void testDeployModelSample() throws TimeoutException {
-    // As model deployment can take a long time, instead try to deploy a
-    // nonexistent model and confirm that the model was not found, but other
-    // elements of the request were valid.
-    String deployedModelDisplayName =
+  public void testCreateBatchPredictionJobSample() throws IOException {
+    // Act
+    String batchPredictionDisplayName =
         String.format(
-            "temp_deploy_model_test_%s",
+            "batch_prediction_bigquery_display_name_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
-    try {
-      DeployModelSample.deployModelSample(
-          PROJECT_ID, deployedModelDisplayName, "4366591682456584192", MODEL_ID);
-      // Assert
-      String got = bout.toString();
-      assertThat(got).contains("is not found.");
-    } catch (StatusRuntimeException | ExecutionException | InterruptedException | IOException e) {
-      assertThat(e.getMessage()).contains("is not found.");
-    }
+
+    CreateBatchPredictionJobSample.createBatchPredictionJobSample(
+        PROJECT,
+        batchPredictionDisplayName,
+        MODEL_ID,
+        "jsonl",
+        GCS_SOURCE_URI,
+        "jsonl",
+        GCS_OUTPUT_URI);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains(batchPredictionDisplayName);
+    assertThat(got).contains("response:");
+    batchPredictionJobId = got.split("Name: ")[1].split("batchPredictionJobs/")[1].split("\n")[0];
   }
 }

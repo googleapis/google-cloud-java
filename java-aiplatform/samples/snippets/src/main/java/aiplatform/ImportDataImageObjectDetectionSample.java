@@ -61,7 +61,7 @@ public class ImportDataImageObjectDetectionSample {
       String location = "us-central1";
       String importSchemaUri =
           "gs://google-cloud-aiplatform/schema/dataset/ioformat/"
-                  + "image_bounding_box_io_format_1.0.0.yaml";
+              + "image_bounding_box_io_format_1.0.0.yaml";
       GcsSource.Builder gcsSource = GcsSource.newBuilder();
       gcsSource.addUris(gcsSourceUri);
       DatasetName datasetName = DatasetName.of(project, location, datasetId);
@@ -80,8 +80,8 @@ public class ImportDataImageObjectDetectionSample {
       System.out.println("Waiting for operation to finish...");
       ImportDataResponse importDataResponse = importDataResponseFuture.get(300, TimeUnit.SECONDS);
 
-      System.out.format("Import Data Image Object Detection Response: %s\n",
-              importDataResponse.toString());
+      System.out.format(
+          "Import Data Image Object Detection Response: %s\n", importDataResponse.toString());
     }
   }
 }

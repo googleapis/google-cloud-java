@@ -61,7 +61,7 @@ public class ImportDataImageClassificationSample {
       String location = "us-central1";
       String importSchemaUri =
           "gs://google-cloud-aiplatform/schema/dataset/ioformat/"
-                  + "image_classification_single_label_io_format_1.0.0.yaml";
+              + "image_classification_single_label_io_format_1.0.0.yaml";
 
       GcsSource.Builder gcsSource = GcsSource.newBuilder();
       gcsSource.addUris(gcsSourceUri);
@@ -81,8 +81,8 @@ public class ImportDataImageClassificationSample {
       System.out.println("Waiting for operation to finish...");
       ImportDataResponse importDataResponse = importDataResponseFuture.get(300, TimeUnit.SECONDS);
 
-      System.out.format("Import Data Image Classification Response: %s\n",
-              importDataResponse.toString());
+      System.out.format(
+          "Import Data Image Classification Response: %s\n", importDataResponse.toString());
     }
   }
 }

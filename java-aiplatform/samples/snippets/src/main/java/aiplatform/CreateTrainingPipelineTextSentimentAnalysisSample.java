@@ -38,12 +38,10 @@ import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
 import com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.protobuf.Any;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
 import java.io.IOException;
-import java.util.List;
 
 public class CreateTrainingPipelineTextSentimentAnalysisSample {
 
@@ -74,7 +72,7 @@ public class CreateTrainingPipelineTextSentimentAnalysisSample {
       String location = "us-central1";
       String trainingTaskDefinition =
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
-                  + "automl_text_sentiment_1.0.0.yaml";
+              + "automl_text_sentiment_1.0.0.yaml";
 
       // Sentiment max must be between 1 and 10 inclusive.
       // Higher value means positive sentiment.

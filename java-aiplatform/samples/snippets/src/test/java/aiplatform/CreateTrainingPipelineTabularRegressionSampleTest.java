@@ -35,23 +35,23 @@ public class CreateTrainingPipelineTabularRegressionSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
   private static final String DATASET_ID =
-          System.getenv("TRAINING_PIPELINE_TABLES_REGRESSION_DATASET_ID");
+      System.getenv("TRAINING_PIPELINE_TABLES_REGRESSION_DATASET_ID");
   private static final String TARGET_COLUMN = "Amount";
   private static final String TRANSFORMATION =
       "[{\"categorical\":{\"columnName\":\"SC_Group_Desc\"}},"
-              + "{\"categorical\":{\"columnName\":\"SC_GroupCommod_ID\"}},"
-              + "{\"categorical\":{\"columnName\":\"SC_GroupCommod_Desc\"}},"
-              + "{\"numeric\":{\"columnName\":\"SortOrder\",\"invalidValuesAllowed\":false}},"
-              + "{\"text\":{\"columnName\":\"SC_GeographyIndented_Desc\"}},"
-              + "{\"numeric\":{\"columnName\":\"SC_Commodity_ID\",\"invalidValuesAllowed\":false}},"
-              + "{\"text\":{\"columnName\":\"SC_Commodity_Desc\"}},"
-              + "{\"numeric\":{\"columnName\":\"SC_Attribute_ID\",\"invalidValuesAllowed\":false}},"
-              + "{\"text\":{\"columnName\":\"SC_Attribute_Desc\"}},"
-              + "{\"numeric\":{\"columnName\":\"SC_Unit_ID\",\"invalidValuesAllowed\":false}},"
-              + "{\"numeric\":{\"columnName\":\"Year_ID\",\"invalidValuesAllowed\":false}},"
-              + "{\"categorical\":{\"columnName\":\"SC_Frequency_Desc\"}},"
-              + "{\"numeric\":{\"columnName\":\"Timeperiod_ID\",\"invalidValuesAllowed\":false}},"
-              + "{\"text\":{\"columnName\":\"Timeperiod_Desc\"}}]";
+          + "{\"categorical\":{\"columnName\":\"SC_GroupCommod_ID\"}},"
+          + "{\"categorical\":{\"columnName\":\"SC_GroupCommod_Desc\"}},"
+          + "{\"numeric\":{\"columnName\":\"SortOrder\",\"invalidValuesAllowed\":false}},"
+          + "{\"text\":{\"columnName\":\"SC_GeographyIndented_Desc\"}},"
+          + "{\"numeric\":{\"columnName\":\"SC_Commodity_ID\",\"invalidValuesAllowed\":false}},"
+          + "{\"text\":{\"columnName\":\"SC_Commodity_Desc\"}},"
+          + "{\"numeric\":{\"columnName\":\"SC_Attribute_ID\",\"invalidValuesAllowed\":false}},"
+          + "{\"text\":{\"columnName\":\"SC_Attribute_Desc\"}},"
+          + "{\"numeric\":{\"columnName\":\"SC_Unit_ID\",\"invalidValuesAllowed\":false}},"
+          + "{\"numeric\":{\"columnName\":\"Year_ID\",\"invalidValuesAllowed\":false}},"
+          + "{\"categorical\":{\"columnName\":\"SC_Frequency_Desc\"}},"
+          + "{\"numeric\":{\"columnName\":\"Timeperiod_ID\",\"invalidValuesAllowed\":false}},"
+          + "{\"text\":{\"columnName\":\"Timeperiod_Desc\"}}]";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -31,19 +31,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class UploadModelSampleTest {
-
+public class CreateTrainingPipelineVideoActionRecognitionSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String METADATASCHEMA_URI = "";
-  private static final String IMAGE_URI =
-      "gcr.io/cloud-ml-service-public/"
-          + "cloud-ml-online-prediction-model-server-cpu:"
-          + "v1_15py3cmle_op_images_20200229_0210_RC00";
-  private static final String ARTIFACT_URI = "gs://ucaip-samples-us-central1/model/explain/";
+  private static final String DATASET_ID =
+      System.getenv("TRAINING_PIPELINE_VIDEO_ACTION_DATASET_ID");
+  private static final String MODEL = "CLOUD";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String uploadedModelId;
+  private String trainingPipelineId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -55,6 +51,7 @@ public class UploadModelSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
+    requireEnvVar("TRAINING_PIPELINE_VIDEO_ACTION_DATASET_ID");
   }
 
   @Before
@@ -67,32 +64,46 @@ public class UploadModelSampleTest {
 
   @After
   public void tearDown()
-      throws InterruptedException, ExecutionException, TimeoutException, IOException {
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
     // Cancel the Training Pipeline
-    DeleteModelSample.deleteModel(PROJECT, uploadedModelId);
+    CancelTrainingPipelineSample.cancelTrainingPipelineSample(PROJECT, trainingPipelineId);
 
     // Assert
-    String deleteModelResponse = bout.toString();
-    assertThat(deleteModelResponse).contains("Deleted Model.");
-    TimeUnit.MINUTES.sleep(1);
+    String cancelResponse = bout.toString();
+    assertThat(cancelResponse).contains("Cancelled the Training Pipeline");
+    TimeUnit.MINUTES.sleep(2);
+
+    // Delete the Training Pipeline
+    DeleteTrainingPipelineSample.deleteTrainingPipelineSample(PROJECT, trainingPipelineId);
+
+    // Assert
+    String deleteResponse = bout.toString();
+    assertThat(deleteResponse).contains("Deleted Training Pipeline.");
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
-  public void uploadModelSampleTest()
-      throws InterruptedException, ExecutionException, TimeoutException, IOException {
+  public void testCreateTrainingPipelineVideoActionRecognitionSample() throws IOException {
     // Act
+    String trainingPipelineDisplayName =
+        String.format(
+            "temp_create_training_pipeline_video_action_recognition_test_%s",
+            UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
+
     String modelDisplayName =
         String.format(
-            "temp_upload_model_test_%s",
+            "temp_create_training_pipeline_video_action_recognition_model_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
-    UploadModelSample.uploadModel(
-        PROJECT, modelDisplayName, METADATASCHEMA_URI, IMAGE_URI, ARTIFACT_URI);
+
+    CreateTrainingPipelineVideoActionRecognitionSample
+        .createTrainingPipelineVideoActionRecognitionSample(
+            PROJECT, trainingPipelineDisplayName, DATASET_ID, modelDisplayName, MODEL);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Upload Model Response");
-    uploadedModelId = got.split("Model:")[1].split("models/")[1].split("\n")[0];
+    assertThat(got).contains(DATASET_ID);
+    assertThat(got).contains("response");
+    trainingPipelineId = got.split("Name: ")[1].split("trainingPipelines/")[1].split("\n")[0];
   }
 }

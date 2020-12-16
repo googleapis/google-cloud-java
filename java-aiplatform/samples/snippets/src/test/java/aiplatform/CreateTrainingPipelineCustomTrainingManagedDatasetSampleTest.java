@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -31,17 +31,21 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CancelTrainingPipelineSampleTest {
-
+public class CreateTrainingPipelineCustomTrainingManagedDatasetSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String DATASET_ID = System.getenv("TRAINING_PIPELINE_DATASET_ID");
-  private static final String TRAINING_TASK_DEFINITION =
-      "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
-          + "automl_image_classification_1.0.0.yaml";
-  private static String TRAINING_PIPELINE_ID = null;
+  private static final String DATASET_ID = System.getenv("CUSTOM_MANAGED_DATASET");
+  private static final String ANNOTATION_SCHEMA_URI =
+      "gs://google-cloud-aiplatform/schema/dataset/annotation/image_classification_1.0.0.yaml";
+  private static final String TRAINING_CONTAINER_IMAGE_URI =
+      "gcr.io/ucaip-test/custom-container-managed-dataset:latest";
+  private static final String MODEL_CONTAIN_SPEC_IMAGE_URI =
+      "gcr.io/cloud-aiplatform/prediction/tf-gpu.1-15:latest";
+  private static final String GCS_OUTPUT_DIRECTORY =
+      "gs://ucaip-samples-us-central1/training_pipeline_output/custom_training_managed_dataset";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
+  private String trainingPipelineId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -53,7 +57,6 @@ public class CancelTrainingPipelineSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("TRAINING_PIPELINE_DATASET_ID");
   }
 
   @Before
@@ -67,8 +70,16 @@ public class CancelTrainingPipelineSampleTest {
   @After
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    // Cancel the Training Pipeline
+    CancelTrainingPipelineSample.cancelTrainingPipelineSample(PROJECT, trainingPipelineId);
+
+    // Assert
+    String cancelResponse = bout.toString();
+    assertThat(cancelResponse).contains("Cancelled the Training Pipeline");
+    TimeUnit.MINUTES.sleep(2);
+
     // Delete the Training Pipeline
-    DeleteTrainingPipelineSample.deleteTrainingPipelineSample(PROJECT, TRAINING_PIPELINE_ID);
+    DeleteTrainingPipelineSample.deleteTrainingPipelineSample(PROJECT, trainingPipelineId);
 
     // Assert
     String deleteResponse = bout.toString();
@@ -78,7 +89,7 @@ public class CancelTrainingPipelineSampleTest {
   }
 
   @Test
-  public void cancelTrainingPipeline() throws IOException, InterruptedException {
+  public void testCreateTrainingPipelineCustomTrainingManagedDatasetSample() throws IOException {
     // Act
     String trainingPipelineDisplayName =
         String.format(
@@ -90,34 +101,20 @@ public class CancelTrainingPipelineSampleTest {
             "temp_create_training_pipeline_model_test_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    CreateTrainingPipelineSample.createTrainingPipelineSample(
-        PROJECT,
-        trainingPipelineDisplayName,
-        DATASET_ID,
-        TRAINING_TASK_DEFINITION,
-        modelDisplayName);
+    CreateTrainingPipelineCustomTrainingManagedDatasetSample
+        .createTrainingPipelineCustomTrainingManagedDatasetSample(
+            PROJECT,
+            trainingPipelineDisplayName,
+            modelDisplayName,
+            DATASET_ID,
+            ANNOTATION_SCHEMA_URI,
+            TRAINING_CONTAINER_IMAGE_URI,
+            MODEL_CONTAIN_SPEC_IMAGE_URI,
+            GCS_OUTPUT_DIRECTORY);
 
     // Assert
-    String createTrainingPipelineResponse = bout.toString();
-    assertThat(createTrainingPipelineResponse).contains(DATASET_ID);
-    assertThat(createTrainingPipelineResponse).contains("Create Training Pipeline Response");
-    TRAINING_PIPELINE_ID =
-        createTrainingPipelineResponse
-            .split("Name: ")[1]
-            .split("trainingPipelines/")[1]
-            .split("\n")[0];
-
-    // Cancel the Training Pipeline
-    CancelTrainingPipelineSample.cancelTrainingPipelineSample(PROJECT, TRAINING_PIPELINE_ID);
-
-    // Assert
-    String cancelResponse = bout.toString();
-    assertThat(cancelResponse).contains("Cancelled the Training Pipeline");
-    TimeUnit.MINUTES.sleep(1);
-
-    // Get TrainingPipeline
-    GetTrainingPipelineSample.getTrainingPipeline(PROJECT, TRAINING_PIPELINE_ID);
-    String trainingPipelineResponse = bout.toString();
-    assertThat(trainingPipelineResponse).contains("Message: CANCELLED");
+    String got = bout.toString();
+    assertThat(got).contains(trainingPipelineDisplayName);
+    trainingPipelineId = got.split("Name: ")[1].split("trainingPipelines/")[1].split("\n")[0];
   }
 }

@@ -31,19 +31,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class UploadModelSampleTest {
-
+public class CreateBatchPredictionJobBigquerySampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String METADATASCHEMA_URI = "";
-  private static final String IMAGE_URI =
-      "gcr.io/cloud-ml-service-public/"
-          + "cloud-ml-online-prediction-model-server-cpu:"
-          + "v1_15py3cmle_op_images_20200229_0210_RC00";
-  private static final String ARTIFACT_URI = "gs://ucaip-samples-us-central1/model/explain/";
+  private static final String MODEL_ID = System.getenv("BATCH_PREDICTION_TABULAR_BQ_MODEL_ID");
+  private static final String BIGQUERY_SOURCE_URI =
+      "bq://ucaip-sample-tests.table_test.all_bq_types";
+  private static final String BIGQUERY_DESTINATION_OUTPUT_URI_PREFIX = "bq://ucaip-sample-tests";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String uploadedModelId;
+  private String batchPredictionJobId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -55,6 +52,7 @@ public class UploadModelSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
+    requireEnvVar("BATCH_PREDICTION_TABULAR_BQ_MODEL_ID");
   }
 
   @Before
@@ -67,32 +65,45 @@ public class UploadModelSampleTest {
 
   @After
   public void tearDown()
-      throws InterruptedException, ExecutionException, TimeoutException, IOException {
-    // Cancel the Training Pipeline
-    DeleteModelSample.deleteModel(PROJECT, uploadedModelId);
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    CancelBatchPredictionJobSample.cancelBatchPredictionJobSample(PROJECT, batchPredictionJobId);
 
     // Assert
-    String deleteModelResponse = bout.toString();
-    assertThat(deleteModelResponse).contains("Deleted Model.");
-    TimeUnit.MINUTES.sleep(1);
+    String cancelResponse = bout.toString();
+    assertThat(cancelResponse).contains("Cancelled the Batch Prediction Job");
+    TimeUnit.MINUTES.sleep(2);
+
+    // Delete the Batch Prediction Job
+    DeleteBatchPredictionJobSample.deleteBatchPredictionJobSample(PROJECT, batchPredictionJobId);
+
+    // Assert
+    String deleteResponse = bout.toString();
+    assertThat(deleteResponse).contains("Deleted Batch");
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
-  public void uploadModelSampleTest()
-      throws InterruptedException, ExecutionException, TimeoutException, IOException {
+  public void testCreateBatchPredictionJobBigquerySample() throws IOException {
     // Act
-    String modelDisplayName =
+    String batchPredictionDisplayName =
         String.format(
-            "temp_upload_model_test_%s",
+            "batch_prediction_bigquery_display_name_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
-    UploadModelSample.uploadModel(
-        PROJECT, modelDisplayName, METADATASCHEMA_URI, IMAGE_URI, ARTIFACT_URI);
+
+    CreateBatchPredictionJobBigquerySample.createBatchPredictionJobBigquerySample(
+        PROJECT,
+        batchPredictionDisplayName,
+        MODEL_ID,
+        "bigquery",
+        BIGQUERY_SOURCE_URI,
+        "bigquery",
+        BIGQUERY_DESTINATION_OUTPUT_URI_PREFIX);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Upload Model Response");
-    uploadedModelId = got.split("Model:")[1].split("models/")[1].split("\n")[0];
+    assertThat(got).contains(batchPredictionDisplayName);
+    assertThat(got).contains("response:");
+    batchPredictionJobId = got.split("Name: ")[1].split("batchPredictionJobs/")[1].split("\n")[0];
   }
 }

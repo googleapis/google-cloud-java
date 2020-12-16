@@ -72,7 +72,7 @@ public class CreateDataLabelingJobImageSample {
               .setInstructionUri(instructionUri)
               .setInputsSchemaUri(
                   "gs://google-cloud-aiplatform/schema/datalabelingjob/inputs/"
-                          + "image_classification.yaml")
+                      + "image_classification.yaml")
               .addDatasets(datasetName.toString())
               .setInputs(annotationSpecValue)
               .putAnnotationLabels(

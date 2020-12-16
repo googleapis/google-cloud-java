@@ -28,11 +28,9 @@ import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.PredefinedSplit;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.protobuf.Any;
 import com.google.protobuf.Value;
 import com.google.rpc.Status;
 import java.io.IOException;
-import java.util.List;
 
 public class CreateTrainingPipelineVideoClassificationSample {
 
@@ -67,7 +65,7 @@ public class CreateTrainingPipelineVideoClassificationSample {
       LocationName locationName = LocationName.of(project, location);
       String trainingTaskDefinition =
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
-                  + "automl_video_classification_1.0.0.yaml";
+              + "automl_video_classification_1.0.0.yaml";
 
       InputDataConfig inputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();

@@ -72,7 +72,7 @@ public class CreateDataLabelingJobVideoSample {
               .setInstructionUri(instructionUri)
               .setInputsSchemaUri(
                   "gs://google-cloud-aiplatform/schema/datalabelingjob/inputs/"
-                          + "video_classification.yaml")
+                      + "video_classification.yaml")
               .addDatasets(datasetName.toString())
               .setInputs(annotationSpecValue)
               .putAnnotationLabels(

@@ -38,12 +38,10 @@ import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
 import com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.protobuf.Any;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
 import java.io.IOException;
-import java.util.List;
 
 public class CreateTrainingPipelineImageClassificationSample {
 
@@ -73,7 +71,7 @@ public class CreateTrainingPipelineImageClassificationSample {
       String location = "us-central1";
       String trainingTaskDefinition =
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
-                  + "automl_image_classification_1.0.0.yaml";
+              + "automl_image_classification_1.0.0.yaml";
       LocationName locationName = LocationName.of(project, location);
 
       String jsonString =

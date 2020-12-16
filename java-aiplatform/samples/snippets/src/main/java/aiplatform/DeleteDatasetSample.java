@@ -59,7 +59,7 @@ public class DeleteDatasetSample {
       System.out.format("Operation name: %s\n", operationFuture.getInitialFuture().get().getName());
       System.out.println("Waiting for operation to finish...");
       operationFuture.get(300, TimeUnit.SECONDS);
-      
+
       System.out.format("Deleted Dataset.");
     }
   }

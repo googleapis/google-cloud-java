@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,6 +19,8 @@ package aiplatform;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
+import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -31,19 +33,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class UploadModelSampleTest {
-
+public class CreateHyperparameterTuningJobSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String METADATASCHEMA_URI = "";
-  private static final String IMAGE_URI =
-      "gcr.io/cloud-ml-service-public/"
-          + "cloud-ml-online-prediction-model-server-cpu:"
-          + "v1_15py3cmle_op_images_20200229_0210_RC00";
-  private static final String ARTIFACT_URI = "gs://ucaip-samples-us-central1/model/explain/";
+  private static final String CONTAINER_IMAGE_URI = "gcr.io/ucaip-test/ucaip-training-test:latest";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String uploadedModelId;
+  private String hyperparameterJobId;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -67,32 +63,43 @@ public class UploadModelSampleTest {
 
   @After
   public void tearDown()
-      throws InterruptedException, ExecutionException, TimeoutException, IOException {
-    // Cancel the Training Pipeline
-    DeleteModelSample.deleteModel(PROJECT, uploadedModelId);
+      throws InterruptedException, ExecutionException, IOException, TimeoutException {
+    JobServiceSettings settings =
+        JobServiceSettings.newBuilder()
+            .setEndpoint("us-central1-aiplatform.googleapis.com:443")
+            .build();
 
-    // Assert
-    String deleteModelResponse = bout.toString();
-    assertThat(deleteModelResponse).contains("Deleted Model.");
-    TimeUnit.MINUTES.sleep(1);
-    System.out.flush();
-    System.setOut(originalPrintStream);
+    try (JobServiceClient client = JobServiceClient.create(settings)) {
+      // Cancel hyper parameter job
+      String hyperparameterJobName =
+          String.format(
+              "projects/%s/locations/us-central1/hyperparameterTuningJobs/%s",
+              PROJECT, hyperparameterJobId);
+      client.cancelHyperparameterTuningJob(hyperparameterJobName);
+
+      TimeUnit.MINUTES.sleep(1);
+
+      // Delete the created job
+      client.deleteHyperparameterTuningJobAsync(hyperparameterJobName);
+      System.out.flush();
+      System.setOut(originalPrintStream);
+    }
   }
 
   @Test
-  public void uploadModelSampleTest()
-      throws InterruptedException, ExecutionException, TimeoutException, IOException {
-    // Act
-    String modelDisplayName =
+  public void testCreateHyperparameterTuningJobSample() throws IOException {
+    String hyperparameterTuningJobDisplayName =
         String.format(
-            "temp_upload_model_test_%s",
+            "temp_hyperparameter_tuning_job_display_name_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
-    UploadModelSample.uploadModel(
-        PROJECT, modelDisplayName, METADATASCHEMA_URI, IMAGE_URI, ARTIFACT_URI);
 
-    // Assert
+    CreateHyperparameterTuningJobSample.createHyperparameterTuningJobSample(
+        PROJECT, hyperparameterTuningJobDisplayName, CONTAINER_IMAGE_URI);
+
     String got = bout.toString();
-    assertThat(got).contains("Upload Model Response");
-    uploadedModelId = got.split("Model:")[1].split("models/")[1].split("\n")[0];
+    assertThat(got).contains(hyperparameterTuningJobDisplayName);
+    assertThat(got).contains("response:");
+    hyperparameterJobId =
+        got.split("Name: ")[1].split("hyperparameterTuningJobs/")[1].split("\n")[0];
   }
 }
