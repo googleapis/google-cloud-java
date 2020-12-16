@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-billingbudgets.git",
-        "sha": "01c704d4ada2fbc7c7e25367dfbf2024ea3fc93e"
+        "sha": "c35935ffb3e66b9c14540bcdb568256cee515861"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5d11bd2888c38ce1fb6fa6bf25494a4219a73928"
+        "sha": "3f67ceece7e797a5736a25488aae35405649b90b"
       }
     }
   ],
