@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-transcoder</artifactId>
-  <version>0.1.7</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
+  <version>0.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
   <packaging>jar</packaging>
   <name>Google Video Transcoder</name>
   <url>https://github.com/googleapis/java-video-transcoder</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-video-transcoder-parent</artifactId>
-    <version>0.1.7</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
+    <version>0.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-video-transcoder</site.installationModule>
