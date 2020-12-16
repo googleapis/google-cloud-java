@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-recommender/compare/v1.2.9...v1.3.0) (2020-12-16)
+
+
+### Features
+
+* Add support for "billingAccounts" as another parent resource name for recommendations and insights APIs. ([#376](https://www.github.com/googleapis/java-recommender/issues/376)) ([7cc9e56](https://www.github.com/googleapis/java-recommender/commit/7cc9e56c2cae655e81dae678017554697720724b))
+
 ### [1.2.9](https://www.github.com/googleapis/java-recommender/compare/v1.2.8...v1.2.9) (2020-12-15)
 
 
