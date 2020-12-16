@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>clouderrorreporting-install-without-bom</artifactId>
   <packaging>jar</packaging>
-  <name>Google Stackdriver Error Reporting Install Without Bom</name>
+  <name>Google Cloud Error Reporting Install Without Bom</name>
   <url>https://github.com/googleapis/java-errorreporting</url>
 
   <!--

@@ -28,13 +28,13 @@ import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
 import com.google.devtools.clouderrorreporting.v1beta1.SourceLocation;
 
 /**
- * Snippet demonstrates using the Stackdriver Error Reporting API to report a custom error event.
+ * Snippet demonstrates using the Cloud Error Reporting API to report a custom error event.
  * <p>
  * This library is not required on App Engine, errors written to stderr are automatically written
- * to Stackdriver Error Reporting.
- * It is also not required if you are writing logs to Stackdriver Logging.
- * Errors written to Stackdriver Logging that contain an exception or stack trace
- * are automatically written out to Stackdriver Error Reporting.
+ * to Cloud Error Reporting.
+ * It is also not required if you are writing logs to Cloud Logging.
+ * Errors written to Cloud Logging that contain an exception or stack trace
+ * are automatically written out to Cloud Error Reporting.
  */
 public class QuickStart {
   public static void main(String[] args) throws Exception {

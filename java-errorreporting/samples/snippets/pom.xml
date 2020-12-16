@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>clouderrorreporting-snippets</artifactId>
   <packaging>jar</packaging>
-  <name>Google Stackdriver Error Reporting Snippets</name>
+  <name>Google Cloud Error Reporting Snippets</name>
   <url>https://github.com/googleapis/java-errorreporting</url>
 
   <!--

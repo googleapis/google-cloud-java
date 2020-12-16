@@ -5,7 +5,7 @@
   <artifactId>google-cloud-clouderrorreporting-samples</artifactId>
   <version>0.0.1-SNAPSHOT</version><!-- This artifact should not be released -->
   <packaging>pom</packaging>
-  <name>Google Stackdriver Error Reporting Samples Parent</name>
+  <name>Google Cloud Error Reporting Samples Parent</name>
   <url>https://github.com/googleapis/java-errorreporting</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
