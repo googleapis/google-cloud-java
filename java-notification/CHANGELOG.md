@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.121.5](https://www.github.com/googleapis/java-notification/compare/v0.121.4...v0.121.5) (2020-12-16)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#213](https://www.github.com/googleapis/java-notification/issues/213)) ([8a78fa9](https://www.github.com/googleapis/java-notification/commit/8a78fa9b45a8ceb9a6075ec8858b6e50381429a5))
+
 ### [0.121.4](https://www.github.com/googleapis/java-notification/compare/v0.121.3...v0.121.4) (2020-12-14)
 
 
