@@ -153,6 +153,8 @@ public class RecommenderClient implements BackgroundResource {
    *     formats:
    *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
+   *     INSIGHT_TYPE_ID refers to supported insight types:
+   *     https://cloud.google.com/recommender/docs/insights/insight-types.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInsightsPagedResponse listInsights(InsightTypeName parent) {
@@ -172,6 +174,8 @@ public class RecommenderClient implements BackgroundResource {
    *     formats:
    *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
+   *     INSIGHT_TYPE_ID refers to supported insight types:
+   *     https://cloud.google.com/recommender/docs/insights/insight-types.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInsightsPagedResponse listInsights(String parent) {
@@ -356,6 +360,8 @@ public class RecommenderClient implements BackgroundResource {
    *     formats:
    *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
+   *     RECOMMENDER_ID refers to supported recommenders:
+   *     https://cloud.google.com/recommender/docs/recommenders.
    * @param filter Filter expression to restrict the recommendations returned. Supported filter
    *     fields: state_info.state Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -379,6 +385,8 @@ public class RecommenderClient implements BackgroundResource {
    *     formats:
    *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
+   *     RECOMMENDER_ID refers to supported recommenders:
+   *     https://cloud.google.com/recommender/docs/recommenders.
    * @param filter Filter expression to restrict the recommendations returned. Supported filter
    *     fields: state_info.state Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
