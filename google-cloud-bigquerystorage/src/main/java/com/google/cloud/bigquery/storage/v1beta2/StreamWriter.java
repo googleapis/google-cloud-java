@@ -82,7 +82,7 @@ public class StreamWriter implements AutoCloseable {
   private static final Logger LOG = Logger.getLogger(StreamWriter.class.getName());
 
   private static String streamPatternString =
-      "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/streams/[^/]+";
+      "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/(streams/[^/]+|_default)";
 
   private static Pattern streamPattern = Pattern.compile(streamPatternString);
 
