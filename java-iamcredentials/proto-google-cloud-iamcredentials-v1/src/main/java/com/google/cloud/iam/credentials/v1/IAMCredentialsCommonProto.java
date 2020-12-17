@@ -93,13 +93,13 @@ public final class IAMCredentialsCommonProto {
           + "/ServiceAccount\022\021\n\tdelegates\030\002 \003(\t\022\025\n\010au"
           + "dience\030\003 \001(\tB\003\340A\002\022\025\n\rinclude_email\030\004 \001(\010"
           + "\"(\n\027GenerateIdTokenResponse\022\r\n\005token\030\001 \001"
-          + "(\tB\347\001\n#com.google.cloud.iam.credentials."
+          + "(\tB\211\002\n#com.google.cloud.iam.credentials."
           + "v1B\031IAMCredentialsCommonProtoP\001ZDgoogle."
           + "golang.org/genproto/googleapis/iam/crede"
-          + "ntials/v1;credentials\370\001\001\352AY\n!iam.googlea"
-          + "pis.com/ServiceAccount\0224projects/{projec"
-          + "t}/serviceAccounts/{service_account}b\006pr"
-          + "oto3"
+          + "ntials/v1;credentials\370\001\001\252\002\037Google.Cloud."
+          + "Iam.Credentials.V1\352AY\n!iam.googleapis.co"
+          + "m/ServiceAccount\0224projects/{project}/ser"
+          + "viceAccounts/{service_account}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

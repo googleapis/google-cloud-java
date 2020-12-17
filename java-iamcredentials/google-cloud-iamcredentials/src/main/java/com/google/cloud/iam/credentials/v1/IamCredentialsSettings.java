@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.iam.credentials.v1;
 
 import com.google.api.core.ApiFunction;
@@ -30,7 +31,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link IamCredentialsClient}.
  *
@@ -48,23 +49,24 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of generateAccessToken to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * IamCredentialsSettings.Builder iamCredentialsSettingsBuilder =
  *     IamCredentialsSettings.newBuilder();
  * iamCredentialsSettingsBuilder
  *     .generateAccessTokenSettings()
  *     .setRetrySettings(
- *         iamCredentialsSettingsBuilder.generateAccessTokenSettings().getRetrySettings().toBuilder()
+ *         iamCredentialsSettingsBuilder
+ *             .generateAccessTokenSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IamCredentialsSettings iamCredentialsSettings = iamCredentialsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class IamCredentialsSettings extends ClientSettings<IamCredentialsSettings> {
+
   /** Returns the object with the settings used for calls to generateAccessToken. */
   public UnaryCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenSettings() {
@@ -147,16 +149,13 @@ public class IamCredentialsSettings extends ClientSettings<IamCredentialsSetting
 
   /** Builder for IamCredentialsSettings. */
   public static class Builder extends ClientSettings.Builder<IamCredentialsSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(IamCredentialsStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(IamCredentialsStubSettings.newBuilder());
     }
 
     protected Builder(IamCredentialsSettings settings) {
@@ -167,11 +166,15 @@ public class IamCredentialsSettings extends ClientSettings<IamCredentialsSetting
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(IamCredentialsStubSettings.newBuilder());
+    }
+
     public IamCredentialsStubSettings.Builder getStubSettingsBuilder() {
       return ((IamCredentialsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

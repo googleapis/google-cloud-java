@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.iam.credentials.v1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -32,6 +32,7 @@ import com.google.cloud.iam.credentials.v1.SignBlobResponse;
 import com.google.cloud.iam.credentials.v1.SignJwtRequest;
 import com.google.cloud.iam.credentials.v1.SignJwtResponse;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -39,16 +40,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for IAM Service Account Credentials API.
+ * gRPC stub implementation for the IAMCredentials service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcIamCredentialsStub extends IamCredentialsStub {
-
   private static final MethodDescriptor<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenMethodDescriptor =
           MethodDescriptor.<GenerateAccessTokenRequest, GenerateAccessTokenResponse>newBuilder()
@@ -59,6 +58,7 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAccessTokenResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GenerateIdTokenRequest, GenerateIdTokenResponse>
       generateIdTokenMethodDescriptor =
           MethodDescriptor.<GenerateIdTokenRequest, GenerateIdTokenResponse>newBuilder()
@@ -69,6 +69,7 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateIdTokenResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SignBlobRequest, SignBlobResponse>
       signBlobMethodDescriptor =
           MethodDescriptor.<SignBlobRequest, SignBlobResponse>newBuilder()
@@ -77,6 +78,7 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SignBlobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SignBlobResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SignJwtRequest, SignJwtResponse> signJwtMethodDescriptor =
       MethodDescriptor.<SignJwtRequest, SignJwtResponse>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -85,8 +87,6 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
           .setResponseMarshaller(ProtoUtils.marshaller(SignJwtResponse.getDefaultInstance()))
           .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable;
   private final UnaryCallable<GenerateIdTokenRequest, GenerateIdTokenResponse>
@@ -94,6 +94,8 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
   private final UnaryCallable<SignBlobRequest, SignBlobResponse> signBlobCallable;
   private final UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcIamCredentialsStub create(IamCredentialsStubSettings settings)
@@ -134,6 +136,7 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenTransportSettings =
@@ -205,7 +208,12 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
         callableFactory.createUnaryCallable(
             signJwtTransportSettings, settings.signJwtSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
