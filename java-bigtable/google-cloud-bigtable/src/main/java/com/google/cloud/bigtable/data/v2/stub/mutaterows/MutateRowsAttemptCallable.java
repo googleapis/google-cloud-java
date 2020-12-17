@@ -160,8 +160,16 @@ class MutateRowsAttemptCallable implements Callable<Void> {
   @Override
   public Void call() {
     try {
+      // externalFuture is set from MutateRowsRetryingCallable before invoking this method. It
+      // shouldn't be null unless the code changed
       Preconditions.checkNotNull(
           externalFuture, "External future must be set before starting an attempt");
+
+      // attemptStared should be called at the very start of the operation. This will initialize
+      // variables in ApiTracer and avoid exceptions when the tracer marks the attempt as finished
+      callContext
+          .getTracer()
+          .attemptStarted(externalFuture.getAttemptSettings().getOverallAttemptCount());
 
       Preconditions.checkState(
           currentRequest.getEntriesCount() > 0, "Request doesn't have any mutations to send");
@@ -178,10 +186,6 @@ class MutateRowsAttemptCallable implements Callable<Void> {
       if (externalFuture.isDone()) {
         return null;
       }
-
-      callContext
-          .getTracer()
-          .attemptStarted(externalFuture.getAttemptSettings().getOverallAttemptCount());
 
       // Make the actual call
       ApiFuture<List<MutateRowsResponse>> innerFuture =

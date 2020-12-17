@@ -26,6 +26,7 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
@@ -46,6 +47,7 @@ import io.opencensus.tags.Tags;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -325,6 +327,24 @@ public class MetricsTracerTest {
     // Average attempt latency will be just a single wait (as opposed to op latency which will be 2x
     // sleeptime)
     assertThat(attemptLatency).isIn(Range.closed(sleepTime, elapsed - sleepTime));
+  }
+
+  @Test
+  public void testInvalidRequest() throws InterruptedException {
+    try {
+      stub.bulkMutateRowsCallable().call(BulkMutation.create(TABLE_ID));
+      Assert.fail("Invalid request should throw exception");
+    } catch (IllegalStateException e) {
+      Thread.sleep(100);
+      // Verify that the latency is recorded with an error code (in this case UNKNOWN)
+      long attemptLatency =
+          getAggregationValueAsLong(
+              RpcViewConstants.BIGTABLE_ATTEMPT_LATENCY_VIEW,
+              ImmutableMap.of(
+                  RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.MutateRows"),
+                  RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("UNKNOWN")));
+      assertThat(attemptLatency).isAtLeast(0);
+    }
   }
 
   @SuppressWarnings("unchecked")
