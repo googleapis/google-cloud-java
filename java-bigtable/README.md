@@ -303,15 +303,13 @@ metrics will be tagged with:
   Under normal circumstances, this will be 1.
 
 ### GFE metric views:
-
 * `cloud.google.com/java/bigtable/gfe_latency`: A distribution of the latency
-  between Google's network receives an RPC and reads back the first byte of
-  the response.
+between Google's network receives an RPC and reads back the first byte of
+the response.
 
 * `cloud.google.com/java/bigtable/gfe_header_missing_count`: A counter of the
-  number of RPC responses received without the server-timing header, which
-  indicates that the request probably never reached Google's network.
-
+number of RPC responses received without the server-timing header, which
+indicates that the request probably never reached Google's network.
 
 By default, the functionality is disabled. For example to enable metrics using
 [Google Stackdriver](https://cloud.google.com/monitoring/docs/):
