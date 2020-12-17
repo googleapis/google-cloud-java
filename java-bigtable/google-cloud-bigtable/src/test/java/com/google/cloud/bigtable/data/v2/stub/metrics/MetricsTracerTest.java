@@ -39,24 +39,10 @@ import com.google.protobuf.StringValue;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
-import io.opencensus.common.Function;
 import io.opencensus.impl.stats.StatsComponentImpl;
-import io.opencensus.stats.AggregationData;
-import io.opencensus.stats.AggregationData.CountData;
-import io.opencensus.stats.AggregationData.DistributionData;
-import io.opencensus.stats.AggregationData.LastValueDataDouble;
-import io.opencensus.stats.AggregationData.LastValueDataLong;
-import io.opencensus.stats.AggregationData.SumDataDouble;
-import io.opencensus.stats.AggregationData.SumDataLong;
-import io.opencensus.stats.View;
-import io.opencensus.stats.ViewData;
 import io.opencensus.tags.TagKey;
 import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tags;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
@@ -117,7 +103,6 @@ public class MetricsTracerTest {
     EnhancedBigtableStubSettings stubSettings =
         EnhancedBigtableStub.finalizeSettings(
             settings.getStubSettings(), Tags.getTagger(), localStats.getStatsRecorder());
-
     stub = new EnhancedBigtableStub(stubSettings, ClientContext.create(stubSettings));
   }
 
@@ -155,11 +140,15 @@ public class MetricsTracerTest {
     Thread.sleep(100);
 
     long opLatency =
-        getAggregationValueAsLong(
+        StatsTestUtils.getAggregationValueAsLong(
+            localStats,
             RpcViewConstants.BIGTABLE_OP_LATENCY_VIEW,
             ImmutableMap.of(
                 RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows"),
-                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")));
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
+            PROJECT_ID,
+            INSTANCE_ID,
+            APP_PROFILE_ID);
     assertThat(opLatency).isIn(Range.closed(sleepTime, elapsed));
   }
 
@@ -187,11 +176,15 @@ public class MetricsTracerTest {
     Thread.sleep(100);
 
     long opLatency =
-        getAggregationValueAsLong(
+        StatsTestUtils.getAggregationValueAsLong(
+            localStats,
             RpcViewConstants.BIGTABLE_COMPLETED_OP_VIEW,
             ImmutableMap.of(
                 RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows"),
-                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")));
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
+            PROJECT_ID,
+            INSTANCE_ID,
+            APP_PROFILE_ID);
     assertThat(opLatency).isEqualTo(2);
   }
 
@@ -225,9 +218,13 @@ public class MetricsTracerTest {
     Thread.sleep(100);
 
     long firstRowLatency =
-        getAggregationValueAsLong(
+        StatsTestUtils.getAggregationValueAsLong(
+            localStats,
             RpcViewConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY_VIEW,
-            ImmutableMap.<TagKey, TagValue>of());
+            ImmutableMap.<TagKey, TagValue>of(),
+            PROJECT_ID,
+            INSTANCE_ID,
+            APP_PROFILE_ID);
 
     // adding buffer time to the upper range to allow for a race between the emulator and the client
     // recording the duration
@@ -267,11 +264,15 @@ public class MetricsTracerTest {
     Thread.sleep(100);
 
     long opLatency =
-        getAggregationValueAsLong(
+        StatsTestUtils.getAggregationValueAsLong(
+            localStats,
             RpcViewConstants.BIGTABLE_ATTEMPTS_PER_OP_VIEW,
             ImmutableMap.of(
                 RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows"),
-                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")));
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
+            PROJECT_ID,
+            INSTANCE_ID,
+            APP_PROFILE_ID);
     assertThat(opLatency).isEqualTo(2);
   }
 
@@ -312,11 +313,15 @@ public class MetricsTracerTest {
     Thread.sleep(100);
 
     long attemptLatency =
-        getAggregationValueAsLong(
+        StatsTestUtils.getAggregationValueAsLong(
+            localStats,
             RpcViewConstants.BIGTABLE_ATTEMPT_LATENCY_VIEW,
             ImmutableMap.of(
                 RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.ReadRows"),
-                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")));
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("OK")),
+            PROJECT_ID,
+            INSTANCE_ID,
+            APP_PROFILE_ID);
     // Average attempt latency will be just a single wait (as opposed to op latency which will be 2x
     // sleeptime)
     assertThat(attemptLatency).isIn(Range.closed(sleepTime, elapsed - sleepTime));
@@ -325,71 +330,5 @@ public class MetricsTracerTest {
   @SuppressWarnings("unchecked")
   private static <T> StreamObserver<T> anyObserver(Class<T> returnType) {
     return (StreamObserver<T>) any(returnType);
-  }
-
-  private long getAggregationValueAsLong(View view, ImmutableMap<TagKey, TagValue> tags) {
-    ViewData viewData = localStats.getViewManager().getView(view.getName());
-    Map<List<TagValue>, AggregationData> aggregationMap =
-        Objects.requireNonNull(viewData).getAggregationMap();
-
-    List<TagValue> tagValues = new ArrayList<>();
-
-    for (TagKey column : view.getColumns()) {
-      if (RpcMeasureConstants.BIGTABLE_PROJECT_ID == column) {
-        tagValues.add(TagValue.create(PROJECT_ID));
-      } else if (RpcMeasureConstants.BIGTABLE_INSTANCE_ID == column) {
-        tagValues.add(TagValue.create(INSTANCE_ID));
-      } else if (RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID == column) {
-        tagValues.add(TagValue.create(APP_PROFILE_ID));
-      } else {
-        tagValues.add(tags.get(column));
-      }
-    }
-
-    AggregationData aggregationData = aggregationMap.get(tagValues);
-
-    return aggregationData.match(
-        new Function<SumDataDouble, Long>() {
-          @Override
-          public Long apply(SumDataDouble arg) {
-            return (long) arg.getSum();
-          }
-        },
-        new Function<SumDataLong, Long>() {
-          @Override
-          public Long apply(SumDataLong arg) {
-            return arg.getSum();
-          }
-        },
-        new Function<CountData, Long>() {
-          @Override
-          public Long apply(CountData arg) {
-            return arg.getCount();
-          }
-        },
-        new Function<DistributionData, Long>() {
-          @Override
-          public Long apply(DistributionData arg) {
-            return (long) arg.getMean();
-          }
-        },
-        new Function<LastValueDataDouble, Long>() {
-          @Override
-          public Long apply(LastValueDataDouble arg) {
-            return (long) arg.getLastValue();
-          }
-        },
-        new Function<LastValueDataLong, Long>() {
-          @Override
-          public Long apply(LastValueDataLong arg) {
-            return arg.getLastValue();
-          }
-        },
-        new Function<AggregationData, Long>() {
-          @Override
-          public Long apply(AggregationData arg) {
-            throw new UnsupportedOperationException();
-          }
-        });
   }
 }

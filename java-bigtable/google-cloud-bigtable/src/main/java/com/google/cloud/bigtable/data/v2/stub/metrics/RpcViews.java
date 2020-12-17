@@ -33,9 +33,26 @@ public class RpcViews {
           RpcViewConstants.BIGTABLE_ATTEMPT_LATENCY_VIEW,
           RpcViewConstants.BIGTABLE_ATTEMPTS_PER_OP_VIEW);
 
+  private static final ImmutableSet<View> GFE_VIEW_SET =
+      ImmutableSet.of(
+          RpcViewConstants.BIGTABLE_GFE_LATENCY_VIEW,
+          RpcViewConstants.BIGTABLE_GFE_HEADER_MISSING_COUNT_VIEW);
+
+  private static boolean gfeMetricsRegistered = false;
+
   /** Registers all Bigtable specific views. */
   public static void registerBigtableClientViews() {
     registerBigtableClientViews(Stats.getViewManager());
+  }
+
+  /**
+   * Register views for GFE metrics, including gfe_latency and gfe_header_missing_count. gfe_latency
+   * measures the latency between Google's network receives an RPC and reads back the first byte of
+   * the response. gfe_header_missing_count is a counter of the number of RPC responses without a
+   * server-timing header.
+   */
+  public static void registerBigtableClientGfeViews() {
+    registerBigtableClientGfeViews(Stats.getViewManager());
   }
 
   @VisibleForTesting
@@ -43,5 +60,22 @@ public class RpcViews {
     for (View view : BIGTABLE_CLIENT_VIEWS_SET) {
       viewManager.registerView(view);
     }
+  }
+
+  @VisibleForTesting
+  static void registerBigtableClientGfeViews(ViewManager viewManager) {
+    for (View view : GFE_VIEW_SET) {
+      viewManager.registerView(view);
+    }
+    gfeMetricsRegistered = true;
+  }
+
+  static boolean isGfeMetricsRegistered() {
+    return gfeMetricsRegistered;
+  }
+
+  @VisibleForTesting
+  static void setGfeMetricsRegistered(boolean gfeMetricsRegistered) {
+    RpcViews.gfeMetricsRegistered = gfeMetricsRegistered;
   }
 }

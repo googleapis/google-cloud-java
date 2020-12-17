@@ -296,11 +296,21 @@ metrics will be tagged with:
   each client RPC, tagged by operation name and the attempt status. Under normal
   circumstances, this will be identical to op_latency. However, when the client
   receives transient errors, op_latency will be the sum of all attempt_latencies
-  and the exponential delays
+  and the exponential delays.
 
 * `cloud.google.com/java/bigtable/attempts_per_op`: A distribution of attempts that
   each operation required, tagged by operation name and final operation status.
   Under normal circumstances, this will be 1.
+
+### GFE metric views:
+
+* `cloud.google.com/java/bigtable/gfe_latency`: A distribution of the latency
+  between Google's network receives an RPC and reads back the first byte of
+  the response.
+
+* `cloud.google.com/java/bigtable/gfe_header_missing_count`: A counter of the
+  number of RPC responses received without the server-timing header, which
+  indicates that the request probably never reached Google's network.
 
 
 By default, the functionality is disabled. For example to enable metrics using
@@ -357,6 +367,8 @@ StackdriverStatsExporter.createAndRegister(
 );
 
 BigtableDataSettings.enableOpenCensusStats();
+// Enable GFE metric views
+BigtableDataSettings.enableGfeOpenCensusStats();
 ```
 
 ## Version Conflicts

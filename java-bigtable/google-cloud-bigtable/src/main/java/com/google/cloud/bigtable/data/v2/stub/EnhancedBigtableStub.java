@@ -66,6 +66,8 @@ import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CompositeTracerFactory;
+import com.google.cloud.bigtable.data.v2.stub.metrics.HeaderTracerStreamingCallable;
+import com.google.cloud.bigtable.data.v2.stub.metrics.HeaderTracerUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsTracerFactory;
 import com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacingCallable;
@@ -162,6 +164,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
               .build());
     }
 
+    ImmutableMap<TagKey, TagValue> attributes =
+        ImmutableMap.<TagKey, TagValue>builder()
+            .put(RpcMeasureConstants.BIGTABLE_PROJECT_ID, TagValue.create(settings.getProjectId()))
+            .put(
+                RpcMeasureConstants.BIGTABLE_INSTANCE_ID, TagValue.create(settings.getInstanceId()))
+            .put(
+                RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID,
+                TagValue.create(settings.getAppProfileId()))
+            .build();
     // Inject Opencensus instrumentation
     builder.setTracerFactory(
         new CompositeTracerFactory(
@@ -187,23 +198,17 @@ public class EnhancedBigtableStub implements AutoCloseable {
                             GaxProperties.getLibraryVersion(EnhancedBigtableStubSettings.class))
                         .build()),
                 // Add OpenCensus Metrics
-                MetricsTracerFactory.create(
-                    tagger,
-                    stats,
-                    ImmutableMap.<TagKey, TagValue>builder()
-                        .put(
-                            RpcMeasureConstants.BIGTABLE_PROJECT_ID,
-                            TagValue.create(settings.getProjectId()))
-                        .put(
-                            RpcMeasureConstants.BIGTABLE_INSTANCE_ID,
-                            TagValue.create(settings.getInstanceId()))
-                        .put(
-                            RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID,
-                            TagValue.create(settings.getAppProfileId()))
-                        .build()),
+                MetricsTracerFactory.create(tagger, stats, attributes),
                 // Add user configured tracer
                 settings.getTracerFactory())));
-
+    builder.setHeaderTracer(
+        builder
+            .getHeaderTracer()
+            .toBuilder()
+            .setStats(stats)
+            .setTagger(tagger)
+            .setStatsAttributes(attributes)
+            .build());
     return builder.build();
   }
 
@@ -268,11 +273,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<Query, RowT> readRowsUserCallable =
         new ReadRowsUserCallable<>(readRowsCallable, requestContext);
 
+    SpanName span = getSpanName("ReadRows");
     ServerStreamingCallable<Query, RowT> traced =
         new TracedServerStreamingCallable<>(
-            readRowsUserCallable,
-            clientContext.getTracerFactory(),
-            SpanName.of(CLIENT_NAME, "ReadRows"));
+            readRowsUserCallable, clientContext.getTracerFactory(), span);
 
     return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
@@ -315,6 +319,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Upon receiving the response stream, it will merge the {@link
    *       com.google.bigtable.v2.ReadRowsResponse.CellChunk}s in logical rows. The actual row
    *       implementation can be configured by the {@code rowAdapter} parameter.
+   *   <li>Add header tracer for tracking GFE metrics.
    *   <li>Retry/resume on failure.
    *   <li>Filter out marker rows.
    * </ul>
@@ -356,10 +361,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<ReadRowsRequest, RowT> watched =
         Callables.watched(merging, innerSettings, clientContext);
 
+    ServerStreamingCallable<ReadRowsRequest, RowT> withHeaderTracer =
+        new HeaderTracerStreamingCallable<>(
+            watched, settings.getHeaderTracer(), getSpanName("ReadRows").toString());
+
     // Retry logic is split into 2 parts to workaround a rare edge case described in
     // ReadRowsRetryCompletedCallable
     ServerStreamingCallable<ReadRowsRequest, RowT> retrying1 =
-        new ReadRowsRetryCompletedCallable<>(watched);
+        new ReadRowsRetryCompletedCallable<>(withHeaderTracer);
 
     ServerStreamingCallable<ReadRowsRequest, RowT> retrying2 =
         Callables.retrying(retrying1, innerSettings, clientContext);
@@ -380,6 +389,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<String, List<KeyOffset>> createSampleRowKeysCallable() {
+    String methodName = "SampleRowKeys";
+
     ServerStreamingCallable<SampleRowKeysRequest, SampleRowKeysResponse> base =
         GrpcRawCallableFactory.createServerStreamingCallable(
             GrpcCallSettings.<SampleRowKeysRequest, SampleRowKeysResponse>newBuilder()
@@ -399,11 +410,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> spoolable = base.all();
 
+    UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> withHeaderTracer =
+        new HeaderTracerUnaryCallable<>(
+            spoolable, settings.getHeaderTracer(), getSpanName(methodName).toString());
+
     UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retryable =
-        Callables.retrying(spoolable, settings.sampleRowKeysSettings(), clientContext);
+        Callables.retrying(withHeaderTracer, settings.sampleRowKeysSettings(), clientContext);
 
     return createUserFacingUnaryCallable(
-        "SampleRowKeys", new SampleRowKeysCallable(retryable, requestContext));
+        methodName, new SampleRowKeysCallable(retryable, requestContext));
   }
 
   /**
@@ -415,6 +430,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
+    String methodName = "MutateRow";
     UnaryCallable<MutateRowRequest, MutateRowResponse> base =
         GrpcRawCallableFactory.createUnaryCallable(
             GrpcCallSettings.<MutateRowRequest, MutateRowResponse>newBuilder()
@@ -431,11 +447,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .build(),
             settings.mutateRowSettings().getRetryableCodes());
 
+    UnaryCallable<MutateRowRequest, MutateRowResponse> withHeaderTracer =
+        new HeaderTracerUnaryCallable<>(
+            base, settings.getHeaderTracer(), getSpanName(methodName).toString());
+
     UnaryCallable<MutateRowRequest, MutateRowResponse> retrying =
-        Callables.retrying(base, settings.mutateRowSettings(), clientContext);
+        Callables.retrying(withHeaderTracer, settings.mutateRowSettings(), clientContext);
 
     return createUserFacingUnaryCallable(
-        "MutateRow", new MutateRowCallable(retrying, requestContext));
+        methodName, new MutateRowCallable(retrying, requestContext));
   }
 
   /**
@@ -459,11 +479,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<BulkMutation, Void> userFacing =
         new BulkMutateRowsUserFacingCallable(baseCallable, requestContext);
 
+    SpanName spanName = getSpanName("MutateRows");
     UnaryCallable<BulkMutation, Void> traced =
-        new TracedUnaryCallable<>(
-            userFacing, clientContext.getTracerFactory(), SpanName.of(CLIENT_NAME, "MutateRows"));
+        new TracedUnaryCallable<>(userFacing, clientContext.getTracerFactory(), spanName);
+    UnaryCallable<BulkMutation, Void> withHeaderTracer =
+        new HeaderTracerUnaryCallable<>(traced, settings.getHeaderTracer(), spanName.toString());
 
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return withHeaderTracer.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -569,6 +591,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<ConditionalRowMutation, Boolean> createCheckAndMutateRowCallable() {
+    String methodName = "CheckAndMutateRow";
     UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> base =
         GrpcRawCallableFactory.createUnaryCallable(
             GrpcCallSettings.<CheckAndMutateRowRequest, CheckAndMutateRowResponse>newBuilder()
@@ -586,11 +609,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .build(),
             settings.checkAndMutateRowSettings().getRetryableCodes());
 
+    UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> withHeaderTracer =
+        new HeaderTracerUnaryCallable<>(
+            base, settings.getHeaderTracer(), getSpanName(methodName).toString());
+
     UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse> retrying =
-        Callables.retrying(base, settings.checkAndMutateRowSettings(), clientContext);
+        Callables.retrying(withHeaderTracer, settings.checkAndMutateRowSettings(), clientContext);
 
     return createUserFacingUnaryCallable(
-        "CheckAndMutateRow", new CheckAndMutateRowCallable(retrying, requestContext));
+        methodName, new CheckAndMutateRowCallable(retrying, requestContext));
   }
 
   /**
@@ -619,12 +646,16 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     })
                 .build(),
             settings.readModifyWriteRowSettings().getRetryableCodes());
+    String methodName = "ReadModifyWriteRow";
+    UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> withHeaderTracer =
+        new HeaderTracerUnaryCallable<>(
+            base, settings.getHeaderTracer(), getSpanName(methodName).toString());
 
     UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> retrying =
-        Callables.retrying(base, settings.readModifyWriteRowSettings(), clientContext);
+        Callables.retrying(withHeaderTracer, settings.readModifyWriteRowSettings(), clientContext);
 
     return createUserFacingUnaryCallable(
-        "ReadModifyWriteRow", new ReadModifyWriteRowCallable(retrying, requestContext));
+        methodName, new ReadModifyWriteRowCallable(retrying, requestContext));
   }
 
   /**
@@ -635,8 +666,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
       String methodName, UnaryCallable<RequestT, ResponseT> inner) {
 
     UnaryCallable<RequestT, ResponseT> traced =
-        new TracedUnaryCallable<>(
-            inner, clientContext.getTracerFactory(), SpanName.of(CLIENT_NAME, methodName));
+        new TracedUnaryCallable<>(inner, clientContext.getTracerFactory(), getSpanName(methodName));
 
     return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
@@ -685,6 +715,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return readModifyWriteRowCallable;
   }
   // </editor-fold>
+
+  private SpanName getSpanName(String methodName) {
+    return SpanName.of(CLIENT_NAME, methodName);
+  }
 
   @Override
   public void close() {

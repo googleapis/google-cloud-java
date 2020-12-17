@@ -23,9 +23,13 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Maps;
 import io.grpc.Context;
 import io.opencensus.common.Scope;
+import io.opencensus.stats.AggregationData;
 import io.opencensus.stats.Measure;
 import io.opencensus.stats.MeasureMap;
+import io.opencensus.stats.StatsComponent;
 import io.opencensus.stats.StatsRecorder;
+import io.opencensus.stats.View;
+import io.opencensus.stats.ViewData;
 import io.opencensus.tags.Tag;
 import io.opencensus.tags.TagContext;
 import io.opencensus.tags.TagContextBuilder;
@@ -35,9 +39,12 @@ import io.opencensus.tags.TagMetadata.TagTtl;
 import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tagger;
 import io.opencensus.tags.unsafe.ContextUtils;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
@@ -263,5 +270,77 @@ class StatsTestUtils {
     return tags instanceof FakeTagContext
         ? ((FakeTagContext) tags).getTags()
         : ImmutableMap.<TagKey, TagValue>of();
+  }
+
+  public static long getAggregationValueAsLong(
+      StatsComponent stats,
+      View view,
+      ImmutableMap<TagKey, TagValue> tags,
+      String projectId,
+      String instanceId,
+      String appProfileId) {
+    ViewData viewData = stats.getViewManager().getView(view.getName());
+    Map<List<TagValue>, AggregationData> aggregationMap =
+        Objects.requireNonNull(viewData).getAggregationMap();
+
+    List<TagValue> tagValues = new ArrayList<>();
+
+    for (TagKey column : view.getColumns()) {
+      if (RpcMeasureConstants.BIGTABLE_PROJECT_ID == column) {
+        tagValues.add(TagValue.create(projectId));
+      } else if (RpcMeasureConstants.BIGTABLE_INSTANCE_ID == column) {
+        tagValues.add(TagValue.create(instanceId));
+      } else if (RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID == column) {
+        tagValues.add(TagValue.create(appProfileId));
+      } else {
+        tagValues.add(tags.get(column));
+      }
+    }
+
+    AggregationData aggregationData = aggregationMap.get(tagValues);
+
+    return aggregationData.match(
+        new io.opencensus.common.Function<AggregationData.SumDataDouble, Long>() {
+          @Override
+          public Long apply(AggregationData.SumDataDouble arg) {
+            return (long) arg.getSum();
+          }
+        },
+        new io.opencensus.common.Function<AggregationData.SumDataLong, Long>() {
+          @Override
+          public Long apply(AggregationData.SumDataLong arg) {
+            return arg.getSum();
+          }
+        },
+        new io.opencensus.common.Function<AggregationData.CountData, Long>() {
+          @Override
+          public Long apply(AggregationData.CountData arg) {
+            return arg.getCount();
+          }
+        },
+        new io.opencensus.common.Function<AggregationData.DistributionData, Long>() {
+          @Override
+          public Long apply(AggregationData.DistributionData arg) {
+            return (long) arg.getMean();
+          }
+        },
+        new io.opencensus.common.Function<AggregationData.LastValueDataDouble, Long>() {
+          @Override
+          public Long apply(AggregationData.LastValueDataDouble arg) {
+            return (long) arg.getLastValue();
+          }
+        },
+        new io.opencensus.common.Function<AggregationData.LastValueDataLong, Long>() {
+          @Override
+          public Long apply(AggregationData.LastValueDataLong arg) {
+            return arg.getLastValue();
+          }
+        },
+        new io.opencensus.common.Function<AggregationData, Long>() {
+          @Override
+          public Long apply(AggregationData arg) {
+            throw new UnsupportedOperationException();
+          }
+        });
   }
 }
