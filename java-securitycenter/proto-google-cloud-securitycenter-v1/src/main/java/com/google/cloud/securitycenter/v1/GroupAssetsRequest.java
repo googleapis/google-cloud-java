@@ -275,7 +275,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * Use a partial match on the empty string to filter based on a property
-   * existing:`resource_properties.my_property : ""`
+   * existing: `resource_properties.my_property : ""`
    * Use a negated partial match on the empty string to filter based on a
    * property not existing: `-resource_properties.my_property : ""`
    * </pre>
@@ -344,7 +344,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
    * Use a partial match on the empty string to filter based on a property
-   * existing:`resource_properties.my_property : ""`
+   * existing: `resource_properties.my_property : ""`
    * Use a negated partial match on the empty string to filter based on a
    * property not existing: `-resource_properties.my_property : ""`
    * </pre>
@@ -372,9 +372,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Expression that defines what assets fields to use for grouping.
-   * The string value should follow SQL syntax: comma separated list of fields.
-   * For example:
+   * Required. Expression that defines what assets fields to use for grouping. The string
+   * value should follow SQL syntax: comma separated list of fields. For
+   * example:
    * "security_center_properties.resource_project,security_center_properties.project".
    * The following fields are supported when compare_duration is not set:
    * * security_center_properties.resource_project
@@ -408,9 +408,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Expression that defines what assets fields to use for grouping.
-   * The string value should follow SQL syntax: comma separated list of fields.
-   * For example:
+   * Required. Expression that defines what assets fields to use for grouping. The string
+   * value should follow SQL syntax: comma separated list of fields. For
+   * example:
    * "security_center_properties.resource_project,security_center_properties.project".
    * The following fields are supported when compare_duration is not set:
    * * security_center_properties.resource_project
@@ -1287,7 +1287,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * Use a partial match on the empty string to filter based on a property
-     * existing:`resource_properties.my_property : ""`
+     * existing: `resource_properties.my_property : ""`
      * Use a negated partial match on the empty string to filter based on a
      * property not existing: `-resource_properties.my_property : ""`
      * </pre>
@@ -1355,7 +1355,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * Use a partial match on the empty string to filter based on a property
-     * existing:`resource_properties.my_property : ""`
+     * existing: `resource_properties.my_property : ""`
      * Use a negated partial match on the empty string to filter based on a
      * property not existing: `-resource_properties.my_property : ""`
      * </pre>
@@ -1423,7 +1423,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * Use a partial match on the empty string to filter based on a property
-     * existing:`resource_properties.my_property : ""`
+     * existing: `resource_properties.my_property : ""`
      * Use a negated partial match on the empty string to filter based on a
      * property not existing: `-resource_properties.my_property : ""`
      * </pre>
@@ -1490,7 +1490,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * Use a partial match on the empty string to filter based on a property
-     * existing:`resource_properties.my_property : ""`
+     * existing: `resource_properties.my_property : ""`
      * Use a negated partial match on the empty string to filter based on a
      * property not existing: `-resource_properties.my_property : ""`
      * </pre>
@@ -1553,7 +1553,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      * * security_center_properties.resource_owners: `=`, `:`
      * For example, `resource_properties.size = 100` is a valid filter string.
      * Use a partial match on the empty string to filter based on a property
-     * existing:`resource_properties.my_property : ""`
+     * existing: `resource_properties.my_property : ""`
      * Use a negated partial match on the empty string to filter based on a
      * property not existing: `-resource_properties.my_property : ""`
      * </pre>
@@ -1579,9 +1579,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping.
-     * The string value should follow SQL syntax: comma separated list of fields.
-     * For example:
+     * Required. Expression that defines what assets fields to use for grouping. The string
+     * value should follow SQL syntax: comma separated list of fields. For
+     * example:
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
@@ -1614,9 +1614,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping.
-     * The string value should follow SQL syntax: comma separated list of fields.
-     * For example:
+     * Required. Expression that defines what assets fields to use for grouping. The string
+     * value should follow SQL syntax: comma separated list of fields. For
+     * example:
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
@@ -1649,9 +1649,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping.
-     * The string value should follow SQL syntax: comma separated list of fields.
-     * For example:
+     * Required. Expression that defines what assets fields to use for grouping. The string
+     * value should follow SQL syntax: comma separated list of fields. For
+     * example:
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
@@ -1683,9 +1683,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping.
-     * The string value should follow SQL syntax: comma separated list of fields.
-     * For example:
+     * Required. Expression that defines what assets fields to use for grouping. The string
+     * value should follow SQL syntax: comma separated list of fields. For
+     * example:
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
@@ -1713,9 +1713,9 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping.
-     * The string value should follow SQL syntax: comma separated list of fields.
-     * For example:
+     * Required. Expression that defines what assets fields to use for grouping. The string
+     * value should follow SQL syntax: comma separated list of fields. For
+     * example:
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project

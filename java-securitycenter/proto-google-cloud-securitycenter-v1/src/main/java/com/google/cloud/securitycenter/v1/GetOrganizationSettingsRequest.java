@@ -118,8 +118,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Name of the organization to get organization settings for. Its
-   * format is "organizations/[organization_id]/organizationSettings".
+   * Required. Name of the organization to get organization settings for. Its format is
+   * "organizations/[organization_id]/organizationSettings".
    * </pre>
    *
    * <code>
@@ -144,8 +144,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Name of the organization to get organization settings for. Its
-   * format is "organizations/[organization_id]/organizationSettings".
+   * Required. Name of the organization to get organization settings for. Its format is
+   * "organizations/[organization_id]/organizationSettings".
    * </pre>
    *
    * <code>
@@ -497,8 +497,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the organization to get organization settings for. Its format is
+     * "organizations/[organization_id]/organizationSettings".
      * </pre>
      *
      * <code>
@@ -522,8 +522,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the organization to get organization settings for. Its format is
+     * "organizations/[organization_id]/organizationSettings".
      * </pre>
      *
      * <code>
@@ -547,8 +547,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the organization to get organization settings for. Its format is
+     * "organizations/[organization_id]/organizationSettings".
      * </pre>
      *
      * <code>
@@ -571,8 +571,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the organization to get organization settings for. Its format is
+     * "organizations/[organization_id]/organizationSettings".
      * </pre>
      *
      * <code>
@@ -591,8 +591,8 @@ public final class GetOrganizationSettingsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the organization to get organization settings for. Its
-     * format is "organizations/[organization_id]/organizationSettings".
+     * Required. Name of the organization to get organization settings for. Its format is
+     * "organizations/[organization_id]/organizationSettings".
      * </pre>
      *
      * <code>

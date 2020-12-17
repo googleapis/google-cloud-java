@@ -249,8 +249,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be
-   * ignored as they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be ignored as
+   * they are both output only fields on this resource.
    * </pre>
    *
    * <code>
@@ -267,8 +267,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be
-   * ignored as they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be ignored as
+   * they are both output only fields on this resource.
    * </pre>
    *
    * <code>
@@ -287,8 +287,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be
-   * ignored as they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be ignored as
+   * they are both output only fields on this resource.
    * </pre>
    *
    * <code>
@@ -910,8 +910,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -927,8 +927,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -950,8 +950,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -975,8 +975,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -997,8 +997,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -1026,8 +1026,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -1049,8 +1049,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -1066,8 +1066,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>
@@ -1087,8 +1087,8 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be
-     * ignored as they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be ignored as
+     * they are both output only fields on this resource.
      * </pre>
      *
      * <code>

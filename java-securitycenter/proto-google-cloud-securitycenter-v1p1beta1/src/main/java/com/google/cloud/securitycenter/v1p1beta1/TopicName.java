@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class TopicName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_TOPIC =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/topics/{topic}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String topic;
+
+  @Deprecated
+  protected TopicName() {
+    project = null;
+    topic = null;
+  }
+
+  private TopicName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    topic = Preconditions.checkNotNull(builder.getTopic());
+  }
 
   public String getProject() {
     return project;
@@ -52,11 +62,6 @@ public class TopicName implements ResourceName {
     return new Builder(this);
   }
 
-  private TopicName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    topic = Preconditions.checkNotNull(builder.getTopic());
-  }
-
   public static TopicName of(String project, String topic) {
     return newBuilder().setProject(project).setTopic(topic).build();
   }
@@ -70,7 +75,7 @@ public class TopicName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_TOPIC.validatedMatch(
             formattedString, "TopicName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("topic"));
   }
@@ -84,7 +89,7 @@ public class TopicName implements ResourceName {
   }
 
   public static List<String> toStringList(List<TopicName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (TopicName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class TopicName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_TOPIC.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("topic", topic);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (topic != null) {
+            fieldMapBuilder.put("topic", topic);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,37 @@ public class TopicName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "topic", topic);
+    return PROJECT_TOPIC.instantiate("project", project, "topic", topic);
   }
 
-  /** Builder for TopicName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      TopicName that = ((TopicName) o);
+      return Objects.equals(this.project, that.project) && Objects.equals(this.topic, that.topic);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(topic);
+    return h;
+  }
+
+  /** Builder for projects/{project}/topics/{topic}. */
+  public static class Builder {
     private String project;
     private String topic;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -146,8 +179,6 @@ public class TopicName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(TopicName topicName) {
       project = topicName.project;
       topic = topicName.topic;
@@ -156,27 +187,5 @@ public class TopicName implements ResourceName {
     public TopicName build() {
       return new TopicName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof TopicName) {
-      TopicName that = (TopicName) o;
-      return (this.project.equals(that.project)) && (this.topic.equals(that.topic));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= topic.hashCode();
-    return h;
   }
 }

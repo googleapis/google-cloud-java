@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,19 +23,29 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class NotificationConfigName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_NOTIFICATION_CONFIG =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/notificationConfigs/{notification_config}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String organization;
   private final String notificationConfig;
+
+  @Deprecated
+  protected NotificationConfigName() {
+    organization = null;
+    notificationConfig = null;
+  }
+
+  private NotificationConfigName(Builder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    notificationConfig = Preconditions.checkNotNull(builder.getNotificationConfig());
+  }
 
   public String getOrganization() {
     return organization;
@@ -51,11 +61,6 @@ public class NotificationConfigName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private NotificationConfigName(Builder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    notificationConfig = Preconditions.checkNotNull(builder.getNotificationConfig());
   }
 
   public static NotificationConfigName of(String organization, String notificationConfig) {
@@ -78,7 +83,7 @@ public class NotificationConfigName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        ORGANIZATION_NOTIFICATION_CONFIG.validatedMatch(
             formattedString, "NotificationConfigName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("notification_config"));
   }
@@ -92,7 +97,7 @@ public class NotificationConfigName implements ResourceName {
   }
 
   public static List<String> toStringList(List<NotificationConfigName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (NotificationConfigName value : values) {
       if (value == null) {
         list.add("");
@@ -104,16 +109,21 @@ public class NotificationConfigName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return ORGANIZATION_NOTIFICATION_CONFIG.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("organization", organization);
-          fieldMapBuilder.put("notificationConfig", notificationConfig);
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
+          }
+          if (notificationConfig != null) {
+            fieldMapBuilder.put("notification_config", notificationConfig);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -127,15 +137,39 @@ public class NotificationConfigName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return ORGANIZATION_NOTIFICATION_CONFIG.instantiate(
         "organization", organization, "notification_config", notificationConfig);
   }
 
-  /** Builder for NotificationConfigName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      NotificationConfigName that = ((NotificationConfigName) o);
+      return Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.notificationConfig, that.notificationConfig);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(notificationConfig);
+    return h;
+  }
+
+  /** Builder for organizations/{organization}/notificationConfigs/{notification_config}. */
+  public static class Builder {
     private String organization;
     private String notificationConfig;
+
+    protected Builder() {}
 
     public String getOrganization() {
       return organization;
@@ -155,8 +189,6 @@ public class NotificationConfigName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(NotificationConfigName notificationConfigName) {
       organization = notificationConfigName.organization;
       notificationConfig = notificationConfigName.notificationConfig;
@@ -165,28 +197,5 @@ public class NotificationConfigName implements ResourceName {
     public NotificationConfigName build() {
       return new NotificationConfigName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof NotificationConfigName) {
-      NotificationConfigName that = (NotificationConfigName) o;
-      return (this.organization.equals(that.organization))
-          && (this.notificationConfig.equals(that.notificationConfig));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= organization.hashCode();
-    h *= 1000003;
-    h ^= notificationConfig.hashCode();
-    return h;
   }
 }

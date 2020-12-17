@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.securitycenter.v1;
 
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
@@ -46,7 +47,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link SecurityCenterClient}.
  *
@@ -64,23 +65,24 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createSource to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SecurityCenterSettings.Builder securityCenterSettingsBuilder =
  *     SecurityCenterSettings.newBuilder();
  * securityCenterSettingsBuilder
  *     .createSourceSettings()
  *     .setRetrySettings(
- *         securityCenterSettingsBuilder.createSourceSettings().getRetrySettings().toBuilder()
+ *         securityCenterSettingsBuilder
+ *             .createSourceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SecurityCenterSettings securityCenterSettings = securityCenterSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class SecurityCenterSettings extends ClientSettings<SecurityCenterSettings> {
+
   /** Returns the object with the settings used for calls to createSource. */
   public UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).createSourceSettings();
@@ -170,8 +172,6 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   }
 
   /** Returns the object with the settings used for calls to runAssetDiscovery. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).runAssetDiscoveryOperationSettings();
@@ -281,16 +281,13 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
 
   /** Builder for SecurityCenterSettings. */
   public static class Builder extends ClientSettings.Builder<SecurityCenterSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(SecurityCenterStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(SecurityCenterStubSettings.newBuilder());
     }
 
     protected Builder(SecurityCenterSettings settings) {
@@ -301,11 +298,15 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(SecurityCenterStubSettings.newBuilder());
+    }
+
     public SecurityCenterStubSettings.Builder getStubSettingsBuilder() {
       return ((SecurityCenterStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -412,8 +413,6 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     }
 
     /** Returns the builder for the settings used for calls to runAssetDiscovery. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
         runAssetDiscoveryOperationSettings() {
       return getStubSettingsBuilder().runAssetDiscoveryOperationSettings();

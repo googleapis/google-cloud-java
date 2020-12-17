@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class FindingName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_SOURCE_FINDING =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/sources/{source}/findings/{finding}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String organization;
   private final String source;
   private final String finding;
+
+  @Deprecated
+  protected FindingName() {
+    organization = null;
+    source = null;
+    finding = null;
+  }
+
+  private FindingName(Builder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    source = Preconditions.checkNotNull(builder.getSource());
+    finding = Preconditions.checkNotNull(builder.getFinding());
+  }
 
   public String getOrganization() {
     return organization;
@@ -58,12 +70,6 @@ public class FindingName implements ResourceName {
     return new Builder(this);
   }
 
-  private FindingName(Builder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    source = Preconditions.checkNotNull(builder.getSource());
-    finding = Preconditions.checkNotNull(builder.getFinding());
-  }
-
   public static FindingName of(String organization, String source, String finding) {
     return newBuilder().setOrganization(organization).setSource(source).setFinding(finding).build();
   }
@@ -82,7 +88,7 @@ public class FindingName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        ORGANIZATION_SOURCE_FINDING.validatedMatch(
             formattedString, "FindingName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("source"), matchMap.get("finding"));
   }
@@ -96,7 +102,7 @@ public class FindingName implements ResourceName {
   }
 
   public static List<String> toStringList(List<FindingName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (FindingName value : values) {
       if (value == null) {
         list.add("");
@@ -108,17 +114,24 @@ public class FindingName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return ORGANIZATION_SOURCE_FINDING.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("organization", organization);
-          fieldMapBuilder.put("source", source);
-          fieldMapBuilder.put("finding", finding);
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
+          }
+          if (source != null) {
+            fieldMapBuilder.put("source", source);
+          }
+          if (finding != null) {
+            fieldMapBuilder.put("finding", finding);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -132,16 +145,43 @@ public class FindingName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return ORGANIZATION_SOURCE_FINDING.instantiate(
         "organization", organization, "source", source, "finding", finding);
   }
 
-  /** Builder for FindingName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      FindingName that = ((FindingName) o);
+      return Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.source, that.source)
+          && Objects.equals(this.finding, that.finding);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(source);
+    h *= 1000003;
+    h ^= Objects.hashCode(finding);
+    return h;
+  }
+
+  /** Builder for organizations/{organization}/sources/{source}/findings/{finding}. */
+  public static class Builder {
     private String organization;
     private String source;
     private String finding;
+
+    protected Builder() {}
 
     public String getOrganization() {
       return organization;
@@ -170,8 +210,6 @@ public class FindingName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(FindingName findingName) {
       organization = findingName.organization;
       source = findingName.source;
@@ -181,31 +219,5 @@ public class FindingName implements ResourceName {
     public FindingName build() {
       return new FindingName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof FindingName) {
-      FindingName that = (FindingName) o;
-      return (this.organization.equals(that.organization))
-          && (this.source.equals(that.source))
-          && (this.finding.equals(that.finding));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= organization.hashCode();
-    h *= 1000003;
-    h ^= source.hashCode();
-    h *= 1000003;
-    h ^= finding.hashCode();
-    return h;
   }
 }

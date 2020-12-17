@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.securitycenter.v1p1beta1.stub;
 
 import static com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient.GroupAssetsPagedResponse;
@@ -22,7 +23,6 @@ import static com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient.Lis
 import static com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient.ListSourcesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -79,16 +79,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Security Command Center API.
+ * gRPC stub implementation for the SecurityCenter service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcSecurityCenterStub extends SecurityCenterStub {
-
   private static final MethodDescriptor<CreateSourceRequest, Source> createSourceMethodDescriptor =
       MethodDescriptor.<CreateSourceRequest, Source>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -96,6 +94,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateFindingRequest, Finding>
       createFindingMethodDescriptor =
           MethodDescriptor.<CreateFindingRequest, Finding>newBuilder()
@@ -106,6 +105,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(CreateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateNotificationConfigRequest, NotificationConfig>
       createNotificationConfigMethodDescriptor =
           MethodDescriptor.<CreateNotificationConfigRequest, NotificationConfig>newBuilder()
@@ -116,6 +116,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(CreateNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigMethodDescriptor =
           MethodDescriptor.<DeleteNotificationConfigRequest, Empty>newBuilder()
@@ -126,6 +127,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(DeleteNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -133,6 +135,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetNotificationConfigRequest, NotificationConfig>
       getNotificationConfigMethodDescriptor =
           MethodDescriptor.<GetNotificationConfigRequest, NotificationConfig>newBuilder()
@@ -143,6 +146,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(GetNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsMethodDescriptor =
           MethodDescriptor.<GetOrganizationSettingsRequest, OrganizationSettings>newBuilder()
@@ -154,6 +158,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrganizationSettings.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetSourceRequest, Source> getSourceMethodDescriptor =
       MethodDescriptor.<GetSourceRequest, Source>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -161,6 +166,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GroupAssetsRequest, GroupAssetsResponse>
       groupAssetsMethodDescriptor =
           MethodDescriptor.<GroupAssetsRequest, GroupAssetsResponse>newBuilder()
@@ -170,6 +176,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GroupAssetsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GroupFindingsRequest, GroupFindingsResponse>
       groupFindingsMethodDescriptor =
           MethodDescriptor.<GroupFindingsRequest, GroupFindingsResponse>newBuilder()
@@ -181,6 +188,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GroupFindingsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
       listAssetsMethodDescriptor =
           MethodDescriptor.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -189,6 +197,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListFindingsRequest, ListFindingsResponse>
       listFindingsMethodDescriptor =
           MethodDescriptor.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -199,6 +208,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListNotificationConfigsRequest, ListNotificationConfigsResponse>
       listNotificationConfigsMethodDescriptor =
@@ -212,6 +222,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotificationConfigsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListSourcesRequest, ListSourcesResponse>
       listSourcesMethodDescriptor =
           MethodDescriptor.<ListSourcesRequest, ListSourcesResponse>newBuilder()
@@ -221,6 +232,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSourcesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<RunAssetDiscoveryRequest, Operation>
       runAssetDiscoveryMethodDescriptor =
           MethodDescriptor.<RunAssetDiscoveryRequest, Operation>newBuilder()
@@ -231,6 +243,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(RunAssetDiscoveryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SetFindingStateRequest, Finding>
       setFindingStateMethodDescriptor =
           MethodDescriptor.<SetFindingStateRequest, Finding>newBuilder()
@@ -241,6 +254,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(SetFindingStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -248,6 +262,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -259,6 +274,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateFindingRequest, Finding>
       updateFindingMethodDescriptor =
           MethodDescriptor.<UpdateFindingRequest, Finding>newBuilder()
@@ -269,6 +285,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(UpdateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateNotificationConfigRequest, NotificationConfig>
       updateNotificationConfigMethodDescriptor =
           MethodDescriptor.<UpdateNotificationConfigRequest, NotificationConfig>newBuilder()
@@ -279,6 +296,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(UpdateNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsMethodDescriptor =
           MethodDescriptor.<UpdateOrganizationSettingsRequest, OrganizationSettings>newBuilder()
@@ -290,6 +308,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrganizationSettings.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateSourceRequest, Source> updateSourceMethodDescriptor =
       MethodDescriptor.<UpdateSourceRequest, Source>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -297,6 +316,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateSecurityMarksRequest, SecurityMarks>
       updateSecurityMarksMethodDescriptor =
           MethodDescriptor.<UpdateSecurityMarksRequest, SecurityMarks>newBuilder()
@@ -307,9 +327,6 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(UpdateSecurityMarksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecurityMarks.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateSourceRequest, Source> createSourceCallable;
   private final UnaryCallable<CreateFindingRequest, Finding> createFindingCallable;
@@ -357,6 +374,8 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<UpdateSecurityMarksRequest, SecurityMarks>
       updateSecurityMarksCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcSecurityCenterStub create(SecurityCenterStubSettings settings)
@@ -798,7 +817,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             runAssetDiscoveryTransportSettings,
             settings.runAssetDiscoveryOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.setFindingStateCallable =
         callableFactory.createUnaryCallable(
             setFindingStateTransportSettings, settings.setFindingStateSettings(), clientContext);
@@ -832,10 +851,10 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             settings.updateSecurityMarksSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -875,12 +894,16 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     return getSourceCallable;
   }
 
+  public UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
+    return groupAssetsCallable;
+  }
+
   public UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse> groupAssetsPagedCallable() {
     return groupAssetsPagedCallable;
   }
 
-  public UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
-    return groupAssetsCallable;
+  public UnaryCallable<GroupFindingsRequest, GroupFindingsResponse> groupFindingsCallable() {
+    return groupFindingsCallable;
   }
 
   public UnaryCallable<GroupFindingsRequest, GroupFindingsPagedResponse>
@@ -888,29 +911,20 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     return groupFindingsPagedCallable;
   }
 
-  public UnaryCallable<GroupFindingsRequest, GroupFindingsResponse> groupFindingsCallable() {
-    return groupFindingsCallable;
+  public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
+    return listAssetsCallable;
   }
 
   public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
     return listAssetsPagedCallable;
   }
 
-  public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
-    return listAssetsCallable;
-  }
-
-  public UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse> listFindingsPagedCallable() {
-    return listFindingsPagedCallable;
-  }
-
   public UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return listFindingsCallable;
   }
 
-  public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
-      listNotificationConfigsPagedCallable() {
-    return listNotificationConfigsPagedCallable;
+  public UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse> listFindingsPagedCallable() {
+    return listFindingsPagedCallable;
   }
 
   public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
@@ -918,22 +932,26 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     return listNotificationConfigsCallable;
   }
 
-  public UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse> listSourcesPagedCallable() {
-    return listSourcesPagedCallable;
+  public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
+      listNotificationConfigsPagedCallable() {
+    return listNotificationConfigsPagedCallable;
   }
 
   public UnaryCallable<ListSourcesRequest, ListSourcesResponse> listSourcesCallable() {
     return listSourcesCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
-      runAssetDiscoveryOperationCallable() {
-    return runAssetDiscoveryOperationCallable;
+  public UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse> listSourcesPagedCallable() {
+    return listSourcesPagedCallable;
   }
 
   public UnaryCallable<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryCallable() {
     return runAssetDiscoveryCallable;
+  }
+
+  public OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
+      runAssetDiscoveryOperationCallable() {
+    return runAssetDiscoveryOperationCallable;
   }
 
   public UnaryCallable<SetFindingStateRequest, Finding> setFindingStateCallable() {

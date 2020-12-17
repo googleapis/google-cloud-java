@@ -139,8 +139,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The finding resource to update or create if it does not already
-   * exist. parent, security_marks, and update_time will be ignored.
+   * Required. The finding resource to update or create if it does not already exist.
+   * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -160,8 +160,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The finding resource to update or create if it does not already
-   * exist. parent, security_marks, and update_time will be ignored.
+   * Required. The finding resource to update or create if it does not already exist.
+   * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -183,8 +183,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The finding resource to update or create if it does not already
-   * exist. parent, security_marks, and update_time will be ignored.
+   * Required. The finding resource to update or create if it does not already exist.
+   * parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -629,8 +629,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already exist.
+     * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -649,8 +649,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already exist.
+     * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -675,8 +675,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already exist.
+     * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -703,8 +703,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already exist.
+     * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -728,8 +728,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already exist.
+     * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -760,8 +760,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already exist.
+     * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -786,8 +786,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already exist.
+     * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -806,8 +806,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already exist.
+     * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -830,8 +830,8 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The finding resource to update or create if it does not already
-     * exist. parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already exist.
+     * parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.

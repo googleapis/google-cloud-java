@@ -403,4 +403,31 @@ public interface FindingOrBuilder
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The severity of the finding. This field is managed by the source that
+   * writes the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.Severity severity = 12;</code>
+   *
+   * @return The enum numeric value on the wire for severity.
+   */
+  int getSeverityValue();
+  /**
+   *
+   *
+   * <pre>
+   * The severity of the finding. This field is managed by the source that
+   * writes the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.Severity severity = 12;</code>
+   *
+   * @return The severity.
+   */
+  com.google.cloud.securitycenter.v1.Finding.Severity getSeverity();
 }

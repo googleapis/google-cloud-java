@@ -51,7 +51,7 @@ public final class FindingOuterClass {
           + "ce.proto\0323google/cloud/securitycenter/v1"
           + "/security_marks.proto\032\034google/protobuf/s"
           + "truct.proto\032\037google/protobuf/timestamp.p"
-          + "roto\"\244\005\n\007Finding\022\014\n\004name\030\001 \001(\t\022\016\n\006parent"
+          + "roto\"\273\006\n\007Finding\022\014\n\004name\030\001 \001(\t\022\016\n\006parent"
           + "\030\002 \001(\t\022\025\n\rresource_name\030\003 \001(\t\022<\n\005state\030\004"
           + " \001(\0162-.google.cloud.securitycenter.v1.Fi"
           + "nding.State\022\020\n\010category\030\005 \001(\t\022\024\n\014externa"
@@ -61,19 +61,23 @@ public final class FindingOuterClass {
           + "\010 \001(\0132-.google.cloud.securitycenter.v1.S"
           + "ecurityMarksB\003\340A\003\022.\n\nevent_time\030\t \001(\0132\032."
           + "google.protobuf.Timestamp\022/\n\013create_time"
-          + "\030\n \001(\0132\032.google.protobuf.Timestamp\032O\n\025So"
-          + "urcePropertiesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005valu"
-          + "e\030\002 \001(\0132\026.google.protobuf.Value:\0028\001\"8\n\005S"
-          + "tate\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022"
-          + "\014\n\010INACTIVE\020\002:l\352Ai\n%securitycenter.googl"
-          + "eapis.com/Finding\022@organizations/{organi"
-          + "zation}/sources/{source}/findings/{findi"
-          + "ng}B\332\001\n\"com.google.cloud.securitycenter."
-          + "v1P\001ZLgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/securitycenter/v1;securitycent"
-          + "er\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Go"
-          + "ogle\\Cloud\\SecurityCenter\\V1\352\002!Google::C"
-          + "loud::SecurityCenter::V1b\006proto3"
+          + "\030\n \001(\0132\032.google.protobuf.Timestamp\022B\n\010se"
+          + "verity\030\014 \001(\01620.google.cloud.securitycent"
+          + "er.v1.Finding.Severity\032O\n\025SourceProperti"
+          + "esEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.go"
+          + "ogle.protobuf.Value:\0028\001\"8\n\005State\022\025\n\021STAT"
+          + "E_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020"
+          + "\002\"Q\n\010Severity\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022"
+          + "\014\n\010CRITICAL\020\001\022\010\n\004HIGH\020\002\022\n\n\006MEDIUM\020\003\022\007\n\003L"
+          + "OW\020\004:l\352Ai\n%securitycenter.googleapis.com"
+          + "/Finding\022@organizations/{organization}/s"
+          + "ources/{source}/findings/{finding}B\332\001\n\"c"
+          + "om.google.cloud.securitycenter.v1P\001ZLgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/securitycenter/v1;securitycenter\252\002\036Goog"
+          + "le.Cloud.SecurityCenter.V1\312\002\036Google\\Clou"
+          + "d\\SecurityCenter\\V1\352\002!Google::Cloud::Sec"
+          + "urityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -102,6 +106,7 @@ public final class FindingOuterClass {
               "SecurityMarks",
               "EventTime",
               "CreateTime",
+              "Severity",
             });
     internal_static_google_cloud_securitycenter_v1_Finding_SourcePropertiesEntry_descriptor =
         internal_static_google_cloud_securitycenter_v1_Finding_descriptor.getNestedTypes().get(0);

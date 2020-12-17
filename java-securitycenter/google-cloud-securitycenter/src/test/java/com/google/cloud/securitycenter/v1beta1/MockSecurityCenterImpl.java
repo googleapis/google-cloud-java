@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.securitycenter.v1beta1;
 
 import com.google.api.core.BetaApi;
@@ -29,9 +30,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -67,10 +69,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof Source) {
       requests.add(request);
-      responseObserver.onNext((Source) response);
+      responseObserver.onNext(((Source) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -82,10 +84,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof Finding) {
       requests.add(request);
-      responseObserver.onNext((Finding) response);
+      responseObserver.onNext(((Finding) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -96,10 +98,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof Policy) {
       requests.add(request);
-      responseObserver.onNext((Policy) response);
+      responseObserver.onNext(((Policy) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -112,10 +114,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof OrganizationSettings) {
       requests.add(request);
-      responseObserver.onNext((OrganizationSettings) response);
+      responseObserver.onNext(((OrganizationSettings) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -126,10 +128,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof Source) {
       requests.add(request);
-      responseObserver.onNext((Source) response);
+      responseObserver.onNext(((Source) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -141,10 +143,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof GroupAssetsResponse) {
       requests.add(request);
-      responseObserver.onNext((GroupAssetsResponse) response);
+      responseObserver.onNext(((GroupAssetsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -156,10 +158,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof GroupFindingsResponse) {
       requests.add(request);
-      responseObserver.onNext((GroupFindingsResponse) response);
+      responseObserver.onNext(((GroupFindingsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -171,10 +173,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof ListAssetsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListAssetsResponse) response);
+      responseObserver.onNext(((ListAssetsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -186,10 +188,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof ListFindingsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListFindingsResponse) response);
+      responseObserver.onNext(((ListFindingsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -201,10 +203,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof ListSourcesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListSourcesResponse) response);
+      responseObserver.onNext(((ListSourcesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -216,10 +218,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -231,10 +233,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof Finding) {
       requests.add(request);
-      responseObserver.onNext((Finding) response);
+      responseObserver.onNext(((Finding) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -245,10 +247,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof Policy) {
       requests.add(request);
-      responseObserver.onNext((Policy) response);
+      responseObserver.onNext(((Policy) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -261,10 +263,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
-      responseObserver.onNext((TestIamPermissionsResponse) response);
+      responseObserver.onNext(((TestIamPermissionsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -276,10 +278,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof Finding) {
       requests.add(request);
-      responseObserver.onNext((Finding) response);
+      responseObserver.onNext(((Finding) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -292,10 +294,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof OrganizationSettings) {
       requests.add(request);
-      responseObserver.onNext((OrganizationSettings) response);
+      responseObserver.onNext(((OrganizationSettings) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -306,10 +308,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof Source) {
       requests.add(request);
-      responseObserver.onNext((Source) response);
+      responseObserver.onNext(((Source) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -321,10 +323,10 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
     Object response = responses.remove();
     if (response instanceof SecurityMarks) {
       requests.add(request);
-      responseObserver.onNext((SecurityMarks) response);
+      responseObserver.onNext(((SecurityMarks) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

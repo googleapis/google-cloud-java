@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,17 +23,25 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class OrganizationName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String organization;
+
+  @Deprecated
+  protected OrganizationName() {
+    organization = null;
+  }
+
+  private OrganizationName(Builder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+  }
 
   public String getOrganization() {
     return organization;
@@ -45,10 +53,6 @@ public class OrganizationName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private OrganizationName(Builder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
   }
 
   public static OrganizationName of(String organization) {
@@ -64,7 +68,7 @@ public class OrganizationName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        ORGANIZATION.validatedMatch(
             formattedString, "OrganizationName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"));
   }
@@ -78,7 +82,7 @@ public class OrganizationName implements ResourceName {
   }
 
   public static List<String> toStringList(List<OrganizationName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (OrganizationName value : values) {
       if (value == null) {
         list.add("");
@@ -90,15 +94,18 @@ public class OrganizationName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return ORGANIZATION.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("organization", organization);
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -112,13 +119,34 @@ public class OrganizationName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("organization", organization);
+    return ORGANIZATION.instantiate("organization", organization);
   }
 
-  /** Builder for OrganizationName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      OrganizationName that = ((OrganizationName) o);
+      return Objects.equals(this.organization, that.organization);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    return h;
+  }
+
+  /** Builder for organizations/{organization}. */
+  public static class Builder {
     private String organization;
+
+    protected Builder() {}
 
     public String getOrganization() {
       return organization;
@@ -129,8 +157,6 @@ public class OrganizationName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(OrganizationName organizationName) {
       organization = organizationName.organization;
     }
@@ -138,25 +164,5 @@ public class OrganizationName implements ResourceName {
     public OrganizationName build() {
       return new OrganizationName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof OrganizationName) {
-      OrganizationName that = (OrganizationName) o;
-      return (this.organization.equals(that.organization));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= organization.hashCode();
-    return h;
   }
 }

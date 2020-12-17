@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.securitycenter.v1p1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -46,24 +47,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: V1p1Beta1 APIs for Security Center service.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
- *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
- *   Source source = Source.newBuilder().build();
- *   Source response = securityCenterClient.createSource(parent, source);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the securityCenterClient object to clean up resources such
+ * <p>Note: close() needs to be called on the SecurityCenterClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -91,30 +82,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SecurityCenterSettings securityCenterSettings =
  *     SecurityCenterSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * SecurityCenterClient securityCenterClient =
- *     SecurityCenterClient.create(securityCenterSettings);
- * </code>
- * </pre>
+ * SecurityCenterClient securityCenterClient = SecurityCenterClient.create(securityCenterSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SecurityCenterSettings securityCenterSettings =
  *     SecurityCenterSettings.newBuilder().setEndpoint(myEndpoint).build();
- * SecurityCenterClient securityCenterClient =
- *     SecurityCenterClient.create(securityCenterSettings);
- * </code>
- * </pre>
+ * SecurityCenterClient securityCenterClient = SecurityCenterClient.create(securityCenterSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class SecurityCenterClient implements BackgroundResource {
   private final SecurityCenterSettings settings;
   private final SecurityCenterStub stub;
@@ -136,7 +123,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   /**
    * Constructs an instance of SecurityCenterClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use SecurityCenterSettings}.
+   * for advanced usage - prefer using create(SecurityCenterSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SecurityCenterClient create(SecurityCenterStub stub) {
@@ -174,25 +161,13 @@ public class SecurityCenterClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   Source source = Source.newBuilder().build();
-   *   Source response = securityCenterClient.createSource(parent, source);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the new source's parent. Its format should be
    *     "organizations/[organization_id]".
@@ -209,19 +184,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return createSource(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   Source source = Source.newBuilder().build();
-   *   Source response = securityCenterClient.createSource(parent.toString(), source);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the new source's parent. Its format should be
    *     "organizations/[organization_id]".
@@ -235,23 +200,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return createSource(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   Source source = Source.newBuilder().build();
-   *   CreateSourceRequest request = CreateSourceRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSource(source)
-   *     .build();
-   *   Source response = securityCenterClient.createSource(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -260,44 +211,40 @@ public class SecurityCenterClient implements BackgroundResource {
     return createSourceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a source.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   Source source = Source.newBuilder().build();
-   *   CreateSourceRequest request = CreateSourceRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setSource(source)
-   *     .build();
-   *   ApiFuture&lt;Source&gt; future = securityCenterClient.createSourceCallable().futureCall(request);
-   *   // Do something
-   *   Source response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateSourceRequest, Source> createSourceCallable() {
     return stub.createSourceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a finding. The corresponding source must exist for finding creation to succeed.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String findingId = "";
-   *   Finding finding = Finding.newBuilder().build();
-   *   Finding response = securityCenterClient.createFinding(parent, findingId, finding);
-   * }
-   * </code></pre>
+   * @param parent Required. Resource name of the new finding's parent. Its format should be
+   *     "organizations/[organization_id]/sources/[source_id]".
+   * @param finding Required. The Finding being created. The name and security_marks will be ignored
+   *     as they are both output only fields on this resource.
+   * @param findingId Required. Unique identifier provided by the client within the parent scope.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Finding createFinding(SourceName parent, Finding finding, String findingId) {
+    CreateFindingRequest request =
+        CreateFindingRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFinding(finding)
+            .setFindingId(findingId)
+            .build();
+    return createFinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a finding. The corresponding source must exist for finding creation to succeed.
    *
    * @param parent Required. Resource name of the new finding's parent. Its format should be
    *     "organizations/[organization_id]/sources/[source_id]".
@@ -316,20 +263,30 @@ public class SecurityCenterClient implements BackgroundResource {
     return createFinding(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a finding. The corresponding source must exist for finding creation to succeed.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String findingId = "";
-   *   Finding finding = Finding.newBuilder().build();
-   *   Finding response = securityCenterClient.createFinding(parent.toString(), findingId, finding);
-   * }
-   * </code></pre>
+   * @param parent Required. Resource name of the new finding's parent. Its format should be
+   *     "organizations/[organization_id]/sources/[source_id]".
+   * @param finding Required. The Finding being created. The name and security_marks will be ignored
+   *     as they are both output only fields on this resource.
+   * @param findingId Required. Unique identifier provided by the client within the parent scope.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Finding createFinding(String parent, Finding finding, String findingId) {
+    CreateFindingRequest request =
+        CreateFindingRequest.newBuilder()
+            .setParent(parent)
+            .setFinding(finding)
+            .setFindingId(findingId)
+            .build();
+    return createFinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a finding. The corresponding source must exist for finding creation to succeed.
    *
    * @param parent Required. Resource name of the new finding's parent. Its format should be
    *     "organizations/[organization_id]/sources/[source_id]".
@@ -348,25 +305,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return createFinding(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a finding. The corresponding source must exist for finding creation to succeed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String findingId = "";
-   *   Finding finding = Finding.newBuilder().build();
-   *   CreateFindingRequest request = CreateFindingRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setFindingId(findingId)
-   *     .setFinding(finding)
-   *     .build();
-   *   Finding response = securityCenterClient.createFinding(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -375,46 +316,59 @@ public class SecurityCenterClient implements BackgroundResource {
     return createFindingCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a finding. The corresponding source must exist for finding creation to succeed.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String findingId = "";
-   *   Finding finding = Finding.newBuilder().build();
-   *   CreateFindingRequest request = CreateFindingRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setFindingId(findingId)
-   *     .setFinding(finding)
-   *     .build();
-   *   ApiFuture&lt;Finding&gt; future = securityCenterClient.createFindingCallable().futureCall(request);
-   *   // Do something
-   *   Finding response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateFindingRequest, Finding> createFindingCallable() {
     return stub.createFindingCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a notification config.
    *
-   * <p>Sample code:
+   * @param parent Required. Resource name of the new notification config's parent. Its format is
+   *     "organizations/[organization_id]".
+   * @param notificationConfig Required. The notification config being created. The name and the
+   *     service account will be ignored as they are both output only fields on this resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      OrganizationName parent, NotificationConfig notificationConfig) {
+    CreateNotificationConfigRequest request =
+        CreateNotificationConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return createNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a notification config.
    *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   String configId = "";
-   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
-   *   NotificationConfig response = securityCenterClient.createNotificationConfig(parent, configId, notificationConfig);
-   * }
-   * </code></pre>
+   * @param parent Required. Resource name of the new notification config's parent. Its format is
+   *     "organizations/[organization_id]".
+   * @param notificationConfig Required. The notification config being created. The name and the
+   *     service account will be ignored as they are both output only fields on this resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      String parent, NotificationConfig notificationConfig) {
+    CreateNotificationConfigRequest request =
+        CreateNotificationConfigRequest.newBuilder()
+            .setParent(parent)
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return createNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a notification config.
    *
    * @param parent Required. Resource name of the new notification config's parent. Its format is
    *     "organizations/[organization_id]".
@@ -436,20 +390,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return createNotificationConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a notification config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   String configId = "";
-   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
-   *   NotificationConfig response = securityCenterClient.createNotificationConfig(parent.toString(), configId, notificationConfig);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the new notification config's parent. Its format is
    *     "organizations/[organization_id]".
@@ -471,85 +414,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return createNotificationConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a notification config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
-   *   NotificationConfig response = securityCenterClient.createNotificationConfig(parent, notificationConfig);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. Resource name of the new notification config's parent. Its format is
-   *     "organizations/[organization_id]".
-   * @param notificationConfig Required. The notification config being created. The name and the
-   *     service account will be ignored as they are both output only fields on this resource.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final NotificationConfig createNotificationConfig(
-      OrganizationName parent, NotificationConfig notificationConfig) {
-    CreateNotificationConfigRequest request =
-        CreateNotificationConfigRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setNotificationConfig(notificationConfig)
-            .build();
-    return createNotificationConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a notification config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
-   *   NotificationConfig response = securityCenterClient.createNotificationConfig(parent.toString(), notificationConfig);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. Resource name of the new notification config's parent. Its format is
-   *     "organizations/[organization_id]".
-   * @param notificationConfig Required. The notification config being created. The name and the
-   *     service account will be ignored as they are both output only fields on this resource.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final NotificationConfig createNotificationConfig(
-      String parent, NotificationConfig notificationConfig) {
-    CreateNotificationConfigRequest request =
-        CreateNotificationConfigRequest.newBuilder()
-            .setParent(parent)
-            .setNotificationConfig(notificationConfig)
-            .build();
-    return createNotificationConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a notification config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   String configId = "";
-   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
-   *   CreateNotificationConfigRequest request = CreateNotificationConfigRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setConfigId(configId)
-   *     .setNotificationConfig(notificationConfig)
-   *     .build();
-   *   NotificationConfig response = securityCenterClient.createNotificationConfig(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -559,45 +426,20 @@ public class SecurityCenterClient implements BackgroundResource {
     return createNotificationConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a notification config.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   String configId = "";
-   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
-   *   CreateNotificationConfigRequest request = CreateNotificationConfigRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setConfigId(configId)
-   *     .setNotificationConfig(notificationConfig)
-   *     .build();
-   *   ApiFuture&lt;NotificationConfig&gt; future = securityCenterClient.createNotificationConfigCallable().futureCall(request);
-   *   // Do something
-   *   NotificationConfig response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateNotificationConfigRequest, NotificationConfig>
       createNotificationConfigCallable() {
     return stub.createNotificationConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a notification config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
-   *   securityCenterClient.deleteNotificationConfig(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the notification config to delete. Its format is
    *     "organizations/[organization_id]/notificationConfigs/[config_id]".
@@ -611,18 +453,9 @@ public class SecurityCenterClient implements BackgroundResource {
     deleteNotificationConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a notification config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
-   *   securityCenterClient.deleteNotificationConfig(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the notification config to delete. Its format is
    *     "organizations/[organization_id]/notificationConfigs/[config_id]".
@@ -634,21 +467,9 @@ public class SecurityCenterClient implements BackgroundResource {
     deleteNotificationConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a notification config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
-   *   DeleteNotificationConfigRequest request = DeleteNotificationConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   securityCenterClient.deleteNotificationConfig(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -657,41 +478,20 @@ public class SecurityCenterClient implements BackgroundResource {
     deleteNotificationConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a notification config.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
-   *   DeleteNotificationConfigRequest request = DeleteNotificationConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = securityCenterClient.deleteNotificationConfigCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigCallable() {
     return stub.deleteNotificationConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy on the specified Source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   Policy response = securityCenterClient.getIamPolicy(resource);
-   * }
-   * </code></pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -705,18 +505,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy on the specified Source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   Policy response = securityCenterClient.getIamPolicy(resource.toString());
-   * }
-   * </code></pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -727,21 +518,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy on the specified Source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
-   *   Policy response = securityCenterClient.getIamPolicy(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -750,40 +529,19 @@ public class SecurityCenterClient implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy on the specified Source.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = securityCenterClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   Policy response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a notification config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
-   *   NotificationConfig response = securityCenterClient.getNotificationConfig(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the notification config to get. Its format is
    *     "organizations/[organization_id]/notificationConfigs/[config_id]".
@@ -797,18 +555,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return getNotificationConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a notification config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
-   *   NotificationConfig response = securityCenterClient.getNotificationConfig(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the notification config to get. Its format is
    *     "organizations/[organization_id]/notificationConfigs/[config_id]".
@@ -820,21 +569,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return getNotificationConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a notification config.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
-   *   GetNotificationConfigRequest request = GetNotificationConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   NotificationConfig response = securityCenterClient.getNotificationConfig(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -843,41 +580,20 @@ public class SecurityCenterClient implements BackgroundResource {
     return getNotificationConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a notification config.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfigName name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
-   *   GetNotificationConfigRequest request = GetNotificationConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;NotificationConfig&gt; future = securityCenterClient.getNotificationConfigCallable().futureCall(request);
-   *   // Do something
-   *   NotificationConfig response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetNotificationConfigRequest, NotificationConfig>
       getNotificationConfigCallable() {
     return stub.getNotificationConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the settings for an organization.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationSettingsName name = OrganizationSettingsName.of("[ORGANIZATION]");
-   *   OrganizationSettings response = securityCenterClient.getOrganizationSettings(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the organization to get organization settings for. Its format is
    *     "organizations/[organization_id]/organizationSettings".
@@ -891,18 +607,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return getOrganizationSettings(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the settings for an organization.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationSettingsName name = OrganizationSettingsName.of("[ORGANIZATION]");
-   *   OrganizationSettings response = securityCenterClient.getOrganizationSettings(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Name of the organization to get organization settings for. Its format is
    *     "organizations/[organization_id]/organizationSettings".
@@ -914,21 +621,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return getOrganizationSettings(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the settings for an organization.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationSettingsName name = OrganizationSettingsName.of("[ORGANIZATION]");
-   *   GetOrganizationSettingsRequest request = GetOrganizationSettingsRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OrganizationSettings response = securityCenterClient.getOrganizationSettings(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -938,41 +633,20 @@ public class SecurityCenterClient implements BackgroundResource {
     return getOrganizationSettingsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the settings for an organization.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationSettingsName name = OrganizationSettingsName.of("[ORGANIZATION]");
-   *   GetOrganizationSettingsRequest request = GetOrganizationSettingsRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;OrganizationSettings&gt; future = securityCenterClient.getOrganizationSettingsCallable().futureCall(request);
-   *   // Do something
-   *   OrganizationSettings response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsCallable() {
     return stub.getOrganizationSettingsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   Source response = securityCenterClient.getSource(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Relative resource name of the source. Its format is
    *     "organizations/[organization_id]/source/[source_id]".
@@ -984,18 +658,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return getSource(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   Source response = securityCenterClient.getSource(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Relative resource name of the source. Its format is
    *     "organizations/[organization_id]/source/[source_id]".
@@ -1006,21 +671,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return getSource(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   GetSourceRequest request = GetSourceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Source response = securityCenterClient.getSource(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1029,47 +682,19 @@ public class SecurityCenterClient implements BackgroundResource {
     return getSourceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a source.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName name = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   GetSourceRequest request = GetSourceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Source&gt; future = securityCenterClient.getSourceCallable().futureCall(request);
-   *   // Do something
-   *   Source response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetSourceRequest, Source> getSourceCallable() {
     return stub.getSourceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Filters an organization's assets and groups them by their specified properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   String groupBy = "";
-   *   GroupAssetsRequest request = GroupAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   for (GroupResult element : securityCenterClient.groupAssets(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1078,84 +703,33 @@ public class SecurityCenterClient implements BackgroundResource {
     return groupAssetsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Filters an organization's assets and groups them by their specified properties.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   String groupBy = "";
-   *   GroupAssetsRequest request = GroupAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   ApiFuture&lt;GroupAssetsPagedResponse&gt; future = securityCenterClient.groupAssetsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (GroupResult element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse>
       groupAssetsPagedCallable() {
     return stub.groupAssetsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Filters an organization's assets and groups them by their specified properties.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   String groupBy = "";
-   *   GroupAssetsRequest request = GroupAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   while (true) {
-   *     GroupAssetsResponse response = securityCenterClient.groupAssetsCallable().call(request);
-   *     for (GroupResult element : response.getGroupByResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
     return stub.groupAssetsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
    * /v1p1beta1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String groupBy = "";
-   *   for (GroupResult element : securityCenterClient.groupFindings(parent, groupBy).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the source to groupBy. Its format is
    *     "organizations/[organization_id]/sources/[source_id]". To groupBy across all sources
@@ -1164,9 +738,18 @@ public class SecurityCenterClient implements BackgroundResource {
    *     (including `state_change`). The string value should follow SQL syntax: comma separated list
    *     of fields. For example: "parent,resource_name".
    *     <p>The following fields are supported:
-   *     <p>&#42; resource_name &#42; category &#42; state &#42; parent &#42; severity
+   *     <ul>
+   *       <li>resource_name
+   *       <li>category
+   *       <li>state
+   *       <li>parent
+   *       <li>severity
+   *     </ul>
    *     <p>The following fields are supported when compare_duration is set:
-   *     <p>&#42; state_change
+   *     <ul>
+   *       <li>state_change
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GroupFindingsPagedResponse groupFindings(SourceName parent, String groupBy) {
@@ -1178,24 +761,12 @@ public class SecurityCenterClient implements BackgroundResource {
     return groupFindings(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
    * /v1p1beta1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String groupBy = "";
-   *   for (GroupResult element : securityCenterClient.groupFindings(parent.toString(), groupBy).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the source to groupBy. Its format is
    *     "organizations/[organization_id]/sources/[source_id]". To groupBy across all sources
@@ -1204,9 +775,18 @@ public class SecurityCenterClient implements BackgroundResource {
    *     (including `state_change`). The string value should follow SQL syntax: comma separated list
    *     of fields. For example: "parent,resource_name".
    *     <p>The following fields are supported:
-   *     <p>&#42; resource_name &#42; category &#42; state &#42; parent &#42; severity
+   *     <ul>
+   *       <li>resource_name
+   *       <li>category
+   *       <li>state
+   *       <li>parent
+   *       <li>severity
+   *     </ul>
    *     <p>The following fields are supported when compare_duration is set:
-   *     <p>&#42; state_change
+   *     <ul>
+   *       <li>state_change
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GroupFindingsPagedResponse groupFindings(String parent, String groupBy) {
@@ -1215,28 +795,12 @@ public class SecurityCenterClient implements BackgroundResource {
     return groupFindings(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Filters an organization or source's findings and groups them by their specified properties.
    *
    * <p>To group across all sources provide a `-` as the source id. Example:
    * /v1p1beta1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String groupBy = "";
-   *   GroupFindingsRequest request = GroupFindingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   for (GroupResult element : securityCenterClient.groupFindings(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1245,7 +809,7 @@ public class SecurityCenterClient implements BackgroundResource {
     return groupFindingsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Filters an organization or source's findings and groups them by their specified properties.
    *
@@ -1253,29 +817,13 @@ public class SecurityCenterClient implements BackgroundResource {
    * /v1p1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String groupBy = "";
-   *   GroupFindingsRequest request = GroupFindingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   ApiFuture&lt;GroupFindingsPagedResponse&gt; future = securityCenterClient.groupFindingsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (GroupResult element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GroupFindingsRequest, GroupFindingsPagedResponse>
       groupFindingsPagedCallable() {
     return stub.groupFindingsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Filters an organization or source's findings and groups them by their specified properties.
    *
@@ -1283,48 +831,14 @@ public class SecurityCenterClient implements BackgroundResource {
    * /v1p1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   String groupBy = "";
-   *   GroupFindingsRequest request = GroupFindingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setGroupBy(groupBy)
-   *     .build();
-   *   while (true) {
-   *     GroupFindingsResponse response = securityCenterClient.groupFindingsCallable().call(request);
-   *     for (GroupResult element : response.getGroupByResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GroupFindingsRequest, GroupFindingsResponse> groupFindingsCallable() {
     return stub.groupFindingsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists an organization's assets.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   for (ListAssetsResponse.ListAssetsResult element : securityCenterClient.listAssets(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the organization assets should belong to. Its format is
    *     "organizations/[organization_id]".
@@ -1336,20 +850,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return listAssets(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists an organization's assets.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   for (ListAssetsResponse.ListAssetsResult element : securityCenterClient.listAssets(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the organization assets should belong to. Its format is
    *     "organizations/[organization_id]".
@@ -1360,23 +863,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return listAssets(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists an organization's assets.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   ListAssetsRequest request = ListAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (ListAssetsResponse.ListAssetsResult element : securityCenterClient.listAssets(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1385,78 +874,32 @@ public class SecurityCenterClient implements BackgroundResource {
     return listAssetsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists an organization's assets.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   ListAssetsRequest request = ListAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListAssetsPagedResponse&gt; future = securityCenterClient.listAssetsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ListAssetsResponse.ListAssetsResult element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
     return stub.listAssetsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists an organization's assets.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   ListAssetsRequest request = ListAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListAssetsResponse response = securityCenterClient.listAssetsCallable().call(request);
-   *     for (ListAssetsResponse.ListAssetsResult element : response.getListAssetsResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
     return stub.listAssetsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists an organization or source's findings.
    *
    * <p>To list across all sources provide a `-` as the source id. Example:
    * /v1p1beta1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   for (ListFindingsResponse.ListFindingsResult element : securityCenterClient.listFindings(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the source the findings belong to. Its format is
    *     "organizations/[organization_id]/sources/[source_id]". To list across all sources provide a
@@ -1471,23 +914,12 @@ public class SecurityCenterClient implements BackgroundResource {
     return listFindings(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists an organization or source's findings.
    *
    * <p>To list across all sources provide a `-` as the source id. Example:
    * /v1p1beta1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   for (ListFindingsResponse.ListFindingsResult element : securityCenterClient.listFindings(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the source the findings belong to. Its format is
    *     "organizations/[organization_id]/sources/[source_id]". To list across all sources provide a
@@ -1499,26 +931,12 @@ public class SecurityCenterClient implements BackgroundResource {
     return listFindings(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists an organization or source's findings.
    *
    * <p>To list across all sources provide a `-` as the source id. Example:
    * /v1p1beta1/organizations/{organization_id}/sources/-/findings
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   ListFindingsRequest request = ListFindingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (ListFindingsResponse.ListFindingsResult element : securityCenterClient.listFindings(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1527,7 +945,7 @@ public class SecurityCenterClient implements BackgroundResource {
     return listFindingsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists an organization or source's findings.
    *
@@ -1535,27 +953,13 @@ public class SecurityCenterClient implements BackgroundResource {
    * /v1p1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   ListFindingsRequest request = ListFindingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListFindingsPagedResponse&gt; future = securityCenterClient.listFindingsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ListFindingsResponse.ListFindingsResult element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse>
       listFindingsPagedCallable() {
     return stub.listFindingsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists an organization or source's findings.
    *
@@ -1563,46 +967,14 @@ public class SecurityCenterClient implements BackgroundResource {
    * /v1p1beta1/organizations/{organization_id}/sources/-/findings
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SourceName parent = SourceName.of("[ORGANIZATION]", "[SOURCE]");
-   *   ListFindingsRequest request = ListFindingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListFindingsResponse response = securityCenterClient.listFindingsCallable().call(request);
-   *     for (ListFindingsResponse.ListFindingsResult element : response.getListFindingsResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return stub.listFindingsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notification configs.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   for (NotificationConfig element : securityCenterClient.listNotificationConfigs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the organization to list notification configs. Its format is
    *     "organizations/[organization_id]".
@@ -1617,20 +989,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return listNotificationConfigs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notification configs.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   for (NotificationConfig element : securityCenterClient.listNotificationConfigs(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Name of the organization to list notification configs. Its format is
    *     "organizations/[organization_id]".
@@ -1642,23 +1003,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return listNotificationConfigs(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notification configs.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   ListNotificationConfigsRequest request = ListNotificationConfigsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (NotificationConfig element : securityCenterClient.listNotificationConfigs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1668,77 +1015,31 @@ public class SecurityCenterClient implements BackgroundResource {
     return listNotificationConfigsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notification configs.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   ListNotificationConfigsRequest request = ListNotificationConfigsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListNotificationConfigsPagedResponse&gt; future = securityCenterClient.listNotificationConfigsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (NotificationConfig element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
       listNotificationConfigsPagedCallable() {
     return stub.listNotificationConfigsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notification configs.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   ListNotificationConfigsRequest request = ListNotificationConfigsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListNotificationConfigsResponse response = securityCenterClient.listNotificationConfigsCallable().call(request);
-   *     for (NotificationConfig element : response.getNotificationConfigsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
       listNotificationConfigsCallable() {
     return stub.listNotificationConfigsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all sources belonging to an organization.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   for (Source element : securityCenterClient.listSources(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
    *     "organizations/[organization_id]".
@@ -1752,20 +1053,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return listSources(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all sources belonging to an organization.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   for (Source element : securityCenterClient.listSources(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the parent of sources to list. Its format should be
    *     "organizations/[organization_id]".
@@ -1776,23 +1066,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return listSources(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all sources belonging to an organization.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   ListSourcesRequest request = ListSourcesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Source element : securityCenterClient.listSources(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1801,84 +1077,38 @@ public class SecurityCenterClient implements BackgroundResource {
     return listSourcesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all sources belonging to an organization.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   ListSourcesRequest request = ListSourcesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListSourcesPagedResponse&gt; future = securityCenterClient.listSourcesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Source element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse>
       listSourcesPagedCallable() {
     return stub.listSourcesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all sources belonging to an organization.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   ListSourcesRequest request = ListSourcesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListSourcesResponse response = securityCenterClient.listSourcesCallable().call(request);
-   *     for (Source element : response.getSourcesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListSourcesRequest, ListSourcesResponse> listSourcesCallable() {
     return stub.listSourcesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs asset discovery. The discovery is tracked with a long-running operation.
    *
    * <p>This API can only be called with limited frequency for an organization. If it is called too
    * frequently the caller will receive a TOO_MANY_REQUESTS error.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   RunAssetDiscoveryResponse response = securityCenterClient.runAssetDiscoveryAsync(parent).get();
-   * }
-   * </code></pre>
-   *
    * @param parent Required. Name of the organization to run asset discovery for. Its format is
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       OrganizationName parent) {
     RunAssetDiscoveryRequest request =
@@ -1888,28 +1118,17 @@ public class SecurityCenterClient implements BackgroundResource {
     return runAssetDiscoveryAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs asset discovery. The discovery is tracked with a long-running operation.
    *
    * <p>This API can only be called with limited frequency for an organization. If it is called too
    * frequently the caller will receive a TOO_MANY_REQUESTS error.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   RunAssetDiscoveryResponse response = securityCenterClient.runAssetDiscoveryAsync(parent.toString()).get();
-   * }
-   * </code></pre>
-   *
    * @param parent Required. Name of the organization to run asset discovery for. Its format is
    *     "organizations/[organization_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       String parent) {
     RunAssetDiscoveryRequest request =
@@ -1917,36 +1136,22 @@ public class SecurityCenterClient implements BackgroundResource {
     return runAssetDiscoveryAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs asset discovery. The discovery is tracked with a long-running operation.
    *
    * <p>This API can only be called with limited frequency for an organization. If it is called too
    * frequently the caller will receive a TOO_MANY_REQUESTS error.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   RunAssetDiscoveryRequest request = RunAssetDiscoveryRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   RunAssetDiscoveryResponse response = securityCenterClient.runAssetDiscoveryAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<RunAssetDiscoveryResponse, Empty> runAssetDiscoveryAsync(
       RunAssetDiscoveryRequest request) {
     return runAssetDiscoveryOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs asset discovery. The discovery is tracked with a long-running operation.
    *
@@ -1954,26 +1159,13 @@ public class SecurityCenterClient implements BackgroundResource {
    * frequently the caller will receive a TOO_MANY_REQUESTS error.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   RunAssetDiscoveryRequest request = RunAssetDiscoveryRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   OperationFuture&lt;RunAssetDiscoveryResponse, Empty&gt; future = securityCenterClient.runAssetDiscoveryOperationCallable().futureCall(request);
-   *   // Do something
-   *   RunAssetDiscoveryResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable() {
     return stub.runAssetDiscoveryOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Runs asset discovery. The discovery is tracked with a long-running operation.
    *
@@ -1981,37 +1173,14 @@ public class SecurityCenterClient implements BackgroundResource {
    * frequently the caller will receive a TOO_MANY_REQUESTS error.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   RunAssetDiscoveryRequest request = RunAssetDiscoveryRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = securityCenterClient.runAssetDiscoveryCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryCallable() {
     return stub.runAssetDiscoveryCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the state of a finding.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
-   *   Finding.State state = Finding.State.STATE_UNSPECIFIED;
-   *   Timestamp startTime = Timestamp.newBuilder().build();
-   *   Finding response = securityCenterClient.setFindingState(name, state, startTime);
-   * }
-   * </code></pre>
    *
    * @param name Required. The relative resource name of the finding. See:
    *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
@@ -2030,20 +1199,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return setFindingState(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the state of a finding.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
-   *   Finding.State state = Finding.State.STATE_UNSPECIFIED;
-   *   Timestamp startTime = Timestamp.newBuilder().build();
-   *   Finding response = securityCenterClient.setFindingState(name.toString(), state, startTime);
-   * }
-   * </code></pre>
    *
    * @param name Required. The relative resource name of the finding. See:
    *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
@@ -2062,25 +1220,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return setFindingState(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the state of a finding.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
-   *   Finding.State state = Finding.State.STATE_UNSPECIFIED;
-   *   Timestamp startTime = Timestamp.newBuilder().build();
-   *   SetFindingStateRequest request = SetFindingStateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setState(state)
-   *     .setStartTime(startTime)
-   *     .build();
-   *   Finding response = securityCenterClient.setFindingState(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2089,45 +1231,19 @@ public class SecurityCenterClient implements BackgroundResource {
     return setFindingStateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the state of a finding.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   FindingName name = FindingName.of("[ORGANIZATION]", "[SOURCE]", "[FINDING]");
-   *   Finding.State state = Finding.State.STATE_UNSPECIFIED;
-   *   Timestamp startTime = Timestamp.newBuilder().build();
-   *   SetFindingStateRequest request = SetFindingStateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setState(state)
-   *     .setStartTime(startTime)
-   *     .build();
-   *   ApiFuture&lt;Finding&gt; future = securityCenterClient.setFindingStateCallable().futureCall(request);
-   *   // Do something
-   *   Finding response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SetFindingStateRequest, Finding> setFindingStateCallable() {
     return stub.setFindingStateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified Source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = securityCenterClient.setIamPolicy(resource, policy);
-   * }
-   * </code></pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
@@ -2145,19 +1261,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified Source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = securityCenterClient.setIamPolicy(resource.toString(), policy);
-   * }
-   * </code></pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
@@ -2172,23 +1278,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified Source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .setPolicy(policy)
-   *     .build();
-   *   Policy response = securityCenterClient.setIamPolicy(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2197,43 +1289,19 @@ public class SecurityCenterClient implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified Source.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .setPolicy(policy)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = securityCenterClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   Policy response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the permissions that a caller has on the specified source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(resource, permissions);
-   * }
-   * </code></pre>
    *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -2252,19 +1320,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the permissions that a caller has on the specified source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(resource.toString(), permissions);
-   * }
-   * </code></pre>
    *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -2283,23 +1341,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the permissions that a caller has on the specified source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2308,44 +1352,21 @@ public class SecurityCenterClient implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the permissions that a caller has on the specified source.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = securityCenterClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
-   *   TestIamPermissionsResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates or updates a finding. The corresponding source must exist for a finding creation to
    * succeed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   Finding finding = Finding.newBuilder().build();
-   *   Finding response = securityCenterClient.updateFinding(finding);
-   * }
-   * </code></pre>
    *
    * @param finding Required. The finding resource to update or create if it does not already exist.
    *     parent, security_marks, and update_time will be ignored.
@@ -2358,20 +1379,10 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateFinding(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates or updates a finding. The corresponding source must exist for a finding creation to
    * succeed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   Finding finding = Finding.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Finding response = securityCenterClient.updateFinding(finding, updateMask);
-   * }
-   * </code></pre>
    *
    * @param finding Required. The finding resource to update or create if it does not already exist.
    *     parent, security_marks, and update_time will be ignored.
@@ -2390,22 +1401,10 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateFinding(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates or updates a finding. The corresponding source must exist for a finding creation to
    * succeed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   Finding finding = Finding.newBuilder().build();
-   *   UpdateFindingRequest request = UpdateFindingRequest.newBuilder()
-   *     .setFinding(finding)
-   *     .build();
-   *   Finding response = securityCenterClient.updateFinding(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2414,42 +1413,21 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateFindingCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates or updates a finding. The corresponding source must exist for a finding creation to
    * succeed.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   Finding finding = Finding.newBuilder().build();
-   *   UpdateFindingRequest request = UpdateFindingRequest.newBuilder()
-   *     .setFinding(finding)
-   *     .build();
-   *   ApiFuture&lt;Finding&gt; future = securityCenterClient.updateFindingCallable().futureCall(request);
-   *   // Do something
-   *   Finding response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable() {
     return stub.updateFindingCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a notification config. The following update fields are allowed: description,
    * pubsub_topic, streaming_config.filter
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
-   *   NotificationConfig response = securityCenterClient.updateNotificationConfig(notificationConfig);
-   * }
-   * </code></pre>
    *
    * @param notificationConfig Required. The notification config to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2462,20 +1440,10 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateNotificationConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a notification config. The following update fields are allowed: description,
    * pubsub_topic, streaming_config.filter
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   NotificationConfig response = securityCenterClient.updateNotificationConfig(notificationConfig, updateMask);
-   * }
-   * </code></pre>
    *
    * @param notificationConfig Required. The notification config to update.
    * @param updateMask The FieldMask to use when updating the notification config.
@@ -2492,22 +1460,10 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateNotificationConfig(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a notification config. The following update fields are allowed: description,
    * pubsub_topic, streaming_config.filter
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
-   *   UpdateNotificationConfigRequest request = UpdateNotificationConfigRequest.newBuilder()
-   *     .setNotificationConfig(notificationConfig)
-   *     .build();
-   *   NotificationConfig response = securityCenterClient.updateNotificationConfig(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2517,42 +1473,21 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateNotificationConfigCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a notification config. The following update fields are allowed: description,
    * pubsub_topic, streaming_config.filter
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
-   *   UpdateNotificationConfigRequest request = UpdateNotificationConfigRequest.newBuilder()
-   *     .setNotificationConfig(notificationConfig)
-   *     .build();
-   *   ApiFuture&lt;NotificationConfig&gt; future = securityCenterClient.updateNotificationConfigCallable().futureCall(request);
-   *   // Do something
-   *   NotificationConfig response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateNotificationConfigRequest, NotificationConfig>
       updateNotificationConfigCallable() {
     return stub.updateNotificationConfigCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an organization's settings.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationSettings organizationSettings = OrganizationSettings.newBuilder().build();
-   *   OrganizationSettings response = securityCenterClient.updateOrganizationSettings(organizationSettings);
-   * }
-   * </code></pre>
    *
    * @param organizationSettings Required. The organization settings resource to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2566,21 +1501,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateOrganizationSettings(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an organization's settings.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationSettings organizationSettings = OrganizationSettings.newBuilder().build();
-   *   UpdateOrganizationSettingsRequest request = UpdateOrganizationSettingsRequest.newBuilder()
-   *     .setOrganizationSettings(organizationSettings)
-   *     .build();
-   *   OrganizationSettings response = securityCenterClient.updateOrganizationSettings(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2590,41 +1513,20 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateOrganizationSettingsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an organization's settings.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   OrganizationSettings organizationSettings = OrganizationSettings.newBuilder().build();
-   *   UpdateOrganizationSettingsRequest request = UpdateOrganizationSettingsRequest.newBuilder()
-   *     .setOrganizationSettings(organizationSettings)
-   *     .build();
-   *   ApiFuture&lt;OrganizationSettings&gt; future = securityCenterClient.updateOrganizationSettingsCallable().futureCall(request);
-   *   // Do something
-   *   OrganizationSettings response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsCallable() {
     return stub.updateOrganizationSettingsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   Source source = Source.newBuilder().build();
-   *   Source response = securityCenterClient.updateSource(source);
-   * }
-   * </code></pre>
    *
    * @param source Required. The source resource to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2634,19 +1536,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateSource(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   Source source = Source.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Source response = securityCenterClient.updateSource(source, updateMask);
-   * }
-   * </code></pre>
    *
    * @param source Required. The source resource to update.
    * @param updateMask The FieldMask to use when updating the source resource.
@@ -2659,21 +1551,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateSource(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a source.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   Source source = Source.newBuilder().build();
-   *   UpdateSourceRequest request = UpdateSourceRequest.newBuilder()
-   *     .setSource(source)
-   *     .build();
-   *   Source response = securityCenterClient.updateSource(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2682,40 +1562,19 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateSourceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a source.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   Source source = Source.newBuilder().build();
-   *   UpdateSourceRequest request = UpdateSourceRequest.newBuilder()
-   *     .setSource(source)
-   *     .build();
-   *   ApiFuture&lt;Source&gt; future = securityCenterClient.updateSourceCallable().futureCall(request);
-   *   // Do something
-   *   Source response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateSourceRequest, Source> updateSourceCallable() {
     return stub.updateSourceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates security marks.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SecurityMarks securityMarks = SecurityMarks.newBuilder().build();
-   *   SecurityMarks response = securityCenterClient.updateSecurityMarks(securityMarks);
-   * }
-   * </code></pre>
    *
    * @param securityMarks Required. The security marks resource to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2726,19 +1585,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateSecurityMarks(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates security marks.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SecurityMarks securityMarks = SecurityMarks.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   SecurityMarks response = securityCenterClient.updateSecurityMarks(securityMarks, updateMask);
-   * }
-   * </code></pre>
    *
    * @param securityMarks Required. The security marks resource to update.
    * @param updateMask The FieldMask to use when updating the security marks resource.
@@ -2756,21 +1605,9 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateSecurityMarks(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates security marks.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SecurityMarks securityMarks = SecurityMarks.newBuilder().build();
-   *   UpdateSecurityMarksRequest request = UpdateSecurityMarksRequest.newBuilder()
-   *     .setSecurityMarks(securityMarks)
-   *     .build();
-   *   SecurityMarks response = securityCenterClient.updateSecurityMarks(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2779,23 +1616,11 @@ public class SecurityCenterClient implements BackgroundResource {
     return updateSecurityMarksCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates security marks.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   SecurityMarks securityMarks = SecurityMarks.newBuilder().build();
-   *   UpdateSecurityMarksRequest request = UpdateSecurityMarksRequest.newBuilder()
-   *     .setSecurityMarks(securityMarks)
-   *     .build();
-   *   ApiFuture&lt;SecurityMarks&gt; future = securityCenterClient.updateSecurityMarksCallable().futureCall(request);
-   *   // Do something
-   *   SecurityMarks response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateSecurityMarksRequest, SecurityMarks>
       updateSecurityMarksCallable() {

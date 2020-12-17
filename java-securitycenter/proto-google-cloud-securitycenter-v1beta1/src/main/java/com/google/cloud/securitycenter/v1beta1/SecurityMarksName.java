@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,29 +26,48 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class SecurityMarksName implements ResourceName {
-
-  @Deprecated
-  protected SecurityMarksName() {}
-
-  private static final PathTemplate ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_ASSET =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/assets/{asset}/securityMarks");
-  private static final PathTemplate ORGANIZATION_SOURCE_FINDING_SECURITY_MARKS_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_SOURCE_FINDING =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/sources/{source}/findings/{finding}/securityMarks");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String organization;
+  private final String asset;
+  private final String source;
+  private final String finding;
 
-  private String organization;
-  private String asset;
-  private String source;
-  private String finding;
+  @Deprecated
+  protected SecurityMarksName() {
+    organization = null;
+    asset = null;
+    source = null;
+    finding = null;
+  }
+
+  private SecurityMarksName(Builder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    asset = Preconditions.checkNotNull(builder.getAsset());
+    source = null;
+    finding = null;
+    pathTemplate = ORGANIZATION_ASSET;
+  }
+
+  private SecurityMarksName(OrganizationSourceFindingSecurityMarksBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    source = Preconditions.checkNotNull(builder.getSource());
+    finding = Preconditions.checkNotNull(builder.getFinding());
+    asset = null;
+    pathTemplate = ORGANIZATION_SOURCE_FINDING;
+  }
 
   public String getOrganization() {
     return organization;
@@ -64,19 +83,6 @@ public class SecurityMarksName implements ResourceName {
 
   public String getFinding() {
     return finding;
-  }
-
-  private SecurityMarksName(Builder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    asset = Preconditions.checkNotNull(builder.getAsset());
-    pathTemplate = ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE;
-  }
-
-  private SecurityMarksName(OrganizationSourceFindingSecurityMarksBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    source = Preconditions.checkNotNull(builder.getSource());
-    finding = Preconditions.checkNotNull(builder.getFinding());
-    pathTemplate = ORGANIZATION_SOURCE_FINDING_SECURITY_MARKS_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -99,19 +105,13 @@ public class SecurityMarksName implements ResourceName {
   }
 
   public static SecurityMarksName of(String organization, String asset) {
-    return newOrganizationAssetSecurityMarksBuilder()
-        .setOrganization(organization)
-        .setAsset(asset)
-        .build();
+    return newBuilder().setOrganization(organization).setAsset(asset).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityMarksName ofOrganizationAssetSecurityMarksName(
       String organization, String asset) {
-    return newOrganizationAssetSecurityMarksBuilder()
-        .setOrganization(organization)
-        .setAsset(asset)
-        .build();
+    return newBuilder().setOrganization(organization).setAsset(asset).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -148,18 +148,16 @@ public class SecurityMarksName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE.match(formattedString);
+    if (ORGANIZATION_ASSET.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_ASSET.match(formattedString);
       return ofOrganizationAssetSecurityMarksName(
           matchMap.get("organization"), matchMap.get("asset"));
-    } else if (ORGANIZATION_SOURCE_FINDING_SECURITY_MARKS_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          ORGANIZATION_SOURCE_FINDING_SECURITY_MARKS_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION_SOURCE_FINDING.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_SOURCE_FINDING.match(formattedString);
       return ofOrganizationSourceFindingSecurityMarksName(
           matchMap.get("organization"), matchMap.get("source"), matchMap.get("finding"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("SecurityMarksName.parse: formattedString not in valid format");
   }
 
   public static List<SecurityMarksName> parseList(List<String> formattedStrings) {
@@ -183,8 +181,8 @@ public class SecurityMarksName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_SOURCE_FINDING_SECURITY_MARKS_PATH_TEMPLATE.matches(formattedString);
+    return ORGANIZATION_ASSET.matches(formattedString)
+        || ORGANIZATION_SOURCE_FINDING.matches(formattedString);
   }
 
   @Override
@@ -221,9 +219,39 @@ public class SecurityMarksName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      SecurityMarksName that = ((SecurityMarksName) o);
+      return Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.asset, that.asset)
+          && Objects.equals(this.source, that.source)
+          && Objects.equals(this.finding, that.finding);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(asset);
+    h *= 1000003;
+    h ^= Objects.hashCode(source);
+    h *= 1000003;
+    h ^= Objects.hashCode(finding);
+    return h;
+  }
+
   /** Builder for organizations/{organization}/assets/{asset}/securityMarks. */
   public static class Builder {
-
     private String organization;
     private String asset;
 
@@ -249,9 +277,8 @@ public class SecurityMarksName implements ResourceName {
 
     private Builder(SecurityMarksName securityMarksName) {
       Preconditions.checkArgument(
-          securityMarksName.pathTemplate == ORGANIZATION_ASSET_SECURITY_MARKS_PATH_TEMPLATE,
-          "toBuilder is only supported when SecurityMarksName has the pattern of "
-              + "organizations/{organization}/assets/{asset}/securityMarks.");
+          Objects.equals(securityMarksName.pathTemplate, ORGANIZATION_ASSET),
+          "toBuilder is only supported when SecurityMarksName has the pattern of organizations/{organization}/assets/{asset}/securityMarks");
       organization = securityMarksName.organization;
       asset = securityMarksName.asset;
     }
@@ -264,12 +291,11 @@ public class SecurityMarksName implements ResourceName {
   /** Builder for organizations/{organization}/sources/{source}/findings/{finding}/securityMarks. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationSourceFindingSecurityMarksBuilder {
-
     private String organization;
     private String source;
     private String finding;
 
-    private OrganizationSourceFindingSecurityMarksBuilder() {}
+    protected OrganizationSourceFindingSecurityMarksBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -301,36 +327,5 @@ public class SecurityMarksName implements ResourceName {
     public SecurityMarksName build() {
       return new SecurityMarksName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      SecurityMarksName that = (SecurityMarksName) o;
-      return (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.asset, that.asset))
-          && (Objects.equals(this.source, that.source))
-          && (Objects.equals(this.finding, that.finding));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(asset);
-    h *= 1000003;
-    h ^= Objects.hashCode(source);
-    h *= 1000003;
-    h ^= Objects.hashCode(finding);
-    return h;
   }
 }

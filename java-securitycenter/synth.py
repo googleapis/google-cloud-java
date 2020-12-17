@@ -13,7 +13,7 @@
 # limitations under the License.
 
 """This script is used to synthesize generated parts of this library."""
-
+import synthtool as s
 import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
@@ -27,5 +27,50 @@ for version in versions:
       version=version,
       bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
+
+  # TODO: remove for next major release (2.0.0)
+  s.replace(
+      [f"proto-google-cloud-securitycenter-{version}/**/SecurityMarksName.java"],
+      "formatOrganizationAssetName\(",
+      "formatOrganizationAssetSecurityMarksName("
+  )
+  s.replace(
+      [f"proto-google-cloud-securitycenter-{version}/**/SecurityMarksName.java"],
+      "formatOrganizationSourceFindingName\(",
+      "formatOrganizationSourceFindingSecurityMarksName("
+  )
+  s.replace(
+      [f"proto-google-cloud-securitycenter-{version}/**/SecurityMarksName.java"],
+      "newOrganizationAssetBuilder\(",
+      "newOrganizationAssetSecurityMarksBuilder("
+  )
+  s.replace(
+      [f"proto-google-cloud-securitycenter-{version}/**/SecurityMarksName.java"],
+      "newOrganizationSourceFindingBuilder\(",
+      "newOrganizationSourceFindingSecurityMarksBuilder("
+  )
+  s.replace(
+      [f"proto-google-cloud-securitycenter-{version}/**/SecurityMarksName.java"],
+      "ofOrganizationAssetName\(",
+      "ofOrganizationAssetSecurityMarksName("
+  )
+  s.replace(
+      [f"proto-google-cloud-securitycenter-{version}/**/SecurityMarksName.java"],
+      "ofOrganizationSourceFindingName\(",
+      "ofOrganizationSourceFindingSecurityMarksName("
+  )
+  s.replace(
+      [f"proto-google-cloud-securitycenter-{version}/**/SecurityMarksName.java"],
+      "OrganizationSourceFindingBuilder",
+      "OrganizationSourceFindingSecurityMarksBuilder",
+  )
+  java.format_code(f"proto-google-cloud-securitycenter-{version}")
+
+s.replace(
+  [f"google-cloud-securitycenter/**/SecurityCenterClientTest.java"],
+  "SecurityMarksName.ofOrganizationAssetName",
+  "SecurityMarksName.ofOrganizationAssetSecurityMarksName"
+)
+java.format_code(f"google-cloud-securitycenter")
 
 java.common_templates()

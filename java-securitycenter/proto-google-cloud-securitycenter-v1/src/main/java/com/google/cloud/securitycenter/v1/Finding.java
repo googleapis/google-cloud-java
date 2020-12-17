@@ -49,6 +49,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     category_ = "";
     externalUri_ = "";
+    severity_ = 0;
   }
 
   @java.lang.Override
@@ -185,6 +186,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 createTime_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 96:
+            {
+              int rawValue = input.readEnum();
+
+              severity_ = rawValue;
               break;
             }
           default:
@@ -389,6 +397,281 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.Finding.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The severity of the finding.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.securitycenter.v1.Finding.Severity}
+   */
+  public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * This value is used for findings when a source doesn't write a severity
+     * value.
+     * </pre>
+     *
+     * <code>SEVERITY_UNSPECIFIED = 0;</code>
+     */
+    SEVERITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Vulnerability:
+     * A critical vulnerability is easily discoverable by an external actor,
+     * exploitable, and results in the direct ability to execute arbitrary code,
+     * exfiltrate data, and otherwise gain additional access and privileges to
+     * cloud resources and workloads. Examples include publicly accessible
+     * unprotected user data, public SSH access with weak or no passwords, etc.
+     * Threat:
+     * Indicates a threat that is able to access, modify, or delete data or
+     * execute unauthorized code within existing resources.
+     * </pre>
+     *
+     * <code>CRITICAL = 1;</code>
+     */
+    CRITICAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Vulnerability:
+     * A high risk vulnerability can be easily discovered and exploited in
+     * combination with other vulnerabilities in order to gain direct access and
+     * the ability to execute arbitrary code, exfiltrate data, and otherwise
+     * gain additional access and privileges to cloud resources and workloads.
+     * An example is a database with weak or no passwords that is only
+     * accessible internally. This database could easily be compromised by an
+     * actor that had access to the internal network.
+     * Threat:
+     * Indicates a threat that is able to create new computational resources in
+     * an environment but not able to access data or execute code in existing
+     * resources.
+     * </pre>
+     *
+     * <code>HIGH = 2;</code>
+     */
+    HIGH(2),
+    /**
+     *
+     *
+     * <pre>
+     * Vulnerability:
+     * A medium risk vulnerability could be used by an actor to gain access to
+     * resources or privileges that enable them to eventually (through multiple
+     * steps or a complex exploit) gain access and the ability to execute
+     * arbitrary code or exfiltrate data. An example is a service account with
+     * access to more projects than it should have. If an actor gains access to
+     * the service account, they could potentially use that access to manipulate
+     * a project the service account was not intended to.
+     * Threat:
+     * Indicates a threat that is able to cause operational impact but may not
+     * access data or execute unauthorized code.
+     * </pre>
+     *
+     * <code>MEDIUM = 3;</code>
+     */
+    MEDIUM(3),
+    /**
+     *
+     *
+     * <pre>
+     * Vulnerability:
+     * A low risk vulnerability hampers a security organization’s ability to
+     * detect vulnerabilities or active threats in their deployment, or prevents
+     * the root cause investigation of security issues. An example is monitoring
+     * and logs being disabled for resource configurations and access.
+     * Threat:
+     * Indicates a threat that has obtained minimal access to an environment but
+     * is not able to access data, execute code, or create resources.
+     * </pre>
+     *
+     * <code>LOW = 4;</code>
+     */
+    LOW(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * This value is used for findings when a source doesn't write a severity
+     * value.
+     * </pre>
+     *
+     * <code>SEVERITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Vulnerability:
+     * A critical vulnerability is easily discoverable by an external actor,
+     * exploitable, and results in the direct ability to execute arbitrary code,
+     * exfiltrate data, and otherwise gain additional access and privileges to
+     * cloud resources and workloads. Examples include publicly accessible
+     * unprotected user data, public SSH access with weak or no passwords, etc.
+     * Threat:
+     * Indicates a threat that is able to access, modify, or delete data or
+     * execute unauthorized code within existing resources.
+     * </pre>
+     *
+     * <code>CRITICAL = 1;</code>
+     */
+    public static final int CRITICAL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Vulnerability:
+     * A high risk vulnerability can be easily discovered and exploited in
+     * combination with other vulnerabilities in order to gain direct access and
+     * the ability to execute arbitrary code, exfiltrate data, and otherwise
+     * gain additional access and privileges to cloud resources and workloads.
+     * An example is a database with weak or no passwords that is only
+     * accessible internally. This database could easily be compromised by an
+     * actor that had access to the internal network.
+     * Threat:
+     * Indicates a threat that is able to create new computational resources in
+     * an environment but not able to access data or execute code in existing
+     * resources.
+     * </pre>
+     *
+     * <code>HIGH = 2;</code>
+     */
+    public static final int HIGH_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Vulnerability:
+     * A medium risk vulnerability could be used by an actor to gain access to
+     * resources or privileges that enable them to eventually (through multiple
+     * steps or a complex exploit) gain access and the ability to execute
+     * arbitrary code or exfiltrate data. An example is a service account with
+     * access to more projects than it should have. If an actor gains access to
+     * the service account, they could potentially use that access to manipulate
+     * a project the service account was not intended to.
+     * Threat:
+     * Indicates a threat that is able to cause operational impact but may not
+     * access data or execute unauthorized code.
+     * </pre>
+     *
+     * <code>MEDIUM = 3;</code>
+     */
+    public static final int MEDIUM_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Vulnerability:
+     * A low risk vulnerability hampers a security organization’s ability to
+     * detect vulnerabilities or active threats in their deployment, or prevents
+     * the root cause investigation of security issues. An example is monitoring
+     * and logs being disabled for resource configurations and access.
+     * Threat:
+     * Indicates a threat that has obtained minimal access to an environment but
+     * is not able to access data, execute code, or create resources.
+     * </pre>
+     *
+     * <code>LOW = 4;</code>
+     */
+    public static final int LOW_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Severity valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Severity forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SEVERITY_UNSPECIFIED;
+        case 1:
+          return CRITICAL;
+        case 2:
+          return HIGH;
+        case 3:
+          return MEDIUM;
+        case 4:
+          return LOW;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Severity> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Severity> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Severity>() {
+          public Severity findValueByNumber(int number) {
+            return Severity.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1.Finding.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final Severity[] VALUES = values();
+
+    public static Severity valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Severity(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.Finding.Severity)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -986,6 +1269,46 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return getCreateTime();
   }
 
+  public static final int SEVERITY_FIELD_NUMBER = 12;
+  private int severity_;
+  /**
+   *
+   *
+   * <pre>
+   * The severity of the finding. This field is managed by the source that
+   * writes the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.Severity severity = 12;</code>
+   *
+   * @return The enum numeric value on the wire for severity.
+   */
+  @java.lang.Override
+  public int getSeverityValue() {
+    return severity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The severity of the finding. This field is managed by the source that
+   * writes the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Finding.Severity severity = 12;</code>
+   *
+   * @return The severity.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Finding.Severity getSeverity() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.securitycenter.v1.Finding.Severity result =
+        com.google.cloud.securitycenter.v1.Finding.Severity.valueOf(severity_);
+    return result == null
+        ? com.google.cloud.securitycenter.v1.Finding.Severity.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1028,6 +1351,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (createTime_ != null) {
       output.writeMessage(10, getCreateTime());
+    }
+    if (severity_
+        != com.google.cloud.securitycenter.v1.Finding.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(12, severity_);
     }
     unknownFields.writeTo(output);
   }
@@ -1075,6 +1402,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getCreateTime());
     }
+    if (severity_
+        != com.google.cloud.securitycenter.v1.Finding.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, severity_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1110,6 +1441,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (severity_ != other.severity_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1149,6 +1481,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
+    hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
+    hash = (53 * hash) + severity_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1350,6 +1684,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
         createTimeBuilder_ = null;
       }
+      severity_ = 0;
+
       return this;
     }
 
@@ -1401,6 +1737,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.createTime_ = createTimeBuilder_.build();
       }
+      result.severity_ = severity_;
       onBuilt();
       return result;
     }
@@ -1482,6 +1819,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (other.severity_ != 0) {
+        setSeverityValue(other.getSeverityValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3021,6 +3361,104 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private int severity_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The severity of the finding. This field is managed by the source that
+     * writes the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.Severity severity = 12;</code>
+     *
+     * @return The enum numeric value on the wire for severity.
+     */
+    @java.lang.Override
+    public int getSeverityValue() {
+      return severity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The severity of the finding. This field is managed by the source that
+     * writes the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.Severity severity = 12;</code>
+     *
+     * @param value The enum numeric value on the wire for severity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverityValue(int value) {
+
+      severity_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The severity of the finding. This field is managed by the source that
+     * writes the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.Severity severity = 12;</code>
+     *
+     * @return The severity.
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.Finding.Severity getSeverity() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.securitycenter.v1.Finding.Severity result =
+          com.google.cloud.securitycenter.v1.Finding.Severity.valueOf(severity_);
+      return result == null
+          ? com.google.cloud.securitycenter.v1.Finding.Severity.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The severity of the finding. This field is managed by the source that
+     * writes the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.Severity severity = 12;</code>
+     *
+     * @param value The severity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverity(com.google.cloud.securitycenter.v1.Finding.Severity value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      severity_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The severity of the finding. This field is managed by the source that
+     * writes the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Finding.Severity severity = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSeverity() {
+
+      severity_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
