@@ -338,11 +338,15 @@ public class MetricsTracerTest {
       Thread.sleep(100);
       // Verify that the latency is recorded with an error code (in this case UNKNOWN)
       long attemptLatency =
-          getAggregationValueAsLong(
+          StatsTestUtils.getAggregationValueAsLong(
+              localStats,
               RpcViewConstants.BIGTABLE_ATTEMPT_LATENCY_VIEW,
               ImmutableMap.of(
                   RpcMeasureConstants.BIGTABLE_OP, TagValue.create("Bigtable.MutateRows"),
-                  RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("UNKNOWN")));
+                  RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create("UNKNOWN")),
+              PROJECT_ID,
+              INSTANCE_ID,
+              APP_PROFILE_ID);
       assertThat(attemptLatency).isAtLeast(0);
     }
   }
