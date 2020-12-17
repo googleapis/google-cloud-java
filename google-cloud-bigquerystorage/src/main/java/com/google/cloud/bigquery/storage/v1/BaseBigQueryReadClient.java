@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.storage.v1;
 
 import com.google.api.core.BetaApi;
@@ -25,7 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: BigQuery Read API.
  *
@@ -34,18 +35,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   ReadSession readSession = ReadSession.newBuilder().build();
- *   int maxStreamCount = 0;
- *   ReadSession response = baseBigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the baseBigQueryReadClient object to clean up resources
+ * <p>Note: close() needs to be called on the BaseBigQueryReadClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -74,30 +64,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BaseBigQueryReadSettings baseBigQueryReadSettings =
  *     BaseBigQueryReadSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * BaseBigQueryReadClient baseBigQueryReadClient =
  *     BaseBigQueryReadClient.create(baseBigQueryReadSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BaseBigQueryReadSettings baseBigQueryReadSettings =
  *     BaseBigQueryReadSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BaseBigQueryReadClient baseBigQueryReadClient =
  *     BaseBigQueryReadClient.create(baseBigQueryReadSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class BaseBigQueryReadClient implements BackgroundResource {
   private final BaseBigQueryReadSettings settings;
   private final BigQueryReadStub stub;
@@ -118,7 +106,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
 
   /**
    * Constructs an instance of BaseBigQueryReadClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use BaseBigQueryReadSettings}.
+   * is for advanced usage - prefer using create(BaseBigQueryReadSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BaseBigQueryReadClient create(BigQueryReadStub stub) {
@@ -150,7 +138,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new read session. A read session divides the contents of a BigQuery table into one or
    * more streams, which can then be used to read data from the table. The read session also
@@ -168,17 +156,6 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *
    * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
    * clean-up by the caller.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ReadSession readSession = ReadSession.newBuilder().build();
-   *   int maxStreamCount = 0;
-   *   ReadSession response = baseBigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The request project that owns the session, in the form of
    *     `projects/{project_id}`.
@@ -202,7 +179,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
     return createReadSession(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new read session. A read session divides the contents of a BigQuery table into one or
    * more streams, which can then be used to read data from the table. The read session also
@@ -220,17 +197,6 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *
    * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
    * clean-up by the caller.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ReadSession readSession = ReadSession.newBuilder().build();
-   *   int maxStreamCount = 0;
-   *   ReadSession response = baseBigQueryReadClient.createReadSession(parent.toString(), readSession, maxStreamCount);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The request project that owns the session, in the form of
    *     `projects/{project_id}`.
@@ -254,7 +220,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
     return createReadSession(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new read session. A read session divides the contents of a BigQuery table into one or
    * more streams, which can then be used to read data from the table. The read session also
@@ -272,20 +238,6 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *
    * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
    * clean-up by the caller.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ReadSession readSession = ReadSession.newBuilder().build();
-   *   CreateReadSessionRequest request = CreateReadSessionRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setReadSession(readSession)
-   *     .build();
-   *   ReadSession response = baseBigQueryReadClient.createReadSession(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -294,7 +246,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
     return createReadSessionCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new read session. A read session divides the contents of a BigQuery table into one or
    * more streams, which can then be used to read data from the table. The read session also
@@ -314,26 +266,12 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    * clean-up by the caller.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ReadSession readSession = ReadSession.newBuilder().build();
-   *   CreateReadSessionRequest request = CreateReadSessionRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setReadSession(readSession)
-   *     .build();
-   *   ApiFuture&lt;ReadSession&gt; future = baseBigQueryReadClient.createReadSessionCallable().futureCall(request);
-   *   // Do something
-   *   ReadSession response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateReadSessionRequest, ReadSession> createReadSessionCallable() {
     return stub.createReadSessionCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Reads rows from the stream in the format prescribed by the ReadSession. Each response contains
    * one or more table rows, up to a maximum of 100 MiB per response; read requests which attempt to
@@ -343,26 +281,12 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    * stream.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   ReadStreamName readStream = ReadStreamName.of("[PROJECT]", "[LOCATION]", "[SESSION]", "[STREAM]");
-   *   ReadRowsRequest request = ReadRowsRequest.newBuilder()
-   *     .setReadStream(readStream.toString())
-   *     .build();
-   *
-   *   ServerStream&lt;ReadRowsResponse&gt; stream = baseBigQueryReadClient.readRowsCallable().call(request);
-   *   for (ReadRowsResponse response : stream) {
-   *     // Do something when receive a response
-   *   }
-   * }
-   * </code></pre>
    */
   public final ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable() {
     return stub.readRowsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Splits a given `ReadStream` into two `ReadStream` objects. These `ReadStream` objects are
    * referred to as the primary and the residual streams of the split. The original `ReadStream` can
@@ -374,18 +298,6 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    * Concretely, it is guaranteed that for streams original, primary, and residual, that
    * original[0-j] = primary[0-j] and original[j-n] = residual[0-m] once the streams have been read
    * to completion.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   ReadStreamName name = ReadStreamName.of("[PROJECT]", "[LOCATION]", "[SESSION]", "[STREAM]");
-   *   SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   SplitReadStreamResponse response = baseBigQueryReadClient.splitReadStream(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -394,7 +306,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
     return splitReadStreamCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Splits a given `ReadStream` into two `ReadStream` objects. These `ReadStream` objects are
    * referred to as the primary and the residual streams of the split. The original `ReadStream` can
@@ -408,18 +320,6 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    * to completion.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   ReadStreamName name = ReadStreamName.of("[PROJECT]", "[LOCATION]", "[SESSION]", "[STREAM]");
-   *   SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;SplitReadStreamResponse&gt; future = baseBigQueryReadClient.splitReadStreamCallable().futureCall(request);
-   *   // Do something
-   *   SplitReadStreamResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SplitReadStreamRequest, SplitReadStreamResponse>
       splitReadStreamCallable() {

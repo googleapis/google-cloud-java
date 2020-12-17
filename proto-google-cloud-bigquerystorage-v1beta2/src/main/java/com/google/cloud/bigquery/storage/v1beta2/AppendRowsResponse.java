@@ -68,10 +68,28 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
           case 0:
             done = true;
             break;
-          case 8:
+          case 10:
             {
+              com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.Builder
+                  subBuilder = null;
+              if (responseCase_ == 1) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+                            response_)
+                        .toBuilder();
+              }
+              response_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+                        response_);
+                response_ = subBuilder.buildPartial();
+              }
               responseCase_ = 1;
-              response_ = input.readInt64();
               break;
             }
           case 18:
@@ -139,6 +157,796 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.Builder.class);
   }
 
+  public interface AppendResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The row offset at which the last append occurred. The offset will not be
+     * set if appending using default streams.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value offset = 1;</code>
+     *
+     * @return Whether the offset field is set.
+     */
+    boolean hasOffset();
+    /**
+     *
+     *
+     * <pre>
+     * The row offset at which the last append occurred. The offset will not be
+     * set if appending using default streams.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value offset = 1;</code>
+     *
+     * @return The offset.
+     */
+    com.google.protobuf.Int64Value getOffset();
+    /**
+     *
+     *
+     * <pre>
+     * The row offset at which the last append occurred. The offset will not be
+     * set if appending using default streams.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value offset = 1;</code>
+     */
+    com.google.protobuf.Int64ValueOrBuilder getOffsetOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A success append result.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult}
+   */
+  public static final class AppendResult extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+      AppendResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AppendResult.newBuilder() to construct.
+    private AppendResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AppendResult() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AppendResult();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private AppendResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.protobuf.Int64Value.Builder subBuilder = null;
+                if (offset_ != null) {
+                  subBuilder = offset_.toBuilder();
+                }
+                offset_ =
+                    input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(offset_);
+                  offset_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1beta2.StorageProto
+          .internal_static_google_cloud_bigquery_storage_v1beta2_AppendRowsResponse_AppendResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.bigquery.storage.v1beta2.StorageProto
+          .internal_static_google_cloud_bigquery_storage_v1beta2_AppendRowsResponse_AppendResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.class,
+              com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.Builder
+                  .class);
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 1;
+    private com.google.protobuf.Int64Value offset_;
+    /**
+     *
+     *
+     * <pre>
+     * The row offset at which the last append occurred. The offset will not be
+     * set if appending using default streams.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value offset = 1;</code>
+     *
+     * @return Whether the offset field is set.
+     */
+    @java.lang.Override
+    public boolean hasOffset() {
+      return offset_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row offset at which the last append occurred. The offset will not be
+     * set if appending using default streams.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value offset = 1;</code>
+     *
+     * @return The offset.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Int64Value getOffset() {
+      return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row offset at which the last append occurred. The offset will not be
+     * set if appending using default streams.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value offset = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.Int64ValueOrBuilder getOffsetOrBuilder() {
+      return getOffset();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (offset_ != null) {
+        output.writeMessage(1, getOffset());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (offset_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getOffset());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult other =
+          (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult) obj;
+
+      if (hasOffset() != other.hasOffset()) return false;
+      if (hasOffset()) {
+        if (!getOffset().equals(other.getOffset())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasOffset()) {
+        hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+        hash = (53 * hash) + getOffset().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A success append result.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1beta2.StorageProto
+            .internal_static_google_cloud_bigquery_storage_v1beta2_AppendRowsResponse_AppendResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.storage.v1beta2.StorageProto
+            .internal_static_google_cloud_bigquery_storage_v1beta2_AppendRowsResponse_AppendResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.class,
+                com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (offsetBuilder_ == null) {
+          offset_ = null;
+        } else {
+          offset_ = null;
+          offsetBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.storage.v1beta2.StorageProto
+            .internal_static_google_cloud_bigquery_storage_v1beta2_AppendRowsResponse_AppendResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult build() {
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+          buildPartial() {
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult result =
+            new com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult(this);
+        if (offsetBuilder_ == null) {
+          result.offset_ = offset_;
+        } else {
+          result.offset_ = offsetBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult) {
+          return mergeFrom(
+              (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult other) {
+        if (other
+            == com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+                .getDefaultInstance()) return this;
+        if (other.hasOffset()) {
+          mergeOffset(other.getOffset());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.Int64Value offset_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Int64Value,
+              com.google.protobuf.Int64Value.Builder,
+              com.google.protobuf.Int64ValueOrBuilder>
+          offsetBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The row offset at which the last append occurred. The offset will not be
+       * set if appending using default streams.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value offset = 1;</code>
+       *
+       * @return Whether the offset field is set.
+       */
+      public boolean hasOffset() {
+        return offsetBuilder_ != null || offset_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The row offset at which the last append occurred. The offset will not be
+       * set if appending using default streams.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value offset = 1;</code>
+       *
+       * @return The offset.
+       */
+      public com.google.protobuf.Int64Value getOffset() {
+        if (offsetBuilder_ == null) {
+          return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
+        } else {
+          return offsetBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The row offset at which the last append occurred. The offset will not be
+       * set if appending using default streams.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value offset = 1;</code>
+       */
+      public Builder setOffset(com.google.protobuf.Int64Value value) {
+        if (offsetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          offset_ = value;
+          onChanged();
+        } else {
+          offsetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The row offset at which the last append occurred. The offset will not be
+       * set if appending using default streams.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value offset = 1;</code>
+       */
+      public Builder setOffset(com.google.protobuf.Int64Value.Builder builderForValue) {
+        if (offsetBuilder_ == null) {
+          offset_ = builderForValue.build();
+          onChanged();
+        } else {
+          offsetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The row offset at which the last append occurred. The offset will not be
+       * set if appending using default streams.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value offset = 1;</code>
+       */
+      public Builder mergeOffset(com.google.protobuf.Int64Value value) {
+        if (offsetBuilder_ == null) {
+          if (offset_ != null) {
+            offset_ =
+                com.google.protobuf.Int64Value.newBuilder(offset_).mergeFrom(value).buildPartial();
+          } else {
+            offset_ = value;
+          }
+          onChanged();
+        } else {
+          offsetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The row offset at which the last append occurred. The offset will not be
+       * set if appending using default streams.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value offset = 1;</code>
+       */
+      public Builder clearOffset() {
+        if (offsetBuilder_ == null) {
+          offset_ = null;
+          onChanged();
+        } else {
+          offset_ = null;
+          offsetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The row offset at which the last append occurred. The offset will not be
+       * set if appending using default streams.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value offset = 1;</code>
+       */
+      public com.google.protobuf.Int64Value.Builder getOffsetBuilder() {
+
+        onChanged();
+        return getOffsetFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The row offset at which the last append occurred. The offset will not be
+       * set if appending using default streams.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value offset = 1;</code>
+       */
+      public com.google.protobuf.Int64ValueOrBuilder getOffsetOrBuilder() {
+        if (offsetBuilder_ != null) {
+          return offsetBuilder_.getMessageOrBuilder();
+        } else {
+          return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The row offset at which the last append occurred. The offset will not be
+       * set if appending using default streams.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value offset = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Int64Value,
+              com.google.protobuf.Int64Value.Builder,
+              com.google.protobuf.Int64ValueOrBuilder>
+          getOffsetFieldBuilder() {
+        if (offsetBuilder_ == null) {
+          offsetBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Int64Value,
+                  com.google.protobuf.Int64Value.Builder,
+                  com.google.protobuf.Int64ValueOrBuilder>(
+                  getOffset(), getParentForChildren(), isClean());
+          offset_ = null;
+        }
+        return offsetBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+    private static final com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult();
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AppendResult> PARSER =
+        new com.google.protobuf.AbstractParser<AppendResult>() {
+          @java.lang.Override
+          public AppendResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new AppendResult(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<AppendResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AppendResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int responseCase_ = 0;
   private java.lang.Object response_;
 
@@ -146,7 +954,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    OFFSET(1),
+    APPEND_RESULT(1),
     ERROR(2),
     RESPONSE_NOT_SET(0);
     private final int value;
@@ -167,7 +975,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     public static ResponseCase forNumber(int value) {
       switch (value) {
         case 1:
-          return OFFSET;
+          return APPEND_RESULT;
         case 2:
           return ERROR;
         case 0:
@@ -186,24 +994,62 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     return ResponseCase.forNumber(responseCase_);
   }
 
-  public static final int OFFSET_FIELD_NUMBER = 1;
+  public static final int APPEND_RESULT_FIELD_NUMBER = 1;
   /**
    *
    *
    * <pre>
-   * The row offset at which the last append occurred.
+   * Result if the append is successful.
    * </pre>
    *
-   * <code>int64 offset = 1;</code>
+   * <code>.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+   * </code>
    *
-   * @return The offset.
+   * @return Whether the appendResult field is set.
    */
   @java.lang.Override
-  public long getOffset() {
+  public boolean hasAppendResult() {
+    return responseCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Result if the append is successful.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+   * </code>
+   *
+   * @return The appendResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+      getAppendResult() {
     if (responseCase_ == 1) {
-      return (java.lang.Long) response_;
+      return (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult) response_;
     }
-    return 0L;
+    return com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Result if the append is successful.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResultOrBuilder
+      getAppendResultOrBuilder() {
+    if (responseCase_ == 1) {
+      return (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult) response_;
+    }
+    return com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        .getDefaultInstance();
   }
 
   public static final int ERROR_FIELD_NUMBER = 2;
@@ -211,8 +1057,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Error in case of append failure. If set, it means rows are not accepted
-   * into the system. Users can retry within the same connection.
+   * Error in case of request failed. If set, it means rows are not accepted
+   * into the system. Users can retry or continue with other requests within
+   * the same connection.
+   * ALREADY_EXISTS: happens when offset is specified, it means the entire
+   *   request is already appended, it is safe to ignore this error.
+   * OUT_OF_RANGE: happens when offset is specified, it means the specified
+   *   offset is beyond the end of the stream.
+   * INVALID_ARGUMENT: error caused by malformed request or data.
+   * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+   *   append without offset.
+   * ABORTED: request processing is aborted because of prior failures, request
+   *   can be retried if previous failure is fixed.
+   * INTERNAL: server side errors that can be retried.
    * </pre>
    *
    * <code>.google.rpc.Status error = 2;</code>
@@ -227,8 +1084,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Error in case of append failure. If set, it means rows are not accepted
-   * into the system. Users can retry within the same connection.
+   * Error in case of request failed. If set, it means rows are not accepted
+   * into the system. Users can retry or continue with other requests within
+   * the same connection.
+   * ALREADY_EXISTS: happens when offset is specified, it means the entire
+   *   request is already appended, it is safe to ignore this error.
+   * OUT_OF_RANGE: happens when offset is specified, it means the specified
+   *   offset is beyond the end of the stream.
+   * INVALID_ARGUMENT: error caused by malformed request or data.
+   * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+   *   append without offset.
+   * ABORTED: request processing is aborted because of prior failures, request
+   *   can be retried if previous failure is fixed.
+   * INTERNAL: server side errors that can be retried.
    * </pre>
    *
    * <code>.google.rpc.Status error = 2;</code>
@@ -246,8 +1114,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Error in case of append failure. If set, it means rows are not accepted
-   * into the system. Users can retry within the same connection.
+   * Error in case of request failed. If set, it means rows are not accepted
+   * into the system. Users can retry or continue with other requests within
+   * the same connection.
+   * ALREADY_EXISTS: happens when offset is specified, it means the entire
+   *   request is already appended, it is safe to ignore this error.
+   * OUT_OF_RANGE: happens when offset is specified, it means the specified
+   *   offset is beyond the end of the stream.
+   * INVALID_ARGUMENT: error caused by malformed request or data.
+   * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+   *   append without offset.
+   * ABORTED: request processing is aborted because of prior failures, request
+   *   can be retried if previous failure is fixed.
+   * INTERNAL: server side errors that can be retried.
    * </pre>
    *
    * <code>.google.rpc.Status error = 2;</code>
@@ -330,7 +1209,8 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (responseCase_ == 1) {
-      output.writeInt64(1, (long) ((java.lang.Long) response_));
+      output.writeMessage(
+          1, (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult) response_);
     }
     if (responseCase_ == 2) {
       output.writeMessage(2, (com.google.rpc.Status) response_);
@@ -349,8 +1229,10 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (responseCase_ == 1) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeInt64Size(
-              1, (long) ((java.lang.Long) response_));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1,
+              (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+                  response_);
     }
     if (responseCase_ == 2) {
       size +=
@@ -383,7 +1265,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     if (!getResponseCase().equals(other.getResponseCase())) return false;
     switch (responseCase_) {
       case 1:
-        if (getOffset() != other.getOffset()) return false;
+        if (!getAppendResult().equals(other.getAppendResult())) return false;
         break;
       case 2:
         if (!getError().equals(other.getError())) return false;
@@ -408,8 +1290,8 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     }
     switch (responseCase_) {
       case 1:
-        hash = (37 * hash) + OFFSET_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOffset());
+        hash = (37 * hash) + APPEND_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getAppendResult().hashCode();
         break;
       case 2:
         hash = (37 * hash) + ERROR_FIELD_NUMBER;
@@ -601,7 +1483,11 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse result =
           new com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse(this);
       if (responseCase_ == 1) {
-        result.response_ = response_;
+        if (appendResultBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = appendResultBuilder_.build();
+        }
       }
       if (responseCase_ == 2) {
         if (errorBuilder_ == null) {
@@ -671,9 +1557,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         mergeUpdatedSchema(other.getUpdatedSchema());
       }
       switch (other.getResponseCase()) {
-        case OFFSET:
+        case APPEND_RESULT:
           {
-            setOffset(other.getOffset());
+            mergeAppendResult(other.getAppendResult());
             break;
           }
         case ERROR:
@@ -730,59 +1616,248 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult,
+            com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.Builder,
+            com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResultOrBuilder>
+        appendResultBuilder_;
     /**
      *
      *
      * <pre>
-     * The row offset at which the last append occurred.
+     * Result if the append is successful.
      * </pre>
      *
-     * <code>int64 offset = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+     * </code>
      *
-     * @return The offset.
+     * @return Whether the appendResult field is set.
      */
-    public long getOffset() {
-      if (responseCase_ == 1) {
-        return (java.lang.Long) response_;
+    @java.lang.Override
+    public boolean hasAppendResult() {
+      return responseCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result if the append is successful.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+     * </code>
+     *
+     * @return The appendResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+        getAppendResult() {
+      if (appendResultBuilder_ == null) {
+        if (responseCase_ == 1) {
+          return (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+              response_;
+        }
+        return com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+            .getDefaultInstance();
+      } else {
+        if (responseCase_ == 1) {
+          return appendResultBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+            .getDefaultInstance();
       }
-      return 0L;
     }
     /**
      *
      *
      * <pre>
-     * The row offset at which the last append occurred.
+     * Result if the append is successful.
      * </pre>
      *
-     * <code>int64 offset = 1;</code>
-     *
-     * @param value The offset to set.
-     * @return This builder for chaining.
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+     * </code>
      */
-    public Builder setOffset(long value) {
-      responseCase_ = 1;
-      response_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The row offset at which the last append occurred.
-     * </pre>
-     *
-     * <code>int64 offset = 1;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearOffset() {
-      if (responseCase_ == 1) {
-        responseCase_ = 0;
-        response_ = null;
+    public Builder setAppendResult(
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult value) {
+      if (appendResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        response_ = value;
         onChanged();
+      } else {
+        appendResultBuilder_.setMessage(value);
+      }
+      responseCase_ = 1;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result if the append is successful.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+     * </code>
+     */
+    public Builder setAppendResult(
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.Builder
+            builderForValue) {
+      if (appendResultBuilder_ == null) {
+        response_ = builderForValue.build();
+        onChanged();
+      } else {
+        appendResultBuilder_.setMessage(builderForValue.build());
+      }
+      responseCase_ = 1;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result if the append is successful.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+     * </code>
+     */
+    public Builder mergeAppendResult(
+        com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult value) {
+      if (appendResultBuilder_ == null) {
+        if (responseCase_ == 1
+            && response_
+                != com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+                    .getDefaultInstance()) {
+          response_ =
+              com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.newBuilder(
+                      (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+                          response_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          response_ = value;
+        }
+        onChanged();
+      } else {
+        if (responseCase_ == 1) {
+          appendResultBuilder_.mergeFrom(value);
+        }
+        appendResultBuilder_.setMessage(value);
+      }
+      responseCase_ = 1;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result if the append is successful.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+     * </code>
+     */
+    public Builder clearAppendResult() {
+      if (appendResultBuilder_ == null) {
+        if (responseCase_ == 1) {
+          responseCase_ = 0;
+          response_ = null;
+          onChanged();
+        }
+      } else {
+        if (responseCase_ == 1) {
+          responseCase_ = 0;
+          response_ = null;
+        }
+        appendResultBuilder_.clear();
       }
       return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result if the append is successful.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+     * </code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.Builder
+        getAppendResultBuilder() {
+      return getAppendResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result if the append is successful.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResultOrBuilder
+        getAppendResultOrBuilder() {
+      if ((responseCase_ == 1) && (appendResultBuilder_ != null)) {
+        return appendResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (responseCase_ == 1) {
+          return (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+              response_;
+        }
+        return com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result if the append is successful.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult,
+            com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.Builder,
+            com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResultOrBuilder>
+        getAppendResultFieldBuilder() {
+      if (appendResultBuilder_ == null) {
+        if (!(responseCase_ == 1)) {
+          response_ =
+              com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
+                  .getDefaultInstance();
+        }
+        appendResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult,
+                com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.Builder,
+                com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResultOrBuilder>(
+                (com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
+                    response_,
+                getParentForChildren(),
+                isClean());
+        response_ = null;
+      }
+      responseCase_ = 1;
+      onChanged();
+      ;
+      return appendResultBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -792,8 +1867,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * Error in case of request failed. If set, it means rows are not accepted
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the entire
+     *   request is already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -808,8 +1894,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * Error in case of request failed. If set, it means rows are not accepted
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the entire
+     *   request is already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -834,8 +1931,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * Error in case of request failed. If set, it means rows are not accepted
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the entire
+     *   request is already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -857,8 +1965,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * Error in case of request failed. If set, it means rows are not accepted
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the entire
+     *   request is already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -877,8 +1996,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * Error in case of request failed. If set, it means rows are not accepted
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the entire
+     *   request is already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -907,8 +2037,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * Error in case of request failed. If set, it means rows are not accepted
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the entire
+     *   request is already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -933,8 +2074,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * Error in case of request failed. If set, it means rows are not accepted
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the entire
+     *   request is already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -946,8 +2098,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * Error in case of request failed. If set, it means rows are not accepted
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the entire
+     *   request is already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -967,8 +2130,19 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * Error in case of request failed. If set, it means rows are not accepted
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the entire
+     *   request is already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>

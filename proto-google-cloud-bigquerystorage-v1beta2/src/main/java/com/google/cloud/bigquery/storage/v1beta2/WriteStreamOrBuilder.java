@@ -216,29 +216,4 @@ public interface WriteStreamOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.storage.v1beta2.TableSchemaOrBuilder getTableSchemaOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Id set by client to annotate its identity.
-   * </pre>
-   *
-   * <code>string external_id = 6;</code>
-   *
-   * @return The externalId.
-   */
-  java.lang.String getExternalId();
-  /**
-   *
-   *
-   * <pre>
-   * Id set by client to annotate its identity.
-   * </pre>
-   *
-   * <code>string external_id = 6;</code>
-   *
-   * @return The bytes for externalId.
-   */
-  com.google.protobuf.ByteString getExternalIdBytes();
 }

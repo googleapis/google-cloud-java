@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.storage.v1alpha2.stub;
 
 import com.google.api.core.ApiFunction;
@@ -31,17 +32,8 @@ import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest;
-import com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsResponse;
-import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsRequest;
-import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStreamsResponse;
-import com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest;
-import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest;
-import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse;
-import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest;
-import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse;
-import com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest;
-import com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage;
+import com.google.cloud.bigquery.storage.v1alpha2.Stream;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -51,7 +43,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link BigQueryWriteStub}.
  *
@@ -69,22 +61,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createWriteStream to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BigQueryWriteStubSettings.Builder bigQueryWriteSettingsBuilder =
  *     BigQueryWriteStubSettings.newBuilder();
  * bigQueryWriteSettingsBuilder
  *     .createWriteStreamSettings()
  *     .setRetrySettings(
- *         bigQueryWriteSettingsBuilder.createWriteStreamSettings().getRetrySettings().toBuilder()
+ *         bigQueryWriteSettingsBuilder
+ *             .createWriteStreamSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BigQueryWriteStubSettings bigQueryWriteSettings = bigQueryWriteSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -94,44 +87,55 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private final UnaryCallSettings<CreateWriteStreamRequest, WriteStream> createWriteStreamSettings;
-  private final StreamingCallSettings<AppendRowsRequest, AppendRowsResponse> appendRowsSettings;
-  private final UnaryCallSettings<GetWriteStreamRequest, WriteStream> getWriteStreamSettings;
-  private final UnaryCallSettings<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
+  private final UnaryCallSettings<Storage.CreateWriteStreamRequest, Stream.WriteStream>
+      createWriteStreamSettings;
+  private final StreamingCallSettings<Storage.AppendRowsRequest, Storage.AppendRowsResponse>
+      appendRowsSettings;
+  private final UnaryCallSettings<Storage.GetWriteStreamRequest, Stream.WriteStream>
+      getWriteStreamSettings;
+  private final UnaryCallSettings<
+          Storage.FinalizeWriteStreamRequest, Storage.FinalizeWriteStreamResponse>
       finalizeWriteStreamSettings;
-  private final UnaryCallSettings<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
+  private final UnaryCallSettings<
+          Storage.BatchCommitWriteStreamsRequest, Storage.BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsSettings;
-  private final UnaryCallSettings<FlushRowsRequest, FlushRowsResponse> flushRowsSettings;
+  private final UnaryCallSettings<Storage.FlushRowsRequest, Storage.FlushRowsResponse>
+      flushRowsSettings;
 
   /** Returns the object with the settings used for calls to createWriteStream. */
-  public UnaryCallSettings<CreateWriteStreamRequest, WriteStream> createWriteStreamSettings() {
+  public UnaryCallSettings<Storage.CreateWriteStreamRequest, Stream.WriteStream>
+      createWriteStreamSettings() {
     return createWriteStreamSettings;
   }
 
   /** Returns the object with the settings used for calls to appendRows. */
-  public StreamingCallSettings<AppendRowsRequest, AppendRowsResponse> appendRowsSettings() {
+  public StreamingCallSettings<Storage.AppendRowsRequest, Storage.AppendRowsResponse>
+      appendRowsSettings() {
     return appendRowsSettings;
   }
 
   /** Returns the object with the settings used for calls to getWriteStream. */
-  public UnaryCallSettings<GetWriteStreamRequest, WriteStream> getWriteStreamSettings() {
+  public UnaryCallSettings<Storage.GetWriteStreamRequest, Stream.WriteStream>
+      getWriteStreamSettings() {
     return getWriteStreamSettings;
   }
 
   /** Returns the object with the settings used for calls to finalizeWriteStream. */
-  public UnaryCallSettings<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
+  public UnaryCallSettings<Storage.FinalizeWriteStreamRequest, Storage.FinalizeWriteStreamResponse>
       finalizeWriteStreamSettings() {
     return finalizeWriteStreamSettings;
   }
 
   /** Returns the object with the settings used for calls to batchCommitWriteStreams. */
-  public UnaryCallSettings<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
+  public UnaryCallSettings<
+          Storage.BatchCommitWriteStreamsRequest, Storage.BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsSettings() {
     return batchCommitWriteStreamsSettings;
   }
 
   /** Returns the object with the settings used for calls to flushRows. */
-  public UnaryCallSettings<FlushRowsRequest, FlushRowsResponse> flushRowsSettings() {
+  public UnaryCallSettings<Storage.FlushRowsRequest, Storage.FlushRowsResponse>
+      flushRowsSettings() {
     return flushRowsSettings;
   }
 
@@ -141,10 +145,10 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcBigQueryWriteStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -215,20 +219,21 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
   /** Builder for BigQueryWriteStubSettings. */
   public static class Builder extends StubSettings.Builder<BigQueryWriteStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<CreateWriteStreamRequest, WriteStream>
+    private final UnaryCallSettings.Builder<Storage.CreateWriteStreamRequest, Stream.WriteStream>
         createWriteStreamSettings;
-    private final StreamingCallSettings.Builder<AppendRowsRequest, AppendRowsResponse>
+    private final StreamingCallSettings.Builder<
+            Storage.AppendRowsRequest, Storage.AppendRowsResponse>
         appendRowsSettings;
-    private final UnaryCallSettings.Builder<GetWriteStreamRequest, WriteStream>
+    private final UnaryCallSettings.Builder<Storage.GetWriteStreamRequest, Stream.WriteStream>
         getWriteStreamSettings;
-    private final UnaryCallSettings.Builder<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
+    private final UnaryCallSettings.Builder<
+            Storage.FinalizeWriteStreamRequest, Storage.FinalizeWriteStreamResponse>
         finalizeWriteStreamSettings;
     private final UnaryCallSettings.Builder<
-            BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
+            Storage.BatchCommitWriteStreamsRequest, Storage.BatchCommitWriteStreamsResponse>
         batchCommitWriteStreamsSettings;
-    private final UnaryCallSettings.Builder<FlushRowsRequest, FlushRowsResponse> flushRowsSettings;
-
+    private final UnaryCallSettings.Builder<Storage.FlushRowsRequest, Storage.FlushRowsResponse>
+        flushRowsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -236,23 +241,23 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.UNAVAILABLE,
                   StatusCode.Code.RESOURCE_EXHAUSTED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_3_codes",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.RESOURCE_EXHAUSTED)));
       definitions.put(
           "retry_policy_2_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.RESOURCE_EXHAUSTED)));
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -271,7 +276,7 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -282,7 +287,7 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
               .setMaxRpcTimeout(Duration.ofMillis(86400000L))
               .setTotalTimeout(Duration.ofMillis(86400000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
+      definitions.put("retry_policy_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -293,29 +298,24 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_3_params", settings);
+      definitions.put("retry_policy_2_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createWriteStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       appendRowsSettings = StreamingCallSettings.newBuilder();
-
       getWriteStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       finalizeWriteStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchCommitWriteStreamsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       flushRowsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -325,47 +325,7 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
               finalizeWriteStreamSettings,
               batchCommitWriteStreamsSettings,
               flushRowsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createWriteStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getWriteStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .finalizeWriteStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .batchCommitWriteStreamsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .flushRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      return builder;
     }
 
     protected Builder(BigQueryWriteStubSettings settings) {
@@ -387,7 +347,47 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
               flushRowsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createWriteStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getWriteStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .finalizeWriteStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .batchCommitWriteStreamsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .flushRowsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -404,37 +404,40 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
     }
 
     /** Returns the builder for the settings used for calls to createWriteStream. */
-    public UnaryCallSettings.Builder<CreateWriteStreamRequest, WriteStream>
+    public UnaryCallSettings.Builder<Storage.CreateWriteStreamRequest, Stream.WriteStream>
         createWriteStreamSettings() {
       return createWriteStreamSettings;
     }
 
     /** Returns the builder for the settings used for calls to appendRows. */
-    public StreamingCallSettings.Builder<AppendRowsRequest, AppendRowsResponse>
+    public StreamingCallSettings.Builder<Storage.AppendRowsRequest, Storage.AppendRowsResponse>
         appendRowsSettings() {
       return appendRowsSettings;
     }
 
     /** Returns the builder for the settings used for calls to getWriteStream. */
-    public UnaryCallSettings.Builder<GetWriteStreamRequest, WriteStream> getWriteStreamSettings() {
+    public UnaryCallSettings.Builder<Storage.GetWriteStreamRequest, Stream.WriteStream>
+        getWriteStreamSettings() {
       return getWriteStreamSettings;
     }
 
     /** Returns the builder for the settings used for calls to finalizeWriteStream. */
-    public UnaryCallSettings.Builder<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
+    public UnaryCallSettings.Builder<
+            Storage.FinalizeWriteStreamRequest, Storage.FinalizeWriteStreamResponse>
         finalizeWriteStreamSettings() {
       return finalizeWriteStreamSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchCommitWriteStreams. */
     public UnaryCallSettings.Builder<
-            BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
+            Storage.BatchCommitWriteStreamsRequest, Storage.BatchCommitWriteStreamsResponse>
         batchCommitWriteStreamsSettings() {
       return batchCommitWriteStreamsSettings;
     }
 
     /** Returns the builder for the settings used for calls to flushRows. */
-    public UnaryCallSettings.Builder<FlushRowsRequest, FlushRowsResponse> flushRowsSettings() {
+    public UnaryCallSettings.Builder<Storage.FlushRowsRequest, Storage.FlushRowsResponse>
+        flushRowsSettings() {
       return flushRowsSettings;
     }
 

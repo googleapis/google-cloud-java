@@ -28,6 +28,7 @@ public interface BatchCommitWriteStreamsResponseOrBuilder
    *
    * <pre>
    * The time at which streams were committed in microseconds granularity.
+   * This field will only exist when there is no stream errors.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -40,6 +41,7 @@ public interface BatchCommitWriteStreamsResponseOrBuilder
    *
    * <pre>
    * The time at which streams were committed in microseconds granularity.
+   * This field will only exist when there is no stream errors.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -52,9 +54,68 @@ public interface BatchCommitWriteStreamsResponseOrBuilder
    *
    * <pre>
    * The time at which streams were committed in microseconds granularity.
+   * This field will only exist when there is no stream errors.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 1;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCommitTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Stream level error if commit failed. Only streams with error will be in
+   * the list.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+   */
+  java.util.List<com.google.cloud.bigquery.storage.v1beta2.StorageError> getStreamErrorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Stream level error if commit failed. Only streams with error will be in
+   * the list.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+   */
+  com.google.cloud.bigquery.storage.v1beta2.StorageError getStreamErrors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Stream level error if commit failed. Only streams with error will be in
+   * the list.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+   */
+  int getStreamErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Stream level error if commit failed. Only streams with error will be in
+   * the list.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+   */
+  java.util.List<? extends com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder>
+      getStreamErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Stream level error if commit failed. Only streams with error will be in
+   * the list.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+   */
+  com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder getStreamErrorsOrBuilder(
+      int index);
 }

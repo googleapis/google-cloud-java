@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.storage.v1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -24,16 +24,9 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse;
+import com.google.cloud.bigquery.storage.v1beta1.Storage;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -42,81 +35,95 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for BigQuery Storage API.
+ * gRPC stub implementation for the BigQueryStorage service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
-
-  private static final MethodDescriptor<CreateReadSessionRequest, ReadSession>
+  private static final MethodDescriptor<Storage.CreateReadSessionRequest, Storage.ReadSession>
       createReadSessionMethodDescriptor =
-          MethodDescriptor.<CreateReadSessionRequest, ReadSession>newBuilder()
+          MethodDescriptor.<Storage.CreateReadSessionRequest, Storage.ReadSession>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.bigquery.storage.v1beta1.BigQueryStorage/CreateReadSession")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateReadSessionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(ReadSession.getDefaultInstance()))
+                  ProtoUtils.marshaller(Storage.CreateReadSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(Storage.ReadSession.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<ReadRowsRequest, ReadRowsResponse>
+
+  private static final MethodDescriptor<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
       readRowsMethodDescriptor =
-          MethodDescriptor.<ReadRowsRequest, ReadRowsResponse>newBuilder()
+          MethodDescriptor.<Storage.ReadRowsRequest, Storage.ReadRowsResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName("google.cloud.bigquery.storage.v1beta1.BigQueryStorage/ReadRows")
-              .setRequestMarshaller(ProtoUtils.marshaller(ReadRowsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(ReadRowsResponse.getDefaultInstance()))
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(Storage.ReadRowsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(Storage.ReadRowsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
-          BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+          Storage.BatchCreateReadSessionStreamsRequest,
+          Storage.BatchCreateReadSessionStreamsResponse>
       batchCreateReadSessionStreamsMethodDescriptor =
           MethodDescriptor
-              .<BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+              .<Storage.BatchCreateReadSessionStreamsRequest,
+                  Storage.BatchCreateReadSessionStreamsResponse>
                   newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.bigquery.storage.v1beta1.BigQueryStorage/BatchCreateReadSessionStreams")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchCreateReadSessionStreamsRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      Storage.BatchCreateReadSessionStreamsRequest.getDefaultInstance()))
               .setResponseMarshaller(
-                  ProtoUtils.marshaller(BatchCreateReadSessionStreamsResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(
+                      Storage.BatchCreateReadSessionStreamsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<FinalizeStreamRequest, Empty>
+
+  private static final MethodDescriptor<Storage.FinalizeStreamRequest, Empty>
       finalizeStreamMethodDescriptor =
-          MethodDescriptor.<FinalizeStreamRequest, Empty>newBuilder()
+          MethodDescriptor.<Storage.FinalizeStreamRequest, Empty>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.bigquery.storage.v1beta1.BigQueryStorage/FinalizeStream")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(FinalizeStreamRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(Storage.FinalizeStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<SplitReadStreamRequest, SplitReadStreamResponse>
+
+  private static final MethodDescriptor<
+          Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
       splitReadStreamMethodDescriptor =
-          MethodDescriptor.<SplitReadStreamRequest, SplitReadStreamResponse>newBuilder()
+          MethodDescriptor
+              .<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.bigquery.storage.v1beta1.BigQueryStorage/SplitReadStream")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(SplitReadStreamRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(Storage.SplitReadStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(
-                  ProtoUtils.marshaller(SplitReadStreamResponse.getDefaultInstance()))
+                  ProtoUtils.marshaller(Storage.SplitReadStreamResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
-  private final UnaryCallable<CreateReadSessionRequest, ReadSession> createReadSessionCallable;
-  private final ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable;
+  private final UnaryCallable<Storage.CreateReadSessionRequest, Storage.ReadSession>
+      createReadSessionCallable;
+  private final ServerStreamingCallable<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
+      readRowsCallable;
   private final UnaryCallable<
-          BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+          Storage.BatchCreateReadSessionStreamsRequest,
+          Storage.BatchCreateReadSessionStreamsResponse>
       batchCreateReadSessionStreamsCallable;
-  private final UnaryCallable<FinalizeStreamRequest, Empty> finalizeStreamCallable;
-  private final UnaryCallable<SplitReadStreamRequest, SplitReadStreamResponse>
+  private final UnaryCallable<Storage.FinalizeStreamRequest, Empty> finalizeStreamCallable;
+  private final UnaryCallable<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
       splitReadStreamCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcBigQueryStorageStub create(BigQueryStorageStubSettings settings)
@@ -157,32 +164,34 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<CreateReadSessionRequest, ReadSession> createReadSessionTransportSettings =
-        GrpcCallSettings.<CreateReadSessionRequest, ReadSession>newBuilder()
-            .setMethodDescriptor(createReadSessionMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CreateReadSessionRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateReadSessionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "table_reference.project_id",
-                        String.valueOf(request.getTableReference().getProjectId()));
-                    params.put(
-                        "table_reference.dataset_id",
-                        String.valueOf(request.getTableReference().getDatasetId()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsTransportSettings =
-        GrpcCallSettings.<ReadRowsRequest, ReadRowsResponse>newBuilder()
+    GrpcCallSettings<Storage.CreateReadSessionRequest, Storage.ReadSession>
+        createReadSessionTransportSettings =
+            GrpcCallSettings.<Storage.CreateReadSessionRequest, Storage.ReadSession>newBuilder()
+                .setMethodDescriptor(createReadSessionMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<Storage.CreateReadSessionRequest>() {
+                      @Override
+                      public Map<String, String> extract(Storage.CreateReadSessionRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "table_reference.dataset_id",
+                            String.valueOf(request.getTableReference().getDatasetId()));
+                        params.put(
+                            "table_reference.project_id",
+                            String.valueOf(request.getTableReference().getProjectId()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<Storage.ReadRowsRequest, Storage.ReadRowsResponse> readRowsTransportSettings =
+        GrpcCallSettings.<Storage.ReadRowsRequest, Storage.ReadRowsResponse>newBuilder()
             .setMethodDescriptor(readRowsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReadRowsRequest>() {
+                new RequestParamsExtractor<Storage.ReadRowsRequest>() {
                   @Override
-                  public Map<String, String> extract(ReadRowsRequest request) {
+                  public Map<String, String> extract(Storage.ReadRowsRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put(
                         "read_position.stream.name",
@@ -191,44 +200,48 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
                   }
                 })
             .build();
-    GrpcCallSettings<BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+    GrpcCallSettings<
+            Storage.BatchCreateReadSessionStreamsRequest,
+            Storage.BatchCreateReadSessionStreamsResponse>
         batchCreateReadSessionStreamsTransportSettings =
             GrpcCallSettings
-                .<BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+                .<Storage.BatchCreateReadSessionStreamsRequest,
+                    Storage.BatchCreateReadSessionStreamsResponse>
                     newBuilder()
                 .setMethodDescriptor(batchCreateReadSessionStreamsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchCreateReadSessionStreamsRequest>() {
+                    new RequestParamsExtractor<Storage.BatchCreateReadSessionStreamsRequest>() {
                       @Override
                       public Map<String, String> extract(
-                          BatchCreateReadSessionStreamsRequest request) {
+                          Storage.BatchCreateReadSessionStreamsRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put("session.name", String.valueOf(request.getSession().getName()));
                         return params.build();
                       }
                     })
                 .build();
-    GrpcCallSettings<FinalizeStreamRequest, Empty> finalizeStreamTransportSettings =
-        GrpcCallSettings.<FinalizeStreamRequest, Empty>newBuilder()
+    GrpcCallSettings<Storage.FinalizeStreamRequest, Empty> finalizeStreamTransportSettings =
+        GrpcCallSettings.<Storage.FinalizeStreamRequest, Empty>newBuilder()
             .setMethodDescriptor(finalizeStreamMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<FinalizeStreamRequest>() {
+                new RequestParamsExtractor<Storage.FinalizeStreamRequest>() {
                   @Override
-                  public Map<String, String> extract(FinalizeStreamRequest request) {
+                  public Map<String, String> extract(Storage.FinalizeStreamRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("stream.name", String.valueOf(request.getStream().getName()));
                     return params.build();
                   }
                 })
             .build();
-    GrpcCallSettings<SplitReadStreamRequest, SplitReadStreamResponse>
+    GrpcCallSettings<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
         splitReadStreamTransportSettings =
-            GrpcCallSettings.<SplitReadStreamRequest, SplitReadStreamResponse>newBuilder()
+            GrpcCallSettings
+                .<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>newBuilder()
                 .setMethodDescriptor(splitReadStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SplitReadStreamRequest>() {
+                    new RequestParamsExtractor<Storage.SplitReadStreamRequest>() {
                       @Override
-                      public Map<String, String> extract(SplitReadStreamRequest request) {
+                      public Map<String, String> extract(Storage.SplitReadStreamRequest request) {
                         ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                         params.put(
                             "original_stream.name",
@@ -258,27 +271,37 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
         callableFactory.createUnaryCallable(
             splitReadStreamTransportSettings, settings.splitReadStreamSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<CreateReadSessionRequest, ReadSession> createReadSessionCallable() {
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  public UnaryCallable<Storage.CreateReadSessionRequest, Storage.ReadSession>
+      createReadSessionCallable() {
     return createReadSessionCallable;
   }
 
-  public ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable() {
+  public ServerStreamingCallable<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
+      readRowsCallable() {
     return readRowsCallable;
   }
 
-  public UnaryCallable<BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+  public UnaryCallable<
+          Storage.BatchCreateReadSessionStreamsRequest,
+          Storage.BatchCreateReadSessionStreamsResponse>
       batchCreateReadSessionStreamsCallable() {
     return batchCreateReadSessionStreamsCallable;
   }
 
-  public UnaryCallable<FinalizeStreamRequest, Empty> finalizeStreamCallable() {
+  public UnaryCallable<Storage.FinalizeStreamRequest, Empty> finalizeStreamCallable() {
     return finalizeStreamCallable;
   }
 
-  public UnaryCallable<SplitReadStreamRequest, SplitReadStreamResponse> splitReadStreamCallable() {
+  public UnaryCallable<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
+      splitReadStreamCallable() {
     return splitReadStreamCallable;
   }
 

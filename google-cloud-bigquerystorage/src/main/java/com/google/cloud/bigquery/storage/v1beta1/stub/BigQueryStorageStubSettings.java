@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.storage.v1beta1.stub;
 
 import com.google.api.core.ApiFunction;
@@ -31,15 +32,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse;
+import com.google.cloud.bigquery.storage.v1beta1.Storage;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -50,7 +43,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link BigQueryStorageStub}.
  *
@@ -68,22 +61,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createReadSession to 30 seconds:
  *
- * <pre>
- * <code>
- * BigQueryStorageStubSettings.Builder baseBigQueryStorageSettingsBuilder =
+ * <pre>{@code
+ * BigQueryStorageStubSettings.Builder bigQueryStorageSettingsBuilder =
  *     BigQueryStorageStubSettings.newBuilder();
- * baseBigQueryStorageSettingsBuilder
+ * bigQueryStorageSettingsBuilder
  *     .createReadSessionSettings()
  *     .setRetrySettings(
- *         baseBigQueryStorageSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
+ *         bigQueryStorageSettingsBuilder
+ *             .createReadSessionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * BigQueryStorageStubSettings baseBigQueryStorageSettings = baseBigQueryStorageSettingsBuilder.build();
- * </code>
- * </pre>
+ * BigQueryStorageStubSettings bigQueryStorageSettings = bigQueryStorageSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -93,39 +87,45 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private final UnaryCallSettings<CreateReadSessionRequest, ReadSession> createReadSessionSettings;
-  private final ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings;
+  private final UnaryCallSettings<Storage.CreateReadSessionRequest, Storage.ReadSession>
+      createReadSessionSettings;
+  private final ServerStreamingCallSettings<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
+      readRowsSettings;
   private final UnaryCallSettings<
-          BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+          Storage.BatchCreateReadSessionStreamsRequest,
+          Storage.BatchCreateReadSessionStreamsResponse>
       batchCreateReadSessionStreamsSettings;
-  private final UnaryCallSettings<FinalizeStreamRequest, Empty> finalizeStreamSettings;
-  private final UnaryCallSettings<SplitReadStreamRequest, SplitReadStreamResponse>
+  private final UnaryCallSettings<Storage.FinalizeStreamRequest, Empty> finalizeStreamSettings;
+  private final UnaryCallSettings<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
       splitReadStreamSettings;
 
   /** Returns the object with the settings used for calls to createReadSession. */
-  public UnaryCallSettings<CreateReadSessionRequest, ReadSession> createReadSessionSettings() {
+  public UnaryCallSettings<Storage.CreateReadSessionRequest, Storage.ReadSession>
+      createReadSessionSettings() {
     return createReadSessionSettings;
   }
 
   /** Returns the object with the settings used for calls to readRows. */
-  public ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings() {
+  public ServerStreamingCallSettings<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
+      readRowsSettings() {
     return readRowsSettings;
   }
 
   /** Returns the object with the settings used for calls to batchCreateReadSessionStreams. */
   public UnaryCallSettings<
-          BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+          Storage.BatchCreateReadSessionStreamsRequest,
+          Storage.BatchCreateReadSessionStreamsResponse>
       batchCreateReadSessionStreamsSettings() {
     return batchCreateReadSessionStreamsSettings;
   }
 
   /** Returns the object with the settings used for calls to finalizeStream. */
-  public UnaryCallSettings<FinalizeStreamRequest, Empty> finalizeStreamSettings() {
+  public UnaryCallSettings<Storage.FinalizeStreamRequest, Empty> finalizeStreamSettings() {
     return finalizeStreamSettings;
   }
 
   /** Returns the object with the settings used for calls to splitReadStream. */
-  public UnaryCallSettings<SplitReadStreamRequest, SplitReadStreamResponse>
+  public UnaryCallSettings<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
       splitReadStreamSettings() {
     return splitReadStreamSettings;
   }
@@ -136,10 +136,10 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcBigQueryStorageStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -210,18 +210,20 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
   /** Builder for BigQueryStorageStubSettings. */
   public static class Builder extends StubSettings.Builder<BigQueryStorageStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<CreateReadSessionRequest, ReadSession>
+    private final UnaryCallSettings.Builder<Storage.CreateReadSessionRequest, Storage.ReadSession>
         createReadSessionSettings;
-    private final ServerStreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse>
+    private final ServerStreamingCallSettings.Builder<
+            Storage.ReadRowsRequest, Storage.ReadRowsResponse>
         readRowsSettings;
     private final UnaryCallSettings.Builder<
-            BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+            Storage.BatchCreateReadSessionStreamsRequest,
+            Storage.BatchCreateReadSessionStreamsResponse>
         batchCreateReadSessionStreamsSettings;
-    private final UnaryCallSettings.Builder<FinalizeStreamRequest, Empty> finalizeStreamSettings;
-    private final UnaryCallSettings.Builder<SplitReadStreamRequest, SplitReadStreamResponse>
+    private final UnaryCallSettings.Builder<Storage.FinalizeStreamRequest, Empty>
+        finalizeStreamSettings;
+    private final UnaryCallSettings.Builder<
+            Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
         splitReadStreamSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -229,19 +231,18 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+          "retry_policy_1_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -260,7 +261,7 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -271,7 +272,7 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
               .setMaxRpcTimeout(Duration.ofMillis(86400000L))
               .setTotalTimeout(Duration.ofMillis(86400000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
+      definitions.put("retry_policy_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -282,27 +283,21 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createReadSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       readRowsSettings = ServerStreamingCallSettings.newBuilder();
-
       batchCreateReadSessionStreamsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       finalizeStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       splitReadStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -311,47 +306,7 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
               batchCreateReadSessionStreamsSettings,
               finalizeStreamSettings,
               splitReadStreamSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createReadSessionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .readRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .batchCreateReadSessionStreamsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .finalizeStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .splitReadStreamSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      return builder;
     }
 
     protected Builder(BigQueryStorageStubSettings settings) {
@@ -372,7 +327,47 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
               splitReadStreamSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createReadSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .readRowsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .batchCreateReadSessionStreamsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .finalizeStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .splitReadStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -389,31 +384,34 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
     }
 
     /** Returns the builder for the settings used for calls to createReadSession. */
-    public UnaryCallSettings.Builder<CreateReadSessionRequest, ReadSession>
+    public UnaryCallSettings.Builder<Storage.CreateReadSessionRequest, Storage.ReadSession>
         createReadSessionSettings() {
       return createReadSessionSettings;
     }
 
     /** Returns the builder for the settings used for calls to readRows. */
-    public ServerStreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse>
+    public ServerStreamingCallSettings.Builder<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
         readRowsSettings() {
       return readRowsSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchCreateReadSessionStreams. */
     public UnaryCallSettings.Builder<
-            BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+            Storage.BatchCreateReadSessionStreamsRequest,
+            Storage.BatchCreateReadSessionStreamsResponse>
         batchCreateReadSessionStreamsSettings() {
       return batchCreateReadSessionStreamsSettings;
     }
 
     /** Returns the builder for the settings used for calls to finalizeStream. */
-    public UnaryCallSettings.Builder<FinalizeStreamRequest, Empty> finalizeStreamSettings() {
+    public UnaryCallSettings.Builder<Storage.FinalizeStreamRequest, Empty>
+        finalizeStreamSettings() {
       return finalizeStreamSettings;
     }
 
     /** Returns the builder for the settings used for calls to splitReadStream. */
-    public UnaryCallSettings.Builder<SplitReadStreamRequest, SplitReadStreamResponse>
+    public UnaryCallSettings.Builder<
+            Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
         splitReadStreamSettings() {
       return splitReadStreamSettings;
     }

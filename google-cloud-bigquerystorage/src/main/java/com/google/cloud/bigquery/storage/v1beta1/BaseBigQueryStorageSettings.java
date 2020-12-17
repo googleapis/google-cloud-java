@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.storage.v1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -26,22 +27,13 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest;
-import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse;
 import com.google.cloud.bigquery.storage.v1beta1.stub.BigQueryStorageStubSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link BaseBigQueryStorageClient}.
  *
@@ -59,48 +51,53 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createReadSession to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BaseBigQueryStorageSettings.Builder baseBigQueryStorageSettingsBuilder =
  *     BaseBigQueryStorageSettings.newBuilder();
  * baseBigQueryStorageSettingsBuilder
  *     .createReadSessionSettings()
  *     .setRetrySettings(
- *         baseBigQueryStorageSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
+ *         baseBigQueryStorageSettingsBuilder
+ *             .createReadSessionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * BaseBigQueryStorageSettings baseBigQueryStorageSettings = baseBigQueryStorageSettingsBuilder.build();
- * </code>
- * </pre>
+ * BaseBigQueryStorageSettings baseBigQueryStorageSettings =
+ *     baseBigQueryStorageSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class BaseBigQueryStorageSettings extends ClientSettings<BaseBigQueryStorageSettings> {
+
   /** Returns the object with the settings used for calls to createReadSession. */
-  public UnaryCallSettings<CreateReadSessionRequest, ReadSession> createReadSessionSettings() {
+  public UnaryCallSettings<Storage.CreateReadSessionRequest, Storage.ReadSession>
+      createReadSessionSettings() {
     return ((BigQueryStorageStubSettings) getStubSettings()).createReadSessionSettings();
   }
 
   /** Returns the object with the settings used for calls to readRows. */
-  public ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings() {
+  public ServerStreamingCallSettings<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
+      readRowsSettings() {
     return ((BigQueryStorageStubSettings) getStubSettings()).readRowsSettings();
   }
 
   /** Returns the object with the settings used for calls to batchCreateReadSessionStreams. */
   public UnaryCallSettings<
-          BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+          Storage.BatchCreateReadSessionStreamsRequest,
+          Storage.BatchCreateReadSessionStreamsResponse>
       batchCreateReadSessionStreamsSettings() {
     return ((BigQueryStorageStubSettings) getStubSettings())
         .batchCreateReadSessionStreamsSettings();
   }
 
   /** Returns the object with the settings used for calls to finalizeStream. */
-  public UnaryCallSettings<FinalizeStreamRequest, Empty> finalizeStreamSettings() {
+  public UnaryCallSettings<Storage.FinalizeStreamRequest, Empty> finalizeStreamSettings() {
     return ((BigQueryStorageStubSettings) getStubSettings()).finalizeStreamSettings();
   }
 
   /** Returns the object with the settings used for calls to splitReadStream. */
-  public UnaryCallSettings<SplitReadStreamRequest, SplitReadStreamResponse>
+  public UnaryCallSettings<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
       splitReadStreamSettings() {
     return ((BigQueryStorageStubSettings) getStubSettings()).splitReadStreamSettings();
   }
@@ -165,16 +162,13 @@ public class BaseBigQueryStorageSettings extends ClientSettings<BaseBigQueryStor
 
   /** Builder for BaseBigQueryStorageSettings. */
   public static class Builder extends ClientSettings.Builder<BaseBigQueryStorageSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(BigQueryStorageStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(BigQueryStorageStubSettings.newBuilder());
     }
 
     protected Builder(BaseBigQueryStorageSettings settings) {
@@ -185,11 +179,15 @@ public class BaseBigQueryStorageSettings extends ClientSettings<BaseBigQueryStor
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(BigQueryStorageStubSettings.newBuilder());
+    }
+
     public BigQueryStorageStubSettings.Builder getStubSettingsBuilder() {
       return ((BigQueryStorageStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -203,31 +201,34 @@ public class BaseBigQueryStorageSettings extends ClientSettings<BaseBigQueryStor
     }
 
     /** Returns the builder for the settings used for calls to createReadSession. */
-    public UnaryCallSettings.Builder<CreateReadSessionRequest, ReadSession>
+    public UnaryCallSettings.Builder<Storage.CreateReadSessionRequest, Storage.ReadSession>
         createReadSessionSettings() {
       return getStubSettingsBuilder().createReadSessionSettings();
     }
 
     /** Returns the builder for the settings used for calls to readRows. */
-    public ServerStreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse>
+    public ServerStreamingCallSettings.Builder<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
         readRowsSettings() {
       return getStubSettingsBuilder().readRowsSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchCreateReadSessionStreams. */
     public UnaryCallSettings.Builder<
-            BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+            Storage.BatchCreateReadSessionStreamsRequest,
+            Storage.BatchCreateReadSessionStreamsResponse>
         batchCreateReadSessionStreamsSettings() {
       return getStubSettingsBuilder().batchCreateReadSessionStreamsSettings();
     }
 
     /** Returns the builder for the settings used for calls to finalizeStream. */
-    public UnaryCallSettings.Builder<FinalizeStreamRequest, Empty> finalizeStreamSettings() {
+    public UnaryCallSettings.Builder<Storage.FinalizeStreamRequest, Empty>
+        finalizeStreamSettings() {
       return getStubSettingsBuilder().finalizeStreamSettings();
     }
 
     /** Returns the builder for the settings used for calls to splitReadStream. */
-    public UnaryCallSettings.Builder<SplitReadStreamRequest, SplitReadStreamResponse>
+    public UnaryCallSettings.Builder<
+            Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
         splitReadStreamSettings() {
       return getStubSettingsBuilder().splitReadStreamSettings();
     }

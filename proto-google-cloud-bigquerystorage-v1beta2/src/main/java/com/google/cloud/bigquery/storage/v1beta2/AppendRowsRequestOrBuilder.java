@@ -144,16 +144,28 @@ public interface AppendRowsRequestOrBuilder
    *
    *
    * <pre>
-   * Only initial request setting is respected. If true, drop unknown input
-   * fields. Otherwise, the extra fields will cause append to fail. Default
-   * value is false.
+   * Id set by client to annotate its identity. Only initial request setting is
+   * respected.
    * </pre>
    *
-   * <code>bool ignore_unknown_fields = 5;</code>
+   * <code>string trace_id = 6;</code>
    *
-   * @return The ignoreUnknownFields.
+   * @return The traceId.
    */
-  boolean getIgnoreUnknownFields();
+  java.lang.String getTraceId();
+  /**
+   *
+   *
+   * <pre>
+   * Id set by client to annotate its identity. Only initial request setting is
+   * respected.
+   * </pre>
+   *
+   * <code>string trace_id = 6;</code>
+   *
+   * @return The bytes for traceId.
+   */
+  com.google.protobuf.ByteString getTraceIdBytes();
 
   public com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.RowsCase getRowsCase();
 }

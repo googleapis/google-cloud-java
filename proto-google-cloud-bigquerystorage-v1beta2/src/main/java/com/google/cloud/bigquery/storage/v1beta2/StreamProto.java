@@ -93,7 +93,7 @@ public final class StreamProto {
           + "ream\022\021\n\004name\030\001 \001(\tB\003\340A\003:{\352Ax\n)bigqueryst"
           + "orage.googleapis.com/ReadStream\022Kproject"
           + "s/{project}/locations/{location}/session"
-          + "s/{session}/streams/{stream}\"\374\003\n\013WriteSt"
+          + "s/{session}/streams/{stream}\"\347\003\n\013WriteSt"
           + "ream\022\021\n\004name\030\001 \001(\tB\003\340A\003\022J\n\004type\030\002 \001(\01627."
           + "google.cloud.bigquery.storage.v1beta2.Wr"
           + "iteStream.TypeB\003\340A\005\0224\n\013create_time\030\003 \001(\013"
@@ -101,19 +101,19 @@ public final class StreamProto {
           + "mit_time\030\004 \001(\0132\032.google.protobuf.Timesta"
           + "mpB\003\340A\003\022M\n\014table_schema\030\005 \001(\01322.google.c"
           + "loud.bigquery.storage.v1beta2.TableSchem"
-          + "aB\003\340A\003\022\023\n\013external_id\030\006 \001(\t\"F\n\004Type\022\024\n\020T"
-          + "YPE_UNSPECIFIED\020\000\022\r\n\tCOMMITTED\020\001\022\013\n\007PEND"
-          + "ING\020\002\022\014\n\010BUFFERED\020\003:v\352As\n*bigquerystorag"
-          + "e.googleapis.com/WriteStream\022Eprojects/{"
-          + "project}/datasets/{dataset}/tables/{tabl"
-          + "e}/streams/{stream}*>\n\nDataFormat\022\033\n\027DAT"
-          + "A_FORMAT_UNSPECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARRO"
-          + "W\020\002B\340\001\n)com.google.cloud.bigquery.storag"
-          + "e.v1beta2B\013StreamProtoP\001ZLgoogle.golang."
-          + "org/genproto/googleapis/cloud/bigquery/s"
-          + "torage/v1beta2;storage\352AU\n\035bigquery.goog"
-          + "leapis.com/Table\0224projects/{project}/dat"
-          + "asets/{dataset}/tables/{table}b\006proto3"
+          + "aB\003\340A\003\"F\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\r\n\t"
+          + "COMMITTED\020\001\022\013\n\007PENDING\020\002\022\014\n\010BUFFERED\020\003:v"
+          + "\352As\n*bigquerystorage.googleapis.com/Writ"
+          + "eStream\022Eprojects/{project}/datasets/{da"
+          + "taset}/tables/{table}/streams/{stream}*>"
+          + "\n\nDataFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED\020"
+          + "\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW\020\002B\340\001\n)com.google.cl"
+          + "oud.bigquery.storage.v1beta2B\013StreamProt"
+          + "oP\001ZLgoogle.golang.org/genproto/googleap"
+          + "is/cloud/bigquery/storage/v1beta2;storag"
+          + "e\352AU\n\035bigquery.googleapis.com/Table\0224pro"
+          + "jects/{project}/datasets/{dataset}/table"
+          + "s/{table}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -177,7 +177,7 @@ public final class StreamProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta2_WriteStream_descriptor,
             new java.lang.String[] {
-              "Name", "Type", "CreateTime", "CommitTime", "TableSchema", "ExternalId",
+              "Name", "Type", "CreateTime", "CommitTime", "TableSchema",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

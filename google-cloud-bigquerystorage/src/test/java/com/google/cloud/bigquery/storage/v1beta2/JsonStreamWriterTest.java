@@ -1004,7 +1004,7 @@ public class JsonStreamWriterTest {
                       ApiFuture<AppendRowsResponse> appendFuture =
                           writer.append(jsonArr2, -1, /* allowUnknownFields */ false);
                       AppendRowsResponse response = appendFuture.get();
-                      offsetSets.remove(response.getOffset());
+                      // offsetSets.remove(response.getOffset());
                     } catch (Exception e) {
                       LOG.severe("Thread execution failed: " + e.getMessage());
                     }

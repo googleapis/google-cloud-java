@@ -27,21 +27,58 @@ public interface AppendRowsResponseOrBuilder
    *
    *
    * <pre>
-   * The row offset at which the last append occurred.
+   * Result if the append is successful.
    * </pre>
    *
-   * <code>int64 offset = 1;</code>
+   * <code>.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+   * </code>
    *
-   * @return The offset.
+   * @return Whether the appendResult field is set.
    */
-  long getOffset();
+  boolean hasAppendResult();
+  /**
+   *
+   *
+   * <pre>
+   * Result if the append is successful.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+   * </code>
+   *
+   * @return The appendResult.
+   */
+  com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult getAppendResult();
+  /**
+   *
+   *
+   * <pre>
+   * Result if the append is successful.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult append_result = 1;
+   * </code>
+   */
+  com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResultOrBuilder
+      getAppendResultOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Error in case of append failure. If set, it means rows are not accepted
-   * into the system. Users can retry within the same connection.
+   * Error in case of request failed. If set, it means rows are not accepted
+   * into the system. Users can retry or continue with other requests within
+   * the same connection.
+   * ALREADY_EXISTS: happens when offset is specified, it means the entire
+   *   request is already appended, it is safe to ignore this error.
+   * OUT_OF_RANGE: happens when offset is specified, it means the specified
+   *   offset is beyond the end of the stream.
+   * INVALID_ARGUMENT: error caused by malformed request or data.
+   * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+   *   append without offset.
+   * ABORTED: request processing is aborted because of prior failures, request
+   *   can be retried if previous failure is fixed.
+   * INTERNAL: server side errors that can be retried.
    * </pre>
    *
    * <code>.google.rpc.Status error = 2;</code>
@@ -53,8 +90,19 @@ public interface AppendRowsResponseOrBuilder
    *
    *
    * <pre>
-   * Error in case of append failure. If set, it means rows are not accepted
-   * into the system. Users can retry within the same connection.
+   * Error in case of request failed. If set, it means rows are not accepted
+   * into the system. Users can retry or continue with other requests within
+   * the same connection.
+   * ALREADY_EXISTS: happens when offset is specified, it means the entire
+   *   request is already appended, it is safe to ignore this error.
+   * OUT_OF_RANGE: happens when offset is specified, it means the specified
+   *   offset is beyond the end of the stream.
+   * INVALID_ARGUMENT: error caused by malformed request or data.
+   * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+   *   append without offset.
+   * ABORTED: request processing is aborted because of prior failures, request
+   *   can be retried if previous failure is fixed.
+   * INTERNAL: server side errors that can be retried.
    * </pre>
    *
    * <code>.google.rpc.Status error = 2;</code>
@@ -66,8 +114,19 @@ public interface AppendRowsResponseOrBuilder
    *
    *
    * <pre>
-   * Error in case of append failure. If set, it means rows are not accepted
-   * into the system. Users can retry within the same connection.
+   * Error in case of request failed. If set, it means rows are not accepted
+   * into the system. Users can retry or continue with other requests within
+   * the same connection.
+   * ALREADY_EXISTS: happens when offset is specified, it means the entire
+   *   request is already appended, it is safe to ignore this error.
+   * OUT_OF_RANGE: happens when offset is specified, it means the specified
+   *   offset is beyond the end of the stream.
+   * INVALID_ARGUMENT: error caused by malformed request or data.
+   * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+   *   append without offset.
+   * ABORTED: request processing is aborted because of prior failures, request
+   *   can be retried if previous failure is fixed.
+   * INTERNAL: server side errors that can be retried.
    * </pre>
    *
    * <code>.google.rpc.Status error = 2;</code>

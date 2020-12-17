@@ -1,14 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
-  <difference>
-    <differenceType>7012</differenceType>
-    <className>com/google/cloud/bigquery/storage/v1beta2/*OrBuilder</className>
-    <method>* get*(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7012</differenceType>
-    <className>com/google/cloud/bigquery/storage/v1beta2/*OrBuilder</className>
-    <method>boolean has*(*)</method>
-  </difference>
+    <!-- TODO(stephwang): To be removed after the release -->
+
+    <!-- CONSTANT FIELDS REMOVED -->
+    <difference>
+        <differenceType>6011</differenceType>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsRequest</className>
+        <field>IGNORE_UNKNOWN_FIELDS_FIELD_NUMBER</field>
+    </difference>
+    <difference>
+        <differenceType>6011</differenceType>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsResponse</className>
+        <field>OFFSET_FIELD_NUMBER</field>
+    </difference>
+    <difference>
+        <differenceType>6011</differenceType>
+        <className>com/google/cloud/bigquery/storage/v1beta2/WriteStream</className>
+        <field>EXTERNAL_ID_FIELD_NUMBER</field>
+    </difference>
+
+    <!-- METHODS REMOVED -->
+    <difference>
+        <differenceType>7002</differenceType>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsRequest</className>
+        <method>boolean getIgnoreUnknownFields()</method>
+    </difference>
+    <difference>
+        <differenceType>7002</differenceType>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsRequest$Builder</className>
+        <method>com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest$Builder clearIgnoreUnknownFields()</method>
+    </difference>
+    <difference>
+        <differenceType>7002</differenceType>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsRequest*</className>
+        <method>boolean getIgnoreUnknownFields()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsRequest$Builder</className>
+        <differenceType>7002</differenceType>
+        <method>com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest$Builder setIgnoreUnknownFields(boolean)</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsRequest$Builder</className>
+        <differenceType>7002</differenceType>
+        <method>boolean getIgnoreUnknownFields()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsResponse</className>
+        <differenceType>7002</differenceType>
+        <method>long getOffset()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsResponse$Builder</className>
+        <differenceType>7002</differenceType>
+        <method>com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse$Builder clearOffset()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsResponse$Builder</className>
+        <differenceType>7002</differenceType>
+        <method>long getOffset()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsResponse$Builder</className>
+        <differenceType>7002</differenceType>
+        <method>com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse$Builder setOffset(long)</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsResponse$ResponseCase</className>
+        <differenceType>6001</differenceType>
+        <field>OFFSET</field>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsResponseOrBuilder</className>
+        <differenceType>7002</differenceType>
+        <method>long getOffset()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/WriteStream</className>
+        <differenceType>7002</differenceType>
+        <method>java.lang.String getExternalId()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/WriteStream</className>
+        <differenceType>7002</differenceType>
+        <method>com.google.protobuf.ByteString getExternalIdBytes()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/WriteStream$Builder</className>
+        <differenceType>7002</differenceType>
+        <method>com.google.cloud.bigquery.storage.v1beta2.WriteStream$Builder clearExternalId()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/WriteStream$Builder</className>
+        <differenceType>7002</differenceType>
+        <method>java.lang.String getExternalId()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/WriteStream$Builder</className>
+        <differenceType>7002</differenceType>
+        <method>com.google.protobuf.ByteString getExternalIdBytes()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/WriteStream$Builder</className>
+        <differenceType>7002</differenceType>
+        <method>com.google.cloud.bigquery.storage.v1beta2.WriteStream$Builder setExternalId(java.lang.String)</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/WriteStream$Builder</className>
+        <differenceType>7002</differenceType>
+        <method>com.google.cloud.bigquery.storage.v1beta2.WriteStream$Builder setExternalIdBytes(com.google.protobuf.ByteString)</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/WriteStreamOrBuilder</className>
+        <differenceType>7002</differenceType>
+        <method>java.lang.String getExternalId()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/WriteStreamOrBuilder</className>
+        <differenceType>7002</differenceType>
+        <method>com.google.protobuf.ByteString getExternalIdBytes()</method>
+    </difference>
+
+    <!-- METHODS ADDED -->
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsRequestOrBuilder</className>
+        <differenceType>7012</differenceType>
+        <method>java.lang.String getTraceId()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsRequestOrBuilder</className>
+        <differenceType>7012</differenceType>
+        <method>com.google.protobuf.ByteString getTraceIdBytes()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsResponseOrBuilder</className>
+        <differenceType>7012</differenceType>
+        <method>com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse$AppendResult getAppendResult()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsResponseOrBuilder</className>
+        <differenceType>7012</differenceType>
+        <method>com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse$AppendResultOrBuilder getAppendResultOrBuilder()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/AppendRowsResponseOrBuilder</className>
+        <differenceType>7012</differenceType>
+        <method>boolean hasAppendResult()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/BatchCommitWriteStreamsResponseOrBuilder</className>
+        <differenceType>7012</differenceType>
+        <method>com.google.cloud.bigquery.storage.v1beta2.StorageError getStreamErrors(int)</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/BatchCommitWriteStreamsResponseOrBuilder</className>
+        <differenceType>7012</differenceType>
+        <method>int getStreamErrorsCount()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/BatchCommitWriteStreamsResponseOrBuilder</className>
+        <differenceType>7012</differenceType>
+        <method>java.util.List getStreamErrorsList()</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/BatchCommitWriteStreamsResponseOrBuilder</className>
+        <differenceType>7012</differenceType>
+        <method>com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder getStreamErrorsOrBuilder(int)</method>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/BatchCommitWriteStreamsResponseOrBuilder</className>
+        <differenceType>7012</differenceType>
+        <method>java.util.List getStreamErrorsOrBuilderList()</method>
+    </difference>
 </differences>

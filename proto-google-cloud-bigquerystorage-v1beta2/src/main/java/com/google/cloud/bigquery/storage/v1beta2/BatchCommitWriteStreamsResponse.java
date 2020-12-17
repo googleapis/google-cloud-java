@@ -38,7 +38,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     super(builder);
   }
 
-  private BatchCommitWriteStreamsResponse() {}
+  private BatchCommitWriteStreamsResponse() {
+    streamErrors_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -59,6 +61,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -84,6 +87,20 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
 
               break;
             }
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                streamErrors_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.bigquery.storage.v1beta2.StorageError>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              streamErrors_.add(
+                  input.readMessage(
+                      com.google.cloud.bigquery.storage.v1beta2.StorageError.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -98,6 +115,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        streamErrors_ = java.util.Collections.unmodifiableList(streamErrors_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -126,6 +146,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    *
    * <pre>
    * The time at which streams were committed in microseconds granularity.
+   * This field will only exist when there is no stream errors.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -141,6 +162,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    *
    * <pre>
    * The time at which streams were committed in microseconds granularity.
+   * This field will only exist when there is no stream errors.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -156,6 +178,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    *
    * <pre>
    * The time at which streams were committed in microseconds granularity.
+   * This field will only exist when there is no stream errors.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -163,6 +186,82 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCommitTimeOrBuilder() {
     return getCommitTime();
+  }
+
+  public static final int STREAM_ERRORS_FIELD_NUMBER = 2;
+  private java.util.List<com.google.cloud.bigquery.storage.v1beta2.StorageError> streamErrors_;
+  /**
+   *
+   *
+   * <pre>
+   * Stream level error if commit failed. Only streams with error will be in
+   * the list.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.bigquery.storage.v1beta2.StorageError>
+      getStreamErrorsList() {
+    return streamErrors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Stream level error if commit failed. Only streams with error will be in
+   * the list.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder>
+      getStreamErrorsOrBuilderList() {
+    return streamErrors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Stream level error if commit failed. Only streams with error will be in
+   * the list.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+   */
+  @java.lang.Override
+  public int getStreamErrorsCount() {
+    return streamErrors_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Stream level error if commit failed. Only streams with error will be in
+   * the list.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1beta2.StorageError getStreamErrors(int index) {
+    return streamErrors_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Stream level error if commit failed. Only streams with error will be in
+   * the list.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder getStreamErrorsOrBuilder(
+      int index) {
+    return streamErrors_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -182,6 +281,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     if (commitTime_ != null) {
       output.writeMessage(1, getCommitTime());
     }
+    for (int i = 0; i < streamErrors_.size(); i++) {
+      output.writeMessage(2, streamErrors_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -193,6 +295,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     size = 0;
     if (commitTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCommitTime());
+    }
+    for (int i = 0; i < streamErrors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, streamErrors_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,6 +320,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     if (hasCommitTime()) {
       if (!getCommitTime().equals(other.getCommitTime())) return false;
     }
+    if (!getStreamErrorsList().equals(other.getStreamErrorsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -229,6 +335,10 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     if (hasCommitTime()) {
       hash = (37 * hash) + COMMIT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCommitTime().hashCode();
+    }
+    if (getStreamErrorsCount() > 0) {
+      hash = (37 * hash) + STREAM_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getStreamErrorsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -373,7 +483,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getStreamErrorsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -384,6 +496,12 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       } else {
         commitTime_ = null;
         commitTimeBuilder_ = null;
+      }
+      if (streamErrorsBuilder_ == null) {
+        streamErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        streamErrorsBuilder_.clear();
       }
       return this;
     }
@@ -416,10 +534,20 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         buildPartial() {
       com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse result =
           new com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse(this);
+      int from_bitField0_ = bitField0_;
       if (commitTimeBuilder_ == null) {
         result.commitTime_ = commitTime_;
       } else {
         result.commitTime_ = commitTimeBuilder_.build();
+      }
+      if (streamErrorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          streamErrors_ = java.util.Collections.unmodifiableList(streamErrors_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.streamErrors_ = streamErrors_;
+      } else {
+        result.streamErrors_ = streamErrorsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -478,6 +606,33 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       if (other.hasCommitTime()) {
         mergeCommitTime(other.getCommitTime());
       }
+      if (streamErrorsBuilder_ == null) {
+        if (!other.streamErrors_.isEmpty()) {
+          if (streamErrors_.isEmpty()) {
+            streamErrors_ = other.streamErrors_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureStreamErrorsIsMutable();
+            streamErrors_.addAll(other.streamErrors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.streamErrors_.isEmpty()) {
+          if (streamErrorsBuilder_.isEmpty()) {
+            streamErrorsBuilder_.dispose();
+            streamErrorsBuilder_ = null;
+            streamErrors_ = other.streamErrors_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            streamErrorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getStreamErrorsFieldBuilder()
+                    : null;
+          } else {
+            streamErrorsBuilder_.addAllMessages(other.streamErrors_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -510,6 +665,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp commitTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -521,6 +678,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
+     * This field will only exist when there is no stream errors.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -535,6 +693,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
+     * This field will only exist when there is no stream errors.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -555,6 +714,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
+     * This field will only exist when there is no stream errors.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -577,6 +737,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
+     * This field will only exist when there is no stream errors.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -596,6 +757,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
+     * This field will only exist when there is no stream errors.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -620,6 +782,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
+     * This field will only exist when there is no stream errors.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -640,6 +803,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
+     * This field will only exist when there is no stream errors.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -654,6 +818,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
+     * This field will only exist when there is no stream errors.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -672,6 +837,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
+     * This field will only exist when there is no stream errors.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -691,6 +857,384 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         commitTime_ = null;
       }
       return commitTimeBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.bigquery.storage.v1beta2.StorageError> streamErrors_ =
+        java.util.Collections.emptyList();
+
+    private void ensureStreamErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        streamErrors_ =
+            new java.util.ArrayList<com.google.cloud.bigquery.storage.v1beta2.StorageError>(
+                streamErrors_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1beta2.StorageError,
+            com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder,
+            com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder>
+        streamErrorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public java.util.List<com.google.cloud.bigquery.storage.v1beta2.StorageError>
+        getStreamErrorsList() {
+      if (streamErrorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(streamErrors_);
+      } else {
+        return streamErrorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public int getStreamErrorsCount() {
+      if (streamErrorsBuilder_ == null) {
+        return streamErrors_.size();
+      } else {
+        return streamErrorsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta2.StorageError getStreamErrors(int index) {
+      if (streamErrorsBuilder_ == null) {
+        return streamErrors_.get(index);
+      } else {
+        return streamErrorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public Builder setStreamErrors(
+        int index, com.google.cloud.bigquery.storage.v1beta2.StorageError value) {
+      if (streamErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStreamErrorsIsMutable();
+        streamErrors_.set(index, value);
+        onChanged();
+      } else {
+        streamErrorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public Builder setStreamErrors(
+        int index, com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder builderForValue) {
+      if (streamErrorsBuilder_ == null) {
+        ensureStreamErrorsIsMutable();
+        streamErrors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        streamErrorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public Builder addStreamErrors(com.google.cloud.bigquery.storage.v1beta2.StorageError value) {
+      if (streamErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStreamErrorsIsMutable();
+        streamErrors_.add(value);
+        onChanged();
+      } else {
+        streamErrorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public Builder addStreamErrors(
+        int index, com.google.cloud.bigquery.storage.v1beta2.StorageError value) {
+      if (streamErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStreamErrorsIsMutable();
+        streamErrors_.add(index, value);
+        onChanged();
+      } else {
+        streamErrorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public Builder addStreamErrors(
+        com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder builderForValue) {
+      if (streamErrorsBuilder_ == null) {
+        ensureStreamErrorsIsMutable();
+        streamErrors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        streamErrorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public Builder addStreamErrors(
+        int index, com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder builderForValue) {
+      if (streamErrorsBuilder_ == null) {
+        ensureStreamErrorsIsMutable();
+        streamErrors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        streamErrorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public Builder addAllStreamErrors(
+        java.lang.Iterable<? extends com.google.cloud.bigquery.storage.v1beta2.StorageError>
+            values) {
+      if (streamErrorsBuilder_ == null) {
+        ensureStreamErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, streamErrors_);
+        onChanged();
+      } else {
+        streamErrorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public Builder clearStreamErrors() {
+      if (streamErrorsBuilder_ == null) {
+        streamErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        streamErrorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public Builder removeStreamErrors(int index) {
+      if (streamErrorsBuilder_ == null) {
+        ensureStreamErrorsIsMutable();
+        streamErrors_.remove(index);
+        onChanged();
+      } else {
+        streamErrorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder getStreamErrorsBuilder(
+        int index) {
+      return getStreamErrorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder getStreamErrorsOrBuilder(
+        int index) {
+      if (streamErrorsBuilder_ == null) {
+        return streamErrors_.get(index);
+      } else {
+        return streamErrorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public java.util.List<? extends com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder>
+        getStreamErrorsOrBuilderList() {
+      if (streamErrorsBuilder_ != null) {
+        return streamErrorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(streamErrors_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder addStreamErrorsBuilder() {
+      return getStreamErrorsFieldBuilder()
+          .addBuilder(com.google.cloud.bigquery.storage.v1beta2.StorageError.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder addStreamErrorsBuilder(
+        int index) {
+      return getStreamErrorsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.bigquery.storage.v1beta2.StorageError.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stream level error if commit failed. Only streams with error will be in
+     * the list.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
+     */
+    public java.util.List<com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder>
+        getStreamErrorsBuilderList() {
+      return getStreamErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1beta2.StorageError,
+            com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder,
+            com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder>
+        getStreamErrorsFieldBuilder() {
+      if (streamErrorsBuilder_ == null) {
+        streamErrorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.bigquery.storage.v1beta2.StorageError,
+                com.google.cloud.bigquery.storage.v1beta2.StorageError.Builder,
+                com.google.cloud.bigquery.storage.v1beta2.StorageErrorOrBuilder>(
+                streamErrors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        streamErrors_ = null;
+      }
+      return streamErrorsBuilder_;
     }
 
     @java.lang.Override
