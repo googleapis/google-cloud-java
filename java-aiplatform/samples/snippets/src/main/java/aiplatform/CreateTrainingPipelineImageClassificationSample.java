@@ -17,7 +17,7 @@
 package aiplatform;
 
 // [START aiplatform_create_training_pipeline_image_classification_sample]
-
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
 import com.google.cloud.aiplatform.v1beta1.EnvVar;
 import com.google.cloud.aiplatform.v1beta1.ExplanationMetadata;
@@ -38,8 +38,8 @@ import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
 import com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassificationInputs.ModelType;
 import com.google.rpc.Status;
 import java.io.IOException;
 
@@ -74,11 +74,13 @@ public class CreateTrainingPipelineImageClassificationSample {
               + "automl_image_classification_1.0.0.yaml";
       LocationName locationName = LocationName.of(project, location);
 
-      String jsonString =
-          "{\"multiLabel\": false, \"modelType\": \"CLOUD\", \"budgetMilliNodeHours\": 8000,"
-              + " \"disableEarlyStopping\": false}";
-      Value.Builder trainingTaskInputs = Value.newBuilder();
-      JsonFormat.parser().merge(jsonString, trainingTaskInputs);
+      AutoMlImageClassificationInputs autoMlImageClassificationInputs =
+          AutoMlImageClassificationInputs.newBuilder()
+              .setModelType(ModelType.CLOUD)
+              .setMultiLabel(false)
+              .setBudgetMilliNodeHours(8000)
+              .setDisableEarlyStopping(false)
+              .build();
 
       InputDataConfig trainingInputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();
@@ -87,7 +89,7 @@ public class CreateTrainingPipelineImageClassificationSample {
           TrainingPipeline.newBuilder()
               .setDisplayName(trainingPipelineDisplayName)
               .setTrainingTaskDefinition(trainingTaskDefinition)
-              .setTrainingTaskInputs(trainingTaskInputs)
+              .setTrainingTaskInputs(ValueConverter.toValue(autoMlImageClassificationInputs))
               .setInputDataConfig(trainingInputDataConfig)
               .setModelToUpload(model)
               .build();

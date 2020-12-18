@@ -17,13 +17,14 @@
 package aiplatform;
 
 // [START aiplatform_predict_text_classification_sample]
-
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextClassificationPredictionInstance;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ClassificationPredictionResult;
 import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,25 +53,38 @@ public class PredictTextClassificationSingleLabelSample {
     try (PredictionServiceClient predictionServiceClient =
         PredictionServiceClient.create(predictionServiceSettings)) {
       String location = "us-central1";
-      String jsonString = "{\"content\": \"" + content + "\"}";
-
       EndpointName endpointName = EndpointName.of(project, location, endpointId);
 
-      Value parameter = Value.newBuilder().setNumberValue(0).setNumberValue(5).build();
-      Value.Builder instance = Value.newBuilder();
-      JsonFormat.parser().merge(jsonString, instance);
+      TextClassificationPredictionInstance predictionInstance = TextClassificationPredictionInstance
+          .newBuilder()
+          .setContent(content)
+          .build();
 
       List<Value> instances = new ArrayList<>();
-      instances.add(instance.build());
+      instances.add(ValueConverter.toValue(predictionInstance));
 
       PredictResponse predictResponse =
-          predictionServiceClient.predict(endpointName, instances, parameter);
+          predictionServiceClient.predict(endpointName, instances, ValueConverter.EMPTY_VALUE);
       System.out.println("Predict Text Classification Response");
       System.out.format("\tDeployed Model Id: %s\n", predictResponse.getDeployedModelId());
 
-      System.out.println("Predictions");
+      System.out.println("Predictions:\n\n");
       for (Value prediction : predictResponse.getPredictionsList()) {
-        System.out.format("\tPrediction: %s\n", prediction);
+
+        ClassificationPredictionResult.Builder resultBuilder =
+            ClassificationPredictionResult.newBuilder();
+
+        // Display names and confidences values correspond to
+        // IDs in the ID list.
+        ClassificationPredictionResult result =
+            (ClassificationPredictionResult) ValueConverter.fromValue(resultBuilder, prediction);
+        int counter = 0;
+        for (Long id : result.getIdsList()) {
+          System.out.printf("Label ID: %d\n", id);
+          System.out.printf("Label: %s\n", result.getDisplayNames(counter));
+          System.out.printf("Confidence: %.4f\n", result.getConfidences(counter));
+          counter++;
+        }
       }
     }
   }
