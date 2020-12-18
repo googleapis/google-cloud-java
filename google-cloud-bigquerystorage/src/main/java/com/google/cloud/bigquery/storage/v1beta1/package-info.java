@@ -17,13 +17,13 @@
 /**
  * The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= BigQueryStorageClient =======================
+ * <p>======================= BaseBigQueryStorageClient =======================
  *
  * <p>Service Description: BigQuery storage API.
  *
  * <p>The BigQuery storage API can be used to read data stored in BigQuery.
  *
- * <p>Sample for BigQueryStorageClient:
+ * <p>Sample for BaseBigQueryStorageClient:
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigquery.storage.v1beta1;

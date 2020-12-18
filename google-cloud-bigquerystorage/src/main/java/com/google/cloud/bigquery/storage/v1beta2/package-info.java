@@ -17,7 +17,7 @@
 /**
  * The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= BigQueryReadClient =======================
+ * <p>======================= BaseBigQueryReadClient =======================
  *
  * <p>Service Description: BigQuery Read API.
  *
@@ -26,7 +26,7 @@
  * <p>New code should use the v1 Read API going forward, if they don't use Write API at the same
  * time.
  *
- * <p>Sample for BigQueryReadClient:
+ * <p>Sample for BaseBigQueryReadClient:
  *
  * <p>======================= BigQueryWriteClient =======================
  *
