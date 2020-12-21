@@ -37,6 +37,7 @@
  * </code>
  * </pre>
  */
+@Deprecated
 @Generated("by gapic-generator")
 package com.google.cloud.asset.v1beta1;
 

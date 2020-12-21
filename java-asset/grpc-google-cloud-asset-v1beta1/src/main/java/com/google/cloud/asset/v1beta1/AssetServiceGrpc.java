@@ -28,7 +28,10 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * <pre>
  * Asset service definition.
  * </pre>
+ *
+ * @deprecated The v1beta1 endpoint was turned down 2020-09-28.
  */
+@Deprecated
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/asset/v1beta1/asset_service.proto")

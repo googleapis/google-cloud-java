@@ -78,7 +78,10 @@ import org.threeten.bp.Duration;
  * AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();
  * </code>
  * </pre>
+ *
+ * @deprecated The v1beta1 endpoint was turned down 2020-09-28.
  */
+@Deprecated
 @Generated("by gapic-generator")
 @BetaApi
 public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSettings> {

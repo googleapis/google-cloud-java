@@ -96,7 +96,10 @@ import javax.annotation.Generated;
  *     AssetServiceClient.create(assetServiceSettings);
  * </code>
  * </pre>
+ *
+ * @deprecated The v1beta1 endpoint was turned down 2020-09-28.
  */
+@Deprecated
 @Generated("by gapic-generator")
 @BetaApi
 public class AssetServiceClient implements BackgroundResource {

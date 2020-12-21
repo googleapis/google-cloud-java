@@ -39,7 +39,10 @@ import javax.annotation.Generated;
  * gRPC callable factory implementation for Cloud Asset API.
  *
  * <p>This class is for advanced usage.
+ *
+ * @deprecated The v1beta1 endpoint was turned down 2020-09-28.
  */
+@Deprecated
 @Generated("by gapic-generator")
 @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
 public class GrpcAssetServiceCallableFactory implements GrpcStubCallableFactory {

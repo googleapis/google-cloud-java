@@ -32,7 +32,10 @@ import javax.annotation.Generated;
  * Base stub class for Cloud Asset API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated The v1beta1 endpoint was turned down 2020-09-28.
  */
+@Deprecated
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class AssetServiceStub implements BackgroundResource {
