@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-*/
+ */
 
 package com.m.examples.bigtable;
 
@@ -29,6 +29,8 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 // [END bigtable_hw_imports_veneer]
 
@@ -48,7 +50,8 @@ import java.io.IOException;
 public class HelloWorld {
 
   private static final String COLUMN_FAMILY = "cf1";
-  private static final String COLUMN_QUALIFIER = "greeting";
+  private static final String COLUMN_QUALIFIER_GREETING = "greeting";
+  private static final String COLUMN_QUALIFIER_NAME = "name";
   private static final String ROW_KEY_PREFIX = "rowKey";
   private final String tableId;
   private final BigtableDataClient dataClient;
@@ -94,8 +97,13 @@ public class HelloWorld {
     createTable();
     writeToTable();
     readSingleRow();
+    readSpecificCells();
     readTable();
     deleteTable();
+    close();
+  }
+
+  public void close() {
     dataClient.close();
     adminClient.close();
   }
@@ -119,13 +127,15 @@ public class HelloWorld {
     // [START bigtable_hw_write_rows_veneer]
     try {
       System.out.println("\nWriting some greetings to the table");
-      String[] greetings = {"Hello World!", "Hello Bigtable!", "Hello Java!"};
-      for (int i = 0; i < greetings.length; i++) {
+      String[] names = {"World", "Bigtable", "Java"};
+      for (int i = 0; i < names.length; i++) {
+        String greeting = "Hello " + names[i] + "!";
         RowMutation rowMutation =
             RowMutation.create(tableId, ROW_KEY_PREFIX + i)
-                .setCell(COLUMN_FAMILY, COLUMN_QUALIFIER, greetings[i]);
+                .setCell(COLUMN_FAMILY, COLUMN_QUALIFIER_NAME, names[i])
+                .setCell(COLUMN_FAMILY, COLUMN_QUALIFIER_GREETING, greeting);
         dataClient.mutateRow(rowMutation);
-        System.out.println(greetings[i]);
+        System.out.println(greeting);
       }
     } catch (NotFoundException e) {
       System.err.println("Failed to write to non-existent table: " + e.getMessage());
@@ -134,7 +144,7 @@ public class HelloWorld {
   }
 
   /** Demonstrates how to read a single row from a table. */
-  public void readSingleRow() {
+  public Row readSingleRow() {
     // [START bigtable_hw_get_by_key_veneer]
     try {
       System.out.println("\nReading a single row by row key");
@@ -145,29 +155,56 @@ public class HelloWorld {
             "Family: %s    Qualifier: %s    Value: %s%n",
             cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
       }
+      return row;
     } catch (NotFoundException e) {
       System.err.println("Failed to read from a non-existent table: " + e.getMessage());
+      return null;
+    }
+    // [END bigtable_hw_get_by_key_veneer]
+  }
+
+  /** Demonstrates how to access specific cells by family and qualifier. */
+  public List<RowCell> readSpecificCells() {
+    // [START bigtable_hw_get_by_key_veneer]
+    try {
+      System.out.println("\nReading specific cells by family and qualifier");
+      Row row = dataClient.readRow(tableId, ROW_KEY_PREFIX + 0);
+      System.out.println("Row: " + row.getKey().toStringUtf8());
+      List<RowCell> cells = row.getCells(COLUMN_FAMILY, COLUMN_QUALIFIER_NAME);
+      for (RowCell cell : cells) {
+        System.out.printf(
+            "Family: %s    Qualifier: %s    Value: %s%n",
+            cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+      }
+      return cells;
+    } catch (NotFoundException e) {
+      System.err.println("Failed to read from a non-existent table: " + e.getMessage());
+      return null;
     }
     // [END bigtable_hw_get_by_key_veneer]
   }
 
   /** Demonstrates how to read an entire table. */
-  public void readTable() {
+  public List<Row> readTable() {
     // [START bigtable_hw_scan_all_veneer]
     try {
       System.out.println("\nReading the entire table");
       Query query = Query.create(tableId);
       ServerStream<Row> rowStream = dataClient.readRows(query);
+      List<Row> tableRows = new ArrayList<>();
       for (Row r : rowStream) {
         System.out.println("Row Key: " + r.getKey().toStringUtf8());
+        tableRows.add(r);
         for (RowCell cell : r.getCells()) {
           System.out.printf(
               "Family: %s    Qualifier: %s    Value: %s%n",
               cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
         }
       }
+      return tableRows;
     } catch (NotFoundException e) {
       System.err.println("Failed to read a non-existent table: " + e.getMessage());
+      return null;
     }
     // [END bigtable_hw_scan_all_veneer]
   }
