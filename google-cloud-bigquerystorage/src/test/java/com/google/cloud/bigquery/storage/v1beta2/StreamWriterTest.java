@@ -37,6 +37,7 @@ import com.google.api.gax.rpc.DataLossException;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.common.base.Strings;
 import com.google.protobuf.DescriptorProtos;
+import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -128,8 +129,7 @@ public class StreamWriterTest {
       rows.addSerializedRows(foo.toByteString());
     }
     if (offset > 0) {
-      // Temp for Breaking Change.
-      // requestBuilder.setOffset(Int64Value.of(offset));
+      requestBuilder.setOffset(Int64Value.of(offset));
     }
     return requestBuilder
         .setProtoRows(dataBuilder.setRows(rows.build()).build())
@@ -168,9 +168,11 @@ public class StreamWriterTest {
             .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
             .build();
 
-    // Temp for Breaking Change.
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(0).build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .build());
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
 
@@ -178,9 +180,8 @@ public class StreamWriterTest {
     assertFalse(appendFuture2.isDone());
     fakeExecutor.advanceTime(Duration.ofSeconds(10));
 
-    // Temp for Breaking Change.
-    // assertEquals(0L, appendFuture1.get().getOffset());
-    // assertEquals(1L, appendFuture2.get().getOffset());
+    assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
+    assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
     appendFuture1.get();
     appendFuture2.get();
     assertEquals(1, testBigQueryWrite.getAppendRequests().size());
@@ -209,31 +210,30 @@ public class StreamWriterTest {
                     .setDelayThreshold(Duration.ofSeconds(100))
                     .build())
             .build();
-    // Temp for Breaking Change.
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(0).build());
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(2).build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(2)).build())
+            .build());
 
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
     ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
 
-    // Temp for Breaking Change.
-    appendFuture1.get();
-    appendFuture2.get();
-    // assertEquals(0L, appendFuture1.get().getOffset());
-    // assertEquals(1L, appendFuture2.get().getOffset());
+    assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
+    assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
 
     assertFalse(appendFuture3.isDone());
 
     ApiFuture<AppendRowsResponse> appendFuture4 = sendTestMessage(writer, new String[] {"D"});
 
-    // Temp for Breaking Change.
-    appendFuture3.get();
-    appendFuture4.get();
-    // assertEquals(2L, appendFuture3.get().getOffset());
-    // assertEquals(3L, appendFuture4.get().getOffset());
+    assertEquals(2L, appendFuture3.get().getAppendResult().getOffset().getValue());
+    assertEquals(3L, appendFuture4.get().getAppendResult().getOffset().getValue());
 
     assertEquals(2, testBigQueryWrite.getAppendRequests().size());
     assertEquals(
@@ -272,33 +272,36 @@ public class StreamWriterTest {
                     .build())
             .build();
 
-    // Temp for Breaking Change.
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(0).build());
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(2).build());
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(3).build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(2)).build())
+            .build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(3)).build())
+            .build());
 
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
     ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
 
-    // Temp for Breaking Change.
-    // assertEquals(0L, appendFuture1.get().getOffset());
-    // assertEquals(1L, appendFuture2.get().getOffset());
-    appendFuture1.get();
-    appendFuture2.get();
+    assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
+    assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
+
     assertFalse(appendFuture3.isDone());
 
     // This message is big enough to trigger send on the previous message and itself.
     ApiFuture<AppendRowsResponse> appendFuture4 =
         sendTestMessage(writer, new String[] {Strings.repeat("A", 100)});
-    // Temp for Breaking Change.
-    // assertEquals(2L, appendFuture3.get().getOffset());
-    // assertEquals(3L, appendFuture4.get().getOffset());
-    appendFuture3.get();
-    appendFuture4.get();
+    assertEquals(2L, appendFuture3.get().getAppendResult().getOffset().getValue());
+    assertEquals(3L, appendFuture4.get().getAppendResult().getOffset().getValue());
 
     assertEquals(3, testBigQueryWrite.getAppendRequests().size());
 
@@ -316,11 +319,16 @@ public class StreamWriterTest {
                     .setElementCountThreshold(10L)
                     .build())
             .build();
-    // Temp for Breaking Change.
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(0L).build());
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(1L).build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(1)).build())
+            .build());
 
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
@@ -333,9 +341,8 @@ public class StreamWriterTest {
     // Verify the appends completed
     assertTrue(appendFuture1.isDone());
     assertTrue(appendFuture2.isDone());
-    // Temp for Breaking Change.
-    // assertEquals(0L, appendFuture1.get().getOffset());
-    // assertEquals(1L, appendFuture2.get().getOffset());
+    assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
+    assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
   }
 
   @Test
@@ -349,35 +356,31 @@ public class StreamWriterTest {
                     .setDelayThreshold(Duration.ofSeconds(5))
                     .build())
             .build()) {
-      // Temp for Breaking Change.
-      // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(0L).build());
-      // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(2L).build());
-      testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-      testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+              .build());
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(3)).build())
+              .build());
 
       ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
-
-      fakeExecutor.advanceTime(Duration.ofSeconds(2));
       assertFalse(appendFuture1.isDone());
 
       ApiFuture<AppendRowsResponse> appendFuture2 =
           sendTestMessage(writer, new String[] {"B", "C"});
 
       // Write triggered by batch size
-      // Temp for Breaking Change.
-      // assertEquals(0L, appendFuture1.get().getOffset());
-      // assertEquals(1L, appendFuture2.get().getOffset());
-      appendFuture1.get();
-      appendFuture2.get();
+      assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
+      assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
 
       ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"D"});
-
       assertFalse(appendFuture3.isDone());
-
-      // Write triggered by time
-      fakeExecutor.advanceTime(Duration.ofSeconds(5));
-
-      // assertEquals(2L, appendFuture3.get().getOffset());
+      // Eventually will be triggered by time elapsed.
+      assertEquals(3L, appendFuture3.get().getAppendResult().getOffset().getValue());
 
       assertEquals(
           3,
@@ -389,16 +392,16 @@ public class StreamWriterTest {
               .getSerializedRowsCount());
       assertEquals(
           true, testBigQueryWrite.getAppendRequests().get(0).getProtoRows().hasWriterSchema());
-      // assertEquals(
-      //     1,
-      //     testBigQueryWrite
-      //         .getAppendRequests()
-      //         .get(1) // this gives IndexOutOfBounds error at the moment
-      //         .getProtoRows()
-      //         .getRows()
-      //         .getSerializedRowsCount());
-      // assertEquals(
-      //     false, testBigQueryWrite.getAppendRequests().get(1).getProtoRows().hasWriterSchema());
+      assertEquals(
+          1,
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(1) // this gives IndexOutOfBounds error at the moment
+              .getProtoRows()
+              .getRows()
+              .getSerializedRowsCount());
+      assertEquals(
+          false, testBigQueryWrite.getAppendRequests().get(1).getProtoRows().hasWriterSchema());
     }
   }
 
@@ -419,11 +422,16 @@ public class StreamWriterTest {
                     .build())
             .build();
 
-    // Temp for Breaking Change.
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(2L).build());
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(3L).build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(2)).build())
+            .build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(3)).build())
+            .build());
     testBigQueryWrite.setResponseDelay(Duration.ofSeconds(10));
 
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
@@ -444,9 +452,7 @@ public class StreamWriterTest {
     Thread.sleep(5000L);
     fakeExecutor.advanceTime(Duration.ofSeconds(10));
     // The first requests gets back while the second one is blocked.
-    // Temp for Breaking Change.
-    // assertEquals(2L, appendFuture1.get().getOffset());
-    appendFuture1.get();
+    assertEquals(2L, appendFuture1.get().getAppendResult().getOffset().getValue());
     Thread.sleep(5000L);
     // Wait is necessary for response to be scheduled before timer is advanced.
     fakeExecutor.advanceTime(Duration.ofSeconds(10));
@@ -478,9 +484,11 @@ public class StreamWriterTest {
               .getFlowControlSettings()
               .getMaxOutstandingElementCount()
               .longValue());
-      // Temp for Breaking Change.
-      // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(1L).build());
-      testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(1)).build())
+              .build());
       testBigQueryWrite.setResponseDelay(Duration.ofSeconds(10));
       ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
       ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
@@ -495,9 +503,7 @@ public class StreamWriterTest {
             "java.util.concurrent.ExecutionException: The maximum number of batch elements: 1 have been reached.",
             e.toString());
       }
-      // Temp for Breaking Change.
-      // assertEquals(1L, appendFuture1.get().getOffset());
-      appendFuture1.get();
+      assertEquals(1L, appendFuture1.get().getAppendResult().getOffset().getValue());
     }
   }
 
@@ -515,14 +521,15 @@ public class StreamWriterTest {
 
     StatusRuntimeException transientError = new StatusRuntimeException(Status.UNAVAILABLE);
     testBigQueryWrite.addException(transientError);
-    // Temp for Breaking Change.
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(0).build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .build());
     ApiFuture<AppendRowsResponse> future1 = sendTestMessage(writer, new String[] {"m1"});
     assertEquals(false, future1.isDone());
     // Retry is scheduled to be 7 seconds later.
-    // Temp for Breaking Change.
-    // assertEquals(0L, future1.get().getOffset());
+    assertEquals(0L, future1.get().getAppendResult().getOffset().getValue());
     future1.get();
     writer.close();
   }
@@ -591,11 +598,17 @@ public class StreamWriterTest {
                     .build())
             .build()) {
 
-      // Temp for Breaking Change.
-      // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(10L).build());
-      // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(13L).build());
-      testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-      testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(10)).build())
+              .build());
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(13)).build())
+              .build());
+
       AppendRowsRequest request1 = createAppendRequest(new String[] {"A"}, 10L);
       ApiFuture<AppendRowsResponse> appendFuture1 = writer.append(request1);
       AppendRowsRequest request2 = createAppendRequest(new String[] {"B", "C"}, 11L);
@@ -604,14 +617,10 @@ public class StreamWriterTest {
       ApiFuture<AppendRowsResponse> appendFuture3 = writer.append(request3);
       AppendRowsRequest request4 = createAppendRequest(new String[] {"G"}, 15L);
       ApiFuture<AppendRowsResponse> appendFuture4 = writer.append(request4);
-      // assertEquals(10L, appendFuture1.get().getOffset());
-      // assertEquals(11L, appendFuture2.get().getOffset());
-      // assertEquals(13L, appendFuture3.get().getOffset());
-      // assertEquals(15L, appendFuture4.get().getOffset());
-      appendFuture1.get();
-      appendFuture2.get();
-      appendFuture3.get();
-      appendFuture4.get();
+      assertEquals(10L, appendFuture1.get().getAppendResult().getOffset().getValue());
+      assertEquals(11L, appendFuture2.get().getAppendResult().getOffset().getValue());
+      assertEquals(13L, appendFuture3.get().getAppendResult().getOffset().getValue());
+      assertEquals(15L, appendFuture4.get().getAppendResult().getOffset().getValue());
     }
   }
 
@@ -625,15 +634,16 @@ public class StreamWriterTest {
                     .setElementCountThreshold(1L)
                     .build())
             .build()) {
-      // Temp for Breaking Change.
-      // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(11L).build());
-      testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(11)).build())
+              .build());
       AppendRowsRequest request1 = createAppendRequest(new String[] {"A"}, 10L);
       ApiFuture<AppendRowsResponse> appendFuture1 = writer.append(request1);
 
       appendFuture1.get();
-      // Temp for Breaking Change.
-      // fail("Should throw exception");
+      fail("Should throw exception");
     } catch (Exception e) {
       assertEquals(
           "java.lang.IllegalStateException: The append result offset 11 does not match the expected offset 10.",
@@ -909,13 +919,21 @@ public class StreamWriterTest {
                     .build())
             .build();
 
-    // Temp Breaking Change.
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(0).build());
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(2).build());
-    // testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(3).build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(2)).build())
+            .build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(3)).build())
+            .build());
 
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});

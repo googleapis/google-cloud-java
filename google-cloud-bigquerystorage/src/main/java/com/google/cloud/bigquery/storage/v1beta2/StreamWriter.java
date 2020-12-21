@@ -36,8 +36,8 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.bigquery.storage.v1beta2.StorageProto.*;
 import com.google.common.base.Preconditions;
+import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -412,7 +412,7 @@ public class StreamWriter implements AutoCloseable {
       this.inflightRequests = inflightRequests;
       this.offsetList = new ArrayList<Long>(inflightRequests.size());
       for (AppendRequestAndFutureResponse request : inflightRequests) {
-        if (request.message.getOffset().getValue() > 0) {
+        if (request.message.hasOffset()) {
           offsetList.add(new Long(request.message.getOffset().getValue()));
         } else {
           offsetList.add(new Long(-1));
@@ -485,17 +485,15 @@ public class StreamWriter implements AutoCloseable {
     private void onSuccess(AppendRowsResponse response) {
       for (int i = 0; i < inflightRequests.size(); i++) {
         AppendRowsResponse.Builder singleResponse = response.toBuilder();
-        // if (offsetList.get(i) > 0) {
-        //   singleResponse.setOffset(offsetList.get(i));
-        // } else {
-        //   long actualOffset = response.getOffset();
-        //   for (int j = 0; j < i; j++) {
-        //     actualOffset +=
-        //
-        // inflightRequests.get(j).message.getProtoRows().getRows().getSerializedRowsCount();
-        //   }
-        //  singleResponse.setOffset(actualOffset);
-        // }
+        if (response.getAppendResult().hasOffset()) {
+          long actualOffset = response.getAppendResult().getOffset().getValue();
+          for (int j = 0; j < i; j++) {
+            actualOffset +=
+                inflightRequests.get(j).message.getProtoRows().getRows().getSerializedRowsCount();
+          }
+          singleResponse.setAppendResult(
+              AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(actualOffset)));
+        }
         inflightRequests.get(i).appendResult.set(singleResponse.build());
       }
     }
@@ -850,27 +848,28 @@ public class StreamWriter implements AutoCloseable {
         }
         // Currently there is nothing retryable. If the error is already exists, then ignore it.
         if (response.hasError()) {
-          if (response.getError().getCode() != 6 /* ALREADY_EXISTS */) {
-            StatusRuntimeException exception =
-                new StatusRuntimeException(
-                    Status.fromCodeValue(response.getError().getCode())
-                        .withDescription(response.getError().getMessage()));
+          StatusRuntimeException exception =
+              new StatusRuntimeException(
+                  Status.fromCodeValue(response.getError().getCode())
+                      .withDescription(response.getError().getMessage()));
+          inflightBatch.onFailure(exception);
+        } else {
+          if (inflightBatch.getExpectedOffset() > 0
+              && (response.getAppendResult().hasOffset()
+                  && response.getAppendResult().getOffset().getValue()
+                      != inflightBatch.getExpectedOffset())) {
+            IllegalStateException exception =
+                new IllegalStateException(
+                    String.format(
+                        "The append result offset %s does not match " + "the expected offset %s.",
+                        response.getAppendResult().getOffset().getValue(),
+                        inflightBatch.getExpectedOffset()));
             inflightBatch.onFailure(exception);
+            abortInflightRequests(exception);
+          } else {
+            inflightBatch.onSuccess(response);
           }
         }
-        // Temp for Breaking Change.
-        // if (inflightBatch.getExpectedOffset() > 0
-        //     && response.getOffset() != inflightBatch.getExpectedOffset()) {
-        //   IllegalStateException exception =
-        //      new IllegalStateException(
-        //          String.format(
-        //              "The append result offset %s does not match " + "the expected offset %s.",
-        //              response.getOffset(), inflightBatch.getExpectedOffset()));
-        //  inflightBatch.onFailure(exception);
-        //  abortInflightRequests(exception);
-        // } else {
-        inflightBatch.onSuccess(response);
-        // }
       } finally {
         streamWriter.messagesWaiter.release(inflightBatch.getByteSize());
       }

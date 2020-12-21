@@ -426,6 +426,7 @@ public class ITBigQueryWriteManualClientTest {
                 .setParent(tableId2)
                 .setWriteStream(WriteStream.newBuilder().setType(WriteStream.Type.PENDING).build())
                 .build());
+    FinalizeWriteStreamResponse finalizeResponse = FinalizeWriteStreamResponse.getDefaultInstance();
     try (StreamWriter streamWriter = StreamWriter.newBuilder(writeStream.getName()).build()) {
       LOG.info("Sending two messages");
       ApiFuture<AppendRowsResponse> response =
@@ -449,24 +450,25 @@ public class ITBigQueryWriteManualClientTest {
       Iterator<FieldValueList> iter = result.getValues().iterator();
       assertEquals(false, iter.hasNext());
 
-      FinalizeWriteStreamResponse finalizeResponse =
+      finalizeResponse =
           client.finalizeWriteStream(
               FinalizeWriteStreamRequest.newBuilder().setName(writeStream.getName()).build());
 
       ApiFuture<AppendRowsResponse> response3 =
           streamWriter.append(
               createAppendRequestComplicateType(writeStream.getName(), new String[] {"ccc"})
-                  .setOffset(Int64Value.of(1L))
+                  .setOffset(Int64Value.of(2L))
                   .build());
       try {
         assertEquals(2, response3.get().getOffset());
         fail("Append to finalized stream should fail.");
       } catch (Exception expected) {
         // The exception thrown is not stable. Opened a bug to fix it.
+        LOG.info("Got exception: " + expected.toString());
       }
     }
     // Finalize row count is not populated.
-    // assertEquals(1, finalizeResponse.getRowCount());
+    assertEquals(2, finalizeResponse.getRowCount());
     BatchCommitWriteStreamsResponse batchCommitWriteStreamsResponse =
         client.batchCommitWriteStreams(
             BatchCommitWriteStreamsRequest.newBuilder()
