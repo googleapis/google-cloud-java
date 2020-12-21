@@ -171,7 +171,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-pubsub-v1</artifactId>
-        <version>1.90.7</version>
+        <version>1.92.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
