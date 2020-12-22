@@ -17,7 +17,7 @@
 /**
  * The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= AccessApprovalClient =======================
+ * <p>======================= AccessApprovalAdminClient =======================
  *
  * <p>Service Description: This API allows a customer to manage accesses to cloud resources by
  * Google personnel. It defines the following resource model:
@@ -48,7 +48,7 @@
  *
  * <p>If a request is not approved or dismissed, we call it pending.
  *
- * <p>Sample for AccessApprovalClient:
+ * <p>Sample for AccessApprovalAdminClient:
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.accessapproval.v1;
