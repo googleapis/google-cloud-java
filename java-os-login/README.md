@@ -38,18 +38,18 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-os-login</artifactId>
-  <version>1.1.4</version>
+  <version>1.1.6</version>
 </dependency>
 
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-os-login:1.1.4'
+compile 'com.google.cloud:google-cloud-os-login:1.1.6'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-os-login" % "1.1.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-os-login" % "1.1.6"
 ```
 
 ## Authentication
