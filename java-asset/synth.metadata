@@ -4,55 +4,47 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-asset.git",
-        "sha": "0cdd449bbd5ca3241f4a9ef795550171d042b02b"
+        "sha": "aeb8c5ae66c605b3de855b9fe823664b53f51c6f"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1f8a5144b52f7677dc43c55b21ccaf9e1b425ceb",
-        "internalRef": "342689216"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1f8a5144b52f7677dc43c55b21ccaf9e1b425ceb",
-        "internalRef": "342689216"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1f8a5144b52f7677dc43c55b21ccaf9e1b425ceb",
-        "internalRef": "342689216"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1f8a5144b52f7677dc43c55b21ccaf9e1b425ceb",
-        "internalRef": "342689216"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1f8a5144b52f7677dc43c55b21ccaf9e1b425ceb",
-        "internalRef": "342689216"
-      }
-    },
-    {
-      "git": {
-        "name": "googleapis",
-        "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1f8a5144b52f7677dc43c55b21ccaf9e1b425ceb",
-        "internalRef": "342689216"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {

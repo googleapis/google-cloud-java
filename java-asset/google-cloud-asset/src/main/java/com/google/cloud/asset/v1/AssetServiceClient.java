@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.asset.v1;
 
 import com.google.api.core.ApiFunction;
@@ -38,23 +39,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Asset service definition.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   String parent = "";
- *   Feed response = assetServiceClient.createFeed(parent);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the assetServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the AssetServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -82,30 +74,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * AssetServiceClient assetServiceClient =
- *     AssetServiceClient.create(assetServiceSettings);
- * </code>
- * </pre>
+ * AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * AssetServiceClient assetServiceClient =
- *     AssetServiceClient.create(assetServiceSettings);
- * </code>
- * </pre>
+ * AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class AssetServiceClient implements BackgroundResource {
   private final AssetServiceSettings settings;
   private final AssetServiceStub stub;
@@ -126,7 +114,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of AssetServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use AssetServiceSettings}.
+   * for advanced usage - prefer using create(AssetServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AssetServiceClient create(AssetServiceStub stub) {
@@ -164,13 +152,11 @@ public class AssetServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports assets with time and resource types to a given Cloud Storage location/BigQuery table.
    * For Cloud Storage location destinations, the output format is newline-delimited JSON. Each line
@@ -181,31 +167,15 @@ public class AssetServiceClient implements BackgroundResource {
    * exponential retry to poll the export operation result. For regular-size resource parent, the
    * export operation usually finishes within 5 minutes.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ExportAssetsResponse response = assetServiceClient.exportAssetsAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<ExportAssetsResponse, ExportAssetsRequest> exportAssetsAsync(
       ExportAssetsRequest request) {
     return exportAssetsOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports assets with time and resource types to a given Cloud Storage location/BigQuery table.
    * For Cloud Storage location destinations, the output format is newline-delimited JSON. Each line
@@ -217,28 +187,13 @@ public class AssetServiceClient implements BackgroundResource {
    * export operation usually finishes within 5 minutes.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   OperationFuture&lt;ExportAssetsResponse, ExportAssetsRequest&gt; future = assetServiceClient.exportAssetsOperationCallable().futureCall(request);
-   *   // Do something
-   *   ExportAssetsResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationCallable() {
     return stub.exportAssetsOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Exports assets with time and resource types to a given Cloud Storage location/BigQuery table.
    * For Cloud Storage location destinations, the output format is newline-delimited JSON. Each line
@@ -250,44 +205,18 @@ public class AssetServiceClient implements BackgroundResource {
    * export operation usually finishes within 5 minutes.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportAssetsRequest request = ExportAssetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = assetServiceClient.exportAssetsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable() {
     return stub.exportAssetsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Batch gets the update history of assets that overlap a time window. For IAM_POLICY content,
    * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
    * gaps in the output history. Otherwise, this API outputs history with asset in both non-delete
    * or deleted status. If a specified asset does not exist, this API returns an INVALID_ARGUMENT
    * error.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -297,7 +226,7 @@ public class AssetServiceClient implements BackgroundResource {
     return batchGetAssetsHistoryCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Batch gets the update history of assets that overlap a time window. For IAM_POLICY content,
    * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
@@ -306,36 +235,15 @@ public class AssetServiceClient implements BackgroundResource {
    * error.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;BatchGetAssetsHistoryResponse&gt; future = assetServiceClient.batchGetAssetsHistoryCallable().futureCall(request);
-   *   // Do something
-   *   BatchGetAssetsHistoryResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
       batchGetAssetsHistoryCallable() {
     return stub.batchGetAssetsHistoryCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a feed in a parent project/folder/organization to listen to its asset updates.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   Feed response = assetServiceClient.createFeed(parent);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The name of the project/folder/organization where this feed should be
    *     created in. It can only be an organization number (such as "organizations/123"), a folder
@@ -348,25 +256,9 @@ public class AssetServiceClient implements BackgroundResource {
     return createFeed(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a feed in a parent project/folder/organization to listen to its asset updates.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   String feedId = "";
-   *   Feed feed = Feed.newBuilder().build();
-   *   CreateFeedRequest request = CreateFeedRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setFeedId(feedId)
-   *     .setFeed(feed)
-   *     .build();
-   *   Feed response = assetServiceClient.createFeed(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -375,44 +267,19 @@ public class AssetServiceClient implements BackgroundResource {
     return createFeedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a feed in a parent project/folder/organization to listen to its asset updates.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   String feedId = "";
-   *   Feed feed = Feed.newBuilder().build();
-   *   CreateFeedRequest request = CreateFeedRequest.newBuilder()
-   *     .setParent(parent)
-   *     .setFeedId(feedId)
-   *     .setFeed(feed)
-   *     .build();
-   *   ApiFuture&lt;Feed&gt; future = assetServiceClient.createFeedCallable().futureCall(request);
-   *   // Do something
-   *   Feed response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateFeedRequest, Feed> createFeedCallable() {
     return stub.createFeedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details about an asset feed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-   *   Feed response = assetServiceClient.getFeed(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Feed and it must be in the format of:
    *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
@@ -425,18 +292,9 @@ public class AssetServiceClient implements BackgroundResource {
     return getFeed(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details about an asset feed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-   *   Feed response = assetServiceClient.getFeed(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the Feed and it must be in the format of:
    *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
@@ -448,21 +306,9 @@ public class AssetServiceClient implements BackgroundResource {
     return getFeed(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details about an asset feed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-   *   GetFeedRequest request = GetFeedRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Feed response = assetServiceClient.getFeed(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -471,40 +317,19 @@ public class AssetServiceClient implements BackgroundResource {
     return getFeedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details about an asset feed.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-   *   GetFeedRequest request = GetFeedRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Feed&gt; future = assetServiceClient.getFeedCallable().futureCall(request);
-   *   // Do something
-   *   Feed response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetFeedRequest, Feed> getFeedCallable() {
     return stub.getFeedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all asset feeds in a parent project/folder/organization.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   ListFeedsResponse response = assetServiceClient.listFeeds(parent);
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent project/folder/organization whose feeds are to be listed. It
    *     can only be using project/folder/organization number (such as "folders/12345")", or a
@@ -516,21 +341,9 @@ public class AssetServiceClient implements BackgroundResource {
     return listFeeds(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all asset feeds in a parent project/folder/organization.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   ListFeedsRequest request = ListFeedsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   ListFeedsResponse response = assetServiceClient.listFeeds(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -539,40 +352,19 @@ public class AssetServiceClient implements BackgroundResource {
     return listFeedsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all asset feeds in a parent project/folder/organization.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   ListFeedsRequest request = ListFeedsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   ApiFuture&lt;ListFeedsResponse&gt; future = assetServiceClient.listFeedsCallable().futureCall(request);
-   *   // Do something
-   *   ListFeedsResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListFeedsRequest, ListFeedsResponse> listFeedsCallable() {
     return stub.listFeedsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an asset feed configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   Feed feed = Feed.newBuilder().build();
-   *   Feed response = assetServiceClient.updateFeed(feed);
-   * }
-   * </code></pre>
    *
    * @param feed Required. The new values of feed details. It must match an existing feed and the
    *     field `name` must be in the format of: projects/project_number/feeds/feed_id or
@@ -584,23 +376,9 @@ public class AssetServiceClient implements BackgroundResource {
     return updateFeed(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an asset feed configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   Feed feed = Feed.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateFeedRequest request = UpdateFeedRequest.newBuilder()
-   *     .setFeed(feed)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   Feed response = assetServiceClient.updateFeed(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -609,42 +387,19 @@ public class AssetServiceClient implements BackgroundResource {
     return updateFeedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an asset feed configuration.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   Feed feed = Feed.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateFeedRequest request = UpdateFeedRequest.newBuilder()
-   *     .setFeed(feed)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Feed&gt; future = assetServiceClient.updateFeedCallable().futureCall(request);
-   *   // Do something
-   *   Feed response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
     return stub.updateFeedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an asset feed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-   *   assetServiceClient.deleteFeed(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the feed and it must be in the format of:
    *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
@@ -657,18 +412,9 @@ public class AssetServiceClient implements BackgroundResource {
     deleteFeed(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an asset feed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-   *   assetServiceClient.deleteFeed(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the feed and it must be in the format of:
    *     projects/project_number/feeds/feed_id folders/folder_number/feeds/feed_id
@@ -680,21 +426,9 @@ public class AssetServiceClient implements BackgroundResource {
     deleteFeed(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an asset feed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-   *   DeleteFeedRequest request = DeleteFeedRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   assetServiceClient.deleteFeed(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -703,55 +437,34 @@ public class AssetServiceClient implements BackgroundResource {
     deleteFeedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an asset feed.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-   *   DeleteFeedRequest request = DeleteFeedRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = assetServiceClient.deleteFeedCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
     return stub.deleteFeedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   String query = "";
-   *   List&lt;String&gt; assetTypes = new ArrayList&lt;&gt;();
-   *   for (ResourceSearchResult element : assetServiceClient.searchAllResources(scope, query, assetTypes).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param scope Required. A scope can be a project, a folder, or an organization. The search is
    *     limited to the resources within the `scope`. The caller must be granted the
    *     [`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    *     permission on the desired scope.
    *     <p>The allowed values are:
-   *     <p>&#42; projects/{PROJECT_ID} (e.g., "projects/foo-bar") &#42; projects/{PROJECT_NUMBER}
-   *     (e.g., "projects/12345678") &#42; folders/{FOLDER_NUMBER} (e.g., "folders/1234567") &#42;
-   *     organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   *     <ul>
+   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *       <li>folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   *     </ul>
+   *
    * @param query Optional. The query statement. See [how to construct a
    *     query](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
    *     for more information. If not specified or empty, it will search all the resources within
@@ -761,20 +474,29 @@ public class AssetServiceClient implements BackgroundResource {
    *     policy structure, see [IAM policy
    *     doc](https://cloud.google.com/iam/docs/policies#structure).
    *     <p>Examples:
-   *     <p>&#42; `name:Important` to find Cloud resources whose name contains "Important" as a
-   *     word. &#42; `displayName:Impor&#42;` to find Cloud resources whose display name contains
-   *     "Impor" as a prefix. &#42; `description:&#42;por&#42;` to find Cloud resources whose
-   *     description contains "por" as a substring. &#42; `location:us-west&#42;` to find Cloud
-   *     resources whose location is prefixed with "us-west". &#42; `labels:prod` to find Cloud
-   *     resources whose labels contain "prod" as a key or value. &#42; `labels.env:prod` to find
-   *     Cloud resources that have a label "env" and its value is "prod". &#42; `labels.env:&#42;`
-   *     to find Cloud resources that have a label "env". &#42; `Important` to find Cloud resources
-   *     that contain "Important" as a word in any of the searchable fields. &#42; `Impor&#42;` to
-   *     find Cloud resources that contain "Impor" as a prefix in any of the searchable fields.
-   *     &#42; `&#42;por&#42;` to find Cloud resources that contain "por" as a substring in any of
-   *     the searchable fields. &#42; `Important location:(us-west1 OR global)` to find Cloud
-   *     resources that contain "Important" as a word in any of the searchable fields and are also
-   *     located in the "us-west1" region or the "global" location.
+   *     <ul>
+   *       <li>`name:Important` to find Cloud resources whose name contains "Important" as a word.
+   *       <li>`displayName:Impor&#42;` to find Cloud resources whose display name contains "Impor"
+   *           as a prefix.
+   *       <li>`description:&#42;por&#42;` to find Cloud resources whose description contains "por"
+   *           as a substring.
+   *       <li>`location:us-west&#42;` to find Cloud resources whose location is prefixed with
+   *           "us-west".
+   *       <li>`labels:prod` to find Cloud resources whose labels contain "prod" as a key or value.
+   *       <li>`labels.env:prod` to find Cloud resources that have a label "env" and its value is
+   *           "prod".
+   *       <li>`labels.env:&#42;` to find Cloud resources that have a label "env".
+   *       <li>`Important` to find Cloud resources that contain "Important" as a word in any of the
+   *           searchable fields.
+   *       <li>`Impor&#42;` to find Cloud resources that contain "Impor" as a prefix in any of the
+   *           searchable fields.
+   *       <li>`&#42;por&#42;` to find Cloud resources that contain "por" as a substring in any of
+   *           the searchable fields.
+   *       <li>`Important location:(us-west1 OR global)` to find Cloud resources that contain
+   *           "Important" as a word in any of the searchable fields and are also located in the
+   *           "us-west1" region or the "global" location.
+   *     </ul>
+   *
    * @param assetTypes Optional. A list of asset types that this request searches for. If empty, it
    *     will search all the [searchable asset
    *     types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
@@ -791,25 +513,11 @@ public class AssetServiceClient implements BackgroundResource {
     return searchAllResources(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllResourcesRequest request = SearchAllResourcesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   for (ResourceSearchResult element : assetServiceClient.searchAllResources(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -819,111 +527,74 @@ public class AssetServiceClient implements BackgroundResource {
     return searchAllResourcesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllResourcesRequest request = SearchAllResourcesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   ApiFuture&lt;SearchAllResourcesPagedResponse&gt; future = assetServiceClient.searchAllResourcesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ResourceSearchResult element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
       searchAllResourcesPagedCallable() {
     return stub.searchAllResourcesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllResourcesRequest request = SearchAllResourcesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   while (true) {
-   *     SearchAllResourcesResponse response = assetServiceClient.searchAllResourcesCallable().call(request);
-   *     for (ResourceSearchResult element : response.getResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
       searchAllResourcesCallable() {
     return stub.searchAllResourcesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all IAM policies within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
    * permission on the desired scope, otherwise the request will be rejected.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   String query = "";
-   *   for (IamPolicySearchResult element : assetServiceClient.searchAllIamPolicies(scope, query).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param scope Required. A scope can be a project, a folder, or an organization. The search is
    *     limited to the IAM policies within the `scope`. The caller must be granted the
    *     [`cloudasset.assets.searchAllIamPolicies`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    *     permission on the desired scope.
    *     <p>The allowed values are:
-   *     <p>&#42; projects/{PROJECT_ID} (e.g., "projects/foo-bar") &#42; projects/{PROJECT_NUMBER}
-   *     (e.g., "projects/12345678") &#42; folders/{FOLDER_NUMBER} (e.g., "folders/1234567") &#42;
-   *     organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   *     <ul>
+   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *       <li>folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   *     </ul>
+   *
    * @param query Optional. The query statement. See [how to construct a
    *     query](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)
    *     for more information. If not specified or empty, it will search all the IAM policies within
    *     the specified `scope`.
    *     <p>Examples:
-   *     <p>&#42; `policy:amy{@literal @}gmail.com` to find IAM policy bindings that specify user
-   *     "amy{@literal @}gmail.com". &#42; `policy:roles/compute.admin` to find IAM policy bindings
-   *     that specify the Compute Admin role. &#42; `policy.role.permissions:storage.buckets.update`
-   *     to find IAM policy bindings that specify a role containing "storage.buckets.update"
-   *     permission. Note that if callers don't have `iam.roles.get` access to a role's included
-   *     permissions, policy bindings that specify this role will be dropped from the search
-   *     results. &#42; `resource:organizations/123456` to find IAM policy bindings that are set on
-   *     "organizations/123456". &#42; `Important` to find IAM policy bindings that contain
-   *     "Important" as a word in any of the searchable fields (except for the included
-   *     permissions). &#42; `&#42;por&#42;` to find IAM policy bindings that contain "por" as a
-   *     substring in any of the searchable fields (except for the included permissions). &#42;
-   *     `resource:(instance1 OR instance2) policy:amy` to find IAM policy bindings that are set on
-   *     resources "instance1" or "instance2" and also specify user "amy".
+   *     <ul>
+   *       <li>`policy:amy{@literal @}gmail.com` to find IAM policy bindings that specify user
+   *           "amy{@literal @}gmail.com".
+   *       <li>`policy:roles/compute.admin` to find IAM policy bindings that specify the Compute
+   *           Admin role.
+   *       <li>`policy.role.permissions:storage.buckets.update` to find IAM policy bindings that
+   *           specify a role containing "storage.buckets.update" permission. Note that if callers
+   *           don't have `iam.roles.get` access to a role's included permissions, policy bindings
+   *           that specify this role will be dropped from the search results.
+   *       <li>`resource:organizations/123456` to find IAM policy bindings that are set on
+   *           "organizations/123456".
+   *       <li>`Important` to find IAM policy bindings that contain "Important" as a word in any of
+   *           the searchable fields (except for the included permissions).
+   *       <li>`&#42;por&#42;` to find IAM policy bindings that contain "por" as a substring in any
+   *           of the searchable fields (except for the included permissions).
+   *       <li>`resource:(instance1 OR instance2) policy:amy` to find IAM policy bindings that are
+   *           set on resources "instance1" or "instance2" and also specify user "amy".
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAllIamPoliciesPagedResponse searchAllIamPolicies(String scope, String query) {
@@ -932,25 +603,11 @@ public class AssetServiceClient implements BackgroundResource {
     return searchAllIamPolicies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all IAM policies within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
    * permission on the desired scope, otherwise the request will be rejected.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllIamPoliciesRequest request = SearchAllIamPoliciesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   for (IamPolicySearchResult element : assetServiceClient.searchAllIamPolicies(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -960,82 +617,35 @@ public class AssetServiceClient implements BackgroundResource {
     return searchAllIamPoliciesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all IAM policies within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
    * permission on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllIamPoliciesRequest request = SearchAllIamPoliciesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   ApiFuture&lt;SearchAllIamPoliciesPagedResponse&gt; future = assetServiceClient.searchAllIamPoliciesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (IamPolicySearchResult element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesPagedCallable() {
     return stub.searchAllIamPoliciesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all IAM policies within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
    * permission on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllIamPoliciesRequest request = SearchAllIamPoliciesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   while (true) {
-   *     SearchAllIamPoliciesResponse response = assetServiceClient.searchAllIamPoliciesCallable().call(request);
-   *     for (IamPolicySearchResult element : response.getResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
       searchAllIamPoliciesCallable() {
     return stub.searchAllIamPoliciesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes IAM policies to answer which identities have what accesses on which resources.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .build();
-   *   AnalyzeIamPolicyResponse response = assetServiceClient.analyzeIamPolicy(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1044,30 +654,18 @@ public class AssetServiceClient implements BackgroundResource {
     return analyzeIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes IAM policies to answer which identities have what accesses on which resources.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .build();
-   *   ApiFuture&lt;AnalyzeIamPolicyResponse&gt; future = assetServiceClient.analyzeIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   AnalyzeIamPolicyResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
       analyzeIamPolicyCallable() {
     return stub.analyzeIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes IAM policies asynchronously to answer which identities have what accesses on which
    * resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination.
@@ -1078,32 +676,16 @@ public class AssetServiceClient implements BackgroundResource {
    * backoff retry to poll the operation result. The metadata contains the request to help callers
    * to map responses to requests.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
-   *   AnalyzeIamPolicyLongrunningRequest request = AnalyzeIamPolicyLongrunningRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   AnalyzeIamPolicyLongrunningResponse response = assetServiceClient.analyzeIamPolicyLongrunningAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<
           AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>
       analyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest request) {
     return analyzeIamPolicyLongrunningOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes IAM policies asynchronously to answer which identities have what accesses on which
    * resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination.
@@ -1115,22 +697,7 @@ public class AssetServiceClient implements BackgroundResource {
    * to map responses to requests.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
-   *   AnalyzeIamPolicyLongrunningRequest request = AnalyzeIamPolicyLongrunningRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   OperationFuture&lt;AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest&gt; future = assetServiceClient.analyzeIamPolicyLongrunningOperationCallable().futureCall(request);
-   *   // Do something
-   *   AnalyzeIamPolicyLongrunningResponse response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<
           AnalyzeIamPolicyLongrunningRequest,
           AnalyzeIamPolicyLongrunningResponse,
@@ -1139,7 +706,7 @@ public class AssetServiceClient implements BackgroundResource {
     return stub.analyzeIamPolicyLongrunningOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes IAM policies asynchronously to answer which identities have what accesses on which
    * resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination.
@@ -1151,20 +718,6 @@ public class AssetServiceClient implements BackgroundResource {
    * to map responses to requests.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
-   *   AnalyzeIamPolicyLongrunningRequest request = AnalyzeIamPolicyLongrunningRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = assetServiceClient.analyzeIamPolicyLongrunningCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<AnalyzeIamPolicyLongrunningRequest, Operation>
       analyzeIamPolicyLongrunningCallable() {

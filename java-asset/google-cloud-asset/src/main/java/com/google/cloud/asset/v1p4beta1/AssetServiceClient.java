@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.asset.v1p4beta1;
 
 import com.google.api.core.BetaApi;
@@ -28,26 +29,14 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Asset service definition.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
- *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
- *     .setAnalysisQuery(analysisQuery)
- *     .build();
- *   AnalyzeIamPolicyResponse response = assetServiceClient.analyzeIamPolicy(request);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the assetServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the AssetServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -75,30 +64,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * AssetServiceClient assetServiceClient =
- *     AssetServiceClient.create(assetServiceSettings);
- * </code>
- * </pre>
+ * AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * AssetServiceClient assetServiceClient =
- *     AssetServiceClient.create(assetServiceSettings);
- * </code>
- * </pre>
+ * AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class AssetServiceClient implements BackgroundResource {
   private final AssetServiceSettings settings;
   private final AssetServiceStub stub;
@@ -119,7 +104,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of AssetServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use AssetServiceSettings}.
+   * for advanced usage - prefer using create(AssetServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AssetServiceClient create(AssetServiceStub stub) {
@@ -157,117 +142,15 @@ public class AssetServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports IAM policy analysis based on the specified request. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
-   * the export. The metadata contains the request to help callers to map responses to requests.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
-   *   ExportIamPolicyAnalysisRequest request = ExportIamPolicyAnalysisRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ExportIamPolicyAnalysisResponse response = assetServiceClient.exportIamPolicyAnalysisAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest>
-      exportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest request) {
-    return exportIamPolicyAnalysisOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports IAM policy analysis based on the specified request. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
-   * the export. The metadata contains the request to help callers to map responses to requests.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
-   *   ExportIamPolicyAnalysisRequest request = ExportIamPolicyAnalysisRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   OperationFuture&lt;ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest&gt; future = assetServiceClient.exportIamPolicyAnalysisOperationCallable().futureCall(request);
-   *   // Do something
-   *   ExportIamPolicyAnalysisResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<
-          ExportIamPolicyAnalysisRequest,
-          ExportIamPolicyAnalysisResponse,
-          ExportIamPolicyAnalysisRequest>
-      exportIamPolicyAnalysisOperationCallable() {
-    return stub.exportIamPolicyAnalysisOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports IAM policy analysis based on the specified request. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
-   * the export. The metadata contains the request to help callers to map responses to requests.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
-   *   ExportIamPolicyAnalysisRequest request = ExportIamPolicyAnalysisRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = assetServiceClient.exportIamPolicyAnalysisCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ExportIamPolicyAnalysisRequest, Operation>
-      exportIamPolicyAnalysisCallable() {
-    return stub.exportIamPolicyAnalysisCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes IAM policies based on the specified request. Returns a list of
    * [IamPolicyAnalysisResult][google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult] matching the
    * request.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .build();
-   *   AnalyzeIamPolicyResponse response = assetServiceClient.analyzeIamPolicy(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -276,29 +159,60 @@ public class AssetServiceClient implements BackgroundResource {
     return analyzeIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes IAM policies based on the specified request. Returns a list of
    * [IamPolicyAnalysisResult][google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult] matching the
    * request.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-   *   AnalyzeIamPolicyRequest request = AnalyzeIamPolicyRequest.newBuilder()
-   *     .setAnalysisQuery(analysisQuery)
-   *     .build();
-   *   ApiFuture&lt;AnalyzeIamPolicyResponse&gt; future = assetServiceClient.analyzeIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   AnalyzeIamPolicyResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
       analyzeIamPolicyCallable() {
     return stub.analyzeIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports IAM policy analysis based on the specified request. This API implements the
+   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
+   * the export. The metadata contains the request to help callers to map responses to requests.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest>
+      exportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest request) {
+    return exportIamPolicyAnalysisOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports IAM policy analysis based on the specified request. This API implements the
+   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
+   * the export. The metadata contains the request to help callers to map responses to requests.
+   *
+   * <p>Sample code:
+   */
+  public final OperationCallable<
+          ExportIamPolicyAnalysisRequest,
+          ExportIamPolicyAnalysisResponse,
+          ExportIamPolicyAnalysisRequest>
+      exportIamPolicyAnalysisOperationCallable() {
+    return stub.exportIamPolicyAnalysisOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports IAM policy analysis based on the specified request. This API implements the
+   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
+   * the export. The metadata contains the request to help callers to map responses to requests.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<ExportIamPolicyAnalysisRequest, Operation>
+      exportIamPolicyAnalysisCallable() {
+    return stub.exportIamPolicyAnalysisCallable();
   }
 
   @Override

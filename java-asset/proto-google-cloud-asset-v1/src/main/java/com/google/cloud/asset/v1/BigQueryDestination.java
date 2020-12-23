@@ -282,7 +282,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * <pre>
    * [partition_spec] determines whether to export to partitioned table(s) and
    * how to partition the data.
-   * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+   * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
    * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
    * non-partitioned table(s). [force] will decide whether to overwrite existing
    * table(s).
@@ -311,7 +311,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * <pre>
    * [partition_spec] determines whether to export to partitioned table(s) and
    * how to partition the data.
-   * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+   * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
    * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
    * non-partitioned table(s). [force] will decide whether to overwrite existing
    * table(s).
@@ -342,7 +342,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    * <pre>
    * [partition_spec] determines whether to export to partitioned table(s) and
    * how to partition the data.
-   * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+   * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
    * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
    * non-partitioned table(s). [force] will decide whether to overwrite existing
    * table(s).
@@ -1105,7 +1105,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
-     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
@@ -1133,7 +1133,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
-     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
@@ -1167,7 +1167,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
-     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
@@ -1203,7 +1203,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
-     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
@@ -1237,7 +1237,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
-     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
@@ -1277,7 +1277,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
-     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
@@ -1311,7 +1311,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
-     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
@@ -1339,7 +1339,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
-     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).
@@ -1371,7 +1371,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <pre>
      * [partition_spec] determines whether to export to partitioned table(s) and
      * how to partition the data.
-     * If [partition_spec] is unset or [partition_spec.partion_key] is unset or
+     * If [partition_spec] is unset or [partition_spec.partition_key] is unset or
      * `PARTITION_KEY_UNSPECIFIED`, the snapshot results will be exported to
      * non-partitioned table(s). [force] will decide whether to overwrite existing
      * table(s).

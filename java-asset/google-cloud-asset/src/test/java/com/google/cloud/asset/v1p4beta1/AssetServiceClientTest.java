@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.asset.v1p4beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -26,13 +27,14 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -40,31 +42,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class AssetServiceClientTest {
-  private static MockAssetService mockAssetService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private AssetServiceClient client;
   private LocalChannelProvider channelProvider;
+  private static MockAssetService mockAssetService;
 
   @BeforeClass
   public static void startStaticServer() {
     mockAssetService = new MockAssetService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockAssetService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     AssetServiceSettings settings =
         AssetServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -79,10 +81,59 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
+  public void analyzeIamPolicyTest() throws Exception {
+    AnalyzeIamPolicyResponse expectedResponse =
+        AnalyzeIamPolicyResponse.newBuilder()
+            .addAllServiceAccountImpersonationAnalysis(
+                new ArrayList<AnalyzeIamPolicyResponse.IamPolicyAnalysis>())
+            .setFullyExplored(true)
+            .addAllNonCriticalErrors(new ArrayList<IamPolicyAnalysisResult.AnalysisState>())
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    AnalyzeIamPolicyRequest request =
+        AnalyzeIamPolicyRequest.newBuilder()
+            .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+            .build();
+
+    AnalyzeIamPolicyResponse actualResponse = client.analyzeIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeIamPolicyRequest actualRequest = ((AnalyzeIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAnalysisQuery(), actualRequest.getAnalysisQuery());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void analyzeIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      AnalyzeIamPolicyRequest request =
+          AnalyzeIamPolicyRequest.newBuilder()
+              .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+              .build();
+      client.analyzeIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void exportIamPolicyAnalysisTest() throws Exception {
     ExportIamPolicyAnalysisResponse expectedResponse =
-        ExportIamPolicyAnalysisResponse.newBuilder().build();
+        ExportIamPolicyAnalysisResponse.newBuilder()
+            .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("exportIamPolicyAnalysisTest")
@@ -91,12 +142,10 @@ public class AssetServiceClientTest {
             .build();
     mockAssetService.addResponse(resultOperation);
 
-    IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-    IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
     ExportIamPolicyAnalysisRequest request =
         ExportIamPolicyAnalysisRequest.newBuilder()
-            .setAnalysisQuery(analysisQuery)
-            .setOutputConfig(outputConfig)
+            .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+            .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
             .build();
 
     ExportIamPolicyAnalysisResponse actualResponse =
@@ -106,10 +155,11 @@ public class AssetServiceClientTest {
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ExportIamPolicyAnalysisRequest actualRequest =
-        (ExportIamPolicyAnalysisRequest) actualRequests.get(0);
+        ((ExportIamPolicyAnalysisRequest) actualRequests.get(0));
 
-    Assert.assertEquals(analysisQuery, actualRequest.getAnalysisQuery());
-    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertEquals(request.getAnalysisQuery(), actualRequest.getAnalysisQuery());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -117,71 +167,22 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void exportIamPolicyAnalysisExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
-      IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-      IamPolicyAnalysisOutputConfig outputConfig =
-          IamPolicyAnalysisOutputConfig.newBuilder().build();
       ExportIamPolicyAnalysisRequest request =
           ExportIamPolicyAnalysisRequest.newBuilder()
-              .setAnalysisQuery(analysisQuery)
-              .setOutputConfig(outputConfig)
+              .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+              .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
               .build();
-
       client.exportIamPolicyAnalysisAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void analyzeIamPolicyTest() {
-    boolean fullyExplored = true;
-    AnalyzeIamPolicyResponse expectedResponse =
-        AnalyzeIamPolicyResponse.newBuilder().setFullyExplored(fullyExplored).build();
-    mockAssetService.addResponse(expectedResponse);
-
-    IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-    AnalyzeIamPolicyRequest request =
-        AnalyzeIamPolicyRequest.newBuilder().setAnalysisQuery(analysisQuery).build();
-
-    AnalyzeIamPolicyResponse actualResponse = client.analyzeIamPolicy(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    AnalyzeIamPolicyRequest actualRequest = (AnalyzeIamPolicyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(analysisQuery, actualRequest.getAnalysisQuery());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void analyzeIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAssetService.addException(exception);
-
-    try {
-      IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-      AnalyzeIamPolicyRequest request =
-          AnalyzeIamPolicyRequest.newBuilder().setAnalysisQuery(analysisQuery).build();
-
-      client.analyzeIamPolicy(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
     }
   }
 }

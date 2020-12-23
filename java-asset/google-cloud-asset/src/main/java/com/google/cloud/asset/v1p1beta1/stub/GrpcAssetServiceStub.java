@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.asset.v1p1beta1.stub;
 
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -31,6 +31,7 @@ import com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse;
 import com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest;
 import com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -38,16 +39,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Asset API.
+ * gRPC stub implementation for the AssetService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAssetServiceStub extends AssetServiceStub {
-
   private static final MethodDescriptor<SearchAllResourcesRequest, SearchAllResourcesResponse>
       searchAllResourcesMethodDescriptor =
           MethodDescriptor.<SearchAllResourcesRequest, SearchAllResourcesResponse>newBuilder()
@@ -58,6 +57,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchAllResourcesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
       searchAllIamPoliciesMethodDescriptor =
           MethodDescriptor.<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>newBuilder()
@@ -69,8 +69,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(SearchAllIamPoliciesResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
       searchAllResourcesCallable;
   private final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
@@ -80,6 +78,8 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   private final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAssetServiceStub create(AssetServiceStubSettings settings)
@@ -118,6 +118,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<SearchAllResourcesRequest, SearchAllResourcesResponse>
         searchAllResourcesTransportSettings =
@@ -169,12 +170,12 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             settings.searchAllIamPoliciesSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
-      searchAllResourcesPagedCallable() {
-    return searchAllResourcesPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
@@ -182,14 +183,19 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     return searchAllResourcesCallable;
   }
 
-  public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
-      searchAllIamPoliciesPagedCallable() {
-    return searchAllIamPoliciesPagedCallable;
+  public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
+      searchAllResourcesPagedCallable() {
+    return searchAllResourcesPagedCallable;
   }
 
   public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
       searchAllIamPoliciesCallable() {
     return searchAllIamPoliciesCallable;
+  }
+
+  public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
+      searchAllIamPoliciesPagedCallable() {
+    return searchAllIamPoliciesPagedCallable;
   }
 
   @Override

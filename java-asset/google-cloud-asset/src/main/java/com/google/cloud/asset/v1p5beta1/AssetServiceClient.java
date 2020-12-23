@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.asset.v1p5beta1;
 
 import com.google.api.core.ApiFunction;
@@ -33,30 +34,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Asset service definition.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   String parent = "";
- *   ListAssetsRequest request = ListAssetsRequest.newBuilder()
- *     .setParent(parent)
- *     .build();
- *   ApiFuture&lt;ListAssetsPagedResponse&gt; future = assetServiceClient.listAssetsPagedCallable().futureCall(request);
- *   // Do something
- *   for (Asset element : future.get().iterateAll()) {
- *     // doThingsWith(element);
- *   }
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the assetServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the AssetServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -84,30 +69,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * AssetServiceClient assetServiceClient =
- *     AssetServiceClient.create(assetServiceSettings);
- * </code>
- * </pre>
+ * AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * AssetServiceClient assetServiceClient =
- *     AssetServiceClient.create(assetServiceSettings);
- * </code>
- * </pre>
+ * AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class AssetServiceClient implements BackgroundResource {
   private final AssetServiceSettings settings;
   private final AssetServiceStub stub;
@@ -127,7 +108,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of AssetServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use AssetServiceSettings}.
+   * for advanced usage - prefer using create(AssetServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AssetServiceClient create(AssetServiceStub stub) {
@@ -159,23 +140,9 @@ public class AssetServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists assets with time and resource types and returns paged results in response.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   ListAssetsRequest request = ListAssetsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   for (Asset element : assetServiceClient.listAssets(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -184,56 +151,21 @@ public class AssetServiceClient implements BackgroundResource {
     return listAssetsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists assets with time and resource types and returns paged results in response.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   ListAssetsRequest request = ListAssetsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   ApiFuture&lt;ListAssetsPagedResponse&gt; future = assetServiceClient.listAssetsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Asset element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
     return stub.listAssetsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists assets with time and resource types and returns paged results in response.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String parent = "";
-   *   ListAssetsRequest request = ListAssetsRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
-   *   while (true) {
-   *     ListAssetsResponse response = assetServiceClient.listAssetsCallable().call(request);
-   *     for (Asset element : response.getAssetsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
     return stub.listAssetsCallable();

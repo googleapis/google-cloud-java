@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.asset.v1p1beta1;
 
 import com.google.api.core.ApiFunction;
@@ -33,27 +34,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Asset service definition.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   String scope = "";
- *   String query = "";
- *   List&lt;String&gt; assetTypes = new ArrayList&lt;&gt;();
- *   for (StandardResourceMetadata element : assetServiceClient.searchAllResources(scope, query, assetTypes).iterateAll()) {
- *     // doThingsWith(element);
- *   }
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the assetServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the AssetServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -81,30 +69,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * AssetServiceClient assetServiceClient =
- *     AssetServiceClient.create(assetServiceSettings);
- * </code>
- * </pre>
+ * AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * AssetServiceClient assetServiceClient =
- *     AssetServiceClient.create(assetServiceSettings);
- * </code>
- * </pre>
+ * AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class AssetServiceClient implements BackgroundResource {
   private final AssetServiceSettings settings;
   private final AssetServiceStub stub;
@@ -124,7 +108,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of AssetServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use AssetServiceSettings}.
+   * for advanced usage - prefer using create(AssetServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AssetServiceClient create(AssetServiceStub stub) {
@@ -156,7 +140,7 @@ public class AssetServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all the resources under a given accessible CRM scope (project/folder/organization).
    * This RPC gives callers especially admins the ability to search all the resources under a scope,
@@ -164,23 +148,15 @@ public class AssetServiceClient implements BackgroundResource {
    * cloud.assets.SearchAllResources permission on the requested scope, otherwise it will be
    * rejected.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   String query = "";
-   *   List&lt;String&gt; assetTypes = new ArrayList&lt;&gt;();
-   *   for (StandardResourceMetadata element : assetServiceClient.searchAllResources(scope, query, assetTypes).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
    * @param scope Required. The relative name of an asset. The search is limited to the resources
-   *     within the `scope`. The allowed value must be: &#42; Organization number (such as
-   *     "organizations/123") &#42; Folder number(such as "folders/1234") &#42; Project number (such
-   *     as "projects/12345") &#42; Project id (such as "projects/abc")
+   *     within the `scope`. The allowed value must be:
+   *     <ul>
+   *       <li>Organization number (such as "organizations/123")
+   *       <li>Folder number(such as "folders/1234")
+   *       <li>Project number (such as "projects/12345")
+   *       <li>Project id (such as "projects/abc")
+   *     </ul>
+   *
    * @param query Optional. The query statement.
    * @param assetTypes Optional. A list of asset types that this request searches for. If empty, it
    *     will search all the supported asset types.
@@ -197,27 +173,13 @@ public class AssetServiceClient implements BackgroundResource {
     return searchAllResources(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all the resources under a given accessible CRM scope (project/folder/organization).
    * This RPC gives callers especially admins the ability to search all the resources under a scope,
    * even if they don't have .get permission of all the resources. Callers should have
    * cloud.assets.SearchAllResources permission on the requested scope, otherwise it will be
    * rejected.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllResourcesRequest request = SearchAllResourcesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   for (StandardResourceMetadata element : assetServiceClient.searchAllResources(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -227,7 +189,7 @@ public class AssetServiceClient implements BackgroundResource {
     return searchAllResourcesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all the resources under a given accessible CRM scope (project/folder/organization).
    * This RPC gives callers especially admins the ability to search all the resources under a scope,
@@ -236,27 +198,13 @@ public class AssetServiceClient implements BackgroundResource {
    * rejected.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllResourcesRequest request = SearchAllResourcesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   ApiFuture&lt;SearchAllResourcesPagedResponse&gt; future = assetServiceClient.searchAllResourcesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (StandardResourceMetadata element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
       searchAllResourcesPagedCallable() {
     return stub.searchAllResourcesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all the resources under a given accessible CRM scope (project/folder/organization).
    * This RPC gives callers especially admins the ability to search all the resources under a scope,
@@ -265,34 +213,13 @@ public class AssetServiceClient implements BackgroundResource {
    * rejected.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllResourcesRequest request = SearchAllResourcesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   while (true) {
-   *     SearchAllResourcesResponse response = assetServiceClient.searchAllResourcesCallable().call(request);
-   *     for (StandardResourceMetadata element : response.getResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
       searchAllResourcesCallable() {
     return stub.searchAllResourcesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all the IAM policies under a given accessible CRM scope (project/folder/organization).
    * This RPC gives callers especially admins the ability to search all the IAM policies under a
@@ -300,25 +227,21 @@ public class AssetServiceClient implements BackgroundResource {
    * have cloud.assets.SearchAllIamPolicies permission on the requested scope, otherwise it will be
    * rejected.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   String query = "";
-   *   for (IamPolicySearchResult element : assetServiceClient.searchAllIamPolicies(scope, query).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
    * @param scope Required. The relative name of an asset. The search is limited to the resources
-   *     within the `scope`. The allowed value must be: &#42; Organization number (such as
-   *     "organizations/123") &#42; Folder number(such as "folders/1234") &#42; Project number (such
-   *     as "projects/12345") &#42; Project id (such as "projects/abc")
-   * @param query Optional. The query statement. Examples: &#42;
-   *     "policy:myuser{@literal @}mydomain.com" &#42; "policy:(myuser{@literal @}mydomain.com
-   *     viewer)"
+   *     within the `scope`. The allowed value must be:
+   *     <ul>
+   *       <li>Organization number (such as "organizations/123")
+   *       <li>Folder number(such as "folders/1234")
+   *       <li>Project number (such as "projects/12345")
+   *       <li>Project id (such as "projects/abc")
+   *     </ul>
+   *
+   * @param query Optional. The query statement. Examples:
+   *     <ul>
+   *       <li>"policy:myuser{@literal @}mydomain.com"
+   *       <li>"policy:(myuser{@literal @}mydomain.com viewer)"
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAllIamPoliciesPagedResponse searchAllIamPolicies(String scope, String query) {
@@ -327,27 +250,13 @@ public class AssetServiceClient implements BackgroundResource {
     return searchAllIamPolicies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all the IAM policies under a given accessible CRM scope (project/folder/organization).
    * This RPC gives callers especially admins the ability to search all the IAM policies under a
    * scope, even if they don't have .getIamPolicy permission of all the IAM policies. Callers should
    * have cloud.assets.SearchAllIamPolicies permission on the requested scope, otherwise it will be
    * rejected.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllIamPoliciesRequest request = SearchAllIamPoliciesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   for (IamPolicySearchResult element : assetServiceClient.searchAllIamPolicies(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -357,7 +266,7 @@ public class AssetServiceClient implements BackgroundResource {
     return searchAllIamPoliciesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all the IAM policies under a given accessible CRM scope (project/folder/organization).
    * This RPC gives callers especially admins the ability to search all the IAM policies under a
@@ -366,27 +275,13 @@ public class AssetServiceClient implements BackgroundResource {
    * rejected.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllIamPoliciesRequest request = SearchAllIamPoliciesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   ApiFuture&lt;SearchAllIamPoliciesPagedResponse&gt; future = assetServiceClient.searchAllIamPoliciesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (IamPolicySearchResult element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesPagedCallable() {
     return stub.searchAllIamPoliciesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches all the IAM policies under a given accessible CRM scope (project/folder/organization).
    * This RPC gives callers especially admins the ability to search all the IAM policies under a
@@ -395,27 +290,6 @@ public class AssetServiceClient implements BackgroundResource {
    * rejected.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   String scope = "";
-   *   SearchAllIamPoliciesRequest request = SearchAllIamPoliciesRequest.newBuilder()
-   *     .setScope(scope)
-   *     .build();
-   *   while (true) {
-   *     SearchAllIamPoliciesResponse response = assetServiceClient.searchAllIamPoliciesCallable().call(request);
-   *     for (IamPolicySearchResult element : response.getResultsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
       searchAllIamPoliciesCallable() {

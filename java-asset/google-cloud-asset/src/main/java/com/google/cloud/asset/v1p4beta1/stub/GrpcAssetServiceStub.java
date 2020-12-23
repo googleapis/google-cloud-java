@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.asset.v1p4beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -38,26 +38,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Asset API.
+ * gRPC stub implementation for the AssetService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAssetServiceStub extends AssetServiceStub {
-
-  private static final MethodDescriptor<ExportIamPolicyAnalysisRequest, Operation>
-      exportIamPolicyAnalysisMethodDescriptor =
-          MethodDescriptor.<ExportIamPolicyAnalysisRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.asset.v1p4beta1.AssetService/ExportIamPolicyAnalysis")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ExportIamPolicyAnalysisRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
       analyzeIamPolicyMethodDescriptor =
           MethodDescriptor.<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>newBuilder()
@@ -69,9 +57,19 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(AnalyzeIamPolicyResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
+  private static final MethodDescriptor<ExportIamPolicyAnalysisRequest, Operation>
+      exportIamPolicyAnalysisMethodDescriptor =
+          MethodDescriptor.<ExportIamPolicyAnalysisRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.asset.v1p4beta1.AssetService/ExportIamPolicyAnalysis")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportIamPolicyAnalysisRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
+  private final UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicyCallable;
   private final UnaryCallable<ExportIamPolicyAnalysisRequest, Operation>
       exportIamPolicyAnalysisCallable;
   private final OperationCallable<
@@ -79,9 +77,9 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           ExportIamPolicyAnalysisResponse,
           ExportIamPolicyAnalysisRequest>
       exportIamPolicyAnalysisOperationCallable;
-  private final UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-      analyzeIamPolicyCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAssetServiceStub create(AssetServiceStubSettings settings)
@@ -122,22 +120,6 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<ExportIamPolicyAnalysisRequest, Operation>
-        exportIamPolicyAnalysisTransportSettings =
-            GrpcCallSettings.<ExportIamPolicyAnalysisRequest, Operation>newBuilder()
-                .setMethodDescriptor(exportIamPolicyAnalysisMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<ExportIamPolicyAnalysisRequest>() {
-                      @Override
-                      public Map<String, String> extract(ExportIamPolicyAnalysisRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "analysis_query.parent",
-                            String.valueOf(request.getAnalysisQuery().getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
         analyzeIamPolicyTransportSettings =
             GrpcCallSettings.<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>newBuilder()
@@ -154,7 +136,26 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<ExportIamPolicyAnalysisRequest, Operation>
+        exportIamPolicyAnalysisTransportSettings =
+            GrpcCallSettings.<ExportIamPolicyAnalysisRequest, Operation>newBuilder()
+                .setMethodDescriptor(exportIamPolicyAnalysisMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ExportIamPolicyAnalysisRequest>() {
+                      @Override
+                      public Map<String, String> extract(ExportIamPolicyAnalysisRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put(
+                            "analysis_query.parent",
+                            String.valueOf(request.getAnalysisQuery().getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
+    this.analyzeIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            analyzeIamPolicyTransportSettings, settings.analyzeIamPolicySettings(), clientContext);
     this.exportIamPolicyAnalysisCallable =
         callableFactory.createUnaryCallable(
             exportIamPolicyAnalysisTransportSettings,
@@ -165,26 +166,19 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
             exportIamPolicyAnalysisTransportSettings,
             settings.exportIamPolicyAnalysisOperationSettings(),
             clientContext,
-            this.operationsStub);
-    this.analyzeIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            analyzeIamPolicyTransportSettings, settings.analyzeIamPolicySettings(), clientContext);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          ExportIamPolicyAnalysisRequest,
-          ExportIamPolicyAnalysisResponse,
-          ExportIamPolicyAnalysisRequest>
-      exportIamPolicyAnalysisOperationCallable() {
-    return exportIamPolicyAnalysisOperationCallable;
+  public UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
+      analyzeIamPolicyCallable() {
+    return analyzeIamPolicyCallable;
   }
 
   public UnaryCallable<ExportIamPolicyAnalysisRequest, Operation>
@@ -192,9 +186,12 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     return exportIamPolicyAnalysisCallable;
   }
 
-  public UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
-      analyzeIamPolicyCallable() {
-    return analyzeIamPolicyCallable;
+  public OperationCallable<
+          ExportIamPolicyAnalysisRequest,
+          ExportIamPolicyAnalysisResponse,
+          ExportIamPolicyAnalysisRequest>
+      exportIamPolicyAnalysisOperationCallable() {
+    return exportIamPolicyAnalysisOperationCallable;
   }
 
   @Override

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,29 +26,56 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class FeedName implements ResourceName {
-
-  @Deprecated
-  protected FeedName() {}
-
-  private static final PathTemplate PROJECT_FEED_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_FEED =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/feeds/{feed}");
-  private static final PathTemplate FOLDER_FEED_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER_FEED =
       PathTemplate.createWithoutUrlEncoding("folders/{folder}/feeds/{feed}");
-  private static final PathTemplate ORGANIZATION_FEED_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_FEED =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/feeds/{feed}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String feed;
+  private final String folder;
+  private final String organization;
 
-  private String project;
-  private String feed;
-  private String folder;
-  private String organization;
+  @Deprecated
+  protected FeedName() {
+    project = null;
+    feed = null;
+    folder = null;
+    organization = null;
+  }
+
+  private FeedName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    feed = Preconditions.checkNotNull(builder.getFeed());
+    folder = null;
+    organization = null;
+    pathTemplate = PROJECT_FEED;
+  }
+
+  private FeedName(FolderFeedBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    feed = Preconditions.checkNotNull(builder.getFeed());
+    project = null;
+    organization = null;
+    pathTemplate = FOLDER_FEED;
+  }
+
+  private FeedName(OrganizationFeedBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    feed = Preconditions.checkNotNull(builder.getFeed());
+    project = null;
+    folder = null;
+    pathTemplate = ORGANIZATION_FEED;
+  }
 
   public String getProject() {
     return project;
@@ -64,24 +91,6 @@ public class FeedName implements ResourceName {
 
   public String getOrganization() {
     return organization;
-  }
-
-  private FeedName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    feed = Preconditions.checkNotNull(builder.getFeed());
-    pathTemplate = PROJECT_FEED_PATH_TEMPLATE;
-  }
-
-  private FeedName(FolderFeedBuilder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
-    feed = Preconditions.checkNotNull(builder.getFeed());
-    pathTemplate = FOLDER_FEED_PATH_TEMPLATE;
-  }
-
-  private FeedName(OrganizationFeedBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    feed = Preconditions.checkNotNull(builder.getFeed());
-    pathTemplate = ORGANIZATION_FEED_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -108,12 +117,12 @@ public class FeedName implements ResourceName {
   }
 
   public static FeedName of(String project, String feed) {
-    return newProjectFeedBuilder().setProject(project).setFeed(feed).build();
+    return newBuilder().setProject(project).setFeed(feed).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static FeedName ofProjectFeedName(String project, String feed) {
-    return newProjectFeedBuilder().setProject(project).setFeed(feed).build();
+    return newBuilder().setProject(project).setFeed(feed).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -153,17 +162,17 @@ public class FeedName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_FEED_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_FEED_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_FEED.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_FEED.match(formattedString);
       return ofProjectFeedName(matchMap.get("project"), matchMap.get("feed"));
-    } else if (FOLDER_FEED_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = FOLDER_FEED_PATH_TEMPLATE.match(formattedString);
+    } else if (FOLDER_FEED.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_FEED.match(formattedString);
       return ofFolderFeedName(matchMap.get("folder"), matchMap.get("feed"));
-    } else if (ORGANIZATION_FEED_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = ORGANIZATION_FEED_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION_FEED.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_FEED.match(formattedString);
       return ofOrganizationFeedName(matchMap.get("organization"), matchMap.get("feed"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("FeedName.parse: formattedString not in valid format");
   }
 
   public static List<FeedName> parseList(List<String> formattedStrings) {
@@ -187,9 +196,9 @@ public class FeedName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_FEED_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_FEED_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_FEED_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_FEED.matches(formattedString)
+        || FOLDER_FEED.matches(formattedString)
+        || ORGANIZATION_FEED.matches(formattedString);
   }
 
   @Override
@@ -226,9 +235,39 @@ public class FeedName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      FeedName that = ((FeedName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.feed, that.feed)
+          && Objects.equals(this.folder, that.folder)
+          && Objects.equals(this.organization, that.organization);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(feed);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    return h;
+  }
+
   /** Builder for projects/{project}/feeds/{feed}. */
   public static class Builder {
-
     private String project;
     private String feed;
 
@@ -254,9 +293,8 @@ public class FeedName implements ResourceName {
 
     private Builder(FeedName feedName) {
       Preconditions.checkArgument(
-          feedName.pathTemplate == PROJECT_FEED_PATH_TEMPLATE,
-          "toBuilder is only supported when FeedName has the pattern of "
-              + "projects/{project}/feeds/{feed}.");
+          Objects.equals(feedName.pathTemplate, PROJECT_FEED),
+          "toBuilder is only supported when FeedName has the pattern of projects/{project}/feeds/{feed}");
       project = feedName.project;
       feed = feedName.feed;
     }
@@ -269,11 +307,10 @@ public class FeedName implements ResourceName {
   /** Builder for folders/{folder}/feeds/{feed}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderFeedBuilder {
-
     private String folder;
     private String feed;
 
-    private FolderFeedBuilder() {}
+    protected FolderFeedBuilder() {}
 
     public String getFolder() {
       return folder;
@@ -301,11 +338,10 @@ public class FeedName implements ResourceName {
   /** Builder for organizations/{organization}/feeds/{feed}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationFeedBuilder {
-
     private String organization;
     private String feed;
 
-    private OrganizationFeedBuilder() {}
+    protected OrganizationFeedBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -328,36 +364,5 @@ public class FeedName implements ResourceName {
     public FeedName build() {
       return new FeedName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      FeedName that = (FeedName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.feed, that.feed))
-          && (Objects.equals(this.folder, that.folder))
-          && (Objects.equals(this.organization, that.organization));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(feed);
-    h *= 1000003;
-    h ^= Objects.hashCode(folder);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    return h;
   }
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.asset.v1;
 
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
@@ -30,16 +31,18 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
-import io.grpc.Status;
+import com.google.protobuf.Timestamp;
+import com.google.type.Expr;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -47,31 +50,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class AssetServiceClientTest {
-  private static MockAssetService mockAssetService;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private AssetServiceClient client;
   private LocalChannelProvider channelProvider;
+  private static MockAssetService mockAssetService;
 
   @BeforeClass
   public static void startStaticServer() {
     mockAssetService = new MockAssetService();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockAssetService));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     AssetServiceSettings settings =
         AssetServiceSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -86,9 +89,13 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void exportAssetsTest() throws Exception {
-    ExportAssetsResponse expectedResponse = ExportAssetsResponse.newBuilder().build();
+    ExportAssetsResponse expectedResponse =
+        ExportAssetsResponse.newBuilder()
+            .setReadTime(Timestamp.newBuilder().build())
+            .setOutputConfig(OutputConfig.newBuilder().build())
+            .setOutputResult(OutputResult.newBuilder().build())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("exportAssetsTest")
@@ -97,12 +104,12 @@ public class AssetServiceClientTest {
             .build();
     mockAssetService.addResponse(resultOperation);
 
-    String parent = "parent-995424086";
-    OutputConfig outputConfig = OutputConfig.newBuilder().build();
     ExportAssetsRequest request =
         ExportAssetsRequest.newBuilder()
-            .setParent(parent.toString())
-            .setOutputConfig(outputConfig)
+            .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+            .setReadTime(Timestamp.newBuilder().build())
+            .addAllAssetTypes(new ArrayList<String>())
+            .setOutputConfig(OutputConfig.newBuilder().build())
             .build();
 
     ExportAssetsResponse actualResponse = client.exportAssetsAsync(request).get();
@@ -110,10 +117,13 @@ public class AssetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ExportAssetsRequest actualRequest = (ExportAssetsRequest) actualRequests.get(0);
+    ExportAssetsRequest actualRequest = ((ExportAssetsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(Objects.toString(parent), Objects.toString(actualRequest.getParent()));
-    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getReadTime(), actualRequest.getReadTime());
+    Assert.assertEquals(request.getAssetTypesList(), actualRequest.getAssetTypesList());
+    Assert.assertEquals(request.getContentType(), actualRequest.getContentType());
+    Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -121,39 +131,41 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void exportAssetsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
-      OutputConfig outputConfig = OutputConfig.newBuilder().build();
       ExportAssetsRequest request =
           ExportAssetsRequest.newBuilder()
-              .setParent(parent.toString())
-              .setOutputConfig(outputConfig)
+              .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+              .setReadTime(Timestamp.newBuilder().build())
+              .addAllAssetTypes(new ArrayList<String>())
+              .setOutputConfig(OutputConfig.newBuilder().build())
               .build();
-
       client.exportAssetsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void batchGetAssetsHistoryTest() {
+  public void batchGetAssetsHistoryTest() throws Exception {
     BatchGetAssetsHistoryResponse expectedResponse =
-        BatchGetAssetsHistoryResponse.newBuilder().build();
+        BatchGetAssetsHistoryResponse.newBuilder()
+            .addAllAssets(new ArrayList<TemporalAsset>())
+            .build();
     mockAssetService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
     BatchGetAssetsHistoryRequest request =
-        BatchGetAssetsHistoryRequest.newBuilder().setParent(parent.toString()).build();
+        BatchGetAssetsHistoryRequest.newBuilder()
+            .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+            .addAllAssetNames(new ArrayList<String>())
+            .setReadTimeWindow(TimeWindow.newBuilder().build())
+            .build();
 
     BatchGetAssetsHistoryResponse actualResponse = client.batchGetAssetsHistory(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -161,9 +173,12 @@ public class AssetServiceClientTest {
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchGetAssetsHistoryRequest actualRequest =
-        (BatchGetAssetsHistoryRequest) actualRequests.get(0);
+        ((BatchGetAssetsHistoryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(Objects.toString(parent), Objects.toString(actualRequest.getParent()));
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getAssetNamesList(), actualRequest.getAssetNamesList());
+    Assert.assertEquals(request.getContentType(), actualRequest.getContentType());
+    Assert.assertEquals(request.getReadTimeWindow(), actualRequest.getReadTimeWindow());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -171,28 +186,34 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void batchGetAssetsHistoryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
       BatchGetAssetsHistoryRequest request =
-          BatchGetAssetsHistoryRequest.newBuilder().setParent(parent.toString()).build();
-
+          BatchGetAssetsHistoryRequest.newBuilder()
+              .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+              .addAllAssetNames(new ArrayList<String>())
+              .setReadTimeWindow(TimeWindow.newBuilder().build())
+              .build();
       client.batchGetAssetsHistory(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createFeedTest() {
-    FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-    Feed expectedResponse = Feed.newBuilder().setName(name.toString()).build();
+  public void createFeedTest() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+            .addAllAssetNames(new ArrayList<String>())
+            .addAllAssetTypes(new ArrayList<String>())
+            .setFeedOutputConfig(FeedOutputConfig.newBuilder().build())
+            .setCondition(Expr.newBuilder().build())
+            .build();
     mockAssetService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -202,7 +223,7 @@ public class AssetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateFeedRequest actualRequest = (CreateFeedRequest) actualRequests.get(0);
+    CreateFeedRequest actualRequest = ((CreateFeedRequest) actualRequests.get(0));
 
     Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
@@ -212,26 +233,29 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createFeedExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
       String parent = "parent-995424086";
-
       client.createFeed(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getFeedTest() {
-    FeedName name2 = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-    Feed expectedResponse = Feed.newBuilder().setName(name2.toString()).build();
+  public void getFeedTest() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+            .addAllAssetNames(new ArrayList<String>())
+            .addAllAssetTypes(new ArrayList<String>())
+            .setFeedOutputConfig(FeedOutputConfig.newBuilder().build())
+            .setCondition(Expr.newBuilder().build())
+            .build();
     mockAssetService.addResponse(expectedResponse);
 
     FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
@@ -241,9 +265,9 @@ public class AssetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetFeedRequest actualRequest = (GetFeedRequest) actualRequests.get(0);
+    GetFeedRequest actualRequest = ((GetFeedRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, FeedName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -251,25 +275,65 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getFeedExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
       FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-
       client.getFeed(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listFeedsTest() {
-    ListFeedsResponse expectedResponse = ListFeedsResponse.newBuilder().build();
+  public void getFeedTest2() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+            .addAllAssetNames(new ArrayList<String>())
+            .addAllAssetTypes(new ArrayList<String>())
+            .setFeedOutputConfig(FeedOutputConfig.newBuilder().build())
+            .setCondition(Expr.newBuilder().build())
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Feed actualResponse = client.getFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeedRequest actualRequest = ((GetFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeedExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedsTest() throws Exception {
+    ListFeedsResponse expectedResponse =
+        ListFeedsResponse.newBuilder().addAllFeeds(new ArrayList<Feed>()).build();
     mockAssetService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -279,7 +343,7 @@ public class AssetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListFeedsRequest actualRequest = (ListFeedsRequest) actualRequests.get(0);
+    ListFeedsRequest actualRequest = ((ListFeedsRequest) actualRequests.get(0));
 
     Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
@@ -289,26 +353,29 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listFeedsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
       String parent = "parent-995424086";
-
       client.listFeeds(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateFeedTest() {
-    FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-    Feed expectedResponse = Feed.newBuilder().setName(name.toString()).build();
+  public void updateFeedTest() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+            .addAllAssetNames(new ArrayList<String>())
+            .addAllAssetTypes(new ArrayList<String>())
+            .setFeedOutputConfig(FeedOutputConfig.newBuilder().build())
+            .setCondition(Expr.newBuilder().build())
+            .build();
     mockAssetService.addResponse(expectedResponse);
 
     Feed feed = Feed.newBuilder().build();
@@ -318,7 +385,7 @@ public class AssetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateFeedRequest actualRequest = (UpdateFeedRequest) actualRequests.get(0);
+    UpdateFeedRequest actualRequest = ((UpdateFeedRequest) actualRequests.get(0));
 
     Assert.assertEquals(feed, actualRequest.getFeed());
     Assert.assertTrue(
@@ -328,24 +395,21 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateFeedExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
       Feed feed = Feed.newBuilder().build();
-
       client.updateFeed(feed);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteFeedTest() {
+  public void deleteFeedTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockAssetService.addResponse(expectedResponse);
 
@@ -355,9 +419,9 @@ public class AssetServiceClientTest {
 
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteFeedRequest actualRequest = (DeleteFeedRequest) actualRequests.get(0);
+    DeleteFeedRequest actualRequest = ((DeleteFeedRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, FeedName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -365,31 +429,60 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteFeedExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
       FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
-
       client.deleteFeed(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void searchAllResourcesTest() {
-    String nextPageToken = "";
-    ResourceSearchResult resultsElement = ResourceSearchResult.newBuilder().build();
-    List<ResourceSearchResult> results = Arrays.asList(resultsElement);
+  public void deleteFeedTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAssetService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteFeed(name);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeedRequest actualRequest = ((DeleteFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeedExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchAllResourcesTest() throws Exception {
+    ResourceSearchResult responsesElement = ResourceSearchResult.newBuilder().build();
     SearchAllResourcesResponse expectedResponse =
         SearchAllResourcesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllResults(results)
+            .setNextPageToken("")
+            .addAllResults(Arrays.asList(responsesElement))
             .build();
     mockAssetService.addResponse(expectedResponse);
 
@@ -401,12 +494,13 @@ public class AssetServiceClientTest {
         client.searchAllResources(scope, query, assetTypes);
 
     List<ResourceSearchResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SearchAllResourcesRequest actualRequest = (SearchAllResourcesRequest) actualRequests.get(0);
+    SearchAllResourcesRequest actualRequest = ((SearchAllResourcesRequest) actualRequests.get(0));
 
     Assert.assertEquals(scope, actualRequest.getScope());
     Assert.assertEquals(query, actualRequest.getQuery());
@@ -418,33 +512,28 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void searchAllResourcesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
       String scope = "scope109264468";
       String query = "query107944136";
       List<String> assetTypes = new ArrayList<>();
-
       client.searchAllResources(scope, query, assetTypes);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void searchAllIamPoliciesTest() {
-    String nextPageToken = "";
-    IamPolicySearchResult resultsElement = IamPolicySearchResult.newBuilder().build();
-    List<IamPolicySearchResult> results = Arrays.asList(resultsElement);
+  public void searchAllIamPoliciesTest() throws Exception {
+    IamPolicySearchResult responsesElement = IamPolicySearchResult.newBuilder().build();
     SearchAllIamPoliciesResponse expectedResponse =
         SearchAllIamPoliciesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllResults(results)
+            .setNextPageToken("")
+            .addAllResults(Arrays.asList(responsesElement))
             .build();
     mockAssetService.addResponse(expectedResponse);
 
@@ -454,12 +543,14 @@ public class AssetServiceClientTest {
     SearchAllIamPoliciesPagedResponse pagedListResponse = client.searchAllIamPolicies(scope, query);
 
     List<IamPolicySearchResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    SearchAllIamPoliciesRequest actualRequest = (SearchAllIamPoliciesRequest) actualRequests.get(0);
+    SearchAllIamPoliciesRequest actualRequest =
+        ((SearchAllIamPoliciesRequest) actualRequests.get(0));
 
     Assert.assertEquals(scope, actualRequest.getScope());
     Assert.assertEquals(query, actualRequest.getQuery());
@@ -470,42 +561,45 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void searchAllIamPoliciesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
       String scope = "scope109264468";
       String query = "query107944136";
-
       client.searchAllIamPolicies(scope, query);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void analyzeIamPolicyTest() {
-    boolean fullyExplored = true;
+  public void analyzeIamPolicyTest() throws Exception {
     AnalyzeIamPolicyResponse expectedResponse =
-        AnalyzeIamPolicyResponse.newBuilder().setFullyExplored(fullyExplored).build();
+        AnalyzeIamPolicyResponse.newBuilder()
+            .addAllServiceAccountImpersonationAnalysis(
+                new ArrayList<AnalyzeIamPolicyResponse.IamPolicyAnalysis>())
+            .setFullyExplored(true)
+            .build();
     mockAssetService.addResponse(expectedResponse);
 
-    IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
     AnalyzeIamPolicyRequest request =
-        AnalyzeIamPolicyRequest.newBuilder().setAnalysisQuery(analysisQuery).build();
+        AnalyzeIamPolicyRequest.newBuilder()
+            .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+            .setExecutionTimeout(Duration.newBuilder().build())
+            .build();
 
     AnalyzeIamPolicyResponse actualResponse = client.analyzeIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    AnalyzeIamPolicyRequest actualRequest = (AnalyzeIamPolicyRequest) actualRequests.get(0);
+    AnalyzeIamPolicyRequest actualRequest = ((AnalyzeIamPolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(analysisQuery, actualRequest.getAnalysisQuery());
+    Assert.assertEquals(request.getAnalysisQuery(), actualRequest.getAnalysisQuery());
+    Assert.assertEquals(request.getExecutionTimeout(), actualRequest.getExecutionTimeout());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -513,25 +607,24 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void analyzeIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
-      IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
       AnalyzeIamPolicyRequest request =
-          AnalyzeIamPolicyRequest.newBuilder().setAnalysisQuery(analysisQuery).build();
-
+          AnalyzeIamPolicyRequest.newBuilder()
+              .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+              .setExecutionTimeout(Duration.newBuilder().build())
+              .build();
       client.analyzeIamPolicy(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void analyzeIamPolicyLongrunningTest() throws Exception {
     AnalyzeIamPolicyLongrunningResponse expectedResponse =
         AnalyzeIamPolicyLongrunningResponse.newBuilder().build();
@@ -543,12 +636,10 @@ public class AssetServiceClientTest {
             .build();
     mockAssetService.addResponse(resultOperation);
 
-    IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-    IamPolicyAnalysisOutputConfig outputConfig = IamPolicyAnalysisOutputConfig.newBuilder().build();
     AnalyzeIamPolicyLongrunningRequest request =
         AnalyzeIamPolicyLongrunningRequest.newBuilder()
-            .setAnalysisQuery(analysisQuery)
-            .setOutputConfig(outputConfig)
+            .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+            .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
             .build();
 
     AnalyzeIamPolicyLongrunningResponse actualResponse =
@@ -558,10 +649,10 @@ public class AssetServiceClientTest {
     List<AbstractMessage> actualRequests = mockAssetService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeIamPolicyLongrunningRequest actualRequest =
-        (AnalyzeIamPolicyLongrunningRequest) actualRequests.get(0);
+        ((AnalyzeIamPolicyLongrunningRequest) actualRequests.get(0));
 
-    Assert.assertEquals(analysisQuery, actualRequest.getAnalysisQuery());
-    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertEquals(request.getAnalysisQuery(), actualRequest.getAnalysisQuery());
+    Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -569,26 +660,21 @@ public class AssetServiceClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void analyzeIamPolicyLongrunningExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockAssetService.addException(exception);
 
     try {
-      IamPolicyAnalysisQuery analysisQuery = IamPolicyAnalysisQuery.newBuilder().build();
-      IamPolicyAnalysisOutputConfig outputConfig =
-          IamPolicyAnalysisOutputConfig.newBuilder().build();
       AnalyzeIamPolicyLongrunningRequest request =
           AnalyzeIamPolicyLongrunningRequest.newBuilder()
-              .setAnalysisQuery(analysisQuery)
-              .setOutputConfig(outputConfig)
+              .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+              .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
               .build();
-
       client.analyzeIamPolicyLongrunningAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }

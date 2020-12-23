@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.asset.v1p2beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -31,6 +31,7 @@ import com.google.cloud.asset.v1p2beta1.ListFeedsRequest;
 import com.google.cloud.asset.v1p2beta1.ListFeedsResponse;
 import com.google.cloud.asset.v1p2beta1.UpdateFeedRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -39,23 +40,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Asset API.
+ * gRPC stub implementation for the AssetService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAssetServiceStub extends AssetServiceStub {
-
-  private static final MethodDescriptor<DeleteFeedRequest, Empty> deleteFeedMethodDescriptor =
-      MethodDescriptor.<DeleteFeedRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.asset.v1p2beta1.AssetService/DeleteFeed")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteFeedRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<CreateFeedRequest, Feed> createFeedMethodDescriptor =
       MethodDescriptor.<CreateFeedRequest, Feed>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -63,6 +55,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<GetFeedRequest, Feed> getFeedMethodDescriptor =
       MethodDescriptor.<GetFeedRequest, Feed>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -70,6 +63,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListFeedsRequest, ListFeedsResponse>
       listFeedsMethodDescriptor =
           MethodDescriptor.<ListFeedsRequest, ListFeedsResponse>newBuilder()
@@ -78,6 +72,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFeedsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListFeedsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateFeedRequest, Feed> updateFeedMethodDescriptor =
       MethodDescriptor.<UpdateFeedRequest, Feed>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -86,14 +81,22 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
           .build();
 
-  private final BackgroundResource backgroundResources;
+  private static final MethodDescriptor<DeleteFeedRequest, Empty> deleteFeedMethodDescriptor =
+      MethodDescriptor.<DeleteFeedRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.asset.v1p2beta1.AssetService/DeleteFeed")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteFeedRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
 
-  private final UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable;
   private final UnaryCallable<CreateFeedRequest, Feed> createFeedCallable;
   private final UnaryCallable<GetFeedRequest, Feed> getFeedCallable;
   private final UnaryCallable<ListFeedsRequest, ListFeedsResponse> listFeedsCallable;
   private final UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable;
+  private final UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAssetServiceStub create(AssetServiceStubSettings settings)
@@ -132,20 +135,8 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<DeleteFeedRequest, Empty> deleteFeedTransportSettings =
-        GrpcCallSettings.<DeleteFeedRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteFeedMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteFeedRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteFeedRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<CreateFeedRequest, Feed> createFeedTransportSettings =
         GrpcCallSettings.<CreateFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(createFeedMethodDescriptor)
@@ -198,10 +189,20 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteFeedRequest, Empty> deleteFeedTransportSettings =
+        GrpcCallSettings.<DeleteFeedRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteFeedMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteFeedRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteFeedRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.deleteFeedCallable =
-        callableFactory.createUnaryCallable(
-            deleteFeedTransportSettings, settings.deleteFeedSettings(), clientContext);
     this.createFeedCallable =
         callableFactory.createUnaryCallable(
             createFeedTransportSettings, settings.createFeedSettings(), clientContext);
@@ -214,12 +215,16 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     this.updateFeedCallable =
         callableFactory.createUnaryCallable(
             updateFeedTransportSettings, settings.updateFeedSettings(), clientContext);
+    this.deleteFeedCallable =
+        callableFactory.createUnaryCallable(
+            deleteFeedTransportSettings, settings.deleteFeedSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
-    return deleteFeedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateFeedRequest, Feed> createFeedCallable() {
@@ -236,6 +241,10 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
 
   public UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
     return updateFeedCallable;
+  }
+
+  public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
+    return deleteFeedCallable;
   }
 
   @Override

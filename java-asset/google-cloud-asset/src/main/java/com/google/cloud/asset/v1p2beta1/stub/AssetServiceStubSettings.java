@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.asset.v1p2beta1.stub;
 
 import com.google.api.core.ApiFunction;
@@ -47,7 +48,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AssetServiceStub}.
  *
@@ -62,39 +63,35 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteFeed to 30 seconds:
+ * <p>For example, to set the total timeout of createFeed to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AssetServiceStubSettings.Builder assetServiceSettingsBuilder =
  *     AssetServiceStubSettings.newBuilder();
  * assetServiceSettingsBuilder
- *     .deleteFeedSettings()
+ *     .createFeedSettings()
  *     .setRetrySettings(
- *         assetServiceSettingsBuilder.deleteFeedSettings().getRetrySettings().toBuilder()
+ *         assetServiceSettingsBuilder
+ *             .createFeedSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings;
   private final UnaryCallSettings<CreateFeedRequest, Feed> createFeedSettings;
   private final UnaryCallSettings<GetFeedRequest, Feed> getFeedSettings;
   private final UnaryCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsSettings;
   private final UnaryCallSettings<UpdateFeedRequest, Feed> updateFeedSettings;
-
-  /** Returns the object with the settings used for calls to deleteFeed. */
-  public UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings() {
-    return deleteFeedSettings;
-  }
+  private final UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings;
 
   /** Returns the object with the settings used for calls to createFeed. */
   public UnaryCallSettings<CreateFeedRequest, Feed> createFeedSettings() {
@@ -116,16 +113,21 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     return updateFeedSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteFeed. */
+  public UnaryCallSettings<DeleteFeedRequest, Empty> deleteFeedSettings() {
+    return deleteFeedSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AssetServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcAssetServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -185,23 +187,21 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   protected AssetServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteFeedSettings = settingsBuilder.deleteFeedSettings().build();
     createFeedSettings = settingsBuilder.createFeedSettings().build();
     getFeedSettings = settingsBuilder.getFeedSettings().build();
     listFeedsSettings = settingsBuilder.listFeedsSettings().build();
     updateFeedSettings = settingsBuilder.updateFeedSettings().build();
+    deleteFeedSettings = settingsBuilder.deleteFeedSettings().build();
   }
 
   /** Builder for AssetServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<AssetServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings;
     private final UnaryCallSettings.Builder<CreateFeedRequest, Feed> createFeedSettings;
     private final UnaryCallSettings.Builder<GetFeedRequest, Feed> getFeedSettings;
     private final UnaryCallSettings.Builder<ListFeedsRequest, ListFeedsResponse> listFeedsSettings;
     private final UnaryCallSettings.Builder<UpdateFeedRequest, Feed> updateFeedSettings;
-
+    private final UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -209,13 +209,12 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -224,6 +223,14 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -235,67 +242,66 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listFeedsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFeedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteFeedSettings,
               createFeedSettings,
               getFeedSettings,
               listFeedsSettings,
-              updateFeedSettings);
-
+              updateFeedSettings,
+              deleteFeedSettings);
       initDefaults(this);
     }
 
+    protected Builder(AssetServiceStubSettings settings) {
+      super(settings);
+
+      createFeedSettings = settings.createFeedSettings.toBuilder();
+      getFeedSettings = settings.getFeedSettings.toBuilder();
+      listFeedsSettings = settings.listFeedsSettings.toBuilder();
+      updateFeedSettings = settings.updateFeedSettings.toBuilder();
+      deleteFeedSettings = settings.deleteFeedSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createFeedSettings,
+              getFeedSettings,
+              listFeedsSettings,
+              updateFeedSettings,
+              deleteFeedSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
-      builder
-          .deleteFeedSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
       builder
           .createFeedSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
           .getFeedSettings()
@@ -309,31 +315,18 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
       builder
           .updateFeedSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteFeedSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       return builder;
     }
 
-    protected Builder(AssetServiceStubSettings settings) {
-      super(settings);
-
-      deleteFeedSettings = settings.deleteFeedSettings.toBuilder();
-      createFeedSettings = settings.createFeedSettings.toBuilder();
-      getFeedSettings = settings.getFeedSettings.toBuilder();
-      listFeedsSettings = settings.listFeedsSettings.toBuilder();
-      updateFeedSettings = settings.updateFeedSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteFeedSettings,
-              createFeedSettings,
-              getFeedSettings,
-              listFeedsSettings,
-              updateFeedSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -347,11 +340,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteFeed. */
-    public UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings() {
-      return deleteFeedSettings;
     }
 
     /** Returns the builder for the settings used for calls to createFeed. */
@@ -372,6 +360,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     /** Returns the builder for the settings used for calls to updateFeed. */
     public UnaryCallSettings.Builder<UpdateFeedRequest, Feed> updateFeedSettings() {
       return updateFeedSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeed. */
+    public UnaryCallSettings.Builder<DeleteFeedRequest, Empty> deleteFeedSettings() {
+      return deleteFeedSettings;
     }
 
     @Override
