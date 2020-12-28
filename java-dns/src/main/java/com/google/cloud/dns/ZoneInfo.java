@@ -17,15 +17,21 @@
 package com.google.cloud.dns;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.collect.Lists.transform;
 
+import com.google.api.services.dns.model.DnsKeySpec;
 import com.google.api.services.dns.model.ManagedZone;
+import com.google.api.services.dns.model.ManagedZoneDnsSecConfig;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import org.threeten.bp.Instant;
 import org.threeten.bp.ZoneOffset;
 import org.threeten.bp.format.DateTimeFormatter;
@@ -49,6 +55,290 @@ public class ZoneInfo implements Serializable {
   private final String description;
   private final String nameServerSet;
   private final List<String> nameServers;
+  private final DnsSecConfig dnsSecConfig;
+
+  /** This class represents the DNS key spec. */
+  public static class KeySpec {
+
+    private String algorithm;
+    private Long keyLength;
+    private String keyType;
+
+    public static class Builder {
+      private String algorithm;
+      private Long keyLength;
+      private String keyType;
+
+      private Builder() {}
+
+      private Builder(KeySpec keySpec) {
+        this.algorithm = keySpec.algorithm;
+        this.keyLength = keySpec.keyLength;
+        this.keyType = keySpec.getKeyType();
+      }
+
+      /** Specifies the DNSSEC algorithm of this key. */
+      public Builder setAlgorithm(String algorithm) {
+        this.algorithm = algorithm;
+        return this;
+      }
+
+      /** Specifies the length of the keys in bits. */
+      public Builder setKeyLength(Long keyLength) {
+        this.keyLength = keyLength;
+        return this;
+      }
+
+      /**
+       * Specifies the key type, Whether this key is a signing key (KSK) or a zone signing key
+       * (ZSK).
+       */
+      public Builder setKeyType(String keyType) {
+        this.keyType = keyType;
+        return this;
+      }
+
+      /** Creates a {@code KeySpec} object. */
+      public KeySpec build() {
+        return new KeySpec(this);
+      }
+    }
+
+    /** Returns a builder for {@code KeySpec} objects. */
+    public static Builder newBuilder() {
+      return new Builder();
+    }
+
+    private KeySpec(Builder builder) {
+      algorithm = builder.algorithm;
+      keyLength = builder.keyLength;
+      keyType = builder.keyType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      KeySpec keySpec = (KeySpec) o;
+      return Objects.equals(algorithm, keySpec.algorithm)
+          && Objects.equals(keyLength, keySpec.keyLength)
+          && Objects.equals(keyType, keySpec.keyType);
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+          .add("algorithm", getAlgorithm())
+          .add("keyLength", getKeyLength())
+          .add("keyType", getKeyType())
+          .toString();
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(algorithm, keyLength, keyType);
+    }
+
+    DnsKeySpec toPb() {
+      DnsKeySpec dnsKeySpecPb = new DnsKeySpec();
+      dnsKeySpecPb.setAlgorithm(algorithm);
+      dnsKeySpecPb.setKeyLength(keyLength);
+      dnsKeySpecPb.setKeyType(keyType);
+      return dnsKeySpecPb;
+    }
+
+    static KeySpec fromPb(DnsKeySpec dnsKeySpec) {
+      Builder builder = newBuilder();
+      builder.setAlgorithm(dnsKeySpec.getAlgorithm() == null ? null : dnsKeySpec.getAlgorithm());
+      builder.setKeyLength(dnsKeySpec.getKeyLength() == null ? null : dnsKeySpec.getKeyLength());
+      builder.setKeyType(dnsKeySpec.getKeyType() == null ? null : dnsKeySpec.getKeyType());
+      return builder.build();
+    }
+
+    /** Returns the DNSSEC algorithm of this key. */
+    public String getAlgorithm() {
+      return algorithm;
+    }
+
+    /** Returns the key length. */
+    public Long getKeyLength() {
+      return keyLength;
+    }
+
+    /** Returns the key type. */
+    public String getKeyType() {
+      return keyType;
+    }
+  }
+
+  /** This class represents the DNSSEC configuration. */
+  public static class DnsSecConfig {
+
+    private static final Set<String> VALID_STATE_VALUES = ImmutableSet.of("on", "off", "transfer");
+    private static final Set<String> VALID_NONEXISTANCE_VALUES = ImmutableSet.of("nsec", "nsec3");
+
+    private List<KeySpec> defaultKeySpecs;
+    private String nonExistence;
+    private String state;
+
+    public static class Builder {
+      private List<KeySpec> defaultKeySpecs;
+      private String nonExistence;
+      private String state;
+
+      private Builder() {}
+
+      private Builder(DnsSecConfig dnsSecConfig) {
+        this.defaultKeySpecs = dnsSecConfig.defaultKeySpecs;
+        this.nonExistence = dnsSecConfig.nonExistence;
+        this.state = dnsSecConfig.state;
+      }
+
+      /**
+       * Specifies parameters for generating initial DnsKeys for this ManagedZone. This can be
+       * change while state is OFF.
+       */
+      public Builder setDefaultKeySpecs(List<KeySpec> defaultKeySpecs) {
+        this.defaultKeySpecs = defaultKeySpecs;
+        return this;
+      }
+
+      /**
+       * Specifies the mechanism for authenticated denial-of-existence responses. This can be change
+       * while state is OFF. Acceptable values are 'nsec' or 'nsec3'.
+       *
+       * @throws IllegalArgumentException if nonExistence value is not acceptable
+       */
+      public Builder setNonExistence(String nonExistence) {
+        validateValue(nonExistence, VALID_NONEXISTANCE_VALUES);
+        this.nonExistence = nonExistence;
+        return this;
+      }
+
+      /**
+       * Specifies whether DNSSEC is enabled, and what mode it is in. Acceptable values are 'on',
+       * 'off' or 'transfer'.
+       *
+       * @throws IllegalArgumentException if state value is not acceptable
+       */
+      public Builder setState(String state) {
+        validateValue(state, VALID_STATE_VALUES);
+        this.state = state;
+        return this;
+      }
+
+      /** Creates a {@code DnsSecConfig} object. */
+      public DnsSecConfig build() {
+        return new DnsSecConfig(this);
+      }
+    }
+
+    /** Returns a builder for the current blob. */
+    public Builder toBuilder() {
+      return new Builder(this);
+    }
+
+    /** Returns a builder for {@code DnsSecConfig} objects. */
+    public static Builder newBuilder() {
+      return new Builder();
+    }
+
+    private DnsSecConfig(Builder builder) {
+      defaultKeySpecs = builder.defaultKeySpecs;
+      nonExistence = builder.nonExistence;
+      state = builder.state;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      DnsSecConfig that = (DnsSecConfig) o;
+      return Objects.equals(defaultKeySpecs, that.defaultKeySpecs)
+          && Objects.equals(nonExistence, that.nonExistence)
+          && Objects.equals(state, that.state);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(defaultKeySpecs, nonExistence, state);
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+          .add("defaultKeySpecs", getDefaultKeySpecs())
+          .add("nonExistence", getNonExistence())
+          .add("state", getState())
+          .toString();
+    }
+
+    ManagedZoneDnsSecConfig toPb() {
+      ManagedZoneDnsSecConfig dnsSecConfigPb = new ManagedZoneDnsSecConfig();
+      if (defaultKeySpecs != null) {
+        dnsSecConfigPb.setDefaultKeySpecs(
+            transform(
+                defaultKeySpecs,
+                new Function<KeySpec, DnsKeySpec>() {
+                  @Override
+                  public DnsKeySpec apply(KeySpec keySpec) {
+                    return keySpec.toPb();
+                  }
+                }));
+      }
+      dnsSecConfigPb.setNonExistence(nonExistence);
+      dnsSecConfigPb.setState(state);
+      return dnsSecConfigPb;
+    }
+
+    static DnsSecConfig fromPb(ManagedZoneDnsSecConfig managedZoneDnsSecConfig) {
+      Builder builder = newBuilder();
+      if (managedZoneDnsSecConfig.getDefaultKeySpecs() != null) {
+        builder.setDefaultKeySpecs(
+            transform(
+                managedZoneDnsSecConfig.getDefaultKeySpecs(),
+                new Function<DnsKeySpec, KeySpec>() {
+                  @Override
+                  public KeySpec apply(DnsKeySpec dnsKeySpec) {
+                    return KeySpec.fromPb(dnsKeySpec);
+                  }
+                }));
+      }
+      builder.setNonExistence(managedZoneDnsSecConfig.getNonExistence());
+      builder.setState(managedZoneDnsSecConfig.getState());
+      return builder.build();
+    }
+
+    /** Returns the DefaultKeySpecs. */
+    public List<KeySpec> getDefaultKeySpecs() {
+      return defaultKeySpecs;
+    }
+
+    /** Returns the authenticated denial-of-existence responses. */
+    public String getNonExistence() {
+      return nonExistence;
+    }
+
+    /** Returns the DNSSEC state. */
+    public String getState() {
+      return state;
+    }
+
+    private static void validateValue(String value, Set<String> validValues) {
+      if (!validValues.contains(value)) {
+        throw new IllegalArgumentException(
+            "Invalid value, Use one of the value from acceptable values " + validValues);
+      }
+    }
+  }
 
   /** Builder for {@code ZoneInfo}. */
   public abstract static class Builder {
@@ -84,6 +374,11 @@ public class ZoneInfo implements Serializable {
      */
     abstract Builder setNameServers(List<String> nameServers);
 
+    /** Sets the DNSSEC configuration. */
+    public Builder setDnsSecConfig(DnsSecConfig dnsSecConfig) {
+      return this;
+    }
+
     /** Builds the instance of {@code ZoneInfo} based on the information set by this builder. */
     public abstract ZoneInfo build();
   }
@@ -96,6 +391,7 @@ public class ZoneInfo implements Serializable {
     private String description;
     private String nameServerSet;
     private List<String> nameServers;
+    private DnsSecConfig dnsSecConfig;
 
     private BuilderImpl(String name) {
       this.name = checkNotNull(name);
@@ -112,6 +408,7 @@ public class ZoneInfo implements Serializable {
       if (info.nameServers != null) {
         this.nameServers = ImmutableList.copyOf(info.nameServers);
       }
+      this.dnsSecConfig = info.dnsSecConfig;
     }
 
     @Override
@@ -158,6 +455,12 @@ public class ZoneInfo implements Serializable {
     }
 
     @Override
+    public Builder setDnsSecConfig(DnsSecConfig dnsSecConfig) {
+      this.dnsSecConfig = checkNotNull(dnsSecConfig);
+      return this;
+    }
+
+    @Override
     public ZoneInfo build() {
       return new ZoneInfo(this);
     }
@@ -172,6 +475,7 @@ public class ZoneInfo implements Serializable {
     this.nameServerSet = builder.nameServerSet;
     this.nameServers =
         builder.nameServers == null ? null : ImmutableList.copyOf(builder.nameServers);
+    this.dnsSecConfig = builder.dnsSecConfig;
   }
 
   /**
@@ -179,6 +483,11 @@ public class ZoneInfo implements Serializable {
    */
   public static ZoneInfo of(String name, String dnsName, String description) {
     return new BuilderImpl(name).setDnsName(dnsName).setDescription(description).build();
+  }
+
+  /** Returns a {@code ZoneInfo} builder where the DNS name is set to the provided name. */
+  public static Builder newBuilder(String name) {
+    return new BuilderImpl(name);
   }
 
   /** Returns the user-defined name of the zone. */
@@ -221,6 +530,10 @@ public class ZoneInfo implements Serializable {
     return nameServers == null ? ImmutableList.<String>of() : nameServers;
   }
 
+  public DnsSecConfig getDnsSecConfig() {
+    return dnsSecConfig;
+  }
+
   /** Returns a builder for {@code ZoneInfo} prepopulated with the metadata of this zone. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -239,6 +552,9 @@ public class ZoneInfo implements Serializable {
     if (this.getCreationTimeMillis() != null) {
       pb.setCreationTime(
           DATE_TIME_FORMATTER.format(Instant.ofEpochMilli(this.getCreationTimeMillis())));
+    }
+    if (this.dnsSecConfig != null) {
+      pb.setDnssecConfig(this.dnsSecConfig.toPb());
     }
     return pb;
   }
@@ -264,6 +580,9 @@ public class ZoneInfo implements Serializable {
       builder.setCreationTimeMillis(
           DATE_TIME_FORMATTER.parse(pb.getCreationTime(), Instant.FROM).toEpochMilli());
     }
+    if (pb.getDnssecConfig() != null) {
+      builder.setDnsSecConfig(DnsSecConfig.fromPb(pb.getDnssecConfig()));
+    }
     return builder.build();
   }
 
@@ -278,7 +597,14 @@ public class ZoneInfo implements Serializable {
   @Override
   public int hashCode() {
     return Objects.hash(
-        name, generatedId, creationTimeMillis, dnsName, description, nameServerSet, nameServers);
+        name,
+        generatedId,
+        creationTimeMillis,
+        dnsName,
+        description,
+        nameServerSet,
+        nameServers,
+        dnsSecConfig);
   }
 
   @Override
@@ -291,6 +617,7 @@ public class ZoneInfo implements Serializable {
         .add("nameServerSet", getNameServerSet())
         .add("nameServers", getNameServers())
         .add("creationTimeMillis", getCreationTimeMillis())
+        .add("dnsSecConfig", getDnsSecConfig())
         .toString();
   }
 }

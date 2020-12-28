@@ -95,6 +95,12 @@ public class Zone extends ZoneInfo {
     }
 
     @Override
+    public Builder setDnsSecConfig(DnsSecConfig dnsSecConfig) {
+      infoBuilder.setDnsSecConfig(dnsSecConfig);
+      return this;
+    }
+
+    @Override
     public Zone build() {
       return new Zone(dns, infoBuilder);
     }

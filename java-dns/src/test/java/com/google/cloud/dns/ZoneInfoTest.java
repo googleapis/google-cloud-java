@@ -40,6 +40,33 @@ public class ZoneInfoTest {
   private static final String NS2 = "name server 2";
   private static final String NS3 = "name server 3";
   private static final List<String> NAME_SERVERS = ImmutableList.of(NS1, NS2, NS3);
+  private static final String ALGORITHM = "rsasha256";
+  private static final String KEY_TYPE1 = "zoneSigning";
+  private static final String KEY_TYPE2 = "keySigning";
+  private static final String STATE = "off";
+  private static final String NON_EXISTENCE = "nsec";
+  private static final Long ZSK_KEY_LENGTH = 1024L;
+  private static final Long KSK_KEY_LENGTH = 2048L;
+  private static final ZoneInfo.KeySpec ZONE_SIGNING_KEY_SPEC =
+      ZoneInfo.KeySpec.newBuilder()
+          .setAlgorithm(ALGORITHM)
+          .setKeyLength(ZSK_KEY_LENGTH)
+          .setKeyType(KEY_TYPE1)
+          .build();
+  private static final ZoneInfo.KeySpec KEY_SIGNING_KEY_SPEC =
+      ZoneInfo.KeySpec.newBuilder()
+          .setAlgorithm(ALGORITHM)
+          .setKeyLength(KSK_KEY_LENGTH)
+          .setKeyType(KEY_TYPE2)
+          .build();
+  private static final List<ZoneInfo.KeySpec> DEFAULT_KEY_SPECS =
+      ImmutableList.of(ZONE_SIGNING_KEY_SPEC, KEY_SIGNING_KEY_SPEC);
+  private static final ZoneInfo.DnsSecConfig DNS_SEC_CONFIG =
+      ZoneInfo.DnsSecConfig.newBuilder()
+          .setDefaultKeySpecs(DEFAULT_KEY_SPECS)
+          .setState(STATE)
+          .setNonExistence(NON_EXISTENCE)
+          .build();
   private static final ZoneInfo INFO =
       ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION)
           .toBuilder()
@@ -47,6 +74,7 @@ public class ZoneInfoTest {
           .setGeneratedId(GENERATED_ID)
           .setNameServerSet(NAME_SERVER_SET)
           .setNameServers(NAME_SERVERS)
+          .setDnsSecConfig(DNS_SEC_CONFIG)
           .build();
 
   @Test
@@ -73,6 +101,23 @@ public class ZoneInfoTest {
     assertEquals(NAME_SERVER_SET, INFO.getNameServerSet());
     assertEquals(DESCRIPTION, INFO.getDescription());
     assertEquals(DNS_NAME, INFO.getDnsName());
+    assertEquals(DNS_SEC_CONFIG, INFO.getDnsSecConfig());
+
+    ZoneInfo.DnsSecConfig config = INFO.getDnsSecConfig();
+    assertEquals(DEFAULT_KEY_SPECS, config.getDefaultKeySpecs());
+    assertEquals(STATE, config.getState());
+    assertEquals(NON_EXISTENCE, config.getNonExistence());
+
+    List<ZoneInfo.KeySpec> keySpecs = config.getDefaultKeySpecs();
+    ZoneInfo.KeySpec zoneSigningKeySpec = keySpecs.get(0);
+    assertEquals(ALGORITHM, zoneSigningKeySpec.getAlgorithm());
+    assertEquals(KEY_TYPE1, zoneSigningKeySpec.getKeyType());
+    assertEquals(ZSK_KEY_LENGTH, zoneSigningKeySpec.getKeyLength());
+
+    ZoneInfo.KeySpec keySigningKeySpec = keySpecs.get(1);
+    assertEquals(ALGORITHM, keySigningKeySpec.getAlgorithm());
+    assertEquals(KEY_TYPE2, keySigningKeySpec.getKeyType());
+    assertEquals(KSK_KEY_LENGTH, keySigningKeySpec.getKeyLength());
   }
 
   @Test
@@ -96,6 +141,11 @@ public class ZoneInfoTest {
     assertNotEquals(INFO, clone);
     clone = INFO.toBuilder().setNameServerSet(INFO.getNameServerSet() + "salt").build();
     assertNotEquals(INFO, clone);
+    clone =
+        INFO.toBuilder()
+            .setDnsSecConfig(DNS_SEC_CONFIG.toBuilder().setNonExistence("nsec3").build())
+            .build();
+    assertNotEquals(INFO, clone);
   }
 
   @Test
@@ -103,6 +153,10 @@ public class ZoneInfoTest {
     int hash = INFO.hashCode();
     ZoneInfo clone = INFO.toBuilder().build();
     assertEquals(clone.hashCode(), hash);
+
+    int dnsSecConfigHas = DNS_SEC_CONFIG.hashCode();
+    ZoneInfo.DnsSecConfig dnsSecConfig = DNS_SEC_CONFIG.toBuilder().build();
+    assertEquals(dnsSecConfig.hashCode(), dnsSecConfigHas);
   }
 
   @Test
@@ -130,6 +184,10 @@ public class ZoneInfoTest {
             .setNameServerSet(NAME_SERVER_SET)
             .build();
     assertEquals(partial, partial.toBuilder().build());
+
+    assertEquals(DNS_SEC_CONFIG, DNS_SEC_CONFIG.toBuilder().build());
+    ZoneInfo.DnsSecConfig partialDnsSecConfig = ZoneInfo.DnsSecConfig.newBuilder().build();
+    assertEquals(partialDnsSecConfig, partialDnsSecConfig.toBuilder().build());
   }
 
   @Test
@@ -157,6 +215,10 @@ public class ZoneInfoTest {
             .setNameServerSet(NAME_SERVER_SET)
             .build();
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
+    assertEquals(DNS_SEC_CONFIG, ZoneInfo.DnsSecConfig.fromPb(DNS_SEC_CONFIG.toPb()));
+    ZoneInfo.DnsSecConfig partialDnsSecConfig =
+        ZoneInfo.DnsSecConfig.newBuilder().setState(STATE).setNonExistence(NON_EXISTENCE).build();
+    assertEquals(partialDnsSecConfig, ZoneInfo.DnsSecConfig.fromPb(partialDnsSecConfig.toPb()));
   }
 
   @Test
