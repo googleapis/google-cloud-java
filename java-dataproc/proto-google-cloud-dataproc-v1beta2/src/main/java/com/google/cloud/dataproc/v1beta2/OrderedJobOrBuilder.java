@@ -31,8 +31,8 @@ public interface OrderedJobOrBuilder
    * within the template.
    * The step id is used as prefix for job id, as job
    * `goog-dataproc-workflow-step-id` label, and in
-   * [prerequisiteStepIds][google.cloud.dataproc.v1beta2.OrderedJob.prerequisite_step_ids] field from other
-   * steps.
+   * [prerequisiteStepIds][google.cloud.dataproc.v1beta2.OrderedJob.prerequisite_step_ids]
+   * field from other steps.
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
@@ -51,8 +51,8 @@ public interface OrderedJobOrBuilder
    * within the template.
    * The step id is used as prefix for job id, as job
    * `goog-dataproc-workflow-step-id` label, and in
-   * [prerequisiteStepIds][google.cloud.dataproc.v1beta2.OrderedJob.prerequisite_step_ids] field from other
-   * steps.
+   * [prerequisiteStepIds][google.cloud.dataproc.v1beta2.OrderedJob.prerequisite_step_ids]
+   * field from other steps.
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of between 3 and 50 characters.
@@ -65,88 +65,220 @@ public interface OrderedJobOrBuilder
   com.google.protobuf.ByteString getStepIdBytes();
 
   /**
-   * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hadoop job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the hadoopJob field is set.
    */
   boolean hasHadoopJob();
   /**
-   * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hadoop job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The hadoopJob.
    */
   com.google.cloud.dataproc.v1beta2.HadoopJob getHadoopJob();
-  /** <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hadoop job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder getHadoopJobOrBuilder();
 
   /**
-   * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Spark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the sparkJob field is set.
    */
   boolean hasSparkJob();
   /**
-   * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Spark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The sparkJob.
    */
   com.google.cloud.dataproc.v1beta2.SparkJob getSparkJob();
-  /** <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Spark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkJob spark_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder getSparkJobOrBuilder();
 
   /**
-   * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a PySpark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the pysparkJob field is set.
    */
   boolean hasPysparkJob();
   /**
-   * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a PySpark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The pysparkJob.
    */
   com.google.cloud.dataproc.v1beta2.PySparkJob getPysparkJob();
-  /** <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a PySpark job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder getPysparkJobOrBuilder();
 
   /**
-   * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hive job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the hiveJob field is set.
    */
   boolean hasHiveJob();
   /**
-   * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hive job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The hiveJob.
    */
   com.google.cloud.dataproc.v1beta2.HiveJob getHiveJob();
-  /** <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Hive job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.HiveJob hive_job = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder getHiveJobOrBuilder();
 
   /**
-   * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Pig job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PigJob pig_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the pigJob field is set.
    */
   boolean hasPigJob();
   /**
-   * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a Pig job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PigJob pig_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The pigJob.
    */
   com.google.cloud.dataproc.v1beta2.PigJob getPigJob();
-  /** <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a Pig job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PigJob pig_job = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   com.google.cloud.dataproc.v1beta2.PigJobOrBuilder getPigJobOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Spark R job
+   * Optional. Job is a SparkR job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 11;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the sparkRJob field is set.
    */
@@ -155,10 +287,12 @@ public interface OrderedJobOrBuilder
    *
    *
    * <pre>
-   * Spark R job
+   * Optional. Job is a SparkR job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 11;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The sparkRJob.
    */
@@ -167,36 +301,66 @@ public interface OrderedJobOrBuilder
    *
    *
    * <pre>
-   * Spark R job
+   * Optional. Job is a SparkR job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 11;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkRJob spark_r_job = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.SparkRJobOrBuilder getSparkRJobOrBuilder();
 
   /**
-   * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a SparkSql job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the sparkSqlJob field is set.
    */
   boolean hasSparkSqlJob();
   /**
-   * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
+   *
+   *
+   * <pre>
+   * Optional. Job is a SparkSql job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The sparkSqlJob.
    */
   com.google.cloud.dataproc.v1beta2.SparkSqlJob getSparkSqlJob();
-  /** <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Job is a SparkSql job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
   com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Presto job
+   * Optional. Job is a Presto job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.PrestoJob presto_job = 12;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the prestoJob field is set.
    */
@@ -205,10 +369,12 @@ public interface OrderedJobOrBuilder
    *
    *
    * <pre>
-   * Presto job
+   * Optional. Job is a Presto job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.PrestoJob presto_job = 12;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The prestoJob.
    */
@@ -217,10 +383,12 @@ public interface OrderedJobOrBuilder
    *
    *
    * <pre>
-   * Presto job
+   * Optional. Job is a Presto job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.PrestoJob presto_job = 12;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.PrestoJob presto_job = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.PrestoJobOrBuilder getPrestoJobOrBuilder();
 

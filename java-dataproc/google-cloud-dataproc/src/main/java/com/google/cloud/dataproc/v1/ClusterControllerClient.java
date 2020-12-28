@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dataproc.v1;
 
 import com.google.api.core.ApiFunction;
@@ -39,7 +40,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The ClusterControllerService provides methods to manage clusters of Compute
  * Engine instances.
@@ -47,18 +48,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
- *   String projectId = "";
- *   String region = "";
- *   String clusterName = "";
- *   Cluster response = clusterControllerClient.getCluster(projectId, region, clusterName);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the clusterControllerClient object to clean up resources
+ * <p>Note: close() needs to be called on the ClusterControllerClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -87,30 +77,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ClusterControllerSettings clusterControllerSettings =
  *     ClusterControllerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ClusterControllerClient clusterControllerClient =
  *     ClusterControllerClient.create(clusterControllerSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ClusterControllerSettings clusterControllerSettings =
  *     ClusterControllerSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ClusterControllerClient clusterControllerClient =
  *     ClusterControllerClient.create(clusterControllerSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class ClusterControllerClient implements BackgroundResource {
   private final ClusterControllerSettings settings;
   private final ClusterControllerStub stub;
@@ -132,7 +120,7 @@ public class ClusterControllerClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ClusterControllerClient, using the given stub for making calls. This
-   * is for advanced usage - prefer to use ClusterControllerSettings}.
+   * is for advanced usage - prefer using create(ClusterControllerSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ClusterControllerClient create(ClusterControllerStub stub) {
@@ -170,28 +158,15 @@ public class ClusterControllerClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   Cluster cluster = Cluster.newBuilder().build();
-   *   Cluster response = clusterControllerClient.createClusterAsync(projectId, region, cluster).get();
-   * }
-   * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
@@ -199,8 +174,6 @@ public class ClusterControllerClient implements BackgroundResource {
    * @param cluster Required. The cluster to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, ClusterOperationMetadata> createClusterAsync(
       String projectId, String region, Cluster cluster) {
     CreateClusterRequest request =
@@ -212,114 +185,50 @@ public class ClusterControllerClient implements BackgroundResource {
     return createClusterAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   Cluster cluster = Cluster.newBuilder().build();
-   *   CreateClusterRequest request = CreateClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setCluster(cluster)
-   *     .build();
-   *   Cluster response = clusterControllerClient.createClusterAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, ClusterOperationMetadata> createClusterAsync(
       CreateClusterRequest request) {
     return createClusterOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   Cluster cluster = Cluster.newBuilder().build();
-   *   CreateClusterRequest request = CreateClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setCluster(cluster)
-   *     .build();
-   *   OperationFuture&lt;Cluster, ClusterOperationMetadata&gt; future = clusterControllerClient.createClusterOperationCallable().futureCall(request);
-   *   // Do something
-   *   Cluster response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateClusterRequest, Cluster, ClusterOperationMetadata>
       createClusterOperationCallable() {
     return stub.createClusterOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   Cluster cluster = Cluster.newBuilder().build();
-   *   CreateClusterRequest request = CreateClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setCluster(cluster)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = clusterControllerClient.createClusterCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return stub.createClusterCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   Cluster cluster = Cluster.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Cluster response = clusterControllerClient.updateClusterAsync(projectId, region, clusterName, cluster, updateMask).get();
-   * }
-   * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project the cluster belongs to.
    * @param region Required. The Dataproc region in which to handle the request.
@@ -348,8 +257,6 @@ public class ClusterControllerClient implements BackgroundResource {
    *     change autoscaling policies&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, ClusterOperationMetadata> updateClusterAsync(
       String projectId, String region, String clusterName, Cluster cluster, FieldMask updateMask) {
     UpdateClusterRequest request =
@@ -363,124 +270,50 @@ public class ClusterControllerClient implements BackgroundResource {
     return updateClusterAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   Cluster cluster = Cluster.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateClusterRequest request = UpdateClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .setCluster(cluster)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   Cluster response = clusterControllerClient.updateClusterAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Cluster, ClusterOperationMetadata> updateClusterAsync(
       UpdateClusterRequest request) {
     return updateClusterOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   Cluster cluster = Cluster.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateClusterRequest request = UpdateClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .setCluster(cluster)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   OperationFuture&lt;Cluster, ClusterOperationMetadata&gt; future = clusterControllerClient.updateClusterOperationCallable().futureCall(request);
-   *   // Do something
-   *   Cluster response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationCallable() {
     return stub.updateClusterOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   Cluster cluster = Cluster.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateClusterRequest request = UpdateClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .setCluster(cluster)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = clusterControllerClient.updateClusterCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     return stub.updateClusterCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   clusterControllerClient.deleteClusterAsync(projectId, region, clusterName).get();
-   * }
-   * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
@@ -488,8 +321,6 @@ public class ClusterControllerClient implements BackgroundResource {
    * @param clusterName Required. The cluster name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, ClusterOperationMetadata> deleteClusterAsync(
       String projectId, String region, String clusterName) {
     DeleteClusterRequest request =
@@ -501,249 +332,48 @@ public class ClusterControllerClient implements BackgroundResource {
     return deleteClusterAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .build();
-   *   clusterControllerClient.deleteClusterAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, ClusterOperationMetadata> deleteClusterAsync(
       DeleteClusterRequest request) {
     return deleteClusterOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .build();
-   *   OperationFuture&lt;Empty, ClusterOperationMetadata&gt; future = clusterControllerClient.deleteClusterOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationCallable() {
     return stub.deleteClusterOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = clusterControllerClient.deleteClusterCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return stub.deleteClusterCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets cluster diagnostic information. The returned
-   * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
-   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
-   * contains
-   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   DiagnoseClusterResults response = clusterControllerClient.diagnoseClusterAsync(projectId, region, clusterName).get();
-   * }
-   * </code></pre>
-   *
-   * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
-   *     to.
-   * @param region Required. The Dataproc region in which to handle the request.
-   * @param clusterName Required. The cluster name.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<DiagnoseClusterResults, ClusterOperationMetadata>
-      diagnoseClusterAsync(String projectId, String region, String clusterName) {
-    DiagnoseClusterRequest request =
-        DiagnoseClusterRequest.newBuilder()
-            .setProjectId(projectId)
-            .setRegion(region)
-            .setClusterName(clusterName)
-            .build();
-    return diagnoseClusterAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets cluster diagnostic information. The returned
-   * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
-   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
-   * contains
-   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   DiagnoseClusterRequest request = DiagnoseClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .build();
-   *   DiagnoseClusterResults response = clusterControllerClient.diagnoseClusterAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<DiagnoseClusterResults, ClusterOperationMetadata>
-      diagnoseClusterAsync(DiagnoseClusterRequest request) {
-    return diagnoseClusterOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets cluster diagnostic information. The returned
-   * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
-   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
-   * contains
-   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   DiagnoseClusterRequest request = DiagnoseClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .build();
-   *   OperationFuture&lt;DiagnoseClusterResults, ClusterOperationMetadata&gt; future = clusterControllerClient.diagnoseClusterOperationCallable().futureCall(request);
-   *   // Do something
-   *   DiagnoseClusterResults response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<
-          DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
-      diagnoseClusterOperationCallable() {
-    return stub.diagnoseClusterOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets cluster diagnostic information. The returned
-   * [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
-   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
-   * contains
-   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   DiagnoseClusterRequest request = DiagnoseClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = clusterControllerClient.diagnoseClusterCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable() {
-    return stub.diagnoseClusterCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the resource representation for a cluster in a project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   Cluster response = clusterControllerClient.getCluster(projectId, region, clusterName);
-   * }
-   * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
@@ -761,25 +391,9 @@ public class ClusterControllerClient implements BackgroundResource {
     return getCluster(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the resource representation for a cluster in a project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   GetClusterRequest request = GetClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .build();
-   *   Cluster response = clusterControllerClient.getCluster(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -788,47 +402,19 @@ public class ClusterControllerClient implements BackgroundResource {
     return getClusterCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the resource representation for a cluster in a project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String clusterName = "";
-   *   GetClusterRequest request = GetClusterRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .setClusterName(clusterName)
-   *     .build();
-   *   ApiFuture&lt;Cluster&gt; future = clusterControllerClient.getClusterCallable().futureCall(request);
-   *   // Do something
-   *   Cluster response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return stub.getClusterCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all regions/{region}/clusters in a project alphabetically.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   for (Cluster element : clusterControllerClient.listClusters(projectId, region).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
@@ -841,22 +427,9 @@ public class ClusterControllerClient implements BackgroundResource {
     return listClusters(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all regions/{region}/clusters in a project alphabetically.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   String filter = "";
-   *   for (Cluster element : clusterControllerClient.listClusters(projectId, region, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
@@ -888,25 +461,9 @@ public class ClusterControllerClient implements BackgroundResource {
     return listClusters(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all regions/{region}/clusters in a project alphabetically.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   ListClustersRequest request = ListClustersRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .build();
-   *   for (Cluster element : clusterControllerClient.listClusters(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -915,64 +472,100 @@ public class ClusterControllerClient implements BackgroundResource {
     return listClustersPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all regions/{region}/clusters in a project alphabetically.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   ListClustersRequest request = ListClustersRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .build();
-   *   ApiFuture&lt;ListClustersPagedResponse&gt; future = clusterControllerClient.listClustersPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Cluster element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable() {
     return stub.listClustersPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all regions/{region}/clusters in a project alphabetically.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-   *   String projectId = "";
-   *   String region = "";
-   *   ListClustersRequest request = ListClustersRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setRegion(region)
-   *     .build();
-   *   while (true) {
-   *     ListClustersResponse response = clusterControllerClient.listClustersCallable().call(request);
-   *     for (Cluster element : response.getClustersList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     return stub.listClustersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets cluster diagnostic information. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
+   * contains
+   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+   *
+   * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
+   *     to.
+   * @param region Required. The Dataproc region in which to handle the request.
+   * @param clusterName Required. The cluster name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DiagnoseClusterResults, ClusterOperationMetadata>
+      diagnoseClusterAsync(String projectId, String region, String clusterName) {
+    DiagnoseClusterRequest request =
+        DiagnoseClusterRequest.newBuilder()
+            .setProjectId(projectId)
+            .setRegion(region)
+            .setClusterName(clusterName)
+            .build();
+    return diagnoseClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets cluster diagnostic information. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
+   * contains
+   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DiagnoseClusterResults, ClusterOperationMetadata>
+      diagnoseClusterAsync(DiagnoseClusterRequest request) {
+    return diagnoseClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets cluster diagnostic information. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
+   * contains
+   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+   *
+   * <p>Sample code:
+   */
+  public final OperationCallable<
+          DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
+      diagnoseClusterOperationCallable() {
+    return stub.diagnoseClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets cluster diagnostic information. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
+   * contains
+   * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable() {
+    return stub.diagnoseClusterCallable();
   }
 
   @Override

@@ -407,4 +407,148 @@ public interface WorkflowMetadataOrBuilder
    * @return The bytes for clusterUuid.
    */
   com.google.protobuf.ByteString getClusterUuidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timeout duration for the DAG of jobs.
+   * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+   * as a
+   * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+   * For example, "1800" = 1800 seconds/30 minutes duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dagTimeout field is set.
+   */
+  boolean hasDagTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timeout duration for the DAG of jobs.
+   * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+   * as a
+   * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+   * For example, "1800" = 1800 seconds/30 minutes duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dagTimeout.
+   */
+  com.google.protobuf.Duration getDagTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timeout duration for the DAG of jobs.
+   * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+   * as a
+   * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+   * For example, "1800" = 1800 seconds/30 minutes duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getDagTimeoutOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG start time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG begins.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dagStartTime field is set.
+   */
+  boolean hasDagStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG start time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG begins.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dagStartTime.
+   */
+  com.google.protobuf.Timestamp getDagStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG start time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG begins.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDagStartTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG end time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG ends.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dagEndTime field is set.
+   */
+  boolean hasDagEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG end time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG ends.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dagEndTime.
+   */
+  com.google.protobuf.Timestamp getDagEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG end time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG ends.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDagEndTimeOrBuilder();
 }

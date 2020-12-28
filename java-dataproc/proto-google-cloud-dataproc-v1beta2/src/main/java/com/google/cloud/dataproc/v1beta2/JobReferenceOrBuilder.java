@@ -27,11 +27,11 @@ public interface JobReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of the Google Cloud Platform project that the job
-   * belongs to.
+   * Optional. The ID of the Google Cloud Platform project that the job belongs to. If
+   * specified, must match the request project ID.
    * </pre>
    *
-   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The projectId.
    */
@@ -40,11 +40,11 @@ public interface JobReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of the Google Cloud Platform project that the job
-   * belongs to.
+   * Optional. The ID of the Google Cloud Platform project that the job belongs to. If
+   * specified, must match the request project ID.
    * </pre>
    *
-   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for projectId.
    */

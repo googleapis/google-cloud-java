@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dataproc.v1beta2;
 
 import com.google.api.core.ApiFunction;
@@ -39,24 +40,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The API interface for managing Workflow Templates in the Dataproc API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
- *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
- *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
- *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the workflowTemplateServiceClient object to clean up
+ * <p>Note: close() needs to be called on the WorkflowTemplateServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -85,30 +76,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * WorkflowTemplateServiceSettings workflowTemplateServiceSettings =
  *     WorkflowTemplateServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * WorkflowTemplateServiceClient workflowTemplateServiceClient =
  *     WorkflowTemplateServiceClient.create(workflowTemplateServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * WorkflowTemplateServiceSettings workflowTemplateServiceSettings =
  *     WorkflowTemplateServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * WorkflowTemplateServiceClient workflowTemplateServiceClient =
  *     WorkflowTemplateServiceClient.create(workflowTemplateServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class WorkflowTemplateServiceClient implements BackgroundResource {
   private final WorkflowTemplateServiceSettings settings;
   private final WorkflowTemplateServiceStub stub;
@@ -130,7 +119,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of WorkflowTemplateServiceClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use WorkflowTemplateServiceSettings}.
+   * This is for advanced usage - prefer using create(WorkflowTemplateServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final WorkflowTemplateServiceClient create(WorkflowTemplateServiceStub stub) {
@@ -169,702 +158,25 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates.instantiate`, the resource name of the
-   *     template has the following format:
-   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
-   *     template has the following format:
-   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
-      WorkflowTemplateName name) {
-    InstantiateWorkflowTemplateRequest request =
-        InstantiateWorkflowTemplateRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return instantiateWorkflowTemplateAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name.toString()).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates.instantiate`, the resource name of the
-   *     template has the following format:
-   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
-   *     template has the following format:
-   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
-      String name) {
-    InstantiateWorkflowTemplateRequest request =
-        InstantiateWorkflowTemplateRequest.newBuilder().setName(name).build();
-    return instantiateWorkflowTemplateAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   Map&lt;String, String&gt; parameters = new HashMap&lt;&gt;();
-   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name, parameters).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates.instantiate`, the resource name of the
-   *     template has the following format:
-   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
-   *     template has the following format:
-   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
-   * @param parameters Optional. Map from parameter names to values that should be used for those
-   *     parameters. Values may not exceed 100 characters.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
-      WorkflowTemplateName name, Map<String, String> parameters) {
-    InstantiateWorkflowTemplateRequest request =
-        InstantiateWorkflowTemplateRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .putAllParameters(parameters)
-            .build();
-    return instantiateWorkflowTemplateAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   Map&lt;String, String&gt; parameters = new HashMap&lt;&gt;();
-   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name.toString(), parameters).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates.instantiate`, the resource name of the
-   *     template has the following format:
-   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
-   *     template has the following format:
-   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
-   * @param parameters Optional. Map from parameter names to values that should be used for those
-   *     parameters. Values may not exceed 100 characters.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
-      String name, Map<String, String> parameters) {
-    InstantiateWorkflowTemplateRequest request =
-        InstantiateWorkflowTemplateRequest.newBuilder()
-            .setName(name)
-            .putAllParameters(parameters)
-            .build();
-    return instantiateWorkflowTemplateAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   InstantiateWorkflowTemplateRequest request = InstantiateWorkflowTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
-      InstantiateWorkflowTemplateRequest request) {
-    return instantiateWorkflowTemplateOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   InstantiateWorkflowTemplateRequest request = InstantiateWorkflowTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, WorkflowMetadata&gt; future = workflowTemplateServiceClient.instantiateWorkflowTemplateOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
-      instantiateWorkflowTemplateOperationCallable() {
-    return stub.instantiateWorkflowTemplateOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   InstantiateWorkflowTemplateRequest request = InstantiateWorkflowTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = workflowTemplateServiceClient.instantiateWorkflowTemplateCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<InstantiateWorkflowTemplateRequest, Operation>
-      instantiateWorkflowTemplateCallable() {
-    return stub.instantiateWorkflowTemplateCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>This method is equivalent to executing the sequence
-   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
-   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
-   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(parent, template).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the region or location, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,instantiateinline`, the resource name of
-   *     the region has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
-   *     the location has the following format: `projects/{project_id}/locations/{location}`
-   * @param template Required. The workflow template to instantiate.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
-      RegionName parent, WorkflowTemplate template) {
-    InstantiateInlineWorkflowTemplateRequest request =
-        InstantiateInlineWorkflowTemplateRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setTemplate(template)
-            .build();
-    return instantiateInlineWorkflowTemplateAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>This method is equivalent to executing the sequence
-   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
-   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
-   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(parent, template).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the region or location, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,instantiateinline`, the resource name of
-   *     the region has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
-   *     the location has the following format: `projects/{project_id}/locations/{location}`
-   * @param template Required. The workflow template to instantiate.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
-      LocationName parent, WorkflowTemplate template) {
-    InstantiateInlineWorkflowTemplateRequest request =
-        InstantiateInlineWorkflowTemplateRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setTemplate(template)
-            .build();
-    return instantiateInlineWorkflowTemplateAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>This method is equivalent to executing the sequence
-   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
-   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
-   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(parent.toString(), template).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the region or location, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,instantiateinline`, the resource name of
-   *     the region has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
-   *     the location has the following format: `projects/{project_id}/locations/{location}`
-   * @param template Required. The workflow template to instantiate.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
-      String parent, WorkflowTemplate template) {
-    InstantiateInlineWorkflowTemplateRequest request =
-        InstantiateInlineWorkflowTemplateRequest.newBuilder()
-            .setParent(parent)
-            .setTemplate(template)
-            .build();
-    return instantiateInlineWorkflowTemplateAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>This method is equivalent to executing the sequence
-   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
-   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
-   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   InstantiateInlineWorkflowTemplateRequest request = InstantiateInlineWorkflowTemplateRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTemplate(template)
-   *     .build();
-   *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
-      InstantiateInlineWorkflowTemplateRequest request) {
-    return instantiateInlineWorkflowTemplateOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>This method is equivalent to executing the sequence
-   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
-   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
-   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   InstantiateInlineWorkflowTemplateRequest request = InstantiateInlineWorkflowTemplateRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTemplate(template)
-   *     .build();
-   *   OperationFuture&lt;Empty, WorkflowMetadata&gt; future = workflowTemplateServiceClient.instantiateInlineWorkflowTemplateOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
-      instantiateInlineWorkflowTemplateOperationCallable() {
-    return stub.instantiateInlineWorkflowTemplateOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Instantiates a template and begins execution.
-   *
-   * <p>This method is equivalent to executing the sequence
-   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
-   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
-   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
-   *
-   * <p>The returned Operation can be used to track execution of workflow by polling
-   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
-   * entire workflow is finished.
-   *
-   * <p>The running workflow can be aborted via
-   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
-   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
-   *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
-   * Also see [Using
-   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-   *
-   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
-   * be [Empty][google.protobuf.Empty].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   InstantiateInlineWorkflowTemplateRequest request = InstantiateInlineWorkflowTemplateRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTemplate(template)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = workflowTemplateServiceClient.instantiateInlineWorkflowTemplateCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<InstantiateInlineWorkflowTemplateRequest, Operation>
-      instantiateInlineWorkflowTemplateCallable() {
-    return stub.instantiateInlineWorkflowTemplateCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new workflow template.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
-   * }
-   * </code></pre>
-   *
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
-   *     has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
-   *     location has the following format: `projects/{project_id}/locations/{location}`
-   * @param template Required. The Dataproc workflow template to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final WorkflowTemplate createWorkflowTemplate(
-      RegionName parent, WorkflowTemplate template) {
-    CreateWorkflowTemplateRequest request =
-        CreateWorkflowTemplateRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setTemplate(template)
-            .build();
-    return createWorkflowTemplate(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates new workflow template.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates,create`, the resource name of the region has
+   *           the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.create`, the resource name of the location
+   *           has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the region or location, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
-   *     has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
-   *     location has the following format: `projects/{project_id}/locations/{location}`
    * @param template Required. The Dataproc workflow template to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -878,26 +190,49 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return createWorkflowTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new workflow template.
    *
-   * <p>Sample code:
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates,create`, the resource name of the region has
+   *           the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.create`, the resource name of the location
+   *           has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
    *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent.toString(), template);
-   * }
-   * </code></pre>
+   * @param template Required. The Dataproc workflow template to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkflowTemplate createWorkflowTemplate(
+      RegionName parent, WorkflowTemplate template) {
+    CreateWorkflowTemplateRequest request =
+        CreateWorkflowTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTemplate(template)
+            .build();
+    return createWorkflowTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new workflow template.
    *
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
-   *     has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
-   *     location has the following format: `projects/{project_id}/locations/{location}`
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates,create`, the resource name of the region has
+   *           the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.create`, the resource name of the location
+   *           has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
+   *
    * @param template Required. The Dataproc workflow template to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -907,23 +242,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return createWorkflowTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new workflow template.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   CreateWorkflowTemplateRequest request = CreateWorkflowTemplateRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTemplate(template)
-   *     .build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -932,54 +253,36 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return createWorkflowTemplateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new workflow template.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   CreateWorkflowTemplateRequest request = CreateWorkflowTemplateRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setTemplate(template)
-   *     .build();
-   *   ApiFuture&lt;WorkflowTemplate&gt; future = workflowTemplateServiceClient.createWorkflowTemplateCallable().futureCall(request);
-   *   // Do something
-   *   WorkflowTemplate response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>
       createWorkflowTemplateCallable() {
     return stub.createWorkflowTemplateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the latest workflow template.
    *
    * <p>Can retrieve previously instantiated template by specifying optional version parameter.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(name);
-   * }
-   * </code></pre>
-   *
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates.get`, the resource name of the template
-   *     has the following format:
-   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.get`, the resource name of the template
-   *     has the following format:
-   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates.get`, the resource name of the template has
+   *           the following format:
+   *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.get`, the resource name of the template has
+   *           the following format:
+   *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowTemplate getWorkflowTemplate(WorkflowTemplateName name) {
@@ -990,29 +293,25 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return getWorkflowTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the latest workflow template.
    *
    * <p>Can retrieve previously instantiated template by specifying optional version parameter.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(name.toString());
-   * }
-   * </code></pre>
-   *
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates.get`, the resource name of the template
-   *     has the following format:
-   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.get`, the resource name of the template
-   *     has the following format:
-   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates.get`, the resource name of the template has
+   *           the following format:
+   *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.get`, the resource name of the template has
+   *           the following format:
+   *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowTemplate getWorkflowTemplate(String name) {
@@ -1021,23 +320,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return getWorkflowTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the latest workflow template.
    *
    * <p>Can retrieve previously instantiated template by specifying optional version parameter.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   GetWorkflowTemplateRequest request = GetWorkflowTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1046,44 +333,529 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return getWorkflowTemplateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the latest workflow template.
    *
    * <p>Can retrieve previously instantiated template by specifying optional version parameter.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   GetWorkflowTemplateRequest request = GetWorkflowTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;WorkflowTemplate&gt; future = workflowTemplateServiceClient.getWorkflowTemplateCallable().futureCall(request);
-   *   // Do something
-   *   WorkflowTemplate response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetWorkflowTemplateRequest, WorkflowTemplate>
       getWorkflowTemplateCallable() {
     return stub.getWorkflowTemplateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *           template has the following format:
+   *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *           template has the following format:
+   *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
+      WorkflowTemplateName name) {
+    InstantiateWorkflowTemplateRequest request =
+        InstantiateWorkflowTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return instantiateWorkflowTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *           template has the following format:
+   *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *           template has the following format:
+   *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
+      String name) {
+    InstantiateWorkflowTemplateRequest request =
+        InstantiateWorkflowTemplateRequest.newBuilder().setName(name).build();
+    return instantiateWorkflowTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *           template has the following format:
+   *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *           template has the following format:
+   *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     </ul>
+   *
+   * @param parameters Optional. Map from parameter names to values that should be used for those
+   *     parameters. Values may not exceed 100 characters.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
+      WorkflowTemplateName name, Map<String, String> parameters) {
+    InstantiateWorkflowTemplateRequest request =
+        InstantiateWorkflowTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .putAllParameters(parameters)
+            .build();
+    return instantiateWorkflowTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *           template has the following format:
+   *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *           template has the following format:
+   *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     </ul>
+   *
+   * @param parameters Optional. Map from parameter names to values that should be used for those
+   *     parameters. Values may not exceed 100 characters.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
+      String name, Map<String, String> parameters) {
+    InstantiateWorkflowTemplateRequest request =
+        InstantiateWorkflowTemplateRequest.newBuilder()
+            .setName(name)
+            .putAllParameters(parameters)
+            .build();
+    return instantiateWorkflowTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
+      InstantiateWorkflowTemplateRequest request) {
+    return instantiateWorkflowTemplateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * <p>Sample code:
+   */
+  public final OperationCallable<InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
+      instantiateWorkflowTemplateOperationCallable() {
+    return stub.instantiateWorkflowTemplateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<InstantiateWorkflowTemplateRequest, Operation>
+      instantiateWorkflowTemplateCallable() {
+    return stub.instantiateWorkflowTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>This method is equivalent to executing the sequence
+   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
+   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
+   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates,instantiateinline`, the resource name of the
+   *           region has the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
+   *           the location has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
+   *
+   * @param template Required. The workflow template to instantiate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
+      LocationName parent, WorkflowTemplate template) {
+    InstantiateInlineWorkflowTemplateRequest request =
+        InstantiateInlineWorkflowTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTemplate(template)
+            .build();
+    return instantiateInlineWorkflowTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>This method is equivalent to executing the sequence
+   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
+   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
+   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates,instantiateinline`, the resource name of the
+   *           region has the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
+   *           the location has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
+   *
+   * @param template Required. The workflow template to instantiate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
+      RegionName parent, WorkflowTemplate template) {
+    InstantiateInlineWorkflowTemplateRequest request =
+        InstantiateInlineWorkflowTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTemplate(template)
+            .build();
+    return instantiateInlineWorkflowTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>This method is equivalent to executing the sequence
+   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
+   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
+   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates,instantiateinline`, the resource name of the
+   *           region has the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
+   *           the location has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
+   *
+   * @param template Required. The workflow template to instantiate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
+      String parent, WorkflowTemplate template) {
+    InstantiateInlineWorkflowTemplateRequest request =
+        InstantiateInlineWorkflowTemplateRequest.newBuilder()
+            .setParent(parent)
+            .setTemplate(template)
+            .build();
+    return instantiateInlineWorkflowTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>This method is equivalent to executing the sequence
+   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
+   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
+   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateInlineWorkflowTemplateAsync(
+      InstantiateInlineWorkflowTemplateRequest request) {
+    return instantiateInlineWorkflowTemplateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>This method is equivalent to executing the sequence
+   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
+   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
+   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * <p>Sample code:
+   */
+  public final OperationCallable<InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
+      instantiateInlineWorkflowTemplateOperationCallable() {
+    return stub.instantiateInlineWorkflowTemplateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>This method is equivalent to executing the sequence
+   * [CreateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.CreateWorkflowTemplate],
+   * [InstantiateWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.InstantiateWorkflowTemplate],
+   * [DeleteWorkflowTemplate][google.cloud.dataproc.v1beta2.WorkflowTemplateService.DeleteWorkflowTemplate].
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<InstantiateInlineWorkflowTemplateRequest, Operation>
+      instantiateInlineWorkflowTemplateCallable() {
+    return stub.instantiateInlineWorkflowTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates (replaces) workflow template. The updated template must contain version that matches
    * the current server version.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.updateWorkflowTemplate(template);
-   * }
-   * </code></pre>
    *
    * @param template Required. The updated workflow template.
    *     <p>The `template.version` field must match the current version.
@@ -1095,22 +867,10 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return updateWorkflowTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates (replaces) workflow template. The updated template must contain version that matches
    * the current server version.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   UpdateWorkflowTemplateRequest request = UpdateWorkflowTemplateRequest.newBuilder()
-   *     .setTemplate(template)
-   *     .build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.updateWorkflowTemplate(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1119,82 +879,33 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return updateWorkflowTemplateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates (replaces) workflow template. The updated template must contain version that matches
    * the current server version.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   UpdateWorkflowTemplateRequest request = UpdateWorkflowTemplateRequest.newBuilder()
-   *     .setTemplate(template)
-   *     .build();
-   *   ApiFuture&lt;WorkflowTemplate&gt; future = workflowTemplateServiceClient.updateWorkflowTemplateCallable().futureCall(request);
-   *   // Do something
-   *   WorkflowTemplate response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateCallable() {
     return stub.updateWorkflowTemplateCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists workflows that match the specified filter in the request.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   for (WorkflowTemplate element : workflowTemplateServiceClient.listWorkflowTemplates(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,list`, the resource name of the region has
-   *     the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.list`, the resource name of the location
-   *     has the following format: `projects/{project_id}/locations/{location}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(RegionName parent) {
-    ListWorkflowTemplatesRequest request =
-        ListWorkflowTemplatesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listWorkflowTemplates(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists workflows that match the specified filter in the request.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates,list`, the resource name of the region has
+   *           the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.list`, the resource name of the location
+   *           has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (WorkflowTemplate element : workflowTemplateServiceClient.listWorkflowTemplates(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the region or location, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,list`, the resource name of the region has
-   *     the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.list`, the resource name of the location
-   *     has the following format: `projects/{project_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(LocationName parent) {
@@ -1205,27 +916,46 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return listWorkflowTemplates(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists workflows that match the specified filter in the request.
    *
-   * <p>Sample code:
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates,list`, the resource name of the region has
+   *           the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.list`, the resource name of the location
+   *           has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
    *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   for (WorkflowTemplate element : workflowTemplateServiceClient.listWorkflowTemplates(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(RegionName parent) {
+    ListWorkflowTemplatesRequest request =
+        ListWorkflowTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listWorkflowTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists workflows that match the specified filter in the request.
    *
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates,list`, the resource name of the region has
-   *     the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.list`, the resource name of the location
-   *     has the following format: `projects/{project_id}/locations/{location}`
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates,list`, the resource name of the region has
+   *           the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.list`, the resource name of the location
+   *           has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(String parent) {
@@ -1234,23 +964,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return listWorkflowTemplates(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists workflows that match the specified filter in the request.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   ListWorkflowTemplatesRequest request = ListWorkflowTemplatesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (WorkflowTemplate element : workflowTemplateServiceClient.listWorkflowTemplates(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1260,84 +976,45 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return listWorkflowTemplatesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists workflows that match the specified filter in the request.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   ListWorkflowTemplatesRequest request = ListWorkflowTemplatesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListWorkflowTemplatesPagedResponse&gt; future = workflowTemplateServiceClient.listWorkflowTemplatesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (WorkflowTemplate element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListWorkflowTemplatesRequest, ListWorkflowTemplatesPagedResponse>
       listWorkflowTemplatesPagedCallable() {
     return stub.listWorkflowTemplatesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists workflows that match the specified filter in the request.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   ListWorkflowTemplatesRequest request = ListWorkflowTemplatesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListWorkflowTemplatesResponse response = workflowTemplateServiceClient.listWorkflowTemplatesCallable().call(request);
-   *     for (WorkflowTemplate element : response.getTemplatesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse>
       listWorkflowTemplatesCallable() {
     return stub.listWorkflowTemplatesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a workflow template. It does not cancel in-progress workflows.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   workflowTemplateServiceClient.deleteWorkflowTemplate(name);
-   * }
-   * </code></pre>
-   *
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates.delete`, the resource name of the template
-   *     has the following format:
-   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
-   *     template has the following format:
-   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates.delete`, the resource name of the template
+   *           has the following format:
+   *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *           template has the following format:
+   *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteWorkflowTemplate(WorkflowTemplateName name) {
@@ -1348,27 +1025,23 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     deleteWorkflowTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a workflow template. It does not cancel in-progress workflows.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   workflowTemplateServiceClient.deleteWorkflowTemplate(name.toString());
-   * }
-   * </code></pre>
-   *
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.workflowTemplates.delete`, the resource name of the template
-   *     has the following format:
-   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
-   *     template has the following format:
-   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     <ul>
+   *       <li>For `projects.regions.workflowTemplates.delete`, the resource name of the template
+   *           has the following format:
+   *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *           template has the following format:
+   *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteWorkflowTemplate(String name) {
@@ -1377,21 +1050,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     deleteWorkflowTemplate(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a workflow template. It does not cancel in-progress workflows.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   DeleteWorkflowTemplateRequest request = DeleteWorkflowTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   workflowTemplateServiceClient.deleteWorkflowTemplate(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1400,23 +1061,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     deleteWorkflowTemplateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a workflow template. It does not cancel in-progress workflows.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   WorkflowTemplateName name = WorkflowTemplateName.ofProjectRegionWorkflowTemplateName("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   DeleteWorkflowTemplateRequest request = DeleteWorkflowTemplateRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = workflowTemplateServiceClient.deleteWorkflowTemplateCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteWorkflowTemplateRequest, Empty>
       deleteWorkflowTemplateCallable() {

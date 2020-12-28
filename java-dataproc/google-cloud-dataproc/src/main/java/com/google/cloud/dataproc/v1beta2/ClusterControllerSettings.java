@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dataproc.v1beta2;
 
 import static com.google.cloud.dataproc.v1beta2.ClusterControllerClient.ListClustersPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ClusterControllerClient}.
  *
@@ -53,31 +54,30 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getCluster to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ClusterControllerSettings.Builder clusterControllerSettingsBuilder =
  *     ClusterControllerSettings.newBuilder();
  * clusterControllerSettingsBuilder
  *     .getClusterSettings()
  *     .setRetrySettings(
- *         clusterControllerSettingsBuilder.getClusterSettings().getRetrySettings().toBuilder()
+ *         clusterControllerSettingsBuilder
+ *             .getClusterSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ClusterControllerSettings clusterControllerSettings = clusterControllerSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ClusterControllerSettings extends ClientSettings<ClusterControllerSettings> {
+
   /** Returns the object with the settings used for calls to createCluster. */
   public UnaryCallSettings<CreateClusterRequest, Operation> createClusterSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).createClusterSettings();
   }
 
   /** Returns the object with the settings used for calls to createCluster. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateClusterRequest, Cluster, ClusterOperationMetadata>
       createClusterOperationSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).createClusterOperationSettings();
@@ -89,8 +89,6 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
   }
 
   /** Returns the object with the settings used for calls to updateCluster. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).updateClusterOperationSettings();
@@ -102,24 +100,9 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
   }
 
   /** Returns the object with the settings used for calls to deleteCluster. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).deleteClusterOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to diagnoseCluster. */
-  public UnaryCallSettings<DiagnoseClusterRequest, Operation> diagnoseClusterSettings() {
-    return ((ClusterControllerStubSettings) getStubSettings()).diagnoseClusterSettings();
-  }
-
-  /** Returns the object with the settings used for calls to diagnoseCluster. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
-      diagnoseClusterOperationSettings() {
-    return ((ClusterControllerStubSettings) getStubSettings()).diagnoseClusterOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getCluster. */
@@ -131,6 +114,17 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
   public PagedCallSettings<ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
       listClustersSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).listClustersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to diagnoseCluster. */
+  public UnaryCallSettings<DiagnoseClusterRequest, Operation> diagnoseClusterSettings() {
+    return ((ClusterControllerStubSettings) getStubSettings()).diagnoseClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to diagnoseCluster. */
+  public OperationCallSettings<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
+      diagnoseClusterOperationSettings() {
+    return ((ClusterControllerStubSettings) getStubSettings()).diagnoseClusterOperationSettings();
   }
 
   public static final ClusterControllerSettings create(ClusterControllerStubSettings stub)
@@ -193,16 +187,13 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
 
   /** Builder for ClusterControllerSettings. */
   public static class Builder extends ClientSettings.Builder<ClusterControllerSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ClusterControllerStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ClusterControllerStubSettings.newBuilder());
     }
 
     protected Builder(ClusterControllerSettings settings) {
@@ -213,11 +204,15 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ClusterControllerStubSettings.newBuilder());
+    }
+
     public ClusterControllerStubSettings.Builder getStubSettingsBuilder() {
       return ((ClusterControllerStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -236,8 +231,6 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, ClusterOperationMetadata>
         createClusterOperationSettings() {
       return getStubSettingsBuilder().createClusterOperationSettings();
@@ -249,8 +242,6 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
         updateClusterOperationSettings() {
       return getStubSettingsBuilder().updateClusterOperationSettings();
@@ -262,24 +253,9 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteClusterRequest, Empty, ClusterOperationMetadata>
         deleteClusterOperationSettings() {
       return getStubSettingsBuilder().deleteClusterOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to diagnoseCluster. */
-    public UnaryCallSettings.Builder<DiagnoseClusterRequest, Operation> diagnoseClusterSettings() {
-      return getStubSettingsBuilder().diagnoseClusterSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to diagnoseCluster. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
-        diagnoseClusterOperationSettings() {
-      return getStubSettingsBuilder().diagnoseClusterOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getCluster. */
@@ -292,6 +268,17 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
             ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
         listClustersSettings() {
       return getStubSettingsBuilder().listClustersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to diagnoseCluster. */
+    public UnaryCallSettings.Builder<DiagnoseClusterRequest, Operation> diagnoseClusterSettings() {
+      return getStubSettingsBuilder().diagnoseClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to diagnoseCluster. */
+    public OperationCallSettings.Builder<DiagnoseClusterRequest, Empty, ClusterOperationMetadata>
+        diagnoseClusterOperationSettings() {
+      return getStubSettingsBuilder().diagnoseClusterOperationSettings();
     }
 
     @Override

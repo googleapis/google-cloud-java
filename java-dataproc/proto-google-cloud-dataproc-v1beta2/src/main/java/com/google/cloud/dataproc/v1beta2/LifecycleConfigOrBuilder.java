@@ -77,7 +77,8 @@ public interface LifecycleConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+   * Optional. The time when cluster will be auto-deleted. (see JSON
+   * representation of
    * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -92,7 +93,8 @@ public interface LifecycleConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+   * Optional. The time when cluster will be auto-deleted. (see JSON
+   * representation of
    * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -107,7 +109,8 @@ public interface LifecycleConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+   * Optional. The time when cluster will be auto-deleted. (see JSON
+   * representation of
    * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *

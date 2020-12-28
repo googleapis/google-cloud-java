@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dataproc.v1beta2;
 
 import com.google.api.core.ApiFunction;
@@ -34,7 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The API interface for managing autoscaling policies in the Cloud Dataproc
  * API.
@@ -42,17 +43,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
- *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
- *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
- *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(parent, policy);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the autoscalingPolicyServiceClient object to clean up
+ * <p>Note: close() needs to be called on the AutoscalingPolicyServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -81,30 +72,28 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AutoscalingPolicyServiceSettings autoscalingPolicyServiceSettings =
  *     AutoscalingPolicyServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
  *     AutoscalingPolicyServiceClient.create(autoscalingPolicyServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AutoscalingPolicyServiceSettings autoscalingPolicyServiceSettings =
  *     AutoscalingPolicyServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
  *     AutoscalingPolicyServiceClient.create(autoscalingPolicyServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class AutoscalingPolicyServiceClient implements BackgroundResource {
   private final AutoscalingPolicyServiceSettings settings;
   private final AutoscalingPolicyServiceStub stub;
@@ -126,7 +115,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of AutoscalingPolicyServiceClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use AutoscalingPolicyServiceSettings}.
+   * calls. This is for advanced usage - prefer using create(AutoscalingPolicyServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AutoscalingPolicyServiceClient create(AutoscalingPolicyServiceStub stub) {
@@ -159,59 +148,21 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new autoscaling policy.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
-   *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(parent, policy);
-   * }
-   * </code></pre>
-   *
    * @param parent Required. The "resource name" of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.autoscalingPolicies.create`, the resource name has the
-   *     following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.autoscalingPolicies.create`, the resource name has the
-   *     following format: `projects/{project_id}/locations/{location}`
-   * @param policy Required. The autoscaling policy to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AutoscalingPolicy createAutoscalingPolicy(
-      RegionName parent, AutoscalingPolicy policy) {
-    CreateAutoscalingPolicyRequest request =
-        CreateAutoscalingPolicyRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setPolicy(policy)
-            .build();
-    return createAutoscalingPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates new autoscaling policy.
+   *     <ul>
+   *       <li>For `projects.regions.autoscalingPolicies.create`, the resource name has the
+   *           following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.autoscalingPolicies.create`, the resource name has the
+   *           following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
-   *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(parent, policy);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The "resource name" of the region or location, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.autoscalingPolicies.create`, the resource name has the
-   *     following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.autoscalingPolicies.create`, the resource name has the
-   *     following format: `projects/{project_id}/locations/{location}`
    * @param policy Required. The autoscaling policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -225,26 +176,49 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return createAutoscalingPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new autoscaling policy.
    *
-   * <p>Sample code:
+   * @param parent Required. The "resource name" of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.autoscalingPolicies.create`, the resource name has the
+   *           following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.autoscalingPolicies.create`, the resource name has the
+   *           following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
    *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
-   *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(parent.toString(), policy);
-   * }
-   * </code></pre>
+   * @param policy Required. The autoscaling policy to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoscalingPolicy createAutoscalingPolicy(
+      RegionName parent, AutoscalingPolicy policy) {
+    CreateAutoscalingPolicyRequest request =
+        CreateAutoscalingPolicyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPolicy(policy)
+            .build();
+    return createAutoscalingPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new autoscaling policy.
    *
    * @param parent Required. The "resource name" of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.autoscalingPolicies.create`, the resource name has the
-   *     following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.autoscalingPolicies.create`, the resource name has the
-   *     following format: `projects/{project_id}/locations/{location}`
+   *     <ul>
+   *       <li>For `projects.regions.autoscalingPolicies.create`, the resource name has the
+   *           following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.autoscalingPolicies.create`, the resource name has the
+   *           following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
+   *
    * @param policy Required. The autoscaling policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -254,23 +228,9 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return createAutoscalingPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new autoscaling policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
-   *   CreateAutoscalingPolicyRequest request = CreateAutoscalingPolicyRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setPolicy(policy)
-   *     .build();
-   *   AutoscalingPolicy response = autoscalingPolicyServiceClient.createAutoscalingPolicy(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -279,45 +239,22 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return createAutoscalingPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new autoscaling policy.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
-   *   CreateAutoscalingPolicyRequest request = CreateAutoscalingPolicyRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setPolicy(policy)
-   *     .build();
-   *   ApiFuture&lt;AutoscalingPolicy&gt; future = autoscalingPolicyServiceClient.createAutoscalingPolicyCallable().futureCall(request);
-   *   // Do something
-   *   AutoscalingPolicy response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
       createAutoscalingPolicyCallable() {
     return stub.createAutoscalingPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates (replaces) autoscaling policy.
    *
    * <p>Disabled check for update_mask, because all updates will be full replacements.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
-   *   AutoscalingPolicy response = autoscalingPolicyServiceClient.updateAutoscalingPolicy(policy);
-   * }
-   * </code></pre>
    *
    * @param policy Required. The updated autoscaling policy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -328,23 +265,11 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return updateAutoscalingPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates (replaces) autoscaling policy.
    *
    * <p>Disabled check for update_mask, because all updates will be full replacements.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
-   *   UpdateAutoscalingPolicyRequest request = UpdateAutoscalingPolicyRequest.newBuilder()
-   *     .setPolicy(policy)
-   *     .build();
-   *   AutoscalingPolicy response = autoscalingPolicyServiceClient.updateAutoscalingPolicy(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -353,52 +278,36 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return updateAutoscalingPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates (replaces) autoscaling policy.
    *
    * <p>Disabled check for update_mask, because all updates will be full replacements.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
-   *   UpdateAutoscalingPolicyRequest request = UpdateAutoscalingPolicyRequest.newBuilder()
-   *     .setPolicy(policy)
-   *     .build();
-   *   ApiFuture&lt;AutoscalingPolicy&gt; future = autoscalingPolicyServiceClient.updateAutoscalingPolicyCallable().futureCall(request);
-   *   // Do something
-   *   AutoscalingPolicy response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
       updateAutoscalingPolicyCallable() {
     return stub.updateAutoscalingPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves autoscaling policy.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicyName name = AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName("[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
-   *   AutoscalingPolicy response = autoscalingPolicyServiceClient.getAutoscalingPolicy(name);
-   * }
-   * </code></pre>
-   *
    * @param name Required. The "resource name" of the autoscaling policy, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.autoscalingPolicies.get`, the resource name of the policy
-   *     has the following format:
-   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
-   *     <p>&#42; For `projects.locations.autoscalingPolicies.get`, the resource name of the policy
-   *     has the following format:
-   *     `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
+   *     <ul>
+   *       <li>For `projects.regions.autoscalingPolicies.get`, the resource name of the policy has
+   *           the following format:
+   *           `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.autoscalingPolicies.get`, the resource name of the policy has
+   *           the following format:
+   *           `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy getAutoscalingPolicy(AutoscalingPolicyName name) {
@@ -409,27 +318,23 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return getAutoscalingPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves autoscaling policy.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicyName name = AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName("[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
-   *   AutoscalingPolicy response = autoscalingPolicyServiceClient.getAutoscalingPolicy(name.toString());
-   * }
-   * </code></pre>
-   *
    * @param name Required. The "resource name" of the autoscaling policy, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.autoscalingPolicies.get`, the resource name of the policy
-   *     has the following format:
-   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
-   *     <p>&#42; For `projects.locations.autoscalingPolicies.get`, the resource name of the policy
-   *     has the following format:
-   *     `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
+   *     <ul>
+   *       <li>For `projects.regions.autoscalingPolicies.get`, the resource name of the policy has
+   *           the following format:
+   *           `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.autoscalingPolicies.get`, the resource name of the policy has
+   *           the following format:
+   *           `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AutoscalingPolicy getAutoscalingPolicy(String name) {
@@ -438,21 +343,9 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return getAutoscalingPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves autoscaling policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicyName name = AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName("[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
-   *   GetAutoscalingPolicyRequest request = GetAutoscalingPolicyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   AutoscalingPolicy response = autoscalingPolicyServiceClient.getAutoscalingPolicy(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -461,81 +354,32 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return getAutoscalingPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves autoscaling policy.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicyName name = AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName("[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
-   *   GetAutoscalingPolicyRequest request = GetAutoscalingPolicyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;AutoscalingPolicy&gt; future = autoscalingPolicyServiceClient.getAutoscalingPolicyCallable().futureCall(request);
-   *   // Do something
-   *   AutoscalingPolicy response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetAutoscalingPolicyRequest, AutoscalingPolicy>
       getAutoscalingPolicyCallable() {
     return stub.getAutoscalingPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists autoscaling policies in the project.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   for (AutoscalingPolicy element : autoscalingPolicyServiceClient.listAutoscalingPolicies(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
    * @param parent Required. The "resource name" of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.autoscalingPolicies.list`, the resource name of the region
-   *     has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.autoscalingPolicies.list`, the resource name of the
-   *     location has the following format: `projects/{project_id}/locations/{location}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListAutoscalingPoliciesPagedResponse listAutoscalingPolicies(RegionName parent) {
-    ListAutoscalingPoliciesRequest request =
-        ListAutoscalingPoliciesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listAutoscalingPolicies(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists autoscaling policies in the project.
+   *     <ul>
+   *       <li>For `projects.regions.autoscalingPolicies.list`, the resource name of the region has
+   *           the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.autoscalingPolicies.list`, the resource name of the location
+   *           has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (AutoscalingPolicy element : autoscalingPolicyServiceClient.listAutoscalingPolicies(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The "resource name" of the region or location, as described in
-   *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.autoscalingPolicies.list`, the resource name of the region
-   *     has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.autoscalingPolicies.list`, the resource name of the
-   *     location has the following format: `projects/{project_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAutoscalingPoliciesPagedResponse listAutoscalingPolicies(LocationName parent) {
@@ -546,27 +390,46 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return listAutoscalingPolicies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists autoscaling policies in the project.
    *
-   * <p>Sample code:
+   * @param parent Required. The "resource name" of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <ul>
+   *       <li>For `projects.regions.autoscalingPolicies.list`, the resource name of the region has
+   *           the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.autoscalingPolicies.list`, the resource name of the location
+   *           has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
    *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   for (AutoscalingPolicy element : autoscalingPolicyServiceClient.listAutoscalingPolicies(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoscalingPoliciesPagedResponse listAutoscalingPolicies(RegionName parent) {
+    ListAutoscalingPoliciesRequest request =
+        ListAutoscalingPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAutoscalingPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists autoscaling policies in the project.
    *
    * @param parent Required. The "resource name" of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.autoscalingPolicies.list`, the resource name of the region
-   *     has the following format: `projects/{project_id}/regions/{region}`
-   *     <p>&#42; For `projects.locations.autoscalingPolicies.list`, the resource name of the
-   *     location has the following format: `projects/{project_id}/locations/{location}`
+   *     <ul>
+   *       <li>For `projects.regions.autoscalingPolicies.list`, the resource name of the region has
+   *           the following format: `projects/{project_id}/regions/{region}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.autoscalingPolicies.list`, the resource name of the location
+   *           has the following format: `projects/{project_id}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAutoscalingPoliciesPagedResponse listAutoscalingPolicies(String parent) {
@@ -575,23 +438,9 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return listAutoscalingPolicies(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists autoscaling policies in the project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   ListAutoscalingPoliciesRequest request = ListAutoscalingPoliciesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (AutoscalingPolicy element : autoscalingPolicyServiceClient.listAutoscalingPolicies(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -601,85 +450,46 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return listAutoscalingPoliciesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists autoscaling policies in the project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   ListAutoscalingPoliciesRequest request = ListAutoscalingPoliciesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListAutoscalingPoliciesPagedResponse&gt; future = autoscalingPolicyServiceClient.listAutoscalingPoliciesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (AutoscalingPolicy element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesPagedResponse>
       listAutoscalingPoliciesPagedCallable() {
     return stub.listAutoscalingPoliciesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists autoscaling policies in the project.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
-   *   ListAutoscalingPoliciesRequest request = ListAutoscalingPoliciesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListAutoscalingPoliciesResponse response = autoscalingPolicyServiceClient.listAutoscalingPoliciesCallable().call(request);
-   *     for (AutoscalingPolicy element : response.getPoliciesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse>
       listAutoscalingPoliciesCallable() {
     return stub.listAutoscalingPoliciesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an autoscaling policy. It is an error to delete an autoscaling policy that is in use by
    * one or more clusters.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicyName name = AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName("[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
-   *   autoscalingPolicyServiceClient.deleteAutoscalingPolicy(name);
-   * }
-   * </code></pre>
-   *
    * @param name Required. The "resource name" of the autoscaling policy, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.autoscalingPolicies.delete`, the resource name of the policy
-   *     has the following format:
-   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
-   *     <p>&#42; For `projects.locations.autoscalingPolicies.delete`, the resource name of the
-   *     policy has the following format:
-   *     `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
+   *     <ul>
+   *       <li>For `projects.regions.autoscalingPolicies.delete`, the resource name of the policy
+   *           has the following format:
+   *           `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.autoscalingPolicies.delete`, the resource name of the policy
+   *           has the following format:
+   *           `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAutoscalingPolicy(AutoscalingPolicyName name) {
@@ -690,28 +500,24 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     deleteAutoscalingPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an autoscaling policy. It is an error to delete an autoscaling policy that is in use by
    * one or more clusters.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicyName name = AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName("[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
-   *   autoscalingPolicyServiceClient.deleteAutoscalingPolicy(name.toString());
-   * }
-   * </code></pre>
-   *
    * @param name Required. The "resource name" of the autoscaling policy, as described in
    *     https://cloud.google.com/apis/design/resource_names.
-   *     <p>&#42; For `projects.regions.autoscalingPolicies.delete`, the resource name of the policy
-   *     has the following format:
-   *     `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
-   *     <p>&#42; For `projects.locations.autoscalingPolicies.delete`, the resource name of the
-   *     policy has the following format:
-   *     `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
+   *     <ul>
+   *       <li>For `projects.regions.autoscalingPolicies.delete`, the resource name of the policy
+   *           has the following format:
+   *           `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
+   *     </ul>
+   *     <ul>
+   *       <li>For `projects.locations.autoscalingPolicies.delete`, the resource name of the policy
+   *           has the following format:
+   *           `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAutoscalingPolicy(String name) {
@@ -720,22 +526,10 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     deleteAutoscalingPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an autoscaling policy. It is an error to delete an autoscaling policy that is in use by
    * one or more clusters.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicyName name = AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName("[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
-   *   DeleteAutoscalingPolicyRequest request = DeleteAutoscalingPolicyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   autoscalingPolicyServiceClient.deleteAutoscalingPolicy(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -744,24 +538,12 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     deleteAutoscalingPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an autoscaling policy. It is an error to delete an autoscaling policy that is in use by
    * one or more clusters.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.create()) {
-   *   AutoscalingPolicyName name = AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName("[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
-   *   DeleteAutoscalingPolicyRequest request = DeleteAutoscalingPolicyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = autoscalingPolicyServiceClient.deleteAutoscalingPolicyCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteAutoscalingPolicyRequest, Empty>
       deleteAutoscalingPolicyCallable() {

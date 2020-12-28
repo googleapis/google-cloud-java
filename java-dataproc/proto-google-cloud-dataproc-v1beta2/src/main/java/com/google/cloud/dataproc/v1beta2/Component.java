@@ -32,7 +32,7 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified component.
+   * Unspecified component. Specifying this will cause Cluster creation to fail.
    * </pre>
    *
    * <code>COMPONENT_UNSPECIFIED = 0;</code>
@@ -52,16 +52,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Docker
-   * </pre>
-   *
-   * <code>DOCKER = 13;</code>
-   */
-  DOCKER(13),
-  /**
-   *
-   *
-   * <pre>
    * The Druid query engine.
    * </pre>
    *
@@ -72,12 +62,12 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Flink
+   * HBase.
    * </pre>
    *
-   * <code>FLINK = 14;</code>
+   * <code>HBASE = 11;</code>
    */
-  FLINK(14),
+  HBASE(11),
   /**
    *
    *
@@ -165,7 +155,7 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified component.
+   * Unspecified component. Specifying this will cause Cluster creation to fail.
    * </pre>
    *
    * <code>COMPONENT_UNSPECIFIED = 0;</code>
@@ -185,16 +175,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Docker
-   * </pre>
-   *
-   * <code>DOCKER = 13;</code>
-   */
-  public static final int DOCKER_VALUE = 13;
-  /**
-   *
-   *
-   * <pre>
    * The Druid query engine.
    * </pre>
    *
@@ -205,12 +185,12 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Flink
+   * HBase.
    * </pre>
    *
-   * <code>FLINK = 14;</code>
+   * <code>HBASE = 11;</code>
    */
-  public static final int FLINK_VALUE = 14;
+  public static final int HBASE_VALUE = 11;
   /**
    *
    *
@@ -320,12 +300,10 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
         return COMPONENT_UNSPECIFIED;
       case 5:
         return ANACONDA;
-      case 13:
-        return DOCKER;
       case 9:
         return DRUID;
-      case 14:
-        return FLINK;
+      case 11:
+        return HBASE;
       case 3:
         return HIVE_WEBHCAT;
       case 1:

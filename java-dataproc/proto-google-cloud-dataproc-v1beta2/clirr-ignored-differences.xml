@@ -16,4 +16,26 @@
     <className>com/google/cloud/dataproc/v1beta2/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <!-- TODO: remove this after 1.2.0 is released -->
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/dataproc/v1beta2/Component</className>
+    <field>DOCKER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/dataproc/v1beta2/Component</className>
+    <field>DOCKER_VALUE</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/dataproc/v1beta2/Component</className>
+    <field>FLINK</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/dataproc/v1beta2/Component</className>
+    <field>FLINK_VALUE</field>
+  </difference>
 </differences>

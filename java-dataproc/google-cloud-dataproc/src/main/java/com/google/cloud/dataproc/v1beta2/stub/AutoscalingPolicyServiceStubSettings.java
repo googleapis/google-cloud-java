@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dataproc.v1beta2.stub;
 
 import static com.google.cloud.dataproc.v1beta2.AutoscalingPolicyServiceClient.ListAutoscalingPoliciesPagedResponse;
@@ -56,7 +57,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AutoscalingPolicyServiceStub}.
  *
@@ -73,22 +74,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createAutoscalingPolicy to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * AutoscalingPolicyServiceStubSettings.Builder autoscalingPolicyServiceSettingsBuilder =
  *     AutoscalingPolicyServiceStubSettings.newBuilder();
  * autoscalingPolicyServiceSettingsBuilder
  *     .createAutoscalingPolicySettings()
  *     .setRetrySettings(
- *         autoscalingPolicyServiceSettingsBuilder.createAutoscalingPolicySettings().getRetrySettings().toBuilder()
+ *         autoscalingPolicyServiceSettingsBuilder
+ *             .createAutoscalingPolicySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * AutoscalingPolicyServiceStubSettings autoscalingPolicyServiceSettings = autoscalingPolicyServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * AutoscalingPolicyServiceStubSettings autoscalingPolicyServiceSettings =
+ *     autoscalingPolicyServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class AutoscalingPolicyServiceStubSettings
     extends StubSettings<AutoscalingPolicyServiceStubSettings> {
   /** The default scopes of the service. */
@@ -108,6 +111,78 @@ public class AutoscalingPolicyServiceStubSettings
       listAutoscalingPoliciesSettings;
   private final UnaryCallSettings<DeleteAutoscalingPolicyRequest, Empty>
       deleteAutoscalingPolicySettings;
+
+  private static final PagedListDescriptor<
+          ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse, AutoscalingPolicy>
+      LIST_AUTOSCALING_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAutoscalingPoliciesRequest,
+              ListAutoscalingPoliciesResponse,
+              AutoscalingPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAutoscalingPoliciesRequest injectToken(
+                ListAutoscalingPoliciesRequest payload, String token) {
+              return ListAutoscalingPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAutoscalingPoliciesRequest injectPageSize(
+                ListAutoscalingPoliciesRequest payload, int pageSize) {
+              return ListAutoscalingPoliciesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAutoscalingPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAutoscalingPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AutoscalingPolicy> extractResources(
+                ListAutoscalingPoliciesResponse payload) {
+              return payload.getPoliciesList() == null
+                  ? ImmutableList.<AutoscalingPolicy>of()
+                  : payload.getPoliciesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAutoscalingPoliciesRequest,
+          ListAutoscalingPoliciesResponse,
+          ListAutoscalingPoliciesPagedResponse>
+      LIST_AUTOSCALING_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAutoscalingPoliciesRequest,
+              ListAutoscalingPoliciesResponse,
+              ListAutoscalingPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAutoscalingPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse>
+                    callable,
+                ListAutoscalingPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAutoscalingPoliciesResponse> futureResponse) {
+              PageContext<
+                      ListAutoscalingPoliciesRequest,
+                      ListAutoscalingPoliciesResponse,
+                      AutoscalingPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AUTOSCALING_POLICIES_PAGE_STR_DESC, request, context);
+              return ListAutoscalingPoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createAutoscalingPolicy. */
   public UnaryCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -148,10 +223,10 @@ public class AutoscalingPolicyServiceStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcAutoscalingPolicyServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -218,83 +293,10 @@ public class AutoscalingPolicyServiceStubSettings
     deleteAutoscalingPolicySettings = settingsBuilder.deleteAutoscalingPolicySettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse, AutoscalingPolicy>
-      LIST_AUTOSCALING_POLICIES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListAutoscalingPoliciesRequest,
-              ListAutoscalingPoliciesResponse,
-              AutoscalingPolicy>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListAutoscalingPoliciesRequest injectToken(
-                ListAutoscalingPoliciesRequest payload, String token) {
-              return ListAutoscalingPoliciesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListAutoscalingPoliciesRequest injectPageSize(
-                ListAutoscalingPoliciesRequest payload, int pageSize) {
-              return ListAutoscalingPoliciesRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListAutoscalingPoliciesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListAutoscalingPoliciesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<AutoscalingPolicy> extractResources(
-                ListAutoscalingPoliciesResponse payload) {
-              return payload.getPoliciesList() != null
-                  ? payload.getPoliciesList()
-                  : ImmutableList.<AutoscalingPolicy>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListAutoscalingPoliciesRequest,
-          ListAutoscalingPoliciesResponse,
-          ListAutoscalingPoliciesPagedResponse>
-      LIST_AUTOSCALING_POLICIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListAutoscalingPoliciesRequest,
-              ListAutoscalingPoliciesResponse,
-              ListAutoscalingPoliciesPagedResponse>() {
-            @Override
-            public ApiFuture<ListAutoscalingPoliciesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse>
-                    callable,
-                ListAutoscalingPoliciesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListAutoscalingPoliciesResponse> futureResponse) {
-              PageContext<
-                      ListAutoscalingPoliciesRequest,
-                      ListAutoscalingPoliciesResponse,
-                      AutoscalingPolicy>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_AUTOSCALING_POLICIES_PAGE_STR_DESC, request, context);
-              return ListAutoscalingPoliciesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for AutoscalingPolicyServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<AutoscalingPolicyServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
         createAutoscalingPolicySettings;
     private final UnaryCallSettings.Builder<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -308,7 +310,6 @@ public class AutoscalingPolicyServiceStubSettings
         listAutoscalingPoliciesSettings;
     private final UnaryCallSettings.Builder<DeleteAutoscalingPolicyRequest, Empty>
         deleteAutoscalingPolicySettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -316,43 +317,12 @@ public class AutoscalingPolicyServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_4_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_6_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_5_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_7_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -361,6 +331,14 @@ public class AutoscalingPolicyServiceStubSettings
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -372,101 +350,21 @@ public class AutoscalingPolicyServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("retry_policy_6_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("retry_policy_7_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(900000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(900000L))
-              .setTotalTimeout(Duration.ofMillis(900000L))
-              .build();
-      definitions.put("retry_policy_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(900000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(900000L))
-              .setTotalTimeout(Duration.ofMillis(900000L))
-              .build();
-      definitions.put("retry_policy_4_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listAutoscalingPoliciesSettings =
           PagedCallSettings.newBuilder(LIST_AUTOSCALING_POLICIES_PAGE_STR_FACT);
-
       deleteAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -476,47 +374,7 @@ public class AutoscalingPolicyServiceStubSettings
               getAutoscalingPolicySettings,
               listAutoscalingPoliciesSettings,
               deleteAutoscalingPolicySettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createAutoscalingPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateAutoscalingPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getAutoscalingPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listAutoscalingPoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteAutoscalingPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(AutoscalingPolicyServiceStubSettings settings) {
@@ -537,7 +395,47 @@ public class AutoscalingPolicyServiceStubSettings
               deleteAutoscalingPolicySettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createAutoscalingPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateAutoscalingPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getAutoscalingPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listAutoscalingPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteAutoscalingPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

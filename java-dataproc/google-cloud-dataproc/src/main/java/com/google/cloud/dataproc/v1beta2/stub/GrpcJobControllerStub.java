@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,17 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dataproc.v1beta2.stub;
 
 import static com.google.cloud.dataproc.v1beta2.JobControllerClient.ListJobsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1beta2.CancelJobRequest;
 import com.google.cloud.dataproc.v1beta2.DeleteJobRequest;
@@ -34,25 +35,25 @@ import com.google.cloud.dataproc.v1beta2.ListJobsRequest;
 import com.google.cloud.dataproc.v1beta2.ListJobsResponse;
 import com.google.cloud.dataproc.v1beta2.SubmitJobRequest;
 import com.google.cloud.dataproc.v1beta2.UpdateJobRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Dataproc API.
+ * gRPC stub implementation for the JobController service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcJobControllerStub extends JobControllerStub {
-
   private static final MethodDescriptor<SubmitJobRequest, Job> submitJobMethodDescriptor =
       MethodDescriptor.<SubmitJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -60,6 +61,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SubmitJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<SubmitJobRequest, Operation>
       submitJobAsOperationMethodDescriptor =
           MethodDescriptor.<SubmitJobRequest, Operation>newBuilder()
@@ -68,6 +70,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SubmitJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
       MethodDescriptor.<GetJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -75,6 +78,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
       listJobsMethodDescriptor =
           MethodDescriptor.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -83,6 +87,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
       MethodDescriptor.<UpdateJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -90,6 +95,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CancelJobRequest, Job> cancelJobMethodDescriptor =
       MethodDescriptor.<CancelJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -97,6 +103,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CancelJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
       MethodDescriptor.<DeleteJobRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -104,9 +111,6 @@ public class GrpcJobControllerStub extends JobControllerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<SubmitJobRequest, Job> submitJobCallable;
   private final UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable;
@@ -119,6 +123,8 @@ public class GrpcJobControllerStub extends JobControllerStub {
   private final UnaryCallable<CancelJobRequest, Job> cancelJobCallable;
   private final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcJobControllerStub create(JobControllerStubSettings settings)
@@ -162,30 +168,104 @@ public class GrpcJobControllerStub extends JobControllerStub {
     GrpcCallSettings<SubmitJobRequest, Job> submitJobTransportSettings =
         GrpcCallSettings.<SubmitJobRequest, Job>newBuilder()
             .setMethodDescriptor(submitJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SubmitJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(SubmitJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("region", String.valueOf(request.getRegion()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<SubmitJobRequest, Operation> submitJobAsOperationTransportSettings =
         GrpcCallSettings.<SubmitJobRequest, Operation>newBuilder()
             .setMethodDescriptor(submitJobAsOperationMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SubmitJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(SubmitJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("region", String.valueOf(request.getRegion()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
             .setMethodDescriptor(getJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("job_id", String.valueOf(request.getJobId()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("region", String.valueOf(request.getRegion()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
             .setMethodDescriptor(listJobsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListJobsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListJobsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("region", String.valueOf(request.getRegion()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
         GrpcCallSettings.<UpdateJobRequest, Job>newBuilder()
             .setMethodDescriptor(updateJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("job_id", String.valueOf(request.getJobId()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("region", String.valueOf(request.getRegion()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CancelJobRequest, Job> cancelJobTransportSettings =
         GrpcCallSettings.<CancelJobRequest, Job>newBuilder()
             .setMethodDescriptor(cancelJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CancelJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(CancelJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("job_id", String.valueOf(request.getJobId()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("region", String.valueOf(request.getRegion()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("job_id", String.valueOf(request.getJobId()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("region", String.valueOf(request.getRegion()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.submitJobCallable =
@@ -201,7 +281,7 @@ public class GrpcJobControllerStub extends JobControllerStub {
             submitJobAsOperationTransportSettings,
             settings.submitJobAsOperationOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getJobCallable =
         callableFactory.createUnaryCallable(
             getJobTransportSettings, settings.getJobSettings(), clientContext);
@@ -221,10 +301,10 @@ public class GrpcJobControllerStub extends JobControllerStub {
         callableFactory.createUnaryCallable(
             deleteJobTransportSettings, settings.deleteJobSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -233,26 +313,25 @@ public class GrpcJobControllerStub extends JobControllerStub {
     return submitJobCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable() {
+    return submitJobAsOperationCallable;
+  }
+
   public OperationCallable<SubmitJobRequest, Job, JobMetadata>
       submitJobAsOperationOperationCallable() {
     return submitJobAsOperationOperationCallable;
-  }
-
-  public UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable() {
-    return submitJobAsOperationCallable;
   }
 
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {
     return getJobCallable;
   }
 
-  public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
-    return listJobsPagedCallable;
-  }
-
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return listJobsCallable;
+  }
+
+  public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
+    return listJobsPagedCallable;
   }
 
   public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {

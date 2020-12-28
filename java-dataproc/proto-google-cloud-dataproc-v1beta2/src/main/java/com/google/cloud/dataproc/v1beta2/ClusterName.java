@@ -28,30 +28,38 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class RegionName implements ResourceName {
-  private static final PathTemplate PROJECT_REGION =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}");
+public class ClusterName implements ResourceName {
+  private static final PathTemplate PROJECT_LOCATION_CLUSTER =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/clusters/{cluster}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
-  private final String region;
+  private final String location;
+  private final String cluster;
 
   @Deprecated
-  protected RegionName() {
+  protected ClusterName() {
     project = null;
-    region = null;
+    location = null;
+    cluster = null;
   }
 
-  private RegionName(Builder builder) {
+  private ClusterName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    region = Preconditions.checkNotNull(builder.getRegion());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    cluster = Preconditions.checkNotNull(builder.getCluster());
   }
 
   public String getProject() {
     return project;
   }
 
-  public String getRegion() {
-    return region;
+  public String getLocation() {
+    return location;
+  }
+
+  public String getCluster() {
+    return cluster;
   }
 
   public static Builder newBuilder() {
@@ -62,35 +70,40 @@ public class RegionName implements ResourceName {
     return new Builder(this);
   }
 
-  public static RegionName of(String project, String region) {
-    return newBuilder().setProject(project).setRegion(region).build();
+  public static ClusterName of(String project, String location, String cluster) {
+    return newBuilder().setProject(project).setLocation(location).setCluster(cluster).build();
   }
 
-  public static String format(String project, String region) {
-    return newBuilder().setProject(project).setRegion(region).build().toString();
+  public static String format(String project, String location, String cluster) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCluster(cluster)
+        .build()
+        .toString();
   }
 
-  public static RegionName parse(String formattedString) {
+  public static ClusterName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT_REGION.validatedMatch(
-            formattedString, "RegionName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("region"));
+        PROJECT_LOCATION_CLUSTER.validatedMatch(
+            formattedString, "ClusterName.parse: formattedString not in valid format");
+    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("cluster"));
   }
 
-  public static List<RegionName> parseList(List<String> formattedStrings) {
-    List<RegionName> list = new ArrayList<>(formattedStrings.size());
+  public static List<ClusterName> parseList(List<String> formattedStrings) {
+    List<ClusterName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<RegionName> values) {
+  public static List<String> toStringList(List<ClusterName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (RegionName value : values) {
+    for (ClusterName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -101,7 +114,7 @@ public class RegionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_REGION.matches(formattedString);
+    return PROJECT_LOCATION_CLUSTER.matches(formattedString);
   }
 
   @Override
@@ -113,8 +126,11 @@ public class RegionName implements ResourceName {
           if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (region != null) {
-            fieldMapBuilder.put("region", region);
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (cluster != null) {
+            fieldMapBuilder.put("cluster", cluster);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -129,7 +145,8 @@ public class RegionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_REGION.instantiate("project", project, "region", region);
+    return PROJECT_LOCATION_CLUSTER.instantiate(
+        "project", project, "location", location, "cluster", cluster);
   }
 
   @Override
@@ -138,8 +155,10 @@ public class RegionName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      RegionName that = ((RegionName) o);
-      return Objects.equals(this.project, that.project) && Objects.equals(this.region, that.region);
+      ClusterName that = ((ClusterName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.cluster, that.cluster);
     }
     return false;
   }
@@ -150,14 +169,17 @@ public class RegionName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
-    h ^= Objects.hashCode(region);
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(cluster);
     return h;
   }
 
-  /** Builder for projects/{project}/regions/{region}. */
+  /** Builder for projects/{project}/locations/{location}/clusters/{cluster}. */
   public static class Builder {
     private String project;
-    private String region;
+    private String location;
+    private String cluster;
 
     protected Builder() {}
 
@@ -165,8 +187,12 @@ public class RegionName implements ResourceName {
       return project;
     }
 
-    public String getRegion() {
-      return region;
+    public String getLocation() {
+      return location;
+    }
+
+    public String getCluster() {
+      return cluster;
     }
 
     public Builder setProject(String project) {
@@ -174,18 +200,24 @@ public class RegionName implements ResourceName {
       return this;
     }
 
-    public Builder setRegion(String region) {
-      this.region = region;
+    public Builder setLocation(String location) {
+      this.location = location;
       return this;
     }
 
-    private Builder(RegionName regionName) {
-      project = regionName.project;
-      region = regionName.region;
+    public Builder setCluster(String cluster) {
+      this.cluster = cluster;
+      return this;
     }
 
-    public RegionName build() {
-      return new RegionName(this);
+    private Builder(ClusterName clusterName) {
+      project = clusterName.project;
+      location = clusterName.location;
+      cluster = clusterName.cluster;
+    }
+
+    public ClusterName build() {
+      return new ClusterName(this);
     }
   }
 }

@@ -202,6 +202,51 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
               clusterUuid_ = s;
               break;
             }
+          case 98:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (dagTimeout_ != null) {
+                subBuilder = dagTimeout_.toBuilder();
+              }
+              dagTimeout_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dagTimeout_);
+                dagTimeout_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 106:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (dagStartTime_ != null) {
+                subBuilder = dagStartTime_.toBuilder();
+              }
+              dagStartTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dagStartTime_);
+                dagStartTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 114:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (dagEndTime_ != null) {
+                subBuilder = dagEndTime_.toBuilder();
+              }
+              dagEndTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dagEndTime_);
+                dagEndTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1009,6 +1054,185 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int DAG_TIMEOUT_FIELD_NUMBER = 12;
+  private com.google.protobuf.Duration dagTimeout_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timeout duration for the DAG of jobs.
+   * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+   * as a
+   * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+   * For example, "1800" = 1800 seconds/30 minutes duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dagTimeout field is set.
+   */
+  @java.lang.Override
+  public boolean hasDagTimeout() {
+    return dagTimeout_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timeout duration for the DAG of jobs.
+   * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+   * as a
+   * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+   * For example, "1800" = 1800 seconds/30 minutes duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dagTimeout.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getDagTimeout() {
+    return dagTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : dagTimeout_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timeout duration for the DAG of jobs.
+   * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+   * as a
+   * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+   * For example, "1800" = 1800 seconds/30 minutes duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getDagTimeoutOrBuilder() {
+    return getDagTimeout();
+  }
+
+  public static final int DAG_START_TIME_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp dagStartTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG start time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG begins.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dagStartTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDagStartTime() {
+    return dagStartTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG start time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG begins.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dagStartTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDagStartTime() {
+    return dagStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : dagStartTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG start time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG begins.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDagStartTimeOrBuilder() {
+    return getDagStartTime();
+  }
+
+  public static final int DAG_END_TIME_FIELD_NUMBER = 14;
+  private com.google.protobuf.Timestamp dagEndTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG end time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG ends.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dagEndTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDagEndTime() {
+    return dagEndTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG end time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG ends.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dagEndTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDagEndTime() {
+    return dagEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dagEndTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. DAG end time, which is only set for workflows with
+   * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+   * when the DAG ends.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDagEndTimeOrBuilder() {
+    return getDagEndTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1054,6 +1278,15 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     }
     if (!getClusterUuidBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, clusterUuid_);
+    }
+    if (dagTimeout_ != null) {
+      output.writeMessage(12, getDagTimeout());
+    }
+    if (dagStartTime_ != null) {
+      output.writeMessage(13, getDagStartTime());
+    }
+    if (dagEndTime_ != null) {
+      output.writeMessage(14, getDagEndTime());
     }
     unknownFields.writeTo(output);
   }
@@ -1104,6 +1337,15 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     if (!getClusterUuidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, clusterUuid_);
     }
+    if (dagTimeout_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getDagTimeout());
+    }
+    if (dagStartTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getDagStartTime());
+    }
+    if (dagEndTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getDagEndTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1146,6 +1388,18 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
     if (!getClusterUuid().equals(other.getClusterUuid())) return false;
+    if (hasDagTimeout() != other.hasDagTimeout()) return false;
+    if (hasDagTimeout()) {
+      if (!getDagTimeout().equals(other.getDagTimeout())) return false;
+    }
+    if (hasDagStartTime() != other.hasDagStartTime()) return false;
+    if (hasDagStartTime()) {
+      if (!getDagStartTime().equals(other.getDagStartTime())) return false;
+    }
+    if (hasDagEndTime() != other.hasDagEndTime()) return false;
+    if (hasDagEndTime()) {
+      if (!getDagEndTime().equals(other.getDagEndTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1191,6 +1445,18 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + CLUSTER_UUID_FIELD_NUMBER;
     hash = (53 * hash) + getClusterUuid().hashCode();
+    if (hasDagTimeout()) {
+      hash = (37 * hash) + DAG_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getDagTimeout().hashCode();
+    }
+    if (hasDagStartTime()) {
+      hash = (37 * hash) + DAG_START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDagStartTime().hashCode();
+    }
+    if (hasDagEndTime()) {
+      hash = (37 * hash) + DAG_END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDagEndTime().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1397,6 +1663,24 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       }
       clusterUuid_ = "";
 
+      if (dagTimeoutBuilder_ == null) {
+        dagTimeout_ = null;
+      } else {
+        dagTimeout_ = null;
+        dagTimeoutBuilder_ = null;
+      }
+      if (dagStartTimeBuilder_ == null) {
+        dagStartTime_ = null;
+      } else {
+        dagStartTime_ = null;
+        dagStartTimeBuilder_ = null;
+      }
+      if (dagEndTimeBuilder_ == null) {
+        dagEndTime_ = null;
+      } else {
+        dagEndTime_ = null;
+        dagEndTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1457,6 +1741,21 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
         result.endTime_ = endTimeBuilder_.build();
       }
       result.clusterUuid_ = clusterUuid_;
+      if (dagTimeoutBuilder_ == null) {
+        result.dagTimeout_ = dagTimeout_;
+      } else {
+        result.dagTimeout_ = dagTimeoutBuilder_.build();
+      }
+      if (dagStartTimeBuilder_ == null) {
+        result.dagStartTime_ = dagStartTime_;
+      } else {
+        result.dagStartTime_ = dagStartTimeBuilder_.build();
+      }
+      if (dagEndTimeBuilder_ == null) {
+        result.dagEndTime_ = dagEndTime_;
+      } else {
+        result.dagEndTime_ = dagEndTimeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1540,6 +1839,15 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       if (!other.getClusterUuid().isEmpty()) {
         clusterUuid_ = other.clusterUuid_;
         onChanged();
+      }
+      if (other.hasDagTimeout()) {
+        mergeDagTimeout(other.getDagTimeout());
+      }
+      if (other.hasDagStartTime()) {
+        mergeDagStartTime(other.getDagStartTime());
+      }
+      if (other.hasDagEndTime()) {
+        mergeDagEndTime(other.getDagEndTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3230,6 +3538,683 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       clusterUuid_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration dagTimeout_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        dagTimeoutBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timeout duration for the DAG of jobs.
+     * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+     * as a
+     * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+     * For example, "1800" = 1800 seconds/30 minutes duration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dagTimeout field is set.
+     */
+    public boolean hasDagTimeout() {
+      return dagTimeoutBuilder_ != null || dagTimeout_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timeout duration for the DAG of jobs.
+     * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+     * as a
+     * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+     * For example, "1800" = 1800 seconds/30 minutes duration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dagTimeout.
+     */
+    public com.google.protobuf.Duration getDagTimeout() {
+      if (dagTimeoutBuilder_ == null) {
+        return dagTimeout_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : dagTimeout_;
+      } else {
+        return dagTimeoutBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timeout duration for the DAG of jobs.
+     * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+     * as a
+     * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+     * For example, "1800" = 1800 seconds/30 minutes duration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDagTimeout(com.google.protobuf.Duration value) {
+      if (dagTimeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dagTimeout_ = value;
+        onChanged();
+      } else {
+        dagTimeoutBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timeout duration for the DAG of jobs.
+     * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+     * as a
+     * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+     * For example, "1800" = 1800 seconds/30 minutes duration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDagTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+      if (dagTimeoutBuilder_ == null) {
+        dagTimeout_ = builderForValue.build();
+        onChanged();
+      } else {
+        dagTimeoutBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timeout duration for the DAG of jobs.
+     * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+     * as a
+     * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+     * For example, "1800" = 1800 seconds/30 minutes duration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDagTimeout(com.google.protobuf.Duration value) {
+      if (dagTimeoutBuilder_ == null) {
+        if (dagTimeout_ != null) {
+          dagTimeout_ =
+              com.google.protobuf.Duration.newBuilder(dagTimeout_).mergeFrom(value).buildPartial();
+        } else {
+          dagTimeout_ = value;
+        }
+        onChanged();
+      } else {
+        dagTimeoutBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timeout duration for the DAG of jobs.
+     * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+     * as a
+     * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+     * For example, "1800" = 1800 seconds/30 minutes duration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDagTimeout() {
+      if (dagTimeoutBuilder_ == null) {
+        dagTimeout_ = null;
+        onChanged();
+      } else {
+        dagTimeout_ = null;
+        dagTimeoutBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timeout duration for the DAG of jobs.
+     * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+     * as a
+     * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+     * For example, "1800" = 1800 seconds/30 minutes duration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getDagTimeoutBuilder() {
+
+      onChanged();
+      return getDagTimeoutFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timeout duration for the DAG of jobs.
+     * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+     * as a
+     * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+     * For example, "1800" = 1800 seconds/30 minutes duration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getDagTimeoutOrBuilder() {
+      if (dagTimeoutBuilder_ != null) {
+        return dagTimeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return dagTimeout_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : dagTimeout_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timeout duration for the DAG of jobs.
+     * Minimum timeout duration is 10 minutes and maximum is 24 hours, expressed
+     * as a
+     * [google.protobuf.Duration][https://developers.google.com/protocol-buffers/docs/proto3#json_mapping].
+     * For example, "1800" = 1800 seconds/30 minutes duration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration dag_timeout = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getDagTimeoutFieldBuilder() {
+      if (dagTimeoutBuilder_ == null) {
+        dagTimeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getDagTimeout(), getParentForChildren(), isClean());
+        dagTimeout_ = null;
+      }
+      return dagTimeoutBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp dagStartTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        dagStartTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG start time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG begins.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dagStartTime field is set.
+     */
+    public boolean hasDagStartTime() {
+      return dagStartTimeBuilder_ != null || dagStartTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG start time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG begins.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dagStartTime.
+     */
+    public com.google.protobuf.Timestamp getDagStartTime() {
+      if (dagStartTimeBuilder_ == null) {
+        return dagStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : dagStartTime_;
+      } else {
+        return dagStartTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG start time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG begins.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDagStartTime(com.google.protobuf.Timestamp value) {
+      if (dagStartTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dagStartTime_ = value;
+        onChanged();
+      } else {
+        dagStartTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG start time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG begins.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDagStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (dagStartTimeBuilder_ == null) {
+        dagStartTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        dagStartTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG start time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG begins.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDagStartTime(com.google.protobuf.Timestamp value) {
+      if (dagStartTimeBuilder_ == null) {
+        if (dagStartTime_ != null) {
+          dagStartTime_ =
+              com.google.protobuf.Timestamp.newBuilder(dagStartTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dagStartTime_ = value;
+        }
+        onChanged();
+      } else {
+        dagStartTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG start time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG begins.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDagStartTime() {
+      if (dagStartTimeBuilder_ == null) {
+        dagStartTime_ = null;
+        onChanged();
+      } else {
+        dagStartTime_ = null;
+        dagStartTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG start time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG begins.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDagStartTimeBuilder() {
+
+      onChanged();
+      return getDagStartTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG start time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG begins.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDagStartTimeOrBuilder() {
+      if (dagStartTimeBuilder_ != null) {
+        return dagStartTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return dagStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : dagStartTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG start time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG begins.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getDagStartTimeFieldBuilder() {
+      if (dagStartTimeBuilder_ == null) {
+        dagStartTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDagStartTime(), getParentForChildren(), isClean());
+        dagStartTime_ = null;
+      }
+      return dagStartTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp dagEndTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        dagEndTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG end time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG ends.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dagEndTime field is set.
+     */
+    public boolean hasDagEndTime() {
+      return dagEndTimeBuilder_ != null || dagEndTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG end time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG ends.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dagEndTime.
+     */
+    public com.google.protobuf.Timestamp getDagEndTime() {
+      if (dagEndTimeBuilder_ == null) {
+        return dagEndTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : dagEndTime_;
+      } else {
+        return dagEndTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG end time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG ends.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDagEndTime(com.google.protobuf.Timestamp value) {
+      if (dagEndTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dagEndTime_ = value;
+        onChanged();
+      } else {
+        dagEndTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG end time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG ends.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDagEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (dagEndTimeBuilder_ == null) {
+        dagEndTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        dagEndTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG end time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG ends.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDagEndTime(com.google.protobuf.Timestamp value) {
+      if (dagEndTimeBuilder_ == null) {
+        if (dagEndTime_ != null) {
+          dagEndTime_ =
+              com.google.protobuf.Timestamp.newBuilder(dagEndTime_).mergeFrom(value).buildPartial();
+        } else {
+          dagEndTime_ = value;
+        }
+        onChanged();
+      } else {
+        dagEndTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG end time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG ends.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDagEndTime() {
+      if (dagEndTimeBuilder_ == null) {
+        dagEndTime_ = null;
+        onChanged();
+      } else {
+        dagEndTime_ = null;
+        dagEndTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG end time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG ends.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDagEndTimeBuilder() {
+
+      onChanged();
+      return getDagEndTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG end time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG ends.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDagEndTimeOrBuilder() {
+      if (dagEndTimeBuilder_ != null) {
+        return dagEndTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return dagEndTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : dagEndTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. DAG end time, which is only set for workflows with
+     * [dag_timeout][google.cloud.dataproc.v1beta2.WorkflowMetadata.dag_timeout]
+     * when the DAG ends.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getDagEndTimeFieldBuilder() {
+      if (dagEndTimeBuilder_ == null) {
+        dagEndTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDagEndTime(), getParentForChildren(), isClean());
+        dagEndTime_ = null;
+      }
+      return dagEndTimeBuilder_;
     }
 
     @java.lang.Override

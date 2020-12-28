@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dataproc.v1;
 
 import static com.google.cloud.dataproc.v1.JobControllerClient.ListJobsPagedResponse;
@@ -36,7 +37,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link JobControllerClient}.
  *
@@ -53,36 +54,34 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of submitJob to 30 seconds:
  *
- * <pre>
- * <code>
- * JobControllerSettings.Builder jobControllerSettingsBuilder =
- *     JobControllerSettings.newBuilder();
+ * <pre>{@code
+ * JobControllerSettings.Builder jobControllerSettingsBuilder = JobControllerSettings.newBuilder();
  * jobControllerSettingsBuilder
  *     .submitJobSettings()
  *     .setRetrySettings(
- *         jobControllerSettingsBuilder.submitJobSettings().getRetrySettings().toBuilder()
+ *         jobControllerSettingsBuilder
+ *             .submitJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobControllerSettings jobControllerSettings = jobControllerSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class JobControllerSettings extends ClientSettings<JobControllerSettings> {
+
   /** Returns the object with the settings used for calls to submitJob. */
   public UnaryCallSettings<SubmitJobRequest, Job> submitJobSettings() {
     return ((JobControllerStubSettings) getStubSettings()).submitJobSettings();
   }
 
-  /** Returns the object with the settings used for calls to submitJobAsOperation. */
+  /** Returns the object with the settings used for calls to submitJobAs. */
   public UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
     return ((JobControllerStubSettings) getStubSettings()).submitJobAsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to submitJobAsOperation. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
       submitJobAsOperationOperationSettings() {
     return ((JobControllerStubSettings) getStubSettings()).submitJobAsOperationOperationSettings();
@@ -174,16 +173,13 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
 
   /** Builder for JobControllerSettings. */
   public static class Builder extends ClientSettings.Builder<JobControllerSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(JobControllerStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(JobControllerStubSettings.newBuilder());
     }
 
     protected Builder(JobControllerSettings settings) {
@@ -194,11 +190,15 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(JobControllerStubSettings.newBuilder());
+    }
+
     public JobControllerStubSettings.Builder getStubSettingsBuilder() {
       return ((JobControllerStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -216,14 +216,12 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
       return getStubSettingsBuilder().submitJobSettings();
     }
 
-    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
+    /** Returns the builder for the settings used for calls to submitJobAs. */
     public UnaryCallSettings.Builder<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
       return getStubSettingsBuilder().submitJobAsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to submitJobAsOperation. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
         submitJobAsOperationOperationSettings() {
       return getStubSettingsBuilder().submitJobAsOperationOperationSettings();

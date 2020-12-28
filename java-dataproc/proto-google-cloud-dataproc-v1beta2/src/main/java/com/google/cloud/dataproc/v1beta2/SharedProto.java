@@ -37,15 +37,15 @@ public final class SharedProto {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/dataproc/v1beta2/shared.p"
           + "roto\022\035google.cloud.dataproc.v1beta2\032\034goo"
-          + "gle/api/annotations.proto*\302\001\n\tComponent\022"
+          + "gle/api/annotations.proto*\266\001\n\tComponent\022"
           + "\031\n\025COMPONENT_UNSPECIFIED\020\000\022\014\n\010ANACONDA\020\005"
-          + "\022\n\n\006DOCKER\020\r\022\t\n\005DRUID\020\t\022\t\n\005FLINK\020\016\022\020\n\014HI"
-          + "VE_WEBHCAT\020\003\022\013\n\007JUPYTER\020\001\022\014\n\010KERBEROS\020\007\022"
-          + "\n\n\006PRESTO\020\006\022\n\n\006RANGER\020\014\022\010\n\004SOLR\020\n\022\014\n\010ZEP"
-          + "PELIN\020\004\022\r\n\tZOOKEEPER\020\010By\n!com.google.clo"
-          + "ud.dataproc.v1beta2B\013SharedProtoP\001ZEgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "dataproc/v1beta2;dataprocb\006proto3"
+          + "\022\t\n\005DRUID\020\t\022\t\n\005HBASE\020\013\022\020\n\014HIVE_WEBHCAT\020\003"
+          + "\022\013\n\007JUPYTER\020\001\022\014\n\010KERBEROS\020\007\022\n\n\006PRESTO\020\006\022"
+          + "\n\n\006RANGER\020\014\022\010\n\004SOLR\020\n\022\014\n\010ZEPPELIN\020\004\022\r\n\tZ"
+          + "OOKEEPER\020\010By\n!com.google.cloud.dataproc."
+          + "v1beta2B\013SharedProtoP\001ZEgoogle.golang.or"
+          + "g/genproto/googleapis/cloud/dataproc/v1b"
+          + "eta2;dataprocb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

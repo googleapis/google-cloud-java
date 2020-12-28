@@ -299,7 +299,7 @@ public final class JobsProto {
           + "DONE\020\005\022\t\n\005ERROR\020\006\022\023\n\017ATTEMPT_FAILURE\020\t\"H"
           + "\n\010Substate\022\017\n\013UNSPECIFIED\020\000\022\r\n\tSUBMITTED"
           + "\020\001\022\n\n\006QUEUED\020\002\022\020\n\014STALE_STATUS\020\003\"<\n\014JobR"
-          + "eference\022\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\023\n\006job"
+          + "eference\022\027\n\nproject_id\030\001 \001(\tB\003\340A\001\022\023\n\006job"
           + "_id\030\002 \001(\tB\003\340A\001\"\252\002\n\017YarnApplication\022\021\n\004na"
           + "me\030\001 \001(\tB\003\340A\003\022H\n\005state\030\002 \001(\01624.google.cl"
           + "oud.dataproc.v1beta2.YarnApplication.Sta"

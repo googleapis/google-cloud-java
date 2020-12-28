@@ -165,7 +165,7 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * Optional. The [Dataproc service
-   * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+   * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_dataproc)
    * (also see [VM Data Plane
    * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
    * used by Dataproc cluster VM instances to access Google Cloud Platform
@@ -186,7 +186,7 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * Optional. The [Dataproc service
-   * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc)
+   * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_dataproc)
    * (also see [VM Data Plane
    * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
    * used by Dataproc cluster VM instances to access Google Cloud Platform

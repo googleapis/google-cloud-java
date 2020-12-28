@@ -42,6 +42,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     imageUri_ = "";
     machineTypeUri_ = "";
+    preemptibility_ = 0;
     accelerators_ = java.util.Collections.emptyList();
     minCpuPlatform_ = "";
   }
@@ -163,6 +164,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
               minCpuPlatform_ = s;
               break;
             }
+          case 80:
+            {
+              int rawValue = input.readEnum();
+
+              preemptibility_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -201,6 +209,176 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.class,
             com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Controls the use of
+   * [preemptible instances]
+   * (https://cloud.google.com/compute/docs/instances/preemptible)
+   * within the group.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility}
+   */
+  public enum Preemptibility implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Preemptibility is unspecified, the system will choose the
+     * appropriate setting for each instance group.
+     * </pre>
+     *
+     * <code>PREEMPTIBILITY_UNSPECIFIED = 0;</code>
+     */
+    PREEMPTIBILITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Instances are non-preemptible.
+     * This option is allowed for all instance groups and is the only valid
+     * value for Master and Worker instance groups.
+     * </pre>
+     *
+     * <code>NON_PREEMPTIBLE = 1;</code>
+     */
+    NON_PREEMPTIBLE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Instances are preemptible.
+     * This option is allowed only for secondary worker groups.
+     * </pre>
+     *
+     * <code>PREEMPTIBLE = 2;</code>
+     */
+    PREEMPTIBLE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Preemptibility is unspecified, the system will choose the
+     * appropriate setting for each instance group.
+     * </pre>
+     *
+     * <code>PREEMPTIBILITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int PREEMPTIBILITY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Instances are non-preemptible.
+     * This option is allowed for all instance groups and is the only valid
+     * value for Master and Worker instance groups.
+     * </pre>
+     *
+     * <code>NON_PREEMPTIBLE = 1;</code>
+     */
+    public static final int NON_PREEMPTIBLE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Instances are preemptible.
+     * This option is allowed only for secondary worker groups.
+     * </pre>
+     *
+     * <code>PREEMPTIBLE = 2;</code>
+     */
+    public static final int PREEMPTIBLE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Preemptibility valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Preemptibility forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PREEMPTIBILITY_UNSPECIFIED;
+        case 1:
+          return NON_PREEMPTIBLE;
+        case 2:
+          return PREEMPTIBLE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Preemptibility> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Preemptibility> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Preemptibility>() {
+          public Preemptibility findValueByNumber(int number) {
+            return Preemptibility.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Preemptibility[] VALUES = values();
+
+    public static Preemptibility valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Preemptibility(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility)
   }
 
   public static final int NUM_INSTANCES_FIELD_NUMBER = 1;
@@ -498,6 +676,57 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     return isPreemptible_;
   }
 
+  public static final int PREEMPTIBILITY_FIELD_NUMBER = 10;
+  private int preemptibility_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the preemptibility of the instance group.
+   * The default value for master and worker groups is
+   * `NON_PREEMPTIBLE`. This default cannot be changed.
+   * The default value for secondary instances is
+   * `PREEMPTIBLE`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility preemptibility = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for preemptibility.
+   */
+  @java.lang.Override
+  public int getPreemptibilityValue() {
+    return preemptibility_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the preemptibility of the instance group.
+   * The default value for master and worker groups is
+   * `NON_PREEMPTIBLE`. This default cannot be changed.
+   * The default value for secondary instances is
+   * `PREEMPTIBLE`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility preemptibility = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The preemptibility.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility getPreemptibility() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility result =
+        com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility.valueOf(
+            preemptibility_);
+    return result == null
+        ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility.UNRECOGNIZED
+        : result;
+  }
+
   public static final int MANAGED_GROUP_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.dataproc.v1beta2.ManagedGroupConfig managedGroupConfig_;
   /**
@@ -738,6 +967,12 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     if (!getMinCpuPlatformBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, minCpuPlatform_);
     }
+    if (preemptibility_
+        != com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility
+            .PREEMPTIBILITY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, preemptibility_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -779,6 +1014,12 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     if (!getMinCpuPlatformBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, minCpuPlatform_);
     }
+    if (preemptibility_
+        != com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility
+            .PREEMPTIBILITY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, preemptibility_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -804,6 +1045,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       if (!getDiskConfig().equals(other.getDiskConfig())) return false;
     }
     if (getIsPreemptible() != other.getIsPreemptible()) return false;
+    if (preemptibility_ != other.preemptibility_) return false;
     if (hasManagedGroupConfig() != other.hasManagedGroupConfig()) return false;
     if (hasManagedGroupConfig()) {
       if (!getManagedGroupConfig().equals(other.getManagedGroupConfig())) return false;
@@ -837,6 +1079,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + IS_PREEMPTIBLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsPreemptible());
+    hash = (37 * hash) + PREEMPTIBILITY_FIELD_NUMBER;
+    hash = (53 * hash) + preemptibility_;
     if (hasManagedGroupConfig()) {
       hash = (37 * hash) + MANAGED_GROUP_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getManagedGroupConfig().hashCode();
@@ -1012,6 +1256,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       isPreemptible_ = false;
 
+      preemptibility_ = 0;
+
       if (managedGroupConfigBuilder_ == null) {
         managedGroupConfig_ = null;
       } else {
@@ -1068,6 +1314,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         result.diskConfig_ = diskConfigBuilder_.build();
       }
       result.isPreemptible_ = isPreemptible_;
+      result.preemptibility_ = preemptibility_;
       if (managedGroupConfigBuilder_ == null) {
         result.managedGroupConfig_ = managedGroupConfig_;
       } else {
@@ -1159,6 +1406,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       if (other.getIsPreemptible() != false) {
         setIsPreemptible(other.getIsPreemptible());
+      }
+      if (other.preemptibility_ != 0) {
+        setPreemptibilityValue(other.getPreemptibilityValue());
       }
       if (other.hasManagedGroupConfig()) {
         mergeManagedGroupConfig(other.getManagedGroupConfig());
@@ -2025,6 +2275,132 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public Builder clearIsPreemptible() {
 
       isPreemptible_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int preemptibility_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the preemptibility of the instance group.
+     * The default value for master and worker groups is
+     * `NON_PREEMPTIBLE`. This default cannot be changed.
+     * The default value for secondary instances is
+     * `PREEMPTIBLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility preemptibility = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for preemptibility.
+     */
+    @java.lang.Override
+    public int getPreemptibilityValue() {
+      return preemptibility_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the preemptibility of the instance group.
+     * The default value for master and worker groups is
+     * `NON_PREEMPTIBLE`. This default cannot be changed.
+     * The default value for secondary instances is
+     * `PREEMPTIBLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility preemptibility = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for preemptibility to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreemptibilityValue(int value) {
+
+      preemptibility_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the preemptibility of the instance group.
+     * The default value for master and worker groups is
+     * `NON_PREEMPTIBLE`. This default cannot be changed.
+     * The default value for secondary instances is
+     * `PREEMPTIBLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility preemptibility = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The preemptibility.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility
+        getPreemptibility() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility result =
+          com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility.valueOf(
+              preemptibility_);
+      return result == null
+          ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the preemptibility of the instance group.
+     * The default value for master and worker groups is
+     * `NON_PREEMPTIBLE`. This default cannot be changed.
+     * The default value for secondary instances is
+     * `PREEMPTIBLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility preemptibility = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The preemptibility to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreemptibility(
+        com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      preemptibility_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the preemptibility of the instance group.
+     * The default value for master and worker groups is
+     * `NON_PREEMPTIBLE`. This default cannot be changed.
+     * The default value for secondary instances is
+     * `PREEMPTIBLE`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility preemptibility = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPreemptibility() {
+
+      preemptibility_ = 0;
       onChanged();
       return this;
     }

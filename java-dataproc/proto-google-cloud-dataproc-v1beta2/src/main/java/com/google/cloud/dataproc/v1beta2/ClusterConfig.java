@@ -39,6 +39,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
 
   private ClusterConfig() {
     configBucket_ = "";
+    tempBucket_ = "";
     initializationActions_ = java.util.Collections.emptyList();
   }
 
@@ -77,6 +78,13 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               configBucket_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tempBucket_ = s;
               break;
             }
           case 66:
@@ -373,6 +381,67 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       configBucket_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TEMP_BUCKET_FIELD_NUMBER = 2;
+  private volatile java.lang.Object tempBucket_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+   * data, such as Spark and MapReduce history files. If you do not specify a
+   * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+   * EU) for your cluster's temp bucket according to the Compute Engine zone
+   * where your cluster is deployed, and then create and manage this
+   * project-level, per-location bucket. The default bucket has a TTL of 90
+   * days, but you can use any TTL (or none) if you specify a bucket.
+   * </pre>
+   *
+   * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The tempBucket.
+   */
+  @java.lang.Override
+  public java.lang.String getTempBucket() {
+    java.lang.Object ref = tempBucket_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tempBucket_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+   * data, such as Spark and MapReduce history files. If you do not specify a
+   * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+   * EU) for your cluster's temp bucket according to the Compute Engine zone
+   * where your cluster is deployed, and then create and manage this
+   * project-level, per-location bucket. The default bucket has a TTL of 90
+   * days, but you can use any TTL (or none) if you specify a bucket.
+   * </pre>
+   *
+   * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for tempBucket.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTempBucketBytes() {
+    java.lang.Object ref = tempBucket_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tempBucket_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1083,10 +1152,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-   * Setting this is considered mutually exclusive with Compute Engine-based
-   * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-   * `secondary_worker_config`, and `autoscaling_config`.
+   * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+   * Kubernetes. Setting this is considered mutually exclusive with Compute
+   * Engine-based options such as `gce_cluster_config`, `master_config`,
+   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
    * </pre>
    *
    * <code>
@@ -1103,10 +1172,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-   * Setting this is considered mutually exclusive with Compute Engine-based
-   * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-   * `secondary_worker_config`, and `autoscaling_config`.
+   * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+   * Kubernetes. Setting this is considered mutually exclusive with Compute
+   * Engine-based options such as `gce_cluster_config`, `master_config`,
+   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
    * </pre>
    *
    * <code>
@@ -1125,10 +1194,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-   * Setting this is considered mutually exclusive with Compute Engine-based
-   * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-   * `secondary_worker_config`, and `autoscaling_config`.
+   * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+   * Kubernetes. Setting this is considered mutually exclusive with Compute
+   * Engine-based options such as `gce_cluster_config`, `master_config`,
+   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
    * </pre>
    *
    * <code>
@@ -1157,6 +1226,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getConfigBucketBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, configBucket_);
+    }
+    if (!getTempBucketBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tempBucket_);
     }
     if (gceClusterConfig_ != null) {
       output.writeMessage(8, getGceClusterConfig());
@@ -1205,6 +1277,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!getConfigBucketBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, configBucket_);
+    }
+    if (!getTempBucketBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tempBucket_);
     }
     if (gceClusterConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getGceClusterConfig());
@@ -1262,6 +1337,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.dataproc.v1beta2.ClusterConfig) obj;
 
     if (!getConfigBucket().equals(other.getConfigBucket())) return false;
+    if (!getTempBucket().equals(other.getTempBucket())) return false;
     if (hasGceClusterConfig() != other.hasGceClusterConfig()) return false;
     if (hasGceClusterConfig()) {
       if (!getGceClusterConfig().equals(other.getGceClusterConfig())) return false;
@@ -1320,6 +1396,8 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CONFIG_BUCKET_FIELD_NUMBER;
     hash = (53 * hash) + getConfigBucket().hashCode();
+    hash = (37 * hash) + TEMP_BUCKET_FIELD_NUMBER;
+    hash = (53 * hash) + getTempBucket().hashCode();
     if (hasGceClusterConfig()) {
       hash = (37 * hash) + GCE_CLUSTER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGceClusterConfig().hashCode();
@@ -1517,6 +1595,8 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       configBucket_ = "";
 
+      tempBucket_ = "";
+
       if (gceClusterConfigBuilder_ == null) {
         gceClusterConfig_ = null;
       } else {
@@ -1618,6 +1698,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
           new com.google.cloud.dataproc.v1beta2.ClusterConfig(this);
       int from_bitField0_ = bitField0_;
       result.configBucket_ = configBucket_;
+      result.tempBucket_ = tempBucket_;
       if (gceClusterConfigBuilder_ == null) {
         result.gceClusterConfig_ = gceClusterConfig_;
       } else {
@@ -1734,6 +1815,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getConfigBucket().isEmpty()) {
         configBucket_ = other.configBucket_;
+        onChanged();
+      }
+      if (!other.getTempBucket().isEmpty()) {
+        tempBucket_ = other.tempBucket_;
         onChanged();
       }
       if (other.hasGceClusterConfig()) {
@@ -1969,6 +2054,142 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       configBucket_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object tempBucket_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+     * data, such as Spark and MapReduce history files. If you do not specify a
+     * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+     * EU) for your cluster's temp bucket according to the Compute Engine zone
+     * where your cluster is deployed, and then create and manage this
+     * project-level, per-location bucket. The default bucket has a TTL of 90
+     * days, but you can use any TTL (or none) if you specify a bucket.
+     * </pre>
+     *
+     * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The tempBucket.
+     */
+    public java.lang.String getTempBucket() {
+      java.lang.Object ref = tempBucket_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tempBucket_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+     * data, such as Spark and MapReduce history files. If you do not specify a
+     * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+     * EU) for your cluster's temp bucket according to the Compute Engine zone
+     * where your cluster is deployed, and then create and manage this
+     * project-level, per-location bucket. The default bucket has a TTL of 90
+     * days, but you can use any TTL (or none) if you specify a bucket.
+     * </pre>
+     *
+     * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for tempBucket.
+     */
+    public com.google.protobuf.ByteString getTempBucketBytes() {
+      java.lang.Object ref = tempBucket_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tempBucket_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+     * data, such as Spark and MapReduce history files. If you do not specify a
+     * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+     * EU) for your cluster's temp bucket according to the Compute Engine zone
+     * where your cluster is deployed, and then create and manage this
+     * project-level, per-location bucket. The default bucket has a TTL of 90
+     * days, but you can use any TTL (or none) if you specify a bucket.
+     * </pre>
+     *
+     * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The tempBucket to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTempBucket(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      tempBucket_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+     * data, such as Spark and MapReduce history files. If you do not specify a
+     * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+     * EU) for your cluster's temp bucket according to the Compute Engine zone
+     * where your cluster is deployed, and then create and manage this
+     * project-level, per-location bucket. The default bucket has a TTL of 90
+     * days, but you can use any TTL (or none) if you specify a bucket.
+     * </pre>
+     *
+     * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTempBucket() {
+
+      tempBucket_ = getDefaultInstance().getTempBucket();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+     * data, such as Spark and MapReduce history files. If you do not specify a
+     * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+     * EU) for your cluster's temp bucket according to the Compute Engine zone
+     * where your cluster is deployed, and then create and manage this
+     * project-level, per-location bucket. The default bucket has a TTL of 90
+     * days, but you can use any TTL (or none) if you specify a bucket.
+     * </pre>
+     *
+     * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for tempBucket to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTempBucketBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      tempBucket_ = value;
       onChanged();
       return this;
     }
@@ -4686,10 +4907,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-     * Setting this is considered mutually exclusive with Compute Engine-based
-     * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-     * `secondary_worker_config`, and `autoscaling_config`.
+     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
      * </pre>
      *
      * <code>
@@ -4705,10 +4926,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-     * Setting this is considered mutually exclusive with Compute Engine-based
-     * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-     * `secondary_worker_config`, and `autoscaling_config`.
+     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
      * </pre>
      *
      * <code>
@@ -4730,10 +4951,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-     * Setting this is considered mutually exclusive with Compute Engine-based
-     * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-     * `secondary_worker_config`, and `autoscaling_config`.
+     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
      * </pre>
      *
      * <code>
@@ -4757,10 +4978,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-     * Setting this is considered mutually exclusive with Compute Engine-based
-     * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-     * `secondary_worker_config`, and `autoscaling_config`.
+     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
      * </pre>
      *
      * <code>
@@ -4782,10 +5003,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-     * Setting this is considered mutually exclusive with Compute Engine-based
-     * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-     * `secondary_worker_config`, and `autoscaling_config`.
+     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
      * </pre>
      *
      * <code>
@@ -4813,10 +5034,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-     * Setting this is considered mutually exclusive with Compute Engine-based
-     * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-     * `secondary_worker_config`, and `autoscaling_config`.
+     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
      * </pre>
      *
      * <code>
@@ -4838,10 +5059,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-     * Setting this is considered mutually exclusive with Compute Engine-based
-     * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-     * `secondary_worker_config`, and `autoscaling_config`.
+     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
      * </pre>
      *
      * <code>
@@ -4857,10 +5078,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-     * Setting this is considered mutually exclusive with Compute Engine-based
-     * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-     * `secondary_worker_config`, and `autoscaling_config`.
+     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
      * </pre>
      *
      * <code>
@@ -4881,10 +5102,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to Kubernetes.
-     * Setting this is considered mutually exclusive with Compute Engine-based
-     * options such as `gce_cluster_config`, `master_config`, `worker_config`,
-     * `secondary_worker_config`, and `autoscaling_config`.
+     * Optional. The Kubernetes Engine config for Dataproc clusters deployed to
+     * Kubernetes. Setting this is considered mutually exclusive with Compute
+     * Engine-based options such as `gce_cluster_config`, `master_config`,
+     * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
      * </pre>
      *
      * <code>

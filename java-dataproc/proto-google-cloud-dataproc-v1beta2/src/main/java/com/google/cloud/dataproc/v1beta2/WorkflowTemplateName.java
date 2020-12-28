@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,29 +26,48 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class WorkflowTemplateName implements ResourceName {
-
-  @Deprecated
-  protected WorkflowTemplateName() {}
-
-  private static final PathTemplate PROJECT_REGION_WORKFLOW_TEMPLATE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_REGION_WORKFLOW_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/regions/{region}/workflowTemplates/{workflow_template}");
-  private static final PathTemplate PROJECT_LOCATION_WORKFLOW_TEMPLATE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_WORKFLOW_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/workflowTemplates/{workflow_template}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String region;
+  private final String workflowTemplate;
+  private final String location;
 
-  private String project;
-  private String region;
-  private String workflowTemplate;
-  private String location;
+  @Deprecated
+  protected WorkflowTemplateName() {
+    project = null;
+    region = null;
+    workflowTemplate = null;
+    location = null;
+  }
+
+  private WorkflowTemplateName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    region = Preconditions.checkNotNull(builder.getRegion());
+    workflowTemplate = Preconditions.checkNotNull(builder.getWorkflowTemplate());
+    location = null;
+    pathTemplate = PROJECT_REGION_WORKFLOW_TEMPLATE;
+  }
+
+  private WorkflowTemplateName(ProjectLocationWorkflowTemplateBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    workflowTemplate = Preconditions.checkNotNull(builder.getWorkflowTemplate());
+    region = null;
+    pathTemplate = PROJECT_LOCATION_WORKFLOW_TEMPLATE;
+  }
 
   public String getProject() {
     return project;
@@ -64,20 +83,6 @@ public class WorkflowTemplateName implements ResourceName {
 
   public String getLocation() {
     return location;
-  }
-
-  private WorkflowTemplateName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    region = Preconditions.checkNotNull(builder.getRegion());
-    workflowTemplate = Preconditions.checkNotNull(builder.getWorkflowTemplate());
-    pathTemplate = PROJECT_REGION_WORKFLOW_TEMPLATE_PATH_TEMPLATE;
-  }
-
-  private WorkflowTemplateName(ProjectLocationWorkflowTemplateBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    workflowTemplate = Preconditions.checkNotNull(builder.getWorkflowTemplate());
-    pathTemplate = PROJECT_LOCATION_WORKFLOW_TEMPLATE_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -99,7 +104,7 @@ public class WorkflowTemplateName implements ResourceName {
   }
 
   public static WorkflowTemplateName of(String project, String region, String workflowTemplate) {
-    return newProjectRegionWorkflowTemplateBuilder()
+    return newBuilder()
         .setProject(project)
         .setRegion(region)
         .setWorkflowTemplate(workflowTemplate)
@@ -109,7 +114,7 @@ public class WorkflowTemplateName implements ResourceName {
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static WorkflowTemplateName ofProjectRegionWorkflowTemplateName(
       String project, String region, String workflowTemplate) {
-    return newProjectRegionWorkflowTemplateBuilder()
+    return newBuilder()
         .setProject(project)
         .setRegion(region)
         .setWorkflowTemplate(workflowTemplate)
@@ -161,18 +166,17 @@ public class WorkflowTemplateName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_REGION_WORKFLOW_TEMPLATE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_REGION_WORKFLOW_TEMPLATE_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_REGION_WORKFLOW_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_REGION_WORKFLOW_TEMPLATE.match(formattedString);
       return ofProjectRegionWorkflowTemplateName(
           matchMap.get("project"), matchMap.get("region"), matchMap.get("workflow_template"));
-    } else if (PROJECT_LOCATION_WORKFLOW_TEMPLATE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_WORKFLOW_TEMPLATE_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_LOCATION_WORKFLOW_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_WORKFLOW_TEMPLATE.match(formattedString);
       return ofProjectLocationWorkflowTemplateName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("workflow_template"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException(
+        "WorkflowTemplateName.parse: formattedString not in valid format");
   }
 
   public static List<WorkflowTemplateName> parseList(List<String> formattedStrings) {
@@ -196,8 +200,8 @@ public class WorkflowTemplateName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_REGION_WORKFLOW_TEMPLATE_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_WORKFLOW_TEMPLATE_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_REGION_WORKFLOW_TEMPLATE.matches(formattedString)
+        || PROJECT_LOCATION_WORKFLOW_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -234,9 +238,39 @@ public class WorkflowTemplateName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      WorkflowTemplateName that = ((WorkflowTemplateName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.region, that.region)
+          && Objects.equals(this.workflowTemplate, that.workflowTemplate)
+          && Objects.equals(this.location, that.location);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(region);
+    h *= 1000003;
+    h ^= Objects.hashCode(workflowTemplate);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
+  }
+
   /** Builder for projects/{project}/regions/{region}/workflowTemplates/{workflow_template}. */
   public static class Builder {
-
     private String project;
     private String region;
     private String workflowTemplate;
@@ -272,9 +306,8 @@ public class WorkflowTemplateName implements ResourceName {
 
     private Builder(WorkflowTemplateName workflowTemplateName) {
       Preconditions.checkArgument(
-          workflowTemplateName.pathTemplate == PROJECT_REGION_WORKFLOW_TEMPLATE_PATH_TEMPLATE,
-          "toBuilder is only supported when WorkflowTemplateName has the pattern of "
-              + "projects/{project}/regions/{region}/workflowTemplates/{workflow_template}.");
+          Objects.equals(workflowTemplateName.pathTemplate, PROJECT_REGION_WORKFLOW_TEMPLATE),
+          "toBuilder is only supported when WorkflowTemplateName has the pattern of projects/{project}/regions/{region}/workflowTemplates/{workflow_template}");
       project = workflowTemplateName.project;
       region = workflowTemplateName.region;
       workflowTemplate = workflowTemplateName.workflowTemplate;
@@ -288,12 +321,11 @@ public class WorkflowTemplateName implements ResourceName {
   /** Builder for projects/{project}/locations/{location}/workflowTemplates/{workflow_template}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationWorkflowTemplateBuilder {
-
     private String project;
     private String location;
     private String workflowTemplate;
 
-    private ProjectLocationWorkflowTemplateBuilder() {}
+    protected ProjectLocationWorkflowTemplateBuilder() {}
 
     public String getProject() {
       return project;
@@ -325,36 +357,5 @@ public class WorkflowTemplateName implements ResourceName {
     public WorkflowTemplateName build() {
       return new WorkflowTemplateName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      WorkflowTemplateName that = (WorkflowTemplateName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.region, that.region))
-          && (Objects.equals(this.workflowTemplate, that.workflowTemplate))
-          && (Objects.equals(this.location, that.location));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(region);
-    h *= 1000003;
-    h ^= Objects.hashCode(workflowTemplate);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    return h;
   }
 }

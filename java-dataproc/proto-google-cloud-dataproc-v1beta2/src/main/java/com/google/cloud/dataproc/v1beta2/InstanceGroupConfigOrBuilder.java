@@ -241,6 +241,43 @@ public interface InstanceGroupConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Specifies the preemptibility of the instance group.
+   * The default value for master and worker groups is
+   * `NON_PREEMPTIBLE`. This default cannot be changed.
+   * The default value for secondary instances is
+   * `PREEMPTIBLE`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility preemptibility = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for preemptibility.
+   */
+  int getPreemptibilityValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the preemptibility of the instance group.
+   * The default value for master and worker groups is
+   * `NON_PREEMPTIBLE`. This default cannot be changed.
+   * The default value for secondary instances is
+   * `PREEMPTIBLE`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility preemptibility = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The preemptibility.
+   */
+  com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Preemptibility getPreemptibility();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The config for Compute Engine Instance Group
    * Manager that manages this group.
    * This is only used for preemptible instance groups.

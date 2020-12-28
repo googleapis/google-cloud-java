@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,29 +26,48 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class AutoscalingPolicyName implements ResourceName {
-
-  @Deprecated
-  protected AutoscalingPolicyName() {}
-
-  private static final PathTemplate PROJECT_LOCATION_AUTOSCALING_POLICY_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_AUTOSCALING_POLICY =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/autoscalingPolicies/{autoscaling_policy}");
-  private static final PathTemplate PROJECT_REGION_AUTOSCALING_POLICY_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_REGION_AUTOSCALING_POLICY =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/regions/{region}/autoscalingPolicies/{autoscaling_policy}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String location;
+  private final String autoscalingPolicy;
+  private final String region;
 
-  private String project;
-  private String location;
-  private String autoscalingPolicy;
-  private String region;
+  @Deprecated
+  protected AutoscalingPolicyName() {
+    project = null;
+    location = null;
+    autoscalingPolicy = null;
+    region = null;
+  }
+
+  private AutoscalingPolicyName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    autoscalingPolicy = Preconditions.checkNotNull(builder.getAutoscalingPolicy());
+    region = null;
+    pathTemplate = PROJECT_LOCATION_AUTOSCALING_POLICY;
+  }
+
+  private AutoscalingPolicyName(ProjectRegionAutoscalingPolicyBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    region = Preconditions.checkNotNull(builder.getRegion());
+    autoscalingPolicy = Preconditions.checkNotNull(builder.getAutoscalingPolicy());
+    location = null;
+    pathTemplate = PROJECT_REGION_AUTOSCALING_POLICY;
+  }
 
   public String getProject() {
     return project;
@@ -64,20 +83,6 @@ public class AutoscalingPolicyName implements ResourceName {
 
   public String getRegion() {
     return region;
-  }
-
-  private AutoscalingPolicyName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    autoscalingPolicy = Preconditions.checkNotNull(builder.getAutoscalingPolicy());
-    pathTemplate = PROJECT_LOCATION_AUTOSCALING_POLICY_PATH_TEMPLATE;
-  }
-
-  private AutoscalingPolicyName(ProjectRegionAutoscalingPolicyBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    region = Preconditions.checkNotNull(builder.getRegion());
-    autoscalingPolicy = Preconditions.checkNotNull(builder.getAutoscalingPolicy());
-    pathTemplate = PROJECT_REGION_AUTOSCALING_POLICY_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -100,7 +105,7 @@ public class AutoscalingPolicyName implements ResourceName {
 
   public static AutoscalingPolicyName of(
       String project, String location, String autoscalingPolicy) {
-    return newProjectLocationAutoscalingPolicyBuilder()
+    return newBuilder()
         .setProject(project)
         .setLocation(location)
         .setAutoscalingPolicy(autoscalingPolicy)
@@ -110,7 +115,7 @@ public class AutoscalingPolicyName implements ResourceName {
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AutoscalingPolicyName ofProjectLocationAutoscalingPolicyName(
       String project, String location, String autoscalingPolicy) {
-    return newProjectLocationAutoscalingPolicyBuilder()
+    return newBuilder()
         .setProject(project)
         .setLocation(location)
         .setAutoscalingPolicy(autoscalingPolicy)
@@ -162,18 +167,17 @@ public class AutoscalingPolicyName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_LOCATION_AUTOSCALING_POLICY_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_AUTOSCALING_POLICY_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_LOCATION_AUTOSCALING_POLICY.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_AUTOSCALING_POLICY.match(formattedString);
       return ofProjectLocationAutoscalingPolicyName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("autoscaling_policy"));
-    } else if (PROJECT_REGION_AUTOSCALING_POLICY_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_REGION_AUTOSCALING_POLICY_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_REGION_AUTOSCALING_POLICY.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_REGION_AUTOSCALING_POLICY.match(formattedString);
       return ofProjectRegionAutoscalingPolicyName(
           matchMap.get("project"), matchMap.get("region"), matchMap.get("autoscaling_policy"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException(
+        "AutoscalingPolicyName.parse: formattedString not in valid format");
   }
 
   public static List<AutoscalingPolicyName> parseList(List<String> formattedStrings) {
@@ -197,8 +201,8 @@ public class AutoscalingPolicyName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_AUTOSCALING_POLICY_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_REGION_AUTOSCALING_POLICY_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_AUTOSCALING_POLICY.matches(formattedString)
+        || PROJECT_REGION_AUTOSCALING_POLICY.matches(formattedString);
   }
 
   @Override
@@ -235,11 +239,41 @@ public class AutoscalingPolicyName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      AutoscalingPolicyName that = ((AutoscalingPolicyName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.autoscalingPolicy, that.autoscalingPolicy)
+          && Objects.equals(this.region, that.region);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(autoscalingPolicy);
+    h *= 1000003;
+    h ^= Objects.hashCode(region);
+    return h;
+  }
+
   /**
    * Builder for projects/{project}/locations/{location}/autoscalingPolicies/{autoscaling_policy}.
    */
   public static class Builder {
-
     private String project;
     private String location;
     private String autoscalingPolicy;
@@ -275,9 +309,8 @@ public class AutoscalingPolicyName implements ResourceName {
 
     private Builder(AutoscalingPolicyName autoscalingPolicyName) {
       Preconditions.checkArgument(
-          autoscalingPolicyName.pathTemplate == PROJECT_LOCATION_AUTOSCALING_POLICY_PATH_TEMPLATE,
-          "toBuilder is only supported when AutoscalingPolicyName has the pattern of "
-              + "projects/{project}/locations/{location}/autoscalingPolicies/{autoscaling_policy}.");
+          Objects.equals(autoscalingPolicyName.pathTemplate, PROJECT_LOCATION_AUTOSCALING_POLICY),
+          "toBuilder is only supported when AutoscalingPolicyName has the pattern of projects/{project}/locations/{location}/autoscalingPolicies/{autoscaling_policy}");
       project = autoscalingPolicyName.project;
       location = autoscalingPolicyName.location;
       autoscalingPolicy = autoscalingPolicyName.autoscalingPolicy;
@@ -291,12 +324,11 @@ public class AutoscalingPolicyName implements ResourceName {
   /** Builder for projects/{project}/regions/{region}/autoscalingPolicies/{autoscaling_policy}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectRegionAutoscalingPolicyBuilder {
-
     private String project;
     private String region;
     private String autoscalingPolicy;
 
-    private ProjectRegionAutoscalingPolicyBuilder() {}
+    protected ProjectRegionAutoscalingPolicyBuilder() {}
 
     public String getProject() {
       return project;
@@ -328,36 +360,5 @@ public class AutoscalingPolicyName implements ResourceName {
     public AutoscalingPolicyName build() {
       return new AutoscalingPolicyName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      AutoscalingPolicyName that = (AutoscalingPolicyName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.location, that.location))
-          && (Objects.equals(this.autoscalingPolicy, that.autoscalingPolicy))
-          && (Objects.equals(this.region, that.region));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    h *= 1000003;
-    h ^= Objects.hashCode(autoscalingPolicy);
-    h *= 1000003;
-    h ^= Objects.hashCode(region);
-    return h;
   }
 }

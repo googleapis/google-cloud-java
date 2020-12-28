@@ -275,7 +275,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+   * Optional. The time when cluster will be auto-deleted. (see JSON
+   * representation of
    * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -293,7 +294,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+   * Optional. The time when cluster will be auto-deleted. (see JSON
+   * representation of
    * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -314,7 +316,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+   * Optional. The time when cluster will be auto-deleted. (see JSON
+   * representation of
    * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -1148,7 +1151,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * Optional. The time when cluster will be auto-deleted. (see JSON
+     * representation of
      * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -1166,7 +1170,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * Optional. The time when cluster will be auto-deleted. (see JSON
+     * representation of
      * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -1194,7 +1199,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * Optional. The time when cluster will be auto-deleted. (see JSON
+     * representation of
      * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -1219,7 +1225,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * Optional. The time when cluster will be auto-deleted. (see JSON
+     * representation of
      * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -1241,7 +1248,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * Optional. The time when cluster will be auto-deleted. (see JSON
+     * representation of
      * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -1273,7 +1281,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * Optional. The time when cluster will be auto-deleted. (see JSON
+     * representation of
      * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -1301,7 +1310,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * Optional. The time when cluster will be auto-deleted. (see JSON
+     * representation of
      * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -1316,7 +1326,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * Optional. The time when cluster will be auto-deleted. (see JSON
+     * representation of
      * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -1339,7 +1350,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The time when cluster will be auto-deleted. (see JSON representation of
+     * Optional. The time when cluster will be auto-deleted. (see JSON
+     * representation of
      * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *

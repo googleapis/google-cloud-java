@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dataproc.v1.stub;
 
 import static com.google.cloud.dataproc.v1.AutoscalingPolicyServiceClient.ListAutoscalingPoliciesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -33,6 +33,7 @@ import com.google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest;
 import com.google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse;
 import com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Dataproc API.
+ * gRPC stub implementation for the AutoscalingPolicyService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceStub {
-
   private static final MethodDescriptor<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
       createAutoscalingPolicyMethodDescriptor =
           MethodDescriptor.<CreateAutoscalingPolicyRequest, AutoscalingPolicy>newBuilder()
@@ -61,6 +60,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   ProtoUtils.marshaller(CreateAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
       updateAutoscalingPolicyMethodDescriptor =
           MethodDescriptor.<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>newBuilder()
@@ -71,6 +71,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   ProtoUtils.marshaller(UpdateAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetAutoscalingPolicyRequest, AutoscalingPolicy>
       getAutoscalingPolicyMethodDescriptor =
           MethodDescriptor.<GetAutoscalingPolicyRequest, AutoscalingPolicy>newBuilder()
@@ -81,6 +82,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   ProtoUtils.marshaller(GetAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse>
       listAutoscalingPoliciesMethodDescriptor =
@@ -94,6 +96,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAutoscalingPoliciesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteAutoscalingPolicyRequest, Empty>
       deleteAutoscalingPolicyMethodDescriptor =
           MethodDescriptor.<DeleteAutoscalingPolicyRequest, Empty>newBuilder()
@@ -104,8 +107,6 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   ProtoUtils.marshaller(DeleteAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
       createAutoscalingPolicyCallable;
@@ -120,6 +121,8 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
   private final UnaryCallable<DeleteAutoscalingPolicyRequest, Empty>
       deleteAutoscalingPolicyCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAutoscalingPolicyServiceStub create(
@@ -161,6 +164,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
         createAutoscalingPolicyTransportSettings =
@@ -265,7 +269,12 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
             settings.deleteAutoscalingPolicySettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -283,14 +292,14 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
     return getAutoscalingPolicyCallable;
   }
 
-  public UnaryCallable<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesPagedResponse>
-      listAutoscalingPoliciesPagedCallable() {
-    return listAutoscalingPoliciesPagedCallable;
-  }
-
   public UnaryCallable<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse>
       listAutoscalingPoliciesCallable() {
     return listAutoscalingPoliciesCallable;
+  }
+
+  public UnaryCallable<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesPagedResponse>
+      listAutoscalingPoliciesPagedCallable() {
+    return listAutoscalingPoliciesPagedCallable;
   }
 
   public UnaryCallable<DeleteAutoscalingPolicyRequest, Empty> deleteAutoscalingPolicyCallable() {

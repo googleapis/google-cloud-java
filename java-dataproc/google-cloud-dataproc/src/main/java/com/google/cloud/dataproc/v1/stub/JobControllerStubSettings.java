@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dataproc.v1.stub;
 
 import static com.google.cloud.dataproc.v1.JobControllerClient.ListJobsPagedResponse;
@@ -63,7 +64,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link JobControllerStub}.
  *
@@ -80,22 +81,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of submitJob to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * JobControllerStubSettings.Builder jobControllerSettingsBuilder =
  *     JobControllerStubSettings.newBuilder();
  * jobControllerSettingsBuilder
  *     .submitJobSettings()
  *     .setRetrySettings(
- *         jobControllerSettingsBuilder.submitJobSettings().getRetrySettings().toBuilder()
+ *         jobControllerSettingsBuilder
+ *             .submitJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobControllerStubSettings jobControllerSettings = jobControllerSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class JobControllerStubSettings extends StubSettings<JobControllerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -112,18 +114,69 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
   private final UnaryCallSettings<CancelJobRequest, Job> cancelJobSettings;
   private final UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings;
 
+  private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
+      LIST_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListJobsRequest injectToken(ListJobsRequest payload, String token) {
+              return ListJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListJobsRequest injectPageSize(ListJobsRequest payload, int pageSize) {
+              return ListJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Job> extractResources(ListJobsResponse payload) {
+              return payload.getJobsList() == null
+                  ? ImmutableList.<Job>of()
+                  : payload.getJobsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
+      LIST_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListJobsRequest, ListJobsResponse> callable,
+                ListJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListJobsResponse> futureResponse) {
+              PageContext<ListJobsRequest, ListJobsResponse, Job> pageContext =
+                  PageContext.create(callable, LIST_JOBS_PAGE_STR_DESC, request, context);
+              return ListJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to submitJob. */
   public UnaryCallSettings<SubmitJobRequest, Job> submitJobSettings() {
     return submitJobSettings;
   }
 
-  /** Returns the object with the settings used for calls to submitJobAsOperation. */
+  /** Returns the object with the settings used for calls to submitJobAs. */
   public UnaryCallSettings<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
     return submitJobAsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to submitJobAsOperation. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<SubmitJobRequest, Job, JobMetadata>
       submitJobAsOperationOperationSettings() {
     return submitJobAsOperationOperationSettings;
@@ -161,10 +214,10 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcJobControllerStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -235,62 +288,9 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     deleteJobSettings = settingsBuilder.deleteJobSettings().build();
   }
 
-  private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
-      LIST_JOBS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListJobsRequest injectToken(ListJobsRequest payload, String token) {
-              return ListJobsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListJobsRequest injectPageSize(ListJobsRequest payload, int pageSize) {
-              return ListJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListJobsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListJobsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Job> extractResources(ListJobsResponse payload) {
-              return payload.getJobsList() != null
-                  ? payload.getJobsList()
-                  : ImmutableList.<Job>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
-      LIST_JOBS_PAGE_STR_FACT =
-          new PagedListResponseFactory<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>() {
-            @Override
-            public ApiFuture<ListJobsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListJobsRequest, ListJobsResponse> callable,
-                ListJobsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListJobsResponse> futureResponse) {
-              PageContext<ListJobsRequest, ListJobsResponse, Job> pageContext =
-                  PageContext.create(callable, LIST_JOBS_PAGE_STR_DESC, request, context);
-              return ListJobsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for JobControllerStubSettings. */
   public static class Builder extends StubSettings.Builder<JobControllerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<SubmitJobRequest, Job> submitJobSettings;
     private final UnaryCallSettings.Builder<SubmitJobRequest, Operation>
         submitJobAsOperationSettings;
@@ -303,7 +303,6 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     private final UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings;
     private final UnaryCallSettings.Builder<CancelJobRequest, Job> cancelJobSettings;
     private final UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -311,27 +310,7 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_4_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_1_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_6_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
+          "retry_policy_7_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "retry_policy_2_codes",
@@ -340,14 +319,6 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_5_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_7_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -356,50 +327,6 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(900000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(900000L))
-              .setTotalTimeout(Duration.ofMillis(900000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
-              .build();
-      definitions.put("retry_policy_6_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -416,57 +343,29 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setInitialRpcTimeout(Duration.ofMillis(900000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeout(Duration.ofMillis(900000L))
+              .setTotalTimeout(Duration.ofMillis(900000L))
               .build();
-      definitions.put("retry_policy_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("retry_policy_4_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       submitJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       submitJobAsOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       submitJobAsOperationOperationSettings = OperationCallSettings.newBuilder();
-
       getJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listJobsSettings = PagedCallSettings.newBuilder(LIST_JOBS_PAGE_STR_FACT);
-
       updateJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       cancelJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -478,21 +377,45 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
               updateJobSettings,
               cancelJobSettings,
               deleteJobSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(JobControllerStubSettings settings) {
+      super(settings);
+
+      submitJobSettings = settings.submitJobSettings.toBuilder();
+      submitJobAsOperationSettings = settings.submitJobAsOperationSettings.toBuilder();
+      submitJobAsOperationOperationSettings =
+          settings.submitJobAsOperationOperationSettings.toBuilder();
+      getJobSettings = settings.getJobSettings.toBuilder();
+      listJobsSettings = settings.listJobsSettings.toBuilder();
+      updateJobSettings = settings.updateJobSettings.toBuilder();
+      cancelJobSettings = settings.cancelJobSettings.toBuilder();
+      deleteJobSettings = settings.deleteJobSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              submitJobSettings,
+              submitJobAsOperationSettings,
+              getJobSettings,
+              listJobsSettings,
+              updateJobSettings,
+              cancelJobSettings,
+              deleteJobSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .submitJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
@@ -527,6 +450,7 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
           .deleteJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
+
       builder
           .submitJobAsOperationOperationSettings()
           .setInitialCallSettings(
@@ -540,43 +464,19 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
     }
 
-    protected Builder(JobControllerStubSettings settings) {
-      super(settings);
-
-      submitJobSettings = settings.submitJobSettings.toBuilder();
-      submitJobAsOperationSettings = settings.submitJobAsOperationSettings.toBuilder();
-      submitJobAsOperationOperationSettings =
-          settings.submitJobAsOperationOperationSettings.toBuilder();
-      getJobSettings = settings.getJobSettings.toBuilder();
-      listJobsSettings = settings.listJobsSettings.toBuilder();
-      updateJobSettings = settings.updateJobSettings.toBuilder();
-      cancelJobSettings = settings.cancelJobSettings.toBuilder();
-      deleteJobSettings = settings.deleteJobSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              submitJobSettings,
-              submitJobAsOperationSettings,
-              getJobSettings,
-              listJobsSettings,
-              updateJobSettings,
-              cancelJobSettings,
-              deleteJobSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -597,7 +497,7 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
       return submitJobSettings;
     }
 
-    /** Returns the builder for the settings used for calls to submitJobAsOperation. */
+    /** Returns the builder for the settings used for calls to submitJobAs. */
     public UnaryCallSettings.Builder<SubmitJobRequest, Operation> submitJobAsOperationSettings() {
       return submitJobAsOperationSettings;
     }

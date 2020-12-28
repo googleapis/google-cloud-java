@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class RegionName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_REGION =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String region;
+
+  @Deprecated
+  protected RegionName() {
+    project = null;
+    region = null;
+  }
+
+  private RegionName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    region = Preconditions.checkNotNull(builder.getRegion());
+  }
 
   public String getProject() {
     return project;
@@ -52,11 +62,6 @@ public class RegionName implements ResourceName {
     return new Builder(this);
   }
 
-  private RegionName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    region = Preconditions.checkNotNull(builder.getRegion());
-  }
-
   public static RegionName of(String project, String region) {
     return newBuilder().setProject(project).setRegion(region).build();
   }
@@ -70,7 +75,7 @@ public class RegionName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_REGION.validatedMatch(
             formattedString, "RegionName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("region"));
   }
@@ -84,7 +89,7 @@ public class RegionName implements ResourceName {
   }
 
   public static List<String> toStringList(List<RegionName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (RegionName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class RegionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_REGION.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("region", region);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (region != null) {
+            fieldMapBuilder.put("region", region);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,37 @@ public class RegionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "region", region);
+    return PROJECT_REGION.instantiate("project", project, "region", region);
   }
 
-  /** Builder for RegionName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      RegionName that = ((RegionName) o);
+      return Objects.equals(this.project, that.project) && Objects.equals(this.region, that.region);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(region);
+    return h;
+  }
+
+  /** Builder for projects/{project}/regions/{region}. */
+  public static class Builder {
     private String project;
     private String region;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -146,8 +179,6 @@ public class RegionName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(RegionName regionName) {
       project = regionName.project;
       region = regionName.region;
@@ -156,27 +187,5 @@ public class RegionName implements ResourceName {
     public RegionName build() {
       return new RegionName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof RegionName) {
-      RegionName that = (RegionName) o;
-      return (this.project.equals(that.project)) && (this.region.equals(that.region));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= region.hashCode();
-    return h;
   }
 }
