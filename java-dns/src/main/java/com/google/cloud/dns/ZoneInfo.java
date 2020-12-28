@@ -19,6 +19,7 @@ package com.google.cloud.dns;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.Lists.transform;
 
+import com.google.api.client.util.Data;
 import com.google.api.services.dns.model.DnsKeySpec;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ManagedZoneDnsSecConfig;
@@ -27,9 +28,11 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import org.threeten.bp.Instant;
@@ -56,6 +59,7 @@ public class ZoneInfo implements Serializable {
   private final String nameServerSet;
   private final List<String> nameServers;
   private final DnsSecConfig dnsSecConfig;
+  private final Map<String, String> labels;
 
   /** This class represents the DNS key spec. */
   public static class KeySpec {
@@ -379,6 +383,11 @@ public class ZoneInfo implements Serializable {
       return this;
     }
 
+    /** Sets the label of this zone. */
+    public Builder setLabels(Map<String, String> labels) {
+      return this;
+    }
+
     /** Builds the instance of {@code ZoneInfo} based on the information set by this builder. */
     public abstract ZoneInfo build();
   }
@@ -392,6 +401,7 @@ public class ZoneInfo implements Serializable {
     private String nameServerSet;
     private List<String> nameServers;
     private DnsSecConfig dnsSecConfig;
+    private Map<String, String> labels;
 
     private BuilderImpl(String name) {
       this.name = checkNotNull(name);
@@ -409,6 +419,7 @@ public class ZoneInfo implements Serializable {
         this.nameServers = ImmutableList.copyOf(info.nameServers);
       }
       this.dnsSecConfig = info.dnsSecConfig;
+      this.labels = info.labels;
     }
 
     @Override
@@ -461,6 +472,23 @@ public class ZoneInfo implements Serializable {
     }
 
     @Override
+    public Builder setLabels(Map<String, String> labels) {
+      if (labels != null) {
+        this.labels =
+            Maps.transformValues(
+                labels,
+                new Function<String, String>() {
+                  @Override
+                  public String apply(String input) {
+                    // replace null values with empty strings
+                    return input == null ? Data.<String>nullOf(String.class) : input;
+                  }
+                });
+      }
+      return this;
+    }
+
+    @Override
     public ZoneInfo build() {
       return new ZoneInfo(this);
     }
@@ -476,6 +504,7 @@ public class ZoneInfo implements Serializable {
     this.nameServers =
         builder.nameServers == null ? null : ImmutableList.copyOf(builder.nameServers);
     this.dnsSecConfig = builder.dnsSecConfig;
+    this.labels = builder.labels;
   }
 
   /**
@@ -523,6 +552,11 @@ public class ZoneInfo implements Serializable {
     return nameServerSet;
   }
 
+  /** Returns the labels for this zone. */
+  public Map<String, String> getLabels() {
+    return labels;
+  }
+
   /**
    * The nameservers that the zone should be delegated to. This is defined by the Google DNS cloud.
    */
@@ -556,6 +590,9 @@ public class ZoneInfo implements Serializable {
     if (this.dnsSecConfig != null) {
       pb.setDnssecConfig(this.dnsSecConfig.toPb());
     }
+    if (this.getLabels() != null) {
+      pb.setLabels(labels);
+    }
     return pb;
   }
 
@@ -583,6 +620,9 @@ public class ZoneInfo implements Serializable {
     if (pb.getDnssecConfig() != null) {
       builder.setDnsSecConfig(DnsSecConfig.fromPb(pb.getDnssecConfig()));
     }
+    if (pb.getLabels() != null) {
+      builder.setLabels(pb.getLabels());
+    }
     return builder.build();
   }
 
@@ -604,7 +644,8 @@ public class ZoneInfo implements Serializable {
         description,
         nameServerSet,
         nameServers,
-        dnsSecConfig);
+        dnsSecConfig,
+        labels);
   }
 
   @Override
@@ -618,6 +659,7 @@ public class ZoneInfo implements Serializable {
         .add("nameServers", getNameServers())
         .add("creationTimeMillis", getCreationTimeMillis())
         .add("dnsSecConfig", getDnsSecConfig())
+        .add("labels", getLabels())
         .toString();
   }
 }

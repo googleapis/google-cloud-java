@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see https://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+    <difference>
+        <className>com/google/cloud/dns/ZoneInfo$Builder</className>
+        <method>com.google.cloud.dns.ZoneInfo$Builder setLabels(java.util.Map)</method>
+        <differenceType>7013</differenceType>
+    </difference>
+</differences>

@@ -23,9 +23,11 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import org.junit.Test;
 
 public class ZoneInfoTest {
@@ -40,6 +42,8 @@ public class ZoneInfoTest {
   private static final String NS2 = "name server 2";
   private static final String NS3 = "name server 3";
   private static final List<String> NAME_SERVERS = ImmutableList.of(NS1, NS2, NS3);
+  private static final Map<String, String> LABELS =
+      ImmutableMap.of("label1", "value1", "label2", "value2");
   private static final String ALGORITHM = "rsasha256";
   private static final String KEY_TYPE1 = "zoneSigning";
   private static final String KEY_TYPE2 = "keySigning";
@@ -75,6 +79,7 @@ public class ZoneInfoTest {
           .setNameServerSet(NAME_SERVER_SET)
           .setNameServers(NAME_SERVERS)
           .setDnsSecConfig(DNS_SEC_CONFIG)
+          .setLabels(LABELS)
           .build();
 
   @Test
@@ -102,6 +107,7 @@ public class ZoneInfoTest {
     assertEquals(DESCRIPTION, INFO.getDescription());
     assertEquals(DNS_NAME, INFO.getDnsName());
     assertEquals(DNS_SEC_CONFIG, INFO.getDnsSecConfig());
+    assertEquals(LABELS, INFO.getLabels());
 
     ZoneInfo.DnsSecConfig config = INFO.getDnsSecConfig();
     assertEquals(DEFAULT_KEY_SPECS, config.getDefaultKeySpecs());
