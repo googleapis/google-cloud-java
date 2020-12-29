@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-workflow-executions.git",
-        "sha": "a6dd8417700e2fc31278e8fd26396edd80684e50"
+        "sha": "1a85e7af646fb431d9a171debadd9c95b1ad2c0b"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "3f67ceece7e797a5736a25488aae35405649b90b"
+        "sha": "6133907dbb3ddab204a17a15d5c53ec0aae9b033"
       }
     }
   ],
@@ -49,7 +49,6 @@
     ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
-    ".github/workflows/formatting.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
