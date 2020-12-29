@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dlp.git",
-        "sha": "cf3a932b6b5d2680f4d87ff0a8287290c959a5b2"
+        "sha": "0a434339f3f0b6d083f7ad58b3fa861bfd7c5ec2"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "3f67ceece7e797a5736a25488aae35405649b90b"
+        "sha": "6133907dbb3ddab204a17a15d5c53ec0aae9b033"
       }
     }
   ],
@@ -49,7 +49,6 @@
     ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
-    ".github/workflows/formatting.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
     ".kokoro/coerce_logs.sh",
