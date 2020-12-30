@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-shared-config.git",
-        "sha": "329f41993a16830b2a1a4a7080aa15d4d842ba18"
+        "sha": "82b74087e195cab55dbdbfc1728dbd4ca7871f04"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5d11bd2888c38ce1fb6fa6bf25494a4219a73928"
+        "sha": "6133907dbb3ddab204a17a15d5c53ec0aae9b033"
       }
     }
   ],
@@ -29,7 +29,6 @@
     ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
-    ".github/workflows/formatting.yaml",
     ".github/workflows/samples.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
