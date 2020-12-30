@@ -171,7 +171,7 @@ public class CatalogServiceClientTest {
   public void updateCatalogTest() throws Exception {
     Catalog expectedResponse =
         Catalog.newBuilder()
-            .setName("name3373707")
+            .setName(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
             .setDisplayName("displayName1714148973")
             .setProductLevelConfig(ProductLevelConfig.newBuilder().build())
             .build();

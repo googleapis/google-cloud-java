@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-retail.git",
-        "sha": "7b2922b391017c0556a2c7c6047eaa64ae9ad3c1"
+        "sha": "6f3b21118cffb1a0db480f186c5dec945e460e27"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "53eb2512a55caabcbad1898225080a2a3dfcb6aa",
-        "internalRef": "346818879"
+        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
+        "internalRef": "347036369"
       }
     },
     {
@@ -147,6 +147,7 @@
     "proto-google-cloud-retail-v2/src/main/java/com/google/cloud/retail/v2/BigQuerySourceOrBuilder.java",
     "proto-google-cloud-retail-v2/src/main/java/com/google/cloud/retail/v2/BranchName.java",
     "proto-google-cloud-retail-v2/src/main/java/com/google/cloud/retail/v2/Catalog.java",
+    "proto-google-cloud-retail-v2/src/main/java/com/google/cloud/retail/v2/CatalogName.java",
     "proto-google-cloud-retail-v2/src/main/java/com/google/cloud/retail/v2/CatalogOrBuilder.java",
     "proto-google-cloud-retail-v2/src/main/java/com/google/cloud/retail/v2/CatalogProto.java",
     "proto-google-cloud-retail-v2/src/main/java/com/google/cloud/retail/v2/CatalogServiceProto.java",
