@@ -25,6 +25,9 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.storage.test.JsonTest.ComplexRoot;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.test.Test.UpdatedFooType;
@@ -51,6 +54,7 @@ import org.threeten.bp.Instant;
 public class JsonStreamWriterTest {
   private static final Logger LOG = Logger.getLogger(JsonStreamWriterTest.class.getName());
   private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/s";
+  private static final String TEST_TABLE = "projects/p/datasets/d/tables/t";
   private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
   private static LocalChannelProvider channelProvider;
@@ -213,7 +217,7 @@ public class JsonStreamWriterTest {
       getTestJsonStreamWriterBuilder(null, TABLE_SCHEMA);
       Assert.fail("expected NullPointerException");
     } catch (NullPointerException e) {
-      assertEquals(e.getMessage(), "StreamName is null.");
+      assertEquals(e.getMessage(), "StreamOrTableName is null.");
     }
   }
 
@@ -808,6 +812,24 @@ public class JsonStreamWriterTest {
       assertTrue(
           testBigQueryWrite.getAppendRequests().get(1).getProtoRows().hasWriterSchema()
               || testBigQueryWrite.getAppendRequests().get(2).getProtoRows().hasWriterSchema());
+    }
+  }
+
+  @Test
+  public void testCreateDefaultStream() throws Exception {
+    Schema v2Schema =
+        Schema.of(
+            Field.newBuilder("foo", StandardSQLTypeName.STRING)
+                .setMode(Field.Mode.NULLABLE)
+                .build());
+    try (JsonStreamWriter writer =
+        JsonStreamWriter.newBuilder(TEST_TABLE, v2Schema)
+            .createDefaultStream()
+            .setChannelProvider(channelProvider)
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build()) {
+      assertEquals("projects/p/datasets/d/tables/t/_default", writer.getStreamName());
     }
   }
 

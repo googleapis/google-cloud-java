@@ -5,7 +5,3 @@ externalManifests:
 - type: json
   file: '.github/readme/synth.metadata/synth.metadata'
   jsonpath: '$.generatedFiles[*]'
-ignoreAuthors:
-- 'renovate-bot'
-- 'yoshi-automation'
-- 'release-please[bot]'

@@ -291,6 +291,89 @@ public class ITBigQueryWriteManualClientTest {
   }
 
   @Test
+  public void testJsonStreamWriterBatchWriteWithDefaultStream()
+      throws IOException, InterruptedException, ExecutionException,
+          Descriptors.DescriptorValidationException {
+    String tableName = "JsonTableDefaultStream";
+    TableInfo tableInfo =
+        TableInfo.newBuilder(
+                TableId.of(DATASET, tableName),
+                StandardTableDefinition.of(
+                    Schema.of(
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_str", StandardSQLTypeName.STRING)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_numerics", StandardSQLTypeName.NUMERIC)
+                            .setMode(Field.Mode.REPEATED)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_datetime", StandardSQLTypeName.DATETIME)
+                            .build())))
+            .build();
+    bigquery.create(tableInfo);
+    TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+    try (JsonStreamWriter jsonStreamWriter =
+        JsonStreamWriter.newBuilder(parent.toString(), tableInfo.getDefinition().getSchema())
+            .createDefaultStream()
+            .setBatchingSettings(
+                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setRequestByteThreshold(1024 * 1024L) // 1 Mb
+                    .setElementCountThreshold(2L)
+                    .setDelayThreshold(Duration.ofSeconds(2))
+                    .build())
+            .build()) {
+      LOG.info("Sending one message");
+      JSONObject row1 = new JSONObject();
+      row1.put("test_str", "aaa");
+      row1.put("test_numerics", new JSONArray(new String[] {"123.4", "-9000000"}));
+      row1.put("test_datetime", "2020-10-1 12:00:00");
+      JSONArray jsonArr1 = new JSONArray(new JSONObject[] {row1});
+
+      ApiFuture<AppendRowsResponse> response1 =
+          jsonStreamWriter.append(jsonArr1, -1, /* allowUnknownFields */ false);
+
+      assertEquals(0, response1.get().getAppendResult().getOffset().getValue());
+
+      JSONObject row2 = new JSONObject();
+      row1.put("test_str", "bbb");
+      JSONObject row3 = new JSONObject();
+      row2.put("test_str", "ccc");
+      JSONArray jsonArr2 = new JSONArray();
+      jsonArr2.put(row1);
+      jsonArr2.put(row2);
+
+      JSONObject row4 = new JSONObject();
+      row4.put("test_str", "ddd");
+      JSONArray jsonArr3 = new JSONArray();
+      jsonArr3.put(row4);
+
+      LOG.info("Sending two more messages");
+      ApiFuture<AppendRowsResponse> response2 =
+          jsonStreamWriter.append(jsonArr2, -1, /* allowUnknownFields */ false);
+      LOG.info("Sending one more message");
+      ApiFuture<AppendRowsResponse> response3 =
+          jsonStreamWriter.append(jsonArr3, -1, /* allowUnknownFields */ false);
+      assertEquals(1, response2.get().getAppendResult().getOffset().getValue());
+      assertEquals(3, response3.get().getAppendResult().getOffset().getValue());
+
+      TableResult result =
+          bigquery.listTableData(
+              tableInfo.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
+      Iterator<FieldValueList> iter = result.getValues().iterator();
+      FieldValueList currentRow = iter.next();
+      assertEquals("aaa", currentRow.get(0).getStringValue());
+      assertEquals("-9000000", currentRow.get(1).getRepeatedValue().get(1).getStringValue());
+      assertEquals("2020-10-01T12:00:00", currentRow.get(2).getStringValue());
+      assertEquals("bbb", iter.next().get(0).getStringValue());
+      assertEquals("ccc", iter.next().get(0).getStringValue());
+      assertEquals("ddd", iter.next().get(0).getStringValue());
+      assertEquals(false, iter.hasNext());
+    }
+  }
+
+  @Test
   public void testJsonStreamWriterSchemaUpdate()
       throws IOException, InterruptedException, ExecutionException,
           Descriptors.DescriptorValidationException {
