@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+    <!-- TODO(stephwang): To be removed after the release -->
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/JsonStreamWriter</className>
+        <differenceType>7005</differenceType>
+        <method>com.google.api.core.ApiFuture append(org.json.JSONArray, boolean)</method>
+        <from>com.google.api.core.ApiFuture append(org.json.JSONArray, boolean)</from>
+        <to>com.google.api.core.ApiFuture append(org.json.JSONArray, long)</to>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/JsonStreamWriter</className>
+        <differenceType>7004</differenceType>
+        <method>com.google.api.core.ApiFuture append(org.json.JSONArray, long, boolean)</method>
+        <from>com.google.api.core.ApiFuture append(org.json.JSONArray, long, boolean)</from>
+        <to>com.google.api.core.ApiFuture append(org.json.JSONArray)</to>
+    </difference>
+    <difference>
+        <className>com/google/cloud/bigquery/storage/v1beta2/JsonToProtoMessage</className>
+        <differenceType>7004</differenceType>
+        <method>com.google.protobuf.DynamicMessage convertJsonToProtoMessage(com.google.protobuf.Descriptors$Descriptor, org.json.JSONObject, boolean)</method>
+        <from>com.google.protobuf.DynamicMessage convertJsonToProtoMessage(com.google.protobuf.Descriptors$Descriptor, org.json.JSONObject, boolean)</from>
+        <to>com.google.protobuf.DynamicMessage convertJsonToProtoMessage(com.google.protobuf.Descriptors$Descriptor, org.json.JSONObject)</to>
+    </difference>
+</differences>

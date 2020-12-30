@@ -47,18 +47,15 @@ public class JsonToProtoMessage {
    *
    * @param protoSchema
    * @param json
-   * @param allowUnknownFields Ignores unknown JSON fields.
    * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
    */
-  public static DynamicMessage convertJsonToProtoMessage(
-      Descriptor protoSchema, JSONObject json, boolean allowUnknownFields)
+  public static DynamicMessage convertJsonToProtoMessage(Descriptor protoSchema, JSONObject json)
       throws IllegalArgumentException {
     Preconditions.checkNotNull(json, "JSONObject is null.");
     Preconditions.checkNotNull(protoSchema, "Protobuf descriptor is null.");
     Preconditions.checkState(json.length() != 0, "JSONObject is empty.");
 
-    return convertJsonToProtoMessageImpl(
-        protoSchema, json, "root", /*topLevel=*/ true, allowUnknownFields);
+    return convertJsonToProtoMessageImpl(protoSchema, json, "root", /*topLevel=*/ true);
   }
 
   /**
@@ -67,16 +64,11 @@ public class JsonToProtoMessage {
    * @param protoSchema
    * @param json
    * @param jsonScope Debugging purposes
-   * @param allowUnknownFields Ignores unknown JSON fields.
    * @param topLevel checks if root level has any matching fields.
    * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
    */
   private static DynamicMessage convertJsonToProtoMessageImpl(
-      Descriptor protoSchema,
-      JSONObject json,
-      String jsonScope,
-      boolean topLevel,
-      boolean allowUnknownFields)
+      Descriptor protoSchema, JSONObject json, String jsonScope, boolean topLevel)
       throws IllegalArgumentException {
 
     DynamicMessage.Builder protoMsg = DynamicMessage.newBuilder(protoSchema);
@@ -84,7 +76,6 @@ public class JsonToProtoMessage {
     if (jsonNames == null) {
       return protoMsg.build();
     }
-    int matchedFields = 0;
     for (int i = 0; i < jsonNames.length; i++) {
       String jsonName = jsonNames[i];
       // We want lowercase here to support case-insensitive data writes.
@@ -93,27 +84,16 @@ public class JsonToProtoMessage {
       String currentScope = jsonScope + "." + jsonName;
       FieldDescriptor field = protoSchema.findFieldByName(jsonLowercaseName);
       if (field == null) {
-        if (!allowUnknownFields) {
-          throw new IllegalArgumentException(
-              String.format(
-                  "JSONObject has fields unknown to BigQuery: %s. Set allowUnknownFields to True to allow unknown fields.",
-                  currentScope));
-        } else {
-          continue;
-        }
+        throw new IllegalArgumentException(
+            String.format("JSONObject has fields unknown to BigQuery: %s.", currentScope));
       }
-      matchedFields++;
       if (!field.isRepeated()) {
-        fillField(protoMsg, field, json, jsonName, currentScope, allowUnknownFields);
+        fillField(protoMsg, field, json, jsonName, currentScope);
       } else {
-        fillRepeatedField(protoMsg, field, json, jsonName, currentScope, allowUnknownFields);
+        fillRepeatedField(protoMsg, field, json, jsonName, currentScope);
       }
     }
 
-    if (matchedFields == 0 && topLevel) {
-      throw new IllegalArgumentException(
-          "There are no matching fields found for the JSONObject and the protocol buffer descriptor.");
-    }
     DynamicMessage msg;
     try {
       msg = protoMsg.build();
@@ -139,7 +119,6 @@ public class JsonToProtoMessage {
    * @param json
    * @param exactJsonKeyName Exact key name in JSONObject instead of lowercased version
    * @param currentScope Debugging purposes
-   * @param allowUnknownFields Ignores unknown JSON fields.
    * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
    */
   private static void fillField(
@@ -147,8 +126,7 @@ public class JsonToProtoMessage {
       FieldDescriptor fieldDescriptor,
       JSONObject json,
       String exactJsonKeyName,
-      String currentScope,
-      boolean allowUnknownFields)
+      String currentScope)
       throws IllegalArgumentException {
 
     java.lang.Object val = json.get(exactJsonKeyName);
@@ -204,8 +182,7 @@ public class JsonToProtoMessage {
                   fieldDescriptor.getMessageType(),
                   json.getJSONObject(exactJsonKeyName),
                   currentScope,
-                  /*topLevel =*/ false,
-                  allowUnknownFields));
+                  /*topLevel =*/ false));
           return;
         }
         break;
@@ -224,7 +201,6 @@ public class JsonToProtoMessage {
    * @param json If root level has no matching fields, throws exception.
    * @param exactJsonKeyName Exact key name in JSONObject instead of lowercased version
    * @param currentScope Debugging purposes
-   * @param allowUnknownFields Ignores unknown JSON fields.
    * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
    */
   private static void fillRepeatedField(
@@ -232,8 +208,7 @@ public class JsonToProtoMessage {
       FieldDescriptor fieldDescriptor,
       JSONObject json,
       String exactJsonKeyName,
-      String currentScope,
-      boolean allowUnknownFields)
+      String currentScope)
       throws IllegalArgumentException {
 
     JSONArray jsonArray;
@@ -305,8 +280,7 @@ public class JsonToProtoMessage {
                     fieldDescriptor.getMessageType(),
                     jsonArray.getJSONObject(i),
                     currentScope,
-                    /*topLevel =*/ false,
-                    allowUnknownFields));
+                    /*topLevel =*/ false));
           } else {
             fail = true;
           }

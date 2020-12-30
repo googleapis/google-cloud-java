@@ -251,8 +251,7 @@ public class ITBigQueryWriteManualClientTest {
       row1.put("test_datetime", "2020-10-1 12:00:00");
       JSONArray jsonArr1 = new JSONArray(new JSONObject[] {row1});
 
-      ApiFuture<AppendRowsResponse> response1 =
-          jsonStreamWriter.append(jsonArr1, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> response1 = jsonStreamWriter.append(jsonArr1, -1);
 
       assertEquals(0, response1.get().getAppendResult().getOffset().getValue());
 
@@ -270,11 +269,9 @@ public class ITBigQueryWriteManualClientTest {
       jsonArr3.put(row4);
 
       LOG.info("Sending two more messages");
-      ApiFuture<AppendRowsResponse> response2 =
-          jsonStreamWriter.append(jsonArr2, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> response2 = jsonStreamWriter.append(jsonArr2, -1);
       LOG.info("Sending one more message");
-      ApiFuture<AppendRowsResponse> response3 =
-          jsonStreamWriter.append(jsonArr3, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> response3 = jsonStreamWriter.append(jsonArr3, -1);
       assertEquals(1, response2.get().getAppendResult().getOffset().getValue());
       assertEquals(3, response3.get().getAppendResult().getOffset().getValue());
 
@@ -331,8 +328,7 @@ public class ITBigQueryWriteManualClientTest {
       JSONArray jsonArr = new JSONArray();
       jsonArr.put(foo);
 
-      ApiFuture<AppendRowsResponse> response =
-          jsonStreamWriter.append(jsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> response = jsonStreamWriter.append(jsonArr, -1);
       assertEquals(0, response.get().getAppendResult().getOffset().getValue());
       // 2). Schema update and wait until querying it returns a new schema.
       try {
@@ -375,8 +371,7 @@ public class ITBigQueryWriteManualClientTest {
 
       int next = 0;
       for (int i = 1; i < 100; i++) {
-        ApiFuture<AppendRowsResponse> response2 =
-            jsonStreamWriter.append(jsonArr2, -1, /* allowUnknownFields */ false);
+        ApiFuture<AppendRowsResponse> response2 = jsonStreamWriter.append(jsonArr2, -1);
         assertEquals(i, response2.get().getAppendResult().getOffset().getValue());
         if (response2.get().hasUpdatedSchema()) {
           next = i;
@@ -403,8 +398,7 @@ public class ITBigQueryWriteManualClientTest {
       JSONArray updatedJsonArr = new JSONArray();
       updatedJsonArr.put(updatedFoo);
       for (int i = 0; i < 10; i++) {
-        ApiFuture<AppendRowsResponse> response3 =
-            jsonStreamWriter.append(updatedJsonArr, -1, /* allowUnknownFields */ false);
+        ApiFuture<AppendRowsResponse> response3 = jsonStreamWriter.append(updatedJsonArr, -1);
         assertEquals(next + 1 + i, response3.get().getAppendResult().getOffset().getValue());
         response3.get();
       }

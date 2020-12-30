@@ -876,6 +876,8 @@ public class StreamWriterTest {
             .build();
 
     testBigQueryWrite.addException(Status.DATA_LOSS.asException());
+    testBigQueryWrite.addException(Status.DATA_LOSS.asException());
+    testBigQueryWrite.addException(Status.DATA_LOSS.asException());
 
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});

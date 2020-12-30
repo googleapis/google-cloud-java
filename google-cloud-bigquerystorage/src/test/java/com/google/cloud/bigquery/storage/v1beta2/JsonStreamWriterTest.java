@@ -251,8 +251,7 @@ public class JsonStreamWriterTest {
                   AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
               .build());
 
-      ApiFuture<AppendRowsResponse> appendFuture =
-          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
       assertEquals(0L, appendFuture.get().getAppendResult().getOffset().getValue());
       appendFuture.get();
       assertEquals(
@@ -299,8 +298,7 @@ public class JsonStreamWriterTest {
                   AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
               .build());
 
-      ApiFuture<AppendRowsResponse> appendFuture =
-          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
 
       assertEquals(0L, appendFuture.get().getAppendResult().getOffset().getValue());
       appendFuture.get();
@@ -357,7 +355,7 @@ public class JsonStreamWriterTest {
               .build());
       ApiFuture<AppendRowsResponse> appendFuture;
       for (int i = 0; i < 4; i++) {
-        appendFuture = writer.append(jsonArr, -1, /* allowUnknownFields */ false);
+        appendFuture = writer.append(jsonArr);
         assertEquals((long) i, appendFuture.get().getAppendResult().getOffset().getValue());
         appendFuture.get();
         assertEquals(
@@ -443,8 +441,7 @@ public class JsonStreamWriterTest {
                   AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
               .build());
 
-      ApiFuture<AppendRowsResponse> appendFuture =
-          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
 
       assertEquals(0L, appendFuture.get().getAppendResult().getOffset().getValue());
       appendFuture.get();
@@ -495,8 +492,7 @@ public class JsonStreamWriterTest {
       JSONArray jsonArr = new JSONArray();
       jsonArr.put(foo);
 
-      ApiFuture<AppendRowsResponse> appendFuture1 =
-          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture1 = writer.append(jsonArr);
 
       int millis = 0;
       while (millis <= 10000) {
@@ -532,8 +528,7 @@ public class JsonStreamWriterTest {
       JSONArray updatedJsonArr = new JSONArray();
       updatedJsonArr.put(updatedFoo);
 
-      ApiFuture<AppendRowsResponse> appendFuture2 =
-          writer.append(updatedJsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture2 = writer.append(updatedJsonArr);
 
       millis = 0;
       while (millis <= 10000) {
@@ -570,8 +565,7 @@ public class JsonStreamWriterTest {
       JSONArray updatedJsonArr2 = new JSONArray();
       updatedJsonArr2.put(updatedFoo2);
 
-      ApiFuture<AppendRowsResponse> appendFuture3 =
-          writer.append(updatedJsonArr2, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture3 = writer.append(updatedJsonArr2);
 
       assertEquals(2L, appendFuture3.get().getAppendResult().getOffset().getValue());
       assertEquals(
@@ -614,8 +608,7 @@ public class JsonStreamWriterTest {
       foo.put("foo", "allen");
       JSONArray jsonArr = new JSONArray();
       jsonArr.put(foo);
-      ApiFuture<AppendRowsResponse> appendFuture =
-          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
       try {
         appendFuture.get();
         Assert.fail("expected ExecutionException");
@@ -644,8 +637,7 @@ public class JsonStreamWriterTest {
       foo.put("foo", "allen");
       JSONArray jsonArr = new JSONArray();
       jsonArr.put(foo);
-      ApiFuture<AppendRowsResponse> appendFuture =
-          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
       try {
         appendFuture.get();
         Assert.fail("expected ExecutionException");
@@ -668,8 +660,7 @@ public class JsonStreamWriterTest {
       JSONArray updatedJsonArr = new JSONArray();
       updatedJsonArr.put(updatedFoo);
 
-      ApiFuture<AppendRowsResponse> appendFuture2 =
-          writer.append(updatedJsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture2 = writer.append(updatedJsonArr);
       assertEquals(0L, appendFuture2.get().getAppendResult().getOffset().getValue());
       appendFuture2.get();
       assertEquals(
@@ -727,12 +718,9 @@ public class JsonStreamWriterTest {
       JSONArray jsonArr = new JSONArray();
       jsonArr.put(foo);
 
-      ApiFuture<AppendRowsResponse> appendFuture1 =
-          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
-      ApiFuture<AppendRowsResponse> appendFuture2 =
-          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
-      ApiFuture<AppendRowsResponse> appendFuture3 =
-          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture1 = writer.append(jsonArr);
+      ApiFuture<AppendRowsResponse> appendFuture2 = writer.append(jsonArr);
+      ApiFuture<AppendRowsResponse> appendFuture3 = writer.append(jsonArr);
 
       assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
       assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
@@ -796,8 +784,7 @@ public class JsonStreamWriterTest {
       JSONArray updatedJsonArr = new JSONArray();
       updatedJsonArr.put(updatedFoo);
 
-      ApiFuture<AppendRowsResponse> appendFuture4 =
-          writer.append(updatedJsonArr, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> appendFuture4 = writer.append(updatedJsonArr);
 
       assertEquals(3L, appendFuture4.get().getAppendResult().getOffset().getValue());
       assertEquals(
@@ -857,8 +844,7 @@ public class JsonStreamWriterTest {
                 new Runnable() {
                   public void run() {
                     try {
-                      ApiFuture<AppendRowsResponse> appendFuture =
-                          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
+                      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
                       AppendRowsResponse response = appendFuture.get();
                       offsetSets.remove(response.getAppendResult().getOffset().getValue());
                     } catch (Exception e) {
@@ -940,8 +926,7 @@ public class JsonStreamWriterTest {
                 new Runnable() {
                   public void run() {
                     try {
-                      ApiFuture<AppendRowsResponse> appendFuture =
-                          writer.append(jsonArr, -1, /* allowUnknownFields */ false);
+                      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
                       AppendRowsResponse response = appendFuture.get();
                       offsetSets.remove(response.getAppendResult().getOffset().getValue());
                     } catch (Exception e) {
@@ -1004,8 +989,7 @@ public class JsonStreamWriterTest {
                 new Runnable() {
                   public void run() {
                     try {
-                      ApiFuture<AppendRowsResponse> appendFuture =
-                          writer.append(jsonArr2, -1, /* allowUnknownFields */ false);
+                      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr2);
                       AppendRowsResponse response = appendFuture.get();
                       offsetSets.remove(response.getAppendResult().getOffset().getValue());
                     } catch (Exception e) {

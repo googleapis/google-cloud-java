@@ -94,12 +94,11 @@ public class JsonStreamWriter implements AutoCloseable {
    * schema update, the OnSchemaUpdateRunnable will be used to determine what actions to perform.
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
-   * @param allowUnknownFields if true, json data can have fields unknown to the BigQuery table.
    * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
    *     ApiFuture
    */
-  public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr, boolean allowUnknownFields) {
-    return append(jsonArr, -1, allowUnknownFields);
+  public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr) {
+    return append(jsonArr, -1);
   }
 
   /**
@@ -109,20 +108,17 @@ public class JsonStreamWriter implements AutoCloseable {
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
    * @param offset Offset for deduplication
-   * @param allowUnknownFields if true, json data can have fields unknown to the BigQuery table.
    * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
    *     ApiFuture
    */
-  public ApiFuture<AppendRowsResponse> append(
-      JSONArray jsonArr, long offset, boolean allowUnknownFields) {
+  public ApiFuture<AppendRowsResponse> append(JSONArray jsonArr, long offset) {
     ProtoRows.Builder rowsBuilder = ProtoRows.newBuilder();
     // Any error in convertJsonToProtoMessage will throw an
     // IllegalArgumentException/IllegalStateException/NullPointerException and will halt processing
     // of JSON data.
     for (int i = 0; i < jsonArr.length(); i++) {
       JSONObject json = jsonArr.getJSONObject(i);
-      Message protoMessage =
-          JsonToProtoMessage.convertJsonToProtoMessage(this.descriptor, json, allowUnknownFields);
+      Message protoMessage = JsonToProtoMessage.convertJsonToProtoMessage(this.descriptor, json);
       rowsBuilder.addSerializedRows(protoMessage.toByteString());
     }
     AppendRowsRequest.ProtoData.Builder data = AppendRowsRequest.ProtoData.newBuilder();
