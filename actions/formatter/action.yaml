@@ -21,4 +21,4 @@ inputs:
     default: .
 runs:
   using: docker
-  image: gcr.io/cloud-devrel-public-resources/java-formatter
+  image: docker://gcr.io/cloud-devrel-public-resources/java-formatter
