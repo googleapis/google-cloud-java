@@ -13,4 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-java -jar /workspace/google-java-format.jar "${INPUT_CODE_PATH}"
+find "${INPUT_CODE_PATH}" -name *.java | xargs java -jar /workspace/google-java-format.jar --replace
