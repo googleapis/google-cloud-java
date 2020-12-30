@@ -1,0 +1,7 @@
+# Configuration for the Blunderbuss GitHub app. For more info see
+# https://github.com/googleapis/repo-automation-bots/tree/master/packages/blunderbuss
+assign_prs_by:
+- labels:
+  - samples
+  to:
+  - googleapis/java-samples-reviewers
