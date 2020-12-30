@@ -14,7 +14,7 @@
 
 FROM openjdk:8-jre-alpine
 
-ARG GOOGLE_JAVA_FORMAT_VERSION=1.8
+ARG GOOGLE_JAVA_FORMAT_VERSION=1.7
 
 RUN mkdir -p /workspace
 WORKDIR /workspace
