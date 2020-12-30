@@ -18,7 +18,7 @@ ARG GOOGLE_JAVA_FORMAT_VERSION=1.7
 
 RUN mkdir -p /workspace
 WORKDIR /workspace
-ADD https://repo1.maven.org/maven2/com/google/googlejavaformat/google-java-format/${GOOGLE_JAVA_FORMAT_VERSION}/google-java-format-${GOOGLE_JAVA_FORMAT_VERSION}.jar /workspace/google-java-format.jar
+ADD https://repo1.maven.org/maven2/com/google/googlejavaformat/google-java-format/${GOOGLE_JAVA_FORMAT_VERSION}/google-java-format-${GOOGLE_JAVA_FORMAT_VERSION}-all-deps.jar /workspace/google-java-format.jar
 ADD entrypoint.sh /workspace
 
 ENTRYPOINT [ "/workspace/entrypoint.sh" ]
