@@ -18,7 +18,6 @@ package com.example.asset;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.resourcemanager.ProjectInfo;
 import com.google.cloud.resourcemanager.ResourceManager;

@@ -23,7 +23,6 @@ import com.google.cloud.asset.v1.FeedOutputConfig;
 import com.google.cloud.asset.v1.PubsubDestination;
 import com.google.cloud.asset.v1.UpdateFeedRequest;
 import com.google.protobuf.FieldMask;
-import java.util.Arrays;
 
 public class UpdateFeedExample {
 

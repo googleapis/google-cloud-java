@@ -19,7 +19,6 @@ package com.example.asset;
 // [START asset_quickstart_list_assets]
 // Imports the Google Cloud client library
 
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.asset.v1.ProjectName;
 import com.google.cloud.asset.v1p5beta1.AssetServiceClient;
 import com.google.cloud.asset.v1p5beta1.AssetServiceClient.ListAssetsPagedResponse;

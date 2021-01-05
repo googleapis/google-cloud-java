@@ -18,8 +18,6 @@ package com.example.asset;
 
 // [START asset_quickstart_delete_feed]
 import com.google.cloud.asset.v1.AssetServiceClient;
-import com.google.cloud.asset.v1.Feed;
-import java.util.Arrays;
 
 public class DeleteFeedExample {
 

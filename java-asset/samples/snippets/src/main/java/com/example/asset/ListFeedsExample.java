@@ -20,7 +20,6 @@ package com.example.asset;
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.ListFeedsResponse;
 import com.google.cloud.asset.v1.ProjectName;
-import java.util.Arrays;
 
 public class ListFeedsExample {
   // List feeds in a project.
