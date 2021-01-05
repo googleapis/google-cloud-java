@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud.samples</groupId>
     <artifactId>shared-configuration</artifactId>
-    <version>1.0.12</version>
+    <version>1.0.21</version>
   </parent>
 
   <properties>
@@ -23,14 +23,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start::current} -->
   <dependencies>
+    <!-- {x-version-update-start:google-cloud-retail:current} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-retail</artifactId>
       <version>0.0.0</version>
     </dependency>
-  <!-- {x-version-update-end} -->
+    <!-- {x-version-update-end} -->
 
     <dependency>
       <groupId>junit</groupId>
