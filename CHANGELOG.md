@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.8.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.7.2...v1.8.0) (2021-01-05)
+
+
+### Features
+
+* add default stream support for StreamWriter ([#744](https://www.github.com/googleapis/java-bigquerystorage/issues/744)) ([248ab73](https://www.github.com/googleapis/java-bigquerystorage/commit/248ab73eebb9feda94e7e29de591a70c91a064c1))
+* better default stream support in client library ([#750](https://www.github.com/googleapis/java-bigquerystorage/issues/750)) ([488f258](https://www.github.com/googleapis/java-bigquerystorage/commit/488f2589a793ef9efcab64a9bed9af05f5b1620d)), closes [#749](https://www.github.com/googleapis/java-bigquerystorage/issues/749) [#746](https://www.github.com/googleapis/java-bigquerystorage/issues/746)
+* remove IgnoreUnknownFields support on JsonStreamWriter ([#757](https://www.github.com/googleapis/java-bigquerystorage/issues/757)) ([0988105](https://www.github.com/googleapis/java-bigquerystorage/commit/09881051a98f7d1675c3ec0850ef36dbe2ffa481))
+* updates to Write API v1beta2 public interface, migrate to Java microgenerator ([#728](https://www.github.com/googleapis/java-bigquerystorage/issues/728)) ([2fc5968](https://www.github.com/googleapis/java-bigquerystorage/commit/2fc59689dfe64be6c23104493f690f476a0cda7f))
+
+
+### Bug Fixes
+
+* An extra test that is still calling old JsonStreamWriter append ([#760](https://www.github.com/googleapis/java-bigquerystorage/issues/760)) ([af72e6e](https://www.github.com/googleapis/java-bigquerystorage/commit/af72e6e9b4100e4f47fad4139437a04aa3ee7535))
+* enable tests that are disabled due to breaking change and stop ignoring ALREADY_EXISTED error ([#748](https://www.github.com/googleapis/java-bigquerystorage/issues/748)) ([8caf5a2](https://www.github.com/googleapis/java-bigquerystorage/commit/8caf5a26baf865c55405363f9d78756bce2d5219))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.126.3 ([#739](https://www.github.com/googleapis/java-bigquerystorage/issues/739)) ([29f2bac](https://www.github.com/googleapis/java-bigquerystorage/commit/29f2bacb49e977d2e2007123c0c935add264cbc0))
+
 ### [1.7.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.7.1...v1.7.2) (2020-12-15)
 
 
