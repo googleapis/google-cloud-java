@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-retail.git",
+        "sha": "91643d2da5ef49960ba9bb141ded9e5632a4fab3"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "40d76d547573fc273220bc0c8291fd942cb4502b"
+      }
+    }
+  ]
+}
