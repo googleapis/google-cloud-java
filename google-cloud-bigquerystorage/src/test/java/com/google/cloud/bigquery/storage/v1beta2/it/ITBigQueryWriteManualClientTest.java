@@ -331,8 +331,7 @@ public class ITBigQueryWriteManualClientTest {
       row1.put("test_datetime", "2020-10-1 12:00:00");
       JSONArray jsonArr1 = new JSONArray(new JSONObject[] {row1});
 
-      ApiFuture<AppendRowsResponse> response1 =
-          jsonStreamWriter.append(jsonArr1, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> response1 = jsonStreamWriter.append(jsonArr1, -1);
 
       assertEquals(0, response1.get().getAppendResult().getOffset().getValue());
 
@@ -350,11 +349,9 @@ public class ITBigQueryWriteManualClientTest {
       jsonArr3.put(row4);
 
       LOG.info("Sending two more messages");
-      ApiFuture<AppendRowsResponse> response2 =
-          jsonStreamWriter.append(jsonArr2, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> response2 = jsonStreamWriter.append(jsonArr2, -1);
       LOG.info("Sending one more message");
-      ApiFuture<AppendRowsResponse> response3 =
-          jsonStreamWriter.append(jsonArr3, -1, /* allowUnknownFields */ false);
+      ApiFuture<AppendRowsResponse> response3 = jsonStreamWriter.append(jsonArr3, -1);
       assertEquals(1, response2.get().getAppendResult().getOffset().getValue());
       assertEquals(3, response3.get().getAppendResult().getOffset().getValue());
 
