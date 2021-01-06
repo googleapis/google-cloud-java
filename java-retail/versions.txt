@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-retail:0.1.0:0.1.0
-proto-google-cloud-retail-v2:0.1.0:0.1.0
-grpc-google-cloud-retail-v2:0.1.0:0.1.0
+google-cloud-retail:0.1.0:0.1.1-SNAPSHOT
+proto-google-cloud-retail-v2:0.1.0:0.1.1-SNAPSHOT
+grpc-google-cloud-retail-v2:0.1.0:0.1.1-SNAPSHOT
