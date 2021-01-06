@@ -97,6 +97,7 @@ public class WebRiskServiceClientTest {
             .setAdditions(ThreatEntryAdditions.newBuilder().build())
             .setRemovals(ThreatEntryRemovals.newBuilder().build())
             .setNewVersionToken(ByteString.EMPTY)
+            .setChecksum(ComputeThreatListDiffResponse.Checksum.newBuilder().build())
             .setRecommendedNextDiff(Timestamp.newBuilder().build())
             .build();
     mockWebRiskService.addResponse(expectedResponse);
@@ -143,7 +144,10 @@ public class WebRiskServiceClientTest {
 
   @Test
   public void searchUrisTest() throws Exception {
-    SearchUrisResponse expectedResponse = SearchUrisResponse.newBuilder().build();
+    SearchUrisResponse expectedResponse =
+        SearchUrisResponse.newBuilder()
+            .setThreat(SearchUrisResponse.ThreatUri.newBuilder().build())
+            .build();
     mockWebRiskService.addResponse(expectedResponse);
 
     String uri = "uri116076";
