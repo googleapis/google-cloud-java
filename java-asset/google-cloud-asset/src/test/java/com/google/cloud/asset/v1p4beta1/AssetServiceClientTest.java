@@ -84,6 +84,7 @@ public class AssetServiceClientTest {
   public void analyzeIamPolicyTest() throws Exception {
     AnalyzeIamPolicyResponse expectedResponse =
         AnalyzeIamPolicyResponse.newBuilder()
+            .setMainAnalysis(AnalyzeIamPolicyResponse.IamPolicyAnalysis.newBuilder().build())
             .addAllServiceAccountImpersonationAnalysis(
                 new ArrayList<AnalyzeIamPolicyResponse.IamPolicyAnalysis>())
             .setFullyExplored(true)
@@ -94,6 +95,7 @@ public class AssetServiceClientTest {
     AnalyzeIamPolicyRequest request =
         AnalyzeIamPolicyRequest.newBuilder()
             .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+            .setOptions(AnalyzeIamPolicyRequest.Options.newBuilder().build())
             .build();
 
     AnalyzeIamPolicyResponse actualResponse = client.analyzeIamPolicy(request);
@@ -120,6 +122,7 @@ public class AssetServiceClientTest {
       AnalyzeIamPolicyRequest request =
           AnalyzeIamPolicyRequest.newBuilder()
               .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+              .setOptions(AnalyzeIamPolicyRequest.Options.newBuilder().build())
               .build();
       client.analyzeIamPolicy(request);
       Assert.fail("No exception raised");
@@ -145,6 +148,7 @@ public class AssetServiceClientTest {
     ExportIamPolicyAnalysisRequest request =
         ExportIamPolicyAnalysisRequest.newBuilder()
             .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+            .setOptions(ExportIamPolicyAnalysisRequest.Options.newBuilder().build())
             .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
             .build();
 
@@ -175,6 +179,7 @@ public class AssetServiceClientTest {
       ExportIamPolicyAnalysisRequest request =
           ExportIamPolicyAnalysisRequest.newBuilder()
               .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+              .setOptions(ExportIamPolicyAnalysisRequest.Options.newBuilder().build())
               .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
               .build();
       client.exportIamPolicyAnalysisAsync(request).get();

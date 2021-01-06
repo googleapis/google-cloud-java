@@ -579,6 +579,7 @@ public class AssetServiceClientTest {
   public void analyzeIamPolicyTest() throws Exception {
     AnalyzeIamPolicyResponse expectedResponse =
         AnalyzeIamPolicyResponse.newBuilder()
+            .setMainAnalysis(AnalyzeIamPolicyResponse.IamPolicyAnalysis.newBuilder().build())
             .addAllServiceAccountImpersonationAnalysis(
                 new ArrayList<AnalyzeIamPolicyResponse.IamPolicyAnalysis>())
             .setFullyExplored(true)
