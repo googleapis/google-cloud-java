@@ -17,7 +17,7 @@
     <logback.version>1.2.3</logback.version>
     <easymock.version>3.6</easymock.version>
     <truth.version>1.1</truth.version>
-    <logging.version>2.1.0</logging.version>
+    <logging.version>2.1.2</logging.version>
     <slf4j.version>1.7.30</slf4j.version>
     <google.api-common.version>1.9.0</google.api-common.version>
   </properties>
