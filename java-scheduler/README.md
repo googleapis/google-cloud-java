@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-scheduler'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-scheduler:1.23.5'
+compile 'com.google.cloud:google-cloud-scheduler:1.23.6'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "1.23.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "1.23.6"
 ```
 
 ## Authentication
