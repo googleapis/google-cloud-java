@@ -27,11 +27,11 @@ If you are using Maven, add this to your pom.xml file:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-mediatranslation:0.2.7'
+compile 'com.google.cloud:google-cloud-mediatranslation:0.2.9'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-mediatranslation" % "0.2.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-mediatranslation" % "0.2.9"
 ```
 
 ## Authentication
