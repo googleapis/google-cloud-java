@@ -47,25 +47,32 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-automl</artifactId>
-  <version>1.3.2</version>
+  <version>1.3.3</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>1.125.0</version>
+  <version>1.126.3</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.113.4</version>
+  <version>1.113.8</version>
 </dependency>
 
 ```
 
-If you are using Gradle, add this to your dependencies
+If you are using Gradle 5.x or later, add this to your dependencies
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:16.2.0')
+
+compile 'com.google.cloud:google-cloud-automl'
+```
+If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-automl:1.3.3'
 ```
+
 If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "1.3.3"
