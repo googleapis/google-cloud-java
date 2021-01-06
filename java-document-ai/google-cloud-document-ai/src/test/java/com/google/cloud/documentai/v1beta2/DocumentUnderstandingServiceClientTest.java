@@ -140,6 +140,7 @@ public class DocumentUnderstandingServiceClientTest {
             .addAllPages(new ArrayList<Document.Page>())
             .addAllEntities(new ArrayList<Document.Entity>())
             .addAllEntityRelations(new ArrayList<Document.EntityRelation>())
+            .setShardInfo(Document.ShardInfo.newBuilder().build())
             .addAllLabels(new ArrayList<Document.Label>())
             .setError(Status.newBuilder().build())
             .build();
