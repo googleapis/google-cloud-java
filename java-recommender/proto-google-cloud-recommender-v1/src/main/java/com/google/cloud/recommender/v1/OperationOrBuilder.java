@@ -288,12 +288,12 @@ public interface OperationOrBuilder
    *   "/versions/&#42;&#47;targetSize/percent": 20
    *  }
    * * Example: {
-   *   "/bindings/&#42;&#47;role": "roles/owner"
+   *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
    *  }
    * * Example: {
-   *   "/bindings/&#42;&#47;role": "roles/owner"
-   *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
+   *   "/bindings/&#42;&#47;role": "roles/admin"
+   *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
    *  }
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
@@ -316,12 +316,12 @@ public interface OperationOrBuilder
    *   "/versions/&#42;&#47;targetSize/percent": 20
    *  }
    * * Example: {
-   *   "/bindings/&#42;&#47;role": "roles/owner"
+   *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
    *  }
    * * Example: {
-   *   "/bindings/&#42;&#47;role": "roles/owner"
-   *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
+   *   "/bindings/&#42;&#47;role": "roles/admin"
+   *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
    *  }
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
@@ -347,12 +347,12 @@ public interface OperationOrBuilder
    *   "/versions/&#42;&#47;targetSize/percent": 20
    *  }
    * * Example: {
-   *   "/bindings/&#42;&#47;role": "roles/owner"
+   *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
    *  }
    * * Example: {
-   *   "/bindings/&#42;&#47;role": "roles/owner"
-   *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
+   *   "/bindings/&#42;&#47;role": "roles/admin"
+   *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
    *  }
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
@@ -375,12 +375,12 @@ public interface OperationOrBuilder
    *   "/versions/&#42;&#47;targetSize/percent": 20
    *  }
    * * Example: {
-   *   "/bindings/&#42;&#47;role": "roles/owner"
+   *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
    *  }
    * * Example: {
-   *   "/bindings/&#42;&#47;role": "roles/owner"
-   *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
+   *   "/bindings/&#42;&#47;role": "roles/admin"
+   *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
    *  }
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.
@@ -404,12 +404,12 @@ public interface OperationOrBuilder
    *   "/versions/&#42;&#47;targetSize/percent": 20
    *  }
    * * Example: {
-   *   "/bindings/&#42;&#47;role": "roles/owner"
+   *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
    *  }
    * * Example: {
-   *   "/bindings/&#42;&#47;role": "roles/owner"
-   *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;example.com", "y&#64;example.com"]
+   *   "/bindings/&#42;&#47;role": "roles/admin"
+   *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
    *  }
    * When both path_filters and path_value_matchers are set, an implicit AND
    * must be performed.

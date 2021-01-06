@@ -95,9 +95,7 @@ public class RecommenderClientTest {
             .build();
     mockRecommender.addResponse(expectedResponse);
 
-    InsightTypeName parent =
-        InsightTypeName.ofProjectLocationInsightTypeName(
-            "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+    InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
 
     ListInsightsPagedResponse pagedListResponse = client.listInsights(parent);
 
@@ -123,9 +121,7 @@ public class RecommenderClientTest {
     mockRecommender.addException(exception);
 
     try {
-      InsightTypeName parent =
-          InsightTypeName.ofProjectLocationInsightTypeName(
-              "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+      InsightTypeName parent = InsightTypeName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
       client.listInsights(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -182,9 +178,7 @@ public class RecommenderClientTest {
     Insight expectedResponse =
         Insight.newBuilder()
             .setName(
-                InsightName.ofProjectLocationInsightTypeInsightName(
-                        "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]")
-                    .toString())
+                InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]").toString())
             .setDescription("description-1724546052")
             .addAllTargetResources(new ArrayList<String>())
             .setInsightSubtype("insightSubtype841535170")
@@ -197,9 +191,7 @@ public class RecommenderClientTest {
             .build();
     mockRecommender.addResponse(expectedResponse);
 
-    InsightName name =
-        InsightName.ofProjectLocationInsightTypeInsightName(
-            "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+    InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
 
     Insight actualResponse = client.getInsight(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -221,9 +213,7 @@ public class RecommenderClientTest {
     mockRecommender.addException(exception);
 
     try {
-      InsightName name =
-          InsightName.ofProjectLocationInsightTypeInsightName(
-              "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+      InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
       client.getInsight(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -236,9 +226,7 @@ public class RecommenderClientTest {
     Insight expectedResponse =
         Insight.newBuilder()
             .setName(
-                InsightName.ofProjectLocationInsightTypeInsightName(
-                        "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]")
-                    .toString())
+                InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]").toString())
             .setDescription("description-1724546052")
             .addAllTargetResources(new ArrayList<String>())
             .setInsightSubtype("insightSubtype841535170")
@@ -286,9 +274,7 @@ public class RecommenderClientTest {
     Insight expectedResponse =
         Insight.newBuilder()
             .setName(
-                InsightName.ofProjectLocationInsightTypeInsightName(
-                        "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]")
-                    .toString())
+                InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]").toString())
             .setDescription("description-1724546052")
             .addAllTargetResources(new ArrayList<String>())
             .setInsightSubtype("insightSubtype841535170")
@@ -301,9 +287,7 @@ public class RecommenderClientTest {
             .build();
     mockRecommender.addResponse(expectedResponse);
 
-    InsightName name =
-        InsightName.ofProjectLocationInsightTypeInsightName(
-            "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+    InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
     Map<String, String> stateMetadata = new HashMap<>();
     String etag = "etag3123477";
 
@@ -329,9 +313,7 @@ public class RecommenderClientTest {
     mockRecommender.addException(exception);
 
     try {
-      InsightName name =
-          InsightName.ofProjectLocationInsightTypeInsightName(
-              "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+      InsightName name = InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
       Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
       client.markInsightAccepted(name, stateMetadata, etag);
@@ -346,9 +328,7 @@ public class RecommenderClientTest {
     Insight expectedResponse =
         Insight.newBuilder()
             .setName(
-                InsightName.ofProjectLocationInsightTypeInsightName(
-                        "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]")
-                    .toString())
+                InsightName.of("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]").toString())
             .setDescription("description-1724546052")
             .addAllTargetResources(new ArrayList<String>())
             .setInsightSubtype("insightSubtype841535170")
@@ -407,9 +387,7 @@ public class RecommenderClientTest {
             .build();
     mockRecommender.addResponse(expectedResponse);
 
-    RecommenderName parent =
-        RecommenderName.ofProjectLocationRecommenderName(
-            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+    RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
 
     ListRecommendationsPagedResponse pagedListResponse = client.listRecommendations(parent);
 
@@ -435,9 +413,7 @@ public class RecommenderClientTest {
     mockRecommender.addException(exception);
 
     try {
-      RecommenderName parent =
-          RecommenderName.ofProjectLocationRecommenderName(
-              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+      RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
       client.listRecommendations(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -499,9 +475,7 @@ public class RecommenderClientTest {
             .build();
     mockRecommender.addResponse(expectedResponse);
 
-    RecommenderName parent =
-        RecommenderName.ofProjectLocationRecommenderName(
-            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+    RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
     String filter = "filter-1274492040";
 
     ListRecommendationsPagedResponse pagedListResponse = client.listRecommendations(parent, filter);
@@ -529,9 +503,7 @@ public class RecommenderClientTest {
     mockRecommender.addException(exception);
 
     try {
-      RecommenderName parent =
-          RecommenderName.ofProjectLocationRecommenderName(
-              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+      RecommenderName parent = RecommenderName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
       String filter = "filter-1274492040";
       client.listRecommendations(parent, filter);
       Assert.fail("No exception raised");
@@ -592,7 +564,7 @@ public class RecommenderClientTest {
     Recommendation expectedResponse =
         Recommendation.newBuilder()
             .setName(
-                RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                RecommendationName.of(
                         "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
                     .toString())
             .setDescription("description-1724546052")
@@ -608,8 +580,7 @@ public class RecommenderClientTest {
     mockRecommender.addResponse(expectedResponse);
 
     RecommendationName name =
-        RecommendationName.ofProjectLocationRecommenderRecommendationName(
-            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
 
     Recommendation actualResponse = client.getRecommendation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -632,8 +603,7 @@ public class RecommenderClientTest {
 
     try {
       RecommendationName name =
-          RecommendationName.ofProjectLocationRecommenderRecommendationName(
-              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+          RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
       client.getRecommendation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -646,7 +616,7 @@ public class RecommenderClientTest {
     Recommendation expectedResponse =
         Recommendation.newBuilder()
             .setName(
-                RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                RecommendationName.of(
                         "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
                     .toString())
             .setDescription("description-1724546052")
@@ -696,7 +666,7 @@ public class RecommenderClientTest {
     Recommendation expectedResponse =
         Recommendation.newBuilder()
             .setName(
-                RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                RecommendationName.of(
                         "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
                     .toString())
             .setDescription("description-1724546052")
@@ -712,8 +682,7 @@ public class RecommenderClientTest {
     mockRecommender.addResponse(expectedResponse);
 
     RecommendationName name =
-        RecommendationName.ofProjectLocationRecommenderRecommendationName(
-            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
     Map<String, String> stateMetadata = new HashMap<>();
     String etag = "etag3123477";
 
@@ -741,8 +710,7 @@ public class RecommenderClientTest {
 
     try {
       RecommendationName name =
-          RecommendationName.ofProjectLocationRecommenderRecommendationName(
-              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+          RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
       Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
       client.markRecommendationClaimed(name, stateMetadata, etag);
@@ -757,7 +725,7 @@ public class RecommenderClientTest {
     Recommendation expectedResponse =
         Recommendation.newBuilder()
             .setName(
-                RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                RecommendationName.of(
                         "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
                     .toString())
             .setDescription("description-1724546052")
@@ -814,7 +782,7 @@ public class RecommenderClientTest {
     Recommendation expectedResponse =
         Recommendation.newBuilder()
             .setName(
-                RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                RecommendationName.of(
                         "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
                     .toString())
             .setDescription("description-1724546052")
@@ -830,8 +798,7 @@ public class RecommenderClientTest {
     mockRecommender.addResponse(expectedResponse);
 
     RecommendationName name =
-        RecommendationName.ofProjectLocationRecommenderRecommendationName(
-            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
     Map<String, String> stateMetadata = new HashMap<>();
     String etag = "etag3123477";
 
@@ -859,8 +826,7 @@ public class RecommenderClientTest {
 
     try {
       RecommendationName name =
-          RecommendationName.ofProjectLocationRecommenderRecommendationName(
-              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+          RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
       Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
       client.markRecommendationSucceeded(name, stateMetadata, etag);
@@ -875,7 +841,7 @@ public class RecommenderClientTest {
     Recommendation expectedResponse =
         Recommendation.newBuilder()
             .setName(
-                RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                RecommendationName.of(
                         "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
                     .toString())
             .setDescription("description-1724546052")
@@ -932,7 +898,7 @@ public class RecommenderClientTest {
     Recommendation expectedResponse =
         Recommendation.newBuilder()
             .setName(
-                RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                RecommendationName.of(
                         "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
                     .toString())
             .setDescription("description-1724546052")
@@ -948,8 +914,7 @@ public class RecommenderClientTest {
     mockRecommender.addResponse(expectedResponse);
 
     RecommendationName name =
-        RecommendationName.ofProjectLocationRecommenderRecommendationName(
-            "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+        RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
     Map<String, String> stateMetadata = new HashMap<>();
     String etag = "etag3123477";
 
@@ -977,8 +942,7 @@ public class RecommenderClientTest {
 
     try {
       RecommendationName name =
-          RecommendationName.ofProjectLocationRecommenderRecommendationName(
-              "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+          RecommendationName.of("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
       Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
       client.markRecommendationFailed(name, stateMetadata, etag);
@@ -993,7 +957,7 @@ public class RecommenderClientTest {
     Recommendation expectedResponse =
         Recommendation.newBuilder()
             .setName(
-                RecommendationName.ofProjectLocationRecommenderRecommendationName(
+                RecommendationName.of(
                         "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
                     .toString())
             .setDescription("description-1724546052")

@@ -144,8 +144,6 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
-   * INSIGHT_TYPE_ID refers to supported insight types:
-   * https://cloud.google.com/recommender/docs/insights/insight-types.)
    * </pre>
    *
    * <code>
@@ -176,8 +174,6 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
-   * INSIGHT_TYPE_ID refers to supported insight types:
-   * https://cloud.google.com/recommender/docs/insights/insight-types.)
    * </pre>
    *
    * <code>
@@ -703,8 +699,6 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
-     * INSIGHT_TYPE_ID refers to supported insight types:
-     * https://cloud.google.com/recommender/docs/insights/insight-types.)
      * </pre>
      *
      * <code>
@@ -734,8 +728,6 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
-     * INSIGHT_TYPE_ID refers to supported insight types:
-     * https://cloud.google.com/recommender/docs/insights/insight-types.)
      * </pre>
      *
      * <code>
@@ -765,8 +757,6 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
-     * INSIGHT_TYPE_ID refers to supported insight types:
-     * https://cloud.google.com/recommender/docs/insights/insight-types.)
      * </pre>
      *
      * <code>
@@ -795,8 +785,6 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
-     * INSIGHT_TYPE_ID refers to supported insight types:
-     * https://cloud.google.com/recommender/docs/insights/insight-types.)
      * </pre>
      *
      * <code>
@@ -821,8 +809,6 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
-     * INSIGHT_TYPE_ID refers to supported insight types:
-     * https://cloud.google.com/recommender/docs/insights/insight-types.)
      * </pre>
      *
      * <code>

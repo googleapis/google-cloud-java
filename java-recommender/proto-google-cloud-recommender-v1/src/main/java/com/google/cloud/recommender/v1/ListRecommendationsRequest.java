@@ -144,8 +144,6 @@ public final class ListRecommendationsRequest extends com.google.protobuf.Genera
    * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
-   * RECOMMENDER_ID refers to supported recommenders:
-   * https://cloud.google.com/recommender/docs/recommenders.
    * </pre>
    *
    * <code>
@@ -176,8 +174,6 @@ public final class ListRecommendationsRequest extends com.google.protobuf.Genera
    * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
-   * RECOMMENDER_ID refers to supported recommenders:
-   * https://cloud.google.com/recommender/docs/recommenders.
    * </pre>
    *
    * <code>
@@ -704,8 +700,6 @@ public final class ListRecommendationsRequest extends com.google.protobuf.Genera
      * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
-     * RECOMMENDER_ID refers to supported recommenders:
-     * https://cloud.google.com/recommender/docs/recommenders.
      * </pre>
      *
      * <code>
@@ -735,8 +729,6 @@ public final class ListRecommendationsRequest extends com.google.protobuf.Genera
      * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
-     * RECOMMENDER_ID refers to supported recommenders:
-     * https://cloud.google.com/recommender/docs/recommenders.
      * </pre>
      *
      * <code>
@@ -766,8 +758,6 @@ public final class ListRecommendationsRequest extends com.google.protobuf.Genera
      * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
-     * RECOMMENDER_ID refers to supported recommenders:
-     * https://cloud.google.com/recommender/docs/recommenders.
      * </pre>
      *
      * <code>
@@ -796,8 +786,6 @@ public final class ListRecommendationsRequest extends com.google.protobuf.Genera
      * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
-     * RECOMMENDER_ID refers to supported recommenders:
-     * https://cloud.google.com/recommender/docs/recommenders.
      * </pre>
      *
      * <code>
@@ -822,8 +810,6 @@ public final class ListRecommendationsRequest extends com.google.protobuf.Genera
      * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
      * LOCATION here refers to GCP Locations:
      * https://cloud.google.com/about/locations/
-     * RECOMMENDER_ID refers to supported recommenders:
-     * https://cloud.google.com/recommender/docs/recommenders.
      * </pre>
      *
      * <code>
