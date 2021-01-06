@@ -88,6 +88,8 @@ public class BaseBigQueryReadClientTest {
             .setName(ReadSessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]").toString())
             .setExpireTime(Timestamp.newBuilder().build())
             .setTable(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
+            .setTableModifiers(ReadSession.TableModifiers.newBuilder().build())
+            .setReadOptions(ReadSession.TableReadOptions.newBuilder().build())
             .addAllStreams(new ArrayList<ReadStream>())
             .build();
     mockBigQueryRead.addResponse(expectedResponse);
@@ -135,6 +137,8 @@ public class BaseBigQueryReadClientTest {
             .setName(ReadSessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]").toString())
             .setExpireTime(Timestamp.newBuilder().build())
             .setTable(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
+            .setTableModifiers(ReadSession.TableModifiers.newBuilder().build())
+            .setReadOptions(ReadSession.TableReadOptions.newBuilder().build())
             .addAllStreams(new ArrayList<ReadStream>())
             .build();
     mockBigQueryRead.addResponse(expectedResponse);
