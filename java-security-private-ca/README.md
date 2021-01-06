@@ -24,10 +24,11 @@ If you are using Maven, add this to your pom.xml file:
 </dependency>
 ```
 
-If you are using Gradle, add this to your dependencies
+If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-security-private-ca:0.2.1'
 ```
+
 If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-security-private-ca" % "0.2.1"
