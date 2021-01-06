@@ -93,7 +93,9 @@ public class WebSecurityScannerClientTest {
             .setDisplayName("displayName1714148973")
             .setMaxQps(844445913)
             .addAllStartingUrls(new ArrayList<String>())
+            .setAuthentication(ScanConfig.Authentication.newBuilder().build())
             .addAllBlacklistPatterns(new ArrayList<String>())
+            .setSchedule(ScanConfig.Schedule.newBuilder().build())
             .addAllTargetPlatforms(new ArrayList<ScanConfig.TargetPlatform>())
             .setLatestRun(ScanRun.newBuilder().build())
             .build();
@@ -140,7 +142,9 @@ public class WebSecurityScannerClientTest {
             .setDisplayName("displayName1714148973")
             .setMaxQps(844445913)
             .addAllStartingUrls(new ArrayList<String>())
+            .setAuthentication(ScanConfig.Authentication.newBuilder().build())
             .addAllBlacklistPatterns(new ArrayList<String>())
+            .setSchedule(ScanConfig.Schedule.newBuilder().build())
             .addAllTargetPlatforms(new ArrayList<ScanConfig.TargetPlatform>())
             .setLatestRun(ScanRun.newBuilder().build())
             .build();
@@ -255,7 +259,9 @@ public class WebSecurityScannerClientTest {
             .setDisplayName("displayName1714148973")
             .setMaxQps(844445913)
             .addAllStartingUrls(new ArrayList<String>())
+            .setAuthentication(ScanConfig.Authentication.newBuilder().build())
             .addAllBlacklistPatterns(new ArrayList<String>())
+            .setSchedule(ScanConfig.Schedule.newBuilder().build())
             .addAllTargetPlatforms(new ArrayList<ScanConfig.TargetPlatform>())
             .setLatestRun(ScanRun.newBuilder().build())
             .build();
@@ -299,7 +305,9 @@ public class WebSecurityScannerClientTest {
             .setDisplayName("displayName1714148973")
             .setMaxQps(844445913)
             .addAllStartingUrls(new ArrayList<String>())
+            .setAuthentication(ScanConfig.Authentication.newBuilder().build())
             .addAllBlacklistPatterns(new ArrayList<String>())
+            .setSchedule(ScanConfig.Schedule.newBuilder().build())
             .addAllTargetPlatforms(new ArrayList<ScanConfig.TargetPlatform>())
             .setLatestRun(ScanRun.newBuilder().build())
             .build();
@@ -431,7 +439,9 @@ public class WebSecurityScannerClientTest {
             .setDisplayName("displayName1714148973")
             .setMaxQps(844445913)
             .addAllStartingUrls(new ArrayList<String>())
+            .setAuthentication(ScanConfig.Authentication.newBuilder().build())
             .addAllBlacklistPatterns(new ArrayList<String>())
+            .setSchedule(ScanConfig.Schedule.newBuilder().build())
             .addAllTargetPlatforms(new ArrayList<ScanConfig.TargetPlatform>())
             .setLatestRun(ScanRun.newBuilder().build())
             .build();
