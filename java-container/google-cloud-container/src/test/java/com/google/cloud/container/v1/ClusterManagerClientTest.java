@@ -658,6 +658,7 @@ public class ClusterManagerClientTest {
             .setName("name3373707")
             .addAllLocations(new ArrayList<String>())
             .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
+            .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -701,6 +702,7 @@ public class ClusterManagerClientTest {
               .setName("name3373707")
               .addAllLocations(new ArrayList<String>())
               .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
+              .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -1947,6 +1949,7 @@ public class ClusterManagerClientTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllConditions(new ArrayList<StatusCondition>())
             .setPodIpv4CidrSize(1098768716)
+            .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1997,6 +2000,7 @@ public class ClusterManagerClientTest {
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .addAllConditions(new ArrayList<StatusCondition>())
             .setPodIpv4CidrSize(1098768716)
+            .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
