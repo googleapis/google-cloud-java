@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,35 +24,70 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class InspectTemplateName implements ResourceName {
-
-  @Deprecated
-  protected InspectTemplateName() {}
-
-  private static final PathTemplate ORGANIZATION_INSPECT_TEMPLATE_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_INSPECT_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/inspectTemplates/{inspect_template}");
-  private static final PathTemplate PROJECT_INSPECT_TEMPLATE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_INSPECT_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/inspectTemplates/{inspect_template}");
-  private static final PathTemplate ORGANIZATION_LOCATION_INSPECT_TEMPLATE_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_LOCATION_INSPECT_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/inspectTemplates/{inspect_template}");
-  private static final PathTemplate PROJECT_LOCATION_INSPECT_TEMPLATE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_INSPECT_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/inspectTemplates/{inspect_template}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String organization;
+  private final String inspectTemplate;
+  private final String project;
+  private final String location;
 
-  private String organization;
-  private String inspectTemplate;
-  private String project;
-  private String location;
+  @Deprecated
+  protected InspectTemplateName() {
+    organization = null;
+    inspectTemplate = null;
+    project = null;
+    location = null;
+  }
+
+  private InspectTemplateName(Builder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    inspectTemplate = Preconditions.checkNotNull(builder.getInspectTemplate());
+    project = null;
+    location = null;
+    pathTemplate = ORGANIZATION_INSPECT_TEMPLATE;
+  }
+
+  private InspectTemplateName(ProjectInspectTemplateBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    inspectTemplate = Preconditions.checkNotNull(builder.getInspectTemplate());
+    organization = null;
+    location = null;
+    pathTemplate = PROJECT_INSPECT_TEMPLATE;
+  }
+
+  private InspectTemplateName(OrganizationLocationInspectTemplateBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    inspectTemplate = Preconditions.checkNotNull(builder.getInspectTemplate());
+    project = null;
+    pathTemplate = ORGANIZATION_LOCATION_INSPECT_TEMPLATE;
+  }
+
+  private InspectTemplateName(ProjectLocationInspectTemplateBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    inspectTemplate = Preconditions.checkNotNull(builder.getInspectTemplate());
+    organization = null;
+    pathTemplate = PROJECT_LOCATION_INSPECT_TEMPLATE;
+  }
 
   public String getOrganization() {
     return organization;
@@ -68,32 +103,6 @@ public class InspectTemplateName implements ResourceName {
 
   public String getLocation() {
     return location;
-  }
-
-  private InspectTemplateName(Builder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    inspectTemplate = Preconditions.checkNotNull(builder.getInspectTemplate());
-    pathTemplate = ORGANIZATION_INSPECT_TEMPLATE_PATH_TEMPLATE;
-  }
-
-  private InspectTemplateName(ProjectInspectTemplateBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    inspectTemplate = Preconditions.checkNotNull(builder.getInspectTemplate());
-    pathTemplate = PROJECT_INSPECT_TEMPLATE_PATH_TEMPLATE;
-  }
-
-  private InspectTemplateName(OrganizationLocationInspectTemplateBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    inspectTemplate = Preconditions.checkNotNull(builder.getInspectTemplate());
-    pathTemplate = ORGANIZATION_LOCATION_INSPECT_TEMPLATE_PATH_TEMPLATE;
-  }
-
-  private InspectTemplateName(ProjectLocationInspectTemplateBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    inspectTemplate = Preconditions.checkNotNull(builder.getInspectTemplate());
-    pathTemplate = PROJECT_LOCATION_INSPECT_TEMPLATE_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -126,19 +135,13 @@ public class InspectTemplateName implements ResourceName {
   }
 
   public static InspectTemplateName of(String organization, String inspectTemplate) {
-    return newOrganizationInspectTemplateBuilder()
-        .setOrganization(organization)
-        .setInspectTemplate(inspectTemplate)
-        .build();
+    return newBuilder().setOrganization(organization).setInspectTemplate(inspectTemplate).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static InspectTemplateName ofOrganizationInspectTemplateName(
       String organization, String inspectTemplate) {
-    return newOrganizationInspectTemplateBuilder()
-        .setOrganization(organization)
-        .setInspectTemplate(inspectTemplate)
-        .build();
+    return newBuilder().setOrganization(organization).setInspectTemplate(inspectTemplate).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -223,34 +226,31 @@ public class InspectTemplateName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (ORGANIZATION_INSPECT_TEMPLATE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          ORGANIZATION_INSPECT_TEMPLATE_PATH_TEMPLATE.match(formattedString);
+    if (ORGANIZATION_INSPECT_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_INSPECT_TEMPLATE.match(formattedString);
       return ofOrganizationInspectTemplateName(
           matchMap.get("organization"), matchMap.get("inspect_template"));
-    } else if (PROJECT_INSPECT_TEMPLATE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_INSPECT_TEMPLATE_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_INSPECT_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_INSPECT_TEMPLATE.match(formattedString);
       return ofProjectInspectTemplateName(
           matchMap.get("project"), matchMap.get("inspect_template"));
-    } else if (ORGANIZATION_LOCATION_INSPECT_TEMPLATE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          ORGANIZATION_LOCATION_INSPECT_TEMPLATE_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION_LOCATION_INSPECT_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_LOCATION_INSPECT_TEMPLATE.match(formattedString);
       return ofOrganizationLocationInspectTemplateName(
           matchMap.get("organization"), matchMap.get("location"), matchMap.get("inspect_template"));
-    } else if (PROJECT_LOCATION_INSPECT_TEMPLATE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_INSPECT_TEMPLATE_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_LOCATION_INSPECT_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_INSPECT_TEMPLATE.match(formattedString);
       return ofProjectLocationInspectTemplateName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("inspect_template"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("InspectTemplateName.parse: formattedString not in valid format");
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_INSPECT_TEMPLATE_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_INSPECT_TEMPLATE_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_LOCATION_INSPECT_TEMPLATE_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_INSPECT_TEMPLATE_PATH_TEMPLATE.matches(formattedString);
+    return ORGANIZATION_INSPECT_TEMPLATE.matches(formattedString)
+        || PROJECT_INSPECT_TEMPLATE.matches(formattedString)
+        || ORGANIZATION_LOCATION_INSPECT_TEMPLATE.matches(formattedString)
+        || PROJECT_LOCATION_INSPECT_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -287,9 +287,39 @@ public class InspectTemplateName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      InspectTemplateName that = ((InspectTemplateName) o);
+      return Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.inspectTemplate, that.inspectTemplate)
+          && Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(inspectTemplate);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
+  }
+
   /** Builder for organizations/{organization}/inspectTemplates/{inspect_template}. */
   public static class Builder {
-
     private String organization;
     private String inspectTemplate;
 
@@ -315,9 +345,8 @@ public class InspectTemplateName implements ResourceName {
 
     private Builder(InspectTemplateName inspectTemplateName) {
       Preconditions.checkArgument(
-          inspectTemplateName.pathTemplate == ORGANIZATION_INSPECT_TEMPLATE_PATH_TEMPLATE,
-          "toBuilder is only supported when InspectTemplateName has the pattern of "
-              + "organizations/{organization}/inspectTemplates/{inspect_template}.");
+          Objects.equals(inspectTemplateName.pathTemplate, ORGANIZATION_INSPECT_TEMPLATE),
+          "toBuilder is only supported when InspectTemplateName has the pattern of organizations/{organization}/inspectTemplates/{inspect_template}");
       organization = inspectTemplateName.organization;
       inspectTemplate = inspectTemplateName.inspectTemplate;
     }
@@ -330,11 +359,10 @@ public class InspectTemplateName implements ResourceName {
   /** Builder for projects/{project}/inspectTemplates/{inspect_template}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectInspectTemplateBuilder {
-
     private String project;
     private String inspectTemplate;
 
-    private ProjectInspectTemplateBuilder() {}
+    protected ProjectInspectTemplateBuilder() {}
 
     public String getProject() {
       return project;
@@ -365,12 +393,11 @@ public class InspectTemplateName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationInspectTemplateBuilder {
-
     private String organization;
     private String location;
     private String inspectTemplate;
 
-    private OrganizationLocationInspectTemplateBuilder() {}
+    protected OrganizationLocationInspectTemplateBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -407,12 +434,11 @@ public class InspectTemplateName implements ResourceName {
   /** Builder for projects/{project}/locations/{location}/inspectTemplates/{inspect_template}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationInspectTemplateBuilder {
-
     private String project;
     private String location;
     private String inspectTemplate;
 
-    private ProjectLocationInspectTemplateBuilder() {}
+    protected ProjectLocationInspectTemplateBuilder() {}
 
     public String getProject() {
       return project;
@@ -444,36 +470,5 @@ public class InspectTemplateName implements ResourceName {
     public InspectTemplateName build() {
       return new InspectTemplateName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      InspectTemplateName that = (InspectTemplateName) o;
-      return (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.inspectTemplate, that.inspectTemplate))
-          && (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.location, that.location));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(inspectTemplate);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    return h;
   }
 }

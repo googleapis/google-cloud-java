@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,35 +24,70 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class StoredInfoTypeName implements ResourceName {
-
-  @Deprecated
-  protected StoredInfoTypeName() {}
-
-  private static final PathTemplate ORGANIZATION_STORED_INFO_TYPE_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_STORED_INFO_TYPE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/storedInfoTypes/{stored_info_type}");
-  private static final PathTemplate PROJECT_STORED_INFO_TYPE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_STORED_INFO_TYPE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/storedInfoTypes/{stored_info_type}");
-  private static final PathTemplate ORGANIZATION_LOCATION_STORED_INFO_TYPE_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_LOCATION_STORED_INFO_TYPE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/storedInfoTypes/{stored_info_type}");
-  private static final PathTemplate PROJECT_LOCATION_STORED_INFO_TYPE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_STORED_INFO_TYPE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/storedInfoTypes/{stored_info_type}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String organization;
+  private final String storedInfoType;
+  private final String project;
+  private final String location;
 
-  private String organization;
-  private String storedInfoType;
-  private String project;
-  private String location;
+  @Deprecated
+  protected StoredInfoTypeName() {
+    organization = null;
+    storedInfoType = null;
+    project = null;
+    location = null;
+  }
+
+  private StoredInfoTypeName(Builder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    storedInfoType = Preconditions.checkNotNull(builder.getStoredInfoType());
+    project = null;
+    location = null;
+    pathTemplate = ORGANIZATION_STORED_INFO_TYPE;
+  }
+
+  private StoredInfoTypeName(ProjectStoredInfoTypeBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    storedInfoType = Preconditions.checkNotNull(builder.getStoredInfoType());
+    organization = null;
+    location = null;
+    pathTemplate = PROJECT_STORED_INFO_TYPE;
+  }
+
+  private StoredInfoTypeName(OrganizationLocationStoredInfoTypeBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    storedInfoType = Preconditions.checkNotNull(builder.getStoredInfoType());
+    project = null;
+    pathTemplate = ORGANIZATION_LOCATION_STORED_INFO_TYPE;
+  }
+
+  private StoredInfoTypeName(ProjectLocationStoredInfoTypeBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    storedInfoType = Preconditions.checkNotNull(builder.getStoredInfoType());
+    organization = null;
+    pathTemplate = PROJECT_LOCATION_STORED_INFO_TYPE;
+  }
 
   public String getOrganization() {
     return organization;
@@ -68,32 +103,6 @@ public class StoredInfoTypeName implements ResourceName {
 
   public String getLocation() {
     return location;
-  }
-
-  private StoredInfoTypeName(Builder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    storedInfoType = Preconditions.checkNotNull(builder.getStoredInfoType());
-    pathTemplate = ORGANIZATION_STORED_INFO_TYPE_PATH_TEMPLATE;
-  }
-
-  private StoredInfoTypeName(ProjectStoredInfoTypeBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    storedInfoType = Preconditions.checkNotNull(builder.getStoredInfoType());
-    pathTemplate = PROJECT_STORED_INFO_TYPE_PATH_TEMPLATE;
-  }
-
-  private StoredInfoTypeName(OrganizationLocationStoredInfoTypeBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    storedInfoType = Preconditions.checkNotNull(builder.getStoredInfoType());
-    pathTemplate = ORGANIZATION_LOCATION_STORED_INFO_TYPE_PATH_TEMPLATE;
-  }
-
-  private StoredInfoTypeName(ProjectLocationStoredInfoTypeBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    storedInfoType = Preconditions.checkNotNull(builder.getStoredInfoType());
-    pathTemplate = PROJECT_LOCATION_STORED_INFO_TYPE_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -126,19 +135,13 @@ public class StoredInfoTypeName implements ResourceName {
   }
 
   public static StoredInfoTypeName of(String organization, String storedInfoType) {
-    return newOrganizationStoredInfoTypeBuilder()
-        .setOrganization(organization)
-        .setStoredInfoType(storedInfoType)
-        .build();
+    return newBuilder().setOrganization(organization).setStoredInfoType(storedInfoType).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static StoredInfoTypeName ofOrganizationStoredInfoTypeName(
       String organization, String storedInfoType) {
-    return newOrganizationStoredInfoTypeBuilder()
-        .setOrganization(organization)
-        .setStoredInfoType(storedInfoType)
-        .build();
+    return newBuilder().setOrganization(organization).setStoredInfoType(storedInfoType).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -223,33 +226,30 @@ public class StoredInfoTypeName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (ORGANIZATION_STORED_INFO_TYPE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          ORGANIZATION_STORED_INFO_TYPE_PATH_TEMPLATE.match(formattedString);
+    if (ORGANIZATION_STORED_INFO_TYPE.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_STORED_INFO_TYPE.match(formattedString);
       return ofOrganizationStoredInfoTypeName(
           matchMap.get("organization"), matchMap.get("stored_info_type"));
-    } else if (PROJECT_STORED_INFO_TYPE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_STORED_INFO_TYPE_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_STORED_INFO_TYPE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_STORED_INFO_TYPE.match(formattedString);
       return ofProjectStoredInfoTypeName(matchMap.get("project"), matchMap.get("stored_info_type"));
-    } else if (ORGANIZATION_LOCATION_STORED_INFO_TYPE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          ORGANIZATION_LOCATION_STORED_INFO_TYPE_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION_LOCATION_STORED_INFO_TYPE.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_LOCATION_STORED_INFO_TYPE.match(formattedString);
       return ofOrganizationLocationStoredInfoTypeName(
           matchMap.get("organization"), matchMap.get("location"), matchMap.get("stored_info_type"));
-    } else if (PROJECT_LOCATION_STORED_INFO_TYPE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_STORED_INFO_TYPE_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_LOCATION_STORED_INFO_TYPE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_STORED_INFO_TYPE.match(formattedString);
       return ofProjectLocationStoredInfoTypeName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("stored_info_type"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("StoredInfoTypeName.parse: formattedString not in valid format");
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_STORED_INFO_TYPE_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_STORED_INFO_TYPE_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_LOCATION_STORED_INFO_TYPE_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_STORED_INFO_TYPE_PATH_TEMPLATE.matches(formattedString);
+    return ORGANIZATION_STORED_INFO_TYPE.matches(formattedString)
+        || PROJECT_STORED_INFO_TYPE.matches(formattedString)
+        || ORGANIZATION_LOCATION_STORED_INFO_TYPE.matches(formattedString)
+        || PROJECT_LOCATION_STORED_INFO_TYPE.matches(formattedString);
   }
 
   @Override
@@ -286,9 +286,39 @@ public class StoredInfoTypeName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      StoredInfoTypeName that = ((StoredInfoTypeName) o);
+      return Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.storedInfoType, that.storedInfoType)
+          && Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(storedInfoType);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
+  }
+
   /** Builder for organizations/{organization}/storedInfoTypes/{stored_info_type}. */
   public static class Builder {
-
     private String organization;
     private String storedInfoType;
 
@@ -314,9 +344,8 @@ public class StoredInfoTypeName implements ResourceName {
 
     private Builder(StoredInfoTypeName storedInfoTypeName) {
       Preconditions.checkArgument(
-          storedInfoTypeName.pathTemplate == ORGANIZATION_STORED_INFO_TYPE_PATH_TEMPLATE,
-          "toBuilder is only supported when StoredInfoTypeName has the pattern of "
-              + "organizations/{organization}/storedInfoTypes/{stored_info_type}.");
+          Objects.equals(storedInfoTypeName.pathTemplate, ORGANIZATION_STORED_INFO_TYPE),
+          "toBuilder is only supported when StoredInfoTypeName has the pattern of organizations/{organization}/storedInfoTypes/{stored_info_type}");
       organization = storedInfoTypeName.organization;
       storedInfoType = storedInfoTypeName.storedInfoType;
     }
@@ -329,11 +358,10 @@ public class StoredInfoTypeName implements ResourceName {
   /** Builder for projects/{project}/storedInfoTypes/{stored_info_type}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectStoredInfoTypeBuilder {
-
     private String project;
     private String storedInfoType;
 
-    private ProjectStoredInfoTypeBuilder() {}
+    protected ProjectStoredInfoTypeBuilder() {}
 
     public String getProject() {
       return project;
@@ -364,12 +392,11 @@ public class StoredInfoTypeName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationStoredInfoTypeBuilder {
-
     private String organization;
     private String location;
     private String storedInfoType;
 
-    private OrganizationLocationStoredInfoTypeBuilder() {}
+    protected OrganizationLocationStoredInfoTypeBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -406,12 +433,11 @@ public class StoredInfoTypeName implements ResourceName {
   /** Builder for projects/{project}/locations/{location}/storedInfoTypes/{stored_info_type}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationStoredInfoTypeBuilder {
-
     private String project;
     private String location;
     private String storedInfoType;
 
-    private ProjectLocationStoredInfoTypeBuilder() {}
+    protected ProjectLocationStoredInfoTypeBuilder() {}
 
     public String getProject() {
       return project;
@@ -443,36 +469,5 @@ public class StoredInfoTypeName implements ResourceName {
     public StoredInfoTypeName build() {
       return new StoredInfoTypeName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      StoredInfoTypeName that = (StoredInfoTypeName) o;
-      return (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.storedInfoType, that.storedInfoType))
-          && (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.location, that.location));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(storedInfoType);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    return h;
   }
 }

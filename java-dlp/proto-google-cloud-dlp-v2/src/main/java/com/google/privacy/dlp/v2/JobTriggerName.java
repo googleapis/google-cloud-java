@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,29 +22,47 @@ import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class JobTriggerName implements ResourceName {
-
-  @Deprecated
-  protected JobTriggerName() {}
-
-  private static final PathTemplate PROJECT_JOB_TRIGGER_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_JOB_TRIGGER =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/jobTriggers/{job_trigger}");
-  private static final PathTemplate PROJECT_LOCATION_JOB_TRIGGER_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_JOB_TRIGGER =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/jobTriggers/{job_trigger}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String jobTrigger;
+  private final String location;
 
-  private String project;
-  private String jobTrigger;
-  private String location;
+  @Deprecated
+  protected JobTriggerName() {
+    project = null;
+    jobTrigger = null;
+    location = null;
+  }
+
+  private JobTriggerName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    jobTrigger = Preconditions.checkNotNull(builder.getJobTrigger());
+    location = null;
+    pathTemplate = PROJECT_JOB_TRIGGER;
+  }
+
+  private JobTriggerName(ProjectLocationJobTriggerBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    jobTrigger = Preconditions.checkNotNull(builder.getJobTrigger());
+    pathTemplate = PROJECT_LOCATION_JOB_TRIGGER;
+  }
 
   public String getProject() {
     return project;
@@ -56,19 +74,6 @@ public class JobTriggerName implements ResourceName {
 
   public String getLocation() {
     return location;
-  }
-
-  private JobTriggerName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    jobTrigger = Preconditions.checkNotNull(builder.getJobTrigger());
-    pathTemplate = PROJECT_JOB_TRIGGER_PATH_TEMPLATE;
-  }
-
-  private JobTriggerName(ProjectLocationJobTriggerBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    jobTrigger = Preconditions.checkNotNull(builder.getJobTrigger());
-    pathTemplate = PROJECT_LOCATION_JOB_TRIGGER_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -90,12 +95,12 @@ public class JobTriggerName implements ResourceName {
   }
 
   public static JobTriggerName of(String project, String jobTrigger) {
-    return newProjectJobTriggerBuilder().setProject(project).setJobTrigger(jobTrigger).build();
+    return newBuilder().setProject(project).setJobTrigger(jobTrigger).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static JobTriggerName ofProjectJobTriggerName(String project, String jobTrigger) {
-    return newProjectJobTriggerBuilder().setProject(project).setJobTrigger(jobTrigger).build();
+    return newBuilder().setProject(project).setJobTrigger(jobTrigger).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -132,21 +137,40 @@ public class JobTriggerName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_JOB_TRIGGER_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_JOB_TRIGGER_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_JOB_TRIGGER.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_JOB_TRIGGER.match(formattedString);
       return ofProjectJobTriggerName(matchMap.get("project"), matchMap.get("job_trigger"));
-    } else if (PROJECT_LOCATION_JOB_TRIGGER_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_JOB_TRIGGER_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_LOCATION_JOB_TRIGGER.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_JOB_TRIGGER.match(formattedString);
       return ofProjectLocationJobTriggerName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("job_trigger"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("JobTriggerName.parse: formattedString not in valid format");
+  }
+
+  public static List<JobTriggerName> parseList(List<String> formattedStrings) {
+    List<JobTriggerName> list = new ArrayList<>(formattedStrings.size());
+    for (String formattedString : formattedStrings) {
+      list.add(parse(formattedString));
+    }
+    return list;
+  }
+
+  public static List<String> toStringList(List<JobTriggerName> values) {
+    List<String> list = new ArrayList<>(values.size());
+    for (JobTriggerName value : values) {
+      if (value == null) {
+        list.add("");
+      } else {
+        list.add(value.toString());
+      }
+    }
+    return list;
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_JOB_TRIGGER_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_JOB_TRIGGER_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_JOB_TRIGGER.matches(formattedString)
+        || PROJECT_LOCATION_JOB_TRIGGER.matches(formattedString);
   }
 
   @Override
@@ -180,9 +204,36 @@ public class JobTriggerName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      JobTriggerName that = ((JobTriggerName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.jobTrigger, that.jobTrigger)
+          && Objects.equals(this.location, that.location);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(jobTrigger);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
+  }
+
   /** Builder for projects/{project}/jobTriggers/{job_trigger}. */
   public static class Builder {
-
     private String project;
     private String jobTrigger;
 
@@ -208,9 +259,8 @@ public class JobTriggerName implements ResourceName {
 
     private Builder(JobTriggerName jobTriggerName) {
       Preconditions.checkArgument(
-          jobTriggerName.pathTemplate == PROJECT_JOB_TRIGGER_PATH_TEMPLATE,
-          "toBuilder is only supported when JobTriggerName has the pattern of "
-              + "projects/{project}/jobTriggers/{job_trigger}.");
+          Objects.equals(jobTriggerName.pathTemplate, PROJECT_JOB_TRIGGER),
+          "toBuilder is only supported when JobTriggerName has the pattern of projects/{project}/jobTriggers/{job_trigger}");
       project = jobTriggerName.project;
       jobTrigger = jobTriggerName.jobTrigger;
     }
@@ -223,12 +273,11 @@ public class JobTriggerName implements ResourceName {
   /** Builder for projects/{project}/locations/{location}/jobTriggers/{job_trigger}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationJobTriggerBuilder {
-
     private String project;
     private String location;
     private String jobTrigger;
 
-    private ProjectLocationJobTriggerBuilder() {}
+    protected ProjectLocationJobTriggerBuilder() {}
 
     public String getProject() {
       return project;
@@ -260,33 +309,5 @@ public class JobTriggerName implements ResourceName {
     public JobTriggerName build() {
       return new JobTriggerName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      JobTriggerName that = (JobTriggerName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.jobTrigger, that.jobTrigger))
-          && (Objects.equals(this.location, that.location));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(jobTrigger);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    return h;
   }
 }

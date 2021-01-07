@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dlp.v2.stub;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
@@ -47,6 +48,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -102,7 +104,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DlpServiceStub}.
  *
@@ -117,24 +119,24 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listInfoTypes to 30 seconds:
+ * <p>For example, to set the total timeout of inspectContent to 30 seconds:
  *
- * <pre>
- * <code>
- * DlpServiceStubSettings.Builder dlpServiceSettingsBuilder =
- *     DlpServiceStubSettings.newBuilder();
+ * <pre>{@code
+ * DlpServiceStubSettings.Builder dlpServiceSettingsBuilder = DlpServiceStubSettings.newBuilder();
  * dlpServiceSettingsBuilder
- *     .listInfoTypesSettings()
+ *     .inspectContentSettings()
  *     .setRetrySettings(
- *         dlpServiceSettingsBuilder.listInfoTypesSettings().getRetrySettings().toBuilder()
+ *         dlpServiceSettingsBuilder
+ *             .inspectContentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DlpServiceStubSettings dlpServiceSettings = dlpServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -184,6 +186,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
       listJobTriggersSettings;
   private final UnaryCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings;
+  private final UnaryCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerSettings;
   private final UnaryCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobSettings;
   private final PagedCallSettings<ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
       listDlpJobsSettings;
@@ -203,6 +206,313 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
   private final UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobSettings;
   private final UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings;
+
+  private static final PagedListDescriptor<
+          ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
+      LIST_INSPECT_TEMPLATES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListInspectTemplatesRequest injectToken(
+                ListInspectTemplatesRequest payload, String token) {
+              return ListInspectTemplatesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListInspectTemplatesRequest injectPageSize(
+                ListInspectTemplatesRequest payload, int pageSize) {
+              return ListInspectTemplatesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListInspectTemplatesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListInspectTemplatesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<InspectTemplate> extractResources(
+                ListInspectTemplatesResponse payload) {
+              return payload.getInspectTemplatesList() == null
+                  ? ImmutableList.<InspectTemplate>of()
+                  : payload.getInspectTemplatesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse, DeidentifyTemplate>
+      LIST_DEIDENTIFY_TEMPLATES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDeidentifyTemplatesRequest,
+              ListDeidentifyTemplatesResponse,
+              DeidentifyTemplate>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDeidentifyTemplatesRequest injectToken(
+                ListDeidentifyTemplatesRequest payload, String token) {
+              return ListDeidentifyTemplatesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDeidentifyTemplatesRequest injectPageSize(
+                ListDeidentifyTemplatesRequest payload, int pageSize) {
+              return ListDeidentifyTemplatesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDeidentifyTemplatesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDeidentifyTemplatesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DeidentifyTemplate> extractResources(
+                ListDeidentifyTemplatesResponse payload) {
+              return payload.getDeidentifyTemplatesList() == null
+                  ? ImmutableList.<DeidentifyTemplate>of()
+                  : payload.getDeidentifyTemplatesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger>
+      LIST_JOB_TRIGGERS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListJobTriggersRequest injectToken(
+                ListJobTriggersRequest payload, String token) {
+              return ListJobTriggersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListJobTriggersRequest injectPageSize(
+                ListJobTriggersRequest payload, int pageSize) {
+              return ListJobTriggersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListJobTriggersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListJobTriggersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<JobTrigger> extractResources(ListJobTriggersResponse payload) {
+              return payload.getJobTriggersList() == null
+                  ? ImmutableList.<JobTrigger>of()
+                  : payload.getJobTriggersList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob>
+      LIST_DLP_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDlpJobsRequest injectToken(ListDlpJobsRequest payload, String token) {
+              return ListDlpJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDlpJobsRequest injectPageSize(ListDlpJobsRequest payload, int pageSize) {
+              return ListDlpJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDlpJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDlpJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DlpJob> extractResources(ListDlpJobsResponse payload) {
+              return payload.getJobsList() == null
+                  ? ImmutableList.<DlpJob>of()
+                  : payload.getJobsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+      LIST_STORED_INFO_TYPES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListStoredInfoTypesRequest injectToken(
+                ListStoredInfoTypesRequest payload, String token) {
+              return ListStoredInfoTypesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListStoredInfoTypesRequest injectPageSize(
+                ListStoredInfoTypesRequest payload, int pageSize) {
+              return ListStoredInfoTypesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListStoredInfoTypesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListStoredInfoTypesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<StoredInfoType> extractResources(ListStoredInfoTypesResponse payload) {
+              return payload.getStoredInfoTypesList() == null
+                  ? ImmutableList.<StoredInfoType>of()
+                  : payload.getStoredInfoTypesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListInspectTemplatesRequest,
+          ListInspectTemplatesResponse,
+          ListInspectTemplatesPagedResponse>
+      LIST_INSPECT_TEMPLATES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListInspectTemplatesRequest,
+              ListInspectTemplatesResponse,
+              ListInspectTemplatesPagedResponse>() {
+            @Override
+            public ApiFuture<ListInspectTemplatesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListInspectTemplatesRequest, ListInspectTemplatesResponse> callable,
+                ListInspectTemplatesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListInspectTemplatesResponse> futureResponse) {
+              PageContext<
+                      ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_INSPECT_TEMPLATES_PAGE_STR_DESC, request, context);
+              return ListInspectTemplatesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDeidentifyTemplatesRequest,
+          ListDeidentifyTemplatesResponse,
+          ListDeidentifyTemplatesPagedResponse>
+      LIST_DEIDENTIFY_TEMPLATES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDeidentifyTemplatesRequest,
+              ListDeidentifyTemplatesResponse,
+              ListDeidentifyTemplatesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDeidentifyTemplatesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>
+                    callable,
+                ListDeidentifyTemplatesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDeidentifyTemplatesResponse> futureResponse) {
+              PageContext<
+                      ListDeidentifyTemplatesRequest,
+                      ListDeidentifyTemplatesResponse,
+                      DeidentifyTemplate>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DEIDENTIFY_TEMPLATES_PAGE_STR_DESC, request, context);
+              return ListDeidentifyTemplatesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
+      LIST_JOB_TRIGGERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>() {
+            @Override
+            public ApiFuture<ListJobTriggersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse> callable,
+                ListJobTriggersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListJobTriggersResponse> futureResponse) {
+              PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> pageContext =
+                  PageContext.create(callable, LIST_JOB_TRIGGERS_PAGE_STR_DESC, request, context);
+              return ListJobTriggersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
+      LIST_DLP_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDlpJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDlpJobsRequest, ListDlpJobsResponse> callable,
+                ListDlpJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDlpJobsResponse> futureResponse) {
+              PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> pageContext =
+                  PageContext.create(callable, LIST_DLP_JOBS_PAGE_STR_DESC, request, context);
+              return ListDlpJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, ListStoredInfoTypesPagedResponse>
+      LIST_STORED_INFO_TYPES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListStoredInfoTypesRequest,
+              ListStoredInfoTypesResponse,
+              ListStoredInfoTypesPagedResponse>() {
+            @Override
+            public ApiFuture<ListStoredInfoTypesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse> callable,
+                ListStoredInfoTypesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListStoredInfoTypesResponse> futureResponse) {
+              PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_STORED_INFO_TYPES_PAGE_STR_DESC, request, context);
+              return ListStoredInfoTypesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to inspectContent. */
   public UnaryCallSettings<InspectContentRequest, InspectContentResponse> inspectContentSettings() {
@@ -329,6 +639,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     return deleteJobTriggerSettings;
   }
 
+  /** Returns the object with the settings used for calls to activateJobTrigger. */
+  public UnaryCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerSettings() {
+    return activateJobTriggerSettings;
+  }
+
   /** Returns the object with the settings used for calls to createDlpJob. */
   public UnaryCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobSettings() {
     return createDlpJobSettings;
@@ -401,10 +716,10 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcDlpServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -485,6 +800,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     getJobTriggerSettings = settingsBuilder.getJobTriggerSettings().build();
     listJobTriggersSettings = settingsBuilder.listJobTriggersSettings().build();
     deleteJobTriggerSettings = settingsBuilder.deleteJobTriggerSettings().build();
+    activateJobTriggerSettings = settingsBuilder.activateJobTriggerSettings().build();
     createDlpJobSettings = settingsBuilder.createDlpJobSettings().build();
     listDlpJobsSettings = settingsBuilder.listDlpJobsSettings().build();
     getDlpJobSettings = settingsBuilder.getDlpJobSettings().build();
@@ -499,317 +815,9 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     finishDlpJobSettings = settingsBuilder.finishDlpJobSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
-      LIST_INSPECT_TEMPLATES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListInspectTemplatesRequest injectToken(
-                ListInspectTemplatesRequest payload, String token) {
-              return ListInspectTemplatesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListInspectTemplatesRequest injectPageSize(
-                ListInspectTemplatesRequest payload, int pageSize) {
-              return ListInspectTemplatesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListInspectTemplatesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListInspectTemplatesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<InspectTemplate> extractResources(
-                ListInspectTemplatesResponse payload) {
-              return payload.getInspectTemplatesList() != null
-                  ? payload.getInspectTemplatesList()
-                  : ImmutableList.<InspectTemplate>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse, DeidentifyTemplate>
-      LIST_DEIDENTIFY_TEMPLATES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListDeidentifyTemplatesRequest,
-              ListDeidentifyTemplatesResponse,
-              DeidentifyTemplate>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDeidentifyTemplatesRequest injectToken(
-                ListDeidentifyTemplatesRequest payload, String token) {
-              return ListDeidentifyTemplatesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDeidentifyTemplatesRequest injectPageSize(
-                ListDeidentifyTemplatesRequest payload, int pageSize) {
-              return ListDeidentifyTemplatesRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDeidentifyTemplatesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDeidentifyTemplatesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<DeidentifyTemplate> extractResources(
-                ListDeidentifyTemplatesResponse payload) {
-              return payload.getDeidentifyTemplatesList() != null
-                  ? payload.getDeidentifyTemplatesList()
-                  : ImmutableList.<DeidentifyTemplate>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger>
-      LIST_JOB_TRIGGERS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListJobTriggersRequest injectToken(
-                ListJobTriggersRequest payload, String token) {
-              return ListJobTriggersRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListJobTriggersRequest injectPageSize(
-                ListJobTriggersRequest payload, int pageSize) {
-              return ListJobTriggersRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListJobTriggersRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListJobTriggersResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<JobTrigger> extractResources(ListJobTriggersResponse payload) {
-              return payload.getJobTriggersList() != null
-                  ? payload.getJobTriggersList()
-                  : ImmutableList.<JobTrigger>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob>
-      LIST_DLP_JOBS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDlpJobsRequest injectToken(ListDlpJobsRequest payload, String token) {
-              return ListDlpJobsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDlpJobsRequest injectPageSize(ListDlpJobsRequest payload, int pageSize) {
-              return ListDlpJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDlpJobsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDlpJobsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<DlpJob> extractResources(ListDlpJobsResponse payload) {
-              return payload.getJobsList() != null
-                  ? payload.getJobsList()
-                  : ImmutableList.<DlpJob>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
-      LIST_STORED_INFO_TYPES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListStoredInfoTypesRequest injectToken(
-                ListStoredInfoTypesRequest payload, String token) {
-              return ListStoredInfoTypesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListStoredInfoTypesRequest injectPageSize(
-                ListStoredInfoTypesRequest payload, int pageSize) {
-              return ListStoredInfoTypesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListStoredInfoTypesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListStoredInfoTypesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<StoredInfoType> extractResources(ListStoredInfoTypesResponse payload) {
-              return payload.getStoredInfoTypesList() != null
-                  ? payload.getStoredInfoTypesList()
-                  : ImmutableList.<StoredInfoType>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListInspectTemplatesRequest,
-          ListInspectTemplatesResponse,
-          ListInspectTemplatesPagedResponse>
-      LIST_INSPECT_TEMPLATES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListInspectTemplatesRequest,
-              ListInspectTemplatesResponse,
-              ListInspectTemplatesPagedResponse>() {
-            @Override
-            public ApiFuture<ListInspectTemplatesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListInspectTemplatesRequest, ListInspectTemplatesResponse> callable,
-                ListInspectTemplatesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListInspectTemplatesResponse> futureResponse) {
-              PageContext<
-                      ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_INSPECT_TEMPLATES_PAGE_STR_DESC, request, context);
-              return ListInspectTemplatesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListDeidentifyTemplatesRequest,
-          ListDeidentifyTemplatesResponse,
-          ListDeidentifyTemplatesPagedResponse>
-      LIST_DEIDENTIFY_TEMPLATES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListDeidentifyTemplatesRequest,
-              ListDeidentifyTemplatesResponse,
-              ListDeidentifyTemplatesPagedResponse>() {
-            @Override
-            public ApiFuture<ListDeidentifyTemplatesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>
-                    callable,
-                ListDeidentifyTemplatesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListDeidentifyTemplatesResponse> futureResponse) {
-              PageContext<
-                      ListDeidentifyTemplatesRequest,
-                      ListDeidentifyTemplatesResponse,
-                      DeidentifyTemplate>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_DEIDENTIFY_TEMPLATES_PAGE_STR_DESC, request, context);
-              return ListDeidentifyTemplatesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>
-      LIST_JOB_TRIGGERS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListJobTriggersRequest, ListJobTriggersResponse, ListJobTriggersPagedResponse>() {
-            @Override
-            public ApiFuture<ListJobTriggersPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse> callable,
-                ListJobTriggersRequest request,
-                ApiCallContext context,
-                ApiFuture<ListJobTriggersResponse> futureResponse) {
-              PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> pageContext =
-                  PageContext.create(callable, LIST_JOB_TRIGGERS_PAGE_STR_DESC, request, context);
-              return ListJobTriggersPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
-      LIST_DLP_JOBS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>() {
-            @Override
-            public ApiFuture<ListDlpJobsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDlpJobsRequest, ListDlpJobsResponse> callable,
-                ListDlpJobsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListDlpJobsResponse> futureResponse) {
-              PageContext<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob> pageContext =
-                  PageContext.create(callable, LIST_DLP_JOBS_PAGE_STR_DESC, request, context);
-              return ListDlpJobsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, ListStoredInfoTypesPagedResponse>
-      LIST_STORED_INFO_TYPES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListStoredInfoTypesRequest,
-              ListStoredInfoTypesResponse,
-              ListStoredInfoTypesPagedResponse>() {
-            @Override
-            public ApiFuture<ListStoredInfoTypesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse> callable,
-                ListStoredInfoTypesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListStoredInfoTypesResponse> futureResponse) {
-              PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_STORED_INFO_TYPES_PAGE_STR_DESC, request, context);
-              return ListStoredInfoTypesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for DlpServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<DlpServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<InspectContentRequest, InspectContentResponse>
         inspectContentSettings;
     private final UnaryCallSettings.Builder<RedactImageRequest, RedactImageResponse>
@@ -858,6 +866,8 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
         listJobTriggersSettings;
     private final UnaryCallSettings.Builder<DeleteJobTriggerRequest, Empty>
         deleteJobTriggerSettings;
+    private final UnaryCallSettings.Builder<ActivateJobTriggerRequest, DlpJob>
+        activateJobTriggerSettings;
     private final UnaryCallSettings.Builder<CreateDlpJobRequest, DlpJob> createDlpJobSettings;
     private final PagedCallSettings.Builder<
             ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
@@ -881,7 +891,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     private final UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobSettings;
     private final UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -889,11 +898,10 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -914,9 +922,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               .setMaxRpcTimeout(Duration.ofMillis(300000L))
               .setTotalTimeout(Duration.ofMillis(300000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(300000L))
@@ -929,79 +935,48 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       inspectContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       redactImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deidentifyContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       reidentifyContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listInfoTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createInspectTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateInspectTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getInspectTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listInspectTemplatesSettings =
           PagedCallSettings.newBuilder(LIST_INSPECT_TEMPLATES_PAGE_STR_FACT);
-
       deleteInspectTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createDeidentifyTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateDeidentifyTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getDeidentifyTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDeidentifyTemplatesSettings =
           PagedCallSettings.newBuilder(LIST_DEIDENTIFY_TEMPLATES_PAGE_STR_FACT);
-
       deleteDeidentifyTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       hybridInspectJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listJobTriggersSettings = PagedCallSettings.newBuilder(LIST_JOB_TRIGGERS_PAGE_STR_FACT);
-
       deleteJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
+      activateJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDlpJobsSettings = PagedCallSettings.newBuilder(LIST_DLP_JOBS_PAGE_STR_FACT);
-
       getDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       cancelDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listStoredInfoTypesSettings =
           PagedCallSettings.newBuilder(LIST_STORED_INFO_TYPES_PAGE_STR_FACT);
-
       deleteStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       hybridInspectDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       finishDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -1027,6 +1002,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               getJobTriggerSettings,
               listJobTriggersSettings,
               deleteJobTriggerSettings,
+              activateJobTriggerSettings,
               createDlpJobSettings,
               listDlpJobsSettings,
               getDlpJobSettings,
@@ -1039,187 +1015,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               deleteStoredInfoTypeSettings,
               hybridInspectDlpJobSettings,
               finishDlpJobSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .inspectContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .redactImageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deidentifyContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .reidentifyContentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listInfoTypesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createInspectTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateInspectTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getInspectTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listInspectTemplatesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteInspectTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createDeidentifyTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateDeidentifyTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getDeidentifyTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listDeidentifyTemplatesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteDeidentifyTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createJobTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateJobTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .hybridInspectJobTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getJobTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listJobTriggersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteJobTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createDlpJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listDlpJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getDlpJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteDlpJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .cancelDlpJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createStoredInfoTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateStoredInfoTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getStoredInfoTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listStoredInfoTypesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteStoredInfoTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .hybridInspectDlpJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .finishDlpJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(DlpServiceStubSettings settings) {
@@ -1246,6 +1042,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       getJobTriggerSettings = settings.getJobTriggerSettings.toBuilder();
       listJobTriggersSettings = settings.listJobTriggersSettings.toBuilder();
       deleteJobTriggerSettings = settings.deleteJobTriggerSettings.toBuilder();
+      activateJobTriggerSettings = settings.activateJobTriggerSettings.toBuilder();
       createDlpJobSettings = settings.createDlpJobSettings.toBuilder();
       listDlpJobsSettings = settings.listDlpJobsSettings.toBuilder();
       getDlpJobSettings = settings.getDlpJobSettings.toBuilder();
@@ -1282,6 +1079,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               getJobTriggerSettings,
               listJobTriggersSettings,
               deleteJobTriggerSettings,
+              activateJobTriggerSettings,
               createDlpJobSettings,
               listDlpJobsSettings,
               getDlpJobSettings,
@@ -1296,7 +1094,192 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               finishDlpJobSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .inspectContentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .redactImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deidentifyContentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .reidentifyContentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listInfoTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createInspectTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateInspectTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getInspectTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listInspectTemplatesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteInspectTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createDeidentifyTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateDeidentifyTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getDeidentifyTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDeidentifyTemplatesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDeidentifyTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createJobTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateJobTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .hybridInspectJobTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getJobTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listJobTriggersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteJobTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .activateJobTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createDlpJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listDlpJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDlpJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDlpJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .cancelDlpJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createStoredInfoTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateStoredInfoTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getStoredInfoTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listStoredInfoTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteStoredInfoTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .hybridInspectDlpJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .finishDlpJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -1441,6 +1424,12 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     /** Returns the builder for the settings used for calls to deleteJobTrigger. */
     public UnaryCallSettings.Builder<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings() {
       return deleteJobTriggerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to activateJobTrigger. */
+    public UnaryCallSettings.Builder<ActivateJobTriggerRequest, DlpJob>
+        activateJobTriggerSettings() {
+      return activateJobTriggerSettings;
     }
 
     /** Returns the builder for the settings used for calls to createDlpJob. */

@@ -30,6 +30,35 @@ for version in versions:
       destination_name='dlp',
   )
 
+# TODO: remove this for the next semver major release
+# remove ResourceName base parseList and toStringList for backward-compatibility with legacy
+# resource name implementation
+java.remove_method(
+    "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateName.java",
+    "public static List<InspectTemplateName> parseList(List<String> formattedStrings)"
+)
+java.remove_method(
+    "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateName.java",
+    "public static List<String> toStringList(List<InspectTemplateName> values)"
+)
+java.remove_method(
+    "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java",
+    "public static List<DeidentifyTemplateName> parseList(List<String> formattedStrings)"
+)
+java.remove_method(
+    "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java",
+    "public static List<String> toStringList(List<DeidentifyTemplateName> values)"
+)
+java.remove_method(
+    "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java",
+    "public static List<StoredInfoTypeName> parseList(List<String> formattedStrings)"
+)
+java.remove_method(
+    "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java",
+    "public static List<String> toStringList(List<StoredInfoTypeName> values)"
+)
+java.format_code("proto-google-cloud-dlp-v2")
+
 java.common_templates(excludes=[
     '.kokoro/presubmit/samples.cfg',
     '.kokoro/nightly/samples.cfg',

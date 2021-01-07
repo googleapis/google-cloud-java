@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dlp.v2;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
@@ -33,6 +34,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dlp.v2.stub.DlpServiceStubSettings;
+import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -87,7 +89,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DlpServiceClient}.
  *
@@ -102,25 +104,25 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listInfoTypes to 30 seconds:
+ * <p>For example, to set the total timeout of inspectContent to 30 seconds:
  *
- * <pre>
- * <code>
- * DlpServiceSettings.Builder dlpServiceSettingsBuilder =
- *     DlpServiceSettings.newBuilder();
+ * <pre>{@code
+ * DlpServiceSettings.Builder dlpServiceSettingsBuilder = DlpServiceSettings.newBuilder();
  * dlpServiceSettingsBuilder
- *     .listInfoTypesSettings()
+ *     .inspectContentSettings()
  *     .setRetrySettings(
- *         dlpServiceSettingsBuilder.listInfoTypesSettings().getRetrySettings().toBuilder()
+ *         dlpServiceSettingsBuilder
+ *             .inspectContentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DlpServiceSettings dlpServiceSettings = dlpServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
+
   /** Returns the object with the settings used for calls to inspectContent. */
   public UnaryCallSettings<InspectContentRequest, InspectContentResponse> inspectContentSettings() {
     return ((DlpServiceStubSettings) getStubSettings()).inspectContentSettings();
@@ -244,6 +246,11 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   /** Returns the object with the settings used for calls to deleteJobTrigger. */
   public UnaryCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings() {
     return ((DlpServiceStubSettings) getStubSettings()).deleteJobTriggerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to activateJobTrigger. */
+  public UnaryCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).activateJobTriggerSettings();
   }
 
   /** Returns the object with the settings used for calls to createDlpJob. */
@@ -371,16 +378,13 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
 
   /** Builder for DlpServiceSettings. */
   public static class Builder extends ClientSettings.Builder<DlpServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(DlpServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(DlpServiceStubSettings.newBuilder());
     }
 
     protected Builder(DlpServiceSettings settings) {
@@ -391,11 +395,15 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(DlpServiceStubSettings.newBuilder());
+    }
+
     public DlpServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((DlpServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -537,6 +545,12 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteJobTrigger. */
     public UnaryCallSettings.Builder<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings() {
       return getStubSettingsBuilder().deleteJobTriggerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to activateJobTrigger. */
+    public UnaryCallSettings.Builder<ActivateJobTriggerRequest, DlpJob>
+        activateJobTriggerSettings() {
+      return getStubSettingsBuilder().activateJobTriggerSettings();
     }
 
     /** Returns the builder for the settings used for calls to createDlpJob. */

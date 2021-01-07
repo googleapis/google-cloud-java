@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dlp.v2;
 
 import com.google.api.core.BetaApi;
+import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -73,9 +75,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockDlpServiceImpl extends DlpServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -112,10 +115,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof InspectContentResponse) {
       requests.add(request);
-      responseObserver.onNext((InspectContentResponse) response);
+      responseObserver.onNext(((InspectContentResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -127,10 +130,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof RedactImageResponse) {
       requests.add(request);
-      responseObserver.onNext((RedactImageResponse) response);
+      responseObserver.onNext(((RedactImageResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -143,10 +146,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof DeidentifyContentResponse) {
       requests.add(request);
-      responseObserver.onNext((DeidentifyContentResponse) response);
+      responseObserver.onNext(((DeidentifyContentResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -159,10 +162,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ReidentifyContentResponse) {
       requests.add(request);
-      responseObserver.onNext((ReidentifyContentResponse) response);
+      responseObserver.onNext(((ReidentifyContentResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -174,10 +177,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListInfoTypesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListInfoTypesResponse) response);
+      responseObserver.onNext(((ListInfoTypesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -189,10 +192,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof InspectTemplate) {
       requests.add(request);
-      responseObserver.onNext((InspectTemplate) response);
+      responseObserver.onNext(((InspectTemplate) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -204,10 +207,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof InspectTemplate) {
       requests.add(request);
-      responseObserver.onNext((InspectTemplate) response);
+      responseObserver.onNext(((InspectTemplate) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -219,10 +222,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof InspectTemplate) {
       requests.add(request);
-      responseObserver.onNext((InspectTemplate) response);
+      responseObserver.onNext(((InspectTemplate) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -235,10 +238,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListInspectTemplatesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListInspectTemplatesResponse) response);
+      responseObserver.onNext(((ListInspectTemplatesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -250,10 +253,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -266,10 +269,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof DeidentifyTemplate) {
       requests.add(request);
-      responseObserver.onNext((DeidentifyTemplate) response);
+      responseObserver.onNext(((DeidentifyTemplate) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -282,10 +285,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof DeidentifyTemplate) {
       requests.add(request);
-      responseObserver.onNext((DeidentifyTemplate) response);
+      responseObserver.onNext(((DeidentifyTemplate) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -297,10 +300,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof DeidentifyTemplate) {
       requests.add(request);
-      responseObserver.onNext((DeidentifyTemplate) response);
+      responseObserver.onNext(((DeidentifyTemplate) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -313,10 +316,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListDeidentifyTemplatesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListDeidentifyTemplatesResponse) response);
+      responseObserver.onNext(((ListDeidentifyTemplatesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -328,10 +331,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -343,10 +346,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof JobTrigger) {
       requests.add(request);
-      responseObserver.onNext((JobTrigger) response);
+      responseObserver.onNext(((JobTrigger) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -358,10 +361,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof JobTrigger) {
       requests.add(request);
-      responseObserver.onNext((JobTrigger) response);
+      responseObserver.onNext(((JobTrigger) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -374,10 +377,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof HybridInspectResponse) {
       requests.add(request);
-      responseObserver.onNext((HybridInspectResponse) response);
+      responseObserver.onNext(((HybridInspectResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -389,10 +392,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof JobTrigger) {
       requests.add(request);
-      responseObserver.onNext((JobTrigger) response);
+      responseObserver.onNext(((JobTrigger) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -404,10 +407,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListJobTriggersResponse) {
       requests.add(request);
-      responseObserver.onNext((ListJobTriggersResponse) response);
+      responseObserver.onNext(((ListJobTriggersResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -419,10 +422,25 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void activateJobTrigger(
+      ActivateJobTriggerRequest request, StreamObserver<DlpJob> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof DlpJob) {
+      requests.add(request);
+      responseObserver.onNext(((DlpJob) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -433,10 +451,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof DlpJob) {
       requests.add(request);
-      responseObserver.onNext((DlpJob) response);
+      responseObserver.onNext(((DlpJob) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -448,10 +466,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListDlpJobsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListDlpJobsResponse) response);
+      responseObserver.onNext(((ListDlpJobsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -462,10 +480,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof DlpJob) {
       requests.add(request);
-      responseObserver.onNext((DlpJob) response);
+      responseObserver.onNext(((DlpJob) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -476,10 +494,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -490,10 +508,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -505,10 +523,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof StoredInfoType) {
       requests.add(request);
-      responseObserver.onNext((StoredInfoType) response);
+      responseObserver.onNext(((StoredInfoType) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -520,10 +538,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof StoredInfoType) {
       requests.add(request);
-      responseObserver.onNext((StoredInfoType) response);
+      responseObserver.onNext(((StoredInfoType) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -535,10 +553,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof StoredInfoType) {
       requests.add(request);
-      responseObserver.onNext((StoredInfoType) response);
+      responseObserver.onNext(((StoredInfoType) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -551,10 +569,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListStoredInfoTypesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListStoredInfoTypesResponse) response);
+      responseObserver.onNext(((ListStoredInfoTypesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -566,10 +584,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -581,10 +599,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof HybridInspectResponse) {
       requests.add(request);
-      responseObserver.onNext((HybridInspectResponse) response);
+      responseObserver.onNext(((HybridInspectResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -595,10 +613,10 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

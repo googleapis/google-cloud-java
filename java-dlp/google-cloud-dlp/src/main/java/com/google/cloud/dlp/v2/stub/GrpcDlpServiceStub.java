@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dlp.v2.stub;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
@@ -21,7 +22,6 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPaged
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -30,6 +30,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -87,16 +89,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Data Loss Prevention (DLP) API.
+ * gRPC stub implementation for the DlpService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcDlpServiceStub extends DlpServiceStub {
-
   private static final MethodDescriptor<InspectContentRequest, InspectContentResponse>
       inspectContentMethodDescriptor =
           MethodDescriptor.<InspectContentRequest, InspectContentResponse>newBuilder()
@@ -107,6 +107,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(InspectContentResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<RedactImageRequest, RedactImageResponse>
       redactImageMethodDescriptor =
           MethodDescriptor.<RedactImageRequest, RedactImageResponse>newBuilder()
@@ -116,6 +117,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RedactImageResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentMethodDescriptor =
           MethodDescriptor.<DeidentifyContentRequest, DeidentifyContentResponse>newBuilder()
@@ -126,6 +128,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DeidentifyContentResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ReidentifyContentRequest, ReidentifyContentResponse>
       reidentifyContentMethodDescriptor =
           MethodDescriptor.<ReidentifyContentRequest, ReidentifyContentResponse>newBuilder()
@@ -136,6 +139,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReidentifyContentResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListInfoTypesRequest, ListInfoTypesResponse>
       listInfoTypesMethodDescriptor =
           MethodDescriptor.<ListInfoTypesRequest, ListInfoTypesResponse>newBuilder()
@@ -146,6 +150,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInfoTypesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateInspectTemplateRequest, InspectTemplate>
       createInspectTemplateMethodDescriptor =
           MethodDescriptor.<CreateInspectTemplateRequest, InspectTemplate>newBuilder()
@@ -155,6 +160,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(CreateInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InspectTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateInspectTemplateRequest, InspectTemplate>
       updateInspectTemplateMethodDescriptor =
           MethodDescriptor.<UpdateInspectTemplateRequest, InspectTemplate>newBuilder()
@@ -164,6 +170,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(UpdateInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InspectTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetInspectTemplateRequest, InspectTemplate>
       getInspectTemplateMethodDescriptor =
           MethodDescriptor.<GetInspectTemplateRequest, InspectTemplate>newBuilder()
@@ -173,6 +180,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(GetInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InspectTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListInspectTemplatesRequest, ListInspectTemplatesResponse>
       listInspectTemplatesMethodDescriptor =
           MethodDescriptor.<ListInspectTemplatesRequest, ListInspectTemplatesResponse>newBuilder()
@@ -183,6 +191,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInspectTemplatesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteInspectTemplateRequest, Empty>
       deleteInspectTemplateMethodDescriptor =
           MethodDescriptor.<DeleteInspectTemplateRequest, Empty>newBuilder()
@@ -192,6 +201,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(DeleteInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateDeidentifyTemplateRequest, DeidentifyTemplate>
       createDeidentifyTemplateMethodDescriptor =
           MethodDescriptor.<CreateDeidentifyTemplateRequest, DeidentifyTemplate>newBuilder()
@@ -201,6 +211,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(CreateDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeidentifyTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>
       updateDeidentifyTemplateMethodDescriptor =
           MethodDescriptor.<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>newBuilder()
@@ -210,6 +221,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(UpdateDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeidentifyTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetDeidentifyTemplateRequest, DeidentifyTemplate>
       getDeidentifyTemplateMethodDescriptor =
           MethodDescriptor.<GetDeidentifyTemplateRequest, DeidentifyTemplate>newBuilder()
@@ -219,6 +231,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(GetDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeidentifyTemplate.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>
       listDeidentifyTemplatesMethodDescriptor =
@@ -231,6 +244,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeidentifyTemplatesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteDeidentifyTemplateRequest, Empty>
       deleteDeidentifyTemplateMethodDescriptor =
           MethodDescriptor.<DeleteDeidentifyTemplateRequest, Empty>newBuilder()
@@ -240,6 +254,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(DeleteDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateJobTriggerRequest, JobTrigger>
       createJobTriggerMethodDescriptor =
           MethodDescriptor.<CreateJobTriggerRequest, JobTrigger>newBuilder()
@@ -249,6 +264,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(CreateJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTrigger.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateJobTriggerRequest, JobTrigger>
       updateJobTriggerMethodDescriptor =
           MethodDescriptor.<UpdateJobTriggerRequest, JobTrigger>newBuilder()
@@ -258,6 +274,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(UpdateJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTrigger.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<HybridInspectJobTriggerRequest, HybridInspectResponse>
       hybridInspectJobTriggerMethodDescriptor =
           MethodDescriptor.<HybridInspectJobTriggerRequest, HybridInspectResponse>newBuilder()
@@ -268,6 +285,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HybridInspectResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetJobTriggerRequest, JobTrigger>
       getJobTriggerMethodDescriptor =
           MethodDescriptor.<GetJobTriggerRequest, JobTrigger>newBuilder()
@@ -277,6 +295,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(GetJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTrigger.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListJobTriggersRequest, ListJobTriggersResponse>
       listJobTriggersMethodDescriptor =
           MethodDescriptor.<ListJobTriggersRequest, ListJobTriggersResponse>newBuilder()
@@ -287,6 +306,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListJobTriggersResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteJobTriggerRequest, Empty>
       deleteJobTriggerMethodDescriptor =
           MethodDescriptor.<DeleteJobTriggerRequest, Empty>newBuilder()
@@ -296,6 +316,17 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(DeleteJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
+  private static final MethodDescriptor<ActivateJobTriggerRequest, DlpJob>
+      activateJobTriggerMethodDescriptor =
+          MethodDescriptor.<ActivateJobTriggerRequest, DlpJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ActivateJobTrigger")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ActivateJobTriggerRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DlpJob.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateDlpJobRequest, DlpJob> createDlpJobMethodDescriptor =
       MethodDescriptor.<CreateDlpJobRequest, DlpJob>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -303,6 +334,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DlpJob.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListDlpJobsRequest, ListDlpJobsResponse>
       listDlpJobsMethodDescriptor =
           MethodDescriptor.<ListDlpJobsRequest, ListDlpJobsResponse>newBuilder()
@@ -312,6 +344,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDlpJobsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetDlpJobRequest, DlpJob> getDlpJobMethodDescriptor =
       MethodDescriptor.<GetDlpJobRequest, DlpJob>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -319,6 +352,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DlpJob.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteDlpJobRequest, Empty> deleteDlpJobMethodDescriptor =
       MethodDescriptor.<DeleteDlpJobRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -326,6 +360,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CancelDlpJobRequest, Empty> cancelDlpJobMethodDescriptor =
       MethodDescriptor.<CancelDlpJobRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -333,6 +368,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CancelDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateStoredInfoTypeRequest, StoredInfoType>
       createStoredInfoTypeMethodDescriptor =
           MethodDescriptor.<CreateStoredInfoTypeRequest, StoredInfoType>newBuilder()
@@ -342,6 +378,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(CreateStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateStoredInfoTypeRequest, StoredInfoType>
       updateStoredInfoTypeMethodDescriptor =
           MethodDescriptor.<UpdateStoredInfoTypeRequest, StoredInfoType>newBuilder()
@@ -351,6 +388,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(UpdateStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetStoredInfoTypeRequest, StoredInfoType>
       getStoredInfoTypeMethodDescriptor =
           MethodDescriptor.<GetStoredInfoTypeRequest, StoredInfoType>newBuilder()
@@ -360,6 +398,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(GetStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
       listStoredInfoTypesMethodDescriptor =
           MethodDescriptor.<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>newBuilder()
@@ -370,6 +409,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListStoredInfoTypesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteStoredInfoTypeRequest, Empty>
       deleteStoredInfoTypeMethodDescriptor =
           MethodDescriptor.<DeleteStoredInfoTypeRequest, Empty>newBuilder()
@@ -379,6 +419,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(DeleteStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobMethodDescriptor =
           MethodDescriptor.<HybridInspectDlpJobRequest, HybridInspectResponse>newBuilder()
@@ -389,6 +430,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HybridInspectResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<FinishDlpJobRequest, Empty> finishDlpJobMethodDescriptor =
       MethodDescriptor.<FinishDlpJobRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -396,8 +438,6 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(FinishDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable;
   private final UnaryCallable<RedactImageRequest, RedactImageResponse> redactImageCallable;
@@ -439,6 +479,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   private final UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
       listJobTriggersPagedCallable;
   private final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable;
+  private final UnaryCallable<ActivateJobTriggerRequest, DlpJob> activateJobTriggerCallable;
   private final UnaryCallable<CreateDlpJobRequest, DlpJob> createDlpJobCallable;
   private final UnaryCallable<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsCallable;
   private final UnaryCallable<ListDlpJobsRequest, ListDlpJobsPagedResponse>
@@ -460,6 +501,8 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
       hybridInspectDlpJobCallable;
   private final UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcDlpServiceStub create(DlpServiceStubSettings settings)
@@ -498,6 +541,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<InspectContentRequest, InspectContentResponse>
         inspectContentTransportSettings =
@@ -557,15 +601,6 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     GrpcCallSettings<ListInfoTypesRequest, ListInfoTypesResponse> listInfoTypesTransportSettings =
         GrpcCallSettings.<ListInfoTypesRequest, ListInfoTypesResponse>newBuilder()
             .setMethodDescriptor(listInfoTypesMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ListInfoTypesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListInfoTypesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
             .build();
     GrpcCallSettings<CreateInspectTemplateRequest, InspectTemplate>
         createInspectTemplateTransportSettings =
@@ -781,6 +816,19 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                 new RequestParamsExtractor<DeleteJobTriggerRequest>() {
                   @Override
                   public Map<String, String> extract(DeleteJobTriggerRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerTransportSettings =
+        GrpcCallSettings.<ActivateJobTriggerRequest, DlpJob>newBuilder()
+            .setMethodDescriptor(activateJobTriggerMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ActivateJobTriggerRequest>() {
+                  @Override
+                  public Map<String, String> extract(ActivateJobTriggerRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
                     return params.build();
@@ -1050,6 +1098,11 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     this.deleteJobTriggerCallable =
         callableFactory.createUnaryCallable(
             deleteJobTriggerTransportSettings, settings.deleteJobTriggerSettings(), clientContext);
+    this.activateJobTriggerCallable =
+        callableFactory.createUnaryCallable(
+            activateJobTriggerTransportSettings,
+            settings.activateJobTriggerSettings(),
+            clientContext);
     this.createDlpJobCallable =
         callableFactory.createUnaryCallable(
             createDlpJobTransportSettings, settings.createDlpJobSettings(), clientContext);
@@ -1107,7 +1160,12 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
         callableFactory.createUnaryCallable(
             finishDlpJobTransportSettings, settings.finishDlpJobSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable() {
@@ -1146,14 +1204,14 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     return getInspectTemplateCallable;
   }
 
-  public UnaryCallable<ListInspectTemplatesRequest, ListInspectTemplatesPagedResponse>
-      listInspectTemplatesPagedCallable() {
-    return listInspectTemplatesPagedCallable;
-  }
-
   public UnaryCallable<ListInspectTemplatesRequest, ListInspectTemplatesResponse>
       listInspectTemplatesCallable() {
     return listInspectTemplatesCallable;
+  }
+
+  public UnaryCallable<ListInspectTemplatesRequest, ListInspectTemplatesPagedResponse>
+      listInspectTemplatesPagedCallable() {
+    return listInspectTemplatesPagedCallable;
   }
 
   public UnaryCallable<DeleteInspectTemplateRequest, Empty> deleteInspectTemplateCallable() {
@@ -1175,14 +1233,14 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     return getDeidentifyTemplateCallable;
   }
 
-  public UnaryCallable<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesPagedResponse>
-      listDeidentifyTemplatesPagedCallable() {
-    return listDeidentifyTemplatesPagedCallable;
-  }
-
   public UnaryCallable<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>
       listDeidentifyTemplatesCallable() {
     return listDeidentifyTemplatesCallable;
+  }
+
+  public UnaryCallable<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesPagedResponse>
+      listDeidentifyTemplatesPagedCallable() {
+    return listDeidentifyTemplatesPagedCallable;
   }
 
   public UnaryCallable<DeleteDeidentifyTemplateRequest, Empty> deleteDeidentifyTemplateCallable() {
@@ -1206,29 +1264,33 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     return getJobTriggerCallable;
   }
 
+  public UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse> listJobTriggersCallable() {
+    return listJobTriggersCallable;
+  }
+
   public UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
       listJobTriggersPagedCallable() {
     return listJobTriggersPagedCallable;
-  }
-
-  public UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse> listJobTriggersCallable() {
-    return listJobTriggersCallable;
   }
 
   public UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
     return deleteJobTriggerCallable;
   }
 
+  public UnaryCallable<ActivateJobTriggerRequest, DlpJob> activateJobTriggerCallable() {
+    return activateJobTriggerCallable;
+  }
+
   public UnaryCallable<CreateDlpJobRequest, DlpJob> createDlpJobCallable() {
     return createDlpJobCallable;
   }
 
-  public UnaryCallable<ListDlpJobsRequest, ListDlpJobsPagedResponse> listDlpJobsPagedCallable() {
-    return listDlpJobsPagedCallable;
-  }
-
   public UnaryCallable<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsCallable() {
     return listDlpJobsCallable;
+  }
+
+  public UnaryCallable<ListDlpJobsRequest, ListDlpJobsPagedResponse> listDlpJobsPagedCallable() {
+    return listDlpJobsPagedCallable;
   }
 
   public UnaryCallable<GetDlpJobRequest, DlpJob> getDlpJobCallable() {
@@ -1255,14 +1317,14 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     return getStoredInfoTypeCallable;
   }
 
-  public UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesPagedResponse>
-      listStoredInfoTypesPagedCallable() {
-    return listStoredInfoTypesPagedCallable;
-  }
-
   public UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
       listStoredInfoTypesCallable() {
     return listStoredInfoTypesCallable;
+  }
+
+  public UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesPagedResponse>
+      listStoredInfoTypesPagedCallable() {
+    return listStoredInfoTypesPagedCallable;
   }
 
   public UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable() {

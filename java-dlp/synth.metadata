@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "795f0cacce3799e04fa2fe06590216eec4a5ba52",
-        "internalRef": "336694775"
+        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
+        "internalRef": "347036369"
       }
     },
     {
@@ -200,6 +200,7 @@
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteJobTriggerRequestOrBuilder.java",
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteStoredInfoTypeRequest.java",
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeleteStoredInfoTypeRequestOrBuilder.java",
+    "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpContentName.java",
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpJob.java",
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpJobName.java",
     "proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DlpJobOrBuilder.java",

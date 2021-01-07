@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,35 +24,70 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class DeidentifyTemplateName implements ResourceName {
-
-  @Deprecated
-  protected DeidentifyTemplateName() {}
-
-  private static final PathTemplate ORGANIZATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_DEIDENTIFY_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/deidentifyTemplates/{deidentify_template}");
-  private static final PathTemplate PROJECT_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_DEIDENTIFY_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/deidentifyTemplates/{deidentify_template}");
-  private static final PathTemplate ORGANIZATION_LOCATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_LOCATION_DEIDENTIFY_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/deidentifyTemplates/{deidentify_template}");
-  private static final PathTemplate PROJECT_LOCATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_DEIDENTIFY_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/deidentifyTemplates/{deidentify_template}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String organization;
+  private final String deidentifyTemplate;
+  private final String project;
+  private final String location;
 
-  private String organization;
-  private String deidentifyTemplate;
-  private String project;
-  private String location;
+  @Deprecated
+  protected DeidentifyTemplateName() {
+    organization = null;
+    deidentifyTemplate = null;
+    project = null;
+    location = null;
+  }
+
+  private DeidentifyTemplateName(Builder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    deidentifyTemplate = Preconditions.checkNotNull(builder.getDeidentifyTemplate());
+    project = null;
+    location = null;
+    pathTemplate = ORGANIZATION_DEIDENTIFY_TEMPLATE;
+  }
+
+  private DeidentifyTemplateName(ProjectDeidentifyTemplateBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    deidentifyTemplate = Preconditions.checkNotNull(builder.getDeidentifyTemplate());
+    organization = null;
+    location = null;
+    pathTemplate = PROJECT_DEIDENTIFY_TEMPLATE;
+  }
+
+  private DeidentifyTemplateName(OrganizationLocationDeidentifyTemplateBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    deidentifyTemplate = Preconditions.checkNotNull(builder.getDeidentifyTemplate());
+    project = null;
+    pathTemplate = ORGANIZATION_LOCATION_DEIDENTIFY_TEMPLATE;
+  }
+
+  private DeidentifyTemplateName(ProjectLocationDeidentifyTemplateBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    deidentifyTemplate = Preconditions.checkNotNull(builder.getDeidentifyTemplate());
+    organization = null;
+    pathTemplate = PROJECT_LOCATION_DEIDENTIFY_TEMPLATE;
+  }
 
   public String getOrganization() {
     return organization;
@@ -68,32 +103,6 @@ public class DeidentifyTemplateName implements ResourceName {
 
   public String getLocation() {
     return location;
-  }
-
-  private DeidentifyTemplateName(Builder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    deidentifyTemplate = Preconditions.checkNotNull(builder.getDeidentifyTemplate());
-    pathTemplate = ORGANIZATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE;
-  }
-
-  private DeidentifyTemplateName(ProjectDeidentifyTemplateBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    deidentifyTemplate = Preconditions.checkNotNull(builder.getDeidentifyTemplate());
-    pathTemplate = PROJECT_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE;
-  }
-
-  private DeidentifyTemplateName(OrganizationLocationDeidentifyTemplateBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    deidentifyTemplate = Preconditions.checkNotNull(builder.getDeidentifyTemplate());
-    pathTemplate = ORGANIZATION_LOCATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE;
-  }
-
-  private DeidentifyTemplateName(ProjectLocationDeidentifyTemplateBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    deidentifyTemplate = Preconditions.checkNotNull(builder.getDeidentifyTemplate());
-    pathTemplate = PROJECT_LOCATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -127,7 +136,7 @@ public class DeidentifyTemplateName implements ResourceName {
   }
 
   public static DeidentifyTemplateName of(String organization, String deidentifyTemplate) {
-    return newOrganizationDeidentifyTemplateBuilder()
+    return newBuilder()
         .setOrganization(organization)
         .setDeidentifyTemplate(deidentifyTemplate)
         .build();
@@ -136,7 +145,7 @@ public class DeidentifyTemplateName implements ResourceName {
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DeidentifyTemplateName ofOrganizationDeidentifyTemplateName(
       String organization, String deidentifyTemplate) {
-    return newOrganizationDeidentifyTemplateBuilder()
+    return newBuilder()
         .setOrganization(organization)
         .setDeidentifyTemplate(deidentifyTemplate)
         .build();
@@ -225,37 +234,35 @@ public class DeidentifyTemplateName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (ORGANIZATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          ORGANIZATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.match(formattedString);
+    if (ORGANIZATION_DEIDENTIFY_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_DEIDENTIFY_TEMPLATE.match(formattedString);
       return ofOrganizationDeidentifyTemplateName(
           matchMap.get("organization"), matchMap.get("deidentify_template"));
-    } else if (PROJECT_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_DEIDENTIFY_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_DEIDENTIFY_TEMPLATE.match(formattedString);
       return ofProjectDeidentifyTemplateName(
           matchMap.get("project"), matchMap.get("deidentify_template"));
-    } else if (ORGANIZATION_LOCATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.matches(formattedString)) {
+    } else if (ORGANIZATION_LOCATION_DEIDENTIFY_TEMPLATE.matches(formattedString)) {
       Map<String, String> matchMap =
-          ORGANIZATION_LOCATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.match(formattedString);
+          ORGANIZATION_LOCATION_DEIDENTIFY_TEMPLATE.match(formattedString);
       return ofOrganizationLocationDeidentifyTemplateName(
           matchMap.get("organization"),
           matchMap.get("location"),
           matchMap.get("deidentify_template"));
-    } else if (PROJECT_LOCATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_LOCATION_DEIDENTIFY_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_DEIDENTIFY_TEMPLATE.match(formattedString);
       return ofProjectLocationDeidentifyTemplateName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("deidentify_template"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException(
+        "DeidentifyTemplateName.parse: formattedString not in valid format");
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_LOCATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE.matches(formattedString);
+    return ORGANIZATION_DEIDENTIFY_TEMPLATE.matches(formattedString)
+        || PROJECT_DEIDENTIFY_TEMPLATE.matches(formattedString)
+        || ORGANIZATION_LOCATION_DEIDENTIFY_TEMPLATE.matches(formattedString)
+        || PROJECT_LOCATION_DEIDENTIFY_TEMPLATE.matches(formattedString);
   }
 
   @Override
@@ -292,9 +299,39 @@ public class DeidentifyTemplateName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      DeidentifyTemplateName that = ((DeidentifyTemplateName) o);
+      return Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.deidentifyTemplate, that.deidentifyTemplate)
+          && Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(deidentifyTemplate);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
+  }
+
   /** Builder for organizations/{organization}/deidentifyTemplates/{deidentify_template}. */
   public static class Builder {
-
     private String organization;
     private String deidentifyTemplate;
 
@@ -320,9 +357,8 @@ public class DeidentifyTemplateName implements ResourceName {
 
     private Builder(DeidentifyTemplateName deidentifyTemplateName) {
       Preconditions.checkArgument(
-          deidentifyTemplateName.pathTemplate == ORGANIZATION_DEIDENTIFY_TEMPLATE_PATH_TEMPLATE,
-          "toBuilder is only supported when DeidentifyTemplateName has the pattern of "
-              + "organizations/{organization}/deidentifyTemplates/{deidentify_template}.");
+          Objects.equals(deidentifyTemplateName.pathTemplate, ORGANIZATION_DEIDENTIFY_TEMPLATE),
+          "toBuilder is only supported when DeidentifyTemplateName has the pattern of organizations/{organization}/deidentifyTemplates/{deidentify_template}");
       organization = deidentifyTemplateName.organization;
       deidentifyTemplate = deidentifyTemplateName.deidentifyTemplate;
     }
@@ -335,11 +371,10 @@ public class DeidentifyTemplateName implements ResourceName {
   /** Builder for projects/{project}/deidentifyTemplates/{deidentify_template}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectDeidentifyTemplateBuilder {
-
     private String project;
     private String deidentifyTemplate;
 
-    private ProjectDeidentifyTemplateBuilder() {}
+    protected ProjectDeidentifyTemplateBuilder() {}
 
     public String getProject() {
       return project;
@@ -370,12 +405,11 @@ public class DeidentifyTemplateName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationDeidentifyTemplateBuilder {
-
     private String organization;
     private String location;
     private String deidentifyTemplate;
 
-    private OrganizationLocationDeidentifyTemplateBuilder() {}
+    protected OrganizationLocationDeidentifyTemplateBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -415,12 +449,11 @@ public class DeidentifyTemplateName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationDeidentifyTemplateBuilder {
-
     private String project;
     private String location;
     private String deidentifyTemplate;
 
-    private ProjectLocationDeidentifyTemplateBuilder() {}
+    protected ProjectLocationDeidentifyTemplateBuilder() {}
 
     public String getProject() {
       return project;
@@ -453,36 +486,5 @@ public class DeidentifyTemplateName implements ResourceName {
     public DeidentifyTemplateName build() {
       return new DeidentifyTemplateName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      DeidentifyTemplateName that = (DeidentifyTemplateName) o;
-      return (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.deidentifyTemplate, that.deidentifyTemplate))
-          && (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.location, that.location));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(deidentifyTemplate);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    return h;
   }
 }
