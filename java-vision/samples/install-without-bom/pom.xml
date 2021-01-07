@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-vision</artifactId>
-      <version>1.100.8</version>
+      <version>1.100.10</version>
     </dependency>
     <!-- [END vision_install_without_bom] -->
     <dependency>
