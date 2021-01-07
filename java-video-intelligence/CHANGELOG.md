@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.5.8](https://www.github.com/googleapis/java-video-intelligence/compare/v1.5.7...v1.5.8) (2021-01-07)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#361](https://www.github.com/googleapis/java-video-intelligence/issues/361)) ([f606f8f](https://www.github.com/googleapis/java-video-intelligence/commit/f606f8f4d45e2e020b5f5b7aaaa10cf57ba1e0bb))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.8 ([#349](https://www.github.com/googleapis/java-video-intelligence/issues/349)) ([e173ef2](https://www.github.com/googleapis/java-video-intelligence/commit/e173ef24e950484f0544f0e8d007aea9dee5d452))
+
 ### [1.5.7](https://www.github.com/googleapis/java-video-intelligence/compare/v1.5.6...v1.5.7) (2020-12-14)
 
 

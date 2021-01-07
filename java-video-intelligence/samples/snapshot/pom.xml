@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-video-intelligence</artifactId>
-      <version>1.5.8-SNAPSHOT</version>
+      <version>1.5.8</version>
     </dependency>
     <!-- {x-version-update-end} -->
     <dependency>
