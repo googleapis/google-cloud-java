@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-kms</artifactId>
-      <version>1.40.3</version>
+      <version>1.40.5</version>
     </dependency>
     <!-- [END cloudkms_install_without_bom] -->
 
