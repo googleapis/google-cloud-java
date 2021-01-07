@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-analytics-admin.git",
-        "sha": "c15cb1b35dd5b6036ffead1b94af47b47d3a61fa"
+        "sha": "521e3966633b7a2c149377bba4c61b07e5190f90"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
-        "internalRef": "347036369"
+        "sha": "700afd1f0bafc2155bc5e891504c53d4ac9166f5",
+        "internalRef": "350414815"
       }
     },
     {
