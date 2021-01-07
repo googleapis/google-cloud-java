@@ -46,10 +46,17 @@ If you are using Maven without BOM, add this to your dependencies:
 
 ```
 
-If you are using Gradle, add this to your dependencies
+If you are using Gradle 5.x or later, add this to your dependencies
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:16.2.0')
+
+compile 'com.google.cloud:google-cloud-resourcemanager'
+```
+If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-resourcemanager:0.118.6-alpha'
 ```
+
 If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.118.6-alpha"
