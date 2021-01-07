@@ -1,8 +1,8 @@
 {
   "name": "aiplatform",
-  "name_pretty": "AI Platform",
+  "name_pretty": "Cloud AI Platform",
   "product_documentation": "https://cloud.google.com/ai-platform-unified/docs",
-  "api_description": "brings AutoML and AI Platform (Legacy) together into a unified API, client library, and user interface.",
+  "api_description": "is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle.",
   "client_documentation": "https://googleapis.dev/java/google-cloud-aiplatform/latest/index.html",
   "release_level": "beta",
   "transport": "grpc",
