@@ -31,7 +31,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-document-ai</artifactId>
-    <version>0.3.7</version>
+    <version>0.3.6</version>
   </dependency>
 
 ```
