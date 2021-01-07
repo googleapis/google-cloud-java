@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-asset/compare/v2.2.1...v2.3.0) (2021-01-07)
+
+
+### Features
+
+* deprecate v1beta1 client endpoint is turned down ([#493](https://www.github.com/googleapis/java-asset/issues/493)) ([0d52720](https://www.github.com/googleapis/java-asset/commit/0d52720188fd521efc94492ccb89794826070b69)), closes [#481](https://www.github.com/googleapis/java-asset/issues/481)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-os-config-v1 to v1.1.3 ([#504](https://www.github.com/googleapis/java-asset/issues/504)) ([2571520](https://www.github.com/googleapis/java-asset/commit/257152096e3c607f8324036db9d2d784ddbc7c5f))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v0.118.7-alpha ([#506](https://www.github.com/googleapis/java-asset/issues/506)) ([b5c6bc8](https://www.github.com/googleapis/java-asset/commit/b5c6bc845fd9dc25a22fe8ce30f01a111d33b51f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#487](https://www.github.com/googleapis/java-asset/issues/487)) ([439daca](https://www.github.com/googleapis/java-asset/commit/439daca0bc021215809d7a3a27611046c37c6e6f))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.8 ([#502](https://www.github.com/googleapis/java-asset/issues/502)) ([97b51ad](https://www.github.com/googleapis/java-asset/commit/97b51ad3eede73ddb8b5604ede2870c9f7159629))
+
 ### [2.2.1](https://www.github.com/googleapis/java-asset/compare/v2.2.0...v2.2.1) (2020-12-14)
 
 
