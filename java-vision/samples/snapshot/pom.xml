@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-vision</artifactId>
-      <version>1.100.10</version>
+      <version>1.100.11-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
     <dependency>
