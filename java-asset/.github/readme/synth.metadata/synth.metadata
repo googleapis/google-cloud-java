@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-asset.git",
-        "sha": "88637b57f3daedfc85b8e394a10a1f4e1e8461ca"
+        "sha": "78f2e42f4a30592d2bc7ea43ae2b3bd2129fef1f"
       }
     },
     {
