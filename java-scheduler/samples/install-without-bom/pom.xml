@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-scheduler</artifactId>
-      <version>1.23.4</version>
+      <version>1.23.6</version>
     </dependency>
     <!-- [END cloudscheduler_install_without_bom] -->
 
