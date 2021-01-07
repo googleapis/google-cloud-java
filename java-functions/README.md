@@ -17,7 +17,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-functions</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.5</version>
 </dependency>
 
 ```
