@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-memcache</artifactId>
-      <version>0.2.8</version>
+      <version>0.2.10</version>
     </dependency>
     <!-- [END memcache_install_without_bom] -->
 
