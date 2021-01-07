@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager</artifactId>
-  <version>0.118.5-alpha</version>
+  <version>0.118.6-alpha</version>
 </dependency>
 
 ```
