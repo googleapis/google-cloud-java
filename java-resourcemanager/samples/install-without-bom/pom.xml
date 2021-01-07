@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-resourcemanager</artifactId>
-      <version>0.118.6-alpha</version>
+      <version>0.118.7-alpha</version>
     </dependency>
     <!-- [END cloudresourcemanager_install_without_bom] -->
 
