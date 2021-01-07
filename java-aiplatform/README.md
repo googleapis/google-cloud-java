@@ -1,6 +1,6 @@
-# Google AI Platform Client for Java
+# Google Cloud AI Platform Client for Java
 
-Java idiomatic client for [AI Platform][product-docs].
+Java idiomatic client for [Cloud AI Platform][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -35,10 +35,17 @@ If you are using Maven without BOM, add this to your dependencies:
 
 ```
 
-If you are using Gradle, add this to your dependencies
+If you are using Gradle 5.x or later, add this to your dependencies
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:16.2.1')
+
+compile 'com.google.cloud:google-cloud-aiplatform'
+```
+If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-aiplatform:0.1.0'
 ```
+
 If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-aiplatform" % "0.1.0"
@@ -52,8 +59,8 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the AI Platform [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google AI Platform.
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud AI Platform [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud AI Platform.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -63,13 +70,13 @@ You will need to [enable billing][enable-billing] to use Google AI Platform.
 You'll need to obtain the `google-cloud-aiplatform` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-aiplatform` as a dependency in your code.
 
-## About AI Platform
+## About Cloud AI Platform
 
 
-[AI Platform][product-docs] brings AutoML and AI Platform (Legacy) together into a unified API, client library, and user interface.
+[Cloud AI Platform][product-docs] is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle.
 
-See the [AI Platform client library docs][javadocs] to learn how to
-use this AI Platform Client Library.
+See the [Cloud AI Platform client library docs][javadocs] to learn how to
+use this Cloud AI Platform Client Library.
 
 
 
@@ -173,7 +180,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-AI Platform uses gRPC for the transport layer.
+Cloud AI Platform uses gRPC for the transport layer.
 
 ## Java Versions
 
