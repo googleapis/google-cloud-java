@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class ReferenceImageName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_PRODUCT_REFERENCE_IMAGE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/products/{product}/referenceImages/{reference_image}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String product;
   private final String referenceImage;
+
+  @Deprecated
+  protected ReferenceImageName() {
+    project = null;
+    location = null;
+    product = null;
+    referenceImage = null;
+  }
+
+  private ReferenceImageName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    product = Preconditions.checkNotNull(builder.getProduct());
+    referenceImage = Preconditions.checkNotNull(builder.getReferenceImage());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class ReferenceImageName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private ReferenceImageName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    product = Preconditions.checkNotNull(builder.getProduct());
-    referenceImage = Preconditions.checkNotNull(builder.getReferenceImage());
   }
 
   public static ReferenceImageName of(
@@ -96,7 +103,7 @@ public class ReferenceImageName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_PRODUCT_REFERENCE_IMAGE.validatedMatch(
             formattedString, "ReferenceImageName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -114,7 +121,7 @@ public class ReferenceImageName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ReferenceImageName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ReferenceImageName value : values) {
       if (value == null) {
         list.add("");
@@ -126,18 +133,27 @@ public class ReferenceImageName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_PRODUCT_REFERENCE_IMAGE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("product", product);
-          fieldMapBuilder.put("referenceImage", referenceImage);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (product != null) {
+            fieldMapBuilder.put("product", product);
+          }
+          if (referenceImage != null) {
+            fieldMapBuilder.put("reference_image", referenceImage);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -151,7 +167,7 @@ public class ReferenceImageName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_PRODUCT_REFERENCE_IMAGE.instantiate(
         "project",
         project,
         "location",
@@ -162,13 +178,46 @@ public class ReferenceImageName implements ResourceName {
         referenceImage);
   }
 
-  /** Builder for ReferenceImageName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ReferenceImageName that = ((ReferenceImageName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.product, that.product)
+          && Objects.equals(this.referenceImage, that.referenceImage);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(product);
+    h *= 1000003;
+    h ^= Objects.hashCode(referenceImage);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/products/{product}/referenceImages/{reference_image}.
+   */
+  public static class Builder {
     private String project;
     private String location;
     private String product;
     private String referenceImage;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -206,8 +255,6 @@ public class ReferenceImageName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(ReferenceImageName referenceImageName) {
       project = referenceImageName.project;
       location = referenceImageName.location;
@@ -218,34 +265,5 @@ public class ReferenceImageName implements ResourceName {
     public ReferenceImageName build() {
       return new ReferenceImageName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof ReferenceImageName) {
-      ReferenceImageName that = (ReferenceImageName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.product.equals(that.product))
-          && (this.referenceImage.equals(that.referenceImage));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= product.hashCode();
-    h *= 1000003;
-    h ^= referenceImage.hashCode();
-    return h;
   }
 }

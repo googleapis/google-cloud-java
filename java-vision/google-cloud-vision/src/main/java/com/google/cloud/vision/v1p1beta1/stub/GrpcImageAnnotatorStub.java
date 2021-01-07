@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.vision.v1p1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -24,22 +24,21 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Google Cloud Vision API.
+ * gRPC stub implementation for the ImageAnnotator service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
-
   private static final MethodDescriptor<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesMethodDescriptor =
           MethodDescriptor.<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>newBuilder()
@@ -51,11 +50,11 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
                   ProtoUtils.marshaller(BatchAnnotateImagesResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcImageAnnotatorStub create(ImageAnnotatorStubSettings settings)
@@ -96,6 +95,7 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
         batchAnnotateImagesTransportSettings =
@@ -109,7 +109,12 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
             settings.batchAnnotateImagesSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>

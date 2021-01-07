@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.vision.v1p4beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -40,36 +40,14 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Vision API.
+ * gRPC stub implementation for the ImageAnnotator service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
-
-  private static final MethodDescriptor<AsyncBatchAnnotateImagesRequest, Operation>
-      asyncBatchAnnotateImagesMethodDescriptor =
-          MethodDescriptor.<AsyncBatchAnnotateImagesRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.vision.v1p4beta1.ImageAnnotator/AsyncBatchAnnotateImages")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(AsyncBatchAnnotateImagesRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<AsyncBatchAnnotateFilesRequest, Operation>
-      asyncBatchAnnotateFilesMethodDescriptor =
-          MethodDescriptor.<AsyncBatchAnnotateFilesRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.vision.v1p4beta1.ImageAnnotator/AsyncBatchAnnotateFiles")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(AsyncBatchAnnotateFilesRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesMethodDescriptor =
           MethodDescriptor.<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>newBuilder()
@@ -80,6 +58,7 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchAnnotateImagesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
       batchAnnotateFilesMethodDescriptor =
           MethodDescriptor.<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>newBuilder()
@@ -91,9 +70,32 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
                   ProtoUtils.marshaller(BatchAnnotateFilesResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
+  private static final MethodDescriptor<AsyncBatchAnnotateImagesRequest, Operation>
+      asyncBatchAnnotateImagesMethodDescriptor =
+          MethodDescriptor.<AsyncBatchAnnotateImagesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vision.v1p4beta1.ImageAnnotator/AsyncBatchAnnotateImages")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AsyncBatchAnnotateImagesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
+  private static final MethodDescriptor<AsyncBatchAnnotateFilesRequest, Operation>
+      asyncBatchAnnotateFilesMethodDescriptor =
+          MethodDescriptor.<AsyncBatchAnnotateFilesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vision.v1p4beta1.ImageAnnotator/AsyncBatchAnnotateFiles")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AsyncBatchAnnotateFilesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+      batchAnnotateImagesCallable;
+  private final UnaryCallable<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
+      batchAnnotateFilesCallable;
   private final UnaryCallable<AsyncBatchAnnotateImagesRequest, Operation>
       asyncBatchAnnotateImagesCallable;
   private final OperationCallable<
@@ -104,11 +106,9 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
   private final OperationCallable<
           AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
       asyncBatchAnnotateFilesOperationCallable;
-  private final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
-      batchAnnotateImagesCallable;
-  private final UnaryCallable<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
-      batchAnnotateFilesCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcImageAnnotatorStub create(ImageAnnotatorStubSettings settings)
@@ -151,16 +151,6 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<AsyncBatchAnnotateImagesRequest, Operation>
-        asyncBatchAnnotateImagesTransportSettings =
-            GrpcCallSettings.<AsyncBatchAnnotateImagesRequest, Operation>newBuilder()
-                .setMethodDescriptor(asyncBatchAnnotateImagesMethodDescriptor)
-                .build();
-    GrpcCallSettings<AsyncBatchAnnotateFilesRequest, Operation>
-        asyncBatchAnnotateFilesTransportSettings =
-            GrpcCallSettings.<AsyncBatchAnnotateFilesRequest, Operation>newBuilder()
-                .setMethodDescriptor(asyncBatchAnnotateFilesMethodDescriptor)
-                .build();
     GrpcCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
         batchAnnotateImagesTransportSettings =
             GrpcCallSettings.<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>newBuilder()
@@ -171,29 +161,17 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
             GrpcCallSettings.<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>newBuilder()
                 .setMethodDescriptor(batchAnnotateFilesMethodDescriptor)
                 .build();
+    GrpcCallSettings<AsyncBatchAnnotateImagesRequest, Operation>
+        asyncBatchAnnotateImagesTransportSettings =
+            GrpcCallSettings.<AsyncBatchAnnotateImagesRequest, Operation>newBuilder()
+                .setMethodDescriptor(asyncBatchAnnotateImagesMethodDescriptor)
+                .build();
+    GrpcCallSettings<AsyncBatchAnnotateFilesRequest, Operation>
+        asyncBatchAnnotateFilesTransportSettings =
+            GrpcCallSettings.<AsyncBatchAnnotateFilesRequest, Operation>newBuilder()
+                .setMethodDescriptor(asyncBatchAnnotateFilesMethodDescriptor)
+                .build();
 
-    this.asyncBatchAnnotateImagesCallable =
-        callableFactory.createUnaryCallable(
-            asyncBatchAnnotateImagesTransportSettings,
-            settings.asyncBatchAnnotateImagesSettings(),
-            clientContext);
-    this.asyncBatchAnnotateImagesOperationCallable =
-        callableFactory.createOperationCallable(
-            asyncBatchAnnotateImagesTransportSettings,
-            settings.asyncBatchAnnotateImagesOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.asyncBatchAnnotateFilesCallable =
-        callableFactory.createUnaryCallable(
-            asyncBatchAnnotateFilesTransportSettings,
-            settings.asyncBatchAnnotateFilesSettings(),
-            clientContext);
-    this.asyncBatchAnnotateFilesOperationCallable =
-        callableFactory.createOperationCallable(
-            asyncBatchAnnotateFilesTransportSettings,
-            settings.asyncBatchAnnotateFilesOperationSettings(),
-            clientContext,
-            this.operationsStub);
     this.batchAnnotateImagesCallable =
         callableFactory.createUnaryCallable(
             batchAnnotateImagesTransportSettings,
@@ -204,37 +182,35 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
             batchAnnotateFilesTransportSettings,
             settings.batchAnnotateFilesSettings(),
             clientContext);
+    this.asyncBatchAnnotateImagesCallable =
+        callableFactory.createUnaryCallable(
+            asyncBatchAnnotateImagesTransportSettings,
+            settings.asyncBatchAnnotateImagesSettings(),
+            clientContext);
+    this.asyncBatchAnnotateImagesOperationCallable =
+        callableFactory.createOperationCallable(
+            asyncBatchAnnotateImagesTransportSettings,
+            settings.asyncBatchAnnotateImagesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.asyncBatchAnnotateFilesCallable =
+        callableFactory.createUnaryCallable(
+            asyncBatchAnnotateFilesTransportSettings,
+            settings.asyncBatchAnnotateFilesSettings(),
+            clientContext);
+    this.asyncBatchAnnotateFilesOperationCallable =
+        callableFactory.createOperationCallable(
+            asyncBatchAnnotateFilesTransportSettings,
+            settings.asyncBatchAnnotateFilesOperationSettings(),
+            clientContext,
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          AsyncBatchAnnotateImagesRequest, AsyncBatchAnnotateImagesResponse, OperationMetadata>
-      asyncBatchAnnotateImagesOperationCallable() {
-    return asyncBatchAnnotateImagesOperationCallable;
-  }
-
-  public UnaryCallable<AsyncBatchAnnotateImagesRequest, Operation>
-      asyncBatchAnnotateImagesCallable() {
-    return asyncBatchAnnotateImagesCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
-      asyncBatchAnnotateFilesOperationCallable() {
-    return asyncBatchAnnotateFilesOperationCallable;
-  }
-
-  public UnaryCallable<AsyncBatchAnnotateFilesRequest, Operation>
-      asyncBatchAnnotateFilesCallable() {
-    return asyncBatchAnnotateFilesCallable;
   }
 
   public UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
@@ -245,6 +221,28 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
   public UnaryCallable<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
       batchAnnotateFilesCallable() {
     return batchAnnotateFilesCallable;
+  }
+
+  public UnaryCallable<AsyncBatchAnnotateImagesRequest, Operation>
+      asyncBatchAnnotateImagesCallable() {
+    return asyncBatchAnnotateImagesCallable;
+  }
+
+  public OperationCallable<
+          AsyncBatchAnnotateImagesRequest, AsyncBatchAnnotateImagesResponse, OperationMetadata>
+      asyncBatchAnnotateImagesOperationCallable() {
+    return asyncBatchAnnotateImagesOperationCallable;
+  }
+
+  public UnaryCallable<AsyncBatchAnnotateFilesRequest, Operation>
+      asyncBatchAnnotateFilesCallable() {
+    return asyncBatchAnnotateFilesCallable;
+  }
+
+  public OperationCallable<
+          AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
+      asyncBatchAnnotateFilesOperationCallable() {
+    return asyncBatchAnnotateFilesOperationCallable;
   }
 
   @Override

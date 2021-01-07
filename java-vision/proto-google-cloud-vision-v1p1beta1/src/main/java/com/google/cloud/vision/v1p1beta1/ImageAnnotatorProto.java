@@ -96,6 +96,10 @@ public final class ImageAnnotatorProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1p1beta1_WebDetectionParams_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vision_v1p1beta1_TextDetectionParams_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vision_v1p1beta1_TextDetectionParams_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vision_v1p1beta1_ImageContext_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1p1beta1_ImageContext_fieldAccessorTable;
@@ -227,60 +231,63 @@ public final class ImageAnnotatorProto {
           + ";\n\ncrop_hints\030\001 \003(\0132\'.google.cloud.visio"
           + "n.v1p1beta1.CropHint\"(\n\017CropHintsParams\022"
           + "\025\n\raspect_ratios\030\001 \003(\002\"1\n\022WebDetectionPa"
-          + "rams\022\033\n\023include_geo_results\030\002 \001(\010\"\205\002\n\014Im"
-          + "ageContext\022A\n\rlat_long_rect\030\001 \001(\0132*.goog"
-          + "le.cloud.vision.v1p1beta1.LatLongRect\022\026\n"
-          + "\016language_hints\030\002 \003(\t\022I\n\021crop_hints_para"
-          + "ms\030\004 \001(\0132..google.cloud.vision.v1p1beta1"
-          + ".CropHintsParams\022O\n\024web_detection_params"
-          + "\030\006 \001(\01321.google.cloud.vision.v1p1beta1.W"
-          + "ebDetectionParams\"\311\001\n\024AnnotateImageReque"
-          + "st\0223\n\005image\030\001 \001(\0132$.google.cloud.vision."
-          + "v1p1beta1.Image\0228\n\010features\030\002 \003(\0132&.goog"
-          + "le.cloud.vision.v1p1beta1.Feature\022B\n\rima"
-          + "ge_context\030\003 \001(\0132+.google.cloud.vision.v"
-          + "1p1beta1.ImageContext\"\302\006\n\025AnnotateImageR"
-          + "esponse\022G\n\020face_annotations\030\001 \003(\0132-.goog"
-          + "le.cloud.vision.v1p1beta1.FaceAnnotation"
-          + "\022M\n\024landmark_annotations\030\002 \003(\0132/.google."
-          + "cloud.vision.v1p1beta1.EntityAnnotation\022"
-          + "I\n\020logo_annotations\030\003 \003(\0132/.google.cloud"
-          + ".vision.v1p1beta1.EntityAnnotation\022J\n\021la"
-          + "bel_annotations\030\004 \003(\0132/.google.cloud.vis"
-          + "ion.v1p1beta1.EntityAnnotation\022I\n\020text_a"
-          + "nnotations\030\005 \003(\0132/.google.cloud.vision.v"
-          + "1p1beta1.EntityAnnotation\022K\n\024full_text_a"
-          + "nnotation\030\014 \001(\0132-.google.cloud.vision.v1"
-          + "p1beta1.TextAnnotation\022S\n\026safe_search_an"
-          + "notation\030\006 \001(\01323.google.cloud.vision.v1p"
-          + "1beta1.SafeSearchAnnotation\022S\n\033image_pro"
-          + "perties_annotation\030\010 \001(\0132..google.cloud."
-          + "vision.v1p1beta1.ImageProperties\022Q\n\025crop"
-          + "_hints_annotation\030\013 \001(\01322.google.cloud.v"
-          + "ision.v1p1beta1.CropHintsAnnotation\022B\n\rw"
-          + "eb_detection\030\r \001(\0132+.google.cloud.vision"
-          + ".v1p1beta1.WebDetection\022!\n\005error\030\t \001(\0132\022"
-          + ".google.rpc.Status\"h\n\032BatchAnnotateImage"
-          + "sRequest\022J\n\010requests\030\001 \003(\01323.google.clou"
-          + "d.vision.v1p1beta1.AnnotateImageRequestB"
-          + "\003\340A\002\"f\n\033BatchAnnotateImagesResponse\022G\n\tr"
-          + "esponses\030\001 \003(\01324.google.cloud.vision.v1p"
-          + "1beta1.AnnotateImageResponse*e\n\nLikeliho"
-          + "od\022\013\n\007UNKNOWN\020\000\022\021\n\rVERY_UNLIKELY\020\001\022\014\n\010UN"
-          + "LIKELY\020\002\022\014\n\010POSSIBLE\020\003\022\n\n\006LIKELY\020\004\022\017\n\013VE"
-          + "RY_LIKELY\020\0052\311\002\n\016ImageAnnotator\022\276\001\n\023Batch"
-          + "AnnotateImages\0229.google.cloud.vision.v1p"
-          + "1beta1.BatchAnnotateImagesRequest\032:.goog"
-          + "le.cloud.vision.v1p1beta1.BatchAnnotateI"
-          + "magesResponse\"0\202\323\344\223\002\037\"\032/v1p1beta1/images"
-          + ":annotate:\001*\332A\010requests\032v\312A\025vision.googl"
-          + "eapis.com\322A[https://www.googleapis.com/a"
-          + "uth/cloud-platform,https://www.googleapi"
-          + "s.com/auth/cloud-visionB\202\001\n!com.google.c"
-          + "loud.vision.v1p1beta1B\023ImageAnnotatorPro"
-          + "toP\001ZCgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/vision/v1p1beta1;vision\370\001\001b\006pr"
-          + "oto3"
+          + "rams\022\033\n\023include_geo_results\030\002 \001(\010\"E\n\023Tex"
+          + "tDetectionParams\022.\n&enable_text_detectio"
+          + "n_confidence_score\030\t \001(\010\"\330\002\n\014ImageContex"
+          + "t\022A\n\rlat_long_rect\030\001 \001(\0132*.google.cloud."
+          + "vision.v1p1beta1.LatLongRect\022\026\n\016language"
+          + "_hints\030\002 \003(\t\022I\n\021crop_hints_params\030\004 \001(\0132"
+          + "..google.cloud.vision.v1p1beta1.CropHint"
+          + "sParams\022O\n\024web_detection_params\030\006 \001(\01321."
+          + "google.cloud.vision.v1p1beta1.WebDetecti"
+          + "onParams\022Q\n\025text_detection_params\030\014 \001(\0132"
+          + "2.google.cloud.vision.v1p1beta1.TextDete"
+          + "ctionParams\"\311\001\n\024AnnotateImageRequest\0223\n\005"
+          + "image\030\001 \001(\0132$.google.cloud.vision.v1p1be"
+          + "ta1.Image\0228\n\010features\030\002 \003(\0132&.google.clo"
+          + "ud.vision.v1p1beta1.Feature\022B\n\rimage_con"
+          + "text\030\003 \001(\0132+.google.cloud.vision.v1p1bet"
+          + "a1.ImageContext\"\302\006\n\025AnnotateImageRespons"
+          + "e\022G\n\020face_annotations\030\001 \003(\0132-.google.clo"
+          + "ud.vision.v1p1beta1.FaceAnnotation\022M\n\024la"
+          + "ndmark_annotations\030\002 \003(\0132/.google.cloud."
+          + "vision.v1p1beta1.EntityAnnotation\022I\n\020log"
+          + "o_annotations\030\003 \003(\0132/.google.cloud.visio"
+          + "n.v1p1beta1.EntityAnnotation\022J\n\021label_an"
+          + "notations\030\004 \003(\0132/.google.cloud.vision.v1"
+          + "p1beta1.EntityAnnotation\022I\n\020text_annotat"
+          + "ions\030\005 \003(\0132/.google.cloud.vision.v1p1bet"
+          + "a1.EntityAnnotation\022K\n\024full_text_annotat"
+          + "ion\030\014 \001(\0132-.google.cloud.vision.v1p1beta"
+          + "1.TextAnnotation\022S\n\026safe_search_annotati"
+          + "on\030\006 \001(\01323.google.cloud.vision.v1p1beta1"
+          + ".SafeSearchAnnotation\022S\n\033image_propertie"
+          + "s_annotation\030\010 \001(\0132..google.cloud.vision"
+          + ".v1p1beta1.ImageProperties\022Q\n\025crop_hints"
+          + "_annotation\030\013 \001(\01322.google.cloud.vision."
+          + "v1p1beta1.CropHintsAnnotation\022B\n\rweb_det"
+          + "ection\030\r \001(\0132+.google.cloud.vision.v1p1b"
+          + "eta1.WebDetection\022!\n\005error\030\t \001(\0132\022.googl"
+          + "e.rpc.Status\"h\n\032BatchAnnotateImagesReque"
+          + "st\022J\n\010requests\030\001 \003(\01323.google.cloud.visi"
+          + "on.v1p1beta1.AnnotateImageRequestB\003\340A\002\"f"
+          + "\n\033BatchAnnotateImagesResponse\022G\n\trespons"
+          + "es\030\001 \003(\01324.google.cloud.vision.v1p1beta1"
+          + ".AnnotateImageResponse*e\n\nLikelihood\022\013\n\007"
+          + "UNKNOWN\020\000\022\021\n\rVERY_UNLIKELY\020\001\022\014\n\010UNLIKELY"
+          + "\020\002\022\014\n\010POSSIBLE\020\003\022\n\n\006LIKELY\020\004\022\017\n\013VERY_LIK"
+          + "ELY\020\0052\311\002\n\016ImageAnnotator\022\276\001\n\023BatchAnnota"
+          + "teImages\0229.google.cloud.vision.v1p1beta1"
+          + ".BatchAnnotateImagesRequest\032:.google.clo"
+          + "ud.vision.v1p1beta1.BatchAnnotateImagesR"
+          + "esponse\"0\202\323\344\223\002\037\"\032/v1p1beta1/images:annot"
+          + "ate:\001*\332A\010requests\032v\312A\025vision.googleapis."
+          + "com\322A[https://www.googleapis.com/auth/cl"
+          + "oud-platform,https://www.googleapis.com/"
+          + "auth/cloud-visionB\202\001\n!com.google.cloud.v"
+          + "ision.v1p1beta1B\023ImageAnnotatorProtoP\001ZC"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/vision/v1p1beta1;vision\370\001\001b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -456,16 +463,28 @@ public final class ImageAnnotatorProto {
             new java.lang.String[] {
               "IncludeGeoResults",
             });
-    internal_static_google_cloud_vision_v1p1beta1_ImageContext_descriptor =
+    internal_static_google_cloud_vision_v1p1beta1_TextDetectionParams_descriptor =
         getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_vision_v1p1beta1_TextDetectionParams_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vision_v1p1beta1_TextDetectionParams_descriptor,
+            new java.lang.String[] {
+              "EnableTextDetectionConfidenceScore",
+            });
+    internal_static_google_cloud_vision_v1p1beta1_ImageContext_descriptor =
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_vision_v1p1beta1_ImageContext_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1p1beta1_ImageContext_descriptor,
             new java.lang.String[] {
-              "LatLongRect", "LanguageHints", "CropHintsParams", "WebDetectionParams",
+              "LatLongRect",
+              "LanguageHints",
+              "CropHintsParams",
+              "WebDetectionParams",
+              "TextDetectionParams",
             });
     internal_static_google_cloud_vision_v1p1beta1_AnnotateImageRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_vision_v1p1beta1_AnnotateImageRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1p1beta1_AnnotateImageRequest_descriptor,
@@ -473,7 +492,7 @@ public final class ImageAnnotatorProto {
               "Image", "Features", "ImageContext",
             });
     internal_static_google_cloud_vision_v1p1beta1_AnnotateImageResponse_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_vision_v1p1beta1_AnnotateImageResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1p1beta1_AnnotateImageResponse_descriptor,
@@ -491,7 +510,7 @@ public final class ImageAnnotatorProto {
               "Error",
             });
     internal_static_google_cloud_vision_v1p1beta1_BatchAnnotateImagesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_vision_v1p1beta1_BatchAnnotateImagesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1p1beta1_BatchAnnotateImagesRequest_descriptor,
@@ -499,7 +518,7 @@ public final class ImageAnnotatorProto {
               "Requests",
             });
     internal_static_google_cloud_vision_v1p1beta1_BatchAnnotateImagesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_vision_v1p1beta1_BatchAnnotateImagesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1p1beta1_BatchAnnotateImagesResponse_descriptor,

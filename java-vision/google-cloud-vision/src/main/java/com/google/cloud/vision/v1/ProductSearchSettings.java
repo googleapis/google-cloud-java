@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.vision.v1;
 
 import static com.google.cloud.vision.v1.ProductSearchClient.ListProductSetsPagedResponse;
@@ -39,7 +40,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ProductSearchClient}.
  *
@@ -56,48 +57,22 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createProductSet to 30 seconds:
  *
- * <pre>
- * <code>
- * ProductSearchSettings.Builder productSearchSettingsBuilder =
- *     ProductSearchSettings.newBuilder();
+ * <pre>{@code
+ * ProductSearchSettings.Builder productSearchSettingsBuilder = ProductSearchSettings.newBuilder();
  * productSearchSettingsBuilder
  *     .createProductSetSettings()
  *     .setRetrySettings(
- *         productSearchSettingsBuilder.createProductSetSettings().getRetrySettings().toBuilder()
+ *         productSearchSettingsBuilder
+ *             .createProductSetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProductSearchSettings productSearchSettings = productSearchSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class ProductSearchSettings extends ClientSettings<ProductSearchSettings> {
-  /** Returns the object with the settings used for calls to importProductSets. */
-  public UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to importProductSets. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to purgeProducts. */
-  public UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).purgeProductsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to purgeProducts. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<PurgeProductsRequest, Empty, BatchOperationMetadata>
-      purgeProductsOperationSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).purgeProductsOperationSettings();
-  }
 
   /** Returns the object with the settings used for calls to createProductSet. */
   public UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings() {
@@ -195,6 +170,29 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
     return ((ProductSearchStubSettings) getStubSettings()).listProductsInProductSetSettings();
   }
 
+  /** Returns the object with the settings used for calls to importProductSets. */
+  public UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importProductSets. */
+  public OperationCallSettings<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).purgeProductsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public OperationCallSettings<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).purgeProductsOperationSettings();
+  }
+
   public static final ProductSearchSettings create(ProductSearchStubSettings stub)
       throws IOException {
     return new ProductSearchSettings.Builder(stub.toBuilder()).build();
@@ -255,16 +253,13 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
 
   /** Builder for ProductSearchSettings. */
   public static class Builder extends ClientSettings.Builder<ProductSearchSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ProductSearchStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ProductSearchStubSettings.newBuilder());
     }
 
     protected Builder(ProductSearchSettings settings) {
@@ -275,11 +270,15 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ProductSearchStubSettings.newBuilder());
+    }
+
     public ProductSearchStubSettings.Builder getStubSettingsBuilder() {
       return ((ProductSearchStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -290,34 +289,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
-    }
-
-    /** Returns the builder for the settings used for calls to importProductSets. */
-    public UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
-        importProductSetsSettings() {
-      return getStubSettingsBuilder().importProductSetsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to importProductSets. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-        importProductSetsOperationSettings() {
-      return getStubSettingsBuilder().importProductSetsOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to purgeProducts. */
-    public UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings() {
-      return getStubSettingsBuilder().purgeProductsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to purgeProducts. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<PurgeProductsRequest, Empty, BatchOperationMetadata>
-        purgeProductsOperationSettings() {
-      return getStubSettingsBuilder().purgeProductsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createProductSet. */
@@ -422,6 +393,30 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
             ListProductsInProductSetPagedResponse>
         listProductsInProductSetSettings() {
       return getStubSettingsBuilder().listProductsInProductSetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importProductSets. */
+    public UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
+        importProductSetsSettings() {
+      return getStubSettingsBuilder().importProductSetsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importProductSets. */
+    public OperationCallSettings.Builder<
+            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+        importProductSetsOperationSettings() {
+      return getStubSettingsBuilder().importProductSetsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings() {
+      return getStubSettingsBuilder().purgeProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public OperationCallSettings.Builder<PurgeProductsRequest, Empty, BatchOperationMetadata>
+        purgeProductsOperationSettings() {
+      return getStubSettingsBuilder().purgeProductsOperationSettings();
     }
 
     @Override

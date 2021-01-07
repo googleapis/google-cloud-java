@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.vision.v1p3beta1.stub;
 
 import static com.google.cloud.vision.v1p3beta1.ProductSearchClient.ListProductSetsPagedResponse;
@@ -84,7 +85,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ProductSearchStub}.
  *
@@ -101,22 +102,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createProductSet to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ProductSearchStubSettings.Builder productSearchSettingsBuilder =
  *     ProductSearchStubSettings.newBuilder();
  * productSearchSettingsBuilder
  *     .createProductSetSettings()
  *     .setRetrySettings(
- *         productSearchSettingsBuilder.createProductSetSettings().getRetrySettings().toBuilder()
+ *         productSearchSettingsBuilder
+ *             .createProductSetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProductSearchStubSettings productSearchSettings = productSearchSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -125,10 +127,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           .add("https://www.googleapis.com/auth/cloud-vision")
           .build();
 
-  private final UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings;
-  private final OperationCallSettings<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationSettings;
   private final UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings;
   private final PagedCallSettings<
           ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
@@ -160,19 +158,249 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           ListProductsInProductSetResponse,
           ListProductsInProductSetPagedResponse>
       listProductsInProductSetSettings;
-
-  /** Returns the object with the settings used for calls to importProductSets. */
-  public UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings() {
-    return importProductSetsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to importProductSets. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
+  private final UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings;
+  private final OperationCallSettings<
           ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationSettings() {
-    return importProductSetsOperationSettings;
-  }
+      importProductSetsOperationSettings;
+
+  private static final PagedListDescriptor<
+          ListProductSetsRequest, ListProductSetsResponse, ProductSet>
+      LIST_PRODUCT_SETS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListProductSetsRequest, ListProductSetsResponse, ProductSet>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListProductSetsRequest injectToken(
+                ListProductSetsRequest payload, String token) {
+              return ListProductSetsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListProductSetsRequest injectPageSize(
+                ListProductSetsRequest payload, int pageSize) {
+              return ListProductSetsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListProductSetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListProductSetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ProductSet> extractResources(ListProductSetsResponse payload) {
+              return payload.getProductSetsList() == null
+                  ? ImmutableList.<ProductSet>of()
+                  : payload.getProductSetsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListProductsRequest, ListProductsResponse, Product>
+      LIST_PRODUCTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListProductsRequest, ListProductsResponse, Product>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListProductsRequest injectToken(ListProductsRequest payload, String token) {
+              return ListProductsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListProductsRequest injectPageSize(ListProductsRequest payload, int pageSize) {
+              return ListProductsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListProductsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListProductsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Product> extractResources(ListProductsResponse payload) {
+              return payload.getProductsList() == null
+                  ? ImmutableList.<Product>of()
+                  : payload.getProductsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
+      LIST_REFERENCE_IMAGES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListReferenceImagesRequest injectToken(
+                ListReferenceImagesRequest payload, String token) {
+              return ListReferenceImagesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListReferenceImagesRequest injectPageSize(
+                ListReferenceImagesRequest payload, int pageSize) {
+              return ListReferenceImagesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListReferenceImagesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListReferenceImagesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ReferenceImage> extractResources(ListReferenceImagesResponse payload) {
+              return payload.getReferenceImagesList() == null
+                  ? ImmutableList.<ReferenceImage>of()
+                  : payload.getReferenceImagesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
+      LIST_PRODUCTS_IN_PRODUCT_SET_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListProductsInProductSetRequest injectToken(
+                ListProductsInProductSetRequest payload, String token) {
+              return ListProductsInProductSetRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListProductsInProductSetRequest injectPageSize(
+                ListProductsInProductSetRequest payload, int pageSize) {
+              return ListProductsInProductSetRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListProductsInProductSetRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListProductsInProductSetResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Product> extractResources(ListProductsInProductSetResponse payload) {
+              return payload.getProductsList() == null
+                  ? ImmutableList.<Product>of()
+                  : payload.getProductsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
+      LIST_PRODUCT_SETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListProductSetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListProductSetsRequest, ListProductSetsResponse> callable,
+                ListProductSetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListProductSetsResponse> futureResponse) {
+              PageContext<ListProductSetsRequest, ListProductSetsResponse, ProductSet> pageContext =
+                  PageContext.create(callable, LIST_PRODUCT_SETS_PAGE_STR_DESC, request, context);
+              return ListProductSetsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
+      LIST_PRODUCTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>() {
+            @Override
+            public ApiFuture<ListProductsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListProductsRequest, ListProductsResponse> callable,
+                ListProductsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListProductsResponse> futureResponse) {
+              PageContext<ListProductsRequest, ListProductsResponse, Product> pageContext =
+                  PageContext.create(callable, LIST_PRODUCTS_PAGE_STR_DESC, request, context);
+              return ListProductsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListReferenceImagesRequest, ListReferenceImagesResponse, ListReferenceImagesPagedResponse>
+      LIST_REFERENCE_IMAGES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListReferenceImagesRequest,
+              ListReferenceImagesResponse,
+              ListReferenceImagesPagedResponse>() {
+            @Override
+            public ApiFuture<ListReferenceImagesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesResponse> callable,
+                ListReferenceImagesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListReferenceImagesResponse> futureResponse) {
+              PageContext<ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_REFERENCE_IMAGES_PAGE_STR_DESC, request, context);
+              return ListReferenceImagesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListProductsInProductSetRequest,
+          ListProductsInProductSetResponse,
+          ListProductsInProductSetPagedResponse>
+      LIST_PRODUCTS_IN_PRODUCT_SET_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListProductsInProductSetRequest,
+              ListProductsInProductSetResponse,
+              ListProductsInProductSetPagedResponse>() {
+            @Override
+            public ApiFuture<ListProductsInProductSetPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
+                    callable,
+                ListProductsInProductSetRequest request,
+                ApiCallContext context,
+                ApiFuture<ListProductsInProductSetResponse> futureResponse) {
+              PageContext<
+                      ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PRODUCTS_IN_PRODUCT_SET_PAGE_STR_DESC, request, context);
+              return ListProductsInProductSetPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createProductSet. */
   public UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings() {
@@ -270,16 +498,28 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     return listProductsInProductSetSettings;
   }
 
+  /** Returns the object with the settings used for calls to importProductSets. */
+  public UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings() {
+    return importProductSetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importProductSets. */
+  public OperationCallSettings<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationSettings() {
+    return importProductSetsOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProductSearchStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcProductSearchStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -339,9 +579,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   protected ProductSearchStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    importProductSetsSettings = settingsBuilder.importProductSetsSettings().build();
-    importProductSetsOperationSettings =
-        settingsBuilder.importProductSetsOperationSettings().build();
     createProductSetSettings = settingsBuilder.createProductSetSettings().build();
     listProductSetsSettings = settingsBuilder.listProductSetsSettings().build();
     getProductSetSettings = settingsBuilder.getProductSetSettings().build();
@@ -360,256 +597,14 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     removeProductFromProductSetSettings =
         settingsBuilder.removeProductFromProductSetSettings().build();
     listProductsInProductSetSettings = settingsBuilder.listProductsInProductSetSettings().build();
+    importProductSetsSettings = settingsBuilder.importProductSetsSettings().build();
+    importProductSetsOperationSettings =
+        settingsBuilder.importProductSetsOperationSettings().build();
   }
-
-  private static final PagedListDescriptor<
-          ListProductSetsRequest, ListProductSetsResponse, ProductSet>
-      LIST_PRODUCT_SETS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListProductSetsRequest, ListProductSetsResponse, ProductSet>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListProductSetsRequest injectToken(
-                ListProductSetsRequest payload, String token) {
-              return ListProductSetsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListProductSetsRequest injectPageSize(
-                ListProductSetsRequest payload, int pageSize) {
-              return ListProductSetsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListProductSetsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListProductSetsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ProductSet> extractResources(ListProductSetsResponse payload) {
-              return payload.getProductSetsList() != null
-                  ? payload.getProductSetsList()
-                  : ImmutableList.<ProductSet>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListProductsRequest, ListProductsResponse, Product>
-      LIST_PRODUCTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListProductsRequest, ListProductsResponse, Product>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListProductsRequest injectToken(ListProductsRequest payload, String token) {
-              return ListProductsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListProductsRequest injectPageSize(ListProductsRequest payload, int pageSize) {
-              return ListProductsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListProductsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListProductsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Product> extractResources(ListProductsResponse payload) {
-              return payload.getProductsList() != null
-                  ? payload.getProductsList()
-                  : ImmutableList.<Product>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
-      LIST_REFERENCE_IMAGES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListReferenceImagesRequest injectToken(
-                ListReferenceImagesRequest payload, String token) {
-              return ListReferenceImagesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListReferenceImagesRequest injectPageSize(
-                ListReferenceImagesRequest payload, int pageSize) {
-              return ListReferenceImagesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListReferenceImagesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListReferenceImagesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ReferenceImage> extractResources(ListReferenceImagesResponse payload) {
-              return payload.getReferenceImagesList() != null
-                  ? payload.getReferenceImagesList()
-                  : ImmutableList.<ReferenceImage>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
-      LIST_PRODUCTS_IN_PRODUCT_SET_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListProductsInProductSetRequest injectToken(
-                ListProductsInProductSetRequest payload, String token) {
-              return ListProductsInProductSetRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListProductsInProductSetRequest injectPageSize(
-                ListProductsInProductSetRequest payload, int pageSize) {
-              return ListProductsInProductSetRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListProductsInProductSetRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListProductsInProductSetResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Product> extractResources(ListProductsInProductSetResponse payload) {
-              return payload.getProductsList() != null
-                  ? payload.getProductsList()
-                  : ImmutableList.<Product>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
-      LIST_PRODUCT_SETS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>() {
-            @Override
-            public ApiFuture<ListProductSetsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListProductSetsRequest, ListProductSetsResponse> callable,
-                ListProductSetsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListProductSetsResponse> futureResponse) {
-              PageContext<ListProductSetsRequest, ListProductSetsResponse, ProductSet> pageContext =
-                  PageContext.create(callable, LIST_PRODUCT_SETS_PAGE_STR_DESC, request, context);
-              return ListProductSetsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
-      LIST_PRODUCTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>() {
-            @Override
-            public ApiFuture<ListProductsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListProductsRequest, ListProductsResponse> callable,
-                ListProductsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListProductsResponse> futureResponse) {
-              PageContext<ListProductsRequest, ListProductsResponse, Product> pageContext =
-                  PageContext.create(callable, LIST_PRODUCTS_PAGE_STR_DESC, request, context);
-              return ListProductsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListReferenceImagesRequest, ListReferenceImagesResponse, ListReferenceImagesPagedResponse>
-      LIST_REFERENCE_IMAGES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListReferenceImagesRequest,
-              ListReferenceImagesResponse,
-              ListReferenceImagesPagedResponse>() {
-            @Override
-            public ApiFuture<ListReferenceImagesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesResponse> callable,
-                ListReferenceImagesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListReferenceImagesResponse> futureResponse) {
-              PageContext<ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_REFERENCE_IMAGES_PAGE_STR_DESC, request, context);
-              return ListReferenceImagesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListProductsInProductSetRequest,
-          ListProductsInProductSetResponse,
-          ListProductsInProductSetPagedResponse>
-      LIST_PRODUCTS_IN_PRODUCT_SET_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListProductsInProductSetRequest,
-              ListProductsInProductSetResponse,
-              ListProductsInProductSetPagedResponse>() {
-            @Override
-            public ApiFuture<ListProductsInProductSetPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
-                    callable,
-                ListProductsInProductSetRequest request,
-                ApiCallContext context,
-                ApiFuture<ListProductsInProductSetResponse> futureResponse) {
-              PageContext<
-                      ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_PRODUCTS_IN_PRODUCT_SET_PAGE_STR_DESC, request, context);
-              return ListProductsInProductSetPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
 
   /** Builder for ProductSearchStubSettings. */
   public static class Builder extends StubSettings.Builder<ProductSearchStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
-        importProductSetsSettings;
-    private final OperationCallSettings.Builder<
-            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-        importProductSetsOperationSettings;
     private final UnaryCallSettings.Builder<CreateProductSetRequest, ProductSet>
         createProductSetSettings;
     private final PagedCallSettings.Builder<
@@ -647,21 +642,24 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
             ListProductsInProductSetResponse,
             ListProductsInProductSetPagedResponse>
         listProductsInProductSetSettings;
-
+    private final UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
+        importProductSetsSettings;
+    private final OperationCallSettings.Builder<
+            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+        importProductSetsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_3_codes",
+          "retry_policy_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_2_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put(
-          "retry_policy_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -680,7 +678,7 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_3_params", settings);
+      definitions.put("retry_policy_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -692,61 +690,40 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      importProductSetsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      importProductSetsOperationSettings = OperationCallSettings.newBuilder();
-
       createProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listProductSetsSettings = PagedCallSettings.newBuilder(LIST_PRODUCT_SETS_PAGE_STR_FACT);
-
       getProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listProductsSettings = PagedCallSettings.newBuilder(LIST_PRODUCTS_PAGE_STR_FACT);
-
       getProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listReferenceImagesSettings =
           PagedCallSettings.newBuilder(LIST_REFERENCE_IMAGES_PAGE_STR_FACT);
-
       getReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       addProductToProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       removeProductFromProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listProductsInProductSetSettings =
           PagedCallSettings.newBuilder(LIST_PRODUCTS_IN_PRODUCT_SET_PAGE_STR_FACT);
+      importProductSetsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importProductSetsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              importProductSetsSettings,
               createProductSetSettings,
               listProductSetsSettings,
               getProductSetSettings,
@@ -763,144 +740,14 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
               getReferenceImageSettings,
               addProductToProductSetSettings,
               removeProductFromProductSetSettings,
-              listProductsInProductSetSettings);
-
+              listProductsInProductSetSettings,
+              importProductSetsSettings);
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .importProductSetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .createProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .listProductSetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .getProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .updateProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .deleteProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .createProductSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .listProductsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .getProductSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .updateProductSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .deleteProductSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .createReferenceImageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .deleteReferenceImageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .listReferenceImagesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .getReferenceImageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .addProductToProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .removeProductFromProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .listProductsInProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-      builder
-          .importProductSetsOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<ImportProductSetsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(
-                  ImportProductSetsResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(BatchOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(20000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(86400000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(ProductSearchStubSettings settings) {
       super(settings);
 
-      importProductSetsSettings = settings.importProductSetsSettings.toBuilder();
-      importProductSetsOperationSettings = settings.importProductSetsOperationSettings.toBuilder();
       createProductSetSettings = settings.createProductSetSettings.toBuilder();
       listProductSetsSettings = settings.listProductSetsSettings.toBuilder();
       getProductSetSettings = settings.getProductSetSettings.toBuilder();
@@ -919,10 +766,11 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
       removeProductFromProductSetSettings =
           settings.removeProductFromProductSetSettings.toBuilder();
       listProductsInProductSetSettings = settings.listProductsInProductSetSettings.toBuilder();
+      importProductSetsSettings = settings.importProductSetsSettings.toBuilder();
+      importProductSetsOperationSettings = settings.importProductSetsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              importProductSetsSettings,
               createProductSetSettings,
               listProductSetsSettings,
               getProductSetSettings,
@@ -939,10 +787,141 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
               getReferenceImageSettings,
               addProductToProductSetSettings,
               removeProductFromProductSetSettings,
-              listProductsInProductSetSettings);
+              listProductsInProductSetSettings,
+              importProductSetsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listProductSetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .getProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .updateProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .createProductSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listProductsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .getProductSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .updateProductSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteProductSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .createReferenceImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .deleteReferenceImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .listReferenceImagesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .getReferenceImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .addProductToProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .removeProductFromProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listProductsInProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .importProductSetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .importProductSetsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportProductSetsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ImportProductSetsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(BatchOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -956,21 +935,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to importProductSets. */
-    public UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
-        importProductSetsSettings() {
-      return importProductSetsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to importProductSets. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-        importProductSetsOperationSettings() {
-      return importProductSetsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createProductSet. */
@@ -1075,6 +1039,21 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
             ListProductsInProductSetPagedResponse>
         listProductsInProductSetSettings() {
       return listProductsInProductSetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importProductSets. */
+    public UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
+        importProductSetsSettings() {
+      return importProductSetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importProductSets. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+        importProductSetsOperationSettings() {
+      return importProductSetsOperationSettings;
     }
 
     @Override

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.vision.v1.stub;
 
 import static com.google.cloud.vision.v1.ProductSearchClient.ListProductSetsPagedResponse;
@@ -20,7 +21,6 @@ import static com.google.cloud.vision.v1.ProductSearchClient.ListProductsInProdu
 import static com.google.cloud.vision.v1.ProductSearchClient.ListProductsPagedResponse;
 import static com.google.cloud.vision.v1.ProductSearchClient.ListReferenceImagesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -68,34 +68,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Vision API.
+ * gRPC stub implementation for the ProductSearch service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcProductSearchStub extends ProductSearchStub {
-
-  private static final MethodDescriptor<ImportProductSetsRequest, Operation>
-      importProductSetsMethodDescriptor =
-          MethodDescriptor.<ImportProductSetsRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.vision.v1.ProductSearch/ImportProductSets")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ImportProductSetsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<PurgeProductsRequest, Operation>
-      purgeProductsMethodDescriptor =
-          MethodDescriptor.<PurgeProductsRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.vision.v1.ProductSearch/PurgeProducts")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(PurgeProductsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<CreateProductSetRequest, ProductSet>
       createProductSetMethodDescriptor =
           MethodDescriptor.<CreateProductSetRequest, ProductSet>newBuilder()
@@ -105,6 +85,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(CreateProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductSet.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListProductSetsRequest, ListProductSetsResponse>
       listProductSetsMethodDescriptor =
           MethodDescriptor.<ListProductSetsRequest, ListProductSetsResponse>newBuilder()
@@ -115,6 +96,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductSetsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetProductSetRequest, ProductSet>
       getProductSetMethodDescriptor =
           MethodDescriptor.<GetProductSetRequest, ProductSet>newBuilder()
@@ -124,6 +106,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(GetProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductSet.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateProductSetRequest, ProductSet>
       updateProductSetMethodDescriptor =
           MethodDescriptor.<UpdateProductSetRequest, ProductSet>newBuilder()
@@ -133,6 +116,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(UpdateProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductSet.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteProductSetRequest, Empty>
       deleteProductSetMethodDescriptor =
           MethodDescriptor.<DeleteProductSetRequest, Empty>newBuilder()
@@ -142,6 +126,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(DeleteProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateProductRequest, Product>
       createProductMethodDescriptor =
           MethodDescriptor.<CreateProductRequest, Product>newBuilder()
@@ -151,6 +136,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(CreateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListProductsRequest, ListProductsResponse>
       listProductsMethodDescriptor =
           MethodDescriptor.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -160,6 +146,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetProductRequest, Product> getProductMethodDescriptor =
       MethodDescriptor.<GetProductRequest, Product>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -167,6 +154,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateProductRequest, Product>
       updateProductMethodDescriptor =
           MethodDescriptor.<UpdateProductRequest, Product>newBuilder()
@@ -176,6 +164,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(UpdateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteProductRequest, Empty> deleteProductMethodDescriptor =
       MethodDescriptor.<DeleteProductRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -183,6 +172,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateReferenceImageRequest, ReferenceImage>
       createReferenceImageMethodDescriptor =
           MethodDescriptor.<CreateReferenceImageRequest, ReferenceImage>newBuilder()
@@ -192,6 +182,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(CreateReferenceImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReferenceImage.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteReferenceImageRequest, Empty>
       deleteReferenceImageMethodDescriptor =
           MethodDescriptor.<DeleteReferenceImageRequest, Empty>newBuilder()
@@ -201,6 +192,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(DeleteReferenceImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListReferenceImagesRequest, ListReferenceImagesResponse>
       listReferenceImagesMethodDescriptor =
           MethodDescriptor.<ListReferenceImagesRequest, ListReferenceImagesResponse>newBuilder()
@@ -211,6 +203,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReferenceImagesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetReferenceImageRequest, ReferenceImage>
       getReferenceImageMethodDescriptor =
           MethodDescriptor.<GetReferenceImageRequest, ReferenceImage>newBuilder()
@@ -220,6 +213,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(GetReferenceImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReferenceImage.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<AddProductToProductSetRequest, Empty>
       addProductToProductSetMethodDescriptor =
           MethodDescriptor.<AddProductToProductSetRequest, Empty>newBuilder()
@@ -229,6 +223,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(AddProductToProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<RemoveProductFromProductSetRequest, Empty>
       removeProductFromProductSetMethodDescriptor =
           MethodDescriptor.<RemoveProductFromProductSetRequest, Empty>newBuilder()
@@ -238,6 +233,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(RemoveProductFromProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           ListProductsInProductSetRequest, ListProductsInProductSetResponse>
       listProductsInProductSetMethodDescriptor =
@@ -251,16 +247,26 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(ListProductsInProductSetResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
+  private static final MethodDescriptor<ImportProductSetsRequest, Operation>
+      importProductSetsMethodDescriptor =
+          MethodDescriptor.<ImportProductSetsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vision.v1.ProductSearch/ImportProductSets")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportProductSetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
-  private final UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable;
-  private final OperationCallable<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationCallable;
-  private final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable;
-  private final OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
-      purgeProductsOperationCallable;
+  private static final MethodDescriptor<PurgeProductsRequest, Operation>
+      purgeProductsMethodDescriptor =
+          MethodDescriptor.<PurgeProductsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vision.v1.ProductSearch/PurgeProducts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeProductsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable;
   private final UnaryCallable<ListProductSetsRequest, ListProductSetsResponse>
       listProductSetsCallable;
@@ -292,7 +298,16 @@ public class GrpcProductSearchStub extends ProductSearchStub {
   private final UnaryCallable<
           ListProductsInProductSetRequest, ListProductsInProductSetPagedResponse>
       listProductsInProductSetPagedCallable;
+  private final UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable;
+  private final OperationCallable<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationCallable;
+  private final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable;
+  private final OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcProductSearchStub create(ProductSearchStubSettings settings)
@@ -333,32 +348,6 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<ImportProductSetsRequest, Operation> importProductSetsTransportSettings =
-        GrpcCallSettings.<ImportProductSetsRequest, Operation>newBuilder()
-            .setMethodDescriptor(importProductSetsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ImportProductSetsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportProductSetsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
-        GrpcCallSettings.<PurgeProductsRequest, Operation>newBuilder()
-            .setMethodDescriptor(purgeProductsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<PurgeProductsRequest>() {
-                  @Override
-                  public Map<String, String> extract(PurgeProductsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<CreateProductSetRequest, ProductSet> createProductSetTransportSettings =
         GrpcCallSettings.<CreateProductSetRequest, ProductSet>newBuilder()
             .setMethodDescriptor(createProductSetMethodDescriptor)
@@ -588,27 +577,33 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<ImportProductSetsRequest, Operation> importProductSetsTransportSettings =
+        GrpcCallSettings.<ImportProductSetsRequest, Operation>newBuilder()
+            .setMethodDescriptor(importProductSetsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ImportProductSetsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ImportProductSetsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
+        GrpcCallSettings.<PurgeProductsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeProductsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PurgeProductsRequest>() {
+                  @Override
+                  public Map<String, String> extract(PurgeProductsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.importProductSetsCallable =
-        callableFactory.createUnaryCallable(
-            importProductSetsTransportSettings,
-            settings.importProductSetsSettings(),
-            clientContext);
-    this.importProductSetsOperationCallable =
-        callableFactory.createOperationCallable(
-            importProductSetsTransportSettings,
-            settings.importProductSetsOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.purgeProductsCallable =
-        callableFactory.createUnaryCallable(
-            purgeProductsTransportSettings, settings.purgeProductsSettings(), clientContext);
-    this.purgeProductsOperationCallable =
-        callableFactory.createOperationCallable(
-            purgeProductsTransportSettings,
-            settings.purgeProductsOperationSettings(),
-            clientContext,
-            this.operationsStub);
     this.createProductSetCallable =
         callableFactory.createUnaryCallable(
             createProductSetTransportSettings, settings.createProductSetSettings(), clientContext);
@@ -690,47 +685,46 @@ public class GrpcProductSearchStub extends ProductSearchStub {
             listProductsInProductSetTransportSettings,
             settings.listProductsInProductSetSettings(),
             clientContext);
+    this.importProductSetsCallable =
+        callableFactory.createUnaryCallable(
+            importProductSetsTransportSettings,
+            settings.importProductSetsSettings(),
+            clientContext);
+    this.importProductSetsOperationCallable =
+        callableFactory.createOperationCallable(
+            importProductSetsTransportSettings,
+            settings.importProductSetsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.purgeProductsCallable =
+        callableFactory.createUnaryCallable(
+            purgeProductsTransportSettings, settings.purgeProductsSettings(), clientContext);
+    this.purgeProductsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeProductsTransportSettings,
+            settings.purgeProductsOperationSettings(),
+            clientContext,
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationCallable() {
-    return importProductSetsOperationCallable;
-  }
-
-  public UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
-    return importProductSetsCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
-      purgeProductsOperationCallable() {
-    return purgeProductsOperationCallable;
-  }
-
-  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
-    return purgeProductsCallable;
   }
 
   public UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable() {
     return createProductSetCallable;
   }
 
+  public UnaryCallable<ListProductSetsRequest, ListProductSetsResponse> listProductSetsCallable() {
+    return listProductSetsCallable;
+  }
+
   public UnaryCallable<ListProductSetsRequest, ListProductSetsPagedResponse>
       listProductSetsPagedCallable() {
     return listProductSetsPagedCallable;
-  }
-
-  public UnaryCallable<ListProductSetsRequest, ListProductSetsResponse> listProductSetsCallable() {
-    return listProductSetsCallable;
   }
 
   public UnaryCallable<GetProductSetRequest, ProductSet> getProductSetCallable() {
@@ -749,12 +743,12 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     return createProductCallable;
   }
 
-  public UnaryCallable<ListProductsRequest, ListProductsPagedResponse> listProductsPagedCallable() {
-    return listProductsPagedCallable;
-  }
-
   public UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable() {
     return listProductsCallable;
+  }
+
+  public UnaryCallable<ListProductsRequest, ListProductsPagedResponse> listProductsPagedCallable() {
+    return listProductsPagedCallable;
   }
 
   public UnaryCallable<GetProductRequest, Product> getProductCallable() {
@@ -777,14 +771,14 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     return deleteReferenceImageCallable;
   }
 
-  public UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesPagedResponse>
-      listReferenceImagesPagedCallable() {
-    return listReferenceImagesPagedCallable;
-  }
-
   public UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesResponse>
       listReferenceImagesCallable() {
     return listReferenceImagesCallable;
+  }
+
+  public UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesPagedResponse>
+      listReferenceImagesPagedCallable() {
+    return listReferenceImagesPagedCallable;
   }
 
   public UnaryCallable<GetReferenceImageRequest, ReferenceImage> getReferenceImageCallable() {
@@ -800,14 +794,33 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     return removeProductFromProductSetCallable;
   }
 
+  public UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
+      listProductsInProductSetCallable() {
+    return listProductsInProductSetCallable;
+  }
+
   public UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetPagedResponse>
       listProductsInProductSetPagedCallable() {
     return listProductsInProductSetPagedCallable;
   }
 
-  public UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
-      listProductsInProductSetCallable() {
-    return listProductsInProductSetCallable;
+  public UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
+    return importProductSetsCallable;
+  }
+
+  public OperationCallable<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationCallable() {
+    return importProductSetsOperationCallable;
+  }
+
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    return purgeProductsCallable;
+  }
+
+  public OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationCallable() {
+    return purgeProductsOperationCallable;
   }
 
   @Override

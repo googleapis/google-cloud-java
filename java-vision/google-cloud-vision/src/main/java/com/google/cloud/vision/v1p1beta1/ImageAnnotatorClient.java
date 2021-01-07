@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.vision.v1p1beta1;
 
 import com.google.api.core.BetaApi;
@@ -25,7 +26,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service that performs Google Cloud Vision API detection tasks over client
  * images, such as face, landmark, logo, label, and text detection. The ImageAnnotator service
@@ -34,16 +35,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
- *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
- *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the imageAnnotatorClient object to clean up resources such
+ * <p>Note: close() needs to be called on the ImageAnnotatorClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -71,30 +63,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ImageAnnotatorSettings imageAnnotatorSettings =
  *     ImageAnnotatorSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ImageAnnotatorClient imageAnnotatorClient =
- *     ImageAnnotatorClient.create(imageAnnotatorSettings);
- * </code>
- * </pre>
+ * ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create(imageAnnotatorSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ImageAnnotatorSettings imageAnnotatorSettings =
  *     ImageAnnotatorSettings.newBuilder().setEndpoint(myEndpoint).build();
- * ImageAnnotatorClient imageAnnotatorClient =
- *     ImageAnnotatorClient.create(imageAnnotatorSettings);
- * </code>
- * </pre>
+ * ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create(imageAnnotatorSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class ImageAnnotatorClient implements BackgroundResource {
   private final ImageAnnotatorSettings settings;
   private final ImageAnnotatorStub stub;
@@ -115,7 +103,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ImageAnnotatorClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use ImageAnnotatorSettings}.
+   * for advanced usage - prefer using create(ImageAnnotatorSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ImageAnnotatorClient create(ImageAnnotatorStub stub) {
@@ -147,18 +135,9 @@ public class ImageAnnotatorClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Run image detection and annotation for a batch of images.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
-   * }
-   * </code></pre>
    *
    * @param requests Required. Individual image annotation requests for this batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -170,21 +149,9 @@ public class ImageAnnotatorClient implements BackgroundResource {
     return batchAnnotateImages(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Run image detection and annotation for a batch of images.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
-   *     .addAllRequests(requests)
-   *     .build();
-   *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -193,23 +160,11 @@ public class ImageAnnotatorClient implements BackgroundResource {
     return batchAnnotateImagesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Run image detection and annotation for a batch of images.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
-   *     .addAllRequests(requests)
-   *     .build();
-   *   ApiFuture&lt;BatchAnnotateImagesResponse&gt; future = imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);
-   *   // Do something
-   *   BatchAnnotateImagesResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable() {

@@ -131,6 +131,23 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 98:
+            {
+              com.google.cloud.vision.v1p2beta1.TextDetectionParams.Builder subBuilder = null;
+              if (textDetectionParams_ != null) {
+                subBuilder = textDetectionParams_.toBuilder();
+              }
+              textDetectionParams_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p2beta1.TextDetectionParams.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(textDetectionParams_);
+                textDetectionParams_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -402,6 +419,55 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     return getWebDetectionParams();
   }
 
+  public static final int TEXT_DETECTION_PARAMS_FIELD_NUMBER = 12;
+  private com.google.cloud.vision.v1p2beta1.TextDetectionParams textDetectionParams_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for text detection and document text detection.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+   *
+   * @return Whether the textDetectionParams field is set.
+   */
+  @java.lang.Override
+  public boolean hasTextDetectionParams() {
+    return textDetectionParams_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for text detection and document text detection.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+   *
+   * @return The textDetectionParams.
+   */
+  @java.lang.Override
+  public com.google.cloud.vision.v1p2beta1.TextDetectionParams getTextDetectionParams() {
+    return textDetectionParams_ == null
+        ? com.google.cloud.vision.v1p2beta1.TextDetectionParams.getDefaultInstance()
+        : textDetectionParams_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for text detection and document text detection.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vision.v1p2beta1.TextDetectionParamsOrBuilder
+      getTextDetectionParamsOrBuilder() {
+    return getTextDetectionParams();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -428,6 +494,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     if (webDetectionParams_ != null) {
       output.writeMessage(6, getWebDetectionParams());
     }
+    if (textDetectionParams_ != null) {
+      output.writeMessage(12, getTextDetectionParams());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -453,6 +522,10 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     }
     if (webDetectionParams_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getWebDetectionParams());
+    }
+    if (textDetectionParams_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(12, getTextDetectionParams());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -483,6 +556,10 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     if (hasWebDetectionParams()) {
       if (!getWebDetectionParams().equals(other.getWebDetectionParams())) return false;
     }
+    if (hasTextDetectionParams() != other.hasTextDetectionParams()) return false;
+    if (hasTextDetectionParams()) {
+      if (!getTextDetectionParams().equals(other.getTextDetectionParams())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -509,6 +586,10 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     if (hasWebDetectionParams()) {
       hash = (37 * hash) + WEB_DETECTION_PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getWebDetectionParams().hashCode();
+    }
+    if (hasTextDetectionParams()) {
+      hash = (37 * hash) + TEXT_DETECTION_PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getTextDetectionParams().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -675,6 +756,12 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         webDetectionParams_ = null;
         webDetectionParamsBuilder_ = null;
       }
+      if (textDetectionParamsBuilder_ == null) {
+        textDetectionParams_ = null;
+      } else {
+        textDetectionParams_ = null;
+        textDetectionParamsBuilder_ = null;
+      }
       return this;
     }
 
@@ -722,6 +809,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         result.webDetectionParams_ = webDetectionParams_;
       } else {
         result.webDetectionParams_ = webDetectionParamsBuilder_.build();
+      }
+      if (textDetectionParamsBuilder_ == null) {
+        result.textDetectionParams_ = textDetectionParams_;
+      } else {
+        result.textDetectionParams_ = textDetectionParamsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -790,6 +882,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasWebDetectionParams()) {
         mergeWebDetectionParams(other.getWebDetectionParams());
+      }
+      if (other.hasTextDetectionParams()) {
+        mergeTextDetectionParams(other.getTextDetectionParams());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1614,6 +1709,196 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         webDetectionParams_ = null;
       }
       return webDetectionParamsBuilder_;
+    }
+
+    private com.google.cloud.vision.v1p2beta1.TextDetectionParams textDetectionParams_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vision.v1p2beta1.TextDetectionParams,
+            com.google.cloud.vision.v1p2beta1.TextDetectionParams.Builder,
+            com.google.cloud.vision.v1p2beta1.TextDetectionParamsOrBuilder>
+        textDetectionParamsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for text detection and document text detection.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+     *
+     * @return Whether the textDetectionParams field is set.
+     */
+    public boolean hasTextDetectionParams() {
+      return textDetectionParamsBuilder_ != null || textDetectionParams_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for text detection and document text detection.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+     *
+     * @return The textDetectionParams.
+     */
+    public com.google.cloud.vision.v1p2beta1.TextDetectionParams getTextDetectionParams() {
+      if (textDetectionParamsBuilder_ == null) {
+        return textDetectionParams_ == null
+            ? com.google.cloud.vision.v1p2beta1.TextDetectionParams.getDefaultInstance()
+            : textDetectionParams_;
+      } else {
+        return textDetectionParamsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for text detection and document text detection.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+     */
+    public Builder setTextDetectionParams(
+        com.google.cloud.vision.v1p2beta1.TextDetectionParams value) {
+      if (textDetectionParamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        textDetectionParams_ = value;
+        onChanged();
+      } else {
+        textDetectionParamsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for text detection and document text detection.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+     */
+    public Builder setTextDetectionParams(
+        com.google.cloud.vision.v1p2beta1.TextDetectionParams.Builder builderForValue) {
+      if (textDetectionParamsBuilder_ == null) {
+        textDetectionParams_ = builderForValue.build();
+        onChanged();
+      } else {
+        textDetectionParamsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for text detection and document text detection.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+     */
+    public Builder mergeTextDetectionParams(
+        com.google.cloud.vision.v1p2beta1.TextDetectionParams value) {
+      if (textDetectionParamsBuilder_ == null) {
+        if (textDetectionParams_ != null) {
+          textDetectionParams_ =
+              com.google.cloud.vision.v1p2beta1.TextDetectionParams.newBuilder(textDetectionParams_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          textDetectionParams_ = value;
+        }
+        onChanged();
+      } else {
+        textDetectionParamsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for text detection and document text detection.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+     */
+    public Builder clearTextDetectionParams() {
+      if (textDetectionParamsBuilder_ == null) {
+        textDetectionParams_ = null;
+        onChanged();
+      } else {
+        textDetectionParams_ = null;
+        textDetectionParamsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for text detection and document text detection.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+     */
+    public com.google.cloud.vision.v1p2beta1.TextDetectionParams.Builder
+        getTextDetectionParamsBuilder() {
+
+      onChanged();
+      return getTextDetectionParamsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for text detection and document text detection.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+     */
+    public com.google.cloud.vision.v1p2beta1.TextDetectionParamsOrBuilder
+        getTextDetectionParamsOrBuilder() {
+      if (textDetectionParamsBuilder_ != null) {
+        return textDetectionParamsBuilder_.getMessageOrBuilder();
+      } else {
+        return textDetectionParams_ == null
+            ? com.google.cloud.vision.v1p2beta1.TextDetectionParams.getDefaultInstance()
+            : textDetectionParams_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for text detection and document text detection.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p2beta1.TextDetectionParams text_detection_params = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vision.v1p2beta1.TextDetectionParams,
+            com.google.cloud.vision.v1p2beta1.TextDetectionParams.Builder,
+            com.google.cloud.vision.v1p2beta1.TextDetectionParamsOrBuilder>
+        getTextDetectionParamsFieldBuilder() {
+      if (textDetectionParamsBuilder_ == null) {
+        textDetectionParamsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p2beta1.TextDetectionParams,
+                com.google.cloud.vision.v1p2beta1.TextDetectionParams.Builder,
+                com.google.cloud.vision.v1p2beta1.TextDetectionParamsOrBuilder>(
+                getTextDetectionParams(), getParentForChildren(), isClean());
+        textDetectionParams_ = null;
+      }
+      return textDetectionParamsBuilder_;
     }
 
     @java.lang.Override

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.vision.v1p4beta1;
 
 import com.google.api.core.ApiFunction;
@@ -39,7 +40,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Manages Products and ProductSets of reference images for use in product
  * search. It uses the following resource model:
@@ -60,18 +61,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   ProductSet productSet = ProductSet.newBuilder().build();
- *   String productSetId = "";
- *   ProductSet response = productSearchClient.createProductSet(parent, productSet, productSetId);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the productSearchClient object to clean up resources such
+ * <p>Note: close() needs to be called on the ProductSearchClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -99,30 +89,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ProductSearchSettings productSearchSettings =
  *     ProductSearchSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * ProductSearchClient productSearchClient =
- *     ProductSearchClient.create(productSearchSettings);
- * </code>
- * </pre>
+ * ProductSearchClient productSearchClient = ProductSearchClient.create(productSearchSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ProductSearchSettings productSearchSettings =
  *     ProductSearchSettings.newBuilder().setEndpoint(myEndpoint).build();
- * ProductSearchClient productSearchClient =
- *     ProductSearchClient.create(productSearchSettings);
- * </code>
- * </pre>
+ * ProductSearchClient productSearchClient = ProductSearchClient.create(productSearchSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class ProductSearchClient implements BackgroundResource {
   private final ProductSearchSettings settings;
   private final ProductSearchStub stub;
@@ -144,7 +130,7 @@ public class ProductSearchClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ProductSearchClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use ProductSearchSettings}.
+   * for advanced usage - prefer using create(ProductSearchSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ProductSearchClient create(ProductSearchStub stub) {
@@ -182,219 +168,19 @@ public class ProductSearchClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Asynchronous API that imports a list of reference images to specified product sets based on a
-   * list of image information.
-   *
-   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
-   * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
-   * (results)
-   *
-   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
-   * csv file please see
-   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
-   *   ImportProductSetsResponse response = productSearchClient.importProductSetsAsync(parent, inputConfig).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The project in which the ProductSets should be imported.
-   *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param inputConfig Required. The input content for the list of requests.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsAsync(LocationName parent, ImportProductSetsInputConfig inputConfig) {
-    ImportProductSetsRequest request =
-        ImportProductSetsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setInputConfig(inputConfig)
-            .build();
-    return importProductSetsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Asynchronous API that imports a list of reference images to specified product sets based on a
-   * list of image information.
-   *
-   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
-   * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
-   * (results)
-   *
-   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
-   * csv file please see
-   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
-   *   ImportProductSetsResponse response = productSearchClient.importProductSetsAsync(parent.toString(), inputConfig).get();
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The project in which the ProductSets should be imported.
-   *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param inputConfig Required. The input content for the list of requests.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsAsync(String parent, ImportProductSetsInputConfig inputConfig) {
-    ImportProductSetsRequest request =
-        ImportProductSetsRequest.newBuilder().setParent(parent).setInputConfig(inputConfig).build();
-    return importProductSetsAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Asynchronous API that imports a list of reference images to specified product sets based on a
-   * list of image information.
-   *
-   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
-   * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
-   * (results)
-   *
-   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
-   * csv file please see
-   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
-   *   ImportProductSetsRequest request = ImportProductSetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
-   *     .build();
-   *   ImportProductSetsResponse response = productSearchClient.importProductSetsAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsAsync(ImportProductSetsRequest request) {
-    return importProductSetsOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Asynchronous API that imports a list of reference images to specified product sets based on a
-   * list of image information.
-   *
-   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
-   * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
-   * (results)
-   *
-   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
-   * csv file please see
-   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
-   *   ImportProductSetsRequest request = ImportProductSetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
-   *     .build();
-   *   OperationFuture&lt;ImportProductSetsResponse, BatchOperationMetadata&gt; future = productSearchClient.importProductSetsOperationCallable().futureCall(request);
-   *   // Do something
-   *   ImportProductSetsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationCallable() {
-    return stub.importProductSetsOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Asynchronous API that imports a list of reference images to specified product sets based on a
-   * list of image information.
-   *
-   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
-   * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
-   * (results)
-   *
-   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
-   * csv file please see
-   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
-   *   ImportProductSetsRequest request = ImportProductSetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = productSearchClient.importProductSetsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
-    return stub.importProductSetsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new ProductSet resource.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096
-   * characters.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   String productSetId = "";
-   *   ProductSet response = productSearchClient.createProductSet(parent, productSet, productSetId);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
+   * </ul>
    *
    * @param parent Required. The project in which the ProductSet should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
@@ -416,25 +202,15 @@ public class ProductSearchClient implements BackgroundResource {
     return createProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new ProductSet resource.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096
-   * characters.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   String productSetId = "";
-   *   ProductSet response = productSearchClient.createProductSet(parent.toString(), productSet, productSetId);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
+   * </ul>
    *
    * @param parent Required. The project in which the ProductSet should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
@@ -456,28 +232,15 @@ public class ProductSearchClient implements BackgroundResource {
     return createProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new ProductSet resource.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096
-   * characters.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   CreateProductSetRequest request = CreateProductSetRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setProductSet(productSet)
-   *     .build();
-   *   ProductSet response = productSearchClient.createProductSet(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -486,53 +249,31 @@ public class ProductSearchClient implements BackgroundResource {
     return createProductSetCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new ProductSet resource.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096
-   * characters.
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   CreateProductSetRequest request = CreateProductSetRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setProductSet(productSet)
-   *     .build();
-   *   ApiFuture&lt;ProductSet&gt; future = productSearchClient.createProductSetCallable().futureCall(request);
-   *   // Do something
-   *   ProductSet response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable() {
     return stub.createProductSetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ProductSets in an unspecified order.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (ProductSet element : productSearchClient.listProductSets(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   * </ul>
    *
    * @param parent Required. The project from which ProductSets should be listed.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
@@ -546,24 +287,15 @@ public class ProductSearchClient implements BackgroundResource {
     return listProductSets(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ProductSets in an unspecified order.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (ProductSet element : productSearchClient.listProductSets(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   * </ul>
    *
    * @param parent Required. The project from which ProductSets should be listed.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
@@ -574,27 +306,15 @@ public class ProductSearchClient implements BackgroundResource {
     return listProductSets(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ProductSets in an unspecified order.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListProductSetsRequest request = ListProductSetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (ProductSet element : productSearchClient.listProductSets(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -603,87 +323,49 @@ public class ProductSearchClient implements BackgroundResource {
     return listProductSetsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ProductSets in an unspecified order.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListProductSetsRequest request = ListProductSetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListProductSetsPagedResponse&gt; future = productSearchClient.listProductSetsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ProductSet element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListProductSetsRequest, ListProductSetsPagedResponse>
       listProductSetsPagedCallable() {
     return stub.listProductSetsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists ProductSets in an unspecified order.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListProductSetsRequest request = ListProductSetsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListProductSetsResponse response = productSearchClient.listProductSetsCallable().call(request);
-   *     for (ProductSet element : response.getProductSetsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListProductSetsRequest, ListProductSetsResponse>
       listProductSetsCallable() {
     return stub.listProductSetsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a ProductSet.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ProductSet response = productSearchClient.getProductSet(name);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   * </ul>
    *
    * @param name Required. Resource name of the ProductSet to get.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -695,22 +377,15 @@ public class ProductSearchClient implements BackgroundResource {
     return getProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a ProductSet.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ProductSet response = productSearchClient.getProductSet(name.toString());
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   * </ul>
    *
    * @param name Required. Resource name of the ProductSet to get.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -721,25 +396,15 @@ public class ProductSearchClient implements BackgroundResource {
     return getProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a ProductSet.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   GetProductSetRequest request = GetProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ProductSet response = productSearchClient.getProductSet(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -748,51 +413,33 @@ public class ProductSearchClient implements BackgroundResource {
     return getProductSetCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a ProductSet.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
+   * <ul>
+   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   GetProductSetRequest request = GetProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ProductSet&gt; future = productSearchClient.getProductSetCallable().futureCall(request);
-   *   // Do something
-   *   ProductSet response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetProductSetRequest, ProductSet> getProductSetCallable() {
     return stub.getProductSetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes changes to a ProductSet resource. Only display_name can be updated currently.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist. &#42; Returns INVALID_ARGUMENT if
-   * display_name is present in update_mask but missing from the request or longer than 4096
-   * characters.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   ProductSet response = productSearchClient.updateProductSet(productSet, updateMask);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but missing from the
+   *       request or longer than 4096 characters.
+   * </ul>
    *
    * @param productSet Required. The ProductSet resource which replaces the one on the server.
    * @param updateMask The [FieldMask][google.protobuf.FieldMask] that specifies which fields to
@@ -809,27 +456,17 @@ public class ProductSearchClient implements BackgroundResource {
     return updateProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes changes to a ProductSet resource. Only display_name can be updated currently.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist. &#42; Returns INVALID_ARGUMENT if
-   * display_name is present in update_mask but missing from the request or longer than 4096
-   * characters.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   UpdateProductSetRequest request = UpdateProductSetRequest.newBuilder()
-   *     .setProductSet(productSet)
-   *     .build();
-   *   ProductSet response = productSearchClient.updateProductSet(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but missing from the
+   *       request or longer than 4096 characters.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -838,49 +475,30 @@ public class ProductSearchClient implements BackgroundResource {
     return updateProductSetCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes changes to a ProductSet resource. Only display_name can be updated currently.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist. &#42; Returns INVALID_ARGUMENT if
-   * display_name is present in update_mask but missing from the request or longer than 4096
-   * characters.
+   * <ul>
+   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but missing from the
+   *       request or longer than 4096 characters.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   UpdateProductSetRequest request = UpdateProductSetRequest.newBuilder()
-   *     .setProductSet(productSet)
-   *     .build();
-   *   ApiFuture&lt;ProductSet&gt; future = productSearchClient.updateProductSetCallable().futureCall(request);
-   *   // Do something
-   *   ProductSet response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateProductSetRequest, ProductSet> updateProductSetCallable() {
     return stub.updateProductSetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
    * deleted.
    *
    * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   productSearchClient.deleteProductSet(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the ProductSet to delete.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -892,21 +510,12 @@ public class ProductSearchClient implements BackgroundResource {
     deleteProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
    * deleted.
    *
    * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   productSearchClient.deleteProductSet(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the ProductSet to delete.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -917,24 +526,12 @@ public class ProductSearchClient implements BackgroundResource {
     deleteProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
    * deleted.
    *
    * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   productSearchClient.deleteProductSet(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -943,7 +540,7 @@ public class ProductSearchClient implements BackgroundResource {
     deleteProductSetCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
    * deleted.
@@ -951,43 +548,22 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>The actual image files are not deleted from Google Cloud Storage.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteProductSetCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
     return stub.deleteProductSetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new product resource.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
-   * &#42; Returns INVALID_ARGUMENT if description is longer than 4096 characters. &#42; Returns
-   * INVALID_ARGUMENT if product_category is missing or invalid.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Product product = Product.newBuilder().build();
-   *   String productId = "";
-   *   Product response = productSearchClient.createProduct(parent, product, productId);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if product_category is missing or invalid.
+   * </ul>
    *
    * @param parent Required. The project in which the Product should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
@@ -1008,26 +584,17 @@ public class ProductSearchClient implements BackgroundResource {
     return createProduct(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new product resource.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
-   * &#42; Returns INVALID_ARGUMENT if description is longer than 4096 characters. &#42; Returns
-   * INVALID_ARGUMENT if product_category is missing or invalid.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Product product = Product.newBuilder().build();
-   *   String productId = "";
-   *   Product response = productSearchClient.createProduct(parent.toString(), product, productId);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if product_category is missing or invalid.
+   * </ul>
    *
    * @param parent Required. The project in which the Product should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
@@ -1048,29 +615,17 @@ public class ProductSearchClient implements BackgroundResource {
     return createProduct(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new product resource.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
-   * &#42; Returns INVALID_ARGUMENT if description is longer than 4096 characters. &#42; Returns
-   * INVALID_ARGUMENT if product_category is missing or invalid.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Product product = Product.newBuilder().build();
-   *   CreateProductRequest request = CreateProductRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setProduct(product)
-   *     .build();
-   *   Product response = productSearchClient.createProduct(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if product_category is missing or invalid.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1079,54 +634,33 @@ public class ProductSearchClient implements BackgroundResource {
     return createProductCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new product resource.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
-   * &#42; Returns INVALID_ARGUMENT if description is longer than 4096 characters. &#42; Returns
-   * INVALID_ARGUMENT if product_category is missing or invalid.
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if product_category is missing or invalid.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Product product = Product.newBuilder().build();
-   *   CreateProductRequest request = CreateProductRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setProduct(product)
-   *     .build();
-   *   ApiFuture&lt;Product&gt; future = productSearchClient.createProductCallable().futureCall(request);
-   *   // Do something
-   *   Product response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateProductRequest, Product> createProductCallable() {
     return stub.createProductCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists products in an unspecified order.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Product element : productSearchClient.listProducts(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * </ul>
    *
    * @param parent Required. The project OR ProductSet from which Products should be listed.
    *     <p>Format: `projects/PROJECT_ID/locations/LOC_ID`
@@ -1140,24 +674,15 @@ public class ProductSearchClient implements BackgroundResource {
     return listProducts(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists products in an unspecified order.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Product element : productSearchClient.listProducts(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * </ul>
    *
    * @param parent Required. The project OR ProductSet from which Products should be listed.
    *     <p>Format: `projects/PROJECT_ID/locations/LOC_ID`
@@ -1168,27 +693,15 @@ public class ProductSearchClient implements BackgroundResource {
     return listProducts(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists products in an unspecified order.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListProductsRequest request = ListProductsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Product element : productSearchClient.listProducts(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1197,86 +710,48 @@ public class ProductSearchClient implements BackgroundResource {
     return listProductsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists products in an unspecified order.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListProductsRequest request = ListProductsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListProductsPagedResponse&gt; future = productSearchClient.listProductsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Product element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListProductsRequest, ListProductsPagedResponse>
       listProductsPagedCallable() {
     return stub.listProductsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists products in an unspecified order.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListProductsRequest request = ListProductsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListProductsResponse response = productSearchClient.listProductsCallable().call(request);
-   *     for (Product element : response.getProductsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable() {
     return stub.listProductsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a Product.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   Product response = productSearchClient.getProduct(name);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product does not exist.
+   * </ul>
    *
    * @param name Required. Resource name of the Product to get.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
@@ -1288,22 +763,15 @@ public class ProductSearchClient implements BackgroundResource {
     return getProduct(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a Product.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   Product response = productSearchClient.getProduct(name.toString());
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product does not exist.
+   * </ul>
    *
    * @param name Required. Resource name of the Product to get.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
@@ -1314,25 +782,15 @@ public class ProductSearchClient implements BackgroundResource {
     return getProduct(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a Product.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   GetProductRequest request = GetProductRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Product response = productSearchClient.getProduct(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product does not exist.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1341,33 +799,23 @@ public class ProductSearchClient implements BackgroundResource {
     return getProductCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a Product.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product does not exist.
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product does not exist.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   GetProductRequest request = GetProductRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Product&gt; future = productSearchClient.getProductCallable().futureCall(request);
-   *   // Do something
-   *   Product response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetProductRequest, Product> getProductCallable() {
     return stub.getProductCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes changes to a Product resource. Only the `display_name`, `description`, and `labels`
    * fields can be updated right now.
@@ -1377,21 +825,14 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product does not exist. &#42; Returns INVALID_ARGUMENT if
-   * display_name is present in update_mask but is missing from the request or longer than 4096
-   * characters. &#42; Returns INVALID_ARGUMENT if description is present in update_mask but is
-   * longer than 4096 characters. &#42; Returns INVALID_ARGUMENT if product_category is present in
-   * update_mask.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   Product product = Product.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Product response = productSearchClient.updateProduct(product, updateMask);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but is missing from
+   *       the request or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if description is present in update_mask but is longer than 4096
+   *       characters.
+   *   <li>Returns INVALID_ARGUMENT if product_category is present in update_mask.
+   * </ul>
    *
    * @param product Required. The Product resource which replaces the one on the server.
    *     product.name is immutable.
@@ -1406,7 +847,7 @@ public class ProductSearchClient implements BackgroundResource {
     return updateProduct(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes changes to a Product resource. Only the `display_name`, `description`, and `labels`
    * fields can be updated right now.
@@ -1416,23 +857,14 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product does not exist. &#42; Returns INVALID_ARGUMENT if
-   * display_name is present in update_mask but is missing from the request or longer than 4096
-   * characters. &#42; Returns INVALID_ARGUMENT if description is present in update_mask but is
-   * longer than 4096 characters. &#42; Returns INVALID_ARGUMENT if product_category is present in
-   * update_mask.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   Product product = Product.newBuilder().build();
-   *   UpdateProductRequest request = UpdateProductRequest.newBuilder()
-   *     .setProduct(product)
-   *     .build();
-   *   Product response = productSearchClient.updateProduct(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but is missing from
+   *       the request or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if description is present in update_mask but is longer than 4096
+   *       characters.
+   *   <li>Returns INVALID_ARGUMENT if product_category is present in update_mask.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1441,7 +873,7 @@ public class ProductSearchClient implements BackgroundResource {
     return updateProductCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Makes changes to a Product resource. Only the `display_name`, `description`, and `labels`
    * fields can be updated right now.
@@ -1451,46 +883,28 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product does not exist. &#42; Returns INVALID_ARGUMENT if
-   * display_name is present in update_mask but is missing from the request or longer than 4096
-   * characters. &#42; Returns INVALID_ARGUMENT if description is present in update_mask but is
-   * longer than 4096 characters. &#42; Returns INVALID_ARGUMENT if product_category is present in
-   * update_mask.
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but is missing from
+   *       the request or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if description is present in update_mask but is longer than 4096
+   *       characters.
+   *   <li>Returns INVALID_ARGUMENT if product_category is present in update_mask.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   Product product = Product.newBuilder().build();
-   *   UpdateProductRequest request = UpdateProductRequest.newBuilder()
-   *     .setProduct(product)
-   *     .build();
-   *   ApiFuture&lt;Product&gt; future = productSearchClient.updateProductCallable().futureCall(request);
-   *   // Do something
-   *   Product response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateProductRequest, Product> updateProductCallable() {
     return stub.updateProductCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a product and its reference images.
    *
    * <p>Metadata of the product and all its images will be deleted right away, but search queries
    * against ProductSets containing the product may still work until all related caches are
    * refreshed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   productSearchClient.deleteProduct(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of product to delete.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
@@ -1502,22 +916,13 @@ public class ProductSearchClient implements BackgroundResource {
     deleteProduct(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a product and its reference images.
    *
    * <p>Metadata of the product and all its images will be deleted right away, but search queries
    * against ProductSets containing the product may still work until all related caches are
    * refreshed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   productSearchClient.deleteProduct(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of product to delete.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
@@ -1528,25 +933,13 @@ public class ProductSearchClient implements BackgroundResource {
     deleteProduct(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a product and its reference images.
    *
    * <p>Metadata of the product and all its images will be deleted right away, but search queries
    * against ProductSets containing the product may still work until all related caches are
    * refreshed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   DeleteProductRequest request = DeleteProductRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   productSearchClient.deleteProduct(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1555,7 +948,7 @@ public class ProductSearchClient implements BackgroundResource {
     deleteProductCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a product and its reference images.
    *
@@ -1564,24 +957,12 @@ public class ProductSearchClient implements BackgroundResource {
    * refreshed.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   DeleteProductRequest request = DeleteProductRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteProductCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
     return stub.deleteProductCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new ReferenceImage resource.
    *
@@ -1595,22 +976,13 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
-   * &#42; Returns INVALID_ARGUMENT if the product does not exist. &#42; Returns INVALID_ARGUMENT if
-   * bounding_poly is not provided, and nothing compatible with the parent product's
-   * product_category is detected. &#42; Returns INVALID_ARGUMENT if bounding_poly contains more
-   * than 10 polygons.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   ReferenceImage referenceImage = ReferenceImage.newBuilder().build();
-   *   String referenceImageId = "";
-   *   ReferenceImage response = productSearchClient.createReferenceImage(parent, referenceImage, referenceImageId);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if the product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
+   *       the parent product's product_category is detected.
+   *   <li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
+   * </ul>
    *
    * @param parent Required. Resource name of the product in which to create the reference image.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -1633,7 +1005,7 @@ public class ProductSearchClient implements BackgroundResource {
     return createReferenceImage(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new ReferenceImage resource.
    *
@@ -1647,22 +1019,13 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
-   * &#42; Returns INVALID_ARGUMENT if the product does not exist. &#42; Returns INVALID_ARGUMENT if
-   * bounding_poly is not provided, and nothing compatible with the parent product's
-   * product_category is detected. &#42; Returns INVALID_ARGUMENT if bounding_poly contains more
-   * than 10 polygons.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   ReferenceImage referenceImage = ReferenceImage.newBuilder().build();
-   *   String referenceImageId = "";
-   *   ReferenceImage response = productSearchClient.createReferenceImage(parent.toString(), referenceImage, referenceImageId);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if the product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
+   *       the parent product's product_category is detected.
+   *   <li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
+   * </ul>
    *
    * @param parent Required. Resource name of the product in which to create the reference image.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -1685,7 +1048,7 @@ public class ProductSearchClient implements BackgroundResource {
     return createReferenceImage(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new ReferenceImage resource.
    *
@@ -1699,25 +1062,13 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
-   * &#42; Returns INVALID_ARGUMENT if the product does not exist. &#42; Returns INVALID_ARGUMENT if
-   * bounding_poly is not provided, and nothing compatible with the parent product's
-   * product_category is detected. &#42; Returns INVALID_ARGUMENT if bounding_poly contains more
-   * than 10 polygons.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   ReferenceImage referenceImage = ReferenceImage.newBuilder().build();
-   *   CreateReferenceImageRequest request = CreateReferenceImageRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setReferenceImage(referenceImage)
-   *     .build();
-   *   ReferenceImage response = productSearchClient.createReferenceImage(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if the product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
+   *       the parent product's product_category is detected.
+   *   <li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1726,7 +1077,7 @@ public class ProductSearchClient implements BackgroundResource {
     return createReferenceImageCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates and returns a new ReferenceImage resource.
    *
@@ -1740,34 +1091,22 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
-   * &#42; Returns INVALID_ARGUMENT if the product does not exist. &#42; Returns INVALID_ARGUMENT if
-   * bounding_poly is not provided, and nothing compatible with the parent product's
-   * product_category is detected. &#42; Returns INVALID_ARGUMENT if bounding_poly contains more
-   * than 10 polygons.
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
+   *   <li>Returns INVALID_ARGUMENT if the product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
+   *       the parent product's product_category is detected.
+   *   <li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   ReferenceImage referenceImage = ReferenceImage.newBuilder().build();
-   *   CreateReferenceImageRequest request = CreateReferenceImageRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setReferenceImage(referenceImage)
-   *     .build();
-   *   ApiFuture&lt;ReferenceImage&gt; future = productSearchClient.createReferenceImageCallable().futureCall(request);
-   *   // Do something
-   *   ReferenceImage response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateReferenceImageRequest, ReferenceImage>
       createReferenceImageCallable() {
     return stub.createReferenceImageCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a reference image.
    *
@@ -1775,15 +1114,6 @@ public class ProductSearchClient implements BackgroundResource {
    * containing the image may still work until all related caches are refreshed.
    *
    * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   productSearchClient.deleteReferenceImage(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the reference image to delete.
    *     <p>Format is:
@@ -1798,7 +1128,7 @@ public class ProductSearchClient implements BackgroundResource {
     deleteReferenceImage(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a reference image.
    *
@@ -1806,15 +1136,6 @@ public class ProductSearchClient implements BackgroundResource {
    * containing the image may still work until all related caches are refreshed.
    *
    * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   productSearchClient.deleteReferenceImage(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name of the reference image to delete.
    *     <p>Format is:
@@ -1827,7 +1148,7 @@ public class ProductSearchClient implements BackgroundResource {
     deleteReferenceImage(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a reference image.
    *
@@ -1835,18 +1156,6 @@ public class ProductSearchClient implements BackgroundResource {
    * containing the image may still work until all related caches are refreshed.
    *
    * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   DeleteReferenceImageRequest request = DeleteReferenceImageRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   productSearchClient.deleteReferenceImage(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1855,7 +1164,7 @@ public class ProductSearchClient implements BackgroundResource {
     deleteReferenceImageCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Permanently deletes a reference image.
    *
@@ -1865,42 +1174,21 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>The actual image files are not deleted from Google Cloud Storage.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   DeleteReferenceImageRequest request = DeleteReferenceImageRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteReferenceImageCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
     return stub.deleteReferenceImageCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists reference images.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the parent product does not exist. &#42; Returns INVALID_ARGUMENT
-   * if the page_size is greater than 100, or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   for (ReferenceImage element : productSearchClient.listReferenceImages(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the parent product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
+   * </ul>
    *
    * @param parent Required. Resource name of the product containing the reference images.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -1914,25 +1202,16 @@ public class ProductSearchClient implements BackgroundResource {
     return listReferenceImages(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists reference images.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the parent product does not exist. &#42; Returns INVALID_ARGUMENT
-   * if the page_size is greater than 100, or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   for (ReferenceImage element : productSearchClient.listReferenceImages(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the parent product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
+   * </ul>
    *
    * @param parent Required. Resource name of the product containing the reference images.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
@@ -1944,28 +1223,16 @@ public class ProductSearchClient implements BackgroundResource {
     return listReferenceImages(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists reference images.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the parent product does not exist. &#42; Returns INVALID_ARGUMENT
-   * if the page_size is greater than 100, or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   ListReferenceImagesRequest request = ListReferenceImagesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (ReferenceImage element : productSearchClient.listReferenceImages(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the parent product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1975,89 +1242,51 @@ public class ProductSearchClient implements BackgroundResource {
     return listReferenceImagesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists reference images.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the parent product does not exist. &#42; Returns INVALID_ARGUMENT
-   * if the page_size is greater than 100, or less than 1.
+   * <ul>
+   *   <li>Returns NOT_FOUND if the parent product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   ListReferenceImagesRequest request = ListReferenceImagesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListReferenceImagesPagedResponse&gt; future = productSearchClient.listReferenceImagesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ReferenceImage element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesPagedResponse>
       listReferenceImagesPagedCallable() {
     return stub.listReferenceImagesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists reference images.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the parent product does not exist. &#42; Returns INVALID_ARGUMENT
-   * if the page_size is greater than 100, or less than 1.
+   * <ul>
+   *   <li>Returns NOT_FOUND if the parent product does not exist.
+   *   <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   ListReferenceImagesRequest request = ListReferenceImagesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListReferenceImagesResponse response = productSearchClient.listReferenceImagesCallable().call(request);
-   *     for (ReferenceImage element : response.getReferenceImagesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesResponse>
       listReferenceImagesCallable() {
     return stub.listReferenceImagesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a ReferenceImage.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the specified image does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   ReferenceImage response = productSearchClient.getReferenceImage(name);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the specified image does not exist.
+   * </ul>
    *
    * @param name Required. The resource name of the ReferenceImage to get.
    *     <p>Format is:
@@ -2072,22 +1301,15 @@ public class ProductSearchClient implements BackgroundResource {
     return getReferenceImage(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a ReferenceImage.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the specified image does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   ReferenceImage response = productSearchClient.getReferenceImage(name.toString());
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the specified image does not exist.
+   * </ul>
    *
    * @param name Required. The resource name of the ReferenceImage to get.
    *     <p>Format is:
@@ -2099,25 +1321,15 @@ public class ProductSearchClient implements BackgroundResource {
     return getReferenceImage(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a ReferenceImage.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the specified image does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   GetReferenceImageRequest request = GetReferenceImageRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ReferenceImage response = productSearchClient.getReferenceImage(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the specified image does not exist.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2126,33 +1338,23 @@ public class ProductSearchClient implements BackgroundResource {
     return getReferenceImageCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information associated with a ReferenceImage.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the specified image does not exist.
+   * <ul>
+   *   <li>Returns NOT_FOUND if the specified image does not exist.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   GetReferenceImageRequest request = GetReferenceImageRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ReferenceImage&gt; future = productSearchClient.getReferenceImageCallable().futureCall(request);
-   *   // Do something
-   *   ReferenceImage response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetReferenceImageRequest, ReferenceImage> getReferenceImageCallable() {
     return stub.getReferenceImageCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a Product to the specified ProductSet. If the Product is already present, no change is
    * made.
@@ -2161,17 +1363,9 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   productSearchClient.addProductToProductSet(name, product);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   * </ul>
    *
    * @param name Required. The resource name for the ProductSet to modify.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -2188,7 +1382,7 @@ public class ProductSearchClient implements BackgroundResource {
     addProductToProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a Product to the specified ProductSet. If the Product is already present, no change is
    * made.
@@ -2197,17 +1391,65 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   * </ul>
    *
-   * <p>Sample code:
+   * @param name Required. The resource name for the ProductSet to modify.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
+   * @param product Required. The resource name for the Product to be added to this ProductSet.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void addProductToProductSet(ProductSetName name, String product) {
+    AddProductToProductSetRequest request =
+        AddProductToProductSetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setProduct(product)
+            .build();
+    addProductToProductSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a Product to the specified ProductSet. If the Product is already present, no change is
+   * made.
    *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   productSearchClient.addProductToProductSet(name.toString(), product.toString());
-   * }
-   * </code></pre>
+   * <p>One Product can be added to at most 100 ProductSets.
+   *
+   * <p>Possible errors:
+   *
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   * </ul>
+   *
+   * @param name Required. The resource name for the ProductSet to modify.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
+   * @param product Required. The resource name for the Product to be added to this ProductSet.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void addProductToProductSet(String name, ProductName product) {
+    AddProductToProductSetRequest request =
+        AddProductToProductSetRequest.newBuilder()
+            .setName(name)
+            .setProduct(product == null ? null : product.toString())
+            .build();
+    addProductToProductSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a Product to the specified ProductSet. If the Product is already present, no change is
+   * made.
+   *
+   * <p>One Product can be added to at most 100 ProductSets.
+   *
+   * <p>Possible errors:
+   *
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   * </ul>
    *
    * @param name Required. The resource name for the ProductSet to modify.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -2221,7 +1463,7 @@ public class ProductSearchClient implements BackgroundResource {
     addProductToProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a Product to the specified ProductSet. If the Product is already present, no change is
    * made.
@@ -2230,21 +1472,9 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   AddProductToProductSetRequest request = AddProductToProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setProduct(product.toString())
-   *     .build();
-   *   productSearchClient.addProductToProductSet(request);
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2253,7 +1483,7 @@ public class ProductSearchClient implements BackgroundResource {
     addProductToProductSetCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds a Product to the specified ProductSet. If the Product is already present, no change is
    * made.
@@ -2262,42 +1492,20 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   * <ul>
+   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   AddProductToProductSetRequest request = AddProductToProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setProduct(product.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.addProductToProductSetCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<AddProductToProductSetRequest, Empty>
       addProductToProductSetCallable() {
     return stub.addProductToProductSetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a Product from the specified ProductSet.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   productSearchClient.removeProductFromProductSet(name, product);
-   * }
-   * </code></pre>
    *
    * @param name Required. The resource name for the ProductSet to modify.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -2314,19 +1522,47 @@ public class ProductSearchClient implements BackgroundResource {
     removeProductFromProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a Product from the specified ProductSet.
    *
-   * <p>Sample code:
+   * @param name Required. The resource name for the ProductSet to modify.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
+   * @param product Required. The resource name for the Product to be removed from this ProductSet.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void removeProductFromProductSet(ProductSetName name, String product) {
+    RemoveProductFromProductSetRequest request =
+        RemoveProductFromProductSetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setProduct(product)
+            .build();
+    removeProductFromProductSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes a Product from the specified ProductSet.
    *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   productSearchClient.removeProductFromProductSet(name.toString(), product.toString());
-   * }
-   * </code></pre>
+   * @param name Required. The resource name for the ProductSet to modify.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
+   * @param product Required. The resource name for the Product to be removed from this ProductSet.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void removeProductFromProductSet(String name, ProductName product) {
+    RemoveProductFromProductSetRequest request =
+        RemoveProductFromProductSetRequest.newBuilder()
+            .setName(name)
+            .setProduct(product == null ? null : product.toString())
+            .build();
+    removeProductFromProductSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes a Product from the specified ProductSet.
    *
    * @param name Required. The resource name for the ProductSet to modify.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -2340,23 +1576,9 @@ public class ProductSearchClient implements BackgroundResource {
     removeProductFromProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a Product from the specified ProductSet.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   RemoveProductFromProductSetRequest request = RemoveProductFromProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setProduct(product.toString())
-   *     .build();
-   *   productSearchClient.removeProductFromProductSet(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2365,50 +1587,27 @@ public class ProductSearchClient implements BackgroundResource {
     removeProductFromProductSetCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes a Product from the specified ProductSet.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   RemoveProductFromProductSetRequest request = RemoveProductFromProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setProduct(product.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.removeProductFromProductSetCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<RemoveProductFromProductSetRequest, Empty>
       removeProductFromProductSetCallable() {
     return stub.removeProductFromProductSetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the Products in a ProductSet, in an unspecified order. If the ProductSet does not exist,
    * the products field of the response will be empty.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   for (Product element : productSearchClient.listProductsInProductSet(name).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * </ul>
    *
    * @param name Required. The ProductSet resource for which to retrieve Products.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -2422,25 +1621,16 @@ public class ProductSearchClient implements BackgroundResource {
     return listProductsInProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the Products in a ProductSet, in an unspecified order. If the ProductSet does not exist,
    * the products field of the response will be empty.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   for (Product element : productSearchClient.listProductsInProductSet(name.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * </ul>
    *
    * @param name Required. The ProductSet resource for which to retrieve Products.
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
@@ -2452,28 +1642,16 @@ public class ProductSearchClient implements BackgroundResource {
     return listProductsInProductSet(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the Products in a ProductSet, in an unspecified order. If the ProductSet does not exist,
    * the products field of the response will be empty.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ListProductsInProductSetRequest request = ListProductsInProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   for (Product element : productSearchClient.listProductsInProductSet(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * </ul>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2483,74 +1661,162 @@ public class ProductSearchClient implements BackgroundResource {
     return listProductsInProductSetPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the Products in a ProductSet, in an unspecified order. If the ProductSet does not exist,
    * the products field of the response will be empty.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ListProductsInProductSetRequest request = ListProductsInProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ListProductsInProductSetPagedResponse&gt; future = productSearchClient.listProductsInProductSetPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Product element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetPagedResponse>
       listProductsInProductSetPagedCallable() {
     return stub.listProductsInProductSetPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the Products in a ProductSet, in an unspecified order. If the ProductSet does not exist,
    * the products field of the response will be empty.
    *
    * <p>Possible errors:
    *
-   * <p>&#42; Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * <ul>
+   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   * </ul>
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   ListProductsInProductSetRequest request = ListProductsInProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   while (true) {
-   *     ListProductsInProductSetResponse response = productSearchClient.listProductsInProductSetCallable().call(request);
-   *     for (Product element : response.getProductsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
       listProductsInProductSetCallable() {
     return stub.listProductsInProductSetCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronous API that imports a list of reference images to specified product sets based on a
+   * list of image information.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
+   * (results)
+   *
+   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
+   * csv file please see
+   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   *
+   * @param parent Required. The project in which the ProductSets should be imported.
+   *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
+   * @param inputConfig Required. The input content for the list of requests.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsAsync(LocationName parent, ImportProductSetsInputConfig inputConfig) {
+    ImportProductSetsRequest request =
+        ImportProductSetsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInputConfig(inputConfig)
+            .build();
+    return importProductSetsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronous API that imports a list of reference images to specified product sets based on a
+   * list of image information.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
+   * (results)
+   *
+   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
+   * csv file please see
+   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   *
+   * @param parent Required. The project in which the ProductSets should be imported.
+   *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
+   * @param inputConfig Required. The input content for the list of requests.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsAsync(String parent, ImportProductSetsInputConfig inputConfig) {
+    ImportProductSetsRequest request =
+        ImportProductSetsRequest.newBuilder().setParent(parent).setInputConfig(inputConfig).build();
+    return importProductSetsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronous API that imports a list of reference images to specified product sets based on a
+   * list of image information.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
+   * (results)
+   *
+   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
+   * csv file please see
+   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsAsync(ImportProductSetsRequest request) {
+    return importProductSetsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronous API that imports a list of reference images to specified product sets based on a
+   * list of image information.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
+   * (results)
+   *
+   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
+   * csv file please see
+   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   *
+   * <p>Sample code:
+   */
+  public final OperationCallable<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationCallable() {
+    return stub.importProductSetsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronous API that imports a list of reference images to specified product sets based on a
+   * list of image information.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
+   * (results)
+   *
+   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
+   * csv file please see
+   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
+    return stub.importProductSetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
    * ProductSet.
@@ -2575,21 +1841,10 @@ public class ProductSearchClient implements BackgroundResource {
    * track of the progress and results of the request. `Operation.metadata` contains
    * `BatchOperationMetadata`. (progress)
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   productSearchClient.purgeProductsAsync(parent).get();
-   * }
-   * </code></pre>
-   *
    * @param parent Required. The project and location in which the Products should be deleted.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, BatchOperationMetadata> purgeProductsAsync(
       LocationName parent) {
     PurgeProductsRequest request =
@@ -2599,7 +1854,7 @@ public class ProductSearchClient implements BackgroundResource {
     return purgeProductsAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
    * ProductSet.
@@ -2623,28 +1878,17 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
    * track of the progress and results of the request. `Operation.metadata` contains
    * `BatchOperationMetadata`. (progress)
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   productSearchClient.purgeProductsAsync(parent.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The project and location in which the Products should be deleted.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, BatchOperationMetadata> purgeProductsAsync(String parent) {
     PurgeProductsRequest request = PurgeProductsRequest.newBuilder().setParent(parent).build();
     return purgeProductsAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
    * ProductSet.
@@ -2669,29 +1913,15 @@ public class ProductSearchClient implements BackgroundResource {
    * track of the progress and results of the request. `Operation.metadata` contains
    * `BatchOperationMetadata`. (progress)
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   productSearchClient.purgeProductsAsync(request).get();
-   * }
-   * </code></pre>
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, BatchOperationMetadata> purgeProductsAsync(
       PurgeProductsRequest request) {
     return purgeProductsOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
    * ProductSet.
@@ -2717,26 +1947,13 @@ public class ProductSearchClient implements BackgroundResource {
    * `BatchOperationMetadata`. (progress)
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, BatchOperationMetadata&gt; future = productSearchClient.purgeProductsOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
       purgeProductsOperationCallable() {
     return stub.purgeProductsOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
    * ProductSet.
@@ -2762,18 +1979,6 @@ public class ProductSearchClient implements BackgroundResource {
    * `BatchOperationMetadata`. (progress)
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = productSearchClient.purgeProductsCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
     return stub.purgeProductsCallable();

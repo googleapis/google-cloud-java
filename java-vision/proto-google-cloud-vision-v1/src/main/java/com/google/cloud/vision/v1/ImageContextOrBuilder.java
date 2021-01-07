@@ -241,4 +241,39 @@ public interface ImageContextOrBuilder
    * <code>.google.cloud.vision.v1.WebDetectionParams web_detection_params = 6;</code>
    */
   com.google.cloud.vision.v1.WebDetectionParamsOrBuilder getWebDetectionParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for text detection and document text detection.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.TextDetectionParams text_detection_params = 12;</code>
+   *
+   * @return Whether the textDetectionParams field is set.
+   */
+  boolean hasTextDetectionParams();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for text detection and document text detection.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.TextDetectionParams text_detection_params = 12;</code>
+   *
+   * @return The textDetectionParams.
+   */
+  com.google.cloud.vision.v1.TextDetectionParams getTextDetectionParams();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for text detection and document text detection.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.TextDetectionParams text_detection_params = 12;</code>
+   */
+  com.google.cloud.vision.v1.TextDetectionParamsOrBuilder getTextDetectionParamsOrBuilder();
 }
