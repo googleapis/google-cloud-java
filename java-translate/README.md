@@ -44,13 +44,20 @@ If you are using Maven without BOM, add this to your dependencies:
 
 ```
 
-If you are using Gradle, add this to your dependencies
+If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-translate:1.95.5'
+implementation platform('com.google.cloud:libraries-bom:16.2.1')
+
+compile 'com.google.cloud:google-cloud-translate'
 ```
+If you are using Gradle without BOM, add this to your dependencies
+```Groovy
+compile 'com.google.cloud:google-cloud-translate:1.95.6'
+```
+
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.95.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.95.6"
 ```
 
 ## Authentication
