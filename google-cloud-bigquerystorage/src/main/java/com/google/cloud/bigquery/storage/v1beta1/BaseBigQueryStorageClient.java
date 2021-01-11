@@ -86,7 +86,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class BaseBigQueryStorageClient implements BackgroundResource {
   private final BaseBigQueryStorageSettings settings;
   private final BigQueryStorageStub stub;

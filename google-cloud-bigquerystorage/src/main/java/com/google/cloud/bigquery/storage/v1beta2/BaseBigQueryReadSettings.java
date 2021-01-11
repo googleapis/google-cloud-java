@@ -65,6 +65,7 @@ import javax.annotation.Generated;
  * BaseBigQueryReadSettings baseBigQueryReadSettings = baseBigQueryReadSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class BaseBigQueryReadSettings extends ClientSettings<BaseBigQueryReadSettings> {
 

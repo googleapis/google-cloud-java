@@ -67,6 +67,7 @@ import javax.annotation.Generated;
  *     baseBigQueryStorageSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class BaseBigQueryStorageSettings extends ClientSettings<BaseBigQueryStorageSettings> {
 

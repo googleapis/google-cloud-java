@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.storage.v1beta2.stub;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -45,6 +46,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcBigQueryReadStub extends BigQueryReadStub {
   private static final MethodDescriptor<CreateReadSessionRequest, ReadSession>

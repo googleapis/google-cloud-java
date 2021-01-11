@@ -80,7 +80,6 @@ import org.threeten.bp.Duration;
  * BigQueryReadStubSettings bigQueryReadSettings = bigQueryReadSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class BigQueryReadStubSettings extends StubSettings<BigQueryReadStubSettings> {
   /** The default scopes of the service. */
